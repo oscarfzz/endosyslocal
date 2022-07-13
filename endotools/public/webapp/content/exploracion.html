@@ -1,0 +1,100 @@
+﻿<!--div id="exploracion_form" class="form"-->
+<div id="exploracion_form">
+
+<!--	CONTROL DE CAPTURA	-->
+
+<div id="exploracion_form_top">
+	<div>
+		<!--	con float: right (para que se muestren correctamente en IE7, han de estar delante)	-->
+		<span id="hora"></span>
+		<span id="fecha"></span>
+		<!--	sin float	-->
+		<span id="num_exploracion"></span>
+		<span id="tipo_exploracion"></span>
+		<span id="numero_tipo_exploracion" data-i18n="[title]Número de exploración pertenenciente a este tipo de exploración sobre la cantidad de exploraciones de este mismo tipo"></span>
+		<span id="exploracion_borrada"><span data-i18n>BORRADA</span><i class="fa fa-info-circle"></i></span>
+	</div>
+	<div>
+		<!--	con float: right (para que se muestren correctamente en IE7, han de estar delante)	-->
+		<span id="medico"></span>
+		<span id="sala"></span>
+		<!--	sin float	-->
+		<a id="exploracion-mostrar-paciente" href="#">
+			<span id="historia"></span>
+			<span id="paciente"></span>
+		</a>
+	</div>
+</div>
+
+
+<div id="exploracion_form_tabview" class="seccion">
+
+	<span id="captura-importarimg-btn" class="fileinput-button" style="display: none;">
+		<span data-i18n>Importar imagen</span>
+		<input id="captura-importar-fileupload" accept=".jpg,.jpeg,.png,.bmp" type="file" multiple name="archivo">
+	</span>
+
+	<!--a data-i18n="" style=" display: block; padding: 7px; position: absolute; right: 350px; top: 6px;" id="captura_refrescar" href="#" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" ><span class="ui-button-text">Refrescar</span></a-->
+
+	<!--a data-i18n="" style=" display: block; padding: 7px; position: absolute; right: 265px; top: 6px;" id="captura_link" href="#" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" ><span class="ui-button-text">Capturar 2</span></a-->
+
+	<button id="exploracion-capturar-btn" type="button" style="display: none;" data-i18n>Capturar</button>
+
+	<ul>
+		<li><a href="#exploracion-tab-informes"><em data-i18n>Informes</em></a></li>
+		<li><a href="#exploracion-tab-imagenes"><em data-i18n>Imágenes</em></a></li>
+	</ul>
+
+	<div id="exploracion-tab-exploraciones-anteriores">
+
+	</div>
+
+	<div id="exploracion-tab-informes" class="pure-g">
+
+		<div class="pure-u-1-2" >
+			<div class="seccion">
+				<div id="exploracion-datatable-informes" class="yui-skin-endotools"></div>
+			</div>
+
+			<div>
+				<button id="exploracion-ver-btn" type="button" data-i18n>Ver</button>
+				<button id="exploracion-invalido-btn" type="button" data-i18n>Borrar</button>
+			</div>
+		</div>
+
+		<div class="pure-u-1-2">
+				<button id="exploracion-generar-btn" type="button" data-i18n>Generar informe...</button>
+				<button id="exploracion-generarfirmado-btn" type="button" data-i18n>Generar informe con firma...</button>
+				<span id="exploracion-adjuntar-btn" class="fileinput-button">
+					<span id="file-button-text" data-i18n>Adjuntar documento...</span>
+					<input id="file" type="file" name="file" accept="application/pdf">
+				</span>
+				<p data-i18n>Se generará un nuevo informe utilizando los datos de la exploración actuales. El nuevo informe no podrá ser modificado ni eliminado. Si realiza cambios en los datos de la exploración tendrá que generar un nuevo informe.</p>
+		</div>
+
+
+	</div>
+
+	<!--div id="exploracion-tab-imagenes"> <ul /> </div-->
+	<div id="exploracion-tab-imagenes">
+		<div class="ui-layout-center endo_pane_redondeado endo_pane_content endo-panel">
+			<ul />
+		</div>
+		<div class="ui-layout-east endo_pane_redondeado endo-panel">
+			<!--img src=""-->
+			<div style="width: 100%; height: 100%;"></div>
+		</div>
+	</div>
+
+</div>
+
+<div>
+	<button id="exploracion-guardar-btn" type="button" data-i18n>Save</button>
+	<button id="exploracion-cancelar-btn" type="button" data-i18n>No realizada</button>
+	<button id="exploracion-descartar-btn" type="button" data-i18n>Descartar</button>
+	<button id="exploracion-borrar-btn" type="button" data-i18n>Borrar</button>
+	<button id="exploracion-recuperar-btn" type="button" data-i18n>Recuperar</button>
+	<button id="exploracion-asignarvaloresdefecto-btn" type="button" style="display: none;" data-i18n>Asignar valores por defecto</button>
+</div>
+
+</div>

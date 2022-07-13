@@ -1,0 +1,27 @@
+<form class="pure-form pure-form-stacked">
+	<fieldset>
+		<div class="pure-control-group">
+			<span id="editor-importarform-btn" class="fileinput-button">
+				<span id="file-button-text" data-i18n>Seleccionar fichero...</span>
+				<input id="file" type="file" name="file">
+			</span>
+			<small id="file-name-text" data-i18n>Ningún fichero seleccionado.</small>
+			<div>
+				<label for="import-solo-activos"><input id="import-solo-activos" type="checkbox">Importar sólo activos</label>
+			</div>
+			<!--
+			<span id="editor-sobreescribir-checkbox" class="sobreescribir-checkbox">
+				<input class="yui-dt-checkbox" type="checkbox">
+				<span data-i18n>Sobreescribir valores repetidos</span>
+			</span>-->
+		</div>
+		<div class="pure-control-group">
+			<label data-i18n>Progreso</label>
+			<div id="progressbar"></div>
+		</div>
+		<div class="pure-control-group">
+			<small data-i18n>El formato debe ser texto plano en <strong>UTF-8</strong>.</small>
+			<small data-i18n>Para exportar desde Excel: <code>Guardar como -> Texto Unicode (*.txt)</code>.</small>
+		</div>
+	</fieldset>
+</form>

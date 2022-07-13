@@ -1,0 +1,71 @@
+﻿/*
+COLORES:
+	#808080		gris			Campo utilizado
+	#80C0A0		verde			Celda
+	#F8FFF0		verde pastel	Celda que acepta un campo
+	#F0C0A0		rojo pastel		Celda que no acepta un campo
+	#C0C0FF		azul pastel		Celda seleccionada, para añadir filas
+	#E4FFF0		verde claro		Fondo de los formularios que se editan
+	#C4DFD0		otro verde		Fondo del div con la lista de campos
+	#808080		gris			Borde del div con la lista de campos
+*/
+
+#editor_formularios_tab {
+	height: calc(100% - 105px);
+	padding: 0.25em 0.5em;
+	border: 1px solid #808080;
+	overflow: auto;
+	background-color: #E4FFF0;
+}
+
+.anadir-grupocampos-div {
+	background: none repeat scroll 0 0 #C4DFD0;
+	border: 1px solid #808080;
+	margin-top: 4px;
+	padding: 4px;
+	text-align: left;
+}
+
+
+/*	lista de campos	*/
+/*		en el datatable de campos, los utilizados en el formulario salen en	gris	*/
+tr.utilizado {
+	color: #808080;
+}
+
+#editorforms-nuevo-campo-btn, #editorforms-eliminar-campo-btn {
+	float: left;
+}
+
+/*	controles de celda/campo	*/
+.editable-table td {
+	border: 1px dashed #80C0A0;
+}
+
+.editable-table td.valid-target-td {
+	background-color: #F8FFF0;
+}
+
+.editable-table td.invalid-target-td {
+	background-color: #F0C0A0;
+}
+
+.editable-table td.highlighted {
+	background-color: #C0C0FF;
+}
+
+.campo-edit-dialog, .campo-dec-width-btn, .campo-inc-width-btn, .campo-dec-height-btn, .campo-inc-height-btn {
+	min-width: 21px;
+	border: 0;
+	margin: 1px;
+	color: #0a5649;
+	background-color: transparent;
+}
+
+.campo-edit-dialog:hover, .campo-dec-width-btn:hover, .campo-inc-width-btn:hover, .campo-dec-height-btn:hover, .campo-inc-height-btn:hover {
+	color: #4a9689;
+}
+
+.panel-lista-campos {
+	overflow:hidden;
+}

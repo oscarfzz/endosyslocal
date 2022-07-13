@@ -1,0 +1,157 @@
+/*
+COLORES:
+	#F2FBF6		verde			Fondo
+	#F9F4D7		amarillo		Highlight
+*/
+
+/*	bordes	*/
+.yui-skin-endotools .yui-dt-scrollable .yui-dt-hd {
+	border-left: 1px solid #AACEC4;
+	border-right: 1px solid #AACEC4;
+	border-top: 1px solid #AACEC4;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+.yui-skin-endotools .yui-dt-scrollable .yui-dt-bd {
+	border-left: 1px solid #AACEC4;
+	border-right: 1px solid #AACEC4;
+	border-bottom: 1px solid #AACEC4;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+.yui-skin-endotools .yui-dt tr.yui-dt-first td {
+	border-top: none;
+}
+
+.yui-skin-endotools .yui-dt-scrollable .yui-dt-data tr.yui-dt-last td {
+	border-bottom: none;
+}
+
+.yui-skin-endotools .yui-dt td {
+	border-color: #AACEC4;
+}
+
+.yui-skin-endotools .yui-dt th {
+	border-color: #AACEC4;
+}
+
+/*	fuente	*/
+.yui-skin-endotools .yui-dt table {
+	font-family: inherit;
+}
+
+/*	fondo header	*/
+.yui-skin-endotools .yui-dt th {
+	background: none repeat scroll 0 0 #C4E5D6;
+}
+
+/*	texto header	*/
+.yui-skin-endotools .yui-dt th, .yui-skin-endotools .yui-dt th a {
+	color: #222222;
+}
+
+/* sortable columns */
+.yui-skin-endotools th.yui-dt-asc,
+.yui-skin-endotools th.yui-dt-desc {
+	/*background: none repeat scroll 0 0 #FFFFFF;*/
+	background: none repeat scroll 0 0 #FAF0C0;
+}
+
+/* texto sortable columns */
+.yui-skin-endotools th.yui-dt-asc a,
+.yui-skin-endotools th.yui-dt-desc a {
+	/*color: #000000;*/
+	color: #82651E;
+}
+
+/*	resizer	*/
+.yui-dt-resizer {
+	/*background-color: #CCCCCC;*/
+}
+
+/*	fondo	*/
+.yui-skin-endotools .yui-dt-scrollable .yui-dt-bd {
+	background-color: #F2FBF6;
+}
+/*	striping	*/
+.yui-skin-endotools tr.yui-dt-even {	background-color: #F2FBF6; }
+.yui-skin-endotools tr.yui-dt-odd {	background-color: #FFFFFF; }
+.yui-skin-endotools tr.yui-dt-even td.yui-dt-asc,
+.yui-skin-endotools tr.yui-dt-even td.yui-dt-desc {background-color: #F2FBF6; }
+.yui-skin-endotools tr.yui-dt-odd td.yui-dt-asc,
+.yui-skin-endotools tr.yui-dt-odd td.yui-dt-desc {	background-color: #FFFFFF; }
+
+/* disable striping in list mode */
+.yui-skin-endotools .yui-dt-list tr.yui-dt-even {	background-color:#F2FBF6; }
+.yui-skin-endotools .yui-dt-list tr.yui-dt-odd {	background-color:#FFFFFF; }
+.yui-skin-endotools .yui-dt-list tr.yui-dt-even td.yui-dt-asc,
+.yui-skin-endotools .yui-dt-list tr.yui-dt-even td.yui-dt-desc {background-color:#F2FBF6; }
+.yui-skin-endotools .yui-dt-list tr.yui-dt-odd td.yui-dt-asc,
+.yui-skin-endotools .yui-dt-list tr.yui-dt-odd td.yui-dt-desc {	background-color:#FFFFFF; }
+
+/* highlighting */
+/*.yui-skin-endotools th.yui-dt-highlighted,
+.yui-skin-endotools th.yui-dt-highlighted a {
+    background-color: F9F4D7;
+}*/
+.yui-skin-endotools tr.yui-dt-highlighted,
+.yui-skin-endotools tr.yui-dt-highlighted td.yui-dt-asc,
+.yui-skin-endotools tr.yui-dt-highlighted td.yui-dt-desc,
+.yui-skin-endotools tr.yui-dt-even td.yui-dt-highlighted,
+.yui-skin-endotools tr.yui-dt-odd td.yui-dt-highlighted {
+    background-color: #F9F4D7;
+}
+
+/* enable highlighting in list mode */
+/*.yui-skin-endotools .yui-dt-list th.yui-dt-highlighted,
+.yui-skin-endotools .yui-dt-list th.yui-dt-highlighted a {
+    background-color: #F9F4D7;
+}*/
+.yui-skin-endotools .yui-dt-list tr.yui-dt-highlighted,
+.yui-skin-endotools .yui-dt-list tr.yui-dt-highlighted td.yui-dt-asc,
+.yui-skin-endotools .yui-dt-list tr.yui-dt-highlighted td.yui-dt-desc,
+.yui-skin-endotools .yui-dt-list tr.yui-dt-even td.yui-dt-highlighted,
+.yui-skin-endotools .yui-dt-list tr.yui-dt-odd td.yui-dt-highlighted {
+    background-color: #F9F4D7;
+}
+
+/*	selected	*/
+.yui-skin-endotools tr.yui-dt-selected td,
+.yui-skin-endotools tr.yui-dt-selected td.yui-dt-asc,
+.yui-skin-endotools tr.yui-dt-selected td.yui-dt-desc {
+	background-color: #F9F4D7;
+	color: #82651e;
+    /*background-color: inherit;*/
+    /*background-color: #FFFFFF;
+	color: #486F65;*/
+}
+
+.yui-skin-endotools .yui-dt-list tr.yui-dt-selected td,
+.yui-skin-endotools .yui-dt-list tr.yui-dt-selected td.yui-dt-asc,
+.yui-skin-endotools .yui-dt-list tr.yui-dt-selected td.yui-dt-desc {
+	background-color: #F9F4D7;
+	color: #82651e;
+    /*background-color: inherit;*/
+    /*background-color: #FFFFFF;
+	color: #486F65;*/
+}
+
+/*.yui-skin-endotools tr.yui-dt-selected td div,
+.yui-skin-endotools tr.yui-dt-selected td div.yui-dt-asc,
+.yui-skin-endotools tr.yui-dt-selected td div.yui-dt-desc {
+    background-color: #FFFFFF;
+	border-top: 1px solid #80C0B0;
+	border-bottom: 1px solid #80C0B0;
+	color: #486F65;
+	padding: 2px 10px;
+}*/
+
+
+
+/*	???	*/
+.yui-dt-editor .yui-dt-button button {
+    width: 6em;
+}
+

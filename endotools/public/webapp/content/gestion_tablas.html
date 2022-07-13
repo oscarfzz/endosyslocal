@@ -1,0 +1,50 @@
+﻿<div class="layout_main_content">
+	<div class="ui-layout-west endo_pane_redondeado endo-panel endo_pane_content">
+
+		<select id="tablas-listado" size="10" style="width: 100%; height: 100%;">
+			<option data-i18n>Cargando...</option>
+		</select>
+
+	</div>
+
+	<div class="ui-layout-center endo_pane_redondeado endo-panel-detail endo_pane_content">
+
+		<form class="pure-form" onsubmit="return false;">
+			<fieldset>
+				<legend id="tablas-titulotipo" data-i18n>Elementos</legend>
+				<input id="tablas-nuevovalor" type="text">
+				<button id="tablas-nuevo-btn" type="button" value="Nuevo" data-i18n>Añadir</button>
+			</fieldset>
+			<fieldset>
+				<!-- <button id="tablas-exportar-btn" type="button" value="Exportar" data-i18n>Exportar</button>
+				<button id="tablas-importar-btn" type="button" value="Importar" data-i18n>Importar</button> -->
+
+				<label for="tablas-toggle-activos" class="checkbox-inline label-left">
+					<span data-i18n>Mostrar:</span>
+					<div class="toggle">
+						<input type="checkbox" id="tablas-toggle-activos" checked />
+
+						<div class="toggle-group">
+							<label for="tablas-toggle-activos" class="toggle-on" data-i18n>Solo activos</label>
+							<label for="tablas-toggle-activos" class="toggle-off" data-i18n>Todos</label>
+							<label for="tablas-toggle-activos" class="toggle-handle"></label>
+						</div>
+					</div>
+				</label>
+			</fieldset>
+			<fieldset>
+				<div id="tablas-datatable" class="yui-skin-endotools seccion-horizontal"></div>
+
+				<div class="button-list-vertical seccion-horizontal">
+					<button id="tablas-eliminar-btn" type="button" value="Eliminar" data-i18n>Delete</button>
+					<button id="tablas-modificar-btn" type="button" value="Modificar" data-i18n>Modify</button>
+					<button id="tablas-actualizar-btn" type="button" value="Actualizar" data-i18n>Actualizar</button>
+					<div>
+			</fieldset>
+			<button id="tablas-exportar-btn" type="button" value="Exportar" data-i18n>Exportar</button>
+			<button id="tablas-exportar-btn-activos" type="button" value="Exportar_activos" data-i18n>Exportar activos</button>
+			<button id="tablas-exportar-btn-todos" type="button" value="Exportar_todos" data-i18n>Exportar todos</button>
+			<button id="tablas-importar-btn" type="button" value="Importar" data-i18n>Importar</button>
+		</form>
+	</div>
+</div>

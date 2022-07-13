@@ -1,0 +1,78 @@
+﻿<div class="layout_main_content">
+
+	<div class="contenedor2 ui-layout-north">
+
+		<div class="ui-layout-west endo_pane_redondeado endo_pane_content endo-panel">
+
+			<div id="busquedaexpl-tabview">
+				<ul>
+					<li><a href="#busquedaexpl-tab-undia" data-i18n>Un solo día</a></li>
+					<li><a href="#busquedaexpl-tab-dosfechas" data-i18n>Entre dos fechas</a></li>
+				</ul>
+
+				<form id="busquedaexpl-tab-undia" class="pure-form" onsubmit="return false;">
+					<fieldset>
+						<input id="busqueda-fecha-undia" type="text">
+						<button id="busqueda-undia-btn" type="button" value="Buscar" data-i18n>Buscar</button>
+					</fieldset>
+
+					<fieldset>
+						<legend></legend>
+						<div class="compacto" id="busqueda-undia-datepicker"></div>
+					</fieldset>
+
+					<fieldset>
+						<legend></legend>
+						<button id="busqueda-hoy-btn" type="button" value="Buscar" data-i18n>Hoy</button>
+						<button id="busqueda-ayer-btn" type="button" value="Buscar" data-i18n>Ayer</button>
+					</fieldset>
+				</form>
+
+				<form id="busquedaexpl-tab-dosfechas" class="pure-form pure-form-stacked">
+					<label data-i18n>Inicio</label>
+					<input id="busqueda-fecha-inicio" class="pure-input-1" type="text">
+
+					<label data-i18n>Fin</label>
+					<input id="busqueda-fecha-fin" class="pure-input-1" type="text">
+					<button id="busqueda-buscar-btn" type="button" value="Buscar" data-i18n>Buscar</button>
+
+					<fieldset>
+						<legend></legend>
+						<button id="busqueda-semanaactual-btn" type="button" value="Buscar" data-i18n>Semana actual</button>
+						<button id="busqueda-mesactual-btn" type="button" value="Buscar" data-i18n>Mes actual</button>
+					</fieldset>
+				</form>
+
+				<form id="busquedaexpl-eliminados" class="pure-form pure-form-stacked">
+					<fieldset>
+						<legend></legend>
+						<label for="checkbox-buscar-eliminados">
+	        				<input id="checkbox-buscar-eliminados" type="checkbox" class="">
+	        				<span data-i18n>Buscar exploraciones borradas</span>
+	        			</label>
+					</fieldset>
+				</form>
+
+			</div>
+
+		</div>
+
+		<div class="ui-layout-center endo_pane_redondeado endo_pane_content endo-panel">
+
+			<div id="datatable_busqueda_result" class="yui-skin-endotools"></div>
+			<div class="seccion" style="margin-top:5px;margin-bottom:0px; min-height: 2em;">
+			<div id="total-registros" data-i18n="[prepend]Encontrados:Total">
+				<span id="total-exploraciones">0</span>
+			</div>
+			<div id="paginacion" class="ui-layout-center"></div>
+			<div class="botones-izquierda">
+				<a id="exportar_exploraciones_hilo" data-i18n="[title]Exportar resultados de exploraciones" target="_blank"><img src="/web/assets/icons/csv.png" width="24" height="24"/></a>
+			</div>
+		</div>
+		</div>
+
+    </div>
+
+	<div id="detalle_exploracion" class="ui-layout-center endo_pane_redondeado endo-panel endo_pane_content"></div>
+
+</div>

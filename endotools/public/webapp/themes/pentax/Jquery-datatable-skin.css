@@ -1,0 +1,34 @@
+/*Adaptacion del datatable de JQUERY al tema PENTAX*/
+
+/*
+ * Row highlighting 
+ */
+
+.dataTables_wrapper tbody tr.even:hover, .dataTables_wrapper tbody tr.even td.highlighted {
+	background-color: #EC948D;
+}
+
+.dataTables_wrapper tbody tr.odd:hover, .dataTables_wrapper tbody tr.odd td.highlighted {
+	background-color: #EC948D;
+}
+
+
+/*sliding*/
+.dataTables_wrapper tr.odd {
+	background-color: #EDEDEE; /*gris*/
+}
+
+.dataTables_wrapper tr.even {
+	background-color: #FFFFFF;
+}
+
+/*configuracion de los margenes exteriores*/
+.dataTables_wrapper {
+	margin-top: 5px;
+}
+.dataTables_wrapper .ui-widget-header {
+    border: 0 solid #AAAAAA;
+}
+.dataTables_wrapper .ui-toolbar {
+    padding: 0px;
+}

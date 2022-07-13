@@ -1,0 +1,381 @@
+/*
+COLORES:
+	#E06040		rojo-naranja	Color del paciente deshabilitado.
+	#A0A0A0		gris claro		Color del informe invalido.
+*/
+
+/* 	PAGINA CALENDARIO	*/
+.no_laboral .fc-event-content {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    z-index: 0;
+}
+
+.no_laboral .fc-event-inner {
+	border-top-width: 0px;
+	border-bottom-width: 0px;
+}
+
+.no_laboral .fc-event-bg {
+    background: none repeat scroll 0 0 #FFFFFF;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+/* 	FIN PAGINA CALENDARIO	*/
+
+
+
+/*	PÁGINA ADMINISTRACIÓN (JSTREE)	*/
+/*		Esto se debería implementar en el "skin" del jsTree (themes/apple/style.css?)	*/
+.jstree {	background-color: transparent !important; }
+.jstree a {	text-shadow: none !important; }
+.jstree > ul { background: none !important; }
+
+/*	FIN PÁGINA ADMINISTRACIÓN	*/
+
+
+/*		busqueda por fecha	*/
+#busqueda-fecha-undia { width: 140px; }
+
+
+/*	VARIOS	*/
+
+/*	edicion busqueda	*/
+.column { width: 170px; float: left; padding-bottom: 100px; }
+.portlet { margin: 0 1em 1em 0; width: 190px; height: 130px; float: left;}
+.portlet-header { margin: 0.3em; padding: 1px 1px 1px 2px; text-align: left;}
+.portlet-header .ui-icon { float: right; }
+.portlet-content { padding: 0.4em; overflow-y: auto; overflow-x: hidden; height: 82px;  }
+.portlet-operacion{ font-style:italic;padding-bottom: 5px;}
+.portlet-valor{ font-weight: bold;}
+.ui-sortable-placeholder { border: 1px dotted black; visibility: visible !important; height: 50px !important; }
+.ui-sortable-placeholder * { visibility: hidden; }
+#ui-datepicker-div {z-index:9999 !important;}
+
+/*	Pacientes deshabilitados	*/
+.paciente-deshabilitado label, .paciente-deshabilitado {	color: #E06040; }
+
+/*	Informes no válidos	*/
+.informe-invalido {			color: #A0A0A0; text-decoration: line-through; }
+
+/*	Pantalla exploraciones	*/
+/*  Icono papelera - eliminar flechas en el gráfico */
+#papelera{opacity: 0.5;}
+
+.papelera_over{opacity: 1 !important;}
+
+
+/*	Citas cancelada	*/
+
+.yui-skin-endotools .yui-dt td.cita-cancelada, 
+.yui-skin-endotools .yui-dt td.cita-cancelada.yui-dt-asc , 
+.yui-skin-endotools .yui-dt td.cita-cancelada.yui-dt-desc{	
+	/*background-color: #fc8c86;
+	border-color: #fc8c86;
+	color: #fc8c86;*/
+	background-image:url("/webapp/assets/icons/pelotita_rojo.png");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+
+/*	Citas realizadas	*/
+.yui-skin-endotools .yui-dt td.cita-realizada,
+.yui-skin-endotools .yui-dt td.cita-realizada.yui-dt-asc,
+.yui-skin-endotools .yui-dt td.cita-realizada.yui-dt-desc{
+	background-image:url("/webapp/assets/icons/pelotita_verde.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	/*background-color: #a9efa9; 
+	border-color: #a9efa9;
+	color: #a9efa9;*/
+}
+
+/*	Citas iniciada	*/
+.yui-skin-endotools .yui-dt td.cita-iniciada,
+.yui-skin-endotools .yui-dt td.cita-iniciada.yui-dt-asc,
+.yui-skin-endotools .yui-dt td.cita-iniciada.yui-dt-desc {
+	background-image:url("/webapp/assets/icons/pelotita_amarilla.png");
+	background-repeat: no-repeat;
+	background-position: center;
+
+	/*background-color: #faf0b0;  
+	border-color: #faf0b0;
+	color: #faf0b0;*/
+}
+
+/*	Citas pendiente	*/
+.yui-skin-endotools .yui-dt td.cita-pendiente,
+.yui-skin-endotools .yui-dt td.cita-pendiente.yui-dt-asc,
+.yui-skin-endotools .yui-dt td.cita-pendiente.yui-dt-desc {
+	background-image:url("/webapp/assets/icons/pelotita_azul.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	/*background-color: #ffffff;  
+	border-color: #ffffff;
+	color: #ffffff;*/
+
+}
+
+/*cita inactiva*/
+.cita-inactiva {
+    color: #bbbbbb;
+}
+
+/* Paginacion */
+#paginacion {width:60%; float:left; text-align: center; padding-top: 3px;}
+#paginacion a{margin:0 5px; text-decoration: none; color:#555;}
+#paginacion a:visited{color:#555;}
+#paginacion a:hover{color:#222;}
+#paginacion a.pag-activa{font-weight:bold; color:black;}
+#total-registros{width:20%; float: left;padding-top: 7px;}
+#pagina-actual{width:41px;font-weight: bold; text-align: center;}
+#cargando-pagina{width:30px; display:inline-block;}
+#total-exploraciones{font-weight: bold;}
+
+#paginacion input[type="text"]{
+	border: 1px solid #aacec4;
+    padding: 0.25em 0.4em;
+	border-radius: 4px;
+    box-shadow: 0 1px 3px #ddd inset;
+    box-sizing: border-box;
+    display: inline-block;
+}
+	
+/* Exportar */
+.botones-izquierda {
+	width:20%;
+	float:right;
+	text-align: right;
+}
+#exportar_excel .ui-button-text {
+    padding: 0.1em 0.1em 0;
+}
+#exportar_exploraciones_hilo .ui-button-text {
+    padding: 0.1em 0.1em 0;
+}
+#exportar_exploraciones_hilo {
+	/*display: none;*/
+}
+
+
+/*gestion usuario multiselect servicios*/
+.multiselect-servicio-agenda .ui-multiselect-checkboxes label input {
+    margin-right: 5px;
+}
+
+.multiselect-servicio-agenda .ui-multiselect-checkboxes li.ui-multiselect-optgroup-label {
+	padding-top:6px;
+}
+
+#refrescar_tareas{margin-left: 10px; font-size:20px; cursor: pointer;}
+#refrescar_tareas:hover{ color:gray; }
+.tarea-finalizada{font-weight: bold; color:green;}
+.tarea-en-curso{font-weight: bold; color:blue;}
+.tarea-error{font-weight: bold; color:red;}
+
+.error-button{color:red!important;}
+
+.drag-td{
+	position:fixed;
+	z-index:100000;
+	width:100px;
+	height:100px;
+	background-color: black;
+}
+
+
+#cargando {
+    position: fixed;
+}
+
+#cargando {
+    background-color: #eee;
+    border: 1px solid #bbb;
+    font-weight: bold;
+    font-size:13px;
+    left: 40%;
+    opacity: 0.6;
+    padding: 0.6em;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 20%;
+    z-index: 999999;
+}
+
+#cargando span {
+    background-image: url("/webapp/assets/unused/progress.gif");
+    background-position: 0 40%;
+    background-repeat: no-repeat;
+    padding-left: 26px;
+    vertical-align: bottom;
+}
+
+/* Cambios al css standard de la agenda fullcalendar.css */
+.fc-event-title {
+	font-weight: bold;
+	font-size: 0.7em;
+	text-indent: 70px;
+	padding-top: 1px;
+}	
+
+.fc-event-vert .fc-event-content{
+	position: absolute!important;
+	width: auto!important;
+}
+
+.fc-event-vert .fc-event-head {
+	font-weight: bold;
+	font-size: 0.7em;
+	display: inline;
+}	
+
+.fc-event-head.fc-event-skin {
+    display: inline;
+    float: left;
+    padding-right: 3px;
+    width: auto;
+    border-radius:2px;
+}
+
+.ui-resizable-handle{opacity: 0!important;}
+
+
+.paciente-historia[type="text"][disabled] {
+    color: black!important;
+}
+/*boton de buscar paciente en el calendario*/
+#paciente-filter-btn{width: 100%;}
+
+/* >> VISOR DE FOTOS */
+.viewer-title{color:yellow!important;font-weight: bold; text-shadow: 0 0 1px black;}
+.viewer-flip-horizontal,.viewer-flip-vertical,
+.viewer-rotate-left,.viewer-rotate-right,.viewer-play{
+	display:none;
+}
+.viewer-toolbar {
+    width: 206px!important;
+}
+
+.viewer-list > li { 
+	width:50px!important;
+}
+.comentariobtn{
+	bottom: 4px;
+    display: none!important;
+    height: 22px;
+    padding: 0;
+    position: absolute !important;
+    right: 30px;
+    width: 22px;
+}
+
+.comentariobtn .ui-button-text{
+	padding:0!important;
+}
+
+li:hover .comentariobtn{
+	display:block!important;
+}
+
+
+.viewer-comment i{	
+	color: white;
+    font-size: 13px;
+    margin-left: 0;
+    margin-top: 5px;
+}
+
+.viewer-add-to-report i{	
+	color: white;
+    font-size: 12px;
+    margin-left: 1px;
+    margin-top: 5px;
+}
+
+.imagen-seleccionada{
+	background-color: green!important;
+}
+
+/* << VISOR DE FOTOS */
+
+/*PANTALLA DETALLE DE PACIENTE*/
+.detalle_paciente select{
+	width: 193px;
+}
+.detalle_paciente input{
+	width: 193px;
+}
+
+
+/* Detalle de cita */
+#button-ver-detalle-paciente{
+	height: 30px!important;
+    margin-left: 181px;
+    padding: 0;
+    text-align: right;
+    width: 223px!important;
+}
+#button-ver-detalle-paciente span{
+ 	padding-top: 4px !important;
+    text-align: center;
+}
+.form-detalle-cita select{
+	width: 223px;
+}
+.form-detalle-cita input{
+	width:223px;
+}
+.dummy-prevent-enter{display: none;}
+
+.button-margin-top button{margin-top:5px;}
+.flechas-btn{text-align: center; margin-top:155px;}
+.button-icon{
+	height: 30px;
+    margin-top: 5px;
+}
+
+/*imprimir*/
+.col-imprimir{width: 50%; float:left;}
+.ayuda-imprimir{margin-top:20px;}
+.p-imprimir{margin: 5px 0;}
+#imprimir-citas-btn {float: right;}
+
+.error-html-informes{
+	margin: 30px;
+    color: white;
+    font-weight: bold;
+}
+
+.info-act-elementos{
+	padding-left: 10px;
+	font-size: 11px;
+	font-style: italic;
+}
+
+.actualizar-elementos{ 
+	margin: -5px 5px 0px 5px!important;
+	font-size: 10px!important;
+	display:none!important;
+}
+
+.actualizar-elementos span{
+	padding:3px!important;
+}
+
+td:hover > label > span > .actualizar-elementos {
+	display:inline-block!important;
+}  
+
+.multiselect-servicios-autoregistro button,
+#workstation-nombre
+{
+	width:315px!important;
+}

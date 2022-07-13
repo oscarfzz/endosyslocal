@@ -1,0 +1,93 @@
+<form id="tipo_exploracion_detail"class="pure-form pure-form-stacked">
+	<fieldset>
+		<div class="pure-g">
+			<div class="pure-u-1-2">
+				<div class="pure-control-group">
+					<label data-i18n>Nombre</label>
+					<input type="text" id="nuevocampo-nombre" class="peque" />
+				</div>
+			</div>
+			<div class="pure-u-1-2">
+				<div class="pure-control-group">
+					<label data-i18n>Título</label>
+					<input type="text" id="nuevocampo-titulo" class="pure-input-1" />
+				</div>
+			</div>
+			<div class="pure-u-1-2">
+				<div class="pure-control-group">
+					<label data-i18n>Ancho (Columnas: 1,2,3,4,..)</label>
+					<input type="number" id="nuevocampo-columnas" class="peque" value="1" />
+				</div>	
+			</div>
+			<div class="pure-u-1-2">
+				<div class="pure-control-group">
+					<label data-i18n>Tipo de campo</label>
+					<select id="nuevocampo-tipo" class="pure-input-1">
+						<option value="1" data-i18n>Text</option>
+						<option value="5" data-i18n>Memo</option>
+						<option value="2" data-i18n>Select</option>
+						<option value="3" data-i18n>Multi select</option>
+						<option value="4" data-i18n>Yes/No</option>
+						<option value="6" data-i18n>Título</option>
+					</select>
+				</div>
+			</div>
+			<div class="pure-u-1-3">
+				<div class="pure-control-group">
+					<label data-i18n>Tipo de control</label>
+					<select id="nuevocampo-tipo-control" class="pure-input-1">
+						<option value="0" data-i18n>Por defecto</option>
+						<option value="1" data-i18n>Autocomplete (solo Select)</option>
+						<option value="2" data-i18n>Con cantidades (solo Multiselect)</option>
+					</select>
+				</div>	
+			</div>
+			<div class="pure-u-1-3">
+				<div class="pure-control-group">
+					<label data-i18n>¿Obligatorio?</label>
+					<input type="checkbox" id="nuevocampo-obligatorio" class="pure-input-1" />
+				</div>
+			</div>
+			<div class="pure-u-1-3">
+				<div class="pure-control-group">
+					<label data-i18n>¿Solo lectura?</label>
+					<input type="checkbox" id="nuevocampo-lectura" class="pure-input-1" />
+				</div>
+			</div>
+			<div class="pure-u-1-2">
+				<div class="pure-control-group">
+					<label data-i18n>Ámbito (sólo select o multiselect)</label>
+					<select id="nuevocampo-ambito" class="pure-input-1">
+						<option value="0" data-i18n>Global</option>
+						<option value="1" data-i18n>Por servicio</option>
+					</select>
+				</div>
+			</div>
+			<div class="pure-u-1-1">
+				<hr/>
+				<div class="pure-control-group">
+					<label data-i18n>Valor por defecto</label>
+					<textarea id="nuevocampo-valorpordefecto" class="pure-input-1"></textarea>
+					<div class="valor_por_defecto_obs">
+						<span data-i18n>A tener en cuenta:</span>
+						<br />
+						<ul>
+							<li data-i18n>Texto: Texto hasta 1000 caracteres</li>
+							<li data-i18n>Memo: Texto hasta 1000 caracteres</li>
+							<li data-i18n>Select: insertar el ID del elemento</li>
+							<li data-i18n>Multiselect: insertar el ID's separados por coma</li>
+							<li data-i18n>Sí/No: 0=No, 1=Sí</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="pure-u-1-1">
+				<hr />
+				<div class="pure-control-group">
+					<label data-i18n>Calculado <span id="calculado_estado"></span></label>
+					<textarea id="nuevocampo-calculado" class="pure-input-1"></textarea>
+				</div>
+			</div>
+		</div>
+	</fieldset>
+</form>

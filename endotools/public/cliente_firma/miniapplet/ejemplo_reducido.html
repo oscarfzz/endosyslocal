@@ -1,0 +1,103 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es" dir="ltr">
+  <head>
+	<title>Ejemplo de despliegue del MiniApplet @firma</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<style>
+		textarea {width: 100%;}
+		input[type=button] {width: 120px;}
+		input[type=text] {width: 200px;}
+		div {padding: 8px;}
+	</style>
+	<script data-main="/web/" type="text/javascript" src="/lib/jquery/require-jquery.js"></script>
+	<style>#deployJavaPlugin {display: none;}</style>
+	<script type="text/javascript" src="miniapplet-full.js"></script>
+	<script type="text/javascript">
+		function firmar(texto) {
+			//	si se indica "texto", es lo que se firma. Si no,
+			//	se elije un fichero a firmar.
+			try {
+				var dataB64 = null;
+				if (texto) {
+					dataB64 = getBase64FromText(texto, 'UTF-8');
+				} else {
+					var archivo = getFileNameContentBase64("Seleccione el fichero que desee firmar", null, 'pdf');
+					if (!archivo) return;
+					archivo = archivo.split("|");
+					if (archivo[1]) {
+						dataB64 = archivo[1];
+						if (archivo[0]) $('#nombre_archivo').val(archivo[0]);
+					}
+				}
+				if (!dataB64) return;
+				
+				var formato = $('#formato').val();	//	posibles valores: CAdES, Adobe PDF, XAdES, ODF
+				var algoritmo = 'SHA1withRSA';		//	posibles valores: SHA1withRSA, SHA256withRSA, SHA384withRSA, SHA512withRSA
+				var extraparams = '';
+				
+				//	firmar (devuelve la firma electrónica en Base64)
+				var signature = sign(dataB64, algoritmo, formato, extraparams);
+			
+				//	y guardar a archivo
+				saveDataToFile(
+					signature,							//	datos en Base64 (la firma)
+					"Guardar firma electr\u00F3nica",	//	titulo ventana
+					null,								//	nombre archivo
+					null,								//	extension
+					null);								//	descripción
+					
+				//	además se muestra el árbol de firmas de esta firma electrónica
+				var arbol_firmas = getSignersStructure(signature);
+				$('#arbol_firmas').val(arbol_firmas);
+					
+			} catch(e) {
+				showLog(getErrorMessage());
+			}
+		}
+		
+		function showLog(newLog) {
+//			document.getElementById('console').value = document.getElementById('console').value + "\n" + newLog;
+			$('#console').val( $('#console').val() + "\n" + newLog );
+		}
+	</script>
+  </head>
+	<body>
+	
+		<div>
+			<label for="formato">Formato</label>
+			<select id="formato">
+				<option value="CAdES">CAdES</option>
+				<option value="Adobe PDF">PAdES</option>
+				<option value="XAdES">XAdES</option>
+				<option value="ODF">ODF</option>
+			</select>
+		</div>
+		
+		<div>
+			<input type="button" value="Firmar texto" onclick="firmar( $('#texto').val() );">
+			<input id="texto" type="text">
+		</div>
+		<div>
+			<input type="button" value="Firmar archivo..." onclick="firmar();">
+			<input id="nombre_archivo" type="text">
+		</div>
+		
+		<div>
+			<label for="arbol_firmas">Árbol de firmas</label>
+			<textarea id="arbol_firmas" rows="10"></textarea>
+		</div>
+		
+		<div>
+			<label for="console">Consola</label>
+			<textarea id="console" rows="10"></textarea>
+		</div>
+		
+		<script type="text/javascript" src="/cliente_firma/deployjava/deployJava.js"></script>
+		<script type="text/javascript">
+			cargarMiniApplet(null, KEYSTORE_WINDOWS);
+		</script>
+		
+	</body>
+	
+</html>	

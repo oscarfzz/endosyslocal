@@ -1,0 +1,8 @@
+﻿/*
+Usado solo en el DataTable de YUI2.
+*/
+
+.yui-dt {
+	*vertical-align: baseline;	/*	IE7, para que no salga la separacion entre la cabecera y las filas de la tabla, cuando ésta se encuentra dentro de yui-g... (creo)	*/
+	text-align: left;			/*	IE7, si no pueden salir centradas las columnas	*/
+}

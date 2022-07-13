@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?3.1.0pr2/build/cssreset/reset-min.css&3.1.0pr2/build/cssfonts/fonts-min.css&3.1.0pr2/build/cssbase/base-min.css">
+	
+<style type="text/css"> 
+	body {
+		margin:0;
+		padding:20px;
+	}
+
+	#container { position: relative; padding: 6px; background-color: #eeeeee; width: 500px; height:220px; }
+
+</style> 
+
+<title>YUI 2 in 3: Using YUI 2 DataTable from YUI 3</title>
+
+<script src="http://yui.yahooapis.com/3.1.0pr2/build/yui/yui-min.js" type="text/javascript" charset="utf-8"></script>                                                                   
+
+<script type="text/javascript" charset="utf-8">                                                                                                                 
+YUI().use('event', 'yui2-dragdrop', 'yui2-datatable', function (Y) {
+
+    var YAHOO = Y.YUI2;
+		alert(Y.YUI2);
+
+//    Y.on("available", function() {
+	
+		//This is the data from which the DataTable will be built:
+	    var bookorders = [
+	        {id:"po-0167", date:new Date(1980, 2, 24), quantity:1, amount:4, title:"A Book About Nothing",
+	        description: "Lorem ipsum dolor sit amet consectetuer Quisque ipsum suscipit Aenean ligula. Accumsan molestie nibh dui orci vitae auctor nec pulvinar ligula elit."},
+	        {id:"po-0783", date:new Date("January 3, 1983"), quantity:null, amount:12.12345, title:"The Meaning of Life",
+	        description: "Vestibulum scelerisque wisi adipiscing turpis odio Phasellus euismod id orci tristique. Hendrerit sem dictum volutpat cursus pretium dui vitae tincidunt Vivamus Aenean."},
+	        {id:"po-0297", date:new Date(1978, 11, 12), quantity:12, amount:1.25, title:"This Book Was Meant to Be Read Aloud",
+	        description: "Malesuada pellentesque nibh magna nisl tincidunt wisi dui Nam nunc convallis. Adipiscing leo augue Nulla tellus nec eros metus cursus pretium Sed."},
+	        {id:"po-1482", date:new Date("March 11, 1985"), quantity:6, amount:3.5, title:"Read Me Twice",
+	        description: "Libero justo pede nibh tincidunt ut tempus metus et Vestibulum vel. Sem justo morbi lacinia dui turpis In Lorem dictumst volutpat cursus."}
+	    ];
+	
+        var myColumnDefs = [
+            {key:"id", sortable:true, resizeable:true},
+            {key:"date", formatter:YAHOO.widget.DataTable.formatDate, sortable:true, sortOptions:{defaultDir:YAHOO.widget.DataTable.CLASS_DESC},resizeable:true},
+            {key:"quantity", formatter:YAHOO.widget.DataTable.formatNumber, sortable:true, resizeable:true},
+            {key:"amount", formatter:YAHOO.widget.DataTable.formatCurrency, sortable:true, resizeable:true},
+            {key:"title", sortable:true, resizeable:true}
+        ];
+ 
+        var myDataSource = new YAHOO.util.DataSource(bookorders);
+        myDataSource.responseType = YAHOO.util.DataSource.TYPE_JSARRAY;
+        myDataSource.responseSchema = {
+            fields: ["id","date","quantity","amount","title"]
+        };
+ 
+        var myDataTable = new YAHOO.widget.DataTable("basic",
+                myColumnDefs, myDataSource);
+                
+        return {
+            oDS: myDataSource,
+            oDT: myDataTable
+        };
+
+//    }, "#basic");
+
+});
+</script>     
+</head>
+<body class="yui-skin-sam">
+	
+<h1>YUI 2 in 3: Using YUI 2 DataTable from YUI 3</h1>
+
+<p>This example demonstrates the use of <a href="http://developer.yahoo.com/yui/datatable/" title="YUI 2: DataTable">YUI 2's DataTable Control</a> from within a <a href="http://developer.yahoo.com/yui/3/" title="YUI 3 &mdash; Yahoo! User Interface Library">YUI 3</a> instance using the "YUI 2 in 3" support baked into YUI 3.1.0 (post PR1).  Here we're using an experimental build, YUI 3.1.0pr2, with preliminary support along with experimental builds of the YUI 3-ready 2.8.0 codebase.  Using this approach, we can load the <code>yui2-datatable</code> module directly from the YUI 3 <code>use()</code> statement:</p>
+
+<pre>YUI().use("yui2-datatable", function() {
+	
+	//build datatable here
+	
+});</pre>
+
+<p>The value here is that the YUI 3 seed file, in this case <code><a href="http://yui.yahooapis.com/3.1.0pr2/build/yui/yui-min.js">http://yui.yahooapis.com/3.1.0pr2/build/yui/yui-min.js</a></code>, is able to bootstrap the necessary YUI 2 modules and resolve their dependencies seamlessly &mdash; making them effectively first-class modules.  This approach does not create a <code>YAHOO</code> global object, as would be the case when loading standard YUI 2 JavaScript components; this approach sandboxes the the YUI 2 functionality just as all YUI 3 modules are sandboxed.</p> 
+
+<p>View source for the full code sample.</p>
+
+<div id="basic"></div> 
+
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5832650-1");
+pageTracker._trackPageview();
+</script>
+<script type='text/javascript' src='http://track2.mybloglog.com/js/jsserv.php?mblID=2007121522495141'></script>
+		 
+
+<br />
+<hr />
+<a href="http://ericmiraglia.com/">ericmiraglia.com</a>
+</body>
+</html>

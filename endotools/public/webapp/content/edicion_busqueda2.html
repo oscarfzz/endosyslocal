@@ -1,0 +1,49 @@
+﻿<div class="layout_main_content">
+	
+	<div class="ui-layout-west endo_pane_redondeado endo-panel endo_pane_content" >			
+		<div id="accordion_menu">
+		</div>
+    </div>
+
+	<div  class="ui-layout-center endo_pane_redondeado endo_pane_content">
+		<div id="listado_condiciones"></div>
+	</div>
+
+	<div class="ui-layout-east endo_pane_redondeado endo-panel endo_pane_content">
+		<form class="pure-form pure-form-stacked">
+			<fieldset>
+				<div class="pure-control-group" id="creador-group">
+					<label class="creador-label" data-i18n>Creado por</label>
+					<input class="creador-input pure-u-1" size="1" disabled>
+				</div>
+			</fieldset>
+			<fieldset>
+				<div id="nivel-group" class="pure-control-group">
+					<label class="nivel-label" data-i18n>Nivel</label>
+					<select class="nivel-list selectboxit-small pure-u-1" size="1">
+						<option value="0" data-i18n>Público global</option>
+						<option value="1" data-i18n>Público de servicio</option>
+						<option value="2" data-i18n>Protegido global</option>
+						<option value="3" data-i18n>Protegido de servicio</option>
+						<option value="4" selected data-i18n>Privada</option>
+					</select>
+				</div>
+				<div  id="servicio-group" class="pure-control-group">
+					<label class="servicio-label" data-i18n>Servicio</label>
+					<select class="servicio-list selectboxit-small pure-u-1" size="1"></select>
+				</div>
+				<div  id="comentario-group" class="pure-control-group">
+					<label class="comentario-label" data-i18n>Comentario</label>
+					<textarea class="comentario-text pure-u-1" size="1" rows="4"></textarea>
+				</div>
+			</fieldset>
+		</form>
+		<div class="button-list-vertical">
+			<button id="guardar_btn" type="button" value="Guardar" data-i18n>Guardar búsqueda</button>
+			<button id="guardar_como_btn" type="button" value="Guardar_como" data-i18n>Guardar cómo</button>
+			<button id="ejecutar_btn" type="button" value="Ejecutar" data-i18n>Ejecutar</button>
+		</div>
+    </div>
+	
+</div>
+

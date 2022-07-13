@@ -1,0 +1,312 @@
+﻿/*
+Clases utilizadas para mostrar los formularios que componen cada
+tipo de exploración, mostrando los campos en la cuadrícula.
+
+Esta es la estructura necesaria para mostrar los formularios:
+
+	<div class="tab_exploracion">
+		<form class="pure-form pure-form-stacked">
+			<table>
+			...
+			</table>
+		</form>
+	</div>
+
+Clases:
+	.tab_exploracion	El DIV que contiene el form, table, etc... debe tener esta clase.
+	.boton-aux-campo	Los botones auxiliares de los campos (tipo multi, selec y memo) tienen esta clase
+	.modo_campos_2		Modo de campos 2, en el que los labels están a la izquierda en vez de encima del campo.
+						Se asigna al <table>
+	.titulo-campo		Los labels con el título del campo tienen esta clase.
+
+*/
+
+/*
+COLORES:
+	Ninguno
+*/
+
+.titulo-campo small {
+	display: block;
+	color: #999;
+}
+
+.titulo-separador { font-weight: bold; }
+
+.tab_exploracion td {
+	padding: 4px;
+	vertical-align: top;
+	height: 4em;
+}
+
+.boton-aux-campo {
+	float: right;
+}
+
+/*
+	Modo "2" de visualizar los campos, con el label	a la izquierda.
+	Para hacer el ancho de los labels configurable se modifica dinámicamente este CSS (cambia los 100px).
+*/
+.tab_exploracion table.modo_campos_2 .titulo-campo {
+	width: 94px;
+	float: left;
+}
+
+.tab_exploracion table.modo_campos_2 div.modo_campos_2-wrapper {
+	padding-left: 100px;
+	*padding-left: 6px;
+}
+
+.tab_exploracion table.modo_campos_2 td {
+	height: 1em;
+	padding: 2px 4px;
+}
+
+.ui-autocomplete {
+	max-height: 200px;
+	overflow-y: auto;
+	/* prevent horizontal scrollbar */
+	overflow-x: hidden;
+}
+.ui-autocomplete .highlight {
+	/*text-decoration: underline;*/
+	font-weight: bold;
+}
+
+/* Textos predefinidos */
+.btn-open-textos-predefinidos {
+	background: url(/web/assets/icons/dropdown_button.png) no-repeat right center;
+	height: 22px;
+	width: 23px;
+	overflow: hidden;
+	float: right;
+}
+.styled-select{
+	float:right;
+}
+
+.styled-select select {
+	background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+	border: none!important;
+	color: transparent!important;
+	border-radius: 0!important;
+	box-shadow: none!important;
+	height:22px!important;
+	margin:0px!important;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	background: rgba(0, 0, 0, 0) url("/web/assets/icons/dropdown_button.png") no-repeat scroll right center;
+}
+
+.styled-select option {
+	color: black;
+}
+
+.styled-select select:disabled {background-color:transparent}
+
+#nuevocampo-calculado{
+	font-family: monospace, "Courier New";
+	font-size: 12px;
+}
+
+#estado_calculado  {
+	font-weight: bold;
+}
+.calculado_activado{
+	color: green;
+}
+.calculado_desactivado{
+	color: red;
+}
+
+.valor_por_defecto_obs{
+	font-style: italic;
+	font-size:12px;
+}
+
+/* toggle input */
+.checkbox-inline .toggle {
+	margin-left: -20px;
+	margin-right: 5px;
+}
+
+.toggle {
+	position: relative;
+	overflow: hidden;
+	width: 130px;
+	height: 32.78px;
+	display: inline-block;
+	padding: 6px 12px;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #AACEC4;
+	border-radius: 2px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.toggle.off { border-color: #ead882; }
+.toggle input[type="checkbox"] { display: none; }
+.toggle-group {
+	position: absolute;
+	width: 200%;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	transition: left 0.35s;
+	-webkit-transition: left 0.35s;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.toggle.off .toggle-group {left: -100%; }
+.toggle-group .toggle-on {
+	left: 0;
+	right: 50%;
+	background-color: #C4E5D6 ;
+}
+.toggle-group .toggle-off {
+	left: 50%;
+	right: 0;
+	background-color: #faf0c0  ;
+	background-image: none;
+	outline: 0;
+	-webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+	box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+}
+.toggle-group .toggle-on,
+.toggle-group .toggle-off {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: 0;
+	border: 0;
+	border-radius: 0;
+}
+.toggle-group .toggle-handle {
+	position: relative;
+	margin: 0 auto;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	height: 100%;
+	width: 0px;
+
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.toggle:hover .toggle-handle,
+.toggle-group .toggle-handle:hover {
+	background-color: #e6e6e6;
+	border-color: #adadad;
+}
+.toggle-group .toggle-on,
+.toggle-group .toggle-off,
+.toggle-group .toggle-handle {
+	display: inline-block;
+	padding: 6px 12px;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border-width: 0 1px;
+}
+
+.toggle-group .toggle-on { padding-right: 24px; }
+.toggle-group .toggle-ff { padding-left: 24px; }
+
+.radio-inline,
+.checkbox-inline {
+	display: inline-block;
+	max-width: 100%;
+	padding-left: 20px;
+	margin-bottom: 0;
+	font-weight: 400;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+label.radio-inline,
+label.checkbox-inline { margin: 0; }
+
+.radio-inline.label-left,
+.checkbox-inline.label-left {
+	padding-left: 0;
+}
+
+.checkbox-inline.label-left .toggle {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+#tablas-exportar-btn-activos{
+	border: 1px solid #AACEC4;
+  background: #C4E5D6 url(images/ui-bg_flat_0_C4E5D6_40x100.png) 50% 50% repeat-x;
+  font-weight: normal;
+  color: #222222;
+}
+
+#tablas-exportar-btn-todos{
+	border: 1px solid #AACEC4;
+  background: #C4E5D6 url(images/ui-bg_flat_0_C4E5D6_40x100.png) 50% 50% repeat-x;
+  font-weight: normal;
+  color: #222222;
+	height: 31.9px;
+	border-radius: 2px;
+}
+
+/*
+.styled-select select {
+	background: transparent;
+	border: none !important;
+	width: 100px;
+	font-size: 0 !important;
+	height: 22px;
+	cursor: pointer;
+}
+
+.styled-select select:disabled {
+	border: none !important;
+	background: transparent;
+	cursor: default;
+}
+
+.styled-select select:focus::-ms-value {
+	background-color: transparent;
+}
+
+.styled-select {
+	background: url(/web/assets/icons/dropdown_button.png) no-repeat right center;
+	height: 22px;
+	width: 23px;
+	overflow: hidden;
+	float: right;
+}
+
+.styled-select:hover {
+	background: url(/web/assets/icons/dropdown_button_selected.png) no-repeat right center;
+}
+
+.styled-select option {
+	font-size: 15px;
+}
+
+*/

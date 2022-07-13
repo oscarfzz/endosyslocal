@@ -1,0 +1,86 @@
+﻿/*
+Personalización de Pure para EndoTools.
+Atención, este archivo NO se ha creado mediante el SkinBuilder de Pure.
+
+*/
+
+.pure-form input[type="text"],
+.pure-form input[type="password"],
+.pure-form input[type="email"],
+.pure-form input[type="url"],
+.pure-form input[type="date"],
+.pure-form input[type="month"],
+.pure-form input[type="time"],
+.pure-form input[type="datetime"],
+.pure-form input[type="datetime-local"],
+.pure-form input[type="week"],
+.pure-form input[type="number"],
+.pure-form input[type="search"],
+.pure-form input[type="tel"],
+.pure-form input[type="color"],
+.pure-form select,
+.pure-form textarea {
+	padding: 0.25em 0.4em;
+	border: 1px solid #AACEC4;
+}
+
+.pure-form input:not([type]) {
+	padding: 0.25em 0.4em;
+	border: 1px solid #AACEC4;
+}
+
+.pure-form input[type="text"]:focus,
+.pure-form input[type="password"]:focus,
+.pure-form input[type="email"]:focus,
+.pure-form input[type="url"]:focus,
+.pure-form input[type="date"]:focus,
+.pure-form input[type="month"]:focus,
+.pure-form input[type="time"]:focus,
+.pure-form input[type="datetime"]:focus,
+.pure-form input[type="datetime-local"]:focus,
+.pure-form input[type="week"]:focus,
+.pure-form input[type="number"]:focus,
+.pure-form input[type="search"]:focus,
+.pure-form input[type="tel"]:focus,
+.pure-form input[type="color"]:focus,
+.pure-form select:focus,
+.pure-form textarea:focus {
+    border-color: #45E6BE;
+}
+
+.pure-form input:not([type]):focus {
+    border-color: #45E6BE;
+}
+
+.pure-form input[type="file"]:focus,
+.pure-form input[type="radio"]:focus,
+.pure-form input[type="checkbox"]:focus {
+    outline: 1px auto #45E6BE;
+}
+
+.pure-form legend {
+    border-bottom: 1px solid #AACEC4;
+}
+
+.pure-button {
+	background-color: #C4E5D6;
+    border: 1px solid #AACEC4;
+    color: #222222;
+    *color: #222222; /* IE 6 & 7 */
+}
+
+.pure-button-hover,
+.pure-button:hover,
+.pure-button:focus {
+	background-image: none;
+	background-color: #faf0c0;
+    border: 1px solid #ead882;
+}
+
+.pure-button-active,
+.pure-button:active {
+	box-shadow: none;
+	background-color: #FFFFFF;
+    border: 1px solid #80C0B0;
+	color #486F65;
+}

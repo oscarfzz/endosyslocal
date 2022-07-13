@@ -1,0 +1,85 @@
+﻿<form class="pure-form pure-form-aligned">
+
+	<fieldset>
+		<legend data-i18n>Datos del usuario</legend>
+		<div class="pure-control-group">
+			<label data-i18n>Nombre:Usuario</label>
+			<input type="text" class="usuario-nombre">
+		</div>
+		<div class="pure-control-group">
+			<label data-i18n>Contraseña</label>
+			<input type="password" class="usuario-passwd">
+		</div>
+		<div class="pure-control-group">
+			<label>LDAP</label>
+			<input type="checkbox" class="usuario-ldap">
+		</div>
+		<div class="pure-control-group" style="display: none;">
+			<label data-i18n>Médico</label>
+			<input type="checkbox" class="usuario-Medico">
+		</div>
+		<div class="pure-control-group">
+			<label data-i18n>Tipo</label>
+			<select class="usuario-tipo">
+				<option value="0" data-i18n>Usuario</option>
+				<option value="1" data-i18n>Administrador</option>
+			</select>
+		</div>
+		<div class="pure-control-group">
+			<label data-i18n>Activo</label>
+			<input type="checkbox" class="usuario-activo" checked>
+		</div>
+	</fieldset>
+
+	<fieldset class="zonaMedico">
+		<legend data-i18n>Médico</legend>
+		<div class="pure-control-group">
+			<label data-i18n>Nombre</label>
+			<input type="text" class="usuario-medico_nombre">
+		</div>
+		<div class="pure-control-group">
+			<label data-i18n>Servicios</label>
+			<select class="usuario-servicio" multiple=""></select>
+		</div>
+		<div class="pure-control-group">
+			<label data-i18n>Agendas</label>
+			<select class="usuario-servicio-agenda" multiple=""></select>
+		</div>
+		<div class="pure-control-group">
+			<label data-i18n>Nª colegiado</label>
+			<input type="text" class="usuario-medico_colegiado">
+		</div>
+	</fieldset>
+
+	<fieldset>
+		<legend data-i18n>Permisos</legend>
+		<div class="pure-control-group">
+		
+			<label data-i18n>Usuario:Perfil</label>
+			<select class="usuario-perfil">
+				<option value="-1" data-i18n>Selecciona un perfil...</option>
+				<option value="administrativo" data-i18n>Administrativo</option>
+				<option value="medico" data-i18n>Médico</option>
+				<option value="supervisor" data-i18n>Médico supervisor</option>
+				<option value="admin" data-i18n>Administrador</option>
+			</select>
+			
+		</div>
+		<div class="datatable_lista_permisos yui-skin-endotools" style="margin-left:20px"></div>
+	</fieldset>
+
+	<fieldset>
+		<button class="guardar_btn" type="button" value="Guardar" data-i18n>Save</button>
+		<button class="cancelar_btn" type="button" value="Cancelar" data-i18n>Deshacer cambios</button>
+		<button class="eliminar_btn" type="button" value="Eliminar" data-i18n>Delete</button>
+	</fieldset>
+
+	<fieldset class="apiKey" style="display:none;">
+		<legend data-i18n>API Key</legend>
+		<div class="key-display pure-control-group" style="display:none;"><pre ></pre></div>
+		<button class="mostrar_key_btn" type="button" value="Regenerar clave" data-i18n>Mostrar clave</button>
+		<button class="ocultar_key_btn" type="button" value="Regenerar clave" data-i18n>Ocultar clave</button>
+		<button class="regenerar_key_btn" type="button" value="Regenerar clave" data-i18n>Regenerar clave</button>
+		<button class="eliminar_key_btn" type="button" value="Regenerar clave" data-i18n>Eliminar clave</button>
+	</fieldset>
+</form>

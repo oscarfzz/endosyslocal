@@ -1,0 +1,373 @@
+﻿/*
+COLORES:
+	#FFFFFF		blanco		Fondo del header principal
+	#1A1A1A		negro		Fondo de la barra de titulos (negra)
+	#404040		gris		color del texto del usuario logeado
+	#FFFFFF		blanco		Titulo de la pantalla (en la barra negra)
+	#222222		casi negro	Color del texto
+	#A0A0A0		gris		Fondo html.
+*/
+
+/*
+********	BASE			************
+Estilo base para toda la aplicación
+*/
+
+html {
+	background-color: #A0A0A0;
+	color: #222222;
+	/*overflow: hidden;
+	font-size: 90%;*/
+}
+
+/*optgroup {
+	font-style: italic;
+	font-weight: bold;
+	color: black;
+}
+
+optgroup option {
+	font-style: normal;
+	font-weight: normal;
+}*/
+
+/*	corregir el posicionamiento de los DatePicker de jQuery-ui	*/
+.ui-datepicker {
+	z-index: 10 !important;
+}
+
+/*
+********	COMUNES			************
+.selectboxit-especial-item:		Mostrar un item con otro aspecto en un control SelectBoxIt.
+.selectboxit-small:				Hace que un control SelectBoxIt sea más pequeño. (DESACTIVADO)
+.selectboxit-100:				Hace que un control SelectBoxIt tenga ancho de 100% (además se ha de crear con autoWidth: false)
+.ui-icon-empty:					Icono de jQuery ui, que está vacío... para botones con icono sin
+								texto que interesa mostrar en cierto momento sin icono (p.e. checkboxes)
+.ui-button-small:				Se aplica a un botón jqueryui, para que sea más pequeño (también sirve a un button normal/pure)
+.seccion:						Se aplica a un DIV, para que quede separado, como una sección.
+.seccion-horizontal:			Se aplica a un DIV, con el fin de ir concatenando mas DIV en horizontal y que exista una separación entre ellos
+.button-list:					Se aplica a un DIV, que contiene solo BUTTONs
+.button-list-vertical:			Se aplica a un DIV, que contiene solo BUTTONs, y se colocan en una columna vertical.
+
+*/
+.ui-widget.ui-button.ui-button-small, .pure-button.ui-button-small {
+	font-size: 0.6em;
+}
+
+.selectboxit-especial-item a {
+	font-weight: bold;
+	font-style: italic;
+}
+
+.selectboxit-especial-item {
+	font-weight: bold;
+	font-style: italic;
+}
+
+/*.selectboxit-100, .selectboxit-container.selectboxit-100 .selectboxit, .selectboxit-container.selectboxit-100 .selectboxit-options {
+	width: 100%;
+}*/
+.width-100{
+	width: 100%;
+}
+.selectboxit-100, .selectboxit-container.selectboxit-100 .selectboxit {
+	width: 100%;
+}
+.selectboxit-container.selectboxit-100 .selectboxit {
+	width: 100%;
+	min-width: 220px;
+}
+.selectboxit-container.selectboxit-100 .selectboxit-text {
+	max-width: 190px !important;
+}
+.selectboxit-container.selectboxit-100 .selectboxit-options {
+	width: 100%;
+}
+
+.selectboxit-container .selectboxit-options{
+	 max-height: 300px;
+}
+
+/*.selectboxit-container.selectboxit-small span, .selectboxit-container.selectboxit-small .selectboxit-options a {
+    height: 20px;
+    line-height: 20px;
+}
+
+.selectboxit-small .selectboxit .selectboxit-arrow-container .selectboxit-arrow.ui-icon {
+	top: 20%;
+}*/
+
+/*	corregir el border-radius del selectboxit	*/
+.selectboxit-container .selectboxit, .selectboxit-container .selectboxit-options {
+	border-radius: 2px !important;
+}
+
+/*	asignar un alto más correcto al multiselect	*/
+.ui-multiselect {
+	padding: 5px 0 5px 4px !important;
+}
+
+.ui-icon-empty {
+	background-position: -160px -0px;
+}
+
+/*	tiene un alto mínimo porque si dentro se usan botones con float, que se muestren bien <-- ¿?	*/
+.seccion {
+	margin-bottom: 1em;
+}
+.seccion-horizontal {
+	margin-right: 1em;
+	float: left;
+}
+
+.button-list button {
+	display: inline-block;
+	margin-top: 4px;
+}
+
+.button-list-vertical button {
+	display: block;
+	width: 100%;
+	margin-right: 0px;
+	margin-top: 4px;
+}
+
+/*	Algunas reglas para que se muestren correctamente los selectboxit y multiselect en los pure-form-stacked
+	XXX: Faltaria revisar que se muestren bien en los pure-form-aligned
+*/
+
+/*form.pure-form.pure-form-stacked>fieldset>.selectboxit-container,
+form.pure-form.pure-form-stacked>.selectboxit-container {*/
+form.pure-form.pure-form-stacked span.selectboxit-container,
+form.pure-form.pure-form-stacked .ui-multiselect {
+	display: block;
+	margin: 0.25em 0;
+}
+
+/*
+********	PRINCIPAL		************
+#mainheader:	Cabecera con logotipo y sección del usuario logeado, con botón para cerrar la sesión.
+#maintitle:		Barra con el título de la pantalla actual, y subtítulo de detalle.
+#mainnav:		div. situado dentro de #maintitle, con los botones tipo "asistente" (anterior/siguiente)
+#login-form:	formulario de login, mostrado al inicio.
+#mainlayout:	Donde se cargan las pantallas.
+#mainfooter:	Pie de página, con la versión de EndoTools. Contiene #et-capture-control-container (contenedor
+				del OCX de captura)
+#mainstatusbar:	Barra de estado. Utiliza las classes .statusbar-normal y .statusbar-error
+*/
+#mainheader {
+	height: 72px; 
+    background-image: none;	/*	THEMABLE	*/
+    background-position: 0 0px;
+	background-repeat: no-repeat;
+    background-color: #FFFFFF;
+}
+
+#loggedin-usuario {
+	font-size: 120%;
+	font-weight: bold;
+	color: #404040;
+	margin-right: 130px;
+	float: right;
+	padding: 0.7em;
+	text-align: right;
+}
+
+#loggedin-salir-btn {
+	font-size: 100%;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	margin: 1em;
+	height: 42px;
+}
+
+#maintitle {
+	height: 40px; 
+    background-color: #1A1A1A;
+}
+
+#maintitle-texto {
+	position: absolute;
+	margin-left: 20px;
+	margin-top: 6px;
+	font-weight: bold;
+}
+
+#maintitle-texto-titulo {
+	font-size: 1.6em;
+	color: #FFFFFF;
+}
+
+#maintitle-texto-subtitulo {
+	font-size: 1.2em;
+	color: inherit;	/*	THEMABLE	*/
+}
+
+#maintitle-icon-information { 
+    float: right;
+    height: 32px;
+    margin-left: 15px;
+    cursor:pointer;
+    font-size:24px!important;
+    display:none;
+}
+
+#maintitle-icon-information:hover { 
+    cursor:pointer;
+}
+
+#mainnav  {
+	height: 40px; 
+	display: none;
+	float: right;
+	padding-right: 8px;
+}
+
+#mainnav input[type='button'], #mainnav button {
+	/*width: 6.5em;*/
+	margin-top: 8px;
+}
+
+#login-form {
+	position: absolute;
+	display: block;
+	width: 320px;
+	padding: 0.5em 1.5em;
+}
+
+#login-form input{
+	width: 100%;
+	/**/
+	background-repeat: no-repeat;
+	background-position: 4px 8px;
+	padding-left: 22px;
+	/**/
+}
+
+#login-form-user {background-image: url(/web/assets/icons/usuario.png);}
+#login-form-pass {background-image: url(/web/assets/icons/password.png);}
+
+#mainlayout {
+	overflow: auto;
+	*overflow: hidden;	/*	para IE6 y IE7	*/
+}
+
+#mainfooter {
+	height: 36px; 
+    background-image: none;	/*	THEMABLE	*/
+    background-position: 0 0px;
+	background-repeat: repeat-x;
+	color: inherit;	/*	THEMABLE	*/
+    font-size: 85%;
+    font-style: italic;
+	text-align: right;
+	padding: 3px;
+}
+
+#et-capture-control-container {
+	position: absolute;
+	vertical-align: top;
+}
+
+#mainstatusbar {
+	background-color: transparent;
+	background-repeat: repeat-x;
+	font-weight: bold;
+	padding-top: 2px;
+	padding-bottom: 12px;
+	text-align: center;
+	color: inherit;	/*	THEMABLE	*/
+}
+
+.statusbar-normal {	background-image: none; }	/*	THEMABLE	*/
+.statusbar-error {	background-image: none; }	/*	THEMABLE	*/
+
+
+/*
+********	MENU PRINCIPAL	************
+#menu-principal-btn:	Botón para abrir el menu, situado en #maintitle.
+#menu-principal:		El menu principal (menu de jQuery-ui).
+.endo-icon:				icono de EndoTools para el menu principal.
+*/
+#menu-principal-btn {
+	background-image: none;	/*	THEMABLE	*/
+	float: left;
+	margin-left: 0px;
+	margin-top: 0px;
+	height: 40px;
+	width: 20px;
+	cursor: pointer;
+}
+#menu-principal-btn:hover {
+	background-image: none;	/*	THEMABLE	*/
+}
+
+#menu-principal {
+	font-size: 110%;
+	position: absolute;
+	text-align: left;
+}
+
+#menu-principal, #menu-principal ul {
+	width: 300px;
+	box-shadow: 4px 4px 10px -4px rgba(0,0,0,0.3);
+	background: none repeat scroll 0 0 #FFFFFF;
+}
+
+#menu-principal .endo-icon {
+	width: 32px;
+	height: 32px;
+}
+
+#menu-principal .ui-menu-icon {
+	margin-top: 8px;
+}
+
+/*#menu-principal .ui-menu-item a {*/
+#menu-principal .ui-menu-item {
+	padding-left: 3em;
+	line-height: 32px;
+	padding-right: 0.4em;	/* a partir de jqueryui 1.11 alos menu-item les pone un padding-right de 1em, pero queremos mantener el 0.4em que ya había antes */
+}
+
+/*			ICONOS DEL MENU		*/
+#menu-principal-citaspendientes .endo-icon {		background-image: url(/web/assets/menu_icons/citas_pendientes.png);}
+#menu-principal-nuevaexpl .endo-icon {			background-image: url(/web/assets/menu_icons/nueva_exploracion.png);}
+#menu-principal-buscarexpl .endo-icon {			background-image: url(/web/assets/menu_icons/buscar_exploraciones.png);}
+#menu-principal-gestioncitas .endo-icon {		background-image: url(/web/assets/menu_icons/gestioncitas.png);}
+#menu-principal-gestionpacientes .endo-icon {	background-image: url(/web/assets/menu_icons/gestion_pacientes.png);}
+#menu-principal-busquedas .endo-icon {			background-image: url(/web/assets/menu_icons/busquedas_avanzadas.png);}
+#menu-principal-buscarexpl-fecha .endo-icon {	background-image: url(/web/assets/menu_icons/por_fecha.png);}
+#menu-principal-buscarexpl-paciente .endo-icon {	background-image: url(/web/assets/menu_icons/por_paciente.png);}
+#menu-principal-buscarexpl-nexpl .endo-icon {	background-image: url(/web/assets/menu_icons/por_numero_exploracion.png);}
+#menu-principal-buscarexpl-sinfinalizar .endo-icon {background-image: url(/web/assets/menu_icons/sin_finalizar.png);}
+#menu-principal-buscarexpl-avanzadas .endo-icon {background-image: url(/web/assets/menu_icons/busquedas_avanzadas.png);}
+#menu-principal-nuevabusqueda .endo-icon {		background-image: url(/web/assets/menu_icons/busquedas_avanzadas.png);}
+#menu-principal-tablas .endo-icon {				background-image: url(/web/assets/menu_icons/tablas.png);}
+#menu-principal-usuarios .endo-icon {			background-image: url(/web/assets/menu_icons/administrar_usuarios.png);}
+#menu-principal-group-administracion>.endo-icon {		background-image: url(/web/assets/menu_icons/administracion_endotools.png);}
+#menu-principal-administracion .endo-icon {		background-image: url(/web/assets/menu_icons/administracion.png);}
+#menu-principal-editortiposexpl .endo-icon {		background-image: url(/web/assets/menu_icons/editor_exploraciones.png);}
+#menu-principal-tareas .endo-icon {		background-image: url(/web/assets/menu_icons/tareas.png);}
+#menu-principal-mensaje .endo-icon {		background-image: url(/web/assets/menu_icons/crear_mensaje.png);}
+
+
+/*********	COMUNES		*************/
+
+/*	reduce el tamaño de un control. Usado en un datepicker "inline"	*/
+.compacto {
+	font-size: 80%;
+}
+.compacto .ui-datepicker {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+/*********	PANTALLA TABLAS	*************/
+#tablas-nuevovalor {
+	width: 400px;
+}
+/****************************************/

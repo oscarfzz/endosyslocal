@@ -1,0 +1,76 @@
+﻿<div class="layout_main_content">	
+	<div class="ui-layout-west endo_pane_redondeado endo-panel endo_pane_content">
+	
+		<div id="datatable_tipos_expl" class="yui-skin-endotools"></div> 
+		<!--ANTIGUO-->
+		<div class="buttons-div">
+			<button id="editor-nuevo-tipoexpl-btn" type="button" data-i18n>Crear</button>
+			<button id="editor-renombrar-tipoexpl-btn" type="button" data-i18n>Editar</button>
+			<button id="editor-eliminar-tipoexpl-btn" type="button" value="" data-i18n>Borrar</button>
+		</div>
+
+    </div>
+
+	<div  class="ui-layout-center endo_pane_redondeado endo-panel-detail endo_pane_content">
+
+		<!--ANTIGUO-->
+		<h4><span data-i18n>Formularios</span><span id="form_select"></h4>
+			
+		<div class="yui3-g">
+			<div class="yui3-u-2-5">
+				<form class="pure-form pure-form-stacked">
+					<fieldset>
+						<label data-i18n>Asignados</label>
+						<select id="formularios_seleccionados" size="16" multiple="multiple" style="width: 98%;"></select>
+						
+						<div class="buttons-div">
+							<button id="editor-formarriba-btn" class="button-icon" type="button"></button>
+							<button id="editor-formabajo-btn" class="button-icon" type="button"></button>
+						</div>
+						<div class="buttons-div button-margin-top">
+							<button id="editor-guardar-btn" type="button" data-i18n>Save</button>
+							<button id="editor-cancelar-btn" type="button" data-i18n>Cancel</button>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+			<div class="yui3-u-1-5 central flechas-btn">
+				<div>
+					<button id="editor-anadirform-btn" type="button" class="button-icon"></button>
+				</div>
+				<div>
+					<button id="editor-quitarform-btn" type="button" class="button-icon"></button>
+				</div>
+			</div>
+			<div class="yui3-u-2-5">
+				<form class="pure-form pure-form-stacked">
+					<fieldset>
+						<label class="titulo" data-i18n>Disponibles</label>
+						<select id="formularios_todos" size="16" multiple="multiple" style="width: 98%;"></select>
+						
+						<div class="buttons-div button-margin-top">
+							<button id="editor-editarform-btn" type="button" data-i18n>Edit</button>
+							<button id="editor-nuevoform-btn" type="button" data-i18n>Create</button>
+							<button id="editor-renombrarform-btn" type="button" data-i18n>Renombrar</button>
+							<button id="editor-eliminarform-btn" type="button" data-i18n>Delete</button>
+							<button id="editor-exportarform-btn" type="button" data-i18n>Exportar (XML)</button>				
+							<span id="editor-importarform-btn" class="fileinput-button" style="margin-top:5px;">
+								<span data-i18n>Importar (XML)</span>
+								<input id="editor-importar-fileupload" type="file" name="archivo" title="NOTA: Al importar, si ya existen en la base de datos Campos o GruposCampos con exactamente el mismo nombre, entonces los reutiliza. Si no, los crea nuevos. En el caso de los Campos, también comprueba que coincida el Tipo.">
+							</span>
+							
+							
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+			
+			
+	
+    </div>
+
+
+
+</div>
+

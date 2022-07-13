@@ -1,0 +1,49 @@
+﻿<div class="layout_main_content">	
+	<div class="contenedor2 ui-layout-west">
+	
+		<div  class="ui-layout-north endo_pane_redondeado endo-panel endo_pane_content">
+			<form class="pure-form pure-form-stacked" onsubmit="return false;">
+			
+				<fieldset>
+					<div class="pure-control-group">
+						<label for="busqueda-citas-agenda" data-i18n>Agenda</label>
+						<select id="busqueda-citas-agenda" class="width-100"></select>	
+					</div>
+
+					<div class="pure-control-group">
+						<label for="checkbox-fecha">
+							<input id="checkbox-fecha" type="checkbox" checked="checked" class="checkbox_citas"> <span data-i18n>Fecha</span>
+						</label> 	
+						<input id="busqueda-fecha" placeholder="dd/mm/aaaa" class="pure-input-1" type="text"/>
+					</div>	
+
+					<div class="pure-control-group" id="id-unico-paciente">
+						<label for="checkbox-id-unico-paciente">
+            				<input id="checkbox-id-unico-paciente" type="checkbox" class="checkbox_citas"> <span id="label-citas-id-unico-paciente" data-i18n>Historia</span>
+            			</label> 
+            			<input id="busqueda-id-unico-paciente" class="pure-input-1" type="text"/>
+            		</div>
+
+				</fieldset>
+				
+				<fieldset>
+					<button id="busqueda-buscar-btn" type="button" value="Buscar" data-i18n>Buscar</button>
+					<button id="imprimir-citas-btn" type="button" value="Imprimir"><i class="fa fa-print"></i></button>
+				</fieldset>
+
+			</form>		
+		</div>
+		
+		<div class="ui-layout-center">
+
+		</div>	
+		
+    </div>
+
+	<div class="ui-layout-center endo_pane_redondeado endo_pane_content endo-panel">
+			<div id="datatable_busqueda_result" class="yui-skin-endotools"></div> 
+    </div>
+
+
+
+</div>

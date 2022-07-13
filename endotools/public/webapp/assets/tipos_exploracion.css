@@ -1,0 +1,57 @@
+﻿/*
+COLORES:
+	Ninguno
+*/
+
+#tipos_exploracion div {
+	margin-top: 32px;
+}
+
+#tipos_exploracion button {
+	margin: 0.5em;
+	width: 24em;
+	*width: 320px;	/*	en IE7 ponerlo en pixels porque hay que poner el mismo width exacto en el button	*/
+}
+
+#tipos_exploracion button.mini {
+	width: 18em;
+	*width: 240px;	/*	en IE7 ponerlo en pixels porque hay que poner el mismo width exacto en el button	*/
+}
+
+#tipos_exploracion button.una-columna {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#tipos_exploracion button.multiples-columnas {
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+}
+
+#tipos_exploracion input[type='button'], #tipos_exploracion button {
+	height: 3em;
+	font-size: 130%;
+}
+
+#tipos_exploracion input[type='button'].mini, #tipos_exploracion button.mini {
+	height: 2em;
+	font-size: 100%;
+}
+
+#tipos_exploracion_datos{
+	text-align: center;
+	display:none;
+	margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+}
+
+#tipos_exploracion_datos_content{
+	padding:5px;
+}
+
+#tipo_cita, #datos_paciente {display: inline-block;}
+
+.titulo_datos{ font-weight: bold;}

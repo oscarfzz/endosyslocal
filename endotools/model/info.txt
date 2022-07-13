@@ -1,0 +1,2 @@
+ORACLE
+http://stackoverflow.com/questions/5391069/case-insensitive-searching-in-oracle

@@ -1,0 +1,120 @@
+
+#mainheader-notificaciones{
+    display:none;
+	float: right;
+    margin-right: 142px;
+    margin-top: -10px;
+    width: 211px;
+    overflow:hidden;
+    height:20px;
+    right:0px;
+	top: 45px;
+	position: absolute !important;
+    /*display:none;*/
+}
+.notificaciones-titulo{
+	cursor:pointer;
+	 text-align: right;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    
+}
+.notificaciones-titulo .icono{
+	display:inline-block;
+	height: 24px;
+    width: 24px;
+	float:right;
+	background-image: url('/web/assets/icons/mail.png');
+	margin-top:-3px;
+}
+.notificaciones-titulo .titulo-texto{
+	float:right;
+	display:inline-block;
+}
+.abierto{
+    float: none !important;
+    min-height: 100px !important;
+    max-height: 350px !important;
+    overflow: visible !important;
+    position: fixed !important;
+    right: 0;
+    top: 49px;
+    width: 300px !important;
+    z-index: 1000000 !important;
+    height:	auto!important;
+}
+.abierto .notificaciones{
+	display:block;
+}
+.abierto .notificaciones-titulo{
+	font-weight: bold;
+}
+
+.notificaciones{
+	margin-top: 25px;
+	display:none;
+    box-shadow: 4px 4px 10px -4px rgba(0, 0, 0, 0.3);
+    overflow: visible !important;
+	min-height:70px;
+	max-height:320px;
+	width:100%;
+}
+
+/* contenido del popup de notificaciones. */
+#ul-notificaciones{
+	margin:0;
+	padding:0;
+	min-height: 50px;
+	max-height: 290px;
+	overflow:auto;
+}
+#n-footer{height:20px; width:100%;}
+#n-header{height:20px; width:100%;}
+
+/* listado de notificaciones*/
+#ul-notificaciones li{
+    list-style: none;
+    margin: 0px;
+    padding: 10px;
+    padding-bottom: 10px;
+}
+#ul-notificaciones li:last-child{
+border-bottom: none;
+}
+
+
+.n-fecha {font-size: 12px; font-weight: bold;}
+.n-contenido{font-size: 13px;}
+.n-btn-content{
+	float: right;
+    margin-top: 20px;
+    width: 15%;}
+.n-left{float:left;width: 85%;}
+.clearfix{clear:both;}
+#n-footer{
+	
+    font-size: 13px;
+    font-weight: bold;
+    height: 20px;
+    padding-top: 3px;
+    text-align: center;
+    cursor:pointer;
+}
+
+
+.n-container-no-notificaciones {text-align: center; font-size: 14px;
+	margin-top: 8px;
+}
+/* fin del listado de las notificaciones */
+
+#mensaje-contenido {
+    width:500px;
+    height:300px;
+    display:block;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,128 @@
+﻿<form class="pure-form pure-form-aligned detalle_paciente">
+	<fieldset>
+		<!--legend>Datos del paciente</legend-->
+		<div class="pure-g">
+			<div class="pure-u-1-2 pure-control-group paciente-idunico-group" style="display: none">
+				<label class="paciente-idunico-label"><strong data-i18n>Id Único</strong></label>
+				<input class="paciente-idunico" type="text"  tabindex="1"/>
+			</div>
+			<div class="pure-u-1-2 pure-control-group paciente-nhc-group" style="display: none">
+				<label class="paciente-nhc-centro-label" data-i18n>NHC</label>
+				<input class="paciente-nhc-centro" type="text"  tabindex="1"/>
+			</div>
+			<div class="pure-u-1-2 pure-control-group"></div>
+		</div>
+	</fieldset>	
+	
+	<fieldset>		
+		<legend></legend>
+		<div class="pure-g">
+			<div class="pure-u-1-2 pure-control-group">
+				<label data-i18n>Paciente:Nombre</label>
+				<input class="paciente-nombre" type="text" tabindex="2" />
+			</div>
+
+			<div class="pure-u-1-2 pure-control-group">
+				<label data-i18n>Paciente:DNI</label>
+				<input class="paciente-dni" type="text"  tabindex="5"/>							
+			</div>
+
+			<div class="pure-u-1-2 pure-control-group">
+				<label data-i18n="[html]Paciente:html:1er apellido"></label>
+				<input class="paciente-apellido1" type="text"  tabindex="3"/>
+			</div>	
+			<div class="pure-u-1-2 pure-control-group">
+				<label class="cip-label"></label>
+				<input class="paciente-cip" type="text"  tabindex="6"/>
+			</div>	
+			<div class="pure-u-1-2 pure-control-group">
+				<label data-i18n="[html]Paciente:html:2o apellido"></label>
+				<input class="paciente-apellido2" type="text"  tabindex="4"/>
+			</div>				
+		</div>
+	</fieldset>	
+	<fieldset>
+		<legend></legend>	
+		<div class="pure-g">
+			<div class="pure-u-1-2 pure-control-group">
+				<label data-i18n>Fecha de nacimiento</label>
+				<input class="paciente-fecha_nacimiento" type="text" placeholder="dd/mm/aaaa" data-i18n="[placeholder]dd/mm/aaaa" tabindex="7"/>
+			</div>
+			<div class="pure-u-1-2 pure-control-group">
+				<label data-i18n>Género:Sexo</label>
+				<span class="paciente-sexo_container">
+					<select class="paciente-sexo" tabindex="8">
+						<option value="">-</option>
+						<option value="1" data-i18n>Sexo:Hombre</option>
+						<option value="0" data-i18n>Sexo:Mujer</option>
+					</select>
+				</span>
+			</div>	
+			<div class="pure-u-1-2 pure-control-group">
+				<label data-i18n>Edad actual</label>
+				<input readonly class="paciente-edad-actual short-field" type="text"/>
+			</div>
+
+			
+		</div>
+	</fieldset>		
+	<fieldset>
+		<legend></legend>
+		<div class="pure-g">
+			<div class="pure-u-1-2 pure-control-group">
+				<label data-i18n>Paciente:Dirección</label>			
+				<input class="paciente-direccion" type="text" tabindex="9"/>
+			</div>
+
+			<div class="pure-u-1-2 pure-control-group">
+				<label data-i18n>Paciente:Código postal</label>			
+				<input class="paciente-codigo_postal short-field" type="text" tabindex="12"/>
+			</div>
+			
+			<div class="pure-u-1-2 pure-control-group">
+				<label data-i18n>Paciente:Población</label>			
+				<input class="paciente-poblacion" type="text" tabindex="10"/>
+			</div>	
+
+			<div class="pure-u-1-2 pure-control-group">
+				<label data-i18n>Paciente:Teléfono</label>			
+				<input class="paciente-telefono1" type="text" tabindex="13" />
+			</div>
+			
+			<div class="pure-u-1-2 pure-control-group">
+				<label data-i18n>Paciente:Provincia</label>			
+				<input class="paciente-provincia" type="text" tabindex="11"/>
+			</div>
+			
+			<div class="pure-u-1-2 pure-control-group">
+				<label data-i18n>Paciente:Teléfono 2</label>			
+				<input class="paciente-telefono2" type="text" tabindex="14"/>
+			</div>
+			
+			
+		</div>
+	</fieldset>	
+	<fieldset>
+		<legend></legend>
+		<div class="pure-g">
+			<div class="pure-u-1-2 pure-control-group">
+				<label data-i18n>Última aseguradora usada</label>
+				<select class="paciente-aseguradora" tabindex="15"></select>
+			</div>
+
+			<div class="pure-u-1-2 pure-control-group">
+				<label data-i18n>Paciente:Nº afiliación</label>
+				<input class="paciente-afiliacion" type="text" tabindex="16"/>
+			</div>			
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend></legend>
+		<div class="pure-g">
+			<div class="pure-u-1 pure-control-group">
+				<label data-i18n>Comentarios</label>
+				<textarea class="paciente-comentarios pure-input-1-2" maxlength="1000"></textarea>
+			</div>
+		</div>
+	</fieldset>
+</form>

@@ -1,0 +1,139 @@
+Colores de estilos:
+
+
+CODIGO	CLÁSICO				PENTAX
+
+A	#60A090  verde oscuro		#CACCCD  gris
+B	#C4E5D6  verde claro		#DA291C  rojo PENTAX
+C	#F2FBF6	 verde muy claro	#EDEDEE  gris claro
+D	#80C0B0  verde medio		#CACCCD  gris
+E	#486F65  verde muy oscuro 	#DA291C  rojo PENTAX
+F	#AACEC4  verde gris		#DA291C  rojo PENTAX
+G	#222222  gris-negro		#222222  gris-negro
+H	#222222  gris-negro		#FFFFFF  blanco
+I	#FAF0C0  amarillo		#FFFFFF  blanco
+J	#EAD882  amarillo oscuro	#DA291C  rojo PENTAX
+K	#82651E  amarillo mas oscuro	#DA291C  rojo PENTAX
+L	#80C0B0  verde medio		#DA291C  rojo PENTAX
+M	#FFFFFF  blanco			#52555A  gris muy oscuro
+N	#486F65  verde muy oscuro 	#52555A  gris muy oscuro
+O	#222222  gris-negro		#FFFFFF  blanco
+P	#FAF0C0  amarillo		#EC948D  rojo PENTAX claro
+Q	#AACEC4  verde gris		#EC948D  rojo PENTAX claro
+R	#AACEC4  verde gris		#EC948D  rojo PENTAX claro
+S	#45E6BE  cyan brillante		#FF4040  rojo brillante
+T	#486F65  verde muy oscuro 	#FFFFFF  blanco
+U	#486F65  verde muy oscuro 	#FFFFFF  blanco
+V	#486F65  verde muy oscuro 	#DA291C  rojo PENTAX
+W	#F9F4D7  amarillo		#EC948D  rojo PENTAX claro
+X	#82651E  amarillo mas oscuro	#FFFFFF  blanco
+Y	#60A090  verde oscuro		#DA291C  rojo PENTAX
+Z	#C4E5D6  verde claro		#EC948D  rojo PENTAX claro
+AA	#222222  gris-negro		#FFFFFF  blanco
+
+
+(Separar los que solo se usan en jQueryUI, y Pure)
+
+
+
+
+
+Uso de los colores:
+
+A:
+Fondo de EndoTools, separadores de los paneles, bordes.
+
+B:
+Botones, elementos clickables/seleccionables/interactivos, Y FONDO HEADER DATATABLE YUI2.
+
+C:
+Fondo de widgets jQueryUI, paneles, FONDO DE DATATABLE Y FILAS PARES YUI2.
+
+D:
+Fondo headers jQueryUI
+
+E:
+texto botón activo
+
+F:
+Borde botones jQueryUI
+
+G:
+Color texto EndoTools y widgets jQueryUI
+
+H:
+Color texto botones jQueryUI, Y TEXTO HEADER DATATABLE YUI2.
+
+I:
+Fondo botón highlight/activo jQueryUI, Y FONDO COLUMNA SORTABLE DATATABLE YUI2.
+
+J:
+Borde highlight jQueryUI
+
+K:
+Texto highlight jQueryUI, Y TEXTO COLUMNA SORTABLE DATATABLE YUI2.
+
+L:
+Borde botón activo jQueryUI
+
+M:
+Texto footer EndoTools
+
+N:
+Iconos jQueryUI
+
+O:
+Texto botón hover
+
+P:
+Fondo botón hover jQueryUI
+
+Q:
+Borde hover jQueryUI
+
+R:
+Borde controles Pure, Y BORDE DATATABLE YUI2.
+
+S:
+Borde control activo Pure
+
+T:
+Icono botón jQueryUI
+
+U:
+Icono botón hover
+
+V:
+Icono botón activo
+
+W:
+FONDO HIGHLIGHT DATATABLE YUI2.
+
+X:
+TEXTO HIGHLIGHT DATATABLE YUI2.
+
+Y:
+Color del nombre del paciente clickable, en la pantalla de exploraciones.
+
+Z:
+Color del subtitulo de la pantalla, en la barra negra.
+
+AA:
+Color del texto de la statusbar.
+
+
+
+
+REVISAR COLORES:
+
+  en misc.css:
+	#E06040		rojo-naranja	Color del paciente deshabilitado.
+	#A0A0A0		gris claro		Color del informe invalido.
+
+  colores de imágenes:
+	fondo_footer.png
+	menu_principal_btn.png
+	menu_principal_btn_hover.png
+->	fondo_statusbar_error.png
+->	fondo_statusbar_normal.png
+	

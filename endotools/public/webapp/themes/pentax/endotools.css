@@ -1,0 +1,129 @@
+/*
+
+Tema PENTAX
+
+COLORES:
+	#CACCCD		gris			Fondo oscuro, usado como fondo del layout, y los resizers del mismo.
+	#5D86A0		azul PENTAX		Usado de fondo en los paneles del layout.
+	#DA291C		rojo PENTAX		Usado de fondo en los paneles del layout.
+	#EDEDEE		gris claro		Usado de fondo en los paneles del layout, igual que el fondo del content de jquery-ui
+	#FFFFFF		blanco			Usado de fondo en los paneles blancos del layout.
+	#EC948D		rojo claro		subtitulo de la pantalla (en la barra negra)
+	#52555A		gris oscuro		texto footer
+*/
+
+/*	antes en exploraciones.css	*/
+
+#exploracion_form_top #historia {
+	color: #DA291C;
+}
+
+/*	los mismos colores hover del tema de jQueryUI	*/
+#exploracion-mostrar-paciente:hover {
+	background-color: #EC948D;
+	border-color: #DA291C;
+}
+
+
+
+/*	antes en layout.css	*/
+
+.ui-dialog .ui-dialog-content.layout-background, .layout-background,
+.ui-layout-container, .ui-layout-pane {
+	background-color: #CACCCD;
+}
+
+.endo-panel {		background-color: #EDEDEE; }
+
+.endo-panel-alt {	background-color: #5D86A0; }
+
+.endo-panel-detail {	background-color: #FFFFFF;
+	/*background-image: url(/web/assets/detalle_superior_izq.png);
+	background-repeat: no-repeat;*/
+}
+
+.ui-layout-resizer {
+	background-color:	#CACCCD;
+}
+
+.ui-layout-resizer-sliding {
+	background-color:	#CACCCD; /* overridden by custom theme, above, color de cuando se esta arrastrando la barra */
+}
+
+
+
+/*	antes en main_new.css	*/
+
+#mainheader {
+    background-image: url(logo_endotools.png);
+}
+
+#maintitle-texto-subtitulo {
+	color: #EC948D;
+}
+
+#mainfooter {
+    background-image: url(fondo_footer.png);
+	color: #52555A;
+}
+
+#mainstatusbar {
+	color: #FFFFFF;
+}
+
+.statusbar-normal {	background-image: url(fondo_statusbar_normal.png);}
+.statusbar-error {	background-image: url(fondo_statusbar_error.png);}
+
+#menu-principal-btn {
+	background-image: url(menu_principal_btn.png);
+}
+
+#menu-principal-btn:hover {
+	background-image: url(menu_principal_btn_hover.png);
+}
+
+.entorno-pruebas {
+    background-image: url(logo_endotools_pruebas.png)!important;
+}
+
+/*	adaptacion del JSTREE al tema endotools pentax	*/
+
+#organizacion.jstree-apple .jstree-hovered { background:#EC948D; border:1px solid #EC948D;  padding:0 3px 0 1px; text-shadow:1px 1px 1px silver; }
+#organizacion.jstree-apple .jstree-clicked { background:#EC948D; border:1px solid #EC948D; color: #FFFFFF; padding:0 3px 0 1px; }
+
+
+.notificaciones{
+	
+   	border: 1px solid #EC948D !important;
+}
+
+
+#n-footer{background-color: gray;}
+#n-header{background-color: gray;}
+
+#ul-notificaciones li{
+	border-bottom: 2px solid #ddd;
+}
+
+#n-footer{
+	background-color: #DA291C;
+    color: #333;
+}
+
+#n-footer:hover{ background-color: #EC948D;  }
+
+.font-color-claro{ color:white; }
+
+
+.btn-disabled{
+	background-color: #e9e9e9!important;
+    background-image: none!important;
+    color: gray!important;	
+}
+
+.fileinput-button input {
+    z-index: 2;
+    width:100% !important;
+    height:100% !important;
+    transform: none !important;
+}

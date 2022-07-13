@@ -1,0 +1,42 @@
+﻿<div class="layout_main_content">	
+
+	<div class="contenedor2 ui-layout-west">
+
+		<div class="ui-layout-north endo_pane_redondeado endo-panel endo_pane_content">
+			<form class="pure-form pure-form-stacked">
+				<fieldset>
+					<label for="agenda-filter" data-i18n>Agenda</label>
+					<select id="agenda-filter" class="width-100"></select>
+					
+					<label for="agenda-filter" data-i18n>Sala</label>
+					<select id="sala-filter" class="width-100"></select>
+
+					<label for="agenda-filter" data-i18n>Médico</label>
+					<select id="medico-filter" class="width-100"></select>
+					
+					<label for="exam-type-filter" data-i18n>Abrev:Tipo exploración</label>
+					<select id="exam-type-filter" class="width-100"></select>
+					
+					<label for="prioridad-filter" data-i18n>Prioridad</label>
+					<select id="prioridad-filter" class="width-100"></select>
+					
+				</fieldset>
+				<fieldset>
+					<legend></legend>
+					<button id="paciente-filter-btn" type="button" value="Buscar" data-i18n>Buscar citas de un paciente</button>	
+					
+				</fieldset>
+			</form>	
+		</div>
+		
+		<div class="ui-layout-center"></div>	
+		
+    </div>
+
+	<div class="ui-layout-center endo_pane_redondeado endo_pane_content endo-panel-detail" id="agenda-content">
+		<div id='calendar'></div>	
+    </div>
+
+
+
+</div>

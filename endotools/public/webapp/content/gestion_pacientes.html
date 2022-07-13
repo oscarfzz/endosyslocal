@@ -1,0 +1,57 @@
+﻿<div class="layout_main_content">
+
+	<div class="contenedor2 ui-layout-west">
+	
+		<div  class="ui-layout-north endo_pane_redondeado endo-panel endo_pane_content">
+			<form class="pure-form pure-form-stacked">
+				<fieldset>
+					<label id="idunico-label2" for="busqueda-pacientes-IDUNICO" style="display: none;"></label>
+					<input id="busqueda-pacientes-IDUNICO" class="pure-input-1" type="text" style="display: none;"/>
+
+					<label id="nhc-centro-label2" for="busqueda-pacientes-NHC-CENTRO" style="display: none;">NHC</label>
+					<input id="busqueda-pacientes-NHC-CENTRO" class="pure-input-1" type="text" style="display: none;"/>
+
+					<label id="cip-label2" for="busqueda-pacientes-CIP"></label>
+					<input id="busqueda-pacientes-CIP" class="pure-input-1" type="text"/>
+					
+					<label for="busqueda-pacientes-dni" data-i18n>DNI</label>
+					<input id="busqueda-pacientes-dni" class="pure-input-1" type="text"/>
+					
+					<label for="busqueda-pacientes-nombre" data-i18n>Paciente:Nombre</label>
+					<input id="busqueda-pacientes-nombre" class="pure-input-1" type="text"/>
+
+					<label for="busqueda-pacientes-apellido1" data-i18n="[html]Paciente:html:1er apellido"></label>
+					<input id="busqueda-pacientes-apellido1" class="pure-input-1" type="text"/>			
+
+					<label for="busqueda-pacientes-apellido2" data-i18n="[html]Paciente:html:2o apellido"></label>
+					<input id="busqueda-pacientes-apellido2" class="pure-input-1" type="text"/>					
+					
+					<label for="busqueda-pacientes-incl_deshab" class="pure-checkbox" data-i18n="[prepend]Incluir deshabilitados">
+						<input id="busqueda-pacientes-incl_deshab" type="checkbox"/>
+					</label>
+				</fieldset>
+				<fieldset>
+					<button id="nuevo_paciente_btn" type="button" value="Buscar" data-i18n>Nuevo paciente</button>
+					<button id="buscar_pacientes_btn" type="button" value="Buscar" data-i18n>Buscar</button>
+				</fieldset>
+			</form>
+		</div>
+		
+		<div class="ui-layout-center"></div>	
+		
+    </div>
+
+	<div class="ui-layout-center endo_pane_redondeado endo_pane_content endo-panel">		
+		<div id="datatable_busqueda_result" class="yui-skin-endotools"></div> 
+		<div class="seccion" style="margin-top:5px;margin-bottom:0px; min-height: 2em;">
+			<div id="total-registros" data-i18n="[prepend]Encontrados:Total">
+				<span id="total">0</span>
+			</div>
+			<div id="paginacion" style="" class="ui-layout-center"></div>
+				
+		</div>
+    </div>
+
+
+
+</div>

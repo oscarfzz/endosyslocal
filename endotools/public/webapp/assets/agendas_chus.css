@@ -1,0 +1,29 @@
+﻿#layout_agendas_chus {
+	padding-left: 400px;
+}
+
+#layout_agendas_chus_left .content {
+	margin-bottom: 8px; 
+}
+
+#layout_agendas_chus_left {
+	margin-left: -400px;
+	width: 400px;
+}
+
+#busqueda_agendas_chus_result {
+	margin-top: 12px;
+}
+
+#layout_agendas_chus_right {
+	width: 100%;
+}
+
+#prestaciones_form {
+	background-color: white;
+	border: 1px solid #70a0a0;
+	margin: 10px;
+	padding: 10px;
+	min-width: 450px;
+	text-align: left;
+}

@@ -1,0 +1,659 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es" dir="ltr">
+<head>
+    <title>EndoTools Web - Prueba estilo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<!--	Pure	-->
+	<link type="text/css" href="/lib/Pure/pure-min.css" rel="stylesheet" />
+	
+	<!--	JQUERY	-->
+
+	<!--	jQuery UI theme	-->
+	<script data-main="/web/" type="text/javascript" src="/lib/jquery/require-jquery.js"></script>
+	<script type="text/javascript" src="/lib/jquery-ui-1.9.2.custom/js/jquery-ui-1.9.2.custom.js"></script>
+	<script type="text/javascript" src="/lib/jquery-ui-1.9.2.custom/js/i18n/jquery.ui.datepicker-es.js"></script>	
+
+	<!--	jQuery.Rule (manipulación de CSS)	-->
+	<script type="text/javascript" src="/lib/jquery.rule/jquery.rule-1.0.2-min.js"></script>
+	
+	<!--	FULLCALENDAR	-->	
+	<link rel='stylesheet' type='text/css' href='/lib/fullcalendar/fullcalendar.css' />
+	<link rel='stylesheet' type='text/css' href='/lib/fullcalendar/fullcalendar.print.css' media='print' />
+	<script type='text/javascript' src='/lib/fullcalendar/fullcalendar.min.js'></script>
+	
+	<!--	JSTREE	-->	
+	<script type='text/javascript' src='/lib/jstree/jquery.jstree.js'></script>
+	
+<!--	DATATABLE	-->	
+	<link type="text/css" href="assets/dataTable.css" rel="stylesheet"/>
+<!--	FIN DATATABLE	-->		
+	
+	<!-- YUI2 -->
+
+	<!-- Individual YUI CSS files -->  
+	<link rel="stylesheet" type="text/css" href="/lib/yui2/build/assets/skins/sam/skin.css">   
+	<link rel="stylesheet" type="text/css" href="/lib/yui2/build/layout/assets/layout-core.css">
+	
+	<!-- Individual YUI 2 JS files -->  
+	<script type="text/javascript" src="/lib/yui2/combo.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/combo.css?files=/webapp/assets/controles_yui.css|/webapp/assets/misc.css|/webapp/assets/tipos_exploracion.css|/webapp/assets/formularios.css|/webapp/assets/main_new.css|/webapp/assets/layout.css|/webapp/assets/editor_formularios.css|/webapp/assets/exploraciones.css">
+	<!------------------------------------------>
+	<!--	Estilo de EndoTools:
+				Clásico		carpeta	/themes/classic
+				PENTAX		carpeta /themes/pentax
+	-->
+	<!--	Estilo EndoTools clásico verde	-->
+	<!--link type="text/css" href="themes/classic/jqueryui/jquery-ui-1.9.2.custom.css" rel="stylesheet" />
+	<link type="text/css" href="themes/classic/pure-endotools.css" rel="stylesheet" />
+	<link type="text/css" href="themes/classic/endotools.css" rel="stylesheet" />
+	<link type="text/css" href="themes/classic/yui2-datatable-skin.css"  rel="stylesheet" /-->
+
+	<!--	Estilo EndoTools PENTAX	-->
+	<link type="text/css" href="themes/pentax/jqueryui/jquery-ui-1.9.2.custom.css" rel="stylesheet" />
+	<link type="text/css" href="themes/pentax/pure-endotools.css" rel="stylesheet" />
+	<link type="text/css" href="themes/pentax/endotools.css" rel="stylesheet" />
+	<link type="text/css" href="themes/pentax/yui2-datatable-skin.css" rel="stylesheet" />
+	<!------------------------------------------>
+
+	
+	<!-- YUI3 -->
+	<link rel="stylesheet" type="text/css" href="/lib/yui3/build/cssgrids/grids.css">
+
+	<!--	misc	-->
+	<!--script type="text/javascript" src="/lib/jquery-ui-layout/jquery.layout-latest.min.js"></script-->
+	<script type="text/javascript" src="/lib/jquery-ui-layout/jquery.layout-latest.js"></script>
+	<!--script type="text/javascript" src="/lib/noty/jquery.noty.js"></script>
+	<script type="text/javascript" src="/lib/noty/layouts/top.js"></script>
+	<script type="text/javascript" src="/lib/noty/layouts/topRight.js"></script>
+	<script type="text/javascript" src="/lib/noty/themes/default.js"></script-->
+	<script type="text/javascript" src="/lib/noty/packaged/jquery.noty.packaged.min.js"></script>
+	<!--script type="text/javascript" src="/lib/gfranko-jquery.selectBoxIt.js/jquery.selectBoxIt.min.js"></script-->
+	<script type="text/javascript" src="/lib/gfranko-jquery.selectBoxIt.js/jquery.selectBoxIt.js"></script>
+	<link rel="stylesheet" href="/lib/gfranko-jquery.selectBoxIt.js/jquery.selectBoxIt.css">
+	
+	<!--	jquery.fileupload	-->
+	<!--script type="text/javascript" src="/lib/jquery.fileupload/jquery.iframe-transport.js"></script>
+	<script type="text/javascript" src="/lib/jquery.fileupload/jquery.fileupload.js"></script-->
+	<link rel="stylesheet" href="/lib/jquery.fileupload/jquery.fileupload-ui.css">
+	
+	<!--	XXX de momento cargar de forma estática los CSS, ya que el CSSLoader a veces falla	-->
+	<link rel="stylesheet" type="text/css" href="/lib/jquery-ui-multiselect-widget-1.13/jquery.multiselect.css">
+
+	<style>
+	#layout-prueba {
+		height: 500px;
+	}
+	
+	#layout-prueba-2 {
+		height: 500px;
+	}
+	
+	.layout-container {
+		padding: 10px;
+	}
+	
+	.bloque-prueba {
+		margin: 0.5em;
+	}
+
+	</style>
+	
+</head>
+
+<body class="yui-skin-sam yui-skin-endotools pure-skin-endotools">
+
+<h1>Prueba de estilo</h1>
+
+<h2>Esquema de colores/fondos/estilos</h2>
+<div id="mainheader">
+	<div id="mainheader-loggedin"><div id="loggedin-usuario"><div>Nombre del usuario</div></div></div>
+</div>
+<div id="maintitle">
+	<div id="maintitle-texto">
+		<span id="maintitle-texto-titulo">Título de la pantalla</span>
+		<span id="maintitle-texto-subtitulo">subtítulo de la sección</span>
+	</div>
+</div>
+<div class="endo_pane_content">
+	<br>
+</div>
+<div class="endo_pane_content">
+	<br>
+</div>
+<div class="endo-panel endo_pane_content">
+	<br>
+</div>
+<div class="endo-panel-detail endo_pane_content">
+	<div class="paciente-deshabilitado">Paciente deshabilitado</div>
+	<div class="informe-invalido">Informe no válido</div>
+</div>
+
+<h2>Ejemplo de Pure Grid Responsive, de 3 columnas</h2>
+<div class="pure-g-r">
+	<div class="pure-u-1-3"> <p class="endo_pane_redondeado endo_pane_content">1/3</p> </div>
+	<div class="pure-u-1-3"> <p class="endo_pane_redondeado endo_pane_content">1/3</p> </div>
+	<div class="pure-u-1-3"> <p class="endo-panel endo_pane_redondeado endo_pane_content">1/3</p> </div>
+</div>
+
+<h2>Ejemplo de Pure Forms</h2>
+
+<div class="layout-background layout-container">
+	<div id="layout-prueba">
+
+		<div class="ui-layout-west endo_pane_redondeado endo_pane_content">
+			<form class="pure-form pure-form-stacked">
+				<fieldset>
+					<legend>Formulario "stacked"</legend>
+					<label for="stacked-email">Email</label>
+					<input id="stacked-email" type="email" placeholder="Email">
+					<label for="stacked-password">Password</label>
+					<input id="stacked-password" type="password" placeholder="Password">
+					<label for="recordar" class="pure-checkbox">
+						<input id="recordar" type="checkbox"> Remember me
+					</label>
+					<button type="submit" class="pure-button pure-button-primary">Entrar</button>
+				</fieldset>
+			</form>
+		</div>
+
+		<div class="ui-layout-center endo_pane_redondeado endo_pane_content endo-panel-detail">
+			<form class="pure-form pure-form-aligned">
+				<fieldset>
+					<legend>Formulario "aligned"</legend>
+					<div class="pure-control-group">
+						<label for="aligned-email">Email</label>
+						<input id="aligned-email" type="email" placeholder="Email">
+					</div>
+					<div class="pure-control-group">
+						<label for="aligned-password">Password</label>
+						<input id="aligned-password" type="password" placeholder="Password">
+					</div>
+					<div class="pure-controls">
+						<label for="recordar" class="pure-checkbox">
+							<input id="recordar" type="checkbox"> Remember me
+						</label>
+						<button type="submit" class="pure-button pure-button-primary">Entrar</button>
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>Botones</legend>
+					<button type="button" class="pure-button pure-button-primary">Pure "primary"</button>
+					<button type="button" class="pure-button">Pure "normal"</button>
+					<button type="button" class="control-jqueryui">jQuery-ui</button>
+					<button type="button">Genérico HTML</button>
+				</fieldset>				
+			</form>		
+		</div>
+
+		<div class="ui-layout-south endo_pane_redondeado endo-panel endo_pane_content">
+			<form class="pure-form pure-form-stacked">
+				<fieldset>
+					<legend>Formulario "multi-column stacked"</legend>
+					<div class="pure-g-r">
+						<div class="pure-u-1-3">
+							<label for="multicol-stacked-email">Email</label>
+							<input id="multicol-stacked-email" type="email" placeholder="Email">
+							<div class="pure-form-message">Esto es un mensaje</div>
+						</div>
+						<div class="pure-u-1-3">
+							<label for="multicol-stacked-password">Password</label>
+							<input id="multicol-stacked-password" type="password" placeholder="Password">
+						</div>
+						<div class="pure-u-1-3">
+							<label for="recordar" class="pure-checkbox">
+								<input id="recordar" type="checkbox"> Remember me
+							</label>
+							<button type="submit" class="pure-button pure-button-primary">Entrar</button>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+		
+	</div>
+</div>
+
+<h2>Ejemplo de controles (jQuery-ui, YUI DataTable)</h2>
+<button id="abrir-dialog-btn" type="button">Abrir panel izquierdo en Dialog</button>
+
+<div class="layout-background layout-container">
+	<div id="layout-prueba-2">
+
+		<div class="ui-layout-west endo_pane_redondeado endo_pane_content endo-panel-detail">
+			Texto directamente en el panel, sin ningún "tag"
+			<p>Texto en un parágrafo (P)</p>
+			<div>Texto en un DIV</div>
+			<div class="ui-widget">Texto en un divisor con class "ui-widget"</div>
+			<div class="endo_pane_content endo-panel">
+				<h3>Formularios:</h3>
+				<form>
+					<fieldset>
+						<legend>Esto es form genérico</legend>
+						<label style="display: block; margin: 0.25em 0;">label</label>
+						<input style="display: block; margin: 0.25em 0;" type="text" placeholder="input">
+						<select style="display: block; margin: 0.25em 0;" placeholder="select">
+							<option>item 1</option><option>item 2</option><option>item 3</option>
+						</select>
+					</fieldset>
+				</form>
+				<form class="pure-form pure-form-stacked">
+					<fieldset>
+						<legend>Esto es un pure-form</legend>
+						<label>label</label>
+						<input type="text" placeholder="input">
+						<select style="display: block; margin: 0.25em 0;" placeholder="select">
+							<option>item 1</option><option>item 2</option><option>item 3</option>
+						</select>
+					</fieldset>
+				</form>
+				<h3>Formularios con class "ui-widget":</h3>
+				<div class="ui-widget">
+					<form>
+						<fieldset>
+							<legend>Esto es form genérico</legend>
+							<label style="display: block; margin: 0.25em 0;">label</label>
+							<input style="display: block; margin: 0.25em 0;" type="text" placeholder="input">
+							<select style="display: block; margin: 0.25em 0;" placeholder="select">
+								<option>item 1</option><option>item 2</option><option>item 3</option>
+							</select>
+						</fieldset>
+					</form>
+					<form class="pure-form pure-form-stacked">
+						<fieldset>
+							<legend>Esto es un pure-form</legend>
+							<label>label</label>
+							<input type="text" placeholder="input">
+							<select style="display: block; margin: 0.25em 0;" placeholder="select">
+								<option>item 1</option><option>item 2</option><option>item 3</option>
+							</select>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+		<div class="ui-layout-center endo_pane_content endo-panel pure-g-r">
+			<div class="pure-u-1-2">
+				<div id="tabs-prueba" class="bloque-prueba">
+					<ul> 
+						<li><a href="#tab-prueba-1">Primero</a></li> 
+						<li><a href="#tab-prueba-2">Segundo</a></li> 
+						<li><a href="#tab-prueba-3">Tercero</a></li> 
+					</ul>
+					<form id="tab-prueba-1" class="pure-form pure-form-stacked">
+						<fieldset>
+							<legend>Este tab es un pure-form</legend>
+							<label>Campo 1</label>
+							<input type="text" placeholder="Campo 1">
+							<label>Campo 2</label>
+							<input type="text" placeholder="Campo 2">
+							<button type="button" value="Buscar">Buscar</button>
+						</fieldset>
+					</form>
+					<div id="tab-prueba-2">
+						<div id="datepicker-prueba"></div>
+						<form class="pure-form pure-form-stacked">
+							<fieldset>
+								<legend>Seleccionar fecha</legend>
+								<input type="text" id="datepicker-prueba-2" placeholder="Fecha">
+							</fieldset>
+						</form>
+					</div>
+					<div id="tab-prueba-3">
+						<select id="selectboxit-prueba">
+							<option>item 1</option><option>item 2</option><option>item 3</option>
+						</select>
+						<select id="selectboxit-prueba-2">
+							<option>item 1</option><option>item 2</option><option>item 3</option>
+						</select>
+						<select id="multiselect-prueba">
+							<option>item 1</option><option>item 2</option><option>item 3</option>
+						</select>
+						<form class="pure-form pure-form-stacked">
+							<fieldset>
+								<legend>En un pure-form</legend>
+								<select id="selectboxit-prueba-3">
+									<option>item 1</option><option>item 2</option><option>item 3</option>
+								</select>
+								<select id="multiselect-prueba-2">
+									<option>item 1</option><option>item 2</option><option>item 3</option>
+								</select>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+				
+				<div class="bloque-prueba endo_pane_content endo-panel-alt endo_pane_redondeado">
+					<div id="jstree-prueba">
+						<ul>
+							<li><a href="#">Hospital</a></li>
+							<li><a href="#">Últimas exploraciones</a>
+								<ul>
+									<li><a href="#">Gastroscopia, 10/4/2014</a></li>
+									<li><a href="#">Colonoscopia, 23/7/2014</a></li>
+									<li><a href="#">CPRE, 3/11/2013</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Pacientes</a>
+								<ul>
+									<li><a href="#">Pedro García</a>
+										<ul>
+											<li><a href="#">Gastroscopia, 10/4/2014</a></li>
+											<li><a href="#">Colonoscopia, 23/7/2014</a></li>
+										</ul>
+									</li>
+									<li><a href="#">Juan Hernández</a></li>
+									<li><a href="#">Manolo Gómez</a>
+										<ul>
+											<li><a href="#">CPRE, 3/11/2013</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="pure-u-1-2">
+				<div id="accordion-prueba" class="bloque-prueba">
+					<h3>Sección 1</h3>
+					<form class="pure-form pure-form-stacked">
+						<fieldset>
+							<legend>Esta sección es un pure-form</legend>
+							<label>Campo 1</label>
+							<input type="text" placeholder="Campo 1">
+							<label>Campo 2</label>
+							<input type="text" placeholder="Campo 2">
+							<button type="button" value="Buscar">Buscar</button>
+						</fieldset>
+					</form>
+					<h3>Sección 2</h3>
+					<div>
+						<div style="padding: 0 .7em;" class="ui-state-highlight ui-corner-all">
+							<p><strong>Atención!</strong> Esto es un ejemplo de "highlight".</p>
+						</div>
+						<div style="padding: 0 .7em;" class="ui-state-error ui-corner-all">
+							<p><strong>Atención!</strong> Esto es un ejemplo de "error".</p>
+						</div>
+					</div>
+					<h3>Sección 3</h3>
+					<div>
+						<h1>Header 1</h1>
+						<h2>Header 2</h2>
+						<h3>Header 3</h3>
+						<p>Esto es un párrafo de prueba, esto es un párrafo de prueba, esto es un párrafo de prueba.</p>
+						<h4>Lista desordenada</h4>
+						<ul>
+							<li>item 1</li>
+							<li>item 2</li>
+							<li>item 3</li>
+						</ul>
+						<h4>Lista ordenada</h4>
+						<ol>
+							<li>item 1</li>
+							<li>item 2</li>
+							<li>item 3</li>
+						</ol>
+						<h4>Lista de definiciones</h4>
+						<dl>
+							<dt>item 1</dt>
+							<dd>Esto es la definición del item 1</dd>
+							<dt>item 2</dt>
+							<dd>Esto es la definición del item 2</dd>
+							<dt>item 3</dt>
+							<dd>Esto es la definición del item 3</dd>
+						</dl>
+					</div>
+				</div>
+
+				<div id="datatable-prueba" class="yui-skin-endotools"></div>
+
+			</div>
+		</div>
+		
+	</div>
+	
+	
+</div>
+
+<h2>TODO: Montar ejemplo con "cajas" mediante pure, ul, li... como en el skin-builder</h2>
+<div>	
+</div>
+
+<h2>Ejemplo FullCalendar</h2>
+<div id='fullcalendar-prueba' class="endo-panel endo_pane_redondeado endo_pane_content"></div>
+
+
+<script type="text/javascript" src="js/Util/xmlutils.js"></script>
+<script type="text/javascript" src="js/Util/contenido.js"></script>
+<script type="text/javascript" src="js/Util/misc.js"></script>
+<script type="text/javascript" src="js/Util/transaction_manager.js"></script>
+<script type="text/javascript" src="js/Util/transaction_manager_jquery.js"></script>
+
+
+<script type="text/javascript">var Endotools = {};</script>
+
+<!--	varios	-->
+<!--script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/captura.js"></script-->
+<script type="text/javascript" src="js/controles.js"></script>
+<!--script type="text/javascript" src="js/opciones_config.js"></script>
+<script type="text/javascript" src="js/permisos.js"></script>
+<script type="text/javascript" src="js/menu_textos_predefinidos.js"></script>
+<script type="text/javascript" src="js/nuevo_elemento.js"></script>
+<script type="text/javascript" src="js/input_tipo_multi.js"></script>
+<script type="text/javascript" src="js/dialogs/editorformularios_dialogs.js"></script>
+<script type="text/javascript" src="js/dialogs/motivo_cancelacion_dialog.js"></script>
+<script type="text/javascript" src="js/dialogs/plantillas_dialog.js"></script-->
+<!-- INTEGRACION SIHGA -->
+<!--script type="text/javascript" src="js/input_motivo_fallo.js"></script-->
+
+<!--	pantallas	-->
+<!--script type="text/javascript" src="js/editor_tipos_expl.js"></script>
+<script type="text/javascript" src="js/editor_formularios.js"></script>
+<script type="text/javascript" src="js/tablas.js"></script>
+<script type="text/javascript" src="js/pacientes.js"></script>
+<script type="text/javascript" src="js/agendas_chus.js"></script>
+<script type="text/javascript" src="js/citas.js"></script>
+<script type="text/javascript" src="js/imagenes_expl.js"></script>
+<script type="text/javascript" src="js/informes.js"></script>
+<script type="text/javascript" src="js/formularios.js"></script>
+<script type="text/javascript" src="js/exploraciones.js"></script>
+<script type="text/javascript" src="js/nueva_exploracion.js"></script>
+<script type="text/javascript" src="js/busqueda_por_paciente.js"></script>
+<script type="text/javascript" src="js/tipos_exploracion.js"></script>
+<script type="text/javascript" src="js/busquedas_avanzadas/ejecutar_busqueda.js"></script>
+<script type="text/javascript" src="js/busquedas_avanzadas/editor_busqueda2.js"></script>
+<script type="text/javascript" src="js/busquedas_avanzadas/dialogo_condicion.js"></script>
+<script type="text/javascript" src="js/busquedas_avanzadas/logica_estructura.js"></script>
+<script type="text/javascript" src="js/busquedas_avanzadas/gestion_busquedas.js"></script>
+<script type="text/javascript" src="js/gestion_agenda/gestion_agenda.js"></script>
+<script type="text/javascript" src="js/gestion_agenda/dialogo_cita.js"></script>
+<script type="text/javascript" src="js/gestion_agenda/dialogo_paciente.js"></script>
+<script type="text/javascript" src="js/administracion/administracion.js"></script>
+<script type="text/javascript" src="js/administracion/dialogo_sala.js"></script>
+<script type="text/javascript" src="js/administracion/dialogo_hora.js"></script>
+<script type="text/javascript" src="/lib/sprintf-0.7-beta1.js"></script-->
+
+<script>
+
+$(function() {
+	$.datepicker.setDefaults($.datepicker.regional["es"]);
+
+	//	XXX		hasta que no sean todo modulos, de momento pongo aqui algunos requires globales...
+//	require(['/lib/jquery-ui-multiselect-widget-1.13/jquery.multiselect.js'], null);
+
+	//	la libreria requiere un modulo llamado "jquery.ui.widget". Tal como se carga
+	//	ahora jquery-ui no existe ese modulo, por eso lo defino asi:
+	define( "jquery.ui.widget", [], function () { return $.widget; } );
+	
+	require(['/lib/jquery.fileupload/jquery.iframe-transport.js'], null);
+	require(['/lib/jquery.fileupload/jquery.fileupload.js'], null);
+
+	//	DATATABLE
+	require(['/lib/datatables/js/jquery.dataTables.js'], null);
+	
+	///////////////////////////////////
+	//	PRUEBA ESTILO
+	
+	//	Layouts
+	$('#layout-prueba').layout({
+		defaults: {
+			fxName:		"none",
+			fxSpeed:	"fast",
+			size:		"auto",
+			closable:	true,
+			resizable:	true,
+			slidable:	true,
+			initClosed:	false
+		},
+		west: {
+			size:		400
+		}
+	});	
+	
+	$('#layout-prueba-2').layout({
+		defaults: {
+			fxName:		"none",
+			fxSpeed:	"fast",
+			size:		"auto",
+			closable:	true,
+			resizable:	true,
+			slidable:	true,
+			initClosed:	false
+		},
+		west: {
+			size:		400
+		}
+	});	
+	
+	//	jQuery-ui:
+	//	 Botones
+	$('#layout-prueba .ui-layout-center form .control-jqueryui, #tabs-prueba button, #accordion-prueba button, #abrir-dialog-btn').button();
+	//	 Tabs
+	$('#tabs-prueba').tabs();
+	//	 Accordion
+	$('#accordion-prueba').accordion({
+		heightStyle: "fill"
+	});
+	//	 Datepicker
+	$('#datepicker-prueba').datepicker();
+	$("#datepicker-prueba-2").datepicker();
+	//	 Dialog
+	$('#abrir-dialog-btn').click(function() {
+		//	crear un dialog con el contenido copiado del panel izquierdo
+		controles.modal_dialog.mostrar({
+			title: "Prueba de Dialog", width: 600, height: 600, resizable: true,
+			init: function() {
+				this.html( $('#layout-prueba-2 .ui-layout-west').html() );
+			}
+		});
+
+	});
+	//	 Menu? Tooltip?
+	
+	//	Otros controles:
+	//	 jstree
+	$("#jstree-prueba").jstree({
+		"themes": {
+			 "theme":	"apple",
+			 "dots":	true,
+			 "icons":	true
+		}
+	});
+	
+	//	 selectBoxIt
+	$("#selectboxit-prueba").selectBoxIt();
+	$("#selectboxit-prueba-2").selectBoxIt({autoWidth: true, theme: "jqueryui"});
+	$("#selectboxit-prueba-3").selectBoxIt({autoWidth: true, theme: "jqueryui"});
+	
+	//	 multiselect
+	require(['/lib/jquery-ui-multiselect-widget-1.13/jquery.multiselect.js'], function() {
+		$("#multiselect-prueba").multiselect();
+		$("#multiselect-prueba-2").multiselect();
+	});
+	
+	//	 fullcalendar (las propiedades se han copiado del gestion_agenda.js)
+	$('#fullcalendar-prueba').fullCalendar({
+		header: {
+			left:		'prev,next today',
+			center:		'title',
+			right:		'agendaWeek,agendaDay'
+		},
+		defaultView:	'agendaWeek',
+		allDaySlot:		true,
+/*		minTime:		minTime,
+		maxTime:		maxTime,*/
+		firstDay:		1,
+		selectable:		true,							
+		selectHelper:	true,
+		weekends:		false,
+		axisFormat:		'HH:mm',
+		slotMinutes:	30,
+		allDayText:		"",
+		editable:		true,
+		monthNames:		['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio',
+						'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+						
+		monthNamesShort:['Ene', 'Feb', 'Mzo', 'Abr', 'May', 'Jun', 'Jul',
+						'Ago', 'Sept', 'Oct', 'Nov', 'Dic'],
+						
+		dayNames:		['Domingo', 'Lunes', 'Martes', 'Miercoles',
+						'Jueves', 'Viernes', 'Sabado'],
+						
+		dayNamesShort:	['Dom','Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+		
+		timeFormat: {
+			agenda:		'H:mm{ - H:mm}',
+			agendaDay:	'H:mm{ - H:mm}',
+			'':			'H:mm{ - H:mm}'
+		},
+		
+		columnFormat: {
+			week:		'ddd d/M/yyyy',
+			day:		'dddd d/M/yyyy',
+			'':			'h:mm{ - h:mm}'
+		},
+		
+		titleFormat: {//no funciona
+			month:		'MMMM yyyy',                             // September 2009
+			week:		"MMM d[ yyyy]{ '&#8212;'[ MMM] d yyyy}", // Sep 7 - 13 2009
+			day:		'dddd, MMM d, yyyy'      
+		},
+		
+		buttonText: {
+			today:		'Hoy',
+			week:		'Semana',
+			day:		'Dia'
+		}
+	});
+	
+	//	 datatable (jquery)
+	var datatable = new YAHOO.widget.ScrollingDataTable(
+		"datatable-prueba",
+		[	{key: "nombre", label: "Nombre", /*width: 60, */resizeable: true, sortable: true},
+			{key: "apellidos", label: "Apellidos", /*width: 100, */resizeable: true, sortable: true}],
+		dummyDataSource,
+		{	initialLoad: false,
+			MSG_EMPTY: "No hay filas",
+			//height: "200px",
+			width: "auto"}
+	);
+	datatable.onDataReturnInitializeTable(null, {results: [
+		{nombre: "Juan", apellidos: "Perez Garcia"},
+		{nombre: "Manuel", apellidos: "Gonzalez Fuentes"}]
+	});
+	datatable.subscribe("rowMouseoverEvent", datatable.onEventHighlightRow);
+	datatable.subscribe("rowMouseoutEvent", datatable.onEventUnhighlightRow);
+	datatable_results.set("COLOR_COLUMNFILLER", "#F2FBF6");
+
+	//	noty?
+});
+</script>
+
+</body>
+
+</html>

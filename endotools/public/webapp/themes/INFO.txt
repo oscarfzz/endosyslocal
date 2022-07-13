@@ -1,0 +1,45 @@
+Los Themes de EndoTools definen el aspecto y estilo de la aplicación.
+
+Actualmente hay dos definidos:
+
+	classic		Mantiene el estilo visual original, con colores verdes.
+	pentax		Utiliza los colores corporativos de PENTAX.
+
+
+v2.4
+------------------------------------------------------------------------------------------------------
+Creación de un nuevo theme de EndoTools:
+
+	Se debe crear una nueva carpeta con el nombre del nuevo tema en \webapp\themes
+
+	Esta carpeta debe contener estas hojas de estilo:
+
+		endotools.css			Estilo de EndoTools (colores, logotipo, fondos...)
+						Creado a mano.
+
+		pure-endotools.css		Estilo de las classes de Pure (inputs, buttons...)
+						Este fichero se crea a mano, no mediante la utilidad
+						que hay en el sitio web de PURE.
+
+		yui2-datatable-skin.css		Estilo del componente DataTable de YUI 2.
+						Este fichero se crea a mano.
+
+	También debe contener las siguientes imágenes, requeridas por "endotools.css":
+		
+		fondo_footer.png
+		fondo_statusbar_error.png
+		fondo_statusbar_normal.png
+		logo_endotools.png
+		menu_principal_btn.png
+		menu_principal_btn_hover.png
+
+	Pueden haber imágenes adicionales, según el estilo que se defina.
+
+	También debe contener una subcarpeta /jqueryui, que contiene los archivos del Theme de jQuery UI
+	ubicados en \jquery-ui-1.9.2.custom\css\nombre-del-theme\
+	Este theme se debe definir mediante la utilidad ThemeRoller del sitio web de jQuery UI
+	(http://jqueryui.com/themeroller).
+
+	Debe existir un fichero de texto llamado "info.txt". Este fichero debe contener:
+	
+		El link al ThemeRoller de jQuery UI, para el Theme definido.

@@ -1,0 +1,548 @@
+## -*- coding: utf-8 -*-
+<%inherit file="base.html" />
+
+<%def name="head_tags()">
+    <title>Migracion de Base de datos</title>
+    <style>
+      body{
+        font: 'Arial';
+      }
+      input {width:400px;}
+      .checkbox{width:50px;}
+      .red-warning{color:red;font-weight: bold;}
+      .saltar-paso-div{
+        padding: 20px;
+        padding-top:0;
+        background: #ddd;
+        border: 1px solid gray;
+        margin-top: 20px;
+      }
+      .green-bold {
+        color:green;font-weight: bold;}
+      }
+      .red-border-dash{
+        border: 1px dashed red;
+        padding: 10px;
+      }
+
+      .full-w{
+        width: 95%;
+        padding: 5px;
+        font-size: 14px;
+      }
+
+      input[type="submit"]{
+        font-weight: bold;
+        color:  green;
+        padding: 5px;
+      }
+
+      input[type="button"]{
+        padding: 5px;
+      }
+
+      .saltar-paso{width: 580px;}
+
+    </style>
+</%def>
+
+<%def name="javascript_tags()">
+    <script src=/lib/jquery/jquery-3.3.1.min.js></script>
+    <script type="text/javascript">
+      $("document").ready(function(){
+
+          $('.saltar-paso').on('click', function(){
+            var siguiente_paso = $(this).attr('data-nextpaso');
+            $('#stepnext').val(siguiente_paso);
+            $("#form").submit();
+          });
+         
+          $("#form").on("submit", function(e){
+            
+            var step = parseInt($("#step").val(),10);
+            if (step==3){
+                /* paso 3. Migrar centros.
+                 Evita que un centro destino sea seleccionado mas de una vez
+                 Esto no puede pasar porque se pisarian los data_origen_reg_id
+                */
+                var repetido = false;
+                var des_centros_sel = [];
+                $(".select-centro").each(function(){
+                  var value = parseInt($(this).val(),10);
+                  if (value != 0){
+                    if (des_centros_sel.indexOf(value)!=-1){
+                        repetido = true;
+                    }
+                    des_centros_sel.push(value);
+                  }
+                });
+                if (repetido){
+                  alert("Un centro destino esta presente en mas de un centro origen");
+                  e.preventDefault();
+                  return false;
+                }
+            }
+            if (step==4){
+                /* paso 4. Migrar servicios.
+                 Evita que un servicio destino sea seleccionado mas de una vez
+                 Esto no puede pasar porque se pisarian los data_origen_reg_id
+                */
+                var repetido = false;
+                var des_servicios_sel = [];
+                $(".select-servicio").each(function(){
+                  var value = parseInt($(this).val(),10);
+                  if (value != 0){
+                    if (des_servicios_sel.indexOf(value)!=-1){
+                        repetido = true;
+                    }
+                    des_servicios_sel.push(value);
+                  }
+                });
+                if (repetido){
+                  alert("Un Servicio destino esta presente en mas de un servicio origen");
+                  e.preventDefault();
+                  return false;
+                }
+            }
+            return true;
+          });
+
+
+          /* paso 4. Migrar servicios.
+             Solo muestra el selector de centro si se quiere crear un nuevo
+             servicio. Sino se oculta y se usa el centro del servicio mapeado.
+          */  
+          $(".select-servicio").on("change",function(){
+            var id_select_centro = 'servicio'+ $(this).attr("data-id")+'centro';
+            
+            if ($(this).val()!=0){
+              $('#'+id_select_centro).hide();
+            }else{
+              $('#'+id_select_centro).show();
+            }
+          });
+
+      });
+      
+    </script>
+</%def>
+
+<%def name="content()">
+
+  % if 'output' in extra_vars and extra_vars['output'] != []:
+    <h2 class="red-warning">Resultados importantes del paso anterior</h2>
+    <ul>
+      % for msg in extra_vars['output']:
+        <li>${msg}</li>
+      % endfor
+    </ul>
+  % endif
+
+  <form action="" method="post" id="form">  
+      % if extra_vars['step']>=2:
+        <input type="hidden" name="database_origen"
+               value="${extra_vars['database_origen']}" />
+        <input type="hidden" name="database_destino"
+               value="${extra_vars['database_destino']}" />
+      % endif
+  
+      % if extra_vars['step']==1:
+        <h2>Paso 1: Configurar Base de datos</h2>
+        <p class="red-warning">ATENCION: Es recomendable trabajar con copias de las Bases de datos ORIGEN y DESTINO! <br>
+        NO USAR las bases de datos de los servidores en PRODUCCION!
+        </p>
+        <h3>Base de datos ORIGEN:</h3>
+        <input type="text" class="full-w" name="database_origen"
+          value=""/>
+        <h3>Base de datos DESTINO:</h3>
+        <input type="text" class="full-w" name="database_destino"
+          value=""/>
+        % if 'error' in extra_vars:
+          <h3 class="red-warning">${extra_vars['error']}</h3>
+        % endif
+        
+        <p><input type="submit" value="Ejecutar e ir a siguiente paso"></p>
+
+      % elif extra_vars['step']==2:
+        
+        <h2>Paso 2: Crear tablas auxilires de la migracion</h2>
+        <ul>
+          <li>Se crearan en ORIGEN y DESTINO una tabla con nombre "migracion"</li>
+          <li>
+            En las tablas que se necesiten extraer y migrar datos se crearan <br/>
+            las columnas: data_destino_uid (ORIGEN), data_origen_uid (DESTINO) <br/>
+            y data_origen_reg_id (DESTINO)
+          </li>
+        </ul>
+
+        <input type="submit" value="Ejecutar e ir a siguiente paso">
+
+        <div class="saltar-paso-div">
+          <h3>Reanudar de un paso en particular</h3>
+          <p>
+              <input type="button" class="saltar-paso" data-nextpaso="4" value="Ejecutar y saltar al paso 4 (Mapear o crear Servicios)">
+          </p>
+          <p>
+              <input type="button" class="saltar-paso" data-nextpaso="5" value="Ejecutar y saltar al paso 5 (Copiar  Usuarios, Formularios , Campos, Elementos, etc)">
+          </p>
+          <p>
+              <input type="button" class="saltar-paso" data-nextpaso="6" value="Ejecutar y saltar al paso 6 (Copiar  Exploraciones)">
+          </p>
+          <p>
+              <input type="button" class="saltar-paso" data-nextpaso="7" value="Ejecutar y saltar al paso 7 (Copiar Exploraciones Dicom)">
+          </p>
+          <p>
+              <input type="button" class="saltar-paso" data-nextpaso="8" value="Ejecutar y saltar al paso 8 (Copiar Rel Formularios Exploraciones)">
+          </p>
+          <p>
+              <input type="button" class="saltar-paso" data-nextpaso="9" value="Ejecutar y saltar al paso 9 (Copiar ValoresTexto)">
+          </p>
+          <p>
+              <input type="button" class="saltar-paso" data-nextpaso="10" value="Ejecutar y saltar al paso 10 (Copiar ValoresSelec)">
+          </p>
+          <p>
+              <input type="button" class="saltar-paso" data-nextpaso="11" value="Ejecutar y saltar al paso 11 (Copiar ValoresMulti)">
+          </p>
+          <p>
+              <input type="button" class="saltar-paso" data-nextpaso="12" value="Ejecutar y saltar al paso 12 (Copiar ValoresBool)">
+          </p>
+          <p>
+              <input type="button" class="saltar-paso" data-nextpaso="13" value="Ejecutar y saltar al paso 13 (Copiar Capturas) (Registros BD)">
+          </p>
+          <p>
+              <input type="button" class="saltar-paso" data-nextpaso="14" value="Ejecutar y saltar al paso 14 (Copiar Informes (Registros BD))">
+          </p>
+          <p>
+              <input type="button" class="saltar-paso" data-nextpaso="15" value="Ejecutar y saltar al paso 15 (Copiar Rel_Capturas_Informes)">
+          </p>
+          <p>
+              <input type="button" class="saltar-paso" data-nextpaso="16" value="Ejecutar y saltar al paso 16 (Copiar Citas)" />
+          </p>
+          <p>
+              <input type="button" class="saltar-paso" data-nextpaso="17" value="Ejecutar y saltar al paso 17 (Copiar/Mover Archivos Capturas)" />
+          </p>
+          <p>
+              <input type="button" class="saltar-paso" data-nextpaso="18" value="Ejecutar y saltar al paso 18 (Copiar/Mover Archivos Informes)" />
+          </p>
+      </div>
+
+
+      % elif extra_vars['step']==3:
+        
+        <h2>Paso 3: Crear o Mapear Centros</h2>
+        % for ori_centros in extra_vars['centros']['origen']:
+          <h3>
+            ID: ${ori_centros['id']}, 
+            Nombre: ${ori_centros['nombre']}
+          </h3>
+          % if ori_centros['mapeado'] == 0:
+            <p>Selecciona la accion: 
+              <select name="centro${ori_centros['id']}"
+                      class="select-centro">
+                <option value="0">Crear nueva con el mismo nombre</option>
+                % for des_centros in extra_vars['centros']['destino']:
+                  <option value="${des_centros['id']}">
+                    ID: ${des_centros['id']}, 
+                    Nombre: ${des_centros['nombre']}
+                  </option>
+                % endfor
+              </select>
+            </p>
+          % else:
+          <p class="red-warning">Este centro ya esta mapeado en la base de datos destino</p>
+          % endif
+        % endfor
+
+        <input type="submit" value="Ejecutar e ir a siguiente paso">
+
+      % elif extra_vars['step']==4:
+        
+        <h2>Paso 4: Crear o Mapear Servicios</h2>
+        % for ori_servicios in extra_vars['servicios']['origen']:
+          <h3>
+            ID: ${ori_servicios['id']}, 
+            Nombre: ${ori_servicios['nombre']}
+          </h3>
+          % if ori_servicios['mapeado'] == 0:
+            <p>Selecciona la accion: 
+              <select name="servicio${ori_servicios['id']}"
+                      class="select-servicio"
+                      data-id="${ori_servicios['id']}">
+                <option value="0">Crear nueva con el mismo nombre</option>
+                % for des_servicios in extra_vars['servicios']['destino']:
+                  <option value="${des_servicios['id']}">
+                    ID: ${des_servicios['id']}, 
+                    Nombre: ${des_servicios['nombre']},
+                    Centro: ${des_servicios['centro']['nombre']}
+                  </option>
+                % endfor
+              </select>
+              <select name="servicio${ori_servicios['id']}centro"
+                      id="servicio${ori_servicios['id']}centro">
+                    % for des_centros in extra_vars['centros']['destino']:
+                    <option value="${des_centros['id']}">
+                      ID: ${des_centros['id']}, 
+                      Nombre: ${des_centros['nombre']}
+                    </option>
+                  % endfor
+              </select>
+            </p>
+          % else:
+          <p class="red-warning">Este servicio ya esta mapeado en la base de datos destino</p>
+          % endif
+        % endfor
+
+        <input type="submit" value="Ejecutar e ir a siguiente paso">
+
+      % elif extra_vars['step']==5:
+        
+        <h2>Paso 5: Migrar primera parte de datos</h2>
+        <p>Aquí se migrarán los siguientes datos:
+          <ul>
+            <li>Salas</li>
+            <li>Rel_salas_servicios</li>
+            <li>Agendas</li>
+            <li>Horariosagendas</li>
+            <li>Rel_salas_agendas</li>
+            <li>Workstations</li>
+            <li>Rel_servicios_workstations</li>
+            <li>Users</li>
+            <li>Roles</li>
+            <li>Users_roles</li>
+            <li>Usuarios</li>
+            <li>Medicos</li>
+            <li>Rel_medicos_agendas</li>
+            <li>Rel_medicos_servicios</li>
+            <li>Aseguradoras</li>
+            <li>Prioridades</li>
+            <li>Motivoscancelacion</li>
+            <li>Campos</li>
+            <li>Textospredefinidos</li>
+            <li>Gruposcampos</li>
+            <li>Elementos</li>
+            <li>Formularios</li>
+            <li>Valorespordefecto</li>
+            <li>Rel_campos_formularios</li>
+            <li>Rel_gruposcampos_formularios</li>
+            <li>Tiposexploracion</li>
+            <li>Rel_forms_tiposexpl</li>
+            <li>Rel_serv_tiposexpl </li>
+            <li>Poblaciones </li>
+            <li>Provincias </li>
+          </ul>
+        </p>
+
+        <input type="submit" value="Ejecutar e ir a siguiente paso">
+
+      % elif extra_vars['step']==6:
+        
+        <h2>Paso 6: Migrar exploraciones</h2>
+        <p>
+          <ul>
+            <li>Exploraciones</li>
+            <li>Pacientes/Rel_Centros_Pacientes asociados a las exploraciones</li>
+          </ul>
+        </p>
+
+        <p>
+          <strong>Migrar exploraciones de un rango de fechas</strong>
+          <br> Inicio: <input type="text" name="fecha_ini" id="" placeholder="DD/MM/AAAA" value="">
+          <br> Fin: <input type="text" name="fecha_fin" placeholder="" id="DD/MM/AAAA" value="">
+        </p>
+
+        <p>
+          <strong>Configurar prefijo de exploraciones</strong>
+          <br> Para evitar números de exploración duplicados es conveniente indicar un prefijo.
+          <br> (Rango usado actualmente [Min: ${extra_vars['rangos']['min_exploracion']}, Max: ${extra_vars['rangos']['max_exploracion']}])
+          <br> <input type="text" name="prefijo_exploracion" id="" value="0">
+        </p>
+    
+        <input type="submit" value="Ejecutar e ir a siguiente paso">
+    
+      % elif extra_vars['step']==7:
+        
+        <h2>Paso 7: Migrar Exploraciones DICOM</h2>
+        <p>
+          <ul>
+            <li>Exploraciones_Dicom</li>
+          </ul>
+        </p>
+
+        <input type="submit" value="Ejecutar e ir a siguiente paso">
+
+      % elif extra_vars['step']==8:
+        
+        <h2>Paso 8: Migrar Rel_Formularios_Exploraciones</h2>
+        <p>
+          <ul>
+            <li>Rel_Formularios_Exploraciones</li>
+          </ul>
+        </p>
+
+        <input type="submit" value="Ejecutar e ir a siguiente paso">
+
+
+      % elif extra_vars['step']==9:
+        
+        <h2>Paso 9: Migrar valores texto</h2>
+        <p>
+          <ul>
+            <li>ValoresTexto</li>
+          </ul>
+        </p>
+
+        <input type="submit" value="Ejecutar e ir a siguiente paso">
+
+      % elif extra_vars['step']==10:
+        
+        <h2>Paso 10: Migrar valores Selec</h2>
+        <p>
+          <ul>
+            <li>ValoresSelec</li>
+          </ul>
+        </p>
+
+        <input type="submit" value="Ejecutar e ir a siguiente paso">
+
+      % elif extra_vars['step']==11:
+        
+        <h2>Paso 11: Migrar valores Multi</h2>
+        <p>
+          <ul>
+            <li>ValoresMulti</li>
+          </ul>
+        </p>
+
+        <input type="submit" value="Ejecutar e ir a siguiente paso">
+
+      % elif extra_vars['step']==12:
+        
+        <h2>Paso 12: Migrar valores Bool</h2>
+        <p>
+          <ul>
+            <li>ValoresBool</li>
+          </ul>
+        </p>
+
+        <input type="submit" value="Ejecutar e ir a siguiente paso">
+
+      % elif extra_vars['step']==13:
+        
+        <h2>Paso 13: Migrar Capturas</h2>
+        <p>
+          <ul>
+            <li>Capturas</li>
+          </ul>
+        </p>
+
+        <input type="submit" value="Ejecutar e ir a siguiente paso">
+
+      % elif extra_vars['step']==14:
+        
+        <h2>Paso 14: Migrar Informes</h2>
+        <p>
+          <ul>
+            <li>Informes</li>
+          </ul>
+        </p>
+        
+        <p>
+          <strong>Configurar prefijo de informes</strong>
+          <br> Para evitar números de informes duplicados es conveniente indicar un prefijo.
+          <br> (Rango usado actualmente [Min: ${extra_vars['rangos']['min_informe']}, Max: ${extra_vars['rangos']['max_informe']}])
+          <br> <input type="text" name="prefijo_informe" id="" value="0">
+        </p>
+
+        <input type="submit" value="Ejecutar e ir a siguiente paso">
+  
+      % elif extra_vars['step']==15:
+        
+        <h2>Paso 15: Migrar Rel_Capturas_Informes</h2>
+        <p>
+          <ul>
+            <li>Rel_Capturas_Informes</li>
+          </ul>
+        </p>
+
+        <input type="submit" value="Ejecutar e ir a siguiente paso">
+
+      % elif extra_vars['step']==16:
+        
+        <h2>Paso 16: Migrar Citas</h2>
+        <p>
+          <ul>
+            <li>Citas</li>
+            <li>Pacientes/Rel_Centros_Pacientes asociados a las citas</li>
+          </ul>
+        </p>
+
+        <input type="submit" value="Ejecutar e ir a siguiente paso">
+
+      % elif extra_vars['step']==17:
+        <input type="hidden" name="database_origen"
+               value="${extra_vars['database_origen']}" />
+        <input type="hidden" name="database_destino"
+               value="${extra_vars['database_destino']}" />
+        <h2>Paso 17: Copiar Capturas</h2>
+        <h3>Ruta de capturas origen</h3>
+        <p class="red-border-dash">
+          <input type="checkbox" class="checkbox" name="generate_capturas_test" id="" /> Solo Test!: Generar capturas de test para probar copia.
+        </p>
+        <input type="text" name="capturas_origen"
+          value="c:\capturas_origen\"/>
+        <h3>Ruta de capturas destino</h3>
+        <input type="text" name="capturas_destino"
+          value="c:\capturas_destino\"/>
+        <p>
+          <label for="mover_capturas">
+            <p><strong><input type="checkbox" class="checkbox" name="mover_capturas" id="mover_capturas" /> Mover capturas? </strong> <br>
+              Si selecciona esta opción las capturas se moveran en vez de copiarse <br>
+              (Realizar esta acción si realmente esta seguro que no tendrá que recuperar los archivos originales <br> ya que los archivos cambiarán de nombre y para revertir la migración se tendrá que hacer manualmente
+            </p>
+          </label>
+          
+        </p>
+        <p>
+          <input type="submit" value="Ejecutar e ir a siguiente paso">
+        </p>
+
+      % elif extra_vars['step']==18:
+        
+        <h2>Paso 18: Copiar o mover Informes</h2>
+        <h3>Ruta de informes origen</h3>
+        <p class="red-border-dash">
+          <input type="checkbox" class="checkbox" name="generate_informes_test" id="" /> Solo Test!: Generar informes de test para probar copia.
+        </p>
+        <p>Los informes se copiarán desde destino a origen y se <br>
+           modificaran los nombres de archivo para con los nuevos ID's de  <br>
+           la base de datos destino</p>
+        <input type="text" name="informes_origen"
+          value="c:\informes_origen\"/>
+        <h3>Ruta de informes destino</h3>
+        <input type="text" name="informes_destino"
+          value="c:\informes_destino\"/>
+        <p>
+          <label for="mover_informes">
+            <p><strong><input type="checkbox" class="checkbox" id="mover_informes" name="mover_informes" /> Mover informes? </strong> <br>
+              Si selecciona esta opción los informes se moveran en vez de copiarse <br>
+              (Realizar esta acción si realmente esta seguro que no tendrá que recuperar los archivos originales <br> ya que los archivos cambiarán de nombre y para revertir la migración se tendrá que hacer manualmente
+            </p>
+          </label>
+          
+        </p>
+          
+        <p>
+          <input type="submit" value="Ejecutar e ir a siguiente paso">  
+        </p>
+      
+      % elif extra_vars['step']==19:
+
+        <h2 class="green-bold">La migración a finalizado!</h2>
+
+      % endif
+      
+      <input type="hidden" value="" id="stepnext" name="stepnext" />
+      <input type="hidden" value="${extra_vars['step']}" id="step" name="step" />
+      
+  </form>
+</%def>

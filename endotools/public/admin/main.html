@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es" dir="ltr">
+	<head>
+	    <title>EndoTools Web</title>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<style type="text/css">
+			body {
+				margin:0;
+				padding:0;
+			}
+			
+			#user_container{
+				padding: 0px;
+				height:40px;
+			}
+
+			#textarea_sql {
+				border: 1px solid;
+				font-family: Monospace;
+				font-size: large;
+			}
+
+			#nombre_usuario {
+				font-size: x-large;
+				font-weight: bolder;
+			}
+
+			#version_number{
+				font-size: 14px
+			}
+
+			#hacer_login, #hacer_logout{
+				visibility: hidden;
+			}
+		</style>
+
+		<!--	JQUERY	-->
+		<link type="text/css" href="/webapp/themes/pentax/jqueryui/jquery-ui-1.9.2.custom.css" rel="stylesheet" />
+		<script data-main="/web/" type="text/javascript" src="/lib/jquery/require-jquery.js"></script>
+		<script type="text/javascript" src="/lib/jquery-ui-1.9.2.custom/js/jquery-ui-1.9.2.custom.js"></script>
+
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="/lib/yui3/build/cssfonts/fonts-min.css">
+		<link rel="stylesheet" type="text/css" href="/lib/yui3/build/widget/assets/skins/sam/widget.css">
+		<link rel="stylesheet" type="text/css" href="/lib/yui3/build/widget/assets/skins/sam/widget-stack.css">
+		<link rel="stylesheet" type="text/css" href="/lib/yui3/build/overlay/assets/skins/sam/overlay.css">
+		<!-- JS -->
+		<script type="text/javascript" src="/lib/yui3/build/yui/yui-min.js"></script>
+		<script type="text/javascript" src="/lib/yui3/build/oop/oop-min.js"></script>
+		<script type="text/javascript" src="/lib/yui3/build/dom/dom-min.js"></script>
+		<script type="text/javascript" src="/lib/yui3/build/pluginhost/pluginhost-min.js"></script>
+		<script type="text/javascript" src="/lib/yui3/build/event-custom/event-custom-min.js"></script>
+		<script type="text/javascript" src="/lib/yui3/build/node/node-min.js"></script>
+		<script type="text/javascript" src="/lib/yui3/build/event/event-min.js"></script>
+		<script type="text/javascript" src="/lib/yui3/build/attribute/attribute-min.js"></script>
+		<script type="text/javascript" src="/lib/yui3/build/base/base-min.js"></script>
+		<script type="text/javascript" src="/lib/yui3/build/classnamemanager/classnamemanager-min.js"></script>
+		<script type="text/javascript" src="/lib/yui3/build/widget/widget-min.js"></script>
+		<script type="text/javascript" src="/lib/yui3/build/widget/widget-stdmod-min.js"></script>
+		<script type="text/javascript" src="/lib/yui3/build/widget/widget-position-min.js"></script>
+		<script type="text/javascript" src="/lib/yui3/build/widget/widget-position-align-min.js"></script>
+		<script type="text/javascript" src="/lib/yui3/build/widget/widget-stack-min.js"></script>
+		<script type="text/javascript" src="/lib/yui3/build/widget/widget-position-constrain-min.js"></script>
+		<script type="text/javascript" src="/lib/yui3/build/overlay/overlay-min.js"></script>
+		<script type="text/javascript" src="/lib/yui3/build/querystring/querystring-stringify-simple-min.js"></script>
+		<script type="text/javascript" src="/lib/yui3/build/queue-promote/queue-promote-min.js"></script>
+		<script type="text/javascript" src="/lib/yui3/build/datatype/datatype-xml-min.js"></script>
+		<script type="text/javascript" src="/lib/yui3/build/io/io-min.js"></script>
+		<script type="text/javascript" src="/lib/yui3/build/json/json-min.js"></script>	
+		<script type="text/javascript" src="/lib/yui2/build/yahoo/yahoo.js"></script>	
+		<script type="text/javascript" src="/lib/yui2/build/dom/dom.js"></script>	
+		<script type="text/javascript" src="/lib/yui2/build/event/event.js"></script>	
+		<script type="text/javascript" src="/lib/yui2/build/dragdrop/dragdrop-min.js"></script>  
+	</head>
+	<body class="yui-skin-sam" style="margin-left:10px">
+		
+		<h1>EndoTools Web <span id="version_number"></span></h1>
+		
+		<div id="user_container">
+			<div id="hacer_login">
+				<span>Usuario</span>
+				<input id="user" type="text" value="" />
+				<label>Contraseña</label>
+				<input id="password" type="password" value="" />
+				<button id="signin">Aceptar</button>
+			</div>
+			
+			<div id="hacer_logout">
+				<span>Usuario autenticado</span>
+				<span id="nombre_usuario"></span>
+				<button id="signout">Salir</button>
+			</div>
+		</div>
+		
+		<div>
+			<h3>Generales</h3>
+			<ul>
+				<li>
+					<div><a href="/web">EndoTools Web</a></div>
+					<div>Entrar en la aplicación de EndoTools Web</div>
+				</li>
+				
+				<li>
+					<div><a href="/admin/debug.html">Excepciones</a></div>
+					<div>Muestra un listado con las excepciones ocurridas en el servidor de EndoTools Web y permite obtener información mas detallada de cada una</div>
+				</li>
+				<li style="display:none">
+					<div><a href="/check">Comprobaciones</a></div>
+					<div>Informe de comprobaciones y configuración del servidor de EndoTools Web</div>
+				</li>
+				<li style="display:none">
+					<div><a href="/check/plantillas">Comprobación de plantillas de informe</a></div>
+					<div>Utilidad para previsualizar y comprobar el funcionamiento de las plantillas de informe</div>
+				</li>
+				
+				<li style="display:none">
+					<div><a href="/config">Configuración</a></div>
+					<div>Modificar el archivo de configuración INI de EndoTools Web</div>
+				</li>
+				
+				<li style="display:none">
+					<div><a href="/reasignar_paciente">Reasignación de paciente en prueba</a></div>
+					<div>Utilidad para modificar el paciente de una exploración</div>
+				</li>
+			</ul>	
+			<h3>Base de datos</h3>
+			<ul>
+				<li>
+					<div><a href="/dbupdate">Actualización de BBDD</a></div>
+					<div>Actualiza la base de datos desde una versión anterior cuando se acaba de actualizar EndoTools Web a una nueva versión</div>
+				</li>
+				<li>
+					<div><a href="/admin/sql.html">Ejecutar consultas SQL</a></div>
+					<div>Permite acceder a la BBDD de EndoTools Web y ejecutar consultas de SQL</div>
+				</li>
+			</ul>
+			<h3>Integración</h3>
+			<ul>
+				<li>
+					<div><a href="hl7test.html">HL7 test</a></div>
+					<div>Utilidad para probar el procesado de la mensajería HL7</div>
+				</li>
+			</ul>
+
+			<h3>Mantenimiento</h3>
+			<ul>
+				<li>
+					<div><a href="/commands/organizar-capturas">Organizar carpeta de capturas en servidor</a></div>
+					<div>
+						Lanza una tarea que reorganiza las capturas que estan en la raiz del servidor a sus carpetas correspondientes con el formato Año/Mes
+					</div>
+				</li>
+				<li>
+					<div><a href="/commands/organizar-informes">Organizar carpeta de informes en servidor</a></div>
+					<div>
+						Lanza una tarea que reorganiza los informes que estan en la raiz del servidor a sus carpetas correspondientes con el formato Año/Mes
+					</div>
+				</li>
+				<li>
+					<div><a href="/commands/migracion">Migracion de BD</a></div>
+					<div>
+						
+					</div>
+				</li>
+			</ul>
+
+		</div>
+			
+		<script>
+			function aleatorio() {
+				return parseInt(Math.random()*999999);
+			}
+
+			function mostrar_signin(Y, user) {
+				Y.Node.one('#hacer_login').setStyle('visibility', 'visible');
+				Y.Node.one('#hacer_login').setStyle('position', 'static');
+				Y.Node.one('#hacer_logout').setStyle('visibility', 'hidden');
+				Y.Node.one('#hacer_logout').setStyle('position', 'absolute');
+				Y.Node.one('#password').set('user', user);
+				Y.Node.one('#password').set('value', '');
+			}
+			
+			function mostrar_signout(Y, user) {
+				Y.Node.one('#hacer_login').setStyle('visibility', 'hidden');
+				Y.Node.one('#hacer_login').setStyle('position', 'absolute');
+				Y.Node.one('#hacer_logout').setStyle('visibility', 'visible');
+				Y.Node.one('#hacer_logout').setStyle('position', 'static');
+				Y.Node.one('#nombre_usuario').set('innerHTML', user); 
+			}
+			
+			YUI({filter: "raw", base: "/lib/yui3/build/"}).use("node", "overlay", "io", "json-parse", 'event', function(Y) {
+		
+				Y.Node.one('#hacer_logout').setStyle('visibility', 'hidden');
+				Y.Node.one('#hacer_logout').setStyle('position', 'absolute');
+
+				var signin_config = {
+					method: 'POST',
+					timeout: 5000,			
+					on: {
+						success: function (x, o) {
+							mostrar_signout(Y, Y.Node.one('#user').get("value"));
+						},
+						failure: function (x, o) {
+							alert("Error " + o.status + ": " + o.statusText);
+						}
+					}
+				}
+
+				var signout_config = {
+					method: 'POST',
+					timeout: 5000,			
+					on: {
+						success: function (x, o) {
+							mostrar_signin(Y, '');
+						},
+						failure: function (x, o) {
+							alert("Error " + o.status + ": " + o.statusText);
+						}
+					}
+				}
+
+				$("#password").keypress(function(e){
+					//console.log(e)
+					if (e.charCode==13){
+						do_login();
+					}
+				});
+
+				Y.on('click', function(e) {
+					do_login();
+				}, '#signin');
+				
+				function do_login(){
+					var user = Y.Node.one('#user').get("value");
+					var password = Y.Node.one('#password').get("value");
+					signin_config.data = 'username=' + user + '&password=' + password + '&_rand=' + aleatorio();
+					Y.io("/auth/signin", signin_config);
+				}
+
+				Y.on('click', function(e) {
+					Y.io("/auth/signout", signout_config);
+				}, '#signout');
+			
+				var getremoteuser_config = {
+					method: 'POST',
+					timeout: 5000,			
+					on: {
+						success: function (x, o) {
+							if (o.responseText) {					
+								mostrar_signout(Y, o.responseText);
+							} else {
+								mostrar_signin(Y, '');
+							}
+						},
+						failure: function (x, o) {
+							alert("Error " + o.status + ": " + o.statusText);
+						}
+					}
+				}
+
+				Y.io("/auth/remote_user", getremoteuser_config);
+				
+				$.get('/version', function(data) {
+					$('#version_number').html('v' + data);
+				});
+				
+			});
+		
+		</script>
+		
+	</body>
+
+</html>

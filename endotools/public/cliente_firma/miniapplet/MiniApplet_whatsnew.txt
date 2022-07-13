@@ -1,0 +1,15 @@
+MiniApplet 1.0.1
+----------------------------
+
+BUG;	Firma;		Corrección en la generación de firmas EPES para la AGE utilizando el parámetro extra expPolicy.
+RFE;	Despliegue;	Optimización del despliegue por JNLP utilizando técnicas de descompresión del applet en Pack200.
+RFE;	Despliegue;	Despliegue del miniapplet como aplicación web JEE (miniapplet.war)
+BUG;	Otros;		Mejora del proceso de identificación de los formatos de ficheros de MSOffice (excel, powerpoint y project) a partir de la cabecera.
+BUG;	Documentación;	Corrección/ampliación con los valores necesarios para generar firmas con política de la AGE v1.8 y Facturae v3.0 y v3.1.
+RFE;	Documentación;	Inclusión de apartado "Problemas conocidos".
+
+Leyenda:
+--------
+
+BUG:	Reparación de error.
+RFE:	Request for Enhancement - Se refiere a cualquier cambio realizado para mejorar el cliente.

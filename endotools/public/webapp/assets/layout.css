@@ -1,0 +1,118 @@
+﻿/*
+COLORES:
+	#FFFFFF		blanco			Usado en resizer y toggler del layout.
+	#DDD		gris			Resizer del layout.
+	#D44848		rojo			Limite del resizer.
+*/
+
+/*
+layout_main_content
+contenedor2
+*/
+
+/*
+********	JQUERY UI-LAYOUT	************
+.layout-background:			El fondo de un layout, para el mainlayout y dialogs con un layout dentro.
+
+Clases a aplicar a los paneles de un layout:
+.endo-panel					Estilo visual, color fondo como el content de jqueryui
+.endo-panel-alt				Estilo visual, color alternativo (NO SE USA)
+.endo-panel-detail			Estilo visual, blanco con una imagen en la esquina superior izq.
+.endo_pane_redondeado		Estilo visual, esquinas redondeadas
+.endo_pane_content			Un panel que tiene contenido (y no otro layout) debe tener esta clase (padding)
+...
+
+NOTAS:
+Ya no se usa la clase .endo_color_fuerte. Al tener el mismo color que el fondo,
+se ha asignado ese color por defecto para los paneles.
+
+Se ha eliminado la clase .endo_color_suave, ya que coincidia
+con el color de los botones y otros controles, y visualmente no quedaba bien.
+
+La clase .endo_color_medio se ha renombrado a .endo-panel-alt. Además, ahora mismo
+no se usa en ninguna pantalla, y es posible que se termine eliminando.
+
+La clase .endo_content_background se ha renombrado a .endo-panel-detail , ya que normalmente
+se usa para mostrar el detalle, aunque no tiene porqué se así.
+
+La clase .endo_color_claro se ha renombrado a .endo-panel , ya que es el estilo
+más habitual de los paneles en EndoTools.
+*/
+
+.layout_main_content {
+	height: 100%;
+	*height: 450px;	/* en IE7 se ha de indicar un alto concreto */
+}
+
+.ui-layout-pane {
+	overflow: auto; /*SCROLL*/
+}
+
+.endo_pane_redondeado {
+	border-radius: 10px;
+}
+
+.endo_pane_content {
+	padding: 10px;
+}
+
+/*			RESIZERS		*/
+.ui-layout-resizer-west-sliding {	border-radius: 0 10px 10px 0; }
+.ui-layout-resizer-north-sliding {	border-radius: 0 0 10px 10px; }
+.ui-layout-resizer-east-sliding {	border-radius: 10px 0 0 10px; }
+.ui-layout-resizer-south-sliding {	border-radius: 10px 10px 0 0; }
+
+.ui-layout-resizer-closed-hover,
+.ui-layout-resizer-drag, /* cloned bar */
+.ui-layout-resizer-dragging {
+	background:			#DDD !important; /* need higher specificity */
+	opacity: 			0.5 !important;  /* ditto - not sure why? */
+	filter: 			Alpha(Opacity=50) !important;
+}
+
+.ui-layout-resizer-dragging-limit {
+	background:			#D44848 !important; /* cuando llega al limite maximo permitido se pone en rojo*/
+}
+
+.ui-layout-resizer-closed {
+	background-color: #FFFFFF;
+	/*background: url(/web/assets/resizer_background.png) repeat scroll 0 0 #D1E6FC;*/
+	 /*background: url("../../lib/jquery-ui-1.9.2.custom/css/endotools/images/ui-bg_glass_75_e6e6e6_1x400.png") repeat-x scroll 50% 50% #E6E6E6;*/
+	opacity:		.60;
+	filter:			Alpha(Opacity=60);
+	/*margin-top: -10px !important;*/
+}
+
+.ui-layout-resizer-west-closed {		border-radius: 0 10px 10px 0; }
+.ui-layout-resizer-north-closed {	border-radius: 0 0 10px 10px; }
+.ui-layout-resizer-east-closed {		border-radius: 10px 0 0 10px; }
+.ui-layout-resizer-south-closed {	border-radius: 10px 10px 0 0; }	
+
+/*			TOGGLERS		*/
+.ui-layout-toggler {
+	background-color: #FFF;
+	opacity:		.60;
+	filter:			Alpha(Opacity=60);
+}
+
+.ui-layout-toggler.ui-layout-toggler-hover {
+	opacity:		1;
+	filter:			Alpha(Opacity=100);
+}
+
+/*.ui-layout-resizer-open-hover .ui-layout-toggler, 
+.ui-layout-toggler-hover {
+	opacity:		1;
+	filter:			Alpha(Opacity=100);
+}*/
+
+.ui-layout-toggler-east-closed, 
+.ui-layout-toggler-west-open	{ background: transparent url(/web/assets/layout/toggle-lt.gif) no-repeat right center; }
+.ui-layout-toggler-west-closed, 
+.ui-layout-toggler-east-open	{ background: transparent url(/web/assets/layout/toggle-rt.gif) no-repeat left center; }
+.ui-layout-toggler-south-closed, 
+.ui-layout-toggler-north-open	{ background: transparent url(/web/assets/layout/toggle-up.gif) no-repeat center bottom; }
+.ui-layout-toggler-north-closed, 
+.ui-layout-toggler-south-open	{ background: transparent url(/web/assets/layout/toggle-dn.gif) no-repeat center top; }
+
+

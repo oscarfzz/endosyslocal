@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es" dir="ltr">
+<head>
+    <title>EndoTools Web - Debug</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+	/*margin and padding on body element
+	  can introduce errors in determining
+	  element position and are not recommended;
+	  we turn them off as a foundation for YUI
+	  CSS treatments. */
+	body {
+		margin:0;
+		padding:0;
+	}
+	</style>
+
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="/yui3/build/cssfonts/fonts-min.css">
+	<!-- JS -->
+	<script type="text/javascript" src="/yui3/build/yui/yui-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/oop/oop-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/dom/dom-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/event-custom/event-custom-base-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/event/event-base-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/pluginhost/pluginhost-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/node/node-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/event/event-delegate-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/querystring/querystring-stringify-simple-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/queue-promote/queue-promote-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/datatype/datatype-xml-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/io/io-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/json/json-min.js"></script>	
+	
+</head>
+
+
+<body class="yui-skin-sam">
+	<h1>Debug de excepciones de Pylons</h1>
+
+	<dl id="exception_list">
+	</dl>
+	
+	<input id="button1" type="button" value="Actualizar" class="button" />
+
+	<script>
+	function aleatorio() {
+		return parseInt(Math.random()*999999);
+	}
+
+	YUI({combine: true, timeout: 10000}).use("node", "io", "json-parse", function(Y) {
+	
+		var callback = {
+			timeout: 60000,
+			on: {
+				success: function (x, o) {
+					var data;
+					try {
+						data = Y.JSON.parse(o.responseText);
+					} catch (e) {
+						alert("error parsing JSON");
+					}
+					
+					var exception_list = Y.Node.one('#exception_list');
+					exception_list.get('children').remove();
+					for (var i = 0; i < data.length; i++) {
+						exception_list.append('<dt><strong>' + data[i].created + ' - ' + data[i].exception_type + ': ' + data[i].exception + '<strong></dt>');
+						exception_list.append('<dd><a href="' + data[i].uri + '">' + data[i].uri + '</a></dd>');
+					}
+				},
+				failure: function (x, o) {
+					alert("Error " + o.status + ": " + o.statusText);
+				}
+			}
+		}
+
+		Y.io("/_debug/summary", callback);
+
+		Y.on('click', function(e) {
+			callback.data = '_rand=' + aleatorio();
+			Y.io("/_debug/summary", callback);
+		}, '#button1');
+		
+	});
+	
+	</script>
+	
+</body>
+
+</html>

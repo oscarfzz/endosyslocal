@@ -1,0 +1,209 @@
+﻿#exploracion-asignarvaloresdefecto-btn {
+	float: right;
+	display: none !important;	/*	!!! deshabilitado	*/
+}
+
+#exploracion_form_top {
+	margin-bottom: 2px;
+	text-align: left;
+	font-weight: bolder;
+	width: 100%;
+}
+
+#exploracion_form_top #num_exploracion, #exploracion_form_top #tipo_exploracion {
+	font-size: 120%;
+	font-weight: bolder;
+	margin-right: 1em;
+}
+
+#exploracion_form_top #fecha, #exploracion_form_top #hora {
+	float: right;
+	margin-right: 1em;
+}
+
+#exploracion_form_top #historia {
+	margin-left: 0.6em;
+	margin-right: 0.3em;
+	color: inherit;	/*	THEMABLE	*/
+}
+
+#exploracion_form_top #medico, #exploracion_form_top #sala {
+	float: right;
+	margin-right: 1em;
+}
+
+
+#exploracion-mostrar-paciente {
+	padding: 2px;
+	text-decoration: none;
+	color: #222222;
+}
+
+/*	los mismos colores hover del tema de jQueryUI	*/
+#exploracion-mostrar-paciente:hover {
+	background-color: inherit;	/*	THEMABLE	*/
+	border-color: inherit;	/*	THEMABLE	*/
+	border-width: 1px;
+	border-style: solid;
+	margin-left: -1px;
+}
+
+
+/*	TABS	*/
+
+#exploracion_form_tabview .ui-tabs-panel {
+	min-width: 820px;
+}
+
+#exploracion_form_tabview {
+	overflow: auto;
+}
+
+/*	Mostrar el botón de "Capturar" en el "header" del Tabs, reservando un espacio
+a la derecha mediante el padding-right
+*/
+#exploracion_form_tabview .ui-tabs-nav {
+	padding-right: 280px;
+	/*padding-right: 115px;*/
+}
+
+#exploracion-capturar-btn {
+	position: absolute;
+	right: 6px;
+	top: 6px;
+}
+
+#captura-importarimg-btn{
+	position: absolute;
+	right: 110px;
+	top: 6px;
+}
+/*	tab de cita	*/
+#exploracion-tab-citas input {		width: 216px; }
+#exploracion-tab-citas textarea {	width: 616px;	height: 110px; }
+
+
+/*	tab de informes	*/
+#exploracion-tab-informes>.pure-u-1-2>div { padding-right: 1em; }
+
+
+/*	tab de imagenes	*/
+	
+#exploracion_form_tabview #exploracion-tab-imagenes {
+	text-align: left;
+	padding: 10px;
+	min-height: 420px;
+}	
+
+/*	XXX	*/
+#exploracion_form_tabview #exploracion-tab-imagenes>.ui-layout-center {
+	/*overflow: hidden;*/
+}
+
+/*#exploracion_form_tabview #exploracion-tab-imagenes>.ui-layout-east {
+	text-align: center;
+}*/
+
+#exploracion_form_tabview #exploracion-tab-imagenes>.ui-layout-center>ul {
+	padding: 0;
+	margin: 0;
+}
+
+#exploracion_form_tabview #exploracion-tab-imagenes .endotools-imagen-container {
+	display: inline-block;
+	*display: inline;	/*	IE7	*/
+	padding: 4px;
+	margin: 4px 0px;
+	position: relative;	/*	para permitir posicionar dentro de forma absoluta el checkbox	*/
+}	
+	
+#exploracion_form_tabview #exploracion-tab-imagenes img.endotools-imagen {
+	cursor: pointer;
+}
+
+#exploracion_form_tabview #exploracion-tab-imagenes li label.ui-button {
+	position: absolute;
+	right: 4px;
+	bottom: 4px;
+	width: 20px;
+	height: 20px;
+	margin-right: 0.1em;
+}
+
+#numero_tipo_exploracion{
+	font-size: 120%;
+    font-weight: bolder;
+    color:#888;
+}
+
+.dialog_exploracion_sin_finalizar .ui-layout-resizer{
+	display:none!important;
+}
+.dialog_exploracion_sin_finalizar .ui-layout-north{
+	height:97%!important;
+	/*overflow:hidden;*/
+}
+.dialog_exploracion_sin_finalizar .ui-layout-center{
+	height:0%!important;
+	display:none!important;
+}
+
+.dialog_primer_valor{
+	margin-top: 10px;
+}
+
+.dialog_valor_anterior{
+	color:red;
+	text-align: center;
+	font-weight: bold;
+}
+
+.dialog_valor_nuevo{
+	color:green;
+	text-align: center;
+	font-weight: bold;
+}
+
+.dialog_valor_flecha{
+	text-align: center;
+}
+
+#dialog_informacion_cita{
+	display:none;
+}
+
+
+#exploracion-tab-informes hr {margin-bottom: 20px; margin-top: 20px;}
+#exploracion-ver-todos-informes { letter-spacing: 0 !important;}
+
+#exploracion-borrar-btn, #exploracion-recuperar-btn {
+    float: right;
+}
+
+#exploracion-borrar-btn{
+	color:red;
+}
+
+#busquedaexpl-eliminados{
+	margin-top: -26px;
+    padding: 0 1.4em;
+}
+
+#exploracion_borrada {
+	display: none;
+	padding-left: 30px;
+	cursor:pointer;
+}
+
+#exploracion_borrada span{
+	color:red;
+	font-weight: bolder;
+	font-size: 120%;
+}
+
+#exploracion_borrada i{
+ 	color: red;
+    display: inline-block;
+    font-size: 110;
+    padding-left: 4px;
+}

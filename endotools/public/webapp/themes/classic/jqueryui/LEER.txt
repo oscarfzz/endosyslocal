@@ -1,0 +1,2 @@
+En la version jquery ui 1.11 han cambiado la estructura de archivos,
+en principio ahora el CSS se llama simplemente "jquery-ui.css" (y jquery-ui.min.css).

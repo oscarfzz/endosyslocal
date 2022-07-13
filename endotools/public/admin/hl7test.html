@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es" dir="ltr">
+<head>
+    <title>EndoTools Web - HL7 Test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+	
+	.container {
+		padding: 12px;
+	}
+	
+	#mensaje_hl7 {
+		width: 100%;
+		height: 250px;
+	}
+	
+/*	body {
+		margin:0;
+		padding:0;
+	}*/
+	</style>
+
+	<!--	JQUERY	-->
+	<link type="text/css" href="/webapp/themes/pentax/jqueryui/jquery-ui-1.9.2.custom.css" rel="stylesheet" />
+	<script data-main="/web/" type="text/javascript" src="/lib/jquery/require-jquery.js"></script>
+	<script type="text/javascript" src="/lib/jquery-ui-1.9.2.custom/js/jquery-ui-1.9.2.custom.js"></script>
+	
+</head>
+
+
+<body>
+	<h1>HL7 Test</h1>
+
+	<div class="container">
+		<textarea id="mensaje_hl7"></textarea>
+	</div>
+	
+	<input id="button_send" type="button" value="Enviar mensaje" />
+
+	<p id="response"></p>
+	
+
+	<script>
+	function aleatorio() {
+		return parseInt(Math.random()*999999);
+	}
+	
+	$(function() {
+	
+		$('#button_send').click(function() {
+			//	enviar el mensaje HL7 al controller
+/*			$.post('/hl7/process', $('#mensaje_hl7').val(), function(data) {
+				$('#response').html(data);
+			});*/
+
+			var v = $('#mensaje_hl7').val();
+			v = v.split('\n').join('\r');
+			
+			$.ajax({
+				type: 'POST',
+				url: '/hl7/process',
+				data: v,
+				processData: false,
+				contentType: 'text/plain; charset=UTF-8',
+				success: function(data) {
+					$('#response').html(data);
+				}
+			});
+			
+			
+		});
+		
+	});
+	</script>
+	
+</body>
+
+</html>

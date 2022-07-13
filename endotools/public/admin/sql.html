@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es" dir="ltr">
+<head>
+    <title>EndoTools Web - SQL Manager</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+	#textarea_sql {
+		border: 1px solid;
+		font-family: Monospace;
+		font-size: large;
+	}
+
+	</style>
+
+	<!--
+	<link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/3.0.0/build/cssfonts/fonts-min.css" />
+	<script type="text/javascript" src="http://yui.yahooapis.com/3.0.0/build/yui/yui-min.js"></script>
+	-->
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="/yui3/build/cssfonts/fonts-min.css">
+	<link rel="stylesheet" type="text/css" href="/yui3/build/widget/assets/skins/sam/widget.css">
+	<link rel="stylesheet" type="text/css" href="/yui3/build/widget/assets/skins/sam/widget-stack.css">
+	<link rel="stylesheet" type="text/css" href="/yui3/build/overlay/assets/skins/sam/overlay.css">
+	<!-- JS -->
+	<script type="text/javascript" src="/yui3/build/yui/yui-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/oop/oop-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/dom/dom-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/pluginhost/pluginhost-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/event-custom/event-custom-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/node/node-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/event/event-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/attribute/attribute-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/base/base-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/classnamemanager/classnamemanager-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/widget/widget-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/widget/widget-stdmod-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/widget/widget-position-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/widget/widget-position-align-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/widget/widget-stack-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/widget/widget-position-constrain-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/overlay/overlay-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/querystring/querystring-stringify-simple-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/queue-promote/queue-promote-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/datatype/datatype-xml-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/io/io-min.js"></script>
+	<script type="text/javascript" src="/yui3/build/json/json-min.js"></script>	
+
+
+	<!--
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?2.8.0r4/build/datatable/assets/skins/sam/datatable.css">
+	<script type="text/javascript" src="http://yui.yahooapis.com/combo?2.8.0r4/build/yahoo-dom-event/yahoo-dom-event.js&2.8.0r4/build/dragdrop/dragdrop-min.js&2.8.0r4/build/element/element-min.js&2.8.0r4/build/datasource/datasource-min.js&2.8.0r4/build/datatable/datatable-min.js"></script>
+	-->
+	<!-- Individual YUI CSS files -->  
+	<link rel="stylesheet" type="text/css" href="/yui2/build/datatable/assets/skins/sam/datatable.css">   
+	<!-- Individual YUI JS files -->  
+	<script type="text/javascript" src="/yui2/build/yahoo-dom-event/yahoo-dom-event.js"></script>  
+	<script type="text/javascript" src="/yui2/build/datasource/datasource-min.js"></script>  
+	<script type="text/javascript" src="/yui2/build/dragdrop/dragdrop-min.js"></script>  
+	<script type="text/javascript" src="/yui2/build/element/element-min.js"></script>  
+	<script type="text/javascript" src="/yui2/build/datatable/datatable-min.js"></script>  
+
+</head>
+
+
+<body class="yui-skin-sam">
+	<h1>Ejecutar consultas SQL</h1>
+	
+	<p>Escriba los comandos de SQL que desea ejecutar y pulse el botón "Ejecutar"</p>
+	<textarea id="textarea_sql" class="textarea" cols="80" rows="8" ></textarea>
+	<p>
+	<select id="select_presets"></select>
+	</p>
+	<input id="button_run" type="button" value="Ejecutar" class="button" />
+	<input id="button_run_lines" type="button" value="Ejecutar línea a línea (Oracle)" class="button" />
+	<h2>Resultados:</h2>
+	<div id="datatable_results"></div> 
+	<div id="notas_de_uso">
+	<h2>NOTAS DE USO</h2>
+	<h3>Utilizando BBDD de Oracle</h3>
+	<p>El nombre de la tabla se debe escribir respetando mayúsculas y minúsculas
+	y entre comillas dobles. p.ej. <code>SELECT * FROM "TiposExploracion"</code>.</p>
+	<p>Se ha de tener en cuenta que sólo se permite ejecutar una sola instrucción de SQL.
+	Si se quiere ejecutar varias instrucciones (por ejemplo varios DELETEs o INSERTs),
+	se deben introducir cada una en una línea y utilizar el botón "Ejecutar línea a línea"</p>
+	</div>
+	
+	<script>
+	YUI({filter: "raw", base: "/yui3/build/"}).use("node", "overlay", "io", "json-parse", 'event', function(Y) {	
+//	YUI({combine: true, timeout: 10000}).use("node", "overlay", "io", "json-parse", 'event', 'yui2-dragdrop', 'yui2-datatable', function(Y) {
+
+		//	PRESET QUERIES
+		var preset_queries = [
+			['Mostrar todas las tablas', 'EXEC sp_tables @table_type = "\'TABLE\'"'],
+			['Mostrar información de las columnas de una tabla', 'EXEC sp_columns @table_name = \'(tabla)\''],			
+			['Mostrar la tabla \'users\'', 'SELECT * FROM users'],
+			['Crear nuevo usuario', 'INSERT INTO users (username, password) VALUES (\'\', \'\')'],
+			['Crear nuevo médico', 'INSERT INTO medicos (username, nombre) VALUES (\'\', \'\')'],
+			['Modificar NULL/NO NULL columna de pacientes', 'ALTER TABLE pacientes ALTER COLUMN DNI varchar(50) NULL'],
+			['Eliminar todas las exploraciones (sin eliminar imágenes ni informes)',
+				'(ESTE COMENTARIO SE HA PUESTO EXPRESAMENTE PARA DAR UN ERROR YA QUE ESTA QUERY ELIMINARÁ TODAS LAS EXPLORACIONES. PARA EJECUTARLA, ELIMINAR ESTE COMENTARIO)\n\n' +
+				'delete from valorestexto\n' +
+				'delete from valoresselec\n' +
+				'delete from valoresbool\n' +
+				'delete from valoresmulti\n' +
+				'delete from rel_formularios_exploraciones\n' + 
+				'delete from citas\n' + 
+				'delete from rel_capturas_informes\n' + 
+				'delete from informes\n' + 
+				'delete from capturas\n' + 
+				'delete from exploraciones_dicom\n' + 
+				'delete from exploraciones\n']
+		]
+		var select_presets = Y.Node.one('#select_presets');
+		select_presets._node.options.length = 0;
+		select_presets._node.options[0] = new Option("Seleccione un preset...", "");
+		for (var i = 0; i < preset_queries.length; i++) {
+			select_presets._node.options[i+1] = new Option(preset_queries[i][0], preset_queries[i][1]);
+		}
+
+		//	TABLA DE RESULTADOS
+		var myDataSource = new YAHOO.util.DataSource([]);
+        myDataSource.responseType = YAHOO.util.DataSource.TYPE_JSARRAY;
+        myDataSource.responseSchema = {
+            fields: [ {key: 'campo1'}, {key: 'campo2'} ]
+        };
+	
+        var datatable_results = new YAHOO.widget.DataTable("datatable_results", [ {key: 'campo1'}, {key: 'campo2'} ], myDataSource);
+	
+		var run_config = {
+			method: 'POST',
+			timeout: 60000,			
+			on: {
+				success: function (x, o) {
+					
+					var data;
+					try {
+						data = Y.JSON.parse(o.responseText);
+					} catch (e) {
+						alert("error parsing JSON");
+					}
+
+					//	vaciar tabla
+					datatable_results.deleteRows(0, datatable_results.getRecordSet().getLength());
+					
+					//	eliminar columnas
+					while (datatable_results.getColumnSet().keys.length > 0) {
+						datatable_results.removeColumn(datatable_results.getColumnSet().keys[0]);
+					}
+					myDataSource.responseSchema.fields = [];
+					
+					if (data.columns && data.rows/* && (data.rows.length > 0)*/) {
+						//	recrear columnas					
+						for (var i = 0; i < data.columns.length; i++) {
+							datatable_results.insertColumn( {key: data.columns[i], sortable: true, resizeable: true} );
+							myDataSource.responseSchema.fields.push(data.columns[i]);
+						}
+						
+						//	añadir filas
+						for (var i = 0; i < data.rows.length; i++) {
+							datatable_results.addRow( data.rows[i] );
+						}
+					}
+					
+					alert("Los comandos se han ejecutado correctamente");
+					
+				},
+				failure: function (x, o) {
+					alert("Error " + o.status + ": " + o.statusText);
+				}
+			}
+		}
+
+		Y.on('click', function(e) {
+			var textarea_sql = Y.Node.one('#textarea_sql');
+			run_config.data = 'sql=' + textarea_sql.get('value');
+			Y.io("/sql/run", run_config);
+		}, '#button_run');
+
+		Y.on('click', function(e) {
+			var textarea_sql = Y.Node.one('#textarea_sql');
+			var lines = textarea_sql.get('value').split('\n');
+			for (var i = 0; i < lines.length; i++) {
+				run_config.data = 'sql=' + lines[i];
+				Y.io("/sql/run", run_config);
+			}			
+		}, '#button_run_lines');
+
+		Y.on('change', function(e) {
+			if (e.target._node.selectedIndex == 0) return;
+			var textarea_sql = Y.Node.one('#textarea_sql');
+			if (textarea_sql.get('value') != '') {
+				if (!confirm('Se perderá el código SQL actual. ¿Desea continuar?')) return;
+			}
+			textarea_sql.set('value',
+						e.target._node.options[e.target._node.selectedIndex].value);
+		}, '#select_presets');
+		
+		Y.on('keydown', function(e) {
+			select_presets._node.selectedIndex = 0;			
+		}, '#textarea_sql');
+		
+	});
+	
+	</script>
+	
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+﻿<form class="pure-form pure-form-stacked">
+	<fieldset>
+		<legend data-i18n>Datos del centro</legend>
+		<div class="pure-g">
+			<div class="pure-u-1-2">
+				<label for="codigo-centro" data-i18n>Código</label>
+				<input id="codigo-centro" type="text">
+			</div>
+
+			<div class="pure-u-1-2">
+				<label for="nombre-centro" data-i18n>Nombre</label>
+				<input id="nombre-centro" type="text">
+			</div>															
+		</div>
+	</fieldset>	
+
+	<fieldset>
+		<legend data-i18n>Salas del centro</legend>
+		<div class="pure-g">
+			<div class="pure-u-1-2">
+				<div id="zona_salas">
+					<label data-i18n>Salas</label>					
+					<table id="tabla_salas" class="display" cellpadding="0" cellspacing="0" border="0">
+							<thead>
+								<tr><th data-i18n>Id</th><th data-i18n>Descripción</th></tr>
+							</thead>
+							<tbody >
+
+								
+								
+							</tbody>
+					</table>
+					<div id="botones_salas" style="float: right;">
+						<button class="mas_button" type="button" id = "nueva_sala" data-i18n>Añadir valor</button>		
+					</div>
+					
+				</div>
+			</div>
+
+			<div class="pure-u-1-2">
+			</div>						
+		</div>
+	</fieldset>
+	
+	<fieldset>
+		<legend></legend>
+			<button id="modificar_btn" type="button" value="Guardar" data-i18n>Modificar centro</button>
+			<button id="nuevo_btn" type="button" value="Guardar" data-i18n>Nuevo centro</button>
+			<button id="eliminar_btn" type="button" value="Eliminar" data-i18n>Eliminar centro</button>			
+	</fieldset>
+</form>
+
+

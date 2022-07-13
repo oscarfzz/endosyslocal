@@ -1,0 +1,54 @@
+·DESCRIPCIÓN DE CARPETAS Y ARCHIVOS:
+
+ /ELIMINAR_*	carpetas a eliminar
+ /js		archivos javascript comunes a cualquier web de EndoTools Web
+ /firebug-lite	Herramienta de debug para IE7
+ /newweb	Aplicación principal EndoTools Web
+ /yui2 y /yui3	bibliotecas YUI utilizadas actualmente por /newweb
+ /test		pruebas, no necesario
+ admin.html	admin
+ blank.*	JPG y PN, referenciados en lib/informes.py...
+
+
+·MOVER ESPECIFICAS DE CLIENTES A OTRA UBICACIÓN:
+
+ /broggi
+ /capio
+ /chus
+ /HUCA
+ /ramblanova
+
+
+·VARIOS
+
+  Firebug lite: ¿Dejar esta herramienta?
+  El contenido de /misc se ha movido a /js
+  El contenido de /pruebas se ha movido a /test
+  Valorar si se elimina /test
+  Comprobar si se puede eliminar la carpeta /templates_informes (usado en RamblaNova¿?)
+  unknown.png (referenciado en rest/capturas.py) no es parte de web, se ha pasado a
+	una nueva carpeta endotools/res)
+  se renombra /newweb -> /webapp
+  se renombra /js -> /lib
+  se renombra /newadmin -> /admin
+  se mueve y renombra admin.html a /admin/main.html
+  se mueven /yui2 y /yui3 a /lib/yui2 y /lib/yui3
+
+
+·REORGANIZAR CARPETAS Y ARCHIVOS: (algo asi)
+  
+  webapp	aplicación principal de EndoTools Web (/newweb)
+  informes	archivos usados por el server de informes (blank.jpg, blank.png)
+  admin		admin existente (admin.html)
+  lib		librerias comunes del servidor, usadas por la aplicación,
+		admin, etc... (/js, /yui2, /yui3)
+  misc		varios archivos no necesarios para la aplicación (/firebug-lite...)
+  "cliente"	archivos adicionales de clientes específicos, normalmente para informes
+		(fuentes, logos...) -> (/broggi, /capio, etc...).
+
+
+·OBJETIVO:
+
+Facilidad para actualizar aplicación completa "genérica", borrando una carpeta y sustitu-
+yéndola por otra. Para ello, en /endotools/public solo debería "webapp", "informes",
+"admin", "lib" y posiblemente "util".

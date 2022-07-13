@@ -1,0 +1,7 @@
+los ficheros CSV de poblaciones y provincias, son los adoptados como estandar por endotoolsWeb, 
+en caso de querer cargar otro listado distinto, ha de respetar la misma arquitectura.
+
+Los ficheros .BAT se han de configurar las rutas segun el entorno
+
+los fichero cargar_poblaciones.py y cargar_provincias.bat se han de editar para configurar la 
+constantes que utiliza. Configurar la base de datos, nombre del fichero,...

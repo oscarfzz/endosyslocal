@@ -1,0 +1,117 @@
+﻿<form class="pure-form pure-form-aligned form-detalle-cita">	
+	
+	<fieldset>
+		<legend data-i18n>Datos del paciente</legend>
+		<div class="pure-g">
+			<div class="pure-u-1-2">
+				<div class="pure-control-group">
+					<label data-i18n>Nombre</label>
+					<input id="campo-nombre" readonly></input>
+				</div>
+			</div>
+			<div class="pure-u-1-2">
+				<div class="pure-control-group">
+					<label data-i18n>Teléfonos</label>		
+					<input id="campo-telefonos" readonly></input>
+				</div>
+			</div>
+			<div class="pure-u-1-2">
+				<div class="pure-control-group" id="div-nhc-cip" style="display: none">
+					<label id="label-nhc-cip" data-i18n>Identificador</label>
+					<input id="campo-nhc-cip" readonly></input>
+				</div>
+			</div>
+			<div class="pure-u-1-2" id="div-nhc-centro" id="div-nhc-centro" style="display: none">
+				<div class="pure-control-group">
+					<label id="label-nhc-centro" data-i18n>NHC</label>
+					<input id="campo-nhc-centro" readonly></input>
+				</div>
+			</div>
+			<div class="pure-u-1-2">
+				<div class="pure-control-group">
+					<label data-i18n>Aseguradora</label>		
+					<input id="campo-aseguradora" readonly></input>
+				</div>
+			</div>
+			<div class="pure-u-1-2">
+				<div class="pure-control-group">
+					<label data-i18n>Fecha de nacimiento</label>		
+					<input id="campo-fecha-nacimiento" readonly></input>
+				</div>
+			</div>
+			<div class="pure-u-1-2">
+				<div class="pure-control-group">
+					<button onclick="return false;" class="dummy-prevent-enter"></button>
+					<button id="button-ver-detalle-paciente" data-i18n>Ver detalle del paciente</button>
+				</div>
+			</div>
+		</div>
+	</fieldset>
+
+	<fieldset>
+		<legend data-i18n>Datos de la cita</legend>
+		<div class="pure-g">
+            <div class="pure-u-1-2">
+				<div class="pure-control-group">
+					<label for="campo-fecha" data-i18n>Fecha</label>
+					<input id="campo-fecha" placeholder="dd/mm/aaaa" data-i18n="[placeholder]dd/mm/aaaa" readonly></input>
+				</div>
+			</div>
+			<div class="pure-u-1-2">
+				<div class="pure-control-group">
+					<label for="agenda-list" data-i18n>Agenda</label>
+					<select size="1" id="agenda-list" ></select>				
+				</div>	
+			</div>
+			<div class="pure-u-1-2">	
+				<div class="pure-control-group">
+					<label for="campo-hora-ini" data-i18n>Hora inicio</label>
+					<input id="campo-hora-ini" placeholder="hh:mm" data-i18n="[placeholder]hh:mm"></input>		
+				</div>
+			</div>
+			<div class="pure-u-1-2">	
+				<div class="pure-control-group">
+					<label for="medico-list" data-i18n>Médico</label>
+					<select  size="1" id="medico-list" ></select>
+				</div>
+			</div>
+			<div class="pure-u-1-2">	
+				<div class="pure-control-group">
+					<label for="campo-hora-fin" data-i18n>Hora fin</label>
+					<input id="campo-hora-fin" placeholder="hh:mm" data-i18n="[placeholder]hh:mm"></input>
+				</div>
+			</div>
+			<div class="pure-u-1-2">	
+				<div class="pure-control-group">
+					<label for="sala-list" data-i18n>Sala</label>
+					<select  size="1" id="sala-list" ></select>
+				</div>
+			</div>
+			<div class="pure-u-1-2">
+				<div class="pure-control-group">
+					<label for="tipo_exploracion-list" data-i18n>Abrev:Tipo exploración</label>
+					<select  size="1" id="tipo_exploracion-list" ></select>
+				</div>
+			</div>
+			<div class="pure-u-1-2">	
+				<div class="pure-control-group">
+					<label for="priority-list" data-i18n>Prioridad</label>
+					<select  size="1" id="priority-list" ></select>
+				</div>
+			</div>
+			<div class="pure-u-1-2">
+				<div class="pure-control-group">
+					<label for="aseguradora-list" data-i18n>Aseguradora</label>
+					<select  size="1" id="aseguradora-list" ></select>
+				</div>
+			</div>
+		</div>			
+	</fieldset>
+	
+	<fieldset>
+		<legend data-i18n>Observaciones</legend>				
+		<textarea rows="6" id="observaciones" style="width: 100%;"></textarea> 		
+	</fieldset>		
+</form>
+
+
