@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<file-format>
+	<meta-header xfer="1.2.840.10008.1.2.1" name="LittleEndianExplicit">
+	</meta-header>
+	<data-set xfer="1.2.840.10008.1.2.1" name="LittleEndianExplicit">
+		<element tag="0008,0005" vr="CS" vm="0" len="0" name="SpecificCharacterSet"></element>
+		<sequence tag="0040,0100" vr="SQ" card="1" len="16" name="ScheduledProcedureStepSequence">
+		<item card="1" len="8">
+			<element tag="0008,0060" vr="CS" vm="0" len="0" name="Modality"></element>
+			<element tag="0040,0001" vr="AE" vm="0" len="0" name="ScheduledStationAETitle"></element>
+			<element tag="0040,0002" vr="DA" vm="0" len="0" name="ScheduledProcedureStepStartDate"></element>
+			<element tag="0040,0003" vr="TM" vm="0" len="0" name="ScheduledProcedureStepStartTime"></element>
+			<element tag="0040,0006" vr="PN" vm="0" len="0" name="ScheduledPerformingPhysiciansName"></element>
+			<element tag="0040,0007" vr="LO" vm="0" len="0" name="ScheduledProcedureStepDescription"></element>
+		</item>
+		</sequence>
+	</data-set>
+</file-format>

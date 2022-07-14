@@ -1,0 +1,11 @@
+setup.cfg
+setup.py
+CustomForm.egg-info/PKG-INFO
+CustomForm.egg-info/SOURCES.txt
+CustomForm.egg-info/dependency_links.txt
+CustomForm.egg-info/entry_points.txt
+CustomForm.egg-info/not-zip-safe
+CustomForm.egg-info/paster_plugins.txt
+CustomForm.egg-info/requires.txt
+CustomForm.egg-info/top_level.txt
+customform/__init__.py

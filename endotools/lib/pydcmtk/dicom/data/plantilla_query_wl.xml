@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<file-format>
+	<meta-header xfer="1.2.840.10008.1.2.1" name="LittleEndianExplicit">
+	</meta-header>
+	<data-set xfer="1.2.840.10008.1.2.1" name="LittleEndianExplicit">
+		<element tag="0008,0005" vr="CS" vm="0" len="0" name="SpecificCharacterSet"></element>
+		<element tag="0008,0050" vr="SH" vm="0" len="0" name="AccessionNumber"></element>
+		<element tag="0008,0090" vr="PN" vm="0" len="0" name="ReferringPhysicianName"></element>
+		<element tag="0010,0010" vr="PN" vm="0" len="0" name="PatientsName"></element>
+		<element tag="0010,0020" vr="LO" vm="0" len="0" name="PatientsID"></element>
+		<element tag="0010,0030" vr="DA" vm="0" len="0" name="PatientsBirthDate"></element>
+		<element tag="0010,0040" vr="DA" vm="0" len="0" name="PatientsSex"></element>
+		<element tag="0020,0010" vr="UI" vm="0" len="0" name="StudyID"></element>
+		<element tag="0020,000d" vr="UI" vm="0" len="0" name="StudyInstanceUID"></element>
+		<element tag="0032,1032" vr="PN" vm="0" len="0" name="RequestingPhysician"></element>
+		<element tag="0032,1060" vr="LO" vm="0" len="0" name="RequestedProcedureDescription"></element>
+		<element tag="0032,1033" vr="LO" vm="0" len="0" name="RequestingService"></element>
+		<element tag="0038,0010" vr="LO" vm="0" len="0" name="AdmissionID"></element>
+		<sequence tag="0040,0100" vr="SQ" card="1" len="16" name="ScheduledProcedureStepSequence">
+		<item card="1" len="8">
+			<element tag="0008,0060" vr="CS" vm="0" len="0" name="Modality"></element>
+			<element tag="0040,0001" vr="AE" vm="0" len="0" name="ScheduledStationAETitle"></element>
+			<element tag="0040,0002" vr="DA" vm="0" len="0" name="ScheduledProcedureStepStartDate"></element>
+			<element tag="0040,0003" vr="TM" vm="0" len="0" name="ScheduledProcedureStepStartTime"></element>
+			<element tag="0040,0006" vr="PN" vm="0" len="0" name="ScheduledPerformingPhysiciansName"></element>
+			<element tag="0040,0007" vr="LO" vm="0" len="0" name="ScheduledProcedureStepDescription"></element>
+			<element tag="0040,0009" vr="SH" vm="0" len="0" name="ScheduledProcedureStepID"></element>
+			<element tag="0040,0010" vr="SH" vm="0" len="0" name="ScheduledStationName"></element>
+			<element tag="0040,0011" vr="SH" vm="0" len="0" name="ScheduledProcedureStepLocation"></element>
+			<element tag="0040,0020" vr="CS" vm="0" len="0" name="ScheduledProcedureStepStatus"></element>
+			<element tag="0040,1001" vr="SH" vm="0" len="0" name="RequestedProcedureID"></element>
+			<element tag="0040,1003" vr="SH" vm="0" len="0" name="RequestedProcedurePriority"></element>
+			<element tag="0040,2016" vr="LO" vm="0" len="0" name="PlacerOrderNumberImagingServiceRequest"></element>
+		</item>
+		</sequence>
+		<element tag="0040,1001" vr="SH" vm="0" len="0" name="RequestedProcedureID"></element>
+		<element tag="0040,2016" vr="LO" vm="0" len="0" name="PlacerOrderNumberImagingServiceRequest"></element>
+		<element tag="0040,2017" vr="LO" vm="0" len="0" name="FillerOrderNumberImagingServiceRequest"></element>
+	</data-set>
+</file-format>

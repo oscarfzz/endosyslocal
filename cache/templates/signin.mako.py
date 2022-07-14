@@ -2,7 +2,7 @@ from mako import runtime, filters, cache
 UNDEFINED = runtime.UNDEFINED
 _magic_number = 2
 _modified_time = 1652869559.126
-_template_filename='c:\\endotoolsweb\\endotoolsweb\\endotools\\templates/signin.mako'
+_template_filename='c:\\endotoolsweb\\endosysapp\\endotools\\templates/signin.mako'
 _template_uri='/signin.mako'
 _template_cache=cache.Cache(__name__, _modified_time)
 _source_encoding='utf-8'

@@ -1,0 +1,5 @@
+
+      # -*- Entry points: -*-
+      [authkit.method]
+      customform=customform:make_customform_handler
+      

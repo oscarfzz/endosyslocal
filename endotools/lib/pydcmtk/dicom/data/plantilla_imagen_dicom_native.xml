@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<file-format>
+
+	<meta-header xfer="1.2.840.10008.1.2.1" name="LittleEndianExplicit">
+		<element tag="0002,0000" vr="UL" vm="1" len="4" name="MetaElementGroupLength"></element>
+		<element tag="0002,0002" vr="UI" vm="1" len="0" name="MediaStorageSOPClassUID"></element>
+		<element tag="0002,0003" vr="UI" vm="1" len="0" name="MediaStorageSOPInstanceUID"></element>
+		<element tag="0002,0010" vr="UI" vm="1" len="0" name="TransferSyntaxUID"></element>
+		<element tag="0002,0012" vr="UI" vm="1" len="0" name="ImplementationClassUID"></element>
+	</meta-header>
+
+   	<data-set xfer="1.2.840.10008.1.2.1" name="LittleEndianExplicit">
+		<element tag="0008,0005" vr="CS" vm="1" len="0" name="SpecificCharacterSet"></element>
+		<element tag="0008,0016" vr="UI" vm="1" len="0" name="SOPClassUID"></element>
+		<element tag="0008,0018" vr="UI" vm="1" len="0" name="SOPInstanceUID"></element>
+		<element tag="0008,0050" vr="SH" vm="1" len="0" name="AccessionNumber"></element>
+		<element tag="0008,0064" vr="CS" vm="1" len="0" name="ConversionType"></element>
+
+		<element tag="0010,0010" vr="PN" vm="1" len="0" name="PatientsName"></element>
+		<element tag="0010,0020" vr="LO" vm="1" len="0" name="PatientID"></element>
+		<element tag="0010,0030" vr="DA" vm="1" len="0" name="PatientsBirthDate"></element>
+		<element tag="0010,0040" vr="CS" vm="1" len="0" name="PatientsSex"></element>
+
+		<element tag="0008,0020" vr="DA" vm="1" len="0" name="StudyDate"></element>
+		<element tag="0008,0021" vr="DA" vm="1" len="0" name="SeriesDate"></element>
+		<element tag="0008,0030" vr="TM" vm="1" len="0" name="StudyTime"></element>
+		<element tag="0008,0031" vr="TM" vm="1" len="0" name="SeriesTime"></element>
+		<element tag="0008,0060" vr="CS" vm="1" len="0" name="Modality"></element>
+
+		<element tag="0008,0023" vr="DA" vm="1" len="0" name="ContentDate"></element>
+		<element tag="0008,0033" vr="TM" vm="1" len="0" name="ContentTime"></element>
+		<element tag="0020,0011" vr="IS" vm="1" len="0" name="SeriesNumber"></element>
+		<element tag="0020,0013" vr="IS" vm="1" len="0" name="InstanceNumber"></element>
+
+		<element tag="0020,000d" vr="UI" vm="1" len="0" name="StudyInstanceUID"></element>
+		<element tag="0020,000e" vr="UI" vm="1" len="0" name="SeriesInstanceUID"></element>
+
+		<element tag="0028,0002" vr="US" vm="1" len="0" name="SamplesPerPixel"></element>
+		<element tag="0028,0004" vr="CS" vm="1" len="0" name="PhotometricInterpretation"></element>
+		<element tag="0028,0006" vr="US" vm="1" len="0" name="PlanarConfiguration"></element>
+		<element tag="0028,0010" vr="US" vm="1" len="0" name="Rows"></element>
+		<element tag="0028,0011" vr="US" vm="1" len="0" name="Columns"></element>
+		<element tag="0028,0034" vr="IS" vm="2" len="0" name="PixelAspectRatio"></element>
+		<element tag="0028,0100" vr="US" vm="1" len="0" name="BitsAllocated"></element>
+		<element tag="0028,0101" vr="US" vm="1" len="0" name="BitsStored"></element>
+		<element tag="0028,0102" vr="US" vm="1" len="0" name="HighBit">7</element>
+		<element tag="0028,0103" vr="US" vm="1" len="0" name="PixelRepresentation">0</element>
+
+		<element tag="7fe0,0010" vr="OB" vm="1" len="0" name="PixelData" binary="yes"></element>
+	</data-set>
+
+</file-format>

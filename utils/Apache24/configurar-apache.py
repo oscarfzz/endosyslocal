@@ -81,13 +81,13 @@ def configurar_apache():
     endotools_ssl_config = 'httpd-endotools-ssl.conf'
     module = 'mod_wsgi.so'
 
-    if not path.exists('C:\endotoolsweb\Apache24'):
+    if not path.exists('C:\endosysapp\Apache24'):
         apache_dir = raw_input('Indicar directorio base de Apache: ')
     else:
         answer = raw_input("Desea usar el Apache detectado en" + \
-                           " 'C:\endotoolsweb\Apache24'? (S/n) ")
+                           " 'C:\endosysapp\Apache24'? (S/n) ")
         if len(answer) < 1 or answer[0].lower() != 'n':
-            apache_dir = 'C:\endotoolsweb\Apache24'
+            apache_dir = 'C:\endosysapp\Apache24'
         else:
             apache_dir = raw_input('Indicar directorio base de Apache: ')
 
@@ -98,7 +98,7 @@ def configurar_apache():
     # Buscamos si hay un fichero .ini, si no hay o hay multiples preguntamos
     # por el nombre.
     inis = []
-    for file in listdir(path.join(endotools_base, 'endotoolsweb')):
+    for file in listdir(path.join(endotools_base, 'endosysapp')):
         if file.endswith(".ini") and not 'test-endotools-sample.ini' in file:
             inis.append(file.replace('.ini',''))
 
@@ -114,14 +114,14 @@ def configurar_apache():
 
     # Buscamos en la configuración del .ini el puerto a usar.
     port = ''
-    if path.exists(path.join(endotools_base, 'endotoolsweb', '%s.ini' % nombre)):
+    if path.exists(path.join(endotools_base, 'endosysapp', '%s.ini' % nombre)):
         config = ConfigParser.RawConfigParser()
-        config.read(path.join(endotools_base, 'endotoolsweb', '%s.ini' % nombre))
+        config.read(path.join(endotools_base, 'endosysapp', '%s.ini' % nombre))
         port = config.get('server:main', 'port')
 
     print("Configuramos el fichero 'endotools.wsgi' para que use '%s.ini'." %
           nombre)
-    for line in input(path.join(endotools_base, 'endotoolsweb', 'endotools.wsgi'),
+    for line in input(path.join(endotools_base, 'endosysapp', 'endotools.wsgi'),
                       inplace=True):
         if "ini_file =" in line:
             print('ini_file = "%s.ini"' % nombre)
@@ -136,7 +136,7 @@ def configurar_apache():
     copy_file(path.join(base, module), path.join(apache_dir, 'modules', module))
 
     # Buscamos la version del entorno.
-    file = open(path.join(endotools_base, 'endotoolsweb', 'env_version.txt'), 'r')
+    file = open(path.join(endotools_base, 'endosysapp', 'env_version.txt'), 'r')
     env_version = file.read()
     file.close()
 

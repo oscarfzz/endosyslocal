@@ -1,0 +1,11 @@
+setup.cfg
+setup.py
+CustomCookie.egg-info/PKG-INFO
+CustomCookie.egg-info/SOURCES.txt
+CustomCookie.egg-info/dependency_links.txt
+CustomCookie.egg-info/entry_points.txt
+CustomCookie.egg-info/not-zip-safe
+CustomCookie.egg-info/paster_plugins.txt
+CustomCookie.egg-info/requires.txt
+CustomCookie.egg-info/top_level.txt
+customcookie/__init__.py

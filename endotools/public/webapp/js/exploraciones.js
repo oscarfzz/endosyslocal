@@ -185,7 +185,7 @@ var gestion_exploraciones = function () {
 
                     var port = document.location.port ? ("||" + document.location.port) : "";
                     var server = window.location.hostname + port;
-                    var url = "endotoolsweb:a=capture,e=" + exploracion.id + ",p=" + exploracion.paciente.id + ",s=" + server;
+                    var url = "endosysapp:a=capture,e=" + exploracion.id + ",p=" + exploracion.paciente.id + ",s=" + server;
                     window.open(url, "_self");
 
                     // deshabilita el boton por X segundos para evitar que sea presionado nuevamente.
@@ -763,7 +763,7 @@ var gestion_exploraciones = function () {
                                 // Actualiza el estado de gestion_exploracion
                                 gestion_exploraciones.estado = exploracion.estado;
 
-                                //$("#captura_link").attr("href", "endotoolsweb:a=capture,e="+exploracion.id+",p="+exploracion.paciente.id)
+                                //$("#captura_link").attr("href", "endosysapp:a=capture,e="+exploracion.id+",p="+exploracion.paciente.id)
                                 //
                                 // ---EWC
                                 //

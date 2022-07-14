@@ -1,4 +1,4 @@
-los ficheros CSV de poblaciones y provincias, son los adoptados como estandar por endotoolsWeb, 
+los ficheros CSV de poblaciones y provincias, son los adoptados como estandar por endosysapp, 
 en caso de querer cargar otro listado distinto, ha de respetar la misma arquitectura.
 
 Los ficheros .BAT se han de configurar las rutas segun el entorno

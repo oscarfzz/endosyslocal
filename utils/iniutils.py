@@ -8,13 +8,13 @@ from configobj import ConfigObj
 scriptpath = os.path.dirname(os.path.abspath(__file__))
 rootpath = os.path.abspath(os.path.join(scriptpath, '..'))
 
-TEMPLATEINI_FILENAME = "endotoolsweb-sample.ini"
+TEMPLATEINI_FILENAME = "endosysapp-sample.ini"
 TESTINI_FILENAME = "test-endotools-sample.ini"
 
 ####################
 # test
-ini = ConfigObj("endotoolsweb-sample.ini", list_values = False, interpolation = False)
-f = open("endotoolsweb-sample.xxx.ini", 'wb')
+ini = ConfigObj("endosysapp-sample.ini", list_values = False, interpolation = False)
+f = open("endosysapp-sample.xxx.ini", 'wb')
 ini.write(f)
 f.close()
 
@@ -87,7 +87,7 @@ def simplify(infile = "", outfile = ""):
 
 def format(infile = "", outfile = ""):
     """
-    Esta función crea un nuevo INI utilizando template "endotoolsweb-sample.ini"
+    Esta función crea un nuevo INI utilizando template "endosysapp-sample.ini"
     y rellenando los valores obtenidos de otro archivo INI.
     Si se omite infile, se usará el archivo INI de la raiz, a no ser que haya
     más de uno.

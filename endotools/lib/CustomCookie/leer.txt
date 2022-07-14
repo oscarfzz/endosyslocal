@@ -1,0 +1,5 @@
+para instalar:
+python setup.py develop
+
+
+http://wiki.pylonshq.com/display/authkitcookbook/Implement+Your+Own+Authentication+Method

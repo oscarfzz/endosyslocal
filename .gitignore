@@ -54,7 +54,8 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
+# lib/
+*/public/lib
 lib64/
 parts/
 sdist/
@@ -62,7 +63,7 @@ var/
 wheels/
 pip-wheel-metadata/
 share/python-wheels/
-*.egg-info/
+# *.egg-info/
 .installed.cfg
 *.egg
 MANIFEST
