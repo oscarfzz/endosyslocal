@@ -63,7 +63,7 @@ var cierre_sesion = function() {
 		_lanzar_logout: function(){
 			// Cierre de sesión
 			if (cierre_sesion._debug) console.log("Cerrar Sesión");
-			Endotools.auth.do_logout();
+			Endosys.auth.do_logout();
 			set_titulo_pantalla("","");
 						
 			set_continuar(null);

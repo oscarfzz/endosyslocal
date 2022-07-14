@@ -47,7 +47,7 @@ class Hl7Process:
             FusionarPaciente o GestionarCitas. Finalmente también reenvía a Procesar_ack
 
         MODIFICARPACIENTE
-            Obtiene config de conexión a EndoTools Web
+            Obtiene config de conexión a EndoSys Web
             Se autentifica (CONEXION HTTP)
             Obtiene el paciente por NHC (CONEXION HTTP)
             Comprueba si ya existe
@@ -63,12 +63,12 @@ class Hl7Process:
             filtra por tipo de ORM y reenvía a Nueva Cita o Eliminar Cita.
 
         NUEVA CITA
-            Obtiene config de conexión a EndoTools Web
+            Obtiene config de conexión a EndoSys Web
             Se autentifica (CONEXION HTTP)
             Crea una nueva cita (CONEXION HTTP)
 
         ELIMINAR CITA
-            Obtiene config de conexión a EndoTools Web
+            Obtiene config de conexión a EndoSys Web
             Se autentifica (CONEXION HTTP)
             Elimina una cita por ORDERID (CONEXION HTTP)
 
@@ -78,13 +78,13 @@ class Hl7Process:
 
     NUEVA INTEGRACIÓN:
         Mantener la comunicación, filtrado y transformación en Mirth Connect, y
-        hacer el procesado de los mensajes en EndoTools Web.
+        hacer el procesado de los mensajes en EndoSys Web.
 
         SE MANTIENEN:
             LEER_TCP
             ADAPTADOR
 
-        GESTIONA ENDOTOOLS WEB:
+        GESTIONA ENDOSYS WEB:
             PROCESAR MENSAJE
             MODIFICARPACIENTE
             GESTIONARCITAS
@@ -93,8 +93,8 @@ class Hl7Process:
 
     VARIOS: XXX
     ·   Para evitar confusiones con los conceptos de petición, cita, etc... de HL7
-        con el concepto de Cita de EndoTools, se tendría que renombrar este concepto
-        en EndoTools. Propuestas: "Programación", "Lista de trabajo"...
+        con el concepto de Cita de EndoSys, se tendría que renombrar este concepto
+        en EndoSys. Propuestas: "Programación", "Lista de trabajo"...
 
     ·   Debido a que ahora se guardan los segmentos completos (PV1, OBR y ORC) de las
         peticiones en CITAS_EX, se tiene que permitir acceder a campos concretos
@@ -455,7 +455,7 @@ class Hl7Process:
                 if not endosys.lib.hl7_wrapper.hl7absent(numero_expediente): paciente.numero_expediente = endosys.lib.hl7_wrapper.hl7val(numero_expediente)
 
                 #tratamiento del nhc centro en paciente
-                #si el centro no existe en EndoTools NO damos de alta el nhc_centro
+                #si el centro no existe en EndoSys NO damos de alta el nhc_centro
 
                 #en caso de que se trate de una modificación, si el paciente en base de datos ya tiene registrado el nhc_centro que hemos recibido lo omitimos,
                 #en caso de permitirlo estariamos realizando un cambio de número de historia y esto son palabras mayores
@@ -614,7 +614,7 @@ class Hl7Process:
 
     def modificar_cita_ORM(self, paciente_id):
         """
-        Modificar una cita de EndoTools Web a partir de un mensaje ORM^O01 de tipo XO.
+        Modificar una cita de EndoSys Web a partir de un mensaje ORM^O01 de tipo XO.
         Se identifica la cita mediante el Número de Petición.
         
         Hasta la versión 2.4.16 se modificaban estos campos:
@@ -750,7 +750,7 @@ class Hl7Process:
     
     def nueva_cita_ORM(self, paciente_id):
         """
-        Crear una nueva cita de EndoTools Web a partir de un mensaje ORM^O01 de tipo NW.
+        Crear una nueva cita de EndoSys Web a partir de un mensaje ORM^O01 de tipo NW.
 
         El paciente_id se ha tenido que obtener antes desde procesar_paciente().
         """
@@ -855,7 +855,7 @@ class Hl7Process:
 
     def cancelar_cita_ORM(self):
         """
-        Cancelar una cita de EndoTools Web a partir de un mensaje
+        Cancelar una cita de EndoSys Web a partir de un mensaje
         de petición (ORM) con order_control=CA
         (Antes en Mirth: ELIMINAR CITA)
         """
@@ -878,7 +878,7 @@ class Hl7Process:
 
     def nueva_cita_SIU(self, paciente_id):
         """
-        Crear una nueva cita de EndoTools Web a partir de un mensaje
+        Crear una nueva cita de EndoSys Web a partir de un mensaje
         de cita (SIU)
         El paciente_id se ha tenido que obtener antes desde procesar_paciente()
         Devuelve el id de la cita.
@@ -1023,7 +1023,7 @@ class Hl7Process:
 
     def modificar_cita_SIU(self, paciente_id):
         """
-        Modificar una cita de EndoTools Web a partir de un mensaje
+        Modificar una cita de EndoSys Web a partir de un mensaje
         de cita (SIU S13 y S14)
         Devuelve el id de la cita.
         XXX si no existe, crearla nueva¿? por si acaso, se pasa el id del paciente también...
@@ -1166,7 +1166,7 @@ class Hl7Process:
 
     def cancelar_cita_SIU(self):
         """
-        Cancelar una cita de EndoTools Web a partir de un mensaje
+        Cancelar una cita de EndoSys Web a partir de un mensaje
         de petición (SIU)
         (El mapeo de campos se ha hecho igual a la integración del Gregorio Marañón)
         """
@@ -1191,7 +1191,7 @@ class Hl7Process:
 
     def nuevas_citas_SQR(self, pacientes_ids):
         """
-        Crear nuevas citas de EndoTools Web a partir de un mensaje
+        Crear nuevas citas de EndoSys Web a partir de un mensaje
         de SQR, respuesta del SQM.
         
         Los pacientes_ids se han obtenido antes desde procesar_paciente().
@@ -1204,7 +1204,7 @@ class Hl7Process:
         segmentos. Según he investigado, parece que es algo correcto en el estandar
         HL7. En este caso, la forma de identificar cada grupo es buscando el primer
         segmento de cada grupo, que es el SCH.
-        Para EndoTools siempre tienen que llegar estos segmentos en cada
+        Para EndoSys siempre tienen que llegar estos segmentos en cada
         grupo (y en el mismo orden):
             SCH
             PID
@@ -1270,7 +1270,7 @@ class Hl7Process:
             if nte:
                 observaciones =         endosys.lib.hl7_wrapper.hl7val(nte.get(3.1))   #   HL7: Comment
 
-            # El CHUS envía el ncita en SCH.2 (Filler), pero EndoTools normalmente lo espera
+            # El CHUS envía el ncita en SCH.2 (Filler), pero EndoSys normalmente lo espera
             # en SCH.1 (Placer). Para simplificar, de momento lo cogemos de SCH.2, pero por consistencia
             # sería mejor cogerlo de SCH.1 y hacer un mapeo en Mirth.
             numero_cita =               endosys.lib.hl7_wrapper.hl7val(sch.get(2.1))   #   HL7: Filler Appointment ID

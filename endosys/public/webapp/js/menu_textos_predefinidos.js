@@ -51,7 +51,7 @@
 
 			if (predefined_id !=null){
 
-				Endotools.predefinidos.show(TM.content_exploraciones.detalles.textospredefinidos, predefined_id)
+				Endosys.predefinidos.show(TM.content_exploraciones.detalles.textospredefinidos, predefined_id)
 				.done(function(predefinido) {
 					//	añadir
 					var s = $target.val();
@@ -69,7 +69,7 @@
 
 						params = {'activo': 1,'campo_id': campo.campo_rel_id, 'nombre': predefinido.nombre};
 
-						Endotools.elementos.index(TM.content_exploraciones.detalles.elementoscampos, params)
+						Endosys.elementos.index(TM.content_exploraciones.detalles.elementoscampos, params)
 						.done(function(elementos) {
 							// donde se insertará el option
 							var control_destino = $("#form-"+campo.formulario_id + "-campo-"+campo.campo_rel_id);
@@ -125,7 +125,7 @@
 			 */
 			var menu = menu_textos_predefinidos._crear_menu(campo, $parent, target_id);
 			
-			return Endotools.predefinidos.index(
+			return Endosys.predefinidos.index(
 				TM.content_exploraciones.detalles.textospredefinidos,
 				{'campo_id': campo.id}, {fail404: false})
 				//{'campo_id': campo.id, activo: true}, {fail404: false})

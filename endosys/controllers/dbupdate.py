@@ -140,7 +140,7 @@ class DbupdateController(BaseController):
         SQL Alchemy no tiene opciones de actualización de tablas, asi que se
         tiene que hacer directamente con "ALTER TABLES".
 
-        Esta función se debería mantener "sincronizada" con el model de EndoTools
+        Esta función se debería mantener "sincronizada" con el model de EndoSys
         Web y con el archivo "MODIFICACIONES BBDD.txt"
 
         Además debería probarse siempre con SQL Server, Oracle, y otros posibles
@@ -156,7 +156,7 @@ class DbupdateController(BaseController):
         if  not isinstance(meta.engine.dialect, mysql.MySQLDialect) and \
             not isinstance(meta.engine.dialect, mssql.MSSQLDialect) and \
             not isinstance(meta.engine.dialect, oracle.OracleDialect):
-            self.output_log +=  'ATENCION!!! El motor de base de datos no es compatible con EndoTools.'
+            self.output_log +=  'ATENCION!!! El motor de base de datos no es compatible con EndoSys.'
             log.error('motor de bbdd imcompatible.')
         else:
             # 2.3.0

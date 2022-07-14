@@ -1,5 +1,5 @@
 ﻿'''
-Registro de puestos cliente de EndoTools que se han conectado en alguna ocasión,
+Registro de puestos cliente de EndoSys que se han conectado en alguna ocasión,
 identificados por la IP.
 
 Para poder guardar una configuración de un equipo cliente debería estar

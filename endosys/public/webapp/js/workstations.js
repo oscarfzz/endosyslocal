@@ -5,7 +5,7 @@ function get_workstation() {
 	//	devuelve promise
 	workstation=null;
 
-	return Endotools.workstations.show(TM.operaciones, 'auto')
+	return Endosys.workstations.show(TM.operaciones, 'auto')
 	.done(function(_workstation) {
 		workstation = _workstation;
 		$("#info_puesto").html(workstation.nombre);
@@ -72,7 +72,7 @@ function dialog_crear_workstation(){
 						});
 
 						// cargar los servicios de cada centro
-						Endotools.centros.index(TM.operaciones)
+						Endosys.centros.index(TM.operaciones)
 						.then(function(centros){
 							cargar_multiselect_servicios(multiselect_control, centros, {servicios: []});
 						});
@@ -84,7 +84,7 @@ function dialog_crear_workstation(){
 	// si viene por el done quiere decir que se apreto "aceptar", por lo tanto se
 	// crea el workstation con los servicios seleccionados. 
 	.then(function(params){
-		return Endotools.workstations.create(TM.operaciones, params)
+		return Endosys.workstations.create(TM.operaciones, params)
 	});
 
 

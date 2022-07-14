@@ -1,5 +1,5 @@
 ﻿'''
-Estaciones de Trabajo (puestos) de EndoTools.
+Estaciones de Trabajo (puestos) de EndoSys.
 
 Para poder guardar una configuración de un equipo cliente debería estar
 configurado con una IP estática.

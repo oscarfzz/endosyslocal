@@ -24,7 +24,7 @@
 					set_continuar(function() {
 									//	comprobar antes que se haya seleccionado un paciente
 									if (!gestion_pacientes.paciente_id) {
-										Endotools.statusbar.mostrar_mensaje(_('Debe seleccionar un paciente para continuar'), 1);/*IDIOMAOK*/
+										Endosys.statusbar.mostrar_mensaje(_('Debe seleccionar un paciente para continuar'), 1);/*IDIOMAOK*/
 										return;
 									}
 									busqueda_por_paciente.paciente_id = gestion_pacientes.paciente_id;									

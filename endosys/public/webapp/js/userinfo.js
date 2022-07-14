@@ -20,7 +20,7 @@ var userinfo = function() {
 		}
 		
 		,inicializar: function(username) {
-			return Endotools.usuarios.show(TM.operaciones, username/*, {_showmode: '1'}*/)
+			return Endosys.usuarios.show(TM.operaciones, username/*, {_showmode: '1'}*/)
 			
 			.then(function(usuario) {
 				_usuario = usuario;
@@ -67,7 +67,7 @@ var userinfo = function() {
 					{num: 16, id: 'menu-principal-tareas',		desc: _('Tareas')},/*IDIOMAOK*/
 			];
 			
-			if (Endotools.auth.username=="sysadmin"){
+			if (Endosys.auth.username=="sysadmin"){
 				opciones_menu.push({num: 17, id: 'menu-principal-mensaje', desc: _('Enviar Mensaje')});/*IDIOMAOK*/
 			}
 
@@ -111,7 +111,7 @@ var userinfo = function() {
 					}
 				//el permiso admin_organizacion  para la opcion de "Configuración de endosys"
 				} else if (arrayPermUser[i].id == "admin_organizacion" ){
-					opciones_menu.push({num: 12,id:"menu-principal-administracion", desc:_('Administración de EndoTools')});/*IDIOMAOK*/
+					opciones_menu.push({num: 12,id:"menu-principal-administracion", desc:_('Administración de EndoSys')});/*IDIOMAOK*/
 					
 				
 				}

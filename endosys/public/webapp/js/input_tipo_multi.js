@@ -230,7 +230,7 @@ var input_tipo_multi = function () {
                 // Si el campo es de ámbito "por servicio", entonces cargar solo los
                 // elementos del servicio activo.
                 if (tablas[tabla_id].ambito == "1") {
-                    params.servicio_id = Endotools.auth.servicio_activo.id;
+                    params.servicio_id = Endosys.auth.servicio_activo.id;
                 }
 
                 return tablas[tabla_id].rest.index(TM.content_exploraciones.detalles.elementoscampos, params);

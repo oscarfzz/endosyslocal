@@ -546,7 +546,7 @@ def generar_informe_openoffice_interno(nombre_archivo, exploracion, plantilla, i
 			##			# XXX guardar el .odt (sería FilterName=writer8)
 			##			doc.storeAsURL( "file:///%s" % (os.path.splitext(nombre_archivo)[0] + '.odt'), [] )
 		finally:
-			# Cerrar el documento abierto por EndoTools
+			# Cerrar el documento abierto por EndoSys
 			# XXX a veces las lineas doc.close(False) y oodesktop.terminate() dan error
 			# (" <unknown>.close", "Error en la llamada a procedimiento remoto."...)
 			# ponerlas en try...except?
@@ -623,7 +623,7 @@ def _resize_image(image_template, path):
 	el programa está bloqueado (p.e. un dialogo que tiene abierto el usuario) no se
 	pueda generar el informe...
 	Se podría estudiar la opción de crear una instancia exclusiva para uso de
-	EndoTools, que no interfiera con la posible aplicación abierta por un usuario.
+	EndoSys, que no interfiera con la posible aplicación abierta por un usuario.
 
 	NOTA:	XXX Con Word ya se controla, si hay algún otro documento abierto sin guardar
 			no se cierra Word... hacer lo mismo con OpenOffice!

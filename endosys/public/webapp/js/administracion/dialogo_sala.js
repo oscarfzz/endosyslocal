@@ -26,7 +26,7 @@
 								params.centro_id = centro_id;
 								if(!sala_id){
 									//crear sala
-									var creando_sala = Endotools.salas.create(TM.content_administracion, params);
+									var creando_sala = Endosys.salas.create(TM.content_administracion, params);
 									creando_sala.done(function(sala) {
 
 										var pos_row =$('#tabla_salas').dataTable().fnAddData( [
@@ -44,7 +44,7 @@
 									});
 								}else{
 									//modificar nombre de la sala
-									var modificando_sala = Endotools.salas.update(TM.content_administracion, sala_id, params);
+									var modificando_sala = Endosys.salas.update(TM.content_administracion, sala_id, params);
 									modificando_sala.done(function() {										
 										$('#tabla_salas').dataTable().fnUpdate( params.nombre, pos_row, 1 );										
 									});
@@ -73,7 +73,7 @@
 							if(sala_id) {
 								var eliminar_dialog = confirm(_("¿Esta seguro que desea eliminar la Sala?"));
 								if (eliminar_dialog) {
-									var eliminando_sala = Endotools.salas['delete'](TM.content_administracion, sala_id);
+									var eliminando_sala = Endosys.salas['delete'](TM.content_administracion, sala_id);
 									eliminando_sala.done(function() {
 										$('#tabla_salas').dataTable().fnDeleteRow(pos_row);
 									});
@@ -90,7 +90,7 @@
 						botones.eliminar = function(){
 							
 							
-							var eliminando_sala = Endotools.salas['delete'](TM.content_administracion, sala_id);
+							var eliminando_sala = Endosys.salas['delete'](TM.content_administracion, sala_id);
 							eliminando_sala.done(function() {
 								$('#tabla_salas').dataTable().fnDeleteRow(pos_row);
 							});

@@ -1942,7 +1942,7 @@ endosys/public/webapp/assets/layout/toggle-lt.gif
 endosys/public/webapp/assets/layout/toggle-rt.gif
 endosys/public/webapp/assets/layout/toggle-up.gif
 endosys/public/webapp/assets/menu_icons/administracion.png
-endosys/public/webapp/assets/menu_icons/administracion_endotools.png
+endosys/public/webapp/assets/menu_icons/administracion_endosys.png
 endosys/public/webapp/assets/menu_icons/administrar_usuarios.png
 endosys/public/webapp/assets/menu_icons/buscar_exploraciones.png
 endosys/public/webapp/assets/menu_icons/busquedas_avanzadas.png
@@ -2031,10 +2031,10 @@ endosys/public/webapp/js/tipos_exploracion.js
 endosys/public/webapp/js/userinfo.js
 endosys/public/webapp/js/usuarios.js
 endosys/public/webapp/js/workstations.js
-endosys/public/webapp/js/Endotools/ET_REST.js
-endosys/public/webapp/js/Endotools/ET_auth.js
-endosys/public/webapp/js/Endotools/ET_statusbar.js
-endosys/public/webapp/js/Endotools/ET_varios.js
+endosys/public/webapp/js/Endosys/ET_REST.js
+endosys/public/webapp/js/Endosys/ET_auth.js
+endosys/public/webapp/js/Endosys/ET_statusbar.js
+endosys/public/webapp/js/Endosys/ET_varios.js
 endosys/public/webapp/js/Util/contenido.js
 endosys/public/webapp/js/Util/firma_electronica.js
 endosys/public/webapp/js/Util/misc.js
@@ -2062,9 +2062,9 @@ endosys/public/webapp/themes/classic/endosys.css
 endosys/public/webapp/themes/classic/fondo_footer.png
 endosys/public/webapp/themes/classic/fondo_statusbar_error.png
 endosys/public/webapp/themes/classic/fondo_statusbar_normal.png
-endosys/public/webapp/themes/classic/logo_endotools.png
-endosys/public/webapp/themes/classic/logo_endotools_2.png
-endosys/public/webapp/themes/classic/logo_endotools_pruebas.png
+endosys/public/webapp/themes/classic/logo_endosys.png
+endosys/public/webapp/themes/classic/logo_endosys_2.png
+endosys/public/webapp/themes/classic/logo_endosys_pruebas.png
 endosys/public/webapp/themes/classic/menu_principal_btn.png
 endosys/public/webapp/themes/classic/menu_principal_btn_hover.png
 endosys/public/webapp/themes/classic/pure-endosys.css
@@ -2094,9 +2094,9 @@ endosys/public/webapp/themes/pentax/endosys.css
 endosys/public/webapp/themes/pentax/fondo_footer.png
 endosys/public/webapp/themes/pentax/fondo_statusbar_error.png
 endosys/public/webapp/themes/pentax/fondo_statusbar_normal.png
-endosys/public/webapp/themes/pentax/logo_endotools.png
-endosys/public/webapp/themes/pentax/logo_endotools_2.png
-endosys/public/webapp/themes/pentax/logo_endotools_pruebas.png
+endosys/public/webapp/themes/pentax/logo_endosys.png
+endosys/public/webapp/themes/pentax/logo_endosys_2.png
+endosys/public/webapp/themes/pentax/logo_endosys_pruebas.png
 endosys/public/webapp/themes/pentax/menu_principal_btn.png
 endosys/public/webapp/themes/pentax/menu_principal_btn_hover.png
 endosys/public/webapp/themes/pentax/pure-endosys.css
@@ -2124,7 +2124,7 @@ endosys/public/webapp/themes/pentax/jqueryui/images/ui-icons_FFFFFF_256x240.png
 endosys/public/webapp/themes/pentax/jqueryui/images/ui-icons_cd0a0a_256x240.png
 endosys/public/webapp/themes/pentax/unused/fondo_statusbar_error - copia.png
 endosys/public/webapp/themes/pentax/unused/fondo_statusbar_normal - copia.png
-endosys/public/webapp/themes/pentax/unused/logo_endotools_B.png
+endosys/public/webapp/themes/pentax/unused/logo_endosys_B.png
 endosys/templates/base.html
 endosys/templates/base.mako
 endosys/templates/et_test.mako

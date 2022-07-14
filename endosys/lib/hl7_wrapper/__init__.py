@@ -43,7 +43,7 @@ def hl7_to_date(d, **kwargs):
                                     es False, en este caso devolverá HL7_ABSENT. (por
                                     defecto = False)
         check_range  True/False  Comprueba que la fecha esté en el rango permitido
-                                    por EndoTools. Si no es asi, devuelve HL7_ABSENT.
+                                    por EndoSys. Si no es asi, devuelve HL7_ABSENT.
                                     (por defecto = True)
     """
     if d in (HL7_NULL, HL7_ABSENT, None): return d
@@ -64,7 +64,7 @@ def hl7_to_datetime(d, **kwargs):
     devuelve un datetime.datetime, o HL7_ABSENT si no es válida
     parámetros adicinales:
         check_range  True/False  Comprueba que la fecha esté en el rango permitido
-                                    por EndoTools. Si no es asi, devuelve HL7_ABSENT.
+                                    por EndoSys. Si no es asi, devuelve HL7_ABSENT.
                                     (por defecto = True)
     """
     if d in (HL7_NULL, HL7_ABSENT, None): return d
@@ -110,7 +110,7 @@ def datetime_to_hl7(d, ms=False):
         
 def to_sex(v):
     """
-    Convierte el valor representando el Sexo tal como lo almacena EndoTools en
+    Convierte el valor representando el Sexo tal como lo almacena EndoSys en
     el modelo al formato usado en HL7.
     
     Tabla 0001: Administrative Sex
@@ -135,7 +135,7 @@ def to_sex(v):
     
 def from_sex(sex):
     """
-    Al revés que to_sex(), convierte el formato de HL7 al usado por EndoTools
+    Al revés que to_sex(), convierte el formato de HL7 al usado por EndoSys
     en el modelo.
 
     En resumen:
@@ -191,7 +191,7 @@ def CX(id_number, assigning_authority, id_type_code):
         PN      Person number
         SS      Social Security number
         
-    El uso en EndoTools Web de los códigos de tipo de id es el siguiente:
+    El uso en EndoSys Web de los códigos de tipo de id es el siguiente:
     
         JHN     CIP del paciente.
         NNESP   DNI del paciente (o NIE).
@@ -201,7 +201,7 @@ def CX(id_number, assigning_authority, id_type_code):
         PI      NHC del paciente en un centro.
     
     Sobre Assigning Authority:  Es un campo del tipo HD (Hierarchic Designator),
-    pero parece que puede constar sólo de un componente. En el caso de EndoTools
+    pero parece que puede constar sólo de un componente. En el caso de EndoSys
     Web, es el código del centro.
     """
     return "%s^^^%s^%s" % (to_str(id_number), to_str(assigning_authority), to_str(id_type_code))
@@ -212,13 +212,13 @@ def get_patient_identifier_list(field):
     Devolver un dict con las keys y los valores del campo de tipo Listado de
     Identificadores de Paciente, como por ejemplo un PID.3 o un MRG.1.
     
-    Cada key es uno de los "Identifier Type Code" soportados por EndoTools Web,
+    Cada key es uno de los "Identifier Type Code" soportados por EndoSys Web,
     y cada valor es el "Id Number" que tiene asignado.
     
     Se devuelven siempre todos los tipos de identificadores, con su
     correspodiente valor, o HL7_ABSENT / HL7_NULL.
     
-    Los códigos de tipo de id en EndoTools Web son:
+    Los códigos de tipo de id en EndoSys Web son:
     
         JHN     CIP del paciente.
         NNESP   DNI del paciente (o NIE).

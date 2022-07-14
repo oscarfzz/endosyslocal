@@ -8,8 +8,8 @@ echo.
 SET OLDDIR=%cd%
 SET BASE=%~dp0..\
 cd %BASE%
-for %%F in ("%cd%") do set RUTA_ENDOTOOLSWEB=%%~dpF
+for %%F in ("%cd%") do set RUTA_ENDOSYSWEB=%%~dpF
  
-"%RUTA_ENDOTOOLSWEB%PortablePython\App\python.exe" "%OLDDIR%\..\setup.py" egg_info
+"%RUTA_ENDOSYSWEB%PortablePython\App\python.exe" "%OLDDIR%\..\setup.py" egg_info
 cd %OLDDIR%
 pause

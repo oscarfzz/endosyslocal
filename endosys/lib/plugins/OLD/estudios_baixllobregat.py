@@ -70,9 +70,9 @@ class PluginEstudiosBaixLlobregat(PluginEstudios):
 
 	def convertir_a_formato_ticket(self, endoscopio):
 		""" convierte un identificador de endoscopio tal como se selecciona en
-		EndoTools al formato tal como se imprime en el ticket. ahora mismo es asi:
+		EndoSys al formato tal como se imprime en el ticket. ahora mismo es asi:
 
-		EndoTools			   Ticket
+		EndoSys			   Ticket
 		modelo (num_serie)	  modelo_abreviado-num_serie------ (ancho de 16 chars)
 		"""
 		modelo = ''

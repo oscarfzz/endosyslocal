@@ -37,7 +37,7 @@
 			//TM.content_tiposExploracion.activate();
 			TM.content_administracion.activate();
 			
-			Endotools.statusbar.mostrar_mensaje(_('Loading...'));/*IDIOMAOK*/
+			Endosys.statusbar.mostrar_mensaje(_('Loading...'));/*IDIOMAOK*/
 			return TM.gestion_agenda.load_content(mainlayout, "content/calendario.html"+ew_version_param())
 			.done(function() {
 			    
@@ -90,12 +90,12 @@
 				});
 				
 				//content_tiposExploracion
-				var peticion_tipos_exploracion = Endotools.tipos_exploracion.index(TM.content_administracion, {activo: 1}).done(function(tipos_exploracion) {					
+				var peticion_tipos_exploracion = Endosys.tipos_exploracion.index(TM.content_administracion, {activo: 1}).done(function(tipos_exploracion) {					
 					return tipos_exploracion;
 				});
 				
 				//content prioridades
-				var cargando_prioridades = Endotools.prioridades.index(TM.content_administracion);
+				var cargando_prioridades = Endosys.prioridades.index(TM.content_administracion);
 					
 				cargando_prioridades.done(function(lista_prioridades) {
 					//cargar las prioridades en el arbol
@@ -115,7 +115,7 @@
 					gestion_agenda.prioridades = prioridades;
 
 				});
-				Endotools.statusbar.mostrar_mensaje(_('Ready'));/*IDIOMAOK*/
+				Endosys.statusbar.mostrar_mensaje(_('Ready'));/*IDIOMAOK*/
 				
 
 				/*Crea el boton de buscar paciente*/
@@ -269,7 +269,7 @@
 						var hoy = new Date();
 						hoy.setHours(0, 0, 0, 0);
 						if (cal_event.start < hoy){
-							Endotools.statusbar.mostrar_mensaje(_('No puede asignar una fecha anterior a la actual'), 1);
+							Endosys.statusbar.mostrar_mensaje(_('No puede asignar una fecha anterior a la actual'), 1);
 							revertFunc();
 						} else {
 							gestion_agenda.modificar_horario(cal_event);
@@ -415,7 +415,7 @@
 
 					params.exploracion_id = '';	//	buscar las citas que no tienen expl. asignada, es decir, no realizadas
 					params.cancelada = '0';
-					Endotools.citas.index(TM.gestion_agenda, params)
+					Endosys.citas.index(TM.gestion_agenda, params)
 					
 					.done(function(citas) {
 						var events = [];
@@ -487,10 +487,10 @@
 						var events = [];
 						gestion_agenda.crear_events_no_laboral(start, events);
 						if (r.status != 404) {
-							Endotools.statusbar.mostrar_mensaje(_('Error al cargar las citas'),1);/*IDIOMAOK*/
+							Endosys.statusbar.mostrar_mensaje(_('Error al cargar las citas'),1);/*IDIOMAOK*/
 							callback(events);
 						} else {
-							Endotools.statusbar.mostrar_mensaje(_('No se ha encontrado ninguna cita'));/*IDIOMAOK*/
+							Endosys.statusbar.mostrar_mensaje(_('No se ha encontrado ninguna cita'));/*IDIOMAOK*/
 							callback(events);
 						}					
 					});
@@ -649,7 +649,7 @@
 				// devuelve solo las agendas del medico
 				extra_params = {"medico_id": userinfo.get_usuario().medico.id};
 
-				return Endotools.agendas.index(TM.gestion_agenda, extra_params)
+				return Endosys.agendas.index(TM.gestion_agenda, extra_params)
 				.then(function(response) {
 					gestion_agenda.agendas = response;
 					gestion_agenda.interpretar_datos_agenda(gestion_agenda.agendas);
@@ -684,17 +684,17 @@
 			params.hora = data_cita.hora_ini +":"+ data_cita.minuto_ini; 
 			params.hora_fin = data_cita.hora_fin +":"+ data_cita.minuto_fin;
 			
-			Endotools.citas.update(TM.gestion_agenda, datos_cita.id, params)
+			Endosys.citas.update(TM.gestion_agenda, datos_cita.id, params)
 			.done(function() {
 				$('#calendar').fullCalendar( 'refetchEvents' );
-				Endotools.statusbar.mostrar_mensaje(_('La cita se ha modificado correctamente'));/*IDIOMAOK*/
+				Endosys.statusbar.mostrar_mensaje(_('La cita se ha modificado correctamente'));/*IDIOMAOK*/
 			})
 			.fail(function(r) {
 				$('#calendar').fullCalendar( 'refetchEvents' );
 				if (r.status != 400) {
-					Endotools.statusbar.mostrar_mensaje(_('Error al modificar la cita'), 1);/*IDIOMAOK*/
+					Endosys.statusbar.mostrar_mensaje(_('Error al modificar la cita'), 1);/*IDIOMAOK*/
 				} else {
-					Endotools.statusbar.mostrar_mensaje(_('Los datos de la cita no son válidos'));/*IDIOMAOK*/
+					Endosys.statusbar.mostrar_mensaje(_('Los datos de la cita no son válidos'));/*IDIOMAOK*/
 				}
 			});
 		},			

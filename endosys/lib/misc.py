@@ -31,12 +31,12 @@ class HTTPErrorXML(httpexceptions.HTTPError):
 		log.debug('HTTPErrorXML: status=%s, detail=%s', status, detail)
 		if status: self.code = status
 		self.style = style
-		self.endotools_code = code or 0
+		self.endosys_code = code or 0
 		httpexceptions.HTTPError.__init__(self, detail, headers, comment)
 
 	# devolver en xml (hago creer a la clase base que lo pide plain...)
 	def plain(self, environ):
-		return "<error><mensaje>%s</mensaje><estilo>%s</estilo><codigo>%s</codigo></error>" % (self.detail, self.style, self.endotools_code) + ' '*512 # el IE no muestra la pagina 404 si ocupa menos de 512 bytes
+		return "<error><mensaje>%s</mensaje><estilo>%s</estilo><codigo>%s</codigo></error>" % (self.detail, self.style, self.endosys_code) + ' '*512 # el IE no muestra la pagina 404 si ocupa menos de 512 bytes
 
 	# hago que devuelva el error en XML
 	def prepare_content(self, environ):
@@ -61,7 +61,7 @@ class HTTPErrorJSON(httpexceptions.HTTPError):
 		#print 'HTTPErrorJSON: status=%s, detail=%s' % (status, detail)
 		if status: self.code = status
 		self.style = style
-		self.endotools_code = code or 0
+		self.endosys_code = code or 0
 		httpexceptions.HTTPError.__init__(self, detail, headers, comment)
 
 	def plain(self, environ):
@@ -350,7 +350,7 @@ def strday_to_numberday(strday):
 def valid_date_range(d):
 	"""
 	Debido a que cada motor de bbdd tiene unos rangos válidos de fechas en los
-	tipos DATE, EndoTools siempre limita al mas restrictivo, que es SQL Server,
+	tipos DATE, EndoSys siempre limita al mas restrictivo, que es SQL Server,
 	del 1/1/1753 al 1/1/9999.
 	Los rangos de cada bbdd son:
 		SQL Server	 1753 - 9999
@@ -689,25 +689,25 @@ def cargar_layout_main(path_html="main_content.html"):
 		content = open(os.path.join(config['pylons.paths']['static_files'], 'webapp', 'content', path_html)).read()
 		
 	# Asignar el idioma
-	content = content.replace('ENDOTOOLS:LANG', config.get('lang', 'es'))
+	content = content.replace('ENDOSYS:LANG', config.get('lang', 'es'))
 
 	#asignar theme
-	content = content.replace('ENDOTOOLS:THEME', config.get('THEME_ENDOTOOLS', 'classic').lower())
+	content = content.replace('ENDOSYS:THEME', config.get('THEME_ENDOSYS', 'classic').lower())
 
 	# Asignar la Version
 	try:
 		version_file = os.path.join(config['pylons.paths']['root_parent'], 'version.txt')
 		v_file = open(version_file, 'r')
 		first_line = v_file.readline()
-		content = content.replace('ENDOTOOLS:VERSION', first_line)
+		content = content.replace('ENDOSYS:VERSION', first_line)
 	except Exception as e:
 		log.error(e)
-		content = content.replace('ENDOTOOLS:VERSION', '')
+		content = content.replace('ENDOSYS:VERSION', '')
 
 	# Tags para firma electronica
 	if config.get('FIRMA_ELECTRONICA.ACTIVO', '0') in ('1', '2'):
 		if config.get('FIRMA_ELECTRONICA.TIPO') == '@firma' :
-			content = content.replace('<!--ENDOTOOLS:FIRMA_ELECTRONICA-->',
+			content = content.replace('<!--ENDOSYS:FIRMA_ELECTRONICA-->',
 				"""
 				<script type="text/javascript" src="/cliente_firma/deployjava/deployJava-non-minified.js"></script>
 				<script type="text/javascript" src="/cliente_firma/miniapplet-1.1u4/miniapplet.js"></script>
@@ -721,7 +721,7 @@ def cargar_layout_main(path_html="main_content.html"):
 				"""
 			)
 		elif config.get('FIRMA_ELECTRONICA.TIPO') == 'viafirma' :
-			content = content.replace('<!--ENDOTOOLS:FIRMA_ELECTRONICA-->',
+			content = content.replace('<!--ENDOSYS:FIRMA_ELECTRONICA-->',
 				"""
 					<script type="text/javascript" src="/cliente_firma/viafirma.pesado.js"></script>
 				"""

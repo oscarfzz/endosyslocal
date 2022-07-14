@@ -17,10 +17,10 @@ var gestion_pacientes = function() {
 
 		obtener_paciente: function(tm, id, $form) {
 			//	obtener los datos completos de un paciente por el Id
-			Endotools.statusbar.mostrar_mensaje(_('Obteniendo los datos del paciente...'));/*IDIOMAOK*/
-			return Endotools.pacientes.show(tm, id)
+			Endosys.statusbar.mostrar_mensaje(_('Obteniendo los datos del paciente...'));/*IDIOMAOK*/
+			return Endosys.pacientes.show(tm, id)
 			.done(function(paciente) {
-				var centro_id = Endotools.auth.servicio_activo.centro_id
+				var centro_id = Endosys.auth.servicio_activo.centro_id
 
 				if (opciones_config["PACIENTE.PERMITIR_EDITAR_IDUNICO"]=="0"){
 					$form.find('.paciente-idunico').prop("disabled",true);
@@ -67,18 +67,18 @@ var gestion_pacientes = function() {
 				if (paciente.deshabilitado) {
 					$form.addClass('paciente-deshabilitado');
 				}
-				Endotools.statusbar.mostrar_mensaje(_('Listo'));/*IDIOMAOK*/
+				Endosys.statusbar.mostrar_mensaje(_('Listo'));/*IDIOMAOK*/
 				//$form.parent().find("button").prop("disabled", false);
 			})
 			.fail(function(error) {
-				Endotools.statusbar.mostrar_mensaje(parseError(error.responseText), 1); /*IDIOMAOK*/
+				Endosys.statusbar.mostrar_mensaje(parseError(error.responseText), 1); /*IDIOMAOK*/
 			});
 		},
 
 		guardar_paciente: function(tm, id, $form) {
 			//	guardar los datos de un paciente por el Id
-			Endotools.statusbar.mostrar_mensaje(_('Guardando los datos del paciente...'));/*IDIOMAOK*/
-			var centro_id = Endotools.auth.servicio_activo.centro_id;
+			Endosys.statusbar.mostrar_mensaje(_('Guardando los datos del paciente...'));/*IDIOMAOK*/
+			var centro_id = Endosys.auth.servicio_activo.centro_id;
 			//	sacar los params del formulario
 			var params = {
 				idunico:          $form.find('.paciente-idunico').val(),
@@ -102,19 +102,19 @@ var gestion_pacientes = function() {
 			if ( $form.find('.paciente-nhc-centro').val() !== "") {
 				params['centros'] = String(centro_id) + ":" + String($form.find('.paciente-nhc-centro').val());
 			}
-			return Endotools.pacientes.update(tm, id, params)
+			return Endosys.pacientes.update(tm, id, params)
 			.done(function() {
-				Endotools.statusbar.mostrar_mensaje(_('Ready'));/*IDIOMAOK*/
+				Endosys.statusbar.mostrar_mensaje(_('Ready'));/*IDIOMAOK*/
 			})
 			.fail(function(data) {
-				Endotools.statusbar.mostrar_mensaje(parseError(data.responseText), 1);
+				Endosys.statusbar.mostrar_mensaje(parseError(data.responseText), 1);
 			});
 		},
 
 		nuevo_paciente: function(tm, $form) {
 			//	crear un paciente
-			Endotools.statusbar.mostrar_mensaje(_('Creando el paciente...'));/*IDIOMAOK*/
-			var centro_id = !!Endotools.auth.servicio_activo ? Endotools.auth.servicio_activo.centro_id : null;
+			Endosys.statusbar.mostrar_mensaje(_('Creando el paciente...'));/*IDIOMAOK*/
+			var centro_id = !!Endosys.auth.servicio_activo ? Endosys.auth.servicio_activo.centro_id : null;
 			//	sacar los params del formulario
 			var params = {
 				idunico:    $form.find('.paciente-idunico').val(),
@@ -137,12 +137,12 @@ var gestion_pacientes = function() {
 			if ( $form.find('.paciente-nhc-centro').val() !== "" && centro_id !== null) {
 				params['centros'] = String(centro_id) + ":" + String($form.find('.paciente-nhc-centro').val());
 			}
-			return Endotools.pacientes.create(tm, params)
+			return Endosys.pacientes.create(tm, params)
 			.done(function(paciente) {
-				Endotools.statusbar.mostrar_mensaje(_('Listo'));/*IDIOMAOK*/
+				Endosys.statusbar.mostrar_mensaje(_('Listo'));/*IDIOMAOK*/
 			})
 			.fail(function(data) {
-				Endotools.statusbar.mostrar_mensaje(parseError(data.responseText), 1);
+				Endosys.statusbar.mostrar_mensaje(parseError(data.responseText), 1);
 			});
 		},
 
@@ -152,7 +152,7 @@ var gestion_pacientes = function() {
 			// Si existe informa al usuario
 			var valor = $form_pacientes.find(".paciente-idunico").val();
 			if (valor){
-				Endotools.pacientes.index(TM.operaciones, {'idunico': valor} ).done(function(data){
+				Endosys.pacientes.index(TM.operaciones, {'idunico': valor} ).done(function(data){
 					nombre_completo = "";
 
 					if (data.length>0){
@@ -206,7 +206,7 @@ var gestion_pacientes = function() {
 			// Aseguradora: crear el control, y obtener las aseguradoras para llenar el listado
 			var $paciente_aseguradora = $form_pacientes.find('select.paciente-aseguradora');
 			$paciente_aseguradora.append($('<option value="">-</option>'));
-			Endotools.aseguradoras.index(TM.operaciones, {'activo': 1} )
+			Endosys.aseguradoras.index(TM.operaciones, {'activo': 1} )
 			.done(function(aseguradoras) {
 				for (var i=0; i < aseguradoras.length; i++) {
 					if ($paciente_aseguradora.find('option[value="' + aseguradoras[i].id + '"]').length < 1)
@@ -235,7 +235,7 @@ var gestion_pacientes = function() {
 			var $paciente_provincia = $form_pacientes.find('.paciente-provincia');
 			$paciente_provincia.autocomplete({
 			  source: function( request, response ) {
-				Endotools.provincias.index(TM.operaciones, {'nombre': request.term})
+				Endosys.provincias.index(TM.operaciones, {'nombre': request.term})
 				.done(function(provincias) {
 					var listado_provincias = [];
 					for (var n=0; n < provincias.length; n++) {
@@ -262,7 +262,7 @@ var gestion_pacientes = function() {
 			var $paciente_poblacion = $form_pacientes.find('.paciente-poblacion');
 			$paciente_poblacion.autocomplete({
 			  source: function( request, response ) {
-				Endotools.poblaciones.index(TM.operaciones, {'nombre': request.term})
+				Endosys.poblaciones.index(TM.operaciones, {'nombre': request.term})
 				.done(function(poblaciones) {
 					var listado_poblaciones = [];
 					for (var n=0; n < poblaciones.length; n++) {
@@ -319,7 +319,7 @@ var gestion_pacientes = function() {
 						var $dialog = $(this);
 						controles.confirm_dialog(_('Eliminar paciente'), _('¿Está seguro de que desea eliminar este paciente?'))/*IDIOMAOK*/
 						.then(function() {
-							return Endotools.pacientes['delete'](TM.operaciones, paciente_id, null, {datatable: datatable_results})
+							return Endosys.pacientes['delete'](TM.operaciones, paciente_id, null, {datatable: datatable_results})
 						})
 						.then(function() {
 							$dialog.dialog('close');
@@ -410,7 +410,7 @@ var gestion_pacientes = function() {
 				TM.content_pacientes.activate();
 				TM.content_pacientes.detalles.activate();
 				TM.content_pacientes.buscar.activate();
-				Endotools.statusbar.mostrar_mensaje(_('Cargando gestión de pacientes...'));/*IDIOMAOK*/
+				Endosys.statusbar.mostrar_mensaje(_('Cargando gestión de pacientes...'));/*IDIOMAOK*/
 
 				var content_html = "content/gestion_pacientes.html"+ew_version_param();
 
@@ -431,7 +431,7 @@ var gestion_pacientes = function() {
 				TM.content_pacientes.activate();
 				TM.content_pacientes.detalles.activate();
 				TM.content_pacientes.buscar.activate();
-				Endotools.statusbar.mostrar_mensaje(_('Cargando gestión de pacientes...'));/*IDIOMAOK*/
+				Endosys.statusbar.mostrar_mensaje(_('Cargando gestión de pacientes...'));/*IDIOMAOK*/
 
 				var content_html = "content/gestion_pacientes.html";
 
@@ -509,7 +509,7 @@ var gestion_pacientes = function() {
 				if(typeof(oData) === "object") {
 				 	elLiner.innerHTML = "";
 				 	for (var i=0; i < oData.length; i++) {
-				 		if (String(oData[i].id) === Endotools.auth.servicio_activo.centro_id) {
+				 		if (String(oData[i].id) === Endosys.auth.servicio_activo.centro_id) {
 				 			elLiner.innerHTML = String(oData[i].nhc);
 				 			break;
 						}
@@ -558,7 +558,7 @@ var gestion_pacientes = function() {
 			});
 
 
-			//	Se ha quitado el DataSource de ET_pacientes (ya no existe Endotools.pacientes.datasource)
+			//	Se ha quitado el DataSource de ET_pacientes (ya no existe Endosys.pacientes.datasource)
 			//	ahora se usa uno vacío (dummyDataSource)
 			gestion_pacientes.datatable_results = new YAHOO.widget.ScrollingDataTable(
 					"datatable_busqueda_result", fielddef, dummyDataSource,
@@ -623,7 +623,7 @@ var gestion_pacientes = function() {
 					opciones_config.IDENTIFICADORES_PACIENTE.toUpperCase() === 'IDUNICO+NHC' ||
 					opciones_config.IDENTIFICADORES_PACIENTE.toUpperCase() === 'NHC+IDUNICO') &&
 					$("#busqueda-pacientes-NHC-CENTRO").val() !== '') {
-					params["centros"] = String(Endotools.auth.servicio_activo.centro_id) + ":" + $("#busqueda-pacientes-NHC-CENTRO").val()
+					params["centros"] = String(Endosys.auth.servicio_activo.centro_id) + ":" + $("#busqueda-pacientes-NHC-CENTRO").val()
 				}
 
 				for (var p in params) { if (params[p] == '') delete params[p]; }
@@ -637,7 +637,7 @@ var gestion_pacientes = function() {
 				}
 				// < PAGINACION
 
-				Endotools.pacientes.index(TM.content_pacientes.buscar, params, {datatable: datatable_results})
+				Endosys.pacientes.index(TM.content_pacientes.buscar, params, {datatable: datatable_results})
 				.done(function(results){
 					//reset de animacion de scroll, porque queda guardardo en algun lado
 					anim = new YAHOO.util.Scroll(document.getElementsByClassName('yui-dt-bd')[0], { scroll: { to: [10000, 0] } },0.001);
@@ -670,13 +670,13 @@ var gestion_pacientes = function() {
 
 					if (results && results.length == 0) {
 						//no se ha encontrado ningun paciente
-						Endotools.statusbar.mostrar_mensaje(_('No se ha encontrado ningún paciente'));/*IDIOMAOK*/
+						Endosys.statusbar.mostrar_mensaje(_('No se ha encontrado ningún paciente'));/*IDIOMAOK*/
 					} else {
-						Endotools.statusbar.mostrar_mensaje(_('Listo'));/*IDIOMAOK*/
+						Endosys.statusbar.mostrar_mensaje(_('Listo'));/*IDIOMAOK*/
 					}
 				})
 				.fail(function () {
-					Endotools.statusbar.mostrar_mensaje(_('Error al cargar los pacientes'), 1);/*IDIOMAOK*/
+					Endosys.statusbar.mostrar_mensaje(_('Error al cargar los pacientes'), 1);/*IDIOMAOK*/
 				});
 			});
 
@@ -684,7 +684,7 @@ var gestion_pacientes = function() {
 			$("#nuevo_paciente_btn").click(gestion_pacientes.mostrar_nuevo);
 
 			//	-----------------------------------
-			Endotools.statusbar.mostrar_mensaje(_('Ready'));/*IDIOMAOK*/
+			Endosys.statusbar.mostrar_mensaje(_('Ready'));/*IDIOMAOK*/
 
 			if (callback_fn) callback_fn();
 

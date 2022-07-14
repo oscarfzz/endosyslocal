@@ -1,4 +1,4 @@
-Los Themes de EndoTools definen el aspecto y estilo de la aplicaci�n.
+Los Themes de EndoSys definen el aspecto y estilo de la aplicaci�n.
 
 Actualmente hay dos definidos:
 
@@ -8,13 +8,13 @@ Actualmente hay dos definidos:
 
 v2.4
 ------------------------------------------------------------------------------------------------------
-Creaci�n de un nuevo theme de EndoTools:
+Creaci�n de un nuevo theme de EndoSys:
 
 	Se debe crear una nueva carpeta con el nombre del nuevo tema en \webapp\themes
 
 	Esta carpeta debe contener estas hojas de estilo:
 
-		endosys.css			Estilo de EndoTools (colores, logotipo, fondos...)
+		endosys.css			Estilo de EndoSys (colores, logotipo, fondos...)
 						Creado a mano.
 
 		pure-endosys.css		Estilo de las classes de Pure (inputs, buttons...)
@@ -29,7 +29,7 @@ Creaci�n de un nuevo theme de EndoTools:
 		fondo_footer.png
 		fondo_statusbar_error.png
 		fondo_statusbar_normal.png
-		logo_endotools.png
+		logo_endosys.png
 		menu_principal_btn.png
 		menu_principal_btn_hover.png
 

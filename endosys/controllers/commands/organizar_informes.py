@@ -37,4 +37,4 @@ class OrganizarInformesController(CommandController):
 
 	def post_message(self):
 		a_volver = u'<a href="/admin"> << Volver </a> <br>'
-		return a_volver + u'<p>Comando Ejecutado. Ingrese a "Tareas" del EndoTools para ver el estado de la misma.</p>'
+		return a_volver + u'<p>Comando Ejecutado. Ingrese a "Tareas" del EndoSys para ver el estado de la misma.</p>'

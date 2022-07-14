@@ -367,8 +367,8 @@ var ETFormData = function (data) {
                     orden: Number(xmlu.element_text(campos[j].getElementsByTagName('orden')[0])),
                     posx: Number(xmlu.element_text(campos[j].getElementsByTagName('posx')[0])),
                     posy: Number(xmlu.element_text(campos[j].getElementsByTagName('posy')[0])),
-                    solo_lectura: parseEndotoolsBool(xmlu.element_text(campos[j].getElementsByTagName('solo_lectura')[0])),
-                    obligatorio: parseEndotoolsBool(xmlu.element_text(campos[j].getElementsByTagName('obligatorio')[0])),
+                    solo_lectura: parseEndosysBool(xmlu.element_text(campos[j].getElementsByTagName('solo_lectura')[0])),
+                    obligatorio: parseEndosysBool(xmlu.element_text(campos[j].getElementsByTagName('obligatorio')[0])),
                     tipo_control: xmlu.element_text(campos[j].getElementsByTagName('tipo_control')[0]),
                     ambito: xmlu.element_text(campos[j].getElementsByTagName('ambito')[0]),
                     script: xmlu.element_text(campos[j].getElementsByTagName('script')[0]),
@@ -406,8 +406,8 @@ var ETFormData = function (data) {
                     orden: Number(campos[key].orden),
                     posx: Number(campos[key].posx),
                     posy: Number(campos[key].posy),
-                    solo_lectura: parseEndotoolsBool(campos[key].solo_lectura),
-                    obligatorio: parseEndotoolsBool(campos[key].obligatorio),
+                    solo_lectura: parseEndosysBool(campos[key].solo_lectura),
+                    obligatorio: parseEndosysBool(campos[key].obligatorio),
                     tipo_control: campos[key].tipo_control,
                     ambito: campos[key].ambito,
                     script: campos[key].script,
@@ -437,24 +437,24 @@ var ETFormData = function (data) {
 //  solo identifica TIPO_TEXTO, TIPO_MEMO, TIPO_MULTI y TIPO_BOOL
 function esControlTipo($control, tipo) {
     if (!$control) return false;
-    if (tipo == Endotools.campos.TIPO_TEXTO) {
+    if (tipo == Endosys.campos.TIPO_TEXTO) {
         return $control.hasClass('campo-tipo-texto');
         /*if (!($control._node)) return false;
         if ($control._node.nodeName.toUpperCase() != 'INPUT') return false; //  funciona en todos
         if ($control._node.type.toUpperCase() != 'TEXT') return false;
         if ($control._node.type != 'text') return false;
         return true; */
-    } else if (tipo == Endotools.campos.TIPO_MEMO) {
+    } else if (tipo == Endosys.campos.TIPO_MEMO) {
         return $control.hasClass('campo-tipo-memo');
         /*if (!($control._node)) return false;
         if ($control._node.nodeName.toUpperCase() != 'TEXTAREA') return false;  //  funciona en todos
         return true;*/
-    } else if (tipo == Endotools.campos.TIPO_MULTI) {
+    } else if (tipo == Endosys.campos.TIPO_MULTI) {
         return $control.hasClass('campo-tipo-multi');
         /*if (!($control._node)) return false;
         if ($control._node.nodeName.toUpperCase() != 'SELECT') return false;    //  funciona en todos
         return true;*/
-    } else if (tipo == Endotools.campos.TIPO_BOOL) {
+    } else if (tipo == Endosys.campos.TIPO_BOOL) {
         return $control.is('input') && ($control.attr('type') == 'checkbox');
     }
     return false;
@@ -509,12 +509,12 @@ ETFormData.prototype = {
         //  obtiene el valor de un campo a partir del xml, segun el tipo de campo
         var valor;
         if (valor_el) {
-            if ((campo.tipo == Endotools.campos.TIPO_TEXTO) || (campo.tipo == Endotools.campos.TIPO_MEMO)) {
+            if ((campo.tipo == Endosys.campos.TIPO_TEXTO) || (campo.tipo == Endosys.campos.TIPO_MEMO)) {
                 valor = xmlu.element_text(valor_el, '');
-            } else if (campo.tipo == Endotools.campos.TIPO_BOOL) {
+            } else if (campo.tipo == Endosys.campos.TIPO_BOOL) {
                 valor = xmlu.element_text(valor_el, '');
                 valor = (valor == 'sí') || (valor == 'si') || (valor == '1');
-            } else if (campo.tipo == Endotools.campos.TIPO_SELECCION) {
+            } else if (campo.tipo == Endosys.campos.TIPO_SELECCION) {
                 //  guardar en objeto: {id: X, nombre: Y}
                 var elemento = valor_el.getElementsByTagName('elemento');
                 if (elemento.length > 0) {
@@ -525,7 +525,7 @@ ETFormData.prototype = {
                 } else {
                     valor = { id: null, nombre: '' }
                 }
-            } else if (campo.tipo == Endotools.campos.TIPO_MULTI) {
+            } else if (campo.tipo == Endosys.campos.TIPO_MULTI) {
                 var elementos = valor_el.getElementsByTagName('elemento');
                 valor = [];
                 for (var k = 0; k < elementos.length; k++) {
@@ -536,13 +536,13 @@ ETFormData.prototype = {
                 }
             }
         } else {
-            if ((campo.tipo == Endotools.campos.TIPO_TEXTO) || (campo.tipo == Endotools.campos.TIPO_MEMO)) {
+            if ((campo.tipo == Endosys.campos.TIPO_TEXTO) || (campo.tipo == Endosys.campos.TIPO_MEMO)) {
                 valor = '';
-            } else if (campo.tipo == Endotools.campos.TIPO_BOOL) {
+            } else if (campo.tipo == Endosys.campos.TIPO_BOOL) {
                 valor = false;
-            } else if (campo.tipo == Endotools.campos.TIPO_SELECCION) {
+            } else if (campo.tipo == Endosys.campos.TIPO_SELECCION) {
                 valor = { id: null, nombre: '' }
-            } else if (campo.tipo == Endotools.campos.TIPO_MULTI) {
+            } else if (campo.tipo == Endosys.campos.TIPO_MULTI) {
                 valor = [];
             }
         }
@@ -553,12 +553,12 @@ ETFormData.prototype = {
         //  obtiene el valor de un campo a partir del json, segun el tipo de campo
         var valor;
         if (valor_obj) {
-            if ((campo.tipo == Endotools.campos.TIPO_TEXTO) || (campo.tipo == Endotools.campos.TIPO_MEMO)) {
+            if ((campo.tipo == Endosys.campos.TIPO_TEXTO) || (campo.tipo == Endosys.campos.TIPO_MEMO)) {
                 valor = valor_obj;
-            } else if (campo.tipo == Endotools.campos.TIPO_BOOL) {
+            } else if (campo.tipo == Endosys.campos.TIPO_BOOL) {
                 valor = valor_obj;
                 valor = (valor == 'sí') || (valor == 'si') || (valor == '1');
-            } else if (campo.tipo == Endotools.campos.TIPO_SELECCION) {
+            } else if (campo.tipo == Endosys.campos.TIPO_SELECCION) {
                 //  guardar en objeto: {id: X, nombre: Y}
                 if (valor_obj.elemento) {
                     valor = {
@@ -569,7 +569,7 @@ ETFormData.prototype = {
                 } else {
                     valor = { id: null, nombre: '', codigo: '' }
                 }
-            } else if (campo.tipo == Endotools.campos.TIPO_MULTI) {
+            } else if (campo.tipo == Endosys.campos.TIPO_MULTI) {
                 var elementos = valor_obj;
                 valor = [];
                 for (var k = 0; k < elementos.length; k++) {
@@ -582,13 +582,13 @@ ETFormData.prototype = {
                 }
             }
         } else {
-            if ((campo.tipo == Endotools.campos.TIPO_TEXTO) || (campo.tipo == Endotools.campos.TIPO_MEMO)) {
+            if ((campo.tipo == Endosys.campos.TIPO_TEXTO) || (campo.tipo == Endosys.campos.TIPO_MEMO)) {
                 valor = '';
-            } else if (campo.tipo == Endotools.campos.TIPO_BOOL) {
+            } else if (campo.tipo == Endosys.campos.TIPO_BOOL) {
                 valor = false;
-            } else if (campo.tipo == Endotools.campos.TIPO_SELECCION) {
+            } else if (campo.tipo == Endosys.campos.TIPO_SELECCION) {
                 valor = { id: null, nombre: '', codigo: '' }
-            } else if (campo.tipo == Endotools.campos.TIPO_MULTI) {
+            } else if (campo.tipo == Endosys.campos.TIPO_MULTI) {
                 valor = [];
             }
         }
@@ -833,7 +833,7 @@ ETFormData.prototype = {
                 //  no hay control, es un separador/titulo. No se añade el valor de este campo (porque no puede tener)
                 return;
                 //      TIPO TEXTO
-            } else if (esControlTipo($control, Endotools.campos.TIPO_TEXTO)) {
+            } else if (esControlTipo($control, Endosys.campos.TIPO_TEXTO)) {
                 //  el valor esta en el atributo value del control, que es un HTMLElement (mas concretamente un HTMLInputElement)
                 valor = $control.val();
 
@@ -847,14 +847,14 @@ ETFormData.prototype = {
                 valor = $control.val();
 
                 //      TIPO BOOL
-            } else if (esControlTipo($control, Endotools.campos.TIPO_BOOL)) {
+            } else if (esControlTipo($control, Endosys.campos.TIPO_BOOL)) {
                 //  el valor esta en el atributo value del elemento button
                 valor = $control.prop('checked') ? 1 : 0;
                 //      TIPO MEMO
-            } else if (esControlTipo($control, Endotools.campos.TIPO_MEMO)) {
+            } else if (esControlTipo($control, Endosys.campos.TIPO_MEMO)) {
                 valor = $control.val();
                 //      TIPO MULTI
-            } else if (esControlTipo($control, Endotools.campos.TIPO_MULTI)) {
+            } else if (esControlTipo($control, Endosys.campos.TIPO_MULTI)) {
                 //  todos los ids de los elementos seleccionados separados por comas
                 valor = '';
                 $control.find('option').each(function (index, el) {
@@ -900,11 +900,11 @@ ETFormData.prototype = {
                 //  "script" tiene que ser el cuerpo de una función que tiene que retornar
                 //  el valor calculado para el campo. Recibe como parámetro "campos" un object
                 //  con el valor de todos los campos: {campo1: valor, campo2: valor...}
-                if (control.campo.tipo == Endotools.campos.TIPO_TEXTO) {
+                if (control.campo.tipo == Endosys.campos.TIPO_TEXTO) {
                     control.$control.val(
                         (new Function('campos', control.campo.script))(valores_campos)
                     );
-                } else if (control.campo.tipo == Endotools.campos.TIPO_SELECCION) {
+                } else if (control.campo.tipo == Endosys.campos.TIPO_SELECCION) {
                     //  si es tipo seleccion, de momento solo está implementado con los select nativo, no autocomplete
                     if (control.campo.tipo_control == "1") {
                         //...
@@ -996,7 +996,7 @@ ETFormData.prototype = {
         }
 
         // Tipo Texto
-        if (campo.tipo == Endotools.campos.TIPO_TEXTO) {
+        if (campo.tipo == Endosys.campos.TIPO_TEXTO) {
             $control = $('<input type="text"/>')
                 .addClass('campo-tipo-texto')
                 .attr('id', control_ID)
@@ -1008,7 +1008,7 @@ ETFormData.prototype = {
             }
 
             // Tipo Seleccion
-        } else if (campo.tipo == Endotools.campos.TIPO_SELECCION) {
+        } else if (campo.tipo == Endosys.campos.TIPO_SELECCION) {
             // Cuando el tipo_control == 1 entonces es autocomplete.
             // Si es null es un select comun.
 
@@ -1040,10 +1040,10 @@ ETFormData.prototype = {
                         // Si el campo es de ámbito "por servicio", entonces cargar solo los
                         // elementos del servicio activo.
                         if (campo.ambito == "1") {
-                            params.servicio_id = Endotools.auth.servicio_activo.id;
+                            params.servicio_id = Endosys.auth.servicio_activo.id;
                         }
 
-                        Endotools.elementos.index(TM.content_exploraciones.detalles.elementoscampos, params)
+                        Endosys.elementos.index(TM.content_exploraciones.detalles.elementoscampos, params)
                             .done(function (elementos) {
 
                                 var listado_elementos = [];
@@ -1109,7 +1109,7 @@ ETFormData.prototype = {
                     this._elementos_campo(TM.content_exploraciones.detalles.elementoscampos, campo, $control);  //  cargar los elementos de forma asincrona //  XXX el trans. manager configurable?
                 }
             }
-        } else if (campo.tipo == Endotools.campos.TIPO_MULTI) {
+        } else if (campo.tipo == Endosys.campos.TIPO_MULTI) {
             // Campo multiseleccion
             // Crear boton al lado del label para modificar elementos
             var $target_control = null;
@@ -1153,7 +1153,7 @@ ETFormData.prototype = {
             }
 
             $target_control = $control;
-        } else if (campo.tipo == Endotools.campos.TIPO_BOOL) {
+        } else if (campo.tipo == Endosys.campos.TIPO_BOOL) {
             // Campo tipo booleano
             var the_control = $('<input type="checkbox">')
                 .attr('id', control_ID)
@@ -1181,7 +1181,7 @@ ETFormData.prototype = {
             if (campo.solo_lectura) {
                 //  XXX falta
             }
-        } else if (campo.tipo == Endotools.campos.TIPO_MEMO) {
+        } else if (campo.tipo == Endosys.campos.TIPO_MEMO) {
             // Campo del tipo Memo
             // Crear el control
             // $control = $('<textarea rows="6" class="campo-tipo-memo" id="' + campo.nombre + '">' + campo.valor + '</textarea>').appendTo(controlwrapper);
@@ -1209,7 +1209,7 @@ ETFormData.prototype = {
             }
 
             //  SEPARADOR
-        } else if (campo.tipo == Endotools.campos.TIPO_SEPARADOR) {
+        } else if (campo.tipo == Endosys.campos.TIPO_SEPARADOR) {
             $label.addClass('titulo-separador');
             $td.css('vertical-align', 'middle');
             $control = null;
@@ -1464,10 +1464,10 @@ ETFormData.prototype = {
         // Si el campo es de ámbito "por servicio", entonces cargar solo los
         // elementos del servicio activo.
         if (campo.ambito == "1") {
-            params.servicio_id = Endotools.auth.servicio_activo.id;
+            params.servicio_id = Endosys.auth.servicio_activo.id;
         }
 
-        Endotools.elementos.index(tm, params).done(function (elementos) {
+        Endosys.elementos.index(tm, params).done(function (elementos) {
             var ocultar = true;
 
             // Recorre los elementos y los agrega al control

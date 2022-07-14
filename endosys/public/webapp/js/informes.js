@@ -162,7 +162,7 @@
 				.fail(function(respuesta){
 					error = parseError(respuesta.responseText);
 					if (error!=undefined){
-						Endotools.statusbar.mostrar_mensaje(error, 1);	
+						Endosys.statusbar.mostrar_mensaje(error, 1);	
 					}
 				});
 			});
@@ -215,14 +215,14 @@
 
 			$("#exploracion-tab-informes").append('<hr /><button id="exploracion-ver-todos-informes">'+_("Ver todos los informes del paciente")+'</button>');//IDIOMAOK
 			$("#exploracion-ver-todos-informes").button().click(function() {
-				window.open("/rest/informes.html?_agrupado=si&paciente_id="+paciente_id+"&centro_id="+Endotools.auth.servicio_activo.centro_id,"_blank");
+				window.open("/rest/informes.html?_agrupado=si&paciente_id="+paciente_id+"&centro_id="+Endosys.auth.servicio_activo.centro_id,"_blank");
 			});
 
 		},
 
 		buscar_informes: function(exploracion_id) {
 			informes.informe_id = null;
-			Endotools.informes.index(TM.content_exploraciones.detalles.informes,
+			Endosys.informes.index(TM.content_exploraciones.detalles.informes,
 									{'exploracion_id': exploracion_id},
 									{datatable: datatable_informes});
 		},
@@ -243,7 +243,7 @@
 			var h = screen.availHeight - 64;
 			var l = (screen.availWidth - w) / 2;
 			var t = (screen.availHeight - h) / 2;
-			var ventana = window.open(Endotools.informes.resource + '/' + id + ext, "_blank",
+			var ventana = window.open(Endosys.informes.resource + '/' + id + ext, "_blank",
 					"resizable=yes," +
 					"scrollbars=" + show_scrollbars + "," + 
 					"location=no," +
@@ -266,16 +266,16 @@
 					controles.input_dialog.mostrar(_('Motivo'), _('Ingrese el motivo por el cual desea borrar:'), '')//IDIOMAOK
 					.then(function(motivo) {
 						if (motivo!=""){
-							Endotools.informes['delete'](TM.operaciones, id, {'borrado_motivo': motivo})
+							Endosys.informes['delete'](TM.operaciones, id, {'borrado_motivo': motivo})
 							.done(function()
 							{
 								informes.ini_form_expl();
 							}).fail(function(data){
 								var error = parseError(data);
-								Endotools.statusbar.mostrar_mensaje(error, 1);
+								Endosys.statusbar.mostrar_mensaje(error, 1);
 							});
 						}else{
-							Endotools.statusbar.mostrar_mensaje(_("Debe completar el motivo"), 1);//IDIOMAOK
+							Endosys.statusbar.mostrar_mensaje(_("Debe completar el motivo"), 1);//IDIOMAOK
 						}
 						
 					});							
@@ -330,7 +330,7 @@
 				if (!!resultado && !!resultado.comentarios) params.comentarios = resultado.comentarios;
 				if (!!resultado && !!resultado.plantilla) {
 					params.plantilla = resultado.plantilla;
-					return Endotools.informes.create(TM.operaciones, params);
+					return Endosys.informes.create(TM.operaciones, params);
 				} else {
 					alert(_("No ha seleccionado ninguna plantilla"));
 				}
@@ -361,7 +361,7 @@
 					params.pdf = file.result;
 					if (comentario!="") params.comentarios = comentario;
 					if (!!exploracion_id) params.exploracion_id = exploracion_id;
-					Endotools.informes.create(TM.operaciones, params)
+					Endosys.informes.create(TM.operaciones, params)
 					.done(function(nuevoinforme) {
 					//	actualizar la lista de informes
 						informes.buscar_informes(gestion_exploraciones.exploracion_id);

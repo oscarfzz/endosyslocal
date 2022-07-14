@@ -95,7 +95,7 @@ var gestion_exploraciones = function () {
 
             //  columnas 'calculadas' (que no se extraen directamente de los campos devueltos por el datasource)
             datatable_results.doBeforeLoadData = function (sRequest, oResponse, oPayload) {
-                var centro_id = Endotools.auth.servicio_activo.centro_id
+                var centro_id = Endosys.auth.servicio_activo.centro_id
                 for (var n = 0; n < oResponse.results.length; n++) {
                     oResponse.results[n].idunico = oResponse.results[n].paciente.idunico;
                     oResponse.results[n].nhc = "";
@@ -218,7 +218,7 @@ var gestion_exploraciones = function () {
                         //etcapcontrol.ejecutar_captura();
                         gestion_captura.ejecutar_captura();
                     } catch (err) {
-                        Endotools.statusbar.mostrar_mensaje(_('No se ha podido ejecutar el programa de captura'), 1);/*IDIOMAOK*/
+                        Endosys.statusbar.mostrar_mensaje(_('No se ha podido ejecutar el programa de captura'), 1);/*IDIOMAOK*/
                     }
                 });
             }
@@ -307,7 +307,7 @@ var gestion_exploraciones = function () {
                 $("#captura-importarimg-btn").show();
             }
             
-            if (exploracion.estado == 1 && Endotools.auth.username=="sysadmin") {
+            if (exploracion.estado == 1 && Endosys.auth.username=="sysadmin") {
                 $("#captura-importarimg-btn").show();
             }
         },
@@ -320,7 +320,7 @@ var gestion_exploraciones = function () {
                 params._pagina = gestion_paginacion.pagina_actual;
             }
 
-            var link = Endotools.exploraciones.resource + ".csv?" + jQuery.param(params);
+            var link = Endosys.exploraciones.resource + ".csv?" + jQuery.param(params);
 
 
             //Crear una tarea de Exportar
@@ -345,7 +345,7 @@ var gestion_exploraciones = function () {
             }
 
             var args = datatable_results ? { datatable: datatable_results } : null;
-            return Endotools.exploraciones.index(
+            return Endosys.exploraciones.index(
                 TM.content_exploraciones.buscar,
                 params,
                 args
@@ -384,7 +384,7 @@ var gestion_exploraciones = function () {
 
                 if (exploraciones && exploraciones.length == 0) {
                     // no se ha encontrado ninguna exploracion
-                    Endotools.statusbar.mostrar_mensaje(_('No se ha encontrado ninguna exploración'));  /*IDIOMAOK*/
+                    Endosys.statusbar.mostrar_mensaje(_('No se ha encontrado ninguna exploración'));  /*IDIOMAOK*/
                 }
             }).fail(function (exploraciones) {
                 if ($total) $total.html(0);
@@ -393,10 +393,10 @@ var gestion_exploraciones = function () {
 
         obtener_exploracion: function (tm, id, $form_node, $tabs, callback) {
             // obtener los datos completos de una exploracion por el Id
-            Endotools.statusbar.mostrar_mensaje(_('Obteniendo los datos de la exploración...'));    /*IDIOMAOK*/
+            Endosys.statusbar.mostrar_mensaje(_('Obteniendo los datos de la exploración...'));    /*IDIOMAOK*/
             gestion_exploraciones.estado = null;
             gestion_exploraciones._deshabilitar_guardar();
-            Endotools.exploraciones.show(tm, id).done(function (exploracion) {
+            Endosys.exploraciones.show(tm, id).done(function (exploracion) {
                 // extraer los formularios directamente del xml, no se puede hacer con el schema (que yo sepa)
                 var _formularios = [];
                 for (var i = 0; i < exploracion.formularios.length; i++) {
@@ -428,7 +428,7 @@ var gestion_exploraciones = function () {
                     accept: ".flecha",
                     hoverClass: "papelera_over",
                     drop: function (event, ui) {
-                        Endotools.imagenes.update(
+                        Endosys.imagenes.update(
                             tm,
                             ui.draggable.data("imagen").id,
                             { 'posx': null, 'posy': null }
@@ -463,7 +463,7 @@ var gestion_exploraciones = function () {
                 $form_node.find('#fecha').html(exploracion.fecha);
                 $form_node.find('#hora').html(exploracion.hora);
                 if (opciones_config.IDENTIFICADORES_PACIENTE.toUpperCase() === 'NHC' || opciones_config.IDENTIFICADORES_PACIENTE.toUpperCase() === 'NHC+IDUNICO') {
-                    var centro_id = Endotools.auth.servicio_activo.centro_id;
+                    var centro_id = Endosys.auth.servicio_activo.centro_id;
                     $form_node.find('#historia').html("");
 
                     if (!!exploracion.paciente.centros) {
@@ -522,7 +522,7 @@ var gestion_exploraciones = function () {
                     //  cola de carga de formularios
                     chain = chain.then(function () {
                         //  obtener los datos completos del formulario de una exploracion por los Ids
-                        return Endotools.formularios.show(tm, _formulario.id, { 'exploracion_id': id })
+                        return Endosys.formularios.show(tm, _formulario.id, { 'exploracion_id': id })
                             .done(function (response) {
                                 formularios_responses.push({ "response": response, "_formulario": _formulario });
                                 //                          formularios.generar_formulario(response, _formulario, false, exploracion);
@@ -572,7 +572,7 @@ var gestion_exploraciones = function () {
                 });
             }).fail(function () {
                 if (callback && callback.failure) callback.failure();
-                Endotools.statusbar.mostrar_mensaje(_('Ha ocurrido un error obteniendo los datos de la exploración'), 1);/*IDIOMAOK*/
+                Endosys.statusbar.mostrar_mensaje(_('Ha ocurrido un error obteniendo los datos de la exploración'), 1);/*IDIOMAOK*/
             });
         },
 
@@ -592,7 +592,7 @@ var gestion_exploraciones = function () {
         },
 
         guardar_exploracion: function (tm, exploracion_id, $form_node, $tab_capturas/*, callback*/) {
-            Endotools.statusbar.mostrar_mensaje(_('Guardando la exploración...'));/*IDIOMAOK*/
+            Endosys.statusbar.mostrar_mensaje(_('Guardando la exploración...'));/*IDIOMAOK*/
             var updates = [];
 
             //  extraer los valores de los campos para enviar por REST
@@ -630,7 +630,7 @@ var gestion_exploraciones = function () {
                 $tab_capturas.find("li.endosys-imagen-container>a").each(function (index, el) {
                     capturas.push($(el).data("imagen").id);
                 });
-                updates.push(Endotools.exploraciones.update(
+                updates.push(Endosys.exploraciones.update(
                     tm,
                     exploracion_id,
                     {
@@ -649,7 +649,7 @@ var gestion_exploraciones = function () {
                 // de la exploracion
                 for (var i = 0; i < forms_to_update.length; i++) {
                     updates.push(
-                        Endotools.formularios.update(
+                        Endosys.formularios.update(
                             tm,
                             forms_to_update[i].form_id,
                             $.extend(forms_to_update[i].params, { 'exploracion_id': exploracion_id })
@@ -676,23 +676,23 @@ var gestion_exploraciones = function () {
                     //  extraer el valor segun el tipo de campo
                     var valor = '';
                     //      TIPO TEXTO
-                    if (esControlTipo($control, Endotools.campos.TIPO_TEXTO)) {
+                    if (esControlTipo($control, Endosys.campos.TIPO_TEXTO)) {
                         //  el valor esta en el atributo value del control, que es un HTMLElement (mas concretamente un HTMLInputElement)
                         valor = $control.val();
                         //      TIPO SELECCION
                     } else if (control.hasClass('campo-tipo-selec')) {
                         //  el valor esta en el atributo value del elemento button
-                        valor = Endotools.Y.one(control._button).get('value');
+                        valor = Endosys.Y.one(control._button).get('value');
                         //      TIPO BOOL
                         //} else if (control.hasClass('endosys-checkbox')) {
-                    } else if (esControlTipo(control, Endotools.campos.TIPO_BOOL)) {
+                    } else if (esControlTipo(control, Endosys.campos.TIPO_BOOL)) {
                         //  el valor esta en el atributo value del elemento button
                         valor = control.get('checked') ? 1 : 0;
                         //      TIPO MEMO
-                    } else if (esControlTipo(control, Endotools.campos.TIPO_MEMO)) {
-                        valor = Endotools.Y.one(control).get('value');
+                    } else if (esControlTipo(control, Endosys.campos.TIPO_MEMO)) {
+                        valor = Endosys.Y.one(control).get('value');
                         //      TIPO MULTI
-                    } else if (esControlTipo(control, Endotools.campos.TIPO_MULTI)) {
+                    } else if (esControlTipo(control, Endosys.campos.TIPO_MULTI)) {
                         //  todos los ids de los elementos seleccionados separados por comas
                         valor = '';
                         control.all('option').each(function (node) {
@@ -704,7 +704,7 @@ var gestion_exploraciones = function () {
                 }
 
                 params['_modo'] = 'VALORESPORDEFECTO';
-                Endotools.formularios.update(tm, formulario.id, params);
+                Endosys.formularios.update(tm, formulario.id, params);
             });
         },
 
@@ -840,7 +840,7 @@ var gestion_exploraciones = function () {
                                         ).then(
                                             function () { // success del then
                                                 // Pone el estado a 1, que es 'finalizado'
-                                                return Endotools.exploraciones.update(
+                                                return Endosys.exploraciones.update(
                                                     TM.operaciones,
                                                     gestion_exploraciones.exploracion_id,
                                                     { 'estado': 1 }
@@ -851,7 +851,7 @@ var gestion_exploraciones = function () {
                                                 return response;
                                             }
                                         ).done(function () {
-                                            Endotools.statusbar.mostrar_mensaje(_('Exploración finalizada correctamente'));/*IDIOMAOK*/
+                                            Endosys.statusbar.mostrar_mensaje(_('Exploración finalizada correctamente'));/*IDIOMAOK*/
 
                                             // Recargar la exploracion
                                             gestion_exploraciones._mostrar_exploracion(gestion_exploraciones.exploracion_id, $contenedor);
@@ -878,7 +878,7 @@ var gestion_exploraciones = function () {
 
                                                 function () {
                                                     var _do_cancelar = function (motivo_cancelacion) {
-                                                        Endotools.exploraciones.update(
+                                                        Endosys.exploraciones.update(
                                                             TM.operaciones,
                                                             gestion_exploraciones.exploracion_id,
                                                             { 'estado': 2, 'motivo_id': motivo_cancelacion }
@@ -888,7 +888,7 @@ var gestion_exploraciones = function () {
                                                             cierre_sesion.activar();
                                                             contenido_principal.cerrar('#mainlayout');
                                                             gestion_exploraciones.estado = null;
-                                                            Endotools.statusbar.mostrar_mensaje(_('La exploración se ha marcado como "No Realizada"'));/*IDIOMAOK*/
+                                                            Endosys.statusbar.mostrar_mensaje(_('La exploración se ha marcado como "No Realizada"'));/*IDIOMAOK*/
                                                         });
                                                     }
 
@@ -896,7 +896,7 @@ var gestion_exploraciones = function () {
                                                         motivo_cancelacion_dialog.mostrar().done(function (motivo_cancelacion) {
                                                             //  enviar el motivo de fallo a la cita...
                                                             if (motivo_cancelacion == null) {
-                                                                Endotools.statusbar.mostrar_mensaje(_('No ha seleccionado un motivo de cancelación'), 1);   /*IDIOMAOK*/
+                                                                Endosys.statusbar.mostrar_mensaje(_('No ha seleccionado un motivo de cancelación'), 1);   /*IDIOMAOK*/
                                                             } else {
                                                                 _do_cancelar(motivo_cancelacion);
                                                             }
@@ -916,7 +916,7 @@ var gestion_exploraciones = function () {
 
                                         if (confirm_dialog) {
                                             //Borrar la exploracion
-                                            Endotools.exploraciones['delete'](
+                                            Endosys.exploraciones['delete'](
                                                 TM.nueva_exploracion,
                                                 exploracion.id,
                                                 { 'borrado_motivo': 'Descartar' }
@@ -924,14 +924,14 @@ var gestion_exploraciones = function () {
                                                 reset_pantalla();
 
                                                 contenido_principal.cerrar('#mainlayout', cierre_sesion.activar);
-                                                Endotools.statusbar.mostrar_mensaje(_('La exploración ha sido descartada'), 0);/*IDIOMAOK*/
+                                                Endosys.statusbar.mostrar_mensaje(_('La exploración ha sido descartada'), 0);/*IDIOMAOK*/
                                                 gestion_exploraciones.estado = null;
                                                 //ACTIVAR CIERRE
                                                 cierre_sesion.activar();
                                             }).fail(function (data) {
                                                 if (data.responseText) {
                                                     error = parseError(data.responseText);
-                                                    Endotools.statusbar.mostrar_mensaje(error, 1);
+                                                    Endosys.statusbar.mostrar_mensaje(error, 1);
                                                 }
                                             });
                                         }
@@ -965,7 +965,7 @@ var gestion_exploraciones = function () {
                                             $("#exploracion_form"),
                                             $("#exploracion-tab-imagenes")
                                         ).done(function () {
-                                            Endotools.statusbar.mostrar_mensaje(_('Exploración guardada correctamente'));/*IDIOMAOK*/
+                                            Endosys.statusbar.mostrar_mensaje(_('Exploración guardada correctamente'));/*IDIOMAOK*/
                                         }).fail(function (response) {
                                             gestion_exploraciones._mostrar_error_guardar_exploracion(response);
                                         });
@@ -1001,25 +1001,25 @@ var gestion_exploraciones = function () {
                                                 ''
                                             ).then(function (motivo) {
                                                 if (motivo != "") {
-                                                    Endotools.exploraciones['delete'](
+                                                    Endosys.exploraciones['delete'](
                                                         TM.nueva_exploracion,
                                                         exploracion.id,
                                                         { 'borrado_motivo': motivo }
                                                     ).done(function () {
                                                         reset_pantalla();
                                                         contenido_principal.cerrar('#mainlayout', cierre_sesion.activar);
-                                                        Endotools.statusbar.mostrar_mensaje(_('La exploración ha sido eliminada'), 0);/*IDIOMAOK*/
+                                                        Endosys.statusbar.mostrar_mensaje(_('La exploración ha sido eliminada'), 0);/*IDIOMAOK*/
                                                         gestion_exploraciones.estado = null;
                                                         //ACTIVAR CIERRE
                                                         cierre_sesion.activar();
                                                     }).fail(function (data) {
                                                         if (data.responseText) {
                                                             error = parseError(data.responseText);
-                                                            Endotools.statusbar.mostrar_mensaje(error, 1);
+                                                            Endosys.statusbar.mostrar_mensaje(error, 1);
                                                         }
                                                     });
                                                 } else {
-                                                    Endotools.statusbar.mostrar_mensaje(_("Debe completar el motivo"), 1);//IDIOMAOK
+                                                    Endosys.statusbar.mostrar_mensaje(_("Debe completar el motivo"), 1);//IDIOMAOK
                                                 }
                                             });
                                         }
@@ -1033,13 +1033,13 @@ var gestion_exploraciones = function () {
                                         _('Recuperar exploración'),
                                         _('¿Está seguro de que desea recuperar la exploración?'),/*IDIOMAOK*/
                                         function () {
-                                            Endotools.exploraciones.update(TM.nueva_exploracion, exploracion.id, { '_recuperar': 1 }).done(function () {
+                                            Endosys.exploraciones.update(TM.nueva_exploracion, exploracion.id, { '_recuperar': 1 }).done(function () {
                                                 // Recargar la exploracion
                                                 gestion_exploraciones._mostrar_exploracion(gestion_exploraciones.exploracion_id, $contenedor);
                                             }).fail(function (data) {
                                                 if (data.responseText) {
                                                     error = parseError(data.responseText);
-                                                    Endotools.statusbar.mostrar_mensaje(error, 1);
+                                                    Endosys.statusbar.mostrar_mensaje(error, 1);
                                                 }
                                             });
                                         }
@@ -1084,7 +1084,7 @@ var gestion_exploraciones = function () {
                 TM.content_exploraciones.detalles.informes.activate();
                 TM.content_exploraciones.detalles.imagenes.activate();
                 TM.content_exploraciones.detalles.cita.activate();
-                Endotools.statusbar.mostrar_mensaje(_('Cargando la exploración...'));/*IDIOMAOK*/
+                Endosys.statusbar.mostrar_mensaje(_('Cargando la exploración...'));/*IDIOMAOK*/
 
                 mainlayout.html("<div class='endo_pane_redondeado endo-panel endo_pane_content'></div>");
 
@@ -1106,7 +1106,7 @@ var gestion_exploraciones = function () {
                 TM.content_exploraciones.detalles.informes.activate();
                 TM.content_exploraciones.detalles.imagenes.activate();
                 TM.content_exploraciones.detalles.cita.activate();
-                Endotools.statusbar.mostrar_mensaje(_('Cargando gestión de exploraciones...'));/*IDIOMAOK*/
+                Endosys.statusbar.mostrar_mensaje(_('Cargando gestión de exploraciones...'));/*IDIOMAOK*/
                 TM.content_exploraciones.load_content(mainlayout, "content/busqueda_exploraciones.html" + ew_version_param()).done(function () {
                     //crear layouts
                     $('.layout_main_content').layout({
@@ -1140,7 +1140,7 @@ var gestion_exploraciones = function () {
                 TM.content_exploraciones.detalles.informes.activate();
                 TM.content_exploraciones.detalles.imagenes.activate();
                 TM.content_exploraciones.detalles.cita.activate();
-                Endotools.statusbar.mostrar_mensaje(_('Cargando gestión de exploraciones...'));/*IDIOMAOK*/
+                Endosys.statusbar.mostrar_mensaje(_('Cargando gestión de exploraciones...'));/*IDIOMAOK*/
 
                 TM.content_exploraciones.load_content(mainlayout, "content/busqueda_exploraciones_fecha.html" + ew_version_param()).done(function () {
                     // CREAR LAYOUT
@@ -1191,11 +1191,11 @@ var gestion_exploraciones = function () {
                         if (fecha_min) args.fecha_min = fecha_min;
                         if (fecha_max) args.fecha_max = fecha_max;
                         if (!fecha_min && !fecha_max) {
-                            Endotools.statusbar.mostrar_mensaje(_('Debe introducir un rango de fechas antes de iniciar la búsqueda'), 1);
+                            Endosys.statusbar.mostrar_mensaje(_('Debe introducir un rango de fechas antes de iniciar la búsqueda'), 1);
                             return;
                         } else {
-                            if (Endotools.auth.servicio_activo) {
-                                args.servicio_activo = Endotools.auth.servicio_activo.id;
+                            if (Endosys.auth.servicio_activo) {
+                                args.servicio_activo = Endosys.auth.servicio_activo.id;
                             }
 
                             if ($("#checkbox-buscar-eliminados").prop("checked")) {
@@ -1212,7 +1212,7 @@ var gestion_exploraciones = function () {
                         var fecha = $("#busqueda-fecha-undia").val();
 
                         if (fecha) args.fecha = fecha;
-                        if (Endotools.auth.servicio_activo) args.servicio_activo = Endotools.auth.servicio_activo.id;
+                        if (Endosys.auth.servicio_activo) args.servicio_activo = Endosys.auth.servicio_activo.id;
                         if ($("#checkbox-buscar-eliminados").prop("checked")) args.borrado = 1;
 
                         gestion_exploraciones.buscar_exploraciones(args, $('#total-exploraciones'), $("#exportar_excel"));
@@ -1277,7 +1277,7 @@ var gestion_exploraciones = function () {
                     //  buscar todas las exploraciones de hoy
                     $("#busqueda-hoy-btn").click();
 
-                    Endotools.statusbar.mostrar_mensaje(_('Ready'));/*IDIOMAOK*/
+                    Endosys.statusbar.mostrar_mensaje(_('Ready'));/*IDIOMAOK*/
 
                     if (callback_fn) callback_fn();
                 });
@@ -1299,7 +1299,7 @@ var gestion_exploraciones = function () {
                 TM.content_exploraciones.detalles.informes.activate();
                 TM.content_exploraciones.detalles.imagenes.activate();
                 TM.content_exploraciones.detalles.cita.activate();
-                Endotools.statusbar.mostrar_mensaje(_('Cargando gestión de exploraciones...'));//IDIOMAOK
+                Endosys.statusbar.mostrar_mensaje(_('Cargando gestión de exploraciones...'));//IDIOMAOK
 
                 var seleccionar = function () {
                     var record = datatable_results.getRecord(gestion_exploraciones.datatable_results.getSelectedRows()[0]);
@@ -1365,7 +1365,7 @@ var gestion_exploraciones = function () {
 
                             gestion_exploraciones._ini_form_exploraciones(args);
                             //  buscar exploraciones con estado=0 y del mismo medico
-                            gestion_exploraciones.buscar_exploraciones({ estado: 0, medico_id: Endotools.auth.medico_id, servicio_activo: Endotools.auth.servicio_activo.id }, $('#total-exploraciones'), $("#exportar_excel"));
+                            gestion_exploraciones.buscar_exploraciones({ estado: 0, medico_id: Endosys.auth.medico_id, servicio_activo: Endosys.auth.servicio_activo.id }, $('#total-exploraciones'), $("#exportar_excel"));
 
                             //ocultar los bordes
                             container.find(".ui-layout-north").removeClass("endo_pane_redondeado");
@@ -1384,7 +1384,7 @@ var gestion_exploraciones = function () {
                 TM.content_exploraciones.detalles.informes.activate();
                 TM.content_exploraciones.detalles.imagenes.activate();
                 TM.content_exploraciones.detalles.cita.activate();
-                Endotools.statusbar.mostrar_mensaje(_('Cargando gestión de exploraciones...'));//IDIOMAOK
+                Endosys.statusbar.mostrar_mensaje(_('Cargando gestión de exploraciones...'));//IDIOMAOK
                 TM.content_exploraciones.load_content(mainlayout, "content/busqueda_exploraciones.html" + ew_version_param()).done(function () {
                     //crear layouts
                     $('.layout_main_content').layout({
@@ -1396,7 +1396,7 @@ var gestion_exploraciones = function () {
 
                     gestion_exploraciones._ini_form_exploraciones();
                     //  buscar exploraciones con estado=0 y del mismo medico
-                    gestion_exploraciones.buscar_exploraciones({ estado: 0, medico_id: Endotools.auth.medico_id, servicio_activo: Endotools.auth.servicio_activo.id }, $('#total-exploraciones'), $("#exportar_excel"));
+                    gestion_exploraciones.buscar_exploraciones({ estado: 0, medico_id: Endosys.auth.medico_id, servicio_activo: Endosys.auth.servicio_activo.id }, $('#total-exploraciones'), $("#exportar_excel"));
                 });
             },
 
@@ -1416,7 +1416,7 @@ var gestion_exploraciones = function () {
                 TM.content_exploraciones.detalles.informes.activate();
                 TM.content_exploraciones.detalles.imagenes.activate();
                 TM.content_exploraciones.detalles.cita.activate();
-                Endotools.statusbar.mostrar_mensaje(_('Cargando gestión de exploraciones...'));/*IDIOMAOK*/
+                Endosys.statusbar.mostrar_mensaje(_('Cargando gestión de exploraciones...'));/*IDIOMAOK*/
                 TM.content_exploraciones.load_content(mainlayout, "content/busqueda_exploraciones.html" + ew_version_param()).done(function () {
                     $('.layout_main_content').layout({
                         north__size: 280,
@@ -1431,7 +1431,7 @@ var gestion_exploraciones = function () {
                         $('.layout_main_content').layout().close('north');
                     });
                     //  buscar exploraciones del paciente indicado
-                    gestion_exploraciones.buscar_exploraciones({ estado: 1, 'paciente_id': paciente_id, servicio_activo: Endotools.auth.servicio_activo.id }, $('#total-exploraciones'), $("#exportar_excel"));
+                    gestion_exploraciones.buscar_exploraciones({ estado: 1, 'paciente_id': paciente_id, servicio_activo: Endosys.auth.servicio_activo.id }, $('#total-exploraciones'), $("#exportar_excel"));
                 });
             },
 
@@ -1456,7 +1456,7 @@ var gestion_exploraciones = function () {
                 TM.content_exploraciones.detalles.imagenes.activate();
                 TM.content_exploraciones.detalles.cita.activate();
 
-                return gestion_exploraciones.buscar_exploraciones({ numero: numero_expl, servicio_activo: Endotools.auth.servicio_activo.id });
+                return gestion_exploraciones.buscar_exploraciones({ numero: numero_expl, servicio_activo: Endosys.auth.servicio_activo.id });
             }).then(function (exploraciones) {
                 var deferred = $.Deferred();
 
@@ -1465,7 +1465,7 @@ var gestion_exploraciones = function () {
                     deferred.resolve(exploraciones[0]);
                 } else {
                     // No encontro exploracion
-                    Endotools.statusbar.mostrar_mensaje(_('No se ha encontrado ninguna exploración con este número'));/*IDIOMAOK*/
+                    Endosys.statusbar.mostrar_mensaje(_('No se ha encontrado ninguna exploración con este número'));/*IDIOMAOK*/
                     deferred.reject();
                 }
 
@@ -1488,11 +1488,11 @@ var gestion_exploraciones = function () {
                 var formulario = $(el).data('formulario');
                 var control;
                 control = formularios.get_control_by_nombrecampo(formulario, '__TIEMPO_TOTAL');
-                if (control && esControlTipo(control.control, Endotools.campos.TIPO_TEXTO)) {
+                if (control && esControlTipo(control.control, Endosys.campos.TIPO_TEXTO)) {
                     $(control.control).val(tiempo_total);
                 }
                 control = formularios.get_control_by_nombrecampo(formulario, '__TIEMPO_RETIRADA');
-                if (control && esControlTipo(control.control, Endotools.campos.TIPO_TEXTO)) {
+                if (control && esControlTipo(control.control, Endosys.campos.TIPO_TEXTO)) {
                     $(control.control).val(tiempo_retirada);
                 }
             });
@@ -1523,7 +1523,7 @@ var gestion_exploraciones = function () {
                 var $aseguradora = $(document).find('select#expl_aseguradora');
                 $aseguradora.append($('<option value="">-</option>'));
 
-                Endotools.aseguradoras.index(TM.operaciones, { 'activo': 1 }).done(function (aseguradoras) {
+                Endosys.aseguradoras.index(TM.operaciones, { 'activo': 1 }).done(function (aseguradoras) {
                     for (var i = 0; i < aseguradoras.length; i++) {
                         if ($aseguradora.find('option[value="' + aseguradoras[i].id + '"]').length < 1) {
                             $aseguradora.append($('<option value="' + aseguradoras[i].id + '">' + aseguradoras[i].nombre + '</option>'));
@@ -1532,7 +1532,7 @@ var gestion_exploraciones = function () {
                 });
 
                 // Cargar datos de la Cita
-                return Endotools.citas.index(TM.content_exploraciones.detalles.cita, { exploracion_id: gestion_exploraciones.exploracion_id });
+                return Endosys.citas.index(TM.content_exploraciones.detalles.cita, { exploracion_id: gestion_exploraciones.exploracion_id });
             }).then(function (citas) {
                 // Si no ha devuelto ninguna cita, salir
                 if (citas.length == 0) {
@@ -1594,12 +1594,12 @@ var gestion_exploraciones = function () {
                     // muestra error por pantalla de los campos obligatorios
                     var msg = _('La exploración no se ha guardado, existen campos obligatorios sin rellenar.');/*IDIOMAOK*/
                     msg = msg + " (" + response.contenido.join([separator = ', ']) + ")";
-                    Endotools.statusbar.mostrar_mensaje(msg, 1);
+                    Endosys.statusbar.mostrar_mensaje(msg, 1);
                 } else {
-                    Endotools.statusbar.mostrar_mensaje(error_generico, 1)
+                    Endosys.statusbar.mostrar_mensaje(error_generico, 1)
                 }
             } else {
-                Endotools.statusbar.mostrar_mensaje(error_generico, 1)
+                Endosys.statusbar.mostrar_mensaje(error_generico, 1)
             }
         }
     }

@@ -64,16 +64,16 @@
                             
                             .then(function(tablas) {
                                 var params = {nombre: nuevoelemento, activo: '1'};
-                                if ((tablas[nuevo_elemento.tabla_id].rest == Endotools.elementos) || (tablas[nuevo_elemento.tabla_id].rest == Endotools.predefinidos)) {
+                                if ((tablas[nuevo_elemento.tabla_id].rest == Endosys.elementos) || (tablas[nuevo_elemento.tabla_id].rest == Endosys.predefinidos)) {
                                     params.campo_id = tablas[nuevo_elemento.tabla_id].id.split('_')[1];
                                 }
                                 
                                 // Si es un listado de elementos de un campo con ambito "`por servicio",
                                 // al crear el nuevo elemento se asigna el servicio activo.
                                 // si no hay servicio activo, lanzar error.
-                                if ((tablas[nuevo_elemento.tabla_id].rest == Endotools.elementos) && (tablas[nuevo_elemento.tabla_id].ambito == 1)) {
-                                    if ( Endotools.auth.servicio_activo && Endotools.auth.servicio_activo.id) {
-                                        params.servicio_id = Endotools.auth.servicio_activo.id;
+                                if ((tablas[nuevo_elemento.tabla_id].rest == Endosys.elementos) && (tablas[nuevo_elemento.tabla_id].ambito == 1)) {
+                                    if ( Endosys.auth.servicio_activo && Endosys.auth.servicio_activo.id) {
+                                        params.servicio_id = Endosys.auth.servicio_activo.id;
                                     } else {
                                         throw _("No se puede añadir un nuevo elemento a un campo con ámbito 'por servicio' porque no hay ningún servicio activo.");
                                     }
@@ -88,7 +88,7 @@
                                 $(that).dialog('close');
                             })
                             .fail(function(response){
-                                Endotools.statusbar.mostrar_mensaje(parseError(response.responseText), 1);
+                                Endosys.statusbar.mostrar_mensaje(parseError(response.responseText), 1);
                             });
                         }else{
                             alert(_("No se puede crear un elemento con texto vacio"));
@@ -144,7 +144,7 @@
             .then(function(tablas) {
                 var params = {nombre: nombre, activo: '1', campo_id: tabla_id };
                 // XXX TODO no se tiene en cuenta el ambito del campo, por si se ha de indicar servicio_id
-                return Endotools.elementos.create(TM.content_exploraciones.detalles.elementoscampos, params, null)
+                return Endosys.elementos.create(TM.content_exploraciones.detalles.elementoscampos, params, null)
             })
             .done(function(elemento) {
                 // completo los atributos del elemnto para que funcione correctamente el generar option

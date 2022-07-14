@@ -6,13 +6,13 @@ from endosys.model import meta
 from sqlalchemy.sql import and_, or_, not_
 
 '''
-Gestión de pacientes. Cualquier parte de EndoTools que acceda a los pacientes
+Gestión de pacientes. Cualquier parte de EndoSys que acceda a los pacientes
 debería hacerlo utilizando este module.
 
   XXX rest/pacientes
   XXX plugins...
 
-Accede siempre a la bbdd de EndoTools Web. Se debería implementar aqui la
+Accede siempre a la bbdd de EndoSys Web. Se debería implementar aqui la
 funcionalidad de los plugins para cambiar el comportamiento
 '''
 

@@ -5,7 +5,7 @@ mediante jQuery. (indicando rest_cfg.jquery = True).
 Además, en ese caso devuelven el promise de $.ajax().
 */
 
-Endotools.REST = function() {
+Endosys.REST = function() {
 
 //	var datasource;
 	var datasources = [];
@@ -13,7 +13,7 @@ Endotools.REST = function() {
 	return {
    
 		init: function() {
-//			datasource = Endotools.REST._new_datasource();
+//			datasource = Endosys.REST._new_datasource();
 		}
 		
 		/*,_new_datasource: function() {
@@ -32,8 +32,8 @@ Endotools.REST = function() {
 		,_get_datasource: function() {
 			throw 'Trying to use DataSource object!';/*NO TRADUCIR*/
 			//	XXX	para poder acceder a datasource desde fuera
-			if (Endotools.REST._datasource_in_progress()) {
-				return Endotools.REST._new_datasource();
+			if (Endosys.REST._datasource_in_progress()) {
+				return Endosys.REST._new_datasource();
 			} else {
 				return datasource;
 			}				
@@ -107,7 +107,7 @@ Endotools.REST = function() {
 				if (rest_cfg.raw_show) {
 					tm.transaction('GET', res, params, callback);
 				} else {
-					var ds = Endotools.REST._get_datasource();
+					var ds = Endosys.REST._get_datasource();
 					ds.connMethodPost = false;
 					ds.liveData = res;
 					ds.responseSchema = rest_cfg.show_schema;
@@ -167,7 +167,7 @@ Endotools.REST = function() {
 				if (rest_cfg.raw_index) {
 					tm.transaction('GET', res, params, callback);
 				} else {						
-					var ds = Endotools.REST._get_datasource();
+					var ds = Endosys.REST._get_datasource();
 					ds.connMethodPost = false;
 					ds.liveData = res;
 					ds.responseSchema = rest_cfg.index_schema;
@@ -230,7 +230,7 @@ Endotools.REST = function() {
 				if (rest_cfg.raw_create) {
 					tm.transaction('POST', res, params, callback);
 				} else {						
-					var ds = Endotools.REST._get_datasource();
+					var ds = Endosys.REST._get_datasource();
 					ds.connMethodPost = true;
 					ds.liveData = res;
 					ds.responseSchema = rest_cfg.create_schema;
@@ -261,9 +261,9 @@ Endotools.REST = function() {
 		}
 		,generic_fail: function(jqXHR, textStatus, errorThrown) {
 			if (jqXHR && jqXHR.status == 403) {
-				Endotools.statusbar.mostrar_mensaje('El usuario no tiene permiso', 1);/*IDIOMAOK*/
+				Endosys.statusbar.mostrar_mensaje('El usuario no tiene permiso', 1);/*IDIOMAOK*/
 			}else if (jqXHR && jqXHR.status == 401) {
-				Endotools.statusbar.mostrar_mensaje('El usuario no está autenticado', 1);/*IDIOMAOK*/
+				Endosys.statusbar.mostrar_mensaje('El usuario no está autenticado', 1);/*IDIOMAOK*/
 			}
 		}
 		,make: function(resource) {
@@ -299,7 +299,7 @@ Endotools.REST = function() {
 							'resource': resource
 						}
 					}
-					var promise = Endotools.REST.index(tm, _rest_cfg, null, params);
+					var promise = Endosys.REST.index(tm, _rest_cfg, null, params);
 					if (args && args.preprocess) {
 						promise = promise.then(args.preprocess);
 					}
@@ -340,7 +340,7 @@ Endotools.REST = function() {
 					}
 
 
-					return promise.fail(Endotools.REST.generic_fail);					
+					return promise.fail(Endosys.REST.generic_fail);					
 
 					
 				}
@@ -355,30 +355,30 @@ Endotools.REST = function() {
 						}
 					}
                 
-					var promise = Endotools.REST.show(tm, _rest_cfg, id, null, params);
+					var promise = Endosys.REST.show(tm, _rest_cfg, id, null, params);
 
-					return promise.fail(Endotools.REST.generic_fail);;
+					return promise.fail(Endosys.REST.generic_fail);;
 			
 				}
 				,update: function(tm, id, params) {
 
-					var promise = Endotools.REST.update(tm, rest_cfg, id, null, params);
+					var promise = Endosys.REST.update(tm, rest_cfg, id, null, params);
 					
-					return promise.fail(Endotools.REST.generic_fail);;
+					return promise.fail(Endosys.REST.generic_fail);;
 
 				}
 				,create: function(tm, params) {
 					
-					var promise = Endotools.REST.create(tm, rest_cfg, null, params);
+					var promise = Endosys.REST.create(tm, rest_cfg, null, params);
 					
-					return promise.fail(Endotools.REST.generic_fail);;
+					return promise.fail(Endosys.REST.generic_fail);;
 
 				}
 				,'delete': function(tm, id, params, args) {	//	el nombre "delete" falla en IE7 ! aunque se puede usar obj['delete'](...)
 					/*
 					args.datatable: DataTable de YUI 2
 					*/
-					var promise = Endotools.REST.delete_(tm, rest_cfg, id, null, params);
+					var promise = Endosys.REST.delete_(tm, rest_cfg, id, null, params);
 					if (args && args.datatable) {
 						//	si se indica un datatable, buscar el row con el mismo id
 						//	y quitarlo.
@@ -392,7 +392,7 @@ Endotools.REST = function() {
 							});
 					}
 							
-					return promise.fail(Endotools.REST.generic_fail);;
+					return promise.fail(Endosys.REST.generic_fail);;
 				}
 			}
 

@@ -37,24 +37,24 @@ class MainController(BaseController):
 		# atributo lang del elemento HTML. Asignar el idioma definido en el INI.
 		# Asi se puede inicializar la libreria web de i18n.
 		# Si no se ha definido, por defecto "es"
-		content = content.replace('ENDOTOOLS:LANG', config.get('lang', 'es'))
+		content = content.replace('ENDOSYS:LANG', config.get('lang', 'es'))
 
 		# poner la version.
 		try:
 			version_file = os.path.join(config['pylons.paths']['root_parent'], 'version.txt')
 			v_file = open(version_file, 'r')
 			first_line = v_file.readline()
-			content = content.replace('ENDOTOOLS:VERSION', first_line)
+			content = content.replace('ENDOSYS:VERSION', first_line)
 		except Exception as e:
 			log.error(e)
-			content = content.replace('ENDOTOOLS:VERSION', '')
+			content = content.replace('ENDOSYS:VERSION', '')
 
 
 
 		# tags para firma electronica
 		if config.get('FIRMA_ELECTRONICA.ACTIVO', '0') in ('1', '2'):
 			if config.get('FIRMA_ELECTRONICA.TIPO') == '@firma' :
-				content = content.replace('<!--ENDOTOOLS:FIRMA_ELECTRONICA-->',
+				content = content.replace('<!--ENDOSYS:FIRMA_ELECTRONICA-->',
 				"""
 <script type="text/javascript" src="/cliente_firma/deployjava/deployJava-non-minified.js?v=1"></script>
 <script type="text/javascript" src="/cliente_firma/miniapplet-1.1u4/miniapplet.js"></script>
@@ -68,7 +68,7 @@ class MainController(BaseController):
 				"""
 				)
 			elif config.get('FIRMA_ELECTRONICA.TIPO') == 'viafirma' :
-				content = content.replace('<!--ENDOTOOLS:FIRMA_ELECTRONICA-->',
+				content = content.replace('<!--ENDOSYS:FIRMA_ELECTRONICA-->',
 				"""
 					<script type="text/javascript" src="/cliente_firma/viafirma.pesado.js"></script>
 				"""

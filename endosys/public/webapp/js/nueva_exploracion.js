@@ -138,7 +138,7 @@ var nueva_exploracion = function() {
 				//	y no se tiene el paciente_id. Además, como el index por historia devuelve los deshabilitados por defecto,
 				//	esto estaba causando un problema. Al poner este filtro deshabilitado=0 nos aseguramos de que solo se devuelva
 				//	el paciente habilitado.
-				Endotools.pacientes.index(TM.operaciones, {historia: gestion_citas.historia, deshabilitado: 0})
+				Endosys.pacientes.index(TM.operaciones, {historia: gestion_citas.historia, deshabilitado: 0})
 				  .done(function(pacientes) {
 				  	gestion_citas.paciente_id = pacientes[0].id;
 					nueva_exploracion._continuar_seleccionar_cita();
@@ -221,7 +221,7 @@ var nueva_exploracion = function() {
 
 					//	comprobar antes que se haya seleccionado un tipo de expl
 					//if (!tipos_exploracion.tipo_exploracion_id) {
-					//	Endotools.statusbar.mostrar_mensaje(_('Debe seleccionar un tipo de exploración para continuar'), 1);/*IDIOMAOK*/
+					//	Endosys.statusbar.mostrar_mensaje(_('Debe seleccionar un tipo de exploración para continuar'), 1);/*IDIOMAOK*/
 					//	return;
 					//}
 					//
@@ -279,7 +279,7 @@ var nueva_exploracion = function() {
 								}else{
 									//si es una nueva, etonces si o si tiene que apretar el boton 
 									//del tipo de exploracion
-									Endotools.statusbar.mostrar_mensaje(_('Debe seleccionar un tipo de exploración para continuar'), 1);/*IDIOMAOK*/
+									Endosys.statusbar.mostrar_mensaje(_('Debe seleccionar un tipo de exploración para continuar'), 1);/*IDIOMAOK*/
 									return;
 								}
 							}else{
@@ -401,7 +401,7 @@ var nueva_exploracion = function() {
 				set_continuar(function() {
 					//	comprobar antes que se haya seleccionado una agenda y prestación
 					if (!gestion_agendas_chus.prestacion_id) {
-						Endotools.statusbar.mostrar_mensaje(_('Debe seleccionar una prestación para continuar'), 1);/*IDIOMAOK*/
+						Endosys.statusbar.mostrar_mensaje(_('Debe seleccionar una prestación para continuar'), 1);/*IDIOMAOK*/
 						return;
 					}
 					nueva_exploracion.agenda_id = gestion_agendas_chus.agenda_id;
@@ -417,7 +417,7 @@ var nueva_exploracion = function() {
 		_realizar_expl: function() {
 			
 			// 2.4.7: es necesario un servicio activo para hacer una nueva exploración
-			if (!Endotools.auth.servicio_activo) {
+			if (!Endosys.auth.servicio_activo) {
 				alert(_("Se requiere un servicio activo para poder realizar una nueva exploración"));
 				return;
 			}
@@ -427,7 +427,7 @@ var nueva_exploracion = function() {
 			// con los parametros 3 parametros posibles: cita, paciente y tipoExploracion_id
 			if (nueva_exploracion.is_exploracion_editandose()){
 				
-				Endotools.statusbar.mostrar_mensaje(_('La exploración se esta editando. Por favor espere...'), 0, 10000, "edicion-exploracion");//IDIOMAOK
+				Endosys.statusbar.mostrar_mensaje(_('La exploración se esta editando. Por favor espere...'), 0, 10000, "edicion-exploracion");//IDIOMAOK
 										
 				// Crea los parametros a enviar si han cambiado
 				var campos_actualizados = {}
@@ -443,7 +443,7 @@ var nueva_exploracion = function() {
 					campos_actualizados["paciente_id"] = nueva_exploracion.paciente_id;
 				}
 
-				Endotools.exploraciones.update(TM.nueva_exploracion, nueva_exploracion.exploracion_id_editandose, campos_actualizados )
+				Endosys.exploraciones.update(TM.nueva_exploracion, nueva_exploracion.exploracion_id_editandose, campos_actualizados )
 				.done(function(){
 					set_informacion(null);
 					nueva_exploracion._mostrar_exploracion(nueva_exploracion.exploracion_id_editandose);
@@ -492,7 +492,7 @@ var nueva_exploracion = function() {
 				// Checkear si tiene capturas. 
 				// SI: Ir hacia atras directamente
 				// NO: Mostrar dialogo que pregunta si quiere descartar o ir hacia atras
-				Endotools.imagenes.index(TM.nueva_exploracion, {'exploracion_id': nueva_exploracion.exploracion_id_editandose})
+				Endosys.imagenes.index(TM.nueva_exploracion, {'exploracion_id': nueva_exploracion.exploracion_id_editandose})
 				.done(function(imagenes,response) {
 					// >> Tiene capturas - Ir hacia atras
 					// Nota sobre BORRADO LOGICO: en el futuro tendria que preguntar si quiere deshacer, pero 
@@ -515,11 +515,11 @@ var nueva_exploracion = function() {
 							if (confirm_dialog)
 							{
 						 		//Borrar la exploracion
-								Endotools.exploraciones['delete'](TM.nueva_exploracion,nueva_exploracion.exploracion_id_editandose, {'borrado_motivo': 'Descartar'})
+								Endosys.exploraciones['delete'](TM.nueva_exploracion,nueva_exploracion.exploracion_id_editandose, {'borrado_motivo': 'Descartar'})
 								.done(function()
 								{
 									//	vaciar la pantalla
-									Endotools.statusbar.mostrar_mensaje(_('La exploración ha sido descartada'), 0);/*IDIOMAOK*/
+									Endosys.statusbar.mostrar_mensaje(_('La exploración ha sido descartada'), 0);/*IDIOMAOK*/
 									set_titulo_pantalla(" ", "");
 									desactivar_asistente();
 									set_atras(null);
@@ -530,7 +530,7 @@ var nueva_exploracion = function() {
 						 		}).fail(function(data){
 									if (data.responseText){
 										error = parseError(data.responseText);
-										Endotools.statusbar.mostrar_mensaje(error, 1);	
+										Endosys.statusbar.mostrar_mensaje(error, 1);	
 									}
 								});
 						 	}
@@ -593,15 +593,15 @@ var nueva_exploracion = function() {
 						'_servicio_id':		nueva_exploracion.SIHGA_servicio_id,
 						'_prestacion_id':	nueva_exploracion.prestacion_id,
 						///////////////////////////////////////
-						'servicio_id':		Endotools.auth.servicio_activo.id,
+						'servicio_id':		Endosys.auth.servicio_activo.id,
 						'paciente_id':		nueva_exploracion.paciente_id,
 						'tipoExploracion_id': nueva_exploracion.tipo_exploracion_id,
 						'cita_id':			nueva_exploracion.cita_id };
 
-			Endotools.exploraciones.create(TM.nueva_exploracion,params)
+			Endosys.exploraciones.create(TM.nueva_exploracion,params)
 			.done(function(exploracion) {
 				
-				Endotools.statusbar.cerrar_mensaje("edicion-exploracion");
+				Endosys.statusbar.cerrar_mensaje("edicion-exploracion");
 				//si la exploracion era con citas entonces cambia el flag estado
 				//console.log(exploracion)
 				if (nueva_exploracion.modo == nueva_exploracion.CON_CITA){
@@ -629,7 +629,7 @@ var nueva_exploracion = function() {
 					}
 					
 				}else{
-					Endotools.statusbar.mostrar_mensaje(_('Error al crear la exploración'), 1);/*IDIOMAOK*/	
+					Endosys.statusbar.mostrar_mensaje(_('Error al crear la exploración'), 1);/*IDIOMAOK*/	
 				}
 			});	//termina el create
 
@@ -664,7 +664,7 @@ var nueva_exploracion = function() {
 			//mostrar informacion de la cita o el paciente
 			if (cita_id){
 		
-				Endotools.citas.show(TM.nueva_exploracion,cita_id).done(function(cita){
+				Endosys.citas.show(TM.nueva_exploracion,cita_id).done(function(cita){
 					$("#tipo_cita").show();
 					//cita
 					$("#tipo_exploracion_cita").html(cita.fecha + " - " + cita.hora);
@@ -692,7 +692,7 @@ var nueva_exploracion = function() {
 						$("#punto-prestacion").hide();
 					}
 
-					var centro_id = Endotools.auth.servicio_activo.centro_id;
+					var centro_id = Endosys.auth.servicio_activo.centro_id;
 					if (opciones_config.IDENTIFICADORES_PACIENTE.toUpperCase() === 'IDUNICO' ||
 						opciones_config.IDENTIFICADORES_PACIENTE.toUpperCase() === 'IDUNICO+NHC') {
 						$("#tipo_exploracion_paciente_historia_label").html(opciones_config.IDUNICO_LABEL+":");
@@ -720,7 +720,7 @@ var nueva_exploracion = function() {
 					$("#tipo_exploracion_prestacion_cita_label").hide();
 					$("#tipo_exploracion_prestacion_cita").html("");
 
-					Endotools.pacientes.show(TM.nueva_exploracion,paciente_id).done(function(paciente){
+					Endosys.pacientes.show(TM.nueva_exploracion,paciente_id).done(function(paciente){
 						//nombre
 						$("#tipo_exploracion_paciente_nombre").html((paciente.nombre || "") + " " +  (paciente.apellido1 || "") + " " + (paciente.apellido2 || ""));
 						
@@ -734,7 +734,7 @@ var nueva_exploracion = function() {
 						}
 						
 
-						var centro_id = Endotools.auth.servicio_activo.centro_id;
+						var centro_id = Endosys.auth.servicio_activo.centro_id;
 						if (opciones_config.IDENTIFICADORES_PACIENTE.toUpperCase() === 'IDUNICO' ||
 							opciones_config.IDENTIFICADORES_PACIENTE.toUpperCase() === 'IDUNICO+NHC') {
 							$("#tipo_exploracion_paciente_historia_label").html(opciones_config.IDUNICO_LABEL+":");
@@ -773,7 +773,7 @@ var nueva_exploracion = function() {
 			nueva_exploracion.reset_valores_originales();
 
 			//reconstruyo nueva exploracion
-			Endotools.exploraciones.show(TM.content_exploraciones,exploracion_id).done(function(exploracion){
+			Endosys.exploraciones.show(TM.content_exploraciones,exploracion_id).done(function(exploracion){
 				if (exploracion.cita==null){
 					nueva_exploracion.modo=nueva_exploracion.SIN_CITA;
 				}else{
@@ -804,7 +804,7 @@ var nueva_exploracion = function() {
 					if (nueva_exploracion.paciente_id_original){
 						gestion_pacientes.paciente_id = nueva_exploracion.paciente_id_original;
 					}else{
-						Endotools.statusbar.mostrar_mensaje(_('Debe seleccionar un paciente para continuar'), 1);//IDIOMAOK
+						Endosys.statusbar.mostrar_mensaje(_('Debe seleccionar un paciente para continuar'), 1);//IDIOMAOK
 						return;	
 					}
 				}
@@ -842,7 +842,7 @@ var nueva_exploracion = function() {
 						if (nueva_exploracion.cita_id_original) {
 							
 							//1) Completar la informacion de la cita en gestion_citas
-							Endotools.citas.show(TM.nueva_exploracion, nueva_exploracion.cita_id_original)
+							Endosys.citas.show(TM.nueva_exploracion, nueva_exploracion.cita_id_original)
 							.done(function(cita){
 								// Si no se selecciono una nueva cita pero tenia cita, se usa la misma cita que antes
 								// Para hacer eso se tiene que llamar al rest de citas para pedir la informacion de la cita
@@ -866,7 +866,7 @@ var nueva_exploracion = function() {
 							});
 						}else{
 							// 2) Lanza error y sale
-							Endotools.statusbar.mostrar_mensaje(_('Debe seleccionar una cita para continuar'), 1);/*IDIOMAOK*/
+							Endosys.statusbar.mostrar_mensaje(_('Debe seleccionar una cita para continuar'), 1);/*IDIOMAOK*/
 							habilitado_para_avanzar.reject();
 							return;	
 						}	
@@ -881,7 +881,7 @@ var nueva_exploracion = function() {
 								
 								if ( gestion_citas.medico_id_exploracion != userinfo.get_usuario().medico.id ){
 									//cita iniciada y no es el mismo usuario que la creo
-									Endotools.statusbar.mostrar_mensaje(_(
+									Endosys.statusbar.mostrar_mensaje(_(
 										'La cita selecciona se está realizando'), 1);/*IDIOMAOK*/
 									return;
 								}else{
@@ -893,7 +893,7 @@ var nueva_exploracion = function() {
 										// si es otra, entonces no puede seleccionarla, porque quiere seleccionar una 
 										// cita que esta siendo usada y ya tiene una exploracion asignada.
 										if (nueva_exploracion.cita_id_original != gestion_citas.cita_id){
-											Endotools.statusbar.mostrar_mensaje(_(
+											Endosys.statusbar.mostrar_mensaje(_(
 												'La cita selecciona se está realizando. \
 												Seleccione una cita libre o la misma que esta editando'), 1);/*IDIOMAOK*/
 											return;
@@ -906,18 +906,18 @@ var nueva_exploracion = function() {
 
 							}else if (gestion_citas.flag_estado == '02'){ //LA ELEGIDA ESTA TERMINADA
 								//cita finalizada
-								Endotools.statusbar.mostrar_mensaje(_(
+								Endosys.statusbar.mostrar_mensaje(_(
 									'La cita selecciona ya está realizada'), 1);/*IDIOMAOK*/
 								return;
 							}else if (gestion_citas.flag_estado == '03'){ //LA ELEGIDA ESTA CANCELANDA
 								//cita cancelada
-								Endotools.statusbar.mostrar_mensaje(_(
+								Endosys.statusbar.mostrar_mensaje(_(
 									'La cita seleccionada ha sido cancelada'), 1);/*IDIOMAOK*/
 								return;
 							}
 							else if (gestion_citas.flag_estado == '04'){
 								// Cita con exploración borrada
-								Endotools.statusbar.mostrar_mensaje(_(
+								Endosys.statusbar.mostrar_mensaje(_(
 									'La exploración de esta cita ha sido borrada'), 1);/*IDIOMAOK*/
 								return;
 							}
@@ -1018,7 +1018,7 @@ var nueva_exploracion = function() {
 
 					var content_dialog = this; 
 					content_dialog.append( _('¿Esta seguro que desea cambiar el paciente?'));/*IDIOMAOK*/
-					Endotools.pacientes.show(TM.nueva_exploracion,nueva_exploracion.paciente_id_original).done(function(paciente){
+					Endosys.pacientes.show(TM.nueva_exploracion,nueva_exploracion.paciente_id_original).done(function(paciente){
 						
 						var historia = paciente.idunico;
 
@@ -1027,7 +1027,7 @@ var nueva_exploracion = function() {
 						content_dialog.append('<div class="dialog_primer_valor"></div>');
 						content_dialog.append("<div class='dialog_valor_anterior'>" +historia + " &#8226; " + (paciente.nombre || "") + " " +  (paciente.apellido1 || "") + " " +  (paciente.apellido2 || + "") + " &#8226; " + edad + " " +_("años") + "</div>");//IDIOMAOK
 						content_dialog.append("<div class='dialog_valor_flecha'><i class='fa fa-arrow-down'></div>");
-						Endotools.pacientes.show(TM.nueva_exploracion,gestion_pacientes.paciente_id).done(function(paciente_nuevo){
+						Endosys.pacientes.show(TM.nueva_exploracion,gestion_pacientes.paciente_id).done(function(paciente_nuevo){
 							
 
 							var historia = paciente_nuevo.idunico;
@@ -1092,11 +1092,11 @@ var nueva_exploracion = function() {
 					content_dialog.append("<div class='dialog_valor_flecha'><i class='fa fa-arrow-down'></div>");
 					content_dialog.append("<div class='dialog_valor_nuevo'>" + tipos_exploracion.values[tipos_exploracion.tipo_exploracion_id]+ "</div>");
 					/*
-					Endotools.tipos_exploracion.show(TM.nueva_exploracion,nueva_exploracion.tipo_exploracion_id_original).done(function(tipo_exploracion_anterior){
+					Endosys.tipos_exploracion.show(TM.nueva_exploracion,nueva_exploracion.tipo_exploracion_id_original).done(function(tipo_exploracion_anterior){
 						content_dialog.append('<div class="dialog_primer_valor"></div>');
 						content_dialog.append("<div class='dialog_valor_anterior'>" + tipo_exploracion_anterior.nombre + "</div>");
 						content_dialog.append("<div class='dialog_valor_flecha'><i class='fa fa-arrow-down'></div>");
-						Endotools.tipos_exploracion.show(TM.nueva_exploracion,tipos_exploracion.tipo_exploracion_id).done(function(tipo_exploracion_nueva){
+						Endosys.tipos_exploracion.show(TM.nueva_exploracion,tipos_exploracion.tipo_exploracion_id).done(function(tipo_exploracion_nueva){
 							
 							content_dialog.append("<div class='dialog_valor_nuevo'>" + tipo_exploracion_nueva.nombre+ "</div>");
 						
@@ -1154,7 +1154,7 @@ var nueva_exploracion = function() {
 					var content_dialog = this; 
 					content_dialog.append( _('¿Esta seguro que desea cambiar la cita?'));/*IDIOMAOK*/
 					content_dialog.append('<div class="dialog_primer_valor"></div>');
-					Endotools.citas.show(TM.nueva_exploracion,nueva_exploracion.cita_id_original).done(function(cita){
+					Endosys.citas.show(TM.nueva_exploracion,nueva_exploracion.cita_id_original).done(function(cita){
 						
 						var historia="";
 						var edad="";
@@ -1179,7 +1179,7 @@ var nueva_exploracion = function() {
 						content_dialog.append("<div class='dialog_valor_anterior'>" + cita.fecha + " - " + cita.hora + prestacion + "</div>");
 						content_dialog.append("<div class='dialog_valor_flecha'><i class='fa fa-arrow-down'></div>");
 						
-						Endotools.citas.show(TM.nueva_exploracion,gestion_citas.cita_id).done(function(cita_nueva){
+						Endosys.citas.show(TM.nueva_exploracion,gestion_citas.cita_id).done(function(cita_nueva){
 						
 							var historia="";
 							var edad="";
@@ -1229,7 +1229,7 @@ var nueva_exploracion = function() {
 
 					var content_dialog = this; 
 					
-					Endotools.exploraciones.show(TM.nueva_exploracion,nueva_exploracion.exploracion_id_editandose).done(function(exploracion){
+					Endosys.exploraciones.show(TM.nueva_exploracion,nueva_exploracion.exploracion_id_editandose).done(function(exploracion){
 						
 						TM.content_exploraciones.load_content(content_dialog, "content/dialog_informacion_exploracion.html"+ew_version_param()).done(function(){
 
@@ -1248,7 +1248,7 @@ var nueva_exploracion = function() {
 
 								//obtiene el nombre de la agenda v2.4.9
 								if (exploracion.cita.agenda_id){
-									Endotools.agendas.show(TM.nueva_exploracion,exploracion.cita.agenda_id).done(function(agenda){
+									Endosys.agendas.show(TM.nueva_exploracion,exploracion.cita.agenda_id).done(function(agenda){
 										if (agenda.nombre){
 											$("#dialog_cita_agenda").html(agenda.nombre);
 										}
@@ -1262,7 +1262,7 @@ var nueva_exploracion = function() {
 								
 							}
 
-							var centro_id = Endotools.auth.servicio_activo.centro_id;
+							var centro_id = Endosys.auth.servicio_activo.centro_id;
 							$("#dialog_historia_label").html(opciones_config.IDUNICO_LABEL);
 							$("#dialog_historia").html(exploracion.paciente.idunico);
 

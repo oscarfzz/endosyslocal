@@ -12,7 +12,7 @@ from endosys.config.routing import make_map
 from endosys.model import init_model
 from endosys.lib.checks import check_cache_dir
 
-def _endotools_environment_config():
+def _endosys_environment_config():
     """ Configuración de variables de Endosys App, como por ejemplo rutas, etc...
         Añadir paths:
         ------------
@@ -100,7 +100,7 @@ def load_environment(global_conf, app_conf):
     config.init_app(global_conf, app_conf, package='endosys',
                     template_engine='mako', paths=paths)
 
-    _endotools_environment_config()
+    _endosys_environment_config()
 
     config['routes.map'] = make_map()
     config['pylons.g'] = app_globals.Globals()

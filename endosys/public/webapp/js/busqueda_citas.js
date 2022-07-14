@@ -16,7 +16,7 @@ var busqueda_citas = function() {
 				
 				busqueda_citas.paciente_id = null;
 				TM.content_citas.activate();
-				Endotools.statusbar.mostrar_mensaje(_('Cargando citas...'));/*IDIOMAOK*/
+				Endosys.statusbar.mostrar_mensaje(_('Cargando citas...'));/*IDIOMAOK*/
 				
 				var content_html = "content/busqueda_citas.html"+ew_version_param();
 
@@ -138,7 +138,7 @@ var busqueda_citas = function() {
 			};
 
 			//	-----------------------------------
-			Endotools.statusbar.mostrar_mensaje(_('Ready'));/*IDIOMAOK*/
+			Endosys.statusbar.mostrar_mensaje(_('Ready'));/*IDIOMAOK*/
 			
 			if (callback_fn) callback_fn();
 			
@@ -173,7 +173,7 @@ var busqueda_citas = function() {
 
 			for (var p in params) { if (params[p] == '') delete params[p]; }
 		
-			Endotools.citas.index(TM.content_citas, params, {datatable: busqueda_citas.datatable_results})
+			Endosys.citas.index(TM.content_citas, params, {datatable: busqueda_citas.datatable_results})
 			.done(function(results){
 				
 				busqueda_citas.cita_id = null;
@@ -183,13 +183,13 @@ var busqueda_citas = function() {
 				
 				if (results && results.length == 0) {
 					//no se ha encontrado ningun paciente
-					Endotools.statusbar.mostrar_mensaje(_('No se ha encontrado ninguna cita'));/*IDIOMAOK*/
+					Endosys.statusbar.mostrar_mensaje(_('No se ha encontrado ninguna cita'));/*IDIOMAOK*/
 				} else {
-					Endotools.statusbar.mostrar_mensaje(_('Listo'));/*IDIOMAOK*/
+					Endosys.statusbar.mostrar_mensaje(_('Listo'));/*IDIOMAOK*/
 				}								
 			})
 			.fail(function () {
-				Endotools.statusbar.mostrar_mensaje(_('Error al cargar las citas'), 1);/*IDIOMAOK*/
+				Endosys.statusbar.mostrar_mensaje(_('Error al cargar las citas'), 1);/*IDIOMAOK*/
 			});
 		},
 	

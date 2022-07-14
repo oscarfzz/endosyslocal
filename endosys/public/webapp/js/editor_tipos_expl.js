@@ -35,7 +35,7 @@
 
 			if (tipoexpl_id == null) return;
 
-			Endotools.formularios.index(TM.content_editorTiposExpl.tiposexploracion, {'tipoexploracion_id': tipoexpl_id}).done(function(formularios) {
+			Endosys.formularios.index(TM.content_editorTiposExpl.tiposexploracion, {'tipoexploracion_id': tipoexpl_id}).done(function(formularios) {
 				for (var i=0; i < formularios.length; i++) {
 					$lista_seleccionados.append( $('<option value="' + formularios[i].id + '">' + formularios[i].titulo + '</option>') );
 				}
@@ -73,7 +73,7 @@
 			var $form_tipo_expl = $("#tipo_exploracion_detail");
 
 			// Busca los servicios.
-			Endotools.servicios.index(TM.content_editorTiposExpl.tiposexploracion).then(function(servicios) {
+			Endosys.servicios.index(TM.content_editorTiposExpl.tiposexploracion).then(function(servicios) {
 				var $servicios = $form_tipo_expl.find("#servicio_tipo_expl");
 
 				for(var i = 0; i < servicios.length; i++) {
@@ -121,7 +121,7 @@
 			TM.content_editorTiposExpl.activate();
 			TM.content_editorTiposExpl.tiposexploracion.activate();
 			TM.content_editorTiposExpl.detalles.activate();
-			Endotools.statusbar.mostrar_mensaje(_('Cargando editor de tipo de exploración'));	/*IDIOMAOK*/
+			Endosys.statusbar.mostrar_mensaje(_('Cargando editor de tipo de exploración'));	/*IDIOMAOK*/
 			TM.content_editorTiposExpl.load_content(mainlayout, 'content/editor_tipos_exploracion.html'+ew_version_param()).done(function() {
 				$('.layout_main_content').layout({
 					west__size: 300,
@@ -188,7 +188,7 @@
 					console.log(newValueActive);
 					console.log(tipoexpl_id);
 
-					Endotools.tipos_exploracion.update(TM.content_editorTiposExpl, tipoexpl_id, {'activo': newValueActive ? '1' : '0'});				
+					Endosys.tipos_exploracion.update(TM.content_editorTiposExpl, tipoexpl_id, {'activo': newValueActive ? '1' : '0'});				
 				});
 
 				datatable.subscribe("rowClickEvent", function(oArgs) {
@@ -242,7 +242,7 @@
 							'duracion': tipo_expl.duracion
 						};
 
-						return Endotools.tipos_exploracion.create(TM.content_editorTiposExpl.tiposexploracion, params);
+						return Endosys.tipos_exploracion.create(TM.content_editorTiposExpl.tiposexploracion, params);
 					}).done(function(tipoexpl) {
 						// agregar al datatable
 						var fields = {
@@ -290,7 +290,7 @@
 									$dialog.html(html);
 
 									// carga los datos del tipo de exploracion a editar
-									Endotools.tipos_exploracion.show(TM.content_editorTiposExpl.tiposexploracion, editor_tipos_expl.tipoexpl_id).done(function(tipo_expl) {
+									Endosys.tipos_exploracion.show(TM.content_editorTiposExpl.tiposexploracion, editor_tipos_expl.tipoexpl_id).done(function(tipo_expl) {
 										editor_tipos_expl.init_form_tipo_expl(tipo_expl);
 									});
 								});
@@ -309,7 +309,7 @@
 								'duracion': tipo_expl.duracion
 							};
 
-							return Endotools.tipos_exploracion.update(TM.content_editorTiposExpl.tiposexploracion, editor_tipos_expl.tipoexpl_id, params).then(function() {
+							return Endosys.tipos_exploracion.update(TM.content_editorTiposExpl.tiposexploracion, editor_tipos_expl.tipoexpl_id, params).then(function() {
 								return tipo_expl;
 							});
 						}).done(function(tipoexpl) {
@@ -336,11 +336,11 @@
 					}
 
 					controles.confirm_dialog(_('Eliminar tipo de exploración'), _('¿Estás seguro de que quieres eliminar este tipo de exploración?')).then(function() {	/*IDIOMAOK*/
-						return Endotools.tipos_exploracion['delete'](TM.operaciones, editor_tipos_expl.tipoexpl_id, null, {'datatable': datatable})
+						return Endosys.tipos_exploracion['delete'](TM.operaciones, editor_tipos_expl.tipoexpl_id, null, {'datatable': datatable})
 					}).done(function() {
 						editor_tipos_expl._mostrartipoexpl(null);
 					}).fail(function() {
-						Endotools.statusbar.mostrar_mensaje(_('No se pudo borrar el tipo de exploración.'), 1);	/*IDIOMAOK*/
+						Endosys.statusbar.mostrar_mensaje(_('No se pudo borrar el tipo de exploración.'), 1);	/*IDIOMAOK*/
 					});
 				});
 
@@ -418,7 +418,7 @@
 
 					var v = $( datatable.getTrEl(editor_tipos_expl._row) ).find('input:checkbox:checked').val() ? '1' : '0';
 
-					Endotools.tipos_exploracion.update(TM.content_editorTiposExpl.tiposexploracion, editor_tipos_expl.tipoexpl_id, {'formularios': formularios, activo: v});
+					Endosys.tipos_exploracion.update(TM.content_editorTiposExpl.tiposexploracion, editor_tipos_expl.tipoexpl_id, {'formularios': formularios, activo: v});
 					_modificado = false;
 				});
 
@@ -436,7 +436,7 @@
 					).then(function(nuevo_valor) {
 						// crear el nuevo form
 						return $.when(
-							Endotools.formularios.create(TM.operaciones, {'titulo': nuevo_valor}),
+							Endosys.formularios.create(TM.operaciones, {'titulo': nuevo_valor}),
 							nuevo_valor	//	con el when puedo añadir args al done
 						);
 					}).done(function(formulario, titulo_formulario) {
@@ -460,7 +460,7 @@
 						// modificar el nombre del formulario
 						return $.when(
 							nuevo_valor,	//	(esta es una forma de "arrastrar" una variable al siguiente done/then)
-							Endotools.formularios.update(TM.operaciones, $option.val(), {titulo: nuevo_valor})
+							Endosys.formularios.update(TM.operaciones, $option.val(), {titulo: nuevo_valor})
 						);
 					}).done(function(nuevo_valor) {
 						$option.text(nuevo_valor);
@@ -473,7 +473,7 @@
 					if ($option.length != 1) return;
 
 					controles.confirm_dialog(_('Eliminar formulario'), _('¿Estás seguro de que quieres eliminar el formulario seleccionado?')).then(function() {	/*IDIOMAOK*/
-						return Endotools.formularios['delete'](TM.operaciones, $option.val());
+						return Endosys.formularios['delete'](TM.operaciones, $option.val());
 					}).done(function() {
 						$option.remove();
 					});
@@ -516,7 +516,7 @@
 					//var formulario_titulo = $('#formularios_todos option:selected').first().text();
 
 					if(formulario_id) {
-						window.open(Endotools.formularios.resource + '/' + formulario_id + '.download', null);
+						window.open(Endosys.formularios.resource + '/' + formulario_id + '.download', null);
 					}
 				});
 				
@@ -526,14 +526,14 @@
 		
 		_reloadFormsDisponibles: function() {
 			// cargar todos los tipos de exploracion
-			Endotools.tipos_exploracion.index(TM.content_editorTiposExpl.tiposexploracion, {'_all': 1}, {'datatable': datatable});
-			Endotools.statusbar.mostrar_mensaje(_('Listo'));	/*IDIOMOK*/
+			Endosys.tipos_exploracion.index(TM.content_editorTiposExpl.tiposexploracion, {'_all': 1}, {'datatable': datatable});
+			Endosys.statusbar.mostrar_mensaje(_('Listo'));	/*IDIOMOK*/
 			
 			// cargar todos los formularios
 			var $lista_todos = $('#formularios_todos');
 			$lista_todos.empty();
 			
-			Endotools.formularios.index(TM.content_editorTiposExpl.detalles, {"_all": 1}).done(function(formularios) {
+			Endosys.formularios.index(TM.content_editorTiposExpl.detalles, {"_all": 1}).done(function(formularios) {
 				for(var i = 0; i < formularios.length; i++) {
 					$lista_todos.append( $('<option value="' + formularios[i].id + '">' + formularios[i].titulo + '</option>') );
 				}

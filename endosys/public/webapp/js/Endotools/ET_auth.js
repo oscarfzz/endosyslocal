@@ -1,4 +1,4 @@
-﻿Endotools.auth = function() {
+﻿Endosys.auth = function() {
 
 	return {
 
@@ -12,7 +12,7 @@
 		init: function() {
 			//	boton logout
 			 $("#loggedin-salir-btn").button().click(function() {
-				Endotools.auth.do_logout();
+				Endosys.auth.do_logout();
 			});
 
 			//	comprueba si esta autenticado o no y muestra el login o logout segun corresponda
@@ -21,17 +21,17 @@
 			.done(function(data) {
 				//	si esta autenticado hacer login sin pasar nombre ni password para
 				//	obtener los datos, si no mostrar box para login.
-//				Endotools.auth[data ? 'do_login' : 'show_login']();
+//				Endosys.auth[data ? 'do_login' : 'show_login']();
 				if (data) {
 					//	aunque es raro, podría fallar, por ejemplo si el usuario se ha eliminado.
 					//	en ese caso se tiene que hacer un logout para que lo olvide (a nivel de cookies)
 					//	si no no hay maneraq de hacer un login, a no ser que se borren las cookies desde el navegador.
-					Endotools.auth.do_login()
+					Endosys.auth.do_login()
 					.fail(function () {
-						Endotools.auth.do_logout();
+						Endosys.auth.do_logout();
 					});
 				} else {
-					Endotools.auth.show_login();
+					Endosys.auth.show_login();
 				}
 			})
 			
@@ -85,7 +85,7 @@
 			
 			$('#login-form-entrar-btn').button().click(function() {
 				if ($(this).attr('disabled')) return;
-				Endotools.auth.do_login($("#login-form-user").val(), $("#login-form-pass").val());
+				Endosys.auth.do_login($("#login-form-user").val(), $("#login-form-pass").val());
 			});
 		},
 		
@@ -96,7 +96,7 @@
 			//	mostrar logout
 			$("#mainheader-loggedin").html(sprintf(
 				'<div id="loggedin-usuario">' +
-					'<div>' + Endotools.auth.medico_nombre + '</div>' +
+					'<div>' + Endosys.auth.medico_nombre + '</div>' +
 					'<div>' + '</div>' +
 				'</div>' +
 				'<button id="loggedin-salir-btn" type="button" >%s</button>',/*IDIOMAOK*/
@@ -108,7 +108,7 @@
 				icons: { primary: "ui-icon-power" }
 			})
 			.click(function() {
-				Endotools.auth.do_logout();
+				Endosys.auth.do_logout();
 			});
 		},
 		
@@ -126,23 +126,23 @@
 			
 			var centro_id_seleccionado = null;
 			var centro_desc_seleccionado = null;
-			Endotools.statusbar.mostrar_mensaje(_('Autenticando usuario...'));/*IDIOMAOK*/
+			Endosys.statusbar.mostrar_mensaje(_('Autenticando usuario...'));/*IDIOMAOK*/
 			$("#login-form-entrar-btn").attr('disabled', true); 
 			
 			//	se intenta autenticar y si se ejecuta correctamente muestra el logout
 			return $.post("/auth2/signin", {'username': username, 'password': password})
 			
 			.done(function(data) {
-				Endotools.auth.medico_id =		$(data).find('medico').attr('id');
-				Endotools.auth.medico_nombre =	$(data).find('nombre').text();
-				Endotools.auth.username =		$(data).find('username').text();
-				Endotools.statusbar.mostrar_mensaje(_('Usuario autenticado correctamente'));/*IDIOMAOK*/
+				Endosys.auth.medico_id =		$(data).find('medico').attr('id');
+				Endosys.auth.medico_nombre =	$(data).find('nombre').text();
+				Endosys.auth.username =		$(data).find('username').text();
+				Endosys.statusbar.mostrar_mensaje(_('Usuario autenticado correctamente'));/*IDIOMAOK*/
 				success_login = true;
-				Endotools.auth.show_logout();
+				Endosys.auth.show_logout();
 			})
 			
 			.fail(function () {
-				Endotools.statusbar.mostrar_mensaje(_('Error en la autenticación de usuario'), 1);/*IDIOMAOK*/
+				Endosys.statusbar.mostrar_mensaje(_('Error en la autenticación de usuario'), 1);/*IDIOMAOK*/
 			})
 			
 			.always(function() {
@@ -157,7 +157,7 @@
 			.then(null,function(data, textStatus, jqXHR) {
 				// workstation es una variable global del sistema
 				if (success_login && workstation==null){
-					username = Endotools.auth.username;
+					username = Endosys.auth.username;
 					if (username && username.toUpperCase()=="SYSADMIN"){
 						// Solamente deja autoregistro al usuario sysadmin
 						// Abre un dialogo que sirve para registrar un nuevo puesto.
@@ -181,7 +181,7 @@
 			})
 			//	si el login es correcto, obtener la info del usuario incluyendo sus servicios
 			.then(function() {
-				return userinfo.inicializar(Endotools.auth.username);
+				return userinfo.inicializar(Endosys.auth.username);
 			})
 						
 			//	Obtener el servicio activo, comparando los del usuario y los del workstation. Si hay mas de uno lo
@@ -199,7 +199,7 @@
 				
 				//	si no hay ninguno, la funcionalidad es limitada/o no se puede entrar
 				if (resultado.length == 0) {
-					Endotools.statusbar.mostrar_mensaje(_('El usuario no pertenece a ninguno de los servicios disponibles en este puesto de trabajo'), 1);/*IDIOMAOK*/
+					Endosys.statusbar.mostrar_mensaje(_('El usuario no pertenece a ninguno de los servicios disponibles en este puesto de trabajo'), 1);/*IDIOMAOK*/
 					
 					//	de momento se deja para que igualmente se pueda entrar, porque si no seria imposible entrar
 					//	al menos para asignar servicios al workstation, ni con el sysadmin
@@ -242,19 +242,19 @@
 
 			//	si no se consigue un servicio, hacer logout
 			.fail(function () {
-				Endotools.auth.do_logout();
+				Endosys.auth.do_logout();
 			})
 
 			.then(function(_servicio) {
-				Endotools.auth.servicio_activo = _servicio;
-				$('#mainfooter #info_servicio').html(" - " + (Endotools.auth.servicio_activo ? Endotools.auth.servicio_activo.nombre : "(" + _('Ningún servicio activo') + ")"));//IDIOMAOK
+				Endosys.auth.servicio_activo = _servicio;
+				$('#mainfooter #info_servicio').html(" - " + (Endosys.auth.servicio_activo ? Endosys.auth.servicio_activo.nombre : "(" + _('Ningún servicio activo') + ")"));//IDIOMAOK
 			})
 			
 			//	****************************************************
 
 			.then(function() {
 				return $.when(
-					Endotools.busqueda_avanzada.index(TM.operaciones).then(function(busquedas_avanzadas) {return busquedas_avanzadas}),
+					Endosys.busqueda_avanzada.index(TM.operaciones).then(function(busquedas_avanzadas) {return busquedas_avanzadas}),
 					opciones_config.inicializar()
 				)
 			})
@@ -296,7 +296,7 @@
 				set_atras(null);
 				set_continuar(null);
 				contenido_principal.cerrar('#mainlayout');
-				Endotools.auth.show_login();
+				Endosys.auth.show_login();
 
 				// Borrar datos especificos del usuario
 				gestion_agenda.agendas = null;
@@ -304,7 +304,7 @@
 
 				// DESACTIVA EL CIERRE DE SESION
 				cierre_sesion.desactivar();
-				Endotools.auth._finalizar_transacciones_activas();
+				Endosys.auth._finalizar_transacciones_activas();
 			})
 			
 			/*.fail(function (jqXHR, textStatus, errorThrown) {

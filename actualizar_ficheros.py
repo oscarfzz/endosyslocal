@@ -187,9 +187,9 @@ if __name__ == "__main__":
 		filezip = 'endosysapp-update-%s-%s.zip' % (version, actualizacion)
 		try:
 			descomprimir_zip(filezip)
-			log.info("Endotools se ha actualizado correctamente")
+			log.info("Endosys se ha actualizado correctamente")
 		except:
-			log.error("ERROR - Endotools NO se ha actualizado correctamente")
+			log.error("ERROR - Endosys NO se ha actualizado correctamente")
 			raise
 
 	else:

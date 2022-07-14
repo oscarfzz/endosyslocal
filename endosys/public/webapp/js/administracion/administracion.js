@@ -30,7 +30,7 @@ var administracion = function() {
 			info_recursos = [
 				/*{
 					titulo: [_('Centros'), _('Centro')],
-					res:	Endotools.centros,
+					res:	Endosys.centros,
 					detalle:	{
 						'codigo':	{titulo: _('Código'), tipo: 'TEXTO', required: true},
 						'nombre':	{titulo: _('Nombre'), tipo: 'TEXTO', required: true},
@@ -39,7 +39,7 @@ var administracion = function() {
 				},*/
 				{
 					titulo: [_('Motivos de cancelación'), _('Motivo de cancelación')],
-					res:	Endotools.motivosCancelacion,
+					res:	Endosys.motivosCancelacion,
 					detalle:	{
 						'codigo':	{titulo: _('Código'), tipo: 'TEXTO', required: true},
 						'nombre':	{titulo: _('Nombre'), tipo: 'TEXTO', required: true}
@@ -47,7 +47,7 @@ var administracion = function() {
 				},
 				{
 					titulo: [_('Prioridades'), _('Prioridad')],
-					res:	Endotools.prioridades,
+					res:	Endosys.prioridades,
 					detalle:	{
 						'codigo':	{titulo: _('Código'), tipo: 'TEXTO', required: true},
 						'nombre':	{titulo: _('Nombre'), tipo: 'TEXTO', required: true},
@@ -56,7 +56,7 @@ var administracion = function() {
 				},
 				{
 					titulo: [_('Workstations'), _('Workstation')],
-					res:	Endotools.workstations,
+					res:	Endosys.workstations,
 					detalle:	{
 						'nombre':	{titulo: _('Nombre'), tipo: 'TEXTO', required: true},
 						'ip':		{titulo: _('IP'), tipo: 'TEXTO'/*, readonly: true*/}
@@ -180,10 +180,10 @@ var administracion = function() {
 
 					try {
 					  	json_error = JSON.parse(data.responseText);
-						Endotools.statusbar.mostrar_mensaje(json_error.data, 1);
+						Endosys.statusbar.mostrar_mensaje(json_error.data, 1);
 					} catch (e) {
 						// no puede parsearlo, da error. se muestra un mensaje generico de error
-						Endotools.statusbar.mostrar_mensaje(_("Ocurrio un error"), 1);/*IDIOMAOK*/
+						Endosys.statusbar.mostrar_mensaje(_("Ocurrio un error"), 1);/*IDIOMAOK*/
 					}
 				
 				});
@@ -205,7 +205,7 @@ var administracion = function() {
 								if (motivo!=""){
 									borrar(info, data, motivo);
 								}else{
-									Endotools.statusbar.mostrar_mensaje(_("Debe completar el motivo"), 1);//IDIOMAOK
+									Endosys.statusbar.mostrar_mensaje(_("Debe completar el motivo"), 1);//IDIOMAOK
 								}
 							});
 						}else{
@@ -230,7 +230,7 @@ var administracion = function() {
 			.fail(function(data){
 				if (data.responseText){
 					error = parseError(data.responseText);
-					Endotools.statusbar.mostrar_mensaje(error, 1);
+					Endosys.statusbar.mostrar_mensaje(error, 1);
 				}
 			});	
 			
@@ -284,8 +284,8 @@ var administracion = function() {
 			
 			//	se usa el rest de centros para obtener los servicios agrupados por centros
 			$.when(
-				Endotools.centros.index(TM.content_administracion),
-				data ? Endotools.workstations.show(TM.content_administracion, data.id) : [{servicios: []}]
+				Endosys.centros.index(TM.content_administracion),
+				data ? Endosys.workstations.show(TM.content_administracion, data.id) : [{servicios: []}]
 			)
 			.then(function(args1, args2) {
 				var centros = args1[0];
@@ -333,7 +333,7 @@ var administracion = function() {
 				TM.content_administracion.arbol.activate();
 				TM.content_administracion.detalles.activate();
 
-				Endotools.statusbar.mostrar_mensaje(_('Cargando administración de endosys...'));/*IDIOMAOK*/
+				Endosys.statusbar.mostrar_mensaje(_('Cargando administración de endosys...'));/*IDIOMAOK*/
 
 				//	$.when()	ejecuta varias promises y cuando todas se han cumplido, continua.
 				//	.then()		es la continuación de un promise cumplido, además de permitir encadenar una siguiente promise.
@@ -356,7 +356,7 @@ var administracion = function() {
 				
 					$("#organizacion").hide();
 				
-					var cargando_organizacion = Endotools.centros.index(TM.content_administracion)
+					var cargando_organizacion = Endosys.centros.index(TM.content_administracion)
 					
 					.then(function(centros_cargados) {
 						//	cargar la lista de servicios de cada centro				
@@ -375,7 +375,7 @@ var administracion = function() {
 								//	obtener los servicios
 								var centro = centros_cargados[i];
 								promises.push(
-									Endotools.servicios.index(	TM.content_administracion, { centro_id: centro.id }, { fail404: false} )
+									Endosys.servicios.index(	TM.content_administracion, { centro_id: centro.id }, { fail404: false} )
 									.then(function(servicios) {									
 										return [servicios, centro];
 									})
@@ -414,7 +414,7 @@ var administracion = function() {
 									var servicio = servicios_cargados[j];
 									
 									promises.push(
-										Endotools.agendas.index(TM.content_administracion,{servicio_id: servicios_cargados[j].id})
+										Endosys.agendas.index(TM.content_administracion,{servicio_id: servicios_cargados[j].id})
 										.then(function(agendas_cargadas) {
 											agendas_cargadas.servicio_id = servicio.id;
 											return agendas_cargadas;
@@ -524,7 +524,7 @@ var administracion = function() {
 						
 						//fin crear jstree
 						$('#organizacion').show();
-						Endotools.statusbar.mostrar_mensaje(_('Ready'));/*IDIOMAOK*/
+						Endosys.statusbar.mostrar_mensaje(_('Ready'));/*IDIOMAOK*/
 					});
 				
 				});
@@ -557,7 +557,7 @@ var administracion = function() {
 							params_centro.codigo = $("#detalle_elemento").find("#codigo-centro").val();					
 							params_centro.nombre = $("#detalle_elemento").find("#nombre-centro").val();
 							
-							var mofificando_centro = Endotools.centros.update(TM.content_administracion, datos.datos_centro.id, params_centro);
+							var mofificando_centro = Endosys.centros.update(TM.content_administracion, datos.datos_centro.id, params_centro);
 							mofificando_centro.done(function() {
 								//lo ideal seria actualizar el objeto con datos que devuelve el update, aunque siempre serán los mismos
 								administracion.mostrar(function() {									
@@ -585,7 +585,7 @@ var administracion = function() {
 							params_centro.nombre = $("#detalle_elemento").find("#nombre-centro").val();
 							
 							
-							var crear_centro = Endotools.centros.create(TM.content_administracion, params_centro);
+							var crear_centro = Endosys.centros.create(TM.content_administracion, params_centro);
 							crear_centro.done(function(centro) {
 
 								administracion.mostrar(function() {									
@@ -604,7 +604,7 @@ var administracion = function() {
 					.click(function( event ) {
 						
 							
-						var eliminando_centro = Endotools.centros['delete'](TM.content_administracion, datos.datos_centro.id);
+						var eliminando_centro = Endosys.centros['delete'](TM.content_administracion, datos.datos_centro.id);
 						eliminando_centro.done(function() {
 
 							administracion.mostrar();	
@@ -640,7 +640,7 @@ var administracion = function() {
 							dialogo_sala.crear_dialogo_sala(datos.datos_centro.id);
 						});
 
-						var cargando_salas = Endotools.salas.index(TM.content_administracion, {centro_id: datos.datos_centro.id});
+						var cargando_salas = Endosys.salas.index(TM.content_administracion, {centro_id: datos.datos_centro.id});
 						
 						cargando_salas.done(function(salas_cargadas) {
 								
@@ -693,7 +693,7 @@ var administracion = function() {
 			
 			pintar_asignar_medicos_salas: function (datos_centro, arg_detalle_servicio) {
 					
-						var cargando_salas = Endotools.salas.index(TM.content_administracion, {centro_id: datos_centro.id});
+						var cargando_salas = Endosys.salas.index(TM.content_administracion, {centro_id: datos_centro.id});
 																				
 						cargando_salas.done( function(salas_cargadas) {
 
@@ -738,7 +738,7 @@ var administracion = function() {
 
 						});
 
-						var cargando_medicos = Endotools.medicos.index(TM.content_administracion);
+						var cargando_medicos = Endosys.medicos.index(TM.content_administracion);
 
 						cargando_medicos.done( function(respuesta){
 
@@ -805,7 +805,7 @@ var administracion = function() {
 						$("#detalle_elemento").find("#codigo-servicio").val(datos.datos_servicio.codigo);
 						$("#detalle_elemento").find("#nombre-servicio").val(datos.datos_servicio.nombre);
 						
-						var obteniendo_detalle_servicio = Endotools.servicios.show(	TM.content_administracion, datos.datos_servicio.id );
+						var obteniendo_detalle_servicio = Endosys.servicios.show(	TM.content_administracion, datos.datos_servicio.id );
 						obteniendo_detalle_servicio.done( function (arg_detalle_servicio) {
 							administracion.pintar_asignar_medicos_salas( datos_centro, arg_detalle_servicio );
 					
@@ -841,7 +841,7 @@ var administracion = function() {
 							params_servicio.medicos = medico_checked.join();
 							
 																					
-							var mofificando_servicio = Endotools.servicios.update(TM.content_administracion, datos.datos_servicio.id, params_servicio)
+							var mofificando_servicio = Endosys.servicios.update(TM.content_administracion, datos.datos_servicio.id, params_servicio)
 							mofificando_servicio.done(function(content_cargado) {
 								//lo ideal seria actualizar el objeto con datos que devuelve el update, aunque siempre serán los mismos
 								//datos.datos_servicio.nombre = params_servicio.nombre
@@ -889,7 +889,7 @@ var administracion = function() {
 							});
 							params_servicio.medicos = medico_checked.join();
 							
-							var crear_servicio = Endotools.servicios.create(TM.content_administracion, params_servicio);
+							var crear_servicio = Endosys.servicios.create(TM.content_administracion, params_servicio);
 							crear_servicio.done(function(servicio) {
 
 								administracion.mostrar(function() {									
@@ -911,7 +911,7 @@ var administracion = function() {
 					.click(function( event ) {
 						
 							
-						var eliminando_servicio = Endotools.servicios['delete'](TM.content_administracion, datos.datos_servicio.id);
+						var eliminando_servicio = Endosys.servicios['delete'](TM.content_administracion, datos.datos_servicio.id);
 						eliminando_servicio.done(function() {
 
 							administracion.mostrar();	
@@ -995,7 +995,7 @@ var administracion = function() {
 							var params_agenda = administracion.obtener_detalle_agenda();
 							params_agenda.servicio_id = datos_servicio.id;
 							
-							var modificando_agenda = Endotools.agendas.update(TM.content_administracion, datos_agenda.id, params_agenda);
+							var modificando_agenda = Endosys.agendas.update(TM.content_administracion, datos_agenda.id, params_agenda);
 							modificando_agenda.done(function() {
 								//lo ideal seria actualizar el objeto con datos que devuelve el update, aunque siempre serán los mismos
 								/*datos_agenda.agenda_nombre = params_agenda.nombre;
@@ -1026,7 +1026,7 @@ var administracion = function() {
 							var params_agenda = administracion.obtener_detalle_agenda();
 							params_agenda.servicio_id = datos_servicio.id;
 							
-							var creando_agenda = Endotools.agendas.create(TM.content_administracion, params_agenda);
+							var creando_agenda = Endosys.agendas.create(TM.content_administracion, params_agenda);
 							creando_agenda.done(function(agenda) {
 
 								administracion.mostrar(function() {
@@ -1047,7 +1047,7 @@ var administracion = function() {
 					.click(function( event ) {
 						
 							
-						var eliminando_agenda = Endotools.agendas['delete'](TM.content_administracion, datos_agenda.id);
+						var eliminando_agenda = Endosys.agendas['delete'](TM.content_administracion, datos_agenda.id);
 						eliminando_agenda.done(function() {
 
 							administracion.mostrar();	
@@ -1066,7 +1066,7 @@ var administracion = function() {
 						$( "#eliminar_btn" ).hide();
 					}
 
-					var obteniendo_detalle_servicio = Endotools.servicios.show(	TM.content_administracion, datos_servicio.id );
+					var obteniendo_detalle_servicio = Endosys.servicios.show(	TM.content_administracion, datos_servicio.id );
 
 					obteniendo_detalle_servicio.done( function (arg_detalle_servicio) {
 						

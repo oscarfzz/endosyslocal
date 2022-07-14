@@ -16,7 +16,7 @@ var gestion_tablas = (function () {
         }
 
         if (tablas[gestion_tablas.tabla_id].ambito == 1) {
-          params.servicio_id = Endotools.auth.servicio_activo.id;
+          params.servicio_id = Endosys.auth.servicio_activo.id;
         }
 
         tablas[gestion_tablas.tabla_id].rest.create(TM.operaciones, params, null).done(function () {
@@ -33,11 +33,11 @@ var gestion_tablas = (function () {
         $('#tablas-listado').change();
 
         if (total - importados === 0) {
-          Endotools.statusbar.mostrar_mensaje(_('Se han importado correctamente todos los valores'), 0);
+          Endosys.statusbar.mostrar_mensaje(_('Se han importado correctamente todos los valores'), 0);
         } else if (importados === 0) {
-          Endotools.statusbar.mostrar_mensaje(_('No se ha podido importar ningún elemento'), 1);
+          Endosys.statusbar.mostrar_mensaje(_('No se ha podido importar ningún elemento'), 1);
         } else {
-          Endotools.statusbar.mostrar_mensaje(_('Ocurrió un error al grabar algunos elementos'), 1);
+          Endosys.statusbar.mostrar_mensaje(_('Ocurrió un error al grabar algunos elementos'), 1);
         }
 
         document.getElementById('dialog-importar-aceptar').disabled = false;
@@ -157,7 +157,7 @@ var gestion_tablas = (function () {
             $dialog.find('#desc-elemento').val(datos_elemento.nombre);
 
             // consultar el texto predefinido
-            Endotools.predefinidos.show(TM.content_tablas.detalles, datos_elemento.id).done(function (predefinido) {
+            Endosys.predefinidos.show(TM.content_tablas.detalles, datos_elemento.id).done(function (predefinido) {
               $dialog.find('#texto-predefinido').val(predefinido.texto);
             });
           });
@@ -169,7 +169,7 @@ var gestion_tablas = (function () {
             texto: this.find('#texto-predefinido').val()
           };
 
-          Endotools.predefinidos.update(TM.operaciones, datos_elemento.id, valores_elemento).done(function () {
+          Endosys.predefinidos.update(TM.operaciones, datos_elemento.id, valores_elemento).done(function () {
             var pos = datatable_detail.getRecordIndex(row);
 
             datatable_detail.updateRow(pos, {
@@ -182,12 +182,12 @@ var gestion_tablas = (function () {
               data = JSON.parse(response.responseText);
 
               if (data && data.data) {
-                Endotools.statusbar.mostrar_mensaje(data.data, 1);	// IDIOMAOK
+                Endosys.statusbar.mostrar_mensaje(data.data, 1);	// IDIOMAOK
               } else {
-                Endotools.statusbar.mostrar_mensaje(_('Ocurrió un error al grabar'), 1);	// IDIOMAOK
+                Endosys.statusbar.mostrar_mensaje(_('Ocurrió un error al grabar'), 1);	// IDIOMAOK
               }
             } else {
-              Endotools.statusbar.mostrar_mensaje(_('Ocurrió un error al grabar'), 1);	// IDIOMAOK
+              Endosys.statusbar.mostrar_mensaje(_('Ocurrió un error al grabar'), 1);	// IDIOMAOK
             }
           });
 
@@ -209,14 +209,14 @@ var gestion_tablas = (function () {
           id: 'salas',
           campo_id: null,
           nombre: _('Salas'),	// IDIOMAOK
-          rest: Endotools.salas
+          rest: Endosys.salas
         },
         */
         aseguradoras: {
           id: 'aseguradoras',
           campo_id: null,
           nombre: _('Aseguradoras'),	// IDIOMAOK
-          rest: Endotools.aseguradoras
+          rest: Endosys.aseguradoras
         }
       };
 
@@ -243,7 +243,7 @@ var gestion_tablas = (function () {
             }
 
             // mostrar solo los tipo seleccion/selec multi
-            if (campos[i].tipo != Endotools.campos.TIPO_SELECCION && campos[i].tipo != Endotools.campos.TIPO_MULTI && campos[i].tipo != Endotools.campos.TIPO_MEMO) continue;
+            if (campos[i].tipo != Endosys.campos.TIPO_SELECCION && campos[i].tipo != Endosys.campos.TIPO_MULTI && campos[i].tipo != Endosys.campos.TIPO_MEMO) continue;
 
             var campo_id = formulario.id + '_' + campos[i].id;
             temptablas[campo_id] = {
@@ -253,11 +253,11 @@ var gestion_tablas = (function () {
               ambito: campos[i].ambito,
               codigo_nombre: campos[i].nombre,	// se refiere a la columna nombre de la tabla campos
               nombre_formulario: formulario.titulo,
-              rest: Endotools.elementos
+              rest: Endosys.elementos
             };
 
-            if (campos[i].tipo == Endotools.campos.TIPO_MEMO) {
-              temptablas[campo_id].rest = Endotools.predefinidos;
+            if (campos[i].tipo == Endosys.campos.TIPO_MEMO) {
+              temptablas[campo_id].rest = Endosys.predefinidos;
             }
           }
         }
@@ -268,14 +268,14 @@ var gestion_tablas = (function () {
         gestion_tablas.tablas = undefined;
       };
 
-      gestion_tablas.cargando_tablas = Endotools.formularios.index(tm, null).then(function (formularios) {
+      gestion_tablas.cargando_tablas = Endosys.formularios.index(tm, null).then(function (formularios) {
         var chain = $.when();
 
         $(formularios).each(function (i, _form) {
           // solo los formularios "activos" (que estén asignados a algún tipo de exploración que esté activo)
           if (_form.activo) {
             chain = chain.then(function () {
-              return Endotools.formularios.show(tm, _form.id, { _showmode: '1' }).done(procesar_formulario);
+              return Endosys.formularios.show(tm, _form.id, { _showmode: '1' }).done(procesar_formulario);
             });
           }
         });
@@ -294,7 +294,7 @@ var gestion_tablas = (function () {
       gestion_tablas.tabla_id = null;
       TM.content_tablas.activate();
       TM.content_tablas.detalles.activate();
-      Endotools.statusbar.mostrar_mensaje(_('Cargando gestión de tablas...'));	// IDIOMAOK
+      Endosys.statusbar.mostrar_mensaje(_('Cargando gestión de tablas...'));	// IDIOMAOK
 
       TM.content_tablas.load_content(mainlayout, 'content/gestion_tablas.html' + ew_version_param()).done(function () {
         // CREAR LAYOUT
@@ -387,8 +387,8 @@ var gestion_tablas = (function () {
           var valores_elemento = {};
 
           valores_elemento[column] = newValue;
-          Endotools.elementos.update(TM.operaciones, elemento_id, valores_elemento).fail(function (response) {
-            Endotools.statusbar.mostrar_mensaje(_('Ocurrió un error al grabar'), 1);	// IDIOMAOK
+          Endosys.elementos.update(TM.operaciones, elemento_id, valores_elemento).fail(function (response) {
+            Endosys.statusbar.mostrar_mensaje(_('Ocurrió un error al grabar'), 1);	// IDIOMAOK
             $('#tablas-listado').change();
           });
         });
@@ -403,7 +403,7 @@ var gestion_tablas = (function () {
 
           gestion_tablas.tabla_id = tabla_id;
 
-          if (gestion_tablas.tablas[tabla_id].rest == Endotools.predefinidos) {
+          if (gestion_tablas.tablas[tabla_id].rest == Endosys.predefinidos) {
             $('#tablas-modificar-btn').button().click();
           }
         });
@@ -472,7 +472,7 @@ var gestion_tablas = (function () {
 
             // coment ruben
             // var preprocess = null;
-            if (gestion_tablas.tablas[tabla_id].rest == Endotools.predefinidos) {
+            if (gestion_tablas.tablas[tabla_id].rest == Endosys.predefinidos) {
               $('#tablas-titulotipo').html(_('Textos predefinidos del campo') + ' ' + gestion_tablas.tablas[tabla_id].nombre);	// IDIOMAOK
               $('#tablas-modificar-btn').show();
 
@@ -481,7 +481,7 @@ var gestion_tablas = (function () {
               }
 
               gestion_tablas.datatable_detail.hideColumn('orden');
-            } else if (gestion_tablas.tablas[tabla_id].rest == Endotools.elementos) {
+            } else if (gestion_tablas.tablas[tabla_id].rest == Endosys.elementos) {
               // entra si es un listado de elementos
               // obtener el ámbito
               var ambito_tag = '';
@@ -532,7 +532,7 @@ var gestion_tablas = (function () {
                 params = { campo_id: tablas[tabla_id].campo_id };
               }
 
-              if (gestion_tablas.tablas[tabla_id].rest == Endotools.predefinidos) {
+              if (gestion_tablas.tablas[tabla_id].rest == Endosys.predefinidos) {
                 gestion_tablas.exportar_textos_predefinidos(tablas, tabla_id, params);
               } else {
                 // Elementos
@@ -547,7 +547,7 @@ var gestion_tablas = (function () {
               $('optgroup[label="'+formulario+'"] option').each(function(i){
                 var campo_id = parseInt($(this).val().split("_")[1],10);
                 var params = {'campo_id': campo_id };
-                if (gestion_tablas.tablas[$(this).val()].rest == Endotools.predefinidos) { //Si se trata de un campo con texto predefinido
+                if (gestion_tablas.tablas[$(this).val()].rest == Endosys.predefinidos) { //Si se trata de un campo con texto predefinido
                   gestion_tablas.exportar_textos_predefinidos(gestion_tablas.tablas, $(this).val(), params);
                 }else{
                   gestion_tablas.exportar_elementos(gestion_tablas.tablas, $(this).val(), params);
@@ -582,7 +582,7 @@ var gestion_tablas = (function () {
                 params = { campo_id: tablas[tabla_id].campo_id };
               }
 
-              if (gestion_tablas.tablas[tabla_id].rest == Endotools.predefinidos) {
+              if (gestion_tablas.tablas[tabla_id].rest == Endosys.predefinidos) {
                 gestion_tablas.exportar_textos_predefinidos_activos(tablas, tabla_id, params);
               } else {
                 // Elementos
@@ -599,7 +599,7 @@ var gestion_tablas = (function () {
 
             if (valor == '') return;
 
-            var ismemo = gestion_tablas.tablas[gestion_tablas.tabla_id].rest == Endotools.predefinidos;
+            var ismemo = gestion_tablas.tablas[gestion_tablas.tabla_id].rest == Endosys.predefinidos;
 
             gestion_tablas.get_tablas(TM.operaciones).then(function (tablas) {
               var params = { nombre: valor, activo: '1' };
@@ -612,8 +612,8 @@ var gestion_tablas = (function () {
               // al crear el nuevo elemento se asigna el servicio activo.
               // si no hay servicio activo, lanzar error.
               if (!ismemo && tablas[gestion_tablas.tabla_id].ambito == 1) {
-                if (Endotools.auth.servicio_activo && Endotools.auth.servicio_activo.id) {
-                  params.servicio_id = Endotools.auth.servicio_activo.id;
+                if (Endosys.auth.servicio_activo && Endosys.auth.servicio_activo.id) {
+                  params.servicio_id = Endosys.auth.servicio_activo.id;
                 } else {
                   throw _("No se puede añadir un nuevo elemento a un campo con ámbito 'por servicio' porque no hay ningún servicio activo.");
                 }
@@ -635,12 +635,12 @@ var gestion_tablas = (function () {
                 data = JSON.parse(response.responseText);
 
                 if (data && data.data) {
-                  Endotools.statusbar.mostrar_mensaje(data.data, 1);	// IDIOMAOK
+                  Endosys.statusbar.mostrar_mensaje(data.data, 1);	// IDIOMAOK
                 } else {
-                  Endotools.statusbar.mostrar_mensaje(_('Ocurrió un error al grabar'), 1);	// IDIOMAOK
+                  Endosys.statusbar.mostrar_mensaje(_('Ocurrió un error al grabar'), 1);	// IDIOMAOK
                 }
               } else {
-                Endotools.statusbar.mostrar_mensaje(_('Ocurrió un error al grabar'), 1);	// IDIOMAOK
+                Endosys.statusbar.mostrar_mensaje(_('Ocurrió un error al grabar'), 1);	// IDIOMAOK
               }
             });
 
@@ -704,11 +704,11 @@ var gestion_tablas = (function () {
 
                   // Muestra mensaje segun el caso
                   if (eliminados == 0 && erroneos.length != 0) {
-                    Endotools.statusbar.mostrar_mensaje(_('Ningún elemento pudo ser borrado.'), 1);	// IDIOMAOK
+                    Endosys.statusbar.mostrar_mensaje(_('Ningún elemento pudo ser borrado.'), 1);	// IDIOMAOK
                   } else if (eliminados != 0 && erroneos.length != 0) {
-                    Endotools.statusbar.mostrar_mensaje(_('Ocurrieron errores en la eliminación de algunos elementos.'), 1);	// IDIOMAOK
+                    Endosys.statusbar.mostrar_mensaje(_('Ocurrieron errores en la eliminación de algunos elementos.'), 1);	// IDIOMAOK
                   } else if (eliminados != 0 && erroneos.length == 0) {
-                    Endotools.statusbar.mostrar_mensaje(_('Los elementos fueron eliminados correctamente.'), 0); //IDIOMAOK
+                    Endosys.statusbar.mostrar_mensaje(_('Los elementos fueron eliminados correctamente.'), 0); //IDIOMAOK
                   }
 
                   //Muestra los que causaron error de eliminacion
@@ -757,7 +757,7 @@ var gestion_tablas = (function () {
             if (tabla_id == undefined) return;
             if (tabla_id.indexOf('_FORMULARIO_') == 0) return;
             if (tabla_id.indexOf('_GRUPOCAMPOS_') == 0) return;
-            if (gestion_tablas.tablas[tabla_id].rest == Endotools.predefinidos) {
+            if (gestion_tablas.tablas[tabla_id].rest == Endosys.predefinidos) {
               gestion_tablas.mostrar_dialog_mod_predefinido(datos_elemento, row);
             }
           });
@@ -778,13 +778,13 @@ var gestion_tablas = (function () {
               gestion_tablas.get_tablas(TM.operaciones).then(function (tablas) {
                 //  solo permitir actualizar los elementos de una tabla que representa un campo
                 //  de tipo selec. de un formulario. Para identificarlo se comprueba el rest de la tabla.
-                if (tablas[gestion_tablas.tabla_id].rest != Endotools.elementos) return true;
-                Endotools.statusbar.mostrar_mensaje(_('Actualizando los elementos de la tabla...'));	// IDIOMAOK
+                if (tablas[gestion_tablas.tabla_id].rest != Endosys.elementos) return true;
+                Endosys.statusbar.mostrar_mensaje(_('Actualizando los elementos de la tabla...'));	// IDIOMAOK
 
-                return Endotools.campos.update(TM.operaciones, tablas[gestion_tablas.tabla_id].campo_id, {
+                return Endosys.campos.update(TM.operaciones, tablas[gestion_tablas.tabla_id].campo_id, {
                   _actualizar: '1'
                 }).fail(function () {
-                  Endotools.statusbar.mostrar_mensaje(_('Ha ocurrido un error actualizando los elementos de la tabla'), 1);	// IDIOMAOK
+                  Endosys.statusbar.mostrar_mensaje(_('Ha ocurrido un error actualizando los elementos de la tabla'), 1);	// IDIOMAOK
                 });
               }).done(function () {
                 $('#tablas-listado').change(); // XXX verificar que funcione!!!!
@@ -830,7 +830,7 @@ var gestion_tablas = (function () {
             });
           });
         });
-        if (Endotools.auth.username != "sysadmin") {
+        if (Endosys.auth.username != "sysadmin") {
         	$("#tablas-exportar-btn-todos").hide(); //Si el usuario logueado no es Sysadmin, hacemos un hide del boton "exportar todos"
         }
       });
@@ -865,8 +865,8 @@ var gestion_tablas = (function () {
 
       // Si el campo tiene ámbito por servicio, mostrar solo
       // los elementos del servicio activo.
-      if (tabla.rest == Endotools.elementos && tabla.ambito == 1) {
-        params.servicio_id = Endotools.auth.servicio_activo.id;
+      if (tabla.rest == Endosys.elementos && tabla.ambito == 1) {
+        params.servicio_id = Endosys.auth.servicio_activo.id;
       }
 
       tabla.rest.index(TM.content_tablas.detalles, params, {
@@ -884,7 +884,7 @@ var gestion_tablas = (function () {
           csvContent += elementos[i].activo ? '1\t' : '0\t';
           csvContent += elementos[i].codigo !== null && elementos[i].codigo !== undefined ? '"' + elementos[i].codigo + '"' : '';
 
-          if (gestion_tablas.tablas[tabla_id].rest == Endotools.elementos && elementos[i].orden) {
+          if (gestion_tablas.tablas[tabla_id].rest == Endosys.elementos && elementos[i].orden) {
             csvContent += '\t' + elementos[i].orden;
           }
 
@@ -895,7 +895,7 @@ var gestion_tablas = (function () {
     },
 
     exportar_textos_predefinidos: function (tablas, tabla_id, params) {
-      Endotools.predefinidos.index(TM.content_tablas.detalles, params).done(function (predefinidos) {
+      Endosys.predefinidos.index(TM.content_tablas.detalles, params).done(function (predefinidos) {
         var csvContent = 'data:text/plain;charset=utf-8,';
         for (var i = 0; i < predefinidos.length; i++) {
           csvContent += '"' + predefinidos[i].nombre + '"\t';
@@ -931,7 +931,7 @@ var gestion_tablas = (function () {
             csvContent += elementos[i].activo ? '1\t' : '0\t';
             csvContent += elementos[i].codigo !== null && elementos[i].codigo !== undefined ? '"' + elementos[i].codigo + '"' : '';
 
-            if (gestion_tablas.tablas[tabla_id].rest == Endotools.elementos && elementos[i].orden) {
+            if (gestion_tablas.tablas[tabla_id].rest == Endosys.elementos && elementos[i].orden) {
               csvContent += '\t' + elementos[i].orden;
             }
 
@@ -944,7 +944,7 @@ var gestion_tablas = (function () {
     },
 
     exportar_textos_predefinidos_activos: function (tablas, tabla_id, params) {
-      Endotools.predefinidos.index(TM.content_tablas.detalles, params).done(function (predefinidos) {
+      Endosys.predefinidos.index(TM.content_tablas.detalles, params).done(function (predefinidos) {
         var csvContent = 'data:text/plain;charset=utf-8,';
 
         for (var i = 0; i < predefinidos.length; i++) {

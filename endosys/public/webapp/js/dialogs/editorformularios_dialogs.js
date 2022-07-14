@@ -40,7 +40,7 @@
                     .done(function(html) {
 
                         if (id){
-                            Endotools.campos.show(TM.content_editorFormularios, id)
+                            Endosys.campos.show(TM.content_editorFormularios, id)
                             .done(function(campo){
                                 $('#nuevocampo-nombre').val(campo.nombre);
                                 $('#nuevocampo-titulo').val(campo.titulo);

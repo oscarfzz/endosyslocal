@@ -60,6 +60,6 @@ class Hl7Controller(BaseController):
 		de los mensajes ORM se utiliza como identificador, si se han de
 		omitir algunos campos del segmento PID, etc...
 		Mirth Connect podría llamar a config() en el deploy. La configuración
-		debería ser persistente, por si se reinicia el servidor de EndoTools
+		debería ser persistente, por si se reinicia el servidor de EndoSys
 		"""
 		pass

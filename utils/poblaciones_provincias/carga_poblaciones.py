@@ -10,10 +10,10 @@
 #este script NO verifica si existe ya la poblacion
 
 # CONFIGURACION B.D
-HOST_ENDOTOOLS = 'host'
-USER_ENDOTOOLS = 'user'
-PASS_ENDOTOOLS = 'password'
-BBDD_ENDOTOOLS = 'endosysapp'
+HOST_ENDOSYS = 'host'
+USER_ENDOSYS = 'user'
+PASS_ENDOSYS = 'password'
+BBDD_ENDOSYS = 'endosysapp'
 
 # configuracio fichero
 RUTA = 'poblaciones.csv'
@@ -25,24 +25,24 @@ import csv
 
 # cadena de conexión a BBDD de endosys
 endosys = {}
-endosys['CONN'] =  'mssql://%s:%s@%s/%s' % (USER_ENDOTOOLS, PASS_ENDOTOOLS, HOST_ENDOTOOLS, BBDD_ENDOTOOLS)
+endosys['CONN'] =  'mssql://%s:%s@%s/%s' % (USER_ENDOSYS, PASS_ENDOSYS, HOST_ENDOSYS, BBDD_ENDOSYS)
 
 contador = 0
-poblaciones_endotools = None
+poblaciones_endosys = None
 
-def ini_endotools():
-	global endosys, poblaciones_endotools, contador
+def ini_endosys():
+	global endosys, poblaciones_endosys, contador
 
 	# iniciar sqlachemy, conexión a la bbdd y tabla de pacientes
 	endosys['engine'] = create_engine(endosys['CONN'])
 	endosys['metadata'] = MetaData()
 	endosys['metadata'].bind = endosys['engine']
-	poblaciones_endotools = Table('Poblaciones', endosys['metadata'], autoload=True)
+	poblaciones_endosys = Table('Poblaciones', endosys['metadata'], autoload=True)
 	contador = 0
 	leer_fichero_csv()
 
 def leer_fichero_csv():
-	global endosys, poblaciones_endotools, contador
+	global endosys, poblaciones_endosys, contador
 	csvfile = open(RUTA, 'rb')
 	try:
 		csvreader = csv.reader(csvfile, delimiter=';', quotechar='"', quoting = csv.QUOTE_NONE, escapechar = '\\')
@@ -50,7 +50,7 @@ def leer_fichero_csv():
 		for row in csvreader:
 			codigo = row[0]
 			descripcion = row[1]
-			rslt = poblaciones_endotools.insert().values(codigo=codigo, nombre=descripcion).execute()
+			rslt = poblaciones_endosys.insert().values(codigo=codigo, nombre=descripcion).execute()
 			print "registro actual: %s" % (row)
 			contador = contador + 1
 		print "COMPLETADO. Se han resgistrado %s poblaciones" % (contador)
@@ -59,4 +59,4 @@ def leer_fichero_csv():
 
 
 
-ini_endotools()
+ini_endosys()

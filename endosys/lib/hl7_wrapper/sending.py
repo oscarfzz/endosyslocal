@@ -375,7 +375,7 @@ def _crear_mensaje_oru_r01(informe, versiones=False, incrustado=False, anular=Fa
         pv1 = pv1 + '\r'
 
     # OBR ---
-    # - OBR.3.1     ID_EXPLORACION_ENDOTOOLS
+    # - OBR.3.1     ID_EXPLORACION_ENDOSYS
     # - OBR.4.1     COD_PRESTACION
     # - OBR.4.2     NOMBRE_PRESTACION
     # - OBR.7.1     FECHAHORA
@@ -600,7 +600,7 @@ def enviar_ORU_R01(informe, versiones=False, incrustado=False, anular=False):
     #  - Siempre devolverá 200 OK, independientemente de que el reenvío al HIS
     #    sea correcto (si falla es "problema" del Mirth, queda marcado como error)
     #    si el mensaje no se llega a enviar por problemas de comunicación,
-    #    request() lanza una excepción. Esto si que lo tiene que tratar EndoTools!
+    #    request() lanza una excepción. Esto si que lo tiene que tratar EndoSys!
     #    NOTA: finalmente hago que si Mirth devuelve un codigo distinto de 200
     #          significa que necesita que se le vuelva a enviar el mensaje, lo
     #          mismo que si no le hubiera llegado.
@@ -883,7 +883,7 @@ def enviar_captura_actividad(cita, estado, motivo_id=None):
 
         # OBR
             #   OBR.2.1     NUMERO_PETICION
-            #   OBR.3.1     ID_EXPLORACION_ENDOTOOLS
+            #   OBR.3.1     ID_EXPLORACION_ENDOSYS
             #   OBR.4.1     COD_PRESTACION
             #   OBR.4.2     NOMBRE_PRESTACION
             #   OBR.7.1     FECHAHORA
@@ -1083,7 +1083,7 @@ def enviar_captura_actividad(cita, estado, motivo_id=None):
     #   siempre devolverá 200 OK, independientemente de que el reenvío al HIS
     #   sea correcto (si falla es "problema" del Mirth, queda marcado como error)
     #   si el mensaje no se llega a enviar por problemas de comunicación,
-    #   request() lanza una excepción. Esto si que lo tiene que tratar EndoTools!
+    #   request() lanza una excepción. Esto si que lo tiene que tratar EndoSys!
     #   NOTA:   finalmente hago que si Mirth devuelve un codigo distinto de 200
     #           significa que necesita que se le vuelva a enviar el mensaje, lo
     #           mismo que si no le hubiera llegado.

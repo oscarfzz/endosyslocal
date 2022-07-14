@@ -257,7 +257,7 @@ def get_work(workid):
 # en este caso si que se vincula directamente a las exploraciones/capturas,
 # ya que en principio siempre funcionará igual (envío de imágenes al PACS al
 # finalizar una exploración).
-# esta funcionalidad está integrada directamente en endoTools Web, y se puede
+# esta funcionalidad está integrada directamente en endoSys Web, y se puede
 # activar/desactivar desde el .ini
 
 class PACS:

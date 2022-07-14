@@ -42,7 +42,7 @@ var gestion_usuarios = function () {
 				crea un datatable con todos los permisos de usuario.
 				$el						Es un elemento jQuery en el que se creará el datatable.
 				lista_permisos_user		es la lista de permisos asignados a un usuario, para
-										marcarlos (devuelto por Endotools.usuarios.show()).
+										marcarlos (devuelto por Endosys.usuarios.show()).
 										Puede ser NULL.
 				devuelve el objeto DataTable de YUI creado.
 			*/
@@ -237,7 +237,7 @@ var gestion_usuarios = function () {
       var display_apikey = $form.find(".key-display");
       var text_apikey = display_apikey.find('pre');
 
-      Endotools.usuarios.show(
+      Endosys.usuarios.show(
         TM.content_usuarios.detalles,
         gestion_usuarios.usuario_id,
         {
@@ -578,8 +578,8 @@ var gestion_usuarios = function () {
             //Guardamos el valor del multiselect servicios
             var comprobar_servicios_guardar = ($('.usuario-servicio').val() || []).join(",");
 
-            Endotools.statusbar.mostrar_mensaje(_('Guardando los datos del usuario...')); // IDIOMAOK
-            Endotools.usuarios.update(TM.content_usuarios.detalles, gestion_usuarios.usuario_id, args).done(function () {
+            Endosys.statusbar.mostrar_mensaje(_('Guardando los datos del usuario...')); // IDIOMAOK
+            Endosys.usuarios.update(TM.content_usuarios.detalles, gestion_usuarios.usuario_id, args).done(function () {
               datatable_results.updateRow(
                 row,
                 {
@@ -591,7 +591,7 @@ var gestion_usuarios = function () {
                 }
               );
 
-              Endotools.statusbar.mostrar_mensaje(_('Ready'));  // IDIOMAOK
+              Endosys.statusbar.mostrar_mensaje(_('Ready'));  // IDIOMAOK
 
               // Si el valor del multiselect servicios es distinto al valor del mismo en el momento de la carga del formulario,
               // al guardar el usuario actualizará la tabla de usuarios según el filtro que haya seleccionado
@@ -606,7 +606,7 @@ var gestion_usuarios = function () {
                   params = { "servicios": servicios }; //Recogemos la id del/los servicios a modo de diccionario
                 }
 
-                Endotools.usuarios.index(TM.content_usuarios, params, { datatable: datatable_results });
+                Endosys.usuarios.index(TM.content_usuarios, params, { datatable: datatable_results });
               }
             }).done(function () {
               gestion_usuarios.usuario_id = $form_usuarios.find('.usuario-nombre').val();
@@ -623,7 +623,7 @@ var gestion_usuarios = function () {
               _('Eliminar usuario'), // IDIOMAOK
               _('¿Está seguro de que desea eliminar este usuario?') // IDIOMAOK
             ).then(function () {
-              return Endotools.usuarios["delete"](
+              return Endosys.usuarios["delete"](
                 TM.operaciones,
                 // require('js/usuarios'),
                 gestion_usuarios.usuario_id,
@@ -647,9 +647,9 @@ var gestion_usuarios = function () {
               if (!jqXHR) return; // es del confirm_dialog() asi que salir
               if (jqXHR.status == 403) {
                 // forbidden: no se puede porque ya esta en uso, o no se tiene permisos
-                Endotools.statusbar.mostrar_mensaje(_('No se puede eliminar el usuario. Probablemente el usuario tenga alguna exploración o cita'), 1); // IDIOMAOK
+                Endosys.statusbar.mostrar_mensaje(_('No se puede eliminar el usuario. Probablemente el usuario tenga alguna exploración o cita'), 1); // IDIOMAOK
               } else {
-                Endotools.statusbar.mostrar_mensaje(_('Ha ocurrido un error eliminando el usuario'), 1);  // IDIOMAOK
+                Endosys.statusbar.mostrar_mensaje(_('Ha ocurrido un error eliminando el usuario'), 1);  // IDIOMAOK
               }
             });
           },
@@ -666,7 +666,7 @@ var gestion_usuarios = function () {
             var respuesta = confirm(_("¿Realmente quiere eliminar la clave para el usuario?"));
 
             if (!!respuesta) {
-              Endotools.usuarios.update(
+              Endosys.usuarios.update(
                 TM.content_usuarios.detalles,
                 gestion_usuarios.usuario_id,
                 {
@@ -684,7 +684,7 @@ var gestion_usuarios = function () {
             var respuesta = confirm(_("¿Realmente quiere generar una nueva clave para el usuario?"));  // IDIOMAOK
 
             if (!!respuesta) {
-              Endotools.usuarios.update(
+              Endosys.usuarios.update(
                 TM.content_usuarios.detalles,
                 gestion_usuarios.usuario_id,
                 {
@@ -700,8 +700,8 @@ var gestion_usuarios = function () {
         });
 
         // obtener detalle del usuario
-        // Endotools.usuarios.show(TM.content_usuarios.detalles, require('js/usuarios')).done(function (usuario) {
-        Endotools.usuarios.show(TM.content_usuarios.detalles, gestion_usuarios.usuario_id).done(function (usuario) {
+        // Endosys.usuarios.show(TM.content_usuarios.detalles, require('js/usuarios')).done(function (usuario) {
+        Endosys.usuarios.show(TM.content_usuarios.detalles, gestion_usuarios.usuario_id).done(function (usuario) {
           // rellenar los controles
           var $content = $("#generic_detail");
 
@@ -756,20 +756,20 @@ var gestion_usuarios = function () {
             }
           }
 
-          if (Endotools.auth.username == "sysadmin" && opciones_config.PERMITIR_API_KEY > 0) {
+          if (Endosys.auth.username == "sysadmin" && opciones_config.PERMITIR_API_KEY > 0) {
             $(".apiKey").show();
           }
 
-          Endotools.centros.index(TM.content_usuarios).done(function (centros) {
+          Endosys.centros.index(TM.content_usuarios).done(function (centros) {
             gestion_usuarios._actualizar_servicios($form_usuarios, centros, medico_servicios);
 
-            Endotools.agendas.index(TM.content_usuarios).done(function (agendas) {
+            Endosys.agendas.index(TM.content_usuarios).done(function (agendas) {
               gestion_usuarios._actualizar_servicios_agendas($form_usuarios, agendas, medico_agendas);
             });
           });
 
           // obtener los permisos del usuario
-          Endotools.usuarios.show(TM.content_usuarios.detalles, gestion_usuarios.usuario_id).done(function (usuario) {
+          Endosys.usuarios.show(TM.content_usuarios.detalles, gestion_usuarios.usuario_id).done(function (usuario) {
             // datatable permisos
             var $el = $("#generic_detail .datatable_lista_permisos");
             gestion_usuarios.datatable_permisos = gestion_usuarios._crear_datatable_permisos($el, usuario.permisos);
@@ -788,7 +788,7 @@ var gestion_usuarios = function () {
       TM.content_usuarios.activate();
       TM.content_usuarios.detalles.activate();
       TM.content_usuarios.servicios.activate();
-      Endotools.statusbar.mostrar_mensaje(_('Cargando gestión de usuarios...'));  // IDIOMAOK
+      Endosys.statusbar.mostrar_mensaje(_('Cargando gestión de usuarios...'));  // IDIOMAOK
 
       // carga de contenido HTML
       TM.content_usuarios.load_content(mainlayout, "content/gestion_usuarios.html" + ew_version_param()).done(function () {
@@ -825,18 +825,18 @@ var gestion_usuarios = function () {
             }
 
             //params es un diccionario que contendrá las id's de los servicios y que enviaremos a usuarios.py
-            Endotools.usuarios.index(TM.content_usuarios, params, { datatable: datatable_results });
+            Endosys.usuarios.index(TM.content_usuarios, params, { datatable: datatable_results });
           }
         });
 
         // carga de permisos
-        var rest_permisos = Endotools.permisos.index(TM.content_usuarios.detalles).done(function (permisos_cargados) {
+        var rest_permisos = Endosys.permisos.index(TM.content_usuarios.detalles).done(function (permisos_cargados) {
           gestion_usuarios.array_permisos = permisos_cargados;
         });
 
         //carga del multiselect de filtrado por servicio
         rest_permisos.then(function(){
-          Endotools.centros.index(TM.content_usuarios.detalles).done(function (centros) {
+          Endosys.centros.index(TM.content_usuarios.detalles).done(function (centros) {
             gestion_usuarios._actualizar_servicios_filtraje(centros);
           });
         });
@@ -903,7 +903,7 @@ var gestion_usuarios = function () {
         });
 
         // cuando se ha cargado el content, cargar los usuarios (necesita el datatable)
-        Endotools.usuarios.index(TM.content_usuarios, null, { datatable: datatable_results });
+        Endosys.usuarios.index(TM.content_usuarios, null, { datatable: datatable_results });
 
         // edicion campo activo (checkbox)
         datatable_results.subscribe('checkboxClickEvent', function (oArgs) {
@@ -923,7 +923,7 @@ var gestion_usuarios = function () {
             checkKey = "activo";            
           }
 
-          Endotools.usuarios.update(TM.content_usuarios, usuario_id, {
+          Endosys.usuarios.update(TM.content_usuarios, usuario_id, {
             'medico': medico,
             // 'activo': newValue ? '1' : '0',
             // 'ldap': newValueLdap ? '1' : '0',
@@ -944,7 +944,7 @@ var gestion_usuarios = function () {
       var permisos = gestion_usuarios._get_permisos_asignados(datatable_permisos_dlg);
 
       //  llamada a la creacion del nuevo usuario
-      Endotools.statusbar.mostrar_mensaje(_('Creando el usuario...'));//IDIOMAOK
+      Endosys.statusbar.mostrar_mensaje(_('Creando el usuario...'));//IDIOMAOK
 
       // sacar los params del formulario
       var args = {
@@ -1012,8 +1012,8 @@ var gestion_usuarios = function () {
         args.permisos = permisos.join(',');
       }
 
-      Endotools.usuarios.create(TM.operaciones, args).done(function (usuario) {
-        Endotools.statusbar.mostrar_mensaje(_('El usuario se ha creado correctamente'));  // IDIOMAOK
+      Endosys.usuarios.create(TM.operaciones, args).done(function (usuario) {
+        Endosys.statusbar.mostrar_mensaje(_('El usuario se ha creado correctamente'));  // IDIOMAOK
         // añadirlo al datatable y seleccionarlo
         datatable_results.addRow({
           id: usuario.id,
@@ -1025,7 +1025,7 @@ var gestion_usuarios = function () {
         var rs = datatable_results.getRecordSet();
         gestion_usuarios._seleccionar_row(rs.getLength() - 1);
       }).fail(function () {
-        Endotools.statusbar.mostrar_mensaje(_('Error al crear el usuario, revise los valores introducidos en los campos'), 1);  // IDIOMAOK
+        Endosys.statusbar.mostrar_mensaje(_('Error al crear el usuario, revise los valores introducidos en los campos'), 1);  // IDIOMAOK
       });
     },
 
@@ -1059,10 +1059,10 @@ var gestion_usuarios = function () {
 				//	inicializar el formulario y cargar los servicios
 				gestion_usuarios._ini_form_usuario($form);
 				gestion_usuarios._checkMedico($form);
-        return Endotools.agendas.index(TM.content_usuarios);
+        return Endosys.agendas.index(TM.content_usuarios);
       }).then(function (agendas) {
         gestion_usuarios._actualizar_servicios_agendas($form, agendas);
-        return Endotools.centros.index(TM.content_usuarios);
+        return Endosys.centros.index(TM.content_usuarios);
       }).then(function (centros) {
         // poner los servicios en el desplegable de servicio medico
         gestion_usuarios._actualizar_servicios($form, centros);

@@ -6,7 +6,7 @@
 			/*
 			Inicializa las opciones de config. que no requieren que haya un usuario autenticado
 			*/
-			return Endotools.opciones_config.index(TM.operaciones, {'basicas': true}).done(function(results) {
+			return Endosys.opciones_config.index(TM.operaciones, {'basicas': true}).done(function(results) {
 				//	guardarlas
 				for (var n=0; n < results.length; n++) {
 					var v = results[n].valor;
@@ -21,7 +21,7 @@
 			/*
 			Inicializa las opciones de config. para el usuario autenticado
 			*/
-			return Endotools.opciones_config.index(TM.operaciones).done(function(results) {
+			return Endosys.opciones_config.index(TM.operaciones).done(function(results) {
 				//	guardarlas
 				for (var n=0; n < results.length; n++) {
 					var v = results[n].valor;

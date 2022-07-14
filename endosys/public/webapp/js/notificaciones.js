@@ -152,7 +152,7 @@ var gestion_notificaciones = function() {
 		// marca como leida una notificacion mediante su ID
 		marcar_como_leida: function(id_notificacion){
 			if (id_notificacion!=undefined){
-				Endotools.notificaciones.update(TM.notificaciones, id_notificacion, {'leida': 1})
+				Endosys.notificaciones.update(TM.notificaciones, id_notificacion, {'leida': 1})
 				.done(function(data){
 					
 				}).then(function(){
@@ -171,7 +171,7 @@ var gestion_notificaciones = function() {
 		// Genera y carga la UI del popup de notificaciones que se encuentra abajo del nombre de usuario
 		cargar_notificaciones: function(){
 			var params ={'leida':0};
-			Endotools.notificaciones.index(TM.notificaciones, params)
+			Endosys.notificaciones.index(TM.notificaciones, params)
 			.done(function(results){
 
 				$("#cantidad-notificaciones").text(results.length);
@@ -241,7 +241,7 @@ var gestion_notificaciones = function() {
 			if (id_notificacion==undefined) return false;
 
 			//Obtener detalle de la notificacion
-			Endotools.notificaciones.show(TM.notificaciones, id_notificacion)
+			Endosys.notificaciones.show(TM.notificaciones, id_notificacion)
 			.done(function(notificacion){
 				
 				gestion_notificaciones.marcar_como_leida(notificacion.id);
@@ -262,7 +262,7 @@ var gestion_notificaciones = function() {
 		mostrar: function(callback_fn, opciones) {
 
 			TM.notificaciones.activate();
-			Endotools.statusbar.mostrar_mensaje(_('Cargando Notificaciones...'));//IDIOMAOK
+			Endosys.statusbar.mostrar_mensaje(_('Cargando Notificaciones...'));//IDIOMAOK
 			set_titulo_pantalla(_("Notificaciones"), $(this).text());//IDIOMAOK
 			var content_html = "content/gestion_notificaciones.html";
 			TM.notificaciones.load_content(mainlayout, content_html+ew_version_param())
@@ -361,16 +361,16 @@ var gestion_notificaciones = function() {
 
 			var params = {};
 
-			Endotools.notificaciones.index(TM.notificaciones, params, {datatable: datatable_results})
+			Endosys.notificaciones.index(TM.notificaciones, params, {datatable: datatable_results})
 				.done(function(results){
 
 					if (results && results.length == 0) {
 						//no se ha encontrado ningun paciente
-						Endotools.statusbar.mostrar_mensaje(_('No se ha encontrado ninguna notificación'));/*IDIOMAOK*/
+						Endosys.statusbar.mostrar_mensaje(_('No se ha encontrado ninguna notificación'));/*IDIOMAOK*/
 					} else {
 
 						$("#total").html(results.length);
-						Endotools.statusbar.mostrar_mensaje(_('Listo'));/*IDIOMAOK*/
+						Endosys.statusbar.mostrar_mensaje(_('Listo'));/*IDIOMAOK*/
 					
 						$(".boton-ver").on("click", function(){
 							var id_notificacion = $(this).attr("data-id");
@@ -389,7 +389,7 @@ var gestion_notificaciones = function() {
 
 				})
 				.fail(function () {
-					Endotools.statusbar.mostrar_mensaje(_('Error al cargar las notificaciones'), 1);/*IDIOMAOK*/
+					Endosys.statusbar.mostrar_mensaje(_('Error al cargar las notificaciones'), 1);/*IDIOMAOK*/
 				});
 
 		},
@@ -397,9 +397,9 @@ var gestion_notificaciones = function() {
 		_eliminar_notificacion:function(id){
 			var eliminar_dialog = confirm(_("¿Esta seguro que desea eliminar la notificación?"));
 			if (eliminar_dialog) {
-				Endotools.notificaciones['delete'](TM.notificaciones, id)
+				Endosys.notificaciones['delete'](TM.notificaciones, id)
 				.done(function(notificacion) {
-					Endotools.statusbar.mostrar_mensaje(_('La notificación ha sido eliminada con éxito'));//IDIOMAOK 
+					Endosys.statusbar.mostrar_mensaje(_('La notificación ha sido eliminada con éxito'));//IDIOMAOK 
 					gestion_notificaciones.mostrar();
 				});
 			}
@@ -502,7 +502,7 @@ var gestion_notificaciones = function() {
 					}
 				});
 
-				Endotools.medicos.index(TM.notificaciones, null, {datatable: datatable_usuarios});
+				Endosys.medicos.index(TM.notificaciones, null, {datatable: datatable_usuarios});
 
 				$("#mensaje-enviar-btn").button().click(function(){
 
@@ -533,11 +533,11 @@ var gestion_notificaciones = function() {
 
 					var confirm_enviar = confirm(_("¿Está seguro que desea enviar la notificación?"));//IDIOMAOK
 					if (confirm_enviar){
-						Endotools.notificaciones.create(TM.notificaciones, args );
-						Endotools.statusbar.mostrar_mensaje(_('Notificación enviada!'));//IDIOMAOK
+						Endosys.notificaciones.create(TM.notificaciones, args );
+						Endosys.statusbar.mostrar_mensaje(_('Notificación enviada!'));//IDIOMAOK
 						$("#mensaje-contenido").val("")	
 					}else{
-						Endotools.statusbar.mostrar_mensaje(_('Se canceló el envío.'),1);//IDIOMAOK
+						Endosys.statusbar.mostrar_mensaje(_('Se canceló el envío.'),1);//IDIOMAOK
 					}
 					
 				});

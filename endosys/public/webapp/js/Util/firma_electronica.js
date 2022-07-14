@@ -32,7 +32,7 @@
 	
 			$.ajax({
 				type: 'GET',
-				url: Endotools.informes.resource + '/' + informe_id + '.pdfb64',
+				url: Endosys.informes.resource + '/' + informe_id + '.pdfb64',
 				processData: false,
 				contentType: 'text/plain; charset=UTF-8'
 			})
@@ -57,7 +57,7 @@
 			})
 			
 			.fail(function() {
-				Endotools.statusbar.mostrar_mensaje("Ha ocurrido un error obteniendo el informe PDF para firmarlo", 1);
+				Endosys.statusbar.mostrar_mensaje("Ha ocurrido un error obteniendo el informe PDF para firmarlo", 1);
 			});
 			
 		});
@@ -85,13 +85,13 @@
 			cargando.show("test");
 			return $.ajax({
 				type: 'GET'
-				,url: Endotools.exploraciones.resource + '/' + exploracion_id + '/informes/_FIRMAR.json?plantilla=' + plantilla
+				,url: Endosys.exploraciones.resource + '/' + exploracion_id + '/informes/_FIRMAR.json?plantilla=' + plantilla
 				,processData: false
 				,contentType: 'text/plain; charset=UTF-8'
 				,cache: false
 				,success:function(data){cargando.hide("test"); return data}
 			}).fail(function(data){
-				Endotools.statusbar.mostrar_mensaje(parseError(data.responseText), 1);
+				Endosys.statusbar.mostrar_mensaje(parseError(data.responseText), 1);
 				cargando.hide("test");
 			})
 		})
@@ -150,7 +150,7 @@
 		
 			/*var myPDF = new PDFObject({
 				// Solo funciona si se le pasa una URL y no un data:application/pdf;base64
-			  	url: Endotools.exploraciones.resource + '/' + exploracion_id + '/informes/_PREVIEW.pdf?uuid=' + informe_json.uuid,
+			  	url: Endosys.exploraciones.resource + '/' + exploracion_id + '/informes/_PREVIEW.pdf?uuid=' + informe_json.uuid,
 			  	id: "dialog-preview-informe-pdf", width: "100%", height: "100%",
 			  	pdfOpenParams: {view: "FitH", scrollbar: 1, navpanes: 0, statusbar: 0, toolbar: 0}
 			}).embed("dialog-preview-informe");
@@ -162,7 +162,7 @@
 					pdfOpenParams: {view: "FitH", scrollbar: 1, navpanes: 0, statusbar: 0, toolbar: 0}
 			}
 
-			PDFObject.embed(Endotools.exploraciones.resource + '/' + exploracion_id + '/informes/_PREVIEW.pdf?uuid=' + informe_json.uuid, $dialog, pdfViewerOptions);
+			PDFObject.embed(Endosys.exploraciones.resource + '/' + exploracion_id + '/informes/_PREVIEW.pdf?uuid=' + informe_json.uuid, $dialog, pdfViewerOptions);
 
 			return firmando.promise();
 		})
@@ -184,7 +184,7 @@
 
 				$dialog.append('<input id="fileupload" type="file" name="files" >')
 				$("#fileupload").fileupload();
-				var jqXHR = $("#fileupload").fileupload('send', {url: Endotools.informes.resource,
+				var jqXHR = $("#fileupload").fileupload('send', {url: Endosys.informes.resource,
 				dataType: 'xml',
                 formData:[
                 			{
@@ -220,7 +220,7 @@
 				//	Se ha firmado el informe. enviarlo al servidor
 				var enviando = $.ajax({
 					type: 'POST'
-					,url: Endotools.informes.resource
+					,url: Endosys.informes.resource
 					,data: data
 					,cache: false
 				})

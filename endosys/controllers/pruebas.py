@@ -55,7 +55,7 @@ class PruebasController(BaseController):
 	@authorize(UserIn(['sysadmin']))
 	def procesar_imagen(self):
 		endosys.lib.dicom.thread.procesar_imagen(
-								os.path.join('C:\Proyectos\NUEVO ENDOTOOLS 2\proyecto Pylons\endosys\endosys\capturas',
+								os.path.join('C:\Proyectos\NUEVO ENDOSYS 2\proyecto Pylons\endosys\endosys\capturas',
 											'142.bmp'),
 								PatientName = 'juan',
 								PatientID = '123',

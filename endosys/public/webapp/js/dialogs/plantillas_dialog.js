@@ -34,7 +34,7 @@ var plantillas_dialog = function() {
 					
 					//	cargar plantillas
 					$select.html('<option value="">' + _('Cargando...') + '</option>');/*IDIOMAOK*/
-					Endotools.plantillas.obtener(TM.operaciones, exploracion_id)
+					Endosys.plantillas.obtener(TM.operaciones, exploracion_id)
 					.done(function(results) {
 						$select.html('');
 						for (var n=0; n < results.length; n++) {

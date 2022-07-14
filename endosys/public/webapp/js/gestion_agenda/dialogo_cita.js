@@ -7,7 +7,7 @@ var dialogo_cita = function() {
 		paciente_modificado: false,
 
 		completar_datos_paciente: function(content_form_cita,datos_paciente){
-			var centro_id = Endotools.auth.servicio_activo.centro_id;
+			var centro_id = Endosys.auth.servicio_activo.centro_id;
 			//preparacion datos paciente
 			content_form_cita.find("#campo-nhc-cip").val(datos_paciente.idunico);
 			content_form_cita.find("#label-nhc-cip").html(opciones_config.IDUNICO_LABEL);
@@ -121,7 +121,7 @@ var dialogo_cita = function() {
 					}
 					var select_aseguradora = content_form_cita.find("#aseguradora-list");
 					select_aseguradora.append($('<option value="">' + _('Seleccione') + '</option>'));
-					Endotools.aseguradoras.index(TM.operaciones, {'activo': 1} )
+					Endosys.aseguradoras.index(TM.operaciones, {'activo': 1} )
 					.done(function(aseguradoras) {
 						for (var i=0; i < aseguradoras.length; i++) {
 							if (select_aseguradora.find('option[value="' + aseguradoras[i].id + '"]').length < 1)
@@ -248,21 +248,21 @@ var dialogo_cita = function() {
 							
 							if (datos_cita) {
 								//modificar cita
-								Endotools.citas.update(TM.gestion_agenda, datos_cita.id, params)
+								Endosys.citas.update(TM.gestion_agenda, datos_cita.id, params)
 								.done(function() {
-									Endotools.statusbar.mostrar_mensaje(_('La cita se ha modificado correctamente'));/*IDIOMAOK*/
+									Endosys.statusbar.mostrar_mensaje(_('La cita se ha modificado correctamente'));/*IDIOMAOK*/
 									mostrando_dialog.resolve();
 								})
 								.fail(function(r) {
 									if (r.status != 400) {
-										Endotools.statusbar.mostrar_mensaje(_('Error al modificar la cita'), 1);/*IDIOMAOK*/
+										Endosys.statusbar.mostrar_mensaje(_('Error al modificar la cita'), 1);/*IDIOMAOK*/
 									} else {
-										Endotools.statusbar.mostrar_mensaje(_('Los datos de la cita no son válidos'));/*IDIOMAOK*/
+										Endosys.statusbar.mostrar_mensaje(_('Los datos de la cita no son válidos'));/*IDIOMAOK*/
 									}
 								});
 							} else {
 								//nueva cita
-								Endotools.citas.create(TM.gestion_agenda, params)
+								Endosys.citas.create(TM.gestion_agenda, params)
 								.done(function() {
 									mostrando_dialog.resolve();
 								})
@@ -285,7 +285,7 @@ var dialogo_cita = function() {
                             click:  function() {/*IDIOMAOK*/
                                 if(datos_cita){
                                     //eliminar cita
-                                    Endotools.citas['delete'](TM.gestion_agenda, datos_cita.id)
+                                    Endosys.citas['delete'](TM.gestion_agenda, datos_cita.id)
                                     .done(function() {
                                         mostrando_dialog.resolve();
                                     });

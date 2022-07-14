@@ -1,6 +1,6 @@
 ﻿"""
-Este controlador recibe los chunks enviados desde un cliente de EndoTools.
-Los chunks son trozos de archivos más grandes. Cuando EndoTools tiene todos los
+Este controlador recibe los chunks enviados desde un cliente de EndoSys.
+Los chunks son trozos de archivos más grandes. Cuando EndoSys tiene todos los
 chunks de un archivo lo reconstruye. Luego, se procesa el archivo según el tipo
 indicado.
 

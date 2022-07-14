@@ -12,7 +12,7 @@
 		mostrar: function () {
 			TM.gestion_busquedas.activate();
 			TM.gestion_busquedas.detalles.activate();
-			Endotools.statusbar.mostrar_mensaje(_('Cargando gestión de búsquedas...'));	// IDIOMAOK
+			Endosys.statusbar.mostrar_mensaje(_('Cargando gestión de búsquedas...'));	// IDIOMAOK
 
 			return TM.gestion_busquedas.load_content(mainlayout, "content/gestion_busquedas.html" + ew_version_param()).done(function () {
 				// CREAR layout
@@ -62,9 +62,9 @@
 				datatable_results.subscribe("rowClickEvent", datatable_results.onEventSelectRow);
 				//controles.init_YUI_datatable(datatable_results);
 				controles.init_YUI_datatable(datatable_results, { layoutPaneResizing: $('.layout_main_content').layout().panes.center });
-				Endotools.busqueda_avanzada.index(
+				Endosys.busqueda_avanzada.index(
 					TM.gestion_busquedas,
-					{ 'username': Endotools.auth.username, 'servicio_id': Endotools.auth.servicio_activo.id },
+					{ 'username': Endosys.auth.username, 'servicio_id': Endosys.auth.servicio_activo.id },
 					{ 'datatable': datatable_results }
 				);
 
@@ -87,8 +87,8 @@
 							var id = object_selected._oData.id;
 							var descripcion = object_selected._oData.descripcion;
 
-							Endotools.busqueda_avanzada['delete'](TM.gestion_busquedas, id, null, { 'datatable': datatable_results }).done(function () {
-								Endotools.busqueda_avanzada.index(TM.gestion_busquedas).done(function (busquedas_avanzadas) {
+							Endosys.busqueda_avanzada['delete'](TM.gestion_busquedas, id, null, { 'datatable': datatable_results }).done(function () {
+								Endosys.busqueda_avanzada.index(TM.gestion_busquedas).done(function (busquedas_avanzadas) {
 									//datatable_results.deleteRow(pos);
 									var opciones_menu = userinfo.get_opciones_menu();
 									gestion_busquedas.refrescar_menu_busquedas(opciones_menu, busquedas_avanzadas);
@@ -118,9 +118,9 @@
 					controles.input_dialog.mostrar(titulo, desc_campo, descripcion_antigua).then(function (nuevo_valor) {
 						el_nuevo_valor = nuevo_valor;
 
-						return Endotools.busqueda_avanzada.update(TM.gestion_busquedas, id, { 'descripcion': el_nuevo_valor });
+						return Endosys.busqueda_avanzada.update(TM.gestion_busquedas, id, { 'descripcion': el_nuevo_valor });
 					}).then(function () {
-						return Endotools.busqueda_avanzada.index(TM.gestion_busquedas);
+						return Endosys.busqueda_avanzada.index(TM.gestion_busquedas);
 					}).done(function (busquedas_avanzadas) {
 						var busqueda = busquedas_avanzadas[pos];
 						console.log(busqueda);
@@ -167,7 +167,7 @@
 					}
 				});
 
-				Endotools.statusbar.mostrar_mensaje(_('Ready'));	// IDIOMAOK
+				Endosys.statusbar.mostrar_mensaje(_('Ready'));	// IDIOMAOK
 			});
 		},
 

@@ -12,7 +12,7 @@ SET OLDDIR=%cd%
 SET BASE=%~dp0..\
 cd %BASE%
 mkdir logs
-for %%F in ("%cd%") do set RUTA_ENDOTOOLSWEB=%%~dpF
+for %%F in ("%cd%") do set RUTA_ENDOSYSWEB=%%~dpF
 FOR /f "tokens=*" %%i IN (env_version.txt) DO SET ENV_VERSION=%%i
 
 echo .ini files availables:
@@ -22,5 +22,5 @@ echo.
 
 SET /P ARCHIVO_INI=Write the name of .ini file to configure Endosys App:
 
-%RUTA_ENDOTOOLSWEB%\virtualenv\env_%ENV_VERSION%\Scripts\paster.exe setup-app %ARCHIVO_INI%
+%RUTA_ENDOSYSWEB%\virtualenv\env_%ENV_VERSION%\Scripts\paster.exe setup-app %ARCHIVO_INI%
 pause

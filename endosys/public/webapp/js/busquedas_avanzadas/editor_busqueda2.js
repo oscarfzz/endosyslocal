@@ -13,7 +13,7 @@
 			TM.content_editor_busqueda.activate();
 			TM.content_editor_busqueda.detalles.activate();
 			TM.content_editor_busqueda.elementos.activate();
-			Endotools.statusbar.mostrar_mensaje('Cargando busqueda avanzada...');	// IDIOMAOK
+			Endosys.statusbar.mostrar_mensaje('Cargando busqueda avanzada...');	// IDIOMAOK
 
 			return TM.content_editor_busqueda.load_content(mainlayout, "content/edicion_busqueda2.html" + ew_version_param()).then(function () {
 				$('.layout_main_content').layout({
@@ -40,7 +40,7 @@
 					$('#mainnav-continuar-btn').click();
 				});
 
-				$('.creador-input').val(Endotools.auth.username);
+				$('.creador-input').val(Endosys.auth.username);
 
 				if (!editor_busqueda2.desc_busqueda) {
 					//la busqueda no existe por lo que ocultamos el boton de guardar como
@@ -133,13 +133,13 @@
 
 			editor_busqueda2.campos_variables = undefined;
 
-			return Endotools.formularios.index(tm, null).then(function (formularios) {
+			return Endosys.formularios.index(tm, null).then(function (formularios) {
 				//	encadenar todas las llamadas al show de cada formulario para obtener los campos, una tras otra.
 				var chain = $.when();
 
 				$(formularios).each(function (i, form) {
 					chain = chain.then(function () {
-						return Endotools.formularios.show(tm, form.id, { '_showmode': '1' }).done(function (formulario) {
+						return Endosys.formularios.show(tm, form.id, { '_showmode': '1' }).done(function (formulario) {
 							procesar(formulario);
 						});
 					})
@@ -148,7 +148,7 @@
 				return chain;
 			}).then(function () {
 				//	al final, la llamada para obtener los campos fijos
-				return Endotools.camposFijos.index(tm);
+				return Endosys.camposFijos.index(tm);
 			}).then(function (results) {
 				procesar_camposFijos(results);
 				editor_busqueda2.campos_variables = camposFijos.concat(camposVariables);
@@ -212,7 +212,7 @@
 				for (var i = 0; i < servicios.length; i++) {
 					var $op = $('<option value="' + servicios[i].id + '">' + servicios[i].nombre + '</option>');
 
-					if (servicios[i].id === Endotools.auth.servicio_activo.id) {
+					if (servicios[i].id === Endosys.auth.servicio_activo.id) {
 						$op.attr('selected', '');
 					}
 
@@ -343,22 +343,22 @@
 					&& editor_busqueda2.id_busqueda
 					&& guardar_como != true
 					&& (
-						(editor_busqueda2.nivel === "2" && editor_busqueda2.username === Endotools.auth.username)
-						|| (editor_busqueda2.nivel === "3" && editor_busqueda2.username === Endotools.auth.username)
-						|| (editor_busqueda2.nivel === "4" && editor_busqueda2.username === Endotools.auth.username)
-						|| Endotools.auth.username === "sysadmin")
+						(editor_busqueda2.nivel === "2" && editor_busqueda2.username === Endosys.auth.username)
+						|| (editor_busqueda2.nivel === "3" && editor_busqueda2.username === Endosys.auth.username)
+						|| (editor_busqueda2.nivel === "4" && editor_busqueda2.username === Endosys.auth.username)
+						|| Endosys.auth.username === "sysadmin")
 				) {
 					//la busqueda existe, por lo que, el boton guardar hace la funcion de modificar
-					Endotools.busqueda_avanzada.update(TM.content_editor_busqueda, editor_busqueda2.id_busqueda, {
+					Endosys.busqueda_avanzada.update(TM.content_editor_busqueda, editor_busqueda2.id_busqueda, {
 						'xml': xml_return,
 						'nivel': $('.nivel-list').val(),
-						'username': $('.creador-input').val() || Endotools.auth.username,
+						'username': $('.creador-input').val() || Endosys.auth.username,
 						'comentario': $('.comentario-text').val() || null,
 						'servicio_id': $('#servicio-group:visible').length === 1 ? $('.servicio-list').val() : null
 					}).done(function () {
-						Endotools.statusbar.mostrar_mensaje(_('La búsqueda se ha guardado correctamente'));	// IDIOMAOK
+						Endosys.statusbar.mostrar_mensaje(_('La búsqueda se ha guardado correctamente'));	// IDIOMAOK
 					}).then(function () {
-						return Endotools.busqueda_avanzada.index(TM.gestion_busquedas)
+						return Endosys.busqueda_avanzada.index(TM.gestion_busquedas)
 					}).done(function (busquedas_avanzadas) {
 						var opciones_menu = userinfo.get_opciones_menu();
 						gestion_busquedas.refrescar_menu_busquedas(opciones_menu, busquedas_avanzadas);
@@ -370,13 +370,13 @@
 
 					controles.input_dialog.mostrar(titulo, desc_campo, '').then(function (nuevo_valor) {
 						el_nuevo_valor = nuevo_valor;
-						el_nuevo_username = Endotools.auth.username;
+						el_nuevo_username = Endosys.auth.username;
 
-						return Endotools.busqueda_avanzada.create(TM.content_editor_busqueda, {
+						return Endosys.busqueda_avanzada.create(TM.content_editor_busqueda, {
 							'descripcion': el_nuevo_valor,
 							'xml': xml_return,
 							'nivel': $('.nivel-list').val(),
-							'username': Endotools.auth.username,
+							'username': Endosys.auth.username,
 							'comentario': $('.comentario-text').val() || null,
 							'servicio_id': $('#servicio-group:visible').length === 1 ? $('.servicio-list').val() : null
 						})
@@ -389,14 +389,14 @@
 						$('.creador-input').val(el_nuevo_username);
 						$("#guardar_como_btn").show();
 
-						Endotools.statusbar.mostrar_mensaje(_('La búsqueda se ha guardado correctamente'));	// IDIOMAOK
+						Endosys.statusbar.mostrar_mensaje(_('La búsqueda se ha guardado correctamente'));	// IDIOMAOK
 
-						return Endotools.busqueda_avanzada.index(TM.content_editor_busqueda);
+						return Endosys.busqueda_avanzada.index(TM.content_editor_busqueda);
 					}).done(function (busquedas_avanzadas) {
 						var opciones_menu = userinfo.get_opciones_menu();
 						gestion_busquedas.refrescar_menu_busquedas(opciones_menu, busquedas_avanzadas);
 					}).then(function () {
-						return Endotools.busqueda_avanzada.index(TM.gestion_busquedas);
+						return Endosys.busqueda_avanzada.index(TM.gestion_busquedas);
 					}).done(function (busquedas_avanzadas) {
 						var opciones_menu = userinfo.get_opciones_menu();
 						gestion_busquedas.refrescar_menu_busquedas(opciones_menu, busquedas_avanzadas);
@@ -471,7 +471,7 @@
 		},
 
 		cargar_busqueda_existente: function (id) {
-			Endotools.busqueda_avanzada.show(TM.content_editor_busqueda, id).done(function (busqueda) {
+			Endosys.busqueda_avanzada.show(TM.content_editor_busqueda, id).done(function (busqueda) {
 				var busqueda_request = {};
 				busqueda_request.id_busqueda = busqueda.id;
 				busqueda_request.descripcion = busqueda.descripcion;
@@ -571,7 +571,7 @@
 					valores: []
 				}
 
-				var operaciones = Endotools.busqueda_avanzada.get_operaciones(lista_campos[j].tipo_camp);
+				var operaciones = Endosys.busqueda_avanzada.get_operaciones(lista_campos[j].tipo_camp);
 				var op;
 
 				for (var e = 0; e < operaciones.length; e++) {

@@ -151,7 +151,7 @@ form.pure-form.pure-form-stacked .ui-multiselect {
 #mainnav:		div. situado dentro de #maintitle, con los botones tipo "asistente" (anterior/siguiente)
 #login-form:	formulario de login, mostrado al inicio.
 #mainlayout:	Donde se cargan las pantallas.
-#mainfooter:	Pie de página, con la versión de EndoTools. Contiene #et-capture-control-container (contenedor
+#mainfooter:	Pie de página, con la versión de EndoSys. Contiene #et-capture-control-container (contenedor
 				del OCX de captura)
 #mainstatusbar:	Barra de estado. Utiliza las classes .statusbar-normal y .statusbar-error
 */
@@ -288,7 +288,7 @@ form.pure-form.pure-form-stacked .ui-multiselect {
 ********	MENU PRINCIPAL	************
 #menu-principal-btn:	Botón para abrir el menu, situado en #maintitle.
 #menu-principal:		El menu principal (menu de jQuery-ui).
-.endo-icon:				icono de EndoTools para el menu principal.
+.endo-icon:				icono de EndoSys para el menu principal.
 */
 #menu-principal-btn {
 	background-image: none;	/*	THEMABLE	*/
@@ -346,7 +346,7 @@ form.pure-form.pure-form-stacked .ui-multiselect {
 #menu-principal-nuevabusqueda .endo-icon {		background-image: url(/web/assets/menu_icons/busquedas_avanzadas.png);}
 #menu-principal-tablas .endo-icon {				background-image: url(/web/assets/menu_icons/tablas.png);}
 #menu-principal-usuarios .endo-icon {			background-image: url(/web/assets/menu_icons/administrar_usuarios.png);}
-#menu-principal-group-administracion>.endo-icon {		background-image: url(/web/assets/menu_icons/administracion_endotools.png);}
+#menu-principal-group-administracion>.endo-icon {		background-image: url(/web/assets/menu_icons/administracion_endosys.png);}
 #menu-principal-administracion .endo-icon {		background-image: url(/web/assets/menu_icons/administracion.png);}
 #menu-principal-editortiposexpl .endo-icon {		background-image: url(/web/assets/menu_icons/editor_exploraciones.png);}
 #menu-principal-tareas .endo-icon {		background-image: url(/web/assets/menu_icons/tareas.png);}

@@ -1,6 +1,6 @@
 ﻿"""
 Gestión de centros, servicios y salas (componentes organizativos de los centros).
-Cualquier parte de EndoTools que acceda a estos recursos debería hacerlo
+Cualquier parte de EndoSys que acceda a estos recursos debería hacerlo
 utilizando este module.
 
 Valorar si se incluye aqui también:

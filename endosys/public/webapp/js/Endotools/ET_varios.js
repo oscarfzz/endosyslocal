@@ -2,60 +2,60 @@
 objetos de acceso REST
 */
 
-Endotools.opciones_config =		Endotools.REST.make('/rest/opcionesConfig');
+Endosys.opciones_config =		Endosys.REST.make('/rest/opcionesConfig');
 
-Endotools.plantillas = $.extend(Endotools.REST.make('/rest/plantillas'), {
+Endosys.plantillas = $.extend(Endosys.REST.make('/rest/plantillas'), {
 	obtener: function(tm, exploracion_id) {
-		return Endotools.plantillas.index(tm, {'exploracion_id': exploracion_id})
+		return Endosys.plantillas.index(tm, {'exploracion_id': exploracion_id})
 	}
 });
 
-Endotools.usuarios = $.extend(	Endotools.REST.make('/rest/usuarios'), {
+Endosys.usuarios = $.extend(	Endosys.REST.make('/rest/usuarios'), {
 	show: function(tm, id, params) {
 		//	sobreescribir el show().
 		//	quitar el formato .json en el show, este controller funciona asi,
 		//	ya que el id del usuario puede tener puntos
 		var rest_cfg = { jquery: true, 'resource': '/rest/usuarios', format: null };
-		return Endotools.REST.show(tm, rest_cfg, id, null, params);
+		return Endosys.REST.show(tm, rest_cfg, id, null, params);
 	}
 	
 });
 
-Endotools.motivos_cancelacion =	Endotools.REST.make('/rest/motivosCancelacion');
+Endosys.motivos_cancelacion =	Endosys.REST.make('/rest/motivosCancelacion');
 
-Endotools.camposFijos =			Endotools.REST.make('/rest/camposFijos');
+Endosys.camposFijos =			Endosys.REST.make('/rest/camposFijos');
 
-Endotools.permisos =			Endotools.REST.make('/rest/permisos');
+Endosys.permisos =			Endosys.REST.make('/rest/permisos');
 
-Endotools.informes =			Endotools.REST.make('/rest/informes');
+Endosys.informes =			Endosys.REST.make('/rest/informes');
 
-Endotools.centros =				Endotools.REST.make('/rest/centros');
+Endosys.centros =				Endosys.REST.make('/rest/centros');
 
-Endotools.pacientes =			Endotools.REST.make('/rest/pacientes');
+Endosys.pacientes =			Endosys.REST.make('/rest/pacientes');
 
-Endotools.agendas =				Endotools.REST.make('/rest/agendas');
+Endosys.agendas =				Endosys.REST.make('/rest/agendas');
 
-Endotools.servicios =			Endotools.REST.make('/rest/servicios');
+Endosys.servicios =			Endosys.REST.make('/rest/servicios');
 
-Endotools.motivosCancelacion =	Endotools.REST.make('/rest/motivosCancelacion');
+Endosys.motivosCancelacion =	Endosys.REST.make('/rest/motivosCancelacion');
 
-Endotools.prioridades =			Endotools.REST.make('/rest/prioridades');
+Endosys.prioridades =			Endosys.REST.make('/rest/prioridades');
 
-Endotools.grupos_campos =		Endotools.REST.make('/rest/gruposCampos');
+Endosys.grupos_campos =		Endosys.REST.make('/rest/gruposCampos');
 
-Endotools.medicos =				Endotools.REST.make('/rest/medicos');
+Endosys.medicos =				Endosys.REST.make('/rest/medicos');
 
-Endotools.salas =				Endotools.REST.make('/rest/salas');
+Endosys.salas =				Endosys.REST.make('/rest/salas');
 
-Endotools.exploraciones =		Endotools.REST.make('/rest/exploraciones');
+Endosys.exploraciones =		Endosys.REST.make('/rest/exploraciones');
 
-Endotools.citas =				Endotools.REST.make('/rest/citas');
+Endosys.citas =				Endosys.REST.make('/rest/citas');
 
-Endotools.imagenes =			Endotools.REST.make('/rest/capturas');
+Endosys.imagenes =			Endosys.REST.make('/rest/capturas');
 
-Endotools.formularios =			Endotools.REST.make('/rest/formularios');
+Endosys.formularios =			Endosys.REST.make('/rest/formularios');
 
-Endotools.campos = $.extend(	Endotools.REST.make('/rest/campos'), {
+Endosys.campos = $.extend(	Endosys.REST.make('/rest/campos'), {
 	TIPO_TEXTO:		1,
 	TIPO_SELECCION:	2,
 	TIPO_MULTI:		3,
@@ -64,25 +64,25 @@ Endotools.campos = $.extend(	Endotools.REST.make('/rest/campos'), {
 	TIPO_SEPARADOR: 6,
 	get_alto_por_defecto: function(tipo) {
 		//	alto por defecto (en filas de la tabla) de cada tipo de campo
-		if (tipo == Endotools.campos.TIPO_TEXTO) {
+		if (tipo == Endosys.campos.TIPO_TEXTO) {
 			return 1;
-		} else if (tipo == Endotools.campos.TIPO_SELECCION) {
+		} else if (tipo == Endosys.campos.TIPO_SELECCION) {
 			return 1;
-		} else if (tipo == Endotools.campos.TIPO_MULTI) {
+		} else if (tipo == Endosys.campos.TIPO_MULTI) {
 			return 1;
-		} else if (tipo == Endotools.campos.TIPO_BOOL) {
+		} else if (tipo == Endosys.campos.TIPO_BOOL) {
 			return 1;
-		} else if (tipo == Endotools.campos.TIPO_MEMO) {
+		} else if (tipo == Endosys.campos.TIPO_MEMO) {
 			return 1;
-		} else if (tipo == Endotools.campos.TIPO_SEPARADOR) {
+		} else if (tipo == Endosys.campos.TIPO_SEPARADOR) {
 			return 1;
 		}
 	}
 });
 
-Endotools.tipos_exploracion =	Endotools.REST.make('/rest/tiposExploracion');
+Endosys.tipos_exploracion =	Endosys.REST.make('/rest/tiposExploracion');
 
-Endotools.busqueda_avanzada = $.extend(	Endotools.REST.make('/rest/busquedas'), {
+Endosys.busqueda_avanzada = $.extend(	Endosys.REST.make('/rest/busquedas'), {
 	get_operaciones: function( tipo_dato, tipo_control) {
 
 		// Si es undefined, es de tipo_control=0 por defecto
@@ -181,22 +181,22 @@ Endotools.busqueda_avanzada = $.extend(	Endotools.REST.make('/rest/busquedas'), 
 	}
 });
 
-Endotools.aseguradoras =		Endotools.REST.make('/rest/aseguradoras');
+Endosys.aseguradoras =		Endosys.REST.make('/rest/aseguradoras');
 
-Endotools.elementos =			Endotools.REST.make('/rest/elementos');
+Endosys.elementos =			Endosys.REST.make('/rest/elementos');
 
-Endotools.predefinidos =		Endotools.REST.make('/rest/predefinidos');
+Endosys.predefinidos =		Endosys.REST.make('/rest/predefinidos');
 
-Endotools.agendas_chus =		Endotools.REST.make('/rest/agendas_chus');
+Endosys.agendas_chus =		Endosys.REST.make('/rest/agendas_chus');
 
-Endotools.valores_default =		Endotools.REST.make('/valoresDefault');
+Endosys.valores_default =		Endosys.REST.make('/valoresDefault');
 
-Endotools.provincias =			Endotools.REST.make('/rest/provincias');
+Endosys.provincias =			Endosys.REST.make('/rest/provincias');
 
-Endotools.poblaciones =			Endotools.REST.make('/rest/poblaciones');
+Endosys.poblaciones =			Endosys.REST.make('/rest/poblaciones');
 
-Endotools.workstations =		Endotools.REST.make('/rest/workstations');
+Endosys.workstations =		Endosys.REST.make('/rest/workstations');
 
-Endotools.tareas =				Endotools.REST.make('/rest/tareas');
+Endosys.tareas =				Endosys.REST.make('/rest/tareas');
 
-Endotools.notificaciones =		Endotools.REST.make('/rest/notificaciones');
+Endosys.notificaciones =		Endosys.REST.make('/rest/notificaciones');

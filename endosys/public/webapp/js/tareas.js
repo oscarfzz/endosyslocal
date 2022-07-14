@@ -37,12 +37,12 @@ var gestion_tareas = function() {
 		// Crea una tarea y lanza el hilo correspondiente
 		// al tipo de tarea
 		crear_exportar: function(params){
-			var crear_tarea = Endotools.tareas.create(TM.tareas, params)
+			var crear_tarea = Endosys.tareas.create(TM.tareas, params)
 			.done(function() {
 				gestion_tareas.informar_tarea_creada();
 			}).fail(function(response){
 				if (response && response.responseText){
-					Endotools.statusbar.mostrar_mensaje(parseError(response.responseText), 1);	
+					Endosys.statusbar.mostrar_mensaje(parseError(response.responseText), 1);	
 				}
 			});
 		},
@@ -52,7 +52,7 @@ var gestion_tareas = function() {
 		mostrar: function(callback_fn, opciones) {
 
 			TM.tareas.activate();
-			Endotools.statusbar.mostrar_mensaje(_('Cargando Tareas...'));//IDIOMAOK
+			Endosys.statusbar.mostrar_mensaje(_('Cargando Tareas...'));//IDIOMAOK
 			var btn_refrescar = '<span id="refrescar_tareas"><i class="fa fa-refresh"></i><span>';
 			set_titulo_pantalla(_("Tareas") + btn_refrescar, $(this).text() );
 			var content_html = "content/gestion_tareas.html";
@@ -114,7 +114,7 @@ var gestion_tareas = function() {
 			}
 			
 			//Mostrar la columna usuario si es sisadmin
-			if (Endotools.auth.username.toUpperCase()=="SYSADMIN"){
+			if (Endosys.auth.username.toUpperCase()=="SYSADMIN"){
 				fielddef.push({key: 'username', label: _('Usuario'), width: "auto", resizeable: true, sortable: true});//IDIOMAOK
 			}
 
@@ -127,7 +127,7 @@ var gestion_tareas = function() {
 				formatter: function(el, oRecord, oColumn, oData) {
 					data = oRecord.getData();
 					if (data.descargable==true){
-						el.innerHTML = $('<a onclick="unset_prevenir_refresco_manual(1000)" href="'+Endotools.tareas.resource +'/'+data.resultado+'" target="_self" class="ui-button-small">' + _('Descargar') + '</a>').button({icons: {primary: "ui-icon-arrowthickstop-1-s"}, text: true})[0].outerHTML;//IDIOMAOK
+						el.innerHTML = $('<a onclick="unset_prevenir_refresco_manual(1000)" href="'+Endosys.tareas.resource +'/'+data.resultado+'" target="_self" class="ui-button-small">' + _('Descargar') + '</a>').button({icons: {primary: "ui-icon-arrowthickstop-1-s"}, text: true})[0].outerHTML;//IDIOMAOK
 					}
 					el.innerHTML += $('<button class="boton-dialog-detalle ui-button-small" type="button" data-id="'+data.id+'">' + _('Ver detalle') + '</button>').button({icons: {primary: "ui-icon-plus"}, text: true})[0].outerHTML;//IDIOMAOK
 				}
@@ -168,15 +168,15 @@ var gestion_tareas = function() {
 		_load_tareas: function(tm, params, datatable_results){
 
 			// busca las tareas y las ingresa en el datatable_results
-			Endotools.tareas.index(tm, params, {datatable: datatable_results})
+			Endosys.tareas.index(tm, params, {datatable: datatable_results})
 			.done(function(results){
 
 				if (results && results.length == 0) {
-					Endotools.statusbar.mostrar_mensaje(_('No se ha encontrado ninguna tarea'));//IDIOMAOK
+					Endosys.statusbar.mostrar_mensaje(_('No se ha encontrado ninguna tarea'));//IDIOMAOK
 				} else {
 
 					$("#total").html(results.length);
-					Endotools.statusbar.mostrar_mensaje(_('Listo'));//IDIOMAOK
+					Endosys.statusbar.mostrar_mensaje(_('Listo'));//IDIOMAOK
 				
 					$(".boton-dialog-detalle").on("click", function(){
 						gestion_tareas.mostrar_dialog_tarea($(this).attr("data-id"));
@@ -186,7 +186,7 @@ var gestion_tareas = function() {
 
 			})
 			.fail(function () {
-				Endotools.statusbar.mostrar_mensaje(_('Error al cargar las tareas'), 1);//IDIOMAOK
+				Endosys.statusbar.mostrar_mensaje(_('Error al cargar las tareas'), 1);//IDIOMAOK
 			});
 
 		},
@@ -200,8 +200,8 @@ var gestion_tareas = function() {
 
 		_obtener_tarea_dialog: function(tm, id, $form){
 
-			Endotools.statusbar.mostrar_mensaje(_('Obteniendo los datos de la tarea...'));//IDIOMAOK 
-			return Endotools.tareas.show(tm, id)
+			Endosys.statusbar.mostrar_mensaje(_('Obteniendo los datos de la tarea...'));//IDIOMAOK 
+			return Endosys.tareas.show(tm, id)
 			.done(function(tarea) {
 				for (var key in tarea) {
 					$form.find("#campo-"+key).val(tarea[key]);
@@ -219,10 +219,10 @@ var gestion_tareas = function() {
 					}
 				}
 
-				Endotools.statusbar.mostrar_mensaje(_('Listo'));//IDIOMAOK 
+				Endosys.statusbar.mostrar_mensaje(_('Listo'));//IDIOMAOK 
 			})
 			.fail(function(){
-				Endotools.statusbar.mostrar_mensaje(_('La información que se desea visualizar ya no existe.'),1);/*IDIOMAOK*/
+				Endosys.statusbar.mostrar_mensaje(_('La información que se desea visualizar ya no existe.'),1);/*IDIOMAOK*/
 				$("#dialog-show-tarea").dialog('close');
 			});
 
@@ -231,18 +231,18 @@ var gestion_tareas = function() {
 
 		//obtiene el archivo descargable de la tarea desde el REST
 		_descargar_tarea: function(id){
-			Endotools.tareas.show(TM.tareas, id).done(function(tarea) {
+			Endosys.tareas.show(TM.tareas, id).done(function(tarea) {
 				unset_prevenir_refresco_manual(1000);
-				window.location = Endotools.tareas.resource + "/" + tarea.resultado;
+				window.location = Endosys.tareas.resource + "/" + tarea.resultado;
 			});			
 		},
 
 
 		// elimina la tarea 
 		_eliminar_tarea:function(id){
-			Endotools.tareas['delete'](TM.tareas, id)
+			Endosys.tareas['delete'](TM.tareas, id)
 			.done(function(tarea) {
-				Endotools.statusbar.mostrar_mensaje(_('La tarea ha sido eliminada con éxito'));//IDIOMAOK 
+				Endosys.statusbar.mostrar_mensaje(_('La tarea ha sido eliminada con éxito'));//IDIOMAOK 
 			});
 		},
 

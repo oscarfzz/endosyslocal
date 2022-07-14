@@ -15,7 +15,7 @@
 					
 					//	llenar la lista con los motivos de fallo
 					$select.empty();
-					Endotools.motivos_cancelacion.index(TM.operaciones)
+					Endosys.motivos_cancelacion.index(TM.operaciones)
 					.done(function(results) {
 						for (var i=0; i < results.length; i++) {
 							$select.append( $('<option  value="' + results[i].id + '">' + results[i].nombre + '</option>') );

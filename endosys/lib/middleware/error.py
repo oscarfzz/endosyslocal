@@ -6,7 +6,7 @@ from pylons.error import PylonsEvalException
 
 __view_original = None
 
-def EndoTools_ErrorHandler(app, global_conf, **errorware):
+def EndoSys_ErrorHandler(app, global_conf, **errorware):
 	global __view_original
 	if asbool(global_conf.get('debug')):
 		from pylons.error import PylonsEvalException
@@ -87,7 +87,7 @@ __view.exposed = True
 ##	return simplejson.dumps(o)
 
 
-##class EndoToolsEvalException(PylonsEvalException):
+##class EndoSysEvalException(PylonsEvalException):
 ##
 ##	def __format(self, item):
 ##		from endosys.lib.base import h
@@ -119,7 +119,7 @@ __view.exposed = True
 ##
 
 
-# * primero lo habia hecho con una nueva clase "EndoToolsEvalException" que heredaba
+# * primero lo habia hecho con una nueva clase "EndoSysEvalException" que heredaba
 # de 'PylonsEvalException', pero esta ultima utiliza en el metodo 'media' la funcion
 # 'super' y parece que entonces no devolvia su padre (EvalException) sino a si misma,
-# ya que se llamaba desde su hija (EndoToolsEvalException)
+# ya que se llamaba desde su hija (EndoSysEvalException)

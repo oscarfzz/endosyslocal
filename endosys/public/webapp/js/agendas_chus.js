@@ -19,16 +19,16 @@
 //				gestion_agendas_chus.servicio_id = datatable_results.getRecord(row).getData("servicio_id");
 				gestion_agendas_chus.servicio_id = datatable_results.getRecord(row).getData("codigo_servicio");
 				//	mostrar las prestaciones de la agenda
-				//Endotools.agendas_chus.obtener_prestaciones(TM.content_agendas_chus.detalles, null, gestion_agendas_chus.agenda_id, datatable_prestaciones);
-				Endotools.statusbar.mostrar_mensaje("Obteniendo las prestaciones...");
-				Endotools.agendas_chus.show(TM.content_agendas_chus.detalles, gestion_agendas_chus.agenda_id)
+				//Endosys.agendas_chus.obtener_prestaciones(TM.content_agendas_chus.detalles, null, gestion_agendas_chus.agenda_id, datatable_prestaciones);
+				Endosys.statusbar.mostrar_mensaje("Obteniendo las prestaciones...");
+				Endosys.agendas_chus.show(TM.content_agendas_chus.detalles, gestion_agendas_chus.agenda_id)
 				.done(function(agenda_chus) {
 					datatable_prestaciones.onDataReturnInitializeTable(null, { results: agenda_chus.prestaciones });
 				})
 				.fail(function() {
 					datatable_prestaciones.getRecordSet().reset();
 					datatable_prestaciones.render();
-					Endotools.statusbar.mostrar_mensaje("Ha ocurrido un error obteniendo las prestaciones de la agenda", 1);
+					Endosys.statusbar.mostrar_mensaje("Ha ocurrido un error obteniendo las prestaciones de la agenda", 1);
 				});						
 		},
 		
@@ -45,7 +45,7 @@
 				gestion_agendas_chus.servicio_id = null;
 				TM.content_agendas_chus.activate();
 				TM.content_agendas_chus.detalles.activate();
-				Endotools.statusbar.mostrar_mensaje("Cargando selección de agenda...");
+				Endosys.statusbar.mostrar_mensaje("Cargando selección de agenda...");
 				return TM.content_agendas_chus.load_content(mainlayout, "content/gestion_agendas_chus.html"+ew_version_param())
 				.done(function() {
 					//	configurar la busqueda de agendas
@@ -101,15 +101,15 @@
 					});
 
 					//	buscar
-					//Endotools.agendas_chus.obtener(TM.content_agendas_chus, null, datatable_results);
-					Endotools.statusbar.mostrar_mensaje("Obteniendo las agendas...");
-					Endotools.agendas_chus.index(TM.content_agendas_chus, null, {'datatable': datatable_results})
+					//Endosys.agendas_chus.obtener(TM.content_agendas_chus, null, datatable_results);
+					Endosys.statusbar.mostrar_mensaje("Obteniendo las agendas...");
+					Endosys.agendas_chus.index(TM.content_agendas_chus, null, {'datatable': datatable_results})
 					.fail(function() {
-						Endotools.statusbar.mostrar_mensaje("Ha ocurrido un error obteniendo las agendas", 1);
+						Endosys.statusbar.mostrar_mensaje("Ha ocurrido un error obteniendo las agendas", 1);
 					});
 					
 					//	-----------------------------------
-					Endotools.statusbar.mostrar_mensaje("Listo");
+					Endosys.statusbar.mostrar_mensaje("Listo");
 				});
 
 		},

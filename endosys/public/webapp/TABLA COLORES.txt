@@ -1,7 +1,7 @@
 Colores de estilos:
 
 
-CODIGO	CLÁSICO				PENTAX
+CODIGO	CLï¿½SICO				PENTAX
 
 A	#60A090  verde oscuro		#CACCCD  gris
 B	#C4E5D6  verde claro		#DA291C  rojo PENTAX
@@ -41,7 +41,7 @@ AA	#222222  gris-negro		#FFFFFF  blanco
 Uso de los colores:
 
 A:
-Fondo de EndoTools, separadores de los paneles, bordes.
+Fondo de EndoSys, separadores de los paneles, bordes.
 
 B:
 Botones, elementos clickables/seleccionables/interactivos, Y FONDO HEADER DATATABLE YUI2.
@@ -53,19 +53,19 @@ D:
 Fondo headers jQueryUI
 
 E:
-texto botón activo
+texto botï¿½n activo
 
 F:
 Borde botones jQueryUI
 
 G:
-Color texto EndoTools y widgets jQueryUI
+Color texto EndoSys y widgets jQueryUI
 
 H:
 Color texto botones jQueryUI, Y TEXTO HEADER DATATABLE YUI2.
 
 I:
-Fondo botón highlight/activo jQueryUI, Y FONDO COLUMNA SORTABLE DATATABLE YUI2.
+Fondo botï¿½n highlight/activo jQueryUI, Y FONDO COLUMNA SORTABLE DATATABLE YUI2.
 
 J:
 Borde highlight jQueryUI
@@ -74,19 +74,19 @@ K:
 Texto highlight jQueryUI, Y TEXTO COLUMNA SORTABLE DATATABLE YUI2.
 
 L:
-Borde botón activo jQueryUI
+Borde botï¿½n activo jQueryUI
 
 M:
-Texto footer EndoTools
+Texto footer EndoSys
 
 N:
 Iconos jQueryUI
 
 O:
-Texto botón hover
+Texto botï¿½n hover
 
 P:
-Fondo botón hover jQueryUI
+Fondo botï¿½n hover jQueryUI
 
 Q:
 Borde hover jQueryUI
@@ -98,13 +98,13 @@ S:
 Borde control activo Pure
 
 T:
-Icono botón jQueryUI
+Icono botï¿½n jQueryUI
 
 U:
-Icono botón hover
+Icono botï¿½n hover
 
 V:
-Icono botón activo
+Icono botï¿½n activo
 
 W:
 FONDO HIGHLIGHT DATATABLE YUI2.
@@ -130,7 +130,7 @@ REVISAR COLORES:
 	#E06040		rojo-naranja	Color del paciente deshabilitado.
 	#A0A0A0		gris claro		Color del informe invalido.
 
-  colores de imágenes:
+  colores de imï¿½genes:
 	fondo_footer.png
 	menu_principal_btn.png
 	menu_principal_btn_hover.png

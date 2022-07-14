@@ -17,7 +17,7 @@ log = logging.getLogger(__name__)
 class OpcionesconfigController(BaseController):
 
     _opciones_basicas = {
-        'THEME_ENDOTOOLS': 'classic',
+        'THEME_ENDOSYS': 'classic',
         'EWC_MODO.ACTIVO':0,
     }
 
@@ -34,7 +34,7 @@ class OpcionesconfigController(BaseController):
                     'IDENTIFICADORES_PACIENTE': 'IDUNICO',
                     'IDUNICO_LABEL': 'Identificador',                   # permite cambiar la etiqueta mostrada para el campo CIP. p.ej. "NUHSA" en el caso de Huelva/Andaluc?a
                     'CIP_LABEL': 'CIP',
-                    'USAR_MOTIVO_CANCELACION': 1,                       # indica si se utilizar? la funcionalidad de indicar el motivo de cancelaci?n de EndoTools (ojo: es independiente del de SIHGA, motivo de fallo!)
+                    'USAR_MOTIVO_CANCELACION': 1,                       # indica si se utilizar? la funcionalidad de indicar el motivo de cancelaci?n de EndoSys (ojo: es independiente del de SIHGA, motivo de fallo!)
                     'PACIENTES_DESHABILITADOS': 0,                      # activa las opciones relativas a los pacientes deshabilitados en la aplicaci?n: XXX No hace nada, no se ha implementado ninguna funcionalidad dependiente de esta opci?n
                     'FORMULARIOS.LABELS.MODO': 1,                       # indica el modo de los labels, a la izquierda o encima de los campos (1 o 2)
                     'FORMULARIOS.LABELS.ANCHO': 0,                      # indica el ancho de los labels, en pixels (solo util cuando est?n a la izq)
@@ -43,7 +43,7 @@ class OpcionesconfigController(BaseController):
                     'DEVELOPMENT': 0,
                     'PACIENTES_DESHABILITADOS.INCLUIR_POR_DEFECTO': 0,  # indica si por defecto se activa el check de "pacientes deshabilitados" en la busqueda de pacientes
                     'CAMPOS_CALCULADOS': 0,                             # si se usar? la funcionalidad de campos calculados (en cliente, javascript)
-                    'THEME_ENDOTOOLS': 'pentax',    
+                    'THEME_ENDOSYS': 'pentax',    
                     'CONFIRMACION_PACIENTE_CITAS': 0,
                     'MOSTRAR_COLUMNA_CENTRO_EN_EXPLORACIONES': 0,
                     'CITAS_PENDIENTES_MODO': 0,

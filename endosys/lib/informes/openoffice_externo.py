@@ -343,7 +343,7 @@ class Informe():
 				self._write_log(error_str, LOG_ERROR) 
 	
 	def _resize_image(self,image_template, path):
-		""" Funcion de yeray. Nuestro compañero fugaz que tambien ha dejado su marca en el EndoTools.
+		""" Funcion de yeray. Nuestro compañero fugaz que tambien ha dejado su marca en el EndoSys.
 			El era una persona de Tenerife y habia estudiado en La Laguna. No sabiamos mucho de su vida, solo
 			que vivia con dos venezolanas es lo unico relevante que recuerdo.
 		"""

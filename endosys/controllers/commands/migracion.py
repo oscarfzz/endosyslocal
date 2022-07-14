@@ -173,7 +173,7 @@ class MigracionController(CommandController):
 			return render(template,extra_vars=params)
 
 		#verificar las versiones del endosys que sean iguales
-		versiones_ok = self.verificar_versiones_endotools()
+		versiones_ok = self.verificar_versiones_endosys()
 		if not versiones_ok:
 			params['error'] = self.msgs['error_versiones']
 			params['step'] = 1
@@ -392,7 +392,7 @@ class MigracionController(CommandController):
 
 	def post_message(self):
 		a_volver = u'<a href="/admin"> << Volver </a> <br>'
-		return a_volver + u'<p>Comando Ejecutado. Ingrese a "Tareas" del EndoTools para ver el estado de la misma.</p>'
+		return a_volver + u'<p>Comando Ejecutado. Ingrese a "Tareas" del EndoSys para ver el estado de la misma.</p>'
 	
 	def _set_log(self):
 		#import pdb; pdb.set_trace()
@@ -461,7 +461,7 @@ class MigracionController(CommandController):
 		else:
 			raise Exception('Seleccione el tipo de BD')
 
-	def verificar_versiones_endotools(self):
+	def verificar_versiones_endosys(self):
 
 		try:
 			def_configuraciones_o = sa.Table('Configuraciones', self.db_origen['metadata'], autoload=True)

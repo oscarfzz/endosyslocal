@@ -20,13 +20,13 @@
 		_actualizar_agendas: function($agendas, agendas) {
 			/*
 			Actualiza el control select de agendas.
-				agendas: devuelto por Endotools.usuarios.show()
+				agendas: devuelto por Endosys.usuarios.show()
 			*/
 			for (var i=0; i < agendas.length; i++) {
 				// Solo crea las option del select de las agendas que pertenecen al servicio activo
 				//	Si la agenda no tiene servicio_id también se añade... esto sirve para la integr. SIHGA, con las agendas_chus
 				if (agendas[i].servicio_id == undefined  ||  agendas[i].servicio_id == null  ||
-				    (parseInt(agendas[i].servicio_id,10) == parseInt(Endotools.auth.servicio_activo.id,10))) {
+				    (parseInt(agendas[i].servicio_id,10) == parseInt(Endosys.auth.servicio_activo.id,10))) {
 						var id =		agendas[i].id;
 						var nombre =	agendas[i].nombre;
 						var op =		$('<option value="' + id + '">' + nombre + '</option>');
@@ -52,7 +52,7 @@
 				//TM.content_citas.servicios.activate();
 				TM.content_citas.agendas.activate();
 				TM.content_citas.detalles.activate();
-				Endotools.statusbar.mostrar_mensaje(_('Loading...'));/*IDIOMAOK*/
+				Endosys.statusbar.mostrar_mensaje(_('Loading...'));/*IDIOMAOK*/
 
 				// Carga la grilla de citas
 				TM.content_citas.load_content(mainlayout, 'content/lista_citas.html'+ew_version_param())
@@ -96,7 +96,7 @@
 					fielddef = gestion_citas.configurar_columnas();
 					gestion_citas.datatable_results = new YAHOO.widget.ScrollingDataTable("datatable_busqueda_result",
 																		fielddef,
-																		//Endotools.citas.datasource,
+																		//Endosys.citas.datasource,
 																		dummyDataSource,	//	en util/misc.js
 																		{ initialLoad: false,
 																		  //formatRow:		rowFormatter,
@@ -110,7 +110,7 @@
 
 					//	columnas 'calculadas' (que no se extraen directamente de los campos devueltos por el datasource)
 					datatable_results.doBeforeLoadData = function (sRequest, oResponse, oPayload) {
-						var centro_id = Endotools.auth.servicio_activo.centro_id;
+						var centro_id = Endosys.auth.servicio_activo.centro_id;
 						for (var n=0; n < oResponse.results.length; n++) {
 							oResponse.results[n].paciente_id =	oResponse.results[n].paciente.id;
 							oResponse.results[n].idunico =		oResponse.results[n].paciente.idunico;
@@ -325,7 +325,7 @@
 										params.motivo_id = motivo_cancelacion;
 									}
 
-									Endotools.citas.update(TM.operaciones, cita_id, params)
+									Endosys.citas.update(TM.operaciones, cita_id, params)
 									.done(function() {
 										//	quitarla del datatable
 										if(opciones_config.CITAS_PENDIENTES_MODO == 0){
@@ -339,7 +339,7 @@
 										//En este fail se puede diferenciar si no se ha podido cancelar por:
 										//1. ya estaba cancelada
 										//2. se habia iniciado la exploracion
-										Endotools.statusbar.mostrar_mensaje(_('La cita no se puede cancelar'), 1);/*IDIOMAOK*/
+										Endosys.statusbar.mostrar_mensaje(_('La cita no se puede cancelar'), 1);/*IDIOMAOK*/
 										
 									});
 								}
@@ -348,7 +348,7 @@
 									motivo_cancelacion_dialog.mostrar()
 									.done(function(motivo_cancelacion) {
 										if (motivo_cancelacion == null) {
-											Endotools.statusbar.mostrar_mensaje(_('No ha seleccionado un motivo de cancelación'), 1);/*IDIOMAOK*/
+											Endosys.statusbar.mostrar_mensaje(_('No ha seleccionado un motivo de cancelación'), 1);/*IDIOMAOK*/
 										} else {
 											_do_cancelar(motivo_cancelacion);
 										}
@@ -428,13 +428,13 @@
 						// Grabar el orden
 						gestion_citas.sortedBy = gestion_citas.datatable_results.getState().sortedBy;
 						
-						Endotools.citas.index(TM.buscar_citas, params, {datatable: datatable_results})
+						Endosys.citas.index(TM.buscar_citas, params, {datatable: datatable_results})
 						.done(function(results){
 							if (results && results.length == 0){
 								//no se ha encontrado ninguna cita
-								Endotools.statusbar.mostrar_mensaje(_('No se ha encontrado ninguna cita'));/*IDIOMAOK*/
+								Endosys.statusbar.mostrar_mensaje(_('No se ha encontrado ninguna cita'));/*IDIOMAOK*/
 							}else{
-								Endotools.statusbar.mostrar_mensaje(_('Ready'));/*IDIOMAOK*/
+								Endosys.statusbar.mostrar_mensaje(_('Ready'));/*IDIOMAOK*/
 
 								//mostrar/ocultar columna fecha segun el tipo de busqueda que se hizo
 								if ($("#checkbox-fecha").prop("checked")){
@@ -463,7 +463,7 @@
 
 							/*if(arguments[2].status && arguments[2].status == 404){
 							//no se ha encontrado ninguna cita
-								Endotools.statusbar.mostrar_mensaje("No se han encontrado ninguna Cita");
+								Endosys.statusbar.mostrar_mensaje("No se han encontrado ninguna Cita");
 							}*/
 								
 						})
@@ -479,9 +479,9 @@
 								// solo muestra el mensaje de error si no es un abort
 								if (jqXHR.responseText){
 									error = parseError(jqXHR.responseText);
-									Endotools.statusbar.mostrar_mensaje(error, 1);
+									Endosys.statusbar.mostrar_mensaje(error, 1);
 								}else{
-									Endotools.statusbar.mostrar_mensaje(_('Error al cargar las citas'), 1);/*IDIOMAOK*/
+									Endosys.statusbar.mostrar_mensaje(_('Error al cargar las citas'), 1);/*IDIOMAOK*/
 								}
 							}
 						});
@@ -503,7 +503,7 @@
 					
 					//		llenarlo
 					if (opciones_config.INTEGRACION_SIHGA) {
-						Endotools.agendas_chus.index(TM.content_citas.agendas_chus)
+						Endosys.agendas_chus.index(TM.content_citas.agendas_chus)
 						
 						.done(function(agendas) {
 							gestion_citas.agendas = agendas;
@@ -527,21 +527,21 @@
 						})
 						
 						.fail(function() {
-							Endotools.statusbar.mostrar_mensaje(_('Ha ocurrido un error obteniendo las agendas'), 1);/*IDIOMAOK*/
+							Endosys.statusbar.mostrar_mensaje(_('Ha ocurrido un error obteniendo las agendas'), 1);/*IDIOMAOK*/
 						});
 						
 					} else {
-						Endotools.usuarios.show(TM.content_citas.agendas, Endotools.auth.username)
+						Endosys.usuarios.show(TM.content_citas.agendas, Endosys.auth.username)
 
 						.then(function(usuario) {
 							//almacena las agendas del medico actual
 							gestion_citas.agendas = usuario.medico.agendas;
-							return Endotools.valores_default.show(TM.operaciones, 'index')
+							return Endosys.valores_default.show(TM.operaciones, 'index')
 						})
 						
 						.done(function(valores_default) {
 							//obtener el servicio activo, y crea el select de agendas segun el servicio activo
-							if (Endotools.auth.servicio_activo!=null){
+							if (Endosys.auth.servicio_activo!=null){
 								gestion_citas.servicio_id = valores_default.servicio_id;
 								gestion_citas._actualizar_agendas($("#busqueda-citas-agenda"), gestion_citas.agendas);
 								$("#busqueda-citas-agenda").removeAttr('disabled');
@@ -706,7 +706,7 @@
 			
 			//	Formatear el valor de las prioridades
 			/*var prioridad_formatter = function(elLiner, oRecord, oColumn, oData) {
-					elLiner.innerHTML = Endotools.citas.descr_prioridad(oData);
+					elLiner.innerHTML = Endosys.citas.descr_prioridad(oData);
 			}*/
 			
 			//	formatear el botón de "No realizada"

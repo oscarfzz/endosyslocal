@@ -177,21 +177,21 @@ var imagenes_expl = function() {
 
 			// es mpg
 			if ((imagen.tipo) && (imagen.tipo.toUpperCase() == 'MPG')) {
-				url = Endotools.imagenes.resource + '/' + imagen.id + '.mpg';
+				url = Endosys.imagenes.resource + '/' + imagen.id + '.mpg';
 				multimedia.url = url;
 				multimedia.type = "video";
 				return multimedia;
 			}
 			// es ts
 			if ((imagen.tipo) && (imagen.tipo.toUpperCase() == 'TS')) {
-				url = Endotools.imagenes.resource + '/' + imagen.id + '.ts';
+				url = Endosys.imagenes.resource + '/' + imagen.id + '.ts';
 				multimedia.url = url;
 				multimedia.type = "video";
 				return multimedia;
 			}
 			// es avi
 			if ((imagen.tipo) && (imagen.tipo.toUpperCase() == 'AVI')) {
-				url = Endotools.imagenes.resource + '/' + imagen.id + '.avi';
+				url = Endosys.imagenes.resource + '/' + imagen.id + '.avi';
 				multimedia.url = url;
 				multimedia.type = "video";
 				return multimedia;
@@ -199,14 +199,14 @@ var imagenes_expl = function() {
 
 			// es wmv
 			if ((imagen.tipo) && (imagen.tipo.toUpperCase() == 'WMV')) {
-				url = Endotools.imagenes.resource + '/' + imagen.id + '.wmv';
+				url = Endosys.imagenes.resource + '/' + imagen.id + '.wmv';
 				multimedia.url = url;
 				multimedia.type = "video";
 				return multimedia;
 			}
 
 			// sino es imagen
-			multimedia.url =  Endotools.imagenes.resource + '/' + imagen.id + '.' + imagen.tipo;
+			multimedia.url =  Endosys.imagenes.resource + '/' + imagen.id + '.' + imagen.tipo;
 			multimedia.type = "image";
 			return multimedia;
 		},
@@ -326,7 +326,7 @@ var imagenes_expl = function() {
 			})
 			.done(function(comentario) {
 				if (comentario != imagen.comentario) {
-					Endotools.imagenes.update(imagenes_expl.tm, imagen.id, {'comentario': comentario})
+					Endosys.imagenes.update(imagenes_expl.tm, imagen.id, {'comentario': comentario})
 					.done(function() {
 						imagen.comentario = comentario;
 						// actualiza el objeto data del thumb
@@ -351,7 +351,7 @@ var imagenes_expl = function() {
 		obtener_thumbs: function(exploracion_id, $parent) {
 
 			// Obtiene las miniaturas al REST
-			Endotools.imagenes.index(imagenes_expl.tm, {'exploracion_id': exploracion_id})
+			Endosys.imagenes.index(imagenes_expl.tm, {'exploracion_id': exploracion_id})
 			.done(function(imagenes) {
 				imagenes_expl.imagenes = imagenes;
 
@@ -375,7 +375,7 @@ var imagenes_expl = function() {
 					// Si no existe el atributo disponible o si esta disponibles => Disponible
 					if (imagen.disponible==undefined || imagen.disponible){
 						disponible = true;
-						thumb_src = Endotools.imagenes.resource + '/' + imagen.id + '.thumb';
+						thumb_src = Endosys.imagenes.resource + '/' + imagen.id + '.thumb';
 						img_src = multimedia.url;
 						disponible_class = " img-disponible ";
 
@@ -463,14 +463,14 @@ var imagenes_expl = function() {
 						 					var $checkbox = $(this);
 											if ($checkbox.parent().hasClass('li-type-image') || !$checkbox.prop('checked')) {
 												imagenes_expl.update_check_btn($checkbox);
-												Endotools.imagenes.update(imagenes_expl.tm, $checkbox.data('imagen').id, {
+												Endosys.imagenes.update(imagenes_expl.tm, $checkbox.data('imagen').id, {
 													'seleccionada': $checkbox.prop('checked') ? '1' : '0'
 												}).done(function(){
 													imagenes_expl.set_selected_to_image_data_by_id($checkbox.data('imagen').id , $checkbox.prop("checked"));
 												});
 											}
 											else {
-												Endotools.statusbar.mostrar_mensaje(_("Sólo puede añadir imágenes a la generación de informes"), 1);
+												Endosys.statusbar.mostrar_mensaje(_("Sólo puede añadir imágenes a la generación de informes"), 1);
 												$checkbox.prop('checked', false);
 											}
 										});
@@ -536,7 +536,7 @@ var imagenes_expl = function() {
 							var posY = Math.floor(event.pageY - position.top) - 30;
 
 							// Grabar la posicion en la BD
-							Endotools.imagenes.update(imagenes_expl.tm, imagen.id, {'posx': posX, 'posy': posY})
+							Endosys.imagenes.update(imagenes_expl.tm, imagen.id, {'posx': posX, 'posy': posY})
 							.done(function() {
 								// Cuando se graba la posicion, pintar flecha
 								imagenes_expl.pintar_flecha($contenedor, imagen, posX, posY);
@@ -590,7 +590,7 @@ var imagenes_expl = function() {
 				containment: "#exploracion_form_tabview #exploracion-tab-imagenes>.ui-layout-east>div",
 				scroll: false,
 				stop: function() {
-					Endotools.imagenes.update(imagenes_expl.tm, $(this).data("imagen").id, {'posx': this.x, 'posy': this.y });
+					Endosys.imagenes.update(imagenes_expl.tm, $(this).data("imagen").id, {'posx': this.x, 'posy': this.y });
 				}
 			});
 			$flecha.click(function() {
@@ -664,7 +664,7 @@ var refresh_imagenes = function(){
 		set_exploracion_estado:  function(exploracion_estado){
 			refresh_imagenes.exploracion_estado = exploracion_estado;
 
-			//Refrescar del ENDOTOOLSWEBCLIENT
+			//Refrescar del ENDOSYSWEBCLIENT
 			//if (opciones_config["EWC_MODO.ACTIVO"]==1){
 				if (refresh_imagenes.exploracion_estado == 0){
 					// Si tiene estado sin finalizar
@@ -676,7 +676,7 @@ var refresh_imagenes = function(){
 					}
 				}
 			//}else{
-				// cancelar refresco porque no esta activado el modo ENDOTOOLSWEBCLIENT
+				// cancelar refresco porque no esta activado el modo ENDOSYSWEBCLIENT
 			//	refresh_imagenes.terminar();
 			//}
 
@@ -688,7 +688,7 @@ var refresh_imagenes = function(){
 
 			console.log("comenzar hilo de busqueda de imagnes")
 
-			Endotools.imagenes.index(imagenes_expl.tm, {'exploracion_id': gestion_exploraciones.exploracion_id})
+			Endosys.imagenes.index(imagenes_expl.tm, {'exploracion_id': gestion_exploraciones.exploracion_id})
 			.done(function(imagenes) {
 				for (var n=0; n < imagenes.length; n++)
 				{	
@@ -697,7 +697,7 @@ var refresh_imagenes = function(){
 					if (!imagenes[n].disponible && imagenes[n].dicom_stgcmt)
 					{
 						console.log(imagenes[n].id);
-						Endotools.imagenes.show(imagenes_expl.tm, imagenes[n].id,{'format': imagenes[n].tipo})
+						Endosys.imagenes.show(imagenes_expl.tm, imagenes[n].id,{'format': imagenes[n].tipo})
                         .done(function(imagen){
 							console.log("cargo la imagen desde el pacs");
 						}).fail(function(text){

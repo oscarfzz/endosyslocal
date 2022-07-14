@@ -55,7 +55,7 @@ COLORES:
 /*	antes en main_new.css	*/
 
 #mainheader {
-    background-image: url(logo_endotools.png);
+    background-image: url(logo_endosys.png);
 }
 
 #maintitle-texto-subtitulo {
@@ -83,7 +83,7 @@ COLORES:
 }
 
 .entorno-pruebas {
-    background-image: url(logo_endotools_pruebas.png)!important;
+    background-image: url(logo_endosys_pruebas.png)!important;
 }
 
 /*	adaptacion del JSTREE al tema endosys pentax	*/

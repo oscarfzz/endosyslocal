@@ -83,8 +83,8 @@ def make_app(global_conf, full_stack=True, **app_conf):
         # app = ErrorHandler(app, global_conf, error_template=error_template,
         #                  **config['pylons.errorware'])
         # XXX   #################################
-        from endosys.lib.middleware.error import EndoTools_ErrorHandler
-        app = EndoTools_ErrorHandler(app, global_conf, error_template=error_template,
+        from endosys.lib.middleware.error import EndoSys_ErrorHandler
+        app = EndoSys_ErrorHandler(app, global_conf, error_template=error_template,
                            **config['pylons.errorware'])
         # #######################################
 

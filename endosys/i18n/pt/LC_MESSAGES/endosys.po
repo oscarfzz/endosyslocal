@@ -1,76 +1,75 @@
-# English translations for endosys.
-# Copyright (C) 2014 ORGANIZATION
+# Portuguese translations for endosys.
+# Copyright (C) 2015 ORGANIZATION
 # This file is distributed under the same license as the endosys project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: endosys 0.0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2019-06-19 08:45+0200\n"
-"PO-Revision-Date: 2019-06-19 14:19+0200\n"
-"Last-Translator: Carlos Herrero <carlos.herrero@simmedica.com>\n"
-"Language-Team: en <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"PO-Revision-Date: 2016-03-11 09:57+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.3\n"
-"Language: en\n"
-"X-Generator: Poedit 2.2.3\n"
 
 #: endosys/controllers/rest/agendas.py:127
 #: endosys/controllers/rest/agendas.py:256
 #, python-format
 msgid "No se encuentra la agenda indicada con id: %s"
-msgstr "Schedule with id: %s not found"
+msgstr ""
 
 #: endosys/controllers/rest/agendas.py:149
 #, python-format
 msgid "No se puede modificar el agenda indicada con id: %s"
-msgstr "Schedule with id: %s cannot be modified"
+msgstr ""
 
 #: endosys/controllers/rest/agendas.py:247
 msgid "El campo 'nombre' es obligatorio"
-msgstr "Field 'name' is required"
+msgstr ""
 
 #: endosys/controllers/rest/agendas.py:249
 msgid "El campo 'servicio_id' es obligatorio"
-msgstr "Field 'service_id' is required"
+msgstr ""
 
 #: endosys/controllers/rest/agendas_chus.py:136
 msgid "No se ha encontrado la agenda"
-msgstr "Schedule not found"
+msgstr ""
 
 #: endosys/controllers/rest/camposFijos.py:62
 msgid "ERROR: No se puede modificar un campo fijo"
-msgstr "ERROR: Cannot modify a built in field"
+msgstr ""
 
 #: endosys/controllers/rest/camposFijos.py:66
 msgid "ERROR: No se puede crear un campo fijo"
-msgstr "ERROR: Cannot create a built in field"
+msgstr ""
 
 #: endosys/controllers/rest/camposFijos.py:70
 msgid "ERROR: No se puede eliminar un campo fijo"
-msgstr "ERROR: Cannot delete a built in field"
+msgstr ""
 
 #: endosys/controllers/rest/capturas.py:170
 msgid "parametro incorrecto en _content_type"
-msgstr "wrong parameter in _content_type"
+msgstr ""
 
 #: endosys/controllers/rest/capturas.py:206
 msgid ""
-"No es posible visualizar la captura porque la exploración se encuentra borrada"
-msgstr "Is not possible view the images because the examination is deleted"
+"No es posible visualizar la captura porque la exploración se encuentra "
+"borrada"
+msgstr ""
 
 #: endosys/controllers/rest/capturas.py:227
 #, python-format
 msgid "No se ha encontrado la captura id: %s"
-msgstr "Capture %s not found"
+msgstr ""
 
 #: endosys/controllers/rest/capturas.py:228
 msgid "No se ha encontrado la captura"
-msgstr "Capture not found"
+msgstr ""
 
 #: endosys/controllers/rest/capturas.py:252
 #: endosys/controllers/rest/capturas.py:332
@@ -79,212 +78,213 @@ msgstr "Capture not found"
 #: endosys/controllers/rest/informes.py:616
 #: endosys/controllers/rest/informes.py:806
 msgid "La exploración se encuentra borrada"
-msgstr "The examination is deleted"
+msgstr ""
 
 #: endosys/controllers/rest/capturas.py:266
 msgid "Ya existe una captura con ese UUID ya existe"
-msgstr "An image with that UUID already exists"
+msgstr ""
 
 #: endosys/controllers/rest/capturas.py:287
 #, python-format
 msgid "La extensión del archivo no es válida: \"%s\""
-msgstr "Invalid file extension: \"%s\""
+msgstr ""
 
 #: endosys/controllers/rest/capturas.py:307
 msgid "falta el parametro con los datos de la imagen"
-msgstr "image data parameter not found"
+msgstr ""
 
 #: endosys/controllers/rest/capturas.py:336
 msgid "Se ingreso al update de capturas mediante Mirth"
-msgstr "Joined to capture updates through Mirth"
+msgstr ""
 
 #: endosys/controllers/rest/capturas.py:340
 msgid "El usuario no tiene permisos"
-msgstr "Current user does not have permission"
+msgstr ""
 
 #: endosys/controllers/rest/capturas.py:384
 msgid "No se pueden mover las imagenes a otra exploracion"
-msgstr "Cannot move the images to another examination"
+msgstr ""
 
 #: endosys/controllers/rest/capturas.py:394
 msgid ""
-"Solo se permite modificar los campos \"seleccionada\" \"comentario\" \"orden\""
-msgstr "Only fields \"seleccionada\" \"comentario\" \"orden\" can be modified"
+"Solo se permite modificar los campos \"seleccionada\" \"comentario\" "
+"\"orden\""
+msgstr ""
 
 #: endosys/controllers/rest/capturas.py:400
 msgid "ERROR: No se puede eliminar una captura"
-msgstr "ERROR: Cannot delete a capturing"
+msgstr ""
 
 #: endosys/controllers/rest/chunks.py:92
 msgid "Los parámetros de la petición no son correctos"
-msgstr "Incorrect request parameters"
+msgstr ""
 
 #: endosys/controllers/rest/chunks.py:101
 msgid "No se puede modificar un chunk"
-msgstr "Cannot modify a chunk"
+msgstr ""
 
 #: endosys/controllers/rest/chunks.py:108
 msgid "No se puede eliminar un chunk"
-msgstr "Cannot delete a chunk"
+msgstr ""
 
 #: endosys/controllers/rest/citas.py:139
 msgid "No hay configuraciones para obtener Worklist"
-msgstr "Settings not found to obtain Worklist"
+msgstr ""
 
 #: endosys/controllers/rest/citas.py:157
 msgid "No existe ninguna lista de trabajo configurada para esta agenda"
-msgstr "Worklist not found for this schedule"
+msgstr ""
 
-#: endosys/controllers/rest/citas.py:198 endosys/controllers/rest/citas.py:214
+#: endosys/controllers/rest/citas.py:198
+#: endosys/controllers/rest/citas.py:214
 #: endosys/controllers/rest/citas.py:697
 #: endosys/public/webapp/js/busqueda_citas.js:96
 #: endosys/public/webapp/js/busqueda_citas.js:208
-#: endosys/public/webapp/js/citas.js:123 endosys/public/webapp/js/citas.js:485
+#: endosys/public/webapp/js/citas.js:123
+#: endosys/public/webapp/js/citas.js:485
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:551
 msgid "No se ha encontrado ninguna cita"
-msgstr "No appointment found"
+msgstr ""
 
 #: endosys/controllers/rest/citas.py:573
 msgid "No se puede cancelar la cita, porque ya estaba cancelada"
-msgstr "Can not cancel the appointment because it was already canceled"
+msgstr ""
 
 #: endosys/controllers/rest/citas.py:576
 msgid "No se puede cancelar la cita, porque tiene una exploración asociada"
-msgstr "Can not cancel the appointment because it has an examination associated"
+msgstr ""
 
 #: endosys/controllers/rest/citas.py:709
 msgid "No se puede eliminar la cita"
-msgstr "Cannot delete appointment"
+msgstr ""
 
 #: endosys/controllers/rest/elementos.py:77 endosys/lib/busquedas.py:142
 #: endosys/lib/informes/valores.py:98
 #: endosys/public/webapp/content/paciente.html:56
 msgid "Sexo:Hombre"
-msgstr "Male"
+msgstr ""
 
 #: endosys/controllers/rest/elementos.py:78 endosys/lib/busquedas.py:143
 #: endosys/lib/informes/valores.py:96
 #: endosys/public/webapp/content/paciente.html:57
 msgid "Sexo:Mujer"
-msgstr "Female"
+msgstr ""
 
 #: endosys/controllers/rest/elementos.py:112
 #: endosys/controllers/rest/elementos.py:131
 #: endosys/public/webapp/js/tablas.js:396
 msgid "No se ha encontrado ningún elemento"
-msgstr "No item found"
+msgstr ""
 
 #: endosys/controllers/rest/elementos.py:128
 #, python-format
 msgid "Ha ocurrido un error cargando los elementos (%s)"
-msgstr "An error has occurred while loading items (%s)"
+msgstr ""
 
 #: endosys/controllers/rest/elementos.py:193
 msgid "No tiene permisos para agregar un elemento de este campo"
-msgstr "You don't have permissions to add an item to this field"
+msgstr ""
 
 #: endosys/controllers/rest/elementos.py:201
 msgid "Ya existe un elemento con el mismo nombre para ese campo"
-msgstr "An item with the same name already exists for this field"
+msgstr ""
 
 #: endosys/controllers/rest/exploraciones.py:121
 msgid "No se ha indicado el servicio de la exploración"
-msgstr "A service for the examination has not been indicated"
+msgstr ""
 
 #: endosys/controllers/rest/exploraciones.py:138
 msgid "No se puede realizar la exploración, la cita ya ha sido iniciada"
 msgstr ""
-"Can not perform the examination because the appointment has already been "
-"initiated"
 
 #: endosys/controllers/rest/exploraciones.py:141
 msgid "No se puede realizar la exploración, la cita ya ha sido cancelada"
-msgstr "Can not perform the examination because the appointment has been canceled"
+msgstr ""
 
 #: endosys/controllers/rest/exploraciones.py:148
 msgid "No se ha indicado el paciente"
-msgstr "Patient not indicated"
+msgstr ""
 
 #: endosys/controllers/rest/exploraciones.py:150
 msgid "No se ha indicado el tipo de exploración"
-msgstr "No examination type has been specified"
+msgstr ""
 
 #: endosys/controllers/rest/exploraciones.py:156
 msgid ""
-"El paciente indicado está deshabilitado. No se puede hacer una nueva exploración"
-msgstr "The indicated patient is disabled. Cannot perform a new examination"
+"El paciente indicado está deshabilitado. No se puede hacer una nueva "
+"exploración"
+msgstr ""
 
 #: endosys/controllers/rest/exploraciones.py:237
 msgid "El usuario actual no tiene permisos para visualizar exploraciones borradas"
-msgstr "The current user does not have permissions to view deleted examinations"
+msgstr ""
 
 #: endosys/controllers/rest/exploraciones.py:631
 #, python-format
 msgid "Ha ocurrido un error finalizando la exploracion (%s)"
-msgstr "An error has occurred when finishing the examination (%s)"
+msgstr ""
 
 #: endosys/controllers/rest/exploraciones.py:685
 #: endosys/controllers/rest/formularios.py:38
 #: endosys/controllers/rest/formularios.py:114
 #: endosys/controllers/rest/formularios.py:377
 msgid "El usuario actual no puede modificar la exploración"
-msgstr "The current user cannot modify this examination"
+msgstr ""
 
 #: endosys/controllers/rest/exploraciones.py:702
 msgid "El paciente indicado está deshabilitado. No se puede cambiar el paciente"
-msgstr "The indicated patient is disabled. Cannot change the patient"
+msgstr ""
 
 #: endosys/controllers/rest/exploraciones.py:802
 msgid ""
-"Solo se puede modificar el tipo de exploración cuando la exploración esta sin "
-"finalizar"
+"Solo se puede modificar el tipo de exploración cuando la exploración esta"
+" sin finalizar"
 msgstr ""
-"The examination type can be changed only when the examination is not finished"
 
 #: endosys/controllers/rest/exploraciones.py:854
 msgid "La cita no existe"
-msgstr "The appointment does not exist"
+msgstr ""
 
 #: endosys/controllers/rest/exploraciones.py:858
 msgid "La cita ya esta en uso por otra exploración"
-msgstr "This appointment is in use by another examination"
+msgstr ""
 
 #: endosys/controllers/rest/exploraciones.py:861
 msgid "La cita ya ha sido cancelada"
-msgstr "The selected appointment has already been canceled"
+msgstr ""
 
 #: endosys/controllers/rest/exploraciones.py:881
 msgid "El usuario actual no puede eliminar la exploración"
-msgstr "The current user cannot delete this examination"
+msgstr ""
 
 #: endosys/controllers/rest/exploraciones.py:931
 msgid "La exploración no se puede descartar porque tiene imagenes asociadas."
-msgstr "Cannot discart examination because it has associated images."
+msgstr ""
 
 #: endosys/controllers/rest/exploraciones.py:935
 msgid "La exploración no se puede descartar con este usuario."
-msgstr "The examination can not be discarded with this user."
+msgstr ""
 
 #: endosys/controllers/rest/exploraciones.py:938
 #: endosys/public/webapp/content/exploracion.html:94
 msgid "Descartar"
-msgstr "Discard"
+msgstr ""
 
 #: endosys/controllers/rest/exploraciones.py:967
 msgid "El usuario actual no tiene permisos para borrar la exploración"
-msgstr "Current user does not have permission to delete this examination"
+msgstr ""
 
 #: endosys/controllers/rest/exploraciones.py:971
 msgid "La exploración ya está borrada"
-msgstr "The examination is already deleted"
+msgstr ""
 
 #: endosys/controllers/rest/exploraciones.py:975
 msgid "Es necesario un motivo para borrar la exploración"
-msgstr "A reason is required to delete the examination"
+msgstr ""
 
 #: endosys/controllers/rest/exploraciones.py:993
 msgid "No se permite borrar esta exploración"
-msgstr "Remove this examination is not allowed"
+msgstr ""
 
 #: endosys/controllers/rest/formularios.py:43
 #: endosys/controllers/rest/formularios.py:117
@@ -293,106 +293,104 @@ msgstr "Remove this examination is not allowed"
 #: endosys/controllers/rest/formularios.py:608
 #, python-format
 msgid "No existe ninguna exploración con id=%s"
-msgstr "No examination found with id=%s"
+msgstr ""
 
 #: endosys/controllers/rest/formularios.py:53
 #: endosys/controllers/rest/formularios.py:129
 #, python-format
 msgid "Error asignando los valores de los campos de la exploración: %s"
-msgstr "An error has occurred while setting the examination field values: %s"
+msgstr ""
 
 #: endosys/controllers/rest/formularios.py:61
 #, python-format
 msgid "No existe ningún formulario con id=%s"
-msgstr "No form found with id=%s"
+msgstr ""
 
 #: endosys/controllers/rest/formularios.py:63
 msgid "La exploración ya contiene el formulario indicado"
-msgstr "The examination already has the indicated form"
+msgstr ""
 
 #: endosys/controllers/rest/formularios.py:67
 msgid "El usuario no puede editar exploraciones"
-msgstr "The current user cannot edit examinations"
+msgstr ""
 
 #: endosys/controllers/rest/formularios.py:121
 #: endosys/controllers/rest/formularios.py:392
 #: endosys/controllers/rest/formularios.py:618
 msgid "La exploración no contiene el formulario indicado"
-msgstr "The examination has not the indicated form"
+msgstr ""
 
 #: endosys/controllers/rest/formularios.py:135
 msgid "El usuario actual no puede editar exploraciones"
-msgstr "The current user cannot edit examinations"
+msgstr ""
 
 #: endosys/controllers/rest/formularios.py:156
 #: endosys/controllers/rest/formularios.py:160
 msgid "ERROR: campo/s incorrecto/s"
-msgstr "ERROR: incorrect field/s"
+msgstr ""
 
 #: endosys/controllers/rest/formularios.py:272
 msgid ""
-"ERROR: No se pueden añadir o quitar campos, ya existen exploraciones realizadas "
-"que utilizan este formulario"
+"ERROR: No se pueden añadir o quitar campos, ya existen exploraciones "
+"realizadas que utilizan este formulario"
 msgstr ""
-"ERROR: Cannot add or remove fields because examinations using this form have "
-"been performed"
 
 #: endosys/controllers/rest/formularios.py:397
 msgid "El usuario actual no puede editar tipos de exploración"
-msgstr "The current user cannot edit examination types"
+msgstr ""
 
 #: endosys/controllers/rest/formularios.py:486
 msgid "No se pueden visualizar los formularios de una exploración borrada"
-msgstr "Forms for a deleted examination can not be viewed"
+msgstr ""
 
 #: endosys/controllers/rest/formularios.py:492
 #, python-format
 msgid "No existe ningún tipo de exploración con id=%s"
-msgstr "No examination type found with id=%s"
+msgstr ""
 
 #: endosys/controllers/rest/formularios.py:612
 msgid "No se puede visualizar un formulario de una exploración borrada"
-msgstr "Form for a deleted examination can not be viewed"
+msgstr ""
 
 #: endosys/controllers/rest/formularios.py:644
 #, python-format
 msgid "El campo %s es obligatorio, debe de rellenarlo"
-msgstr "Field %s is required, and must be filled in"
+msgstr ""
 
 #: endosys/controllers/rest/fusiones.py:254
 msgid "ERROR: No se puede modificar un registro de fusion"
-msgstr "ERROR: Cannot modify a merge record"
+msgstr ""
 
 #: endosys/controllers/rest/fusiones.py:259
 msgid "ERROR: No se puede eliminar un registro de fusion"
-msgstr "ERROR: Cannot delete a merge record"
+msgstr ""
 
 #: endosys/controllers/rest/informes.py:84
 #: endosys/controllers/rest/informes.py:85
 #: endosys/controllers/rest/informes.py:335
 #: endosys/controllers/rest/informes.py:337
 msgid "Listado de informes"
-msgstr "List of reports"
+msgstr ""
 
 #: endosys/controllers/rest/informes.py:97
 msgid "No se ha podido encontrar el centro."
-msgstr "Facility not found."
+msgstr ""
 
 #: endosys/controllers/rest/informes.py:131
 msgid "No se ha podido obtener el centro necesario para identificar por NHC."
-msgstr "Cannot obtain facility related to identify this MR."
+msgstr ""
 
 #: endosys/controllers/rest/informes.py:172
 #: endosys/controllers/rest/informes.py:227
 #: endosys/public/webapp/js/informes.js:42
 msgid "Informe"
-msgstr "Report"
+msgstr ""
 
 #: endosys/controllers/rest/informes.py:174
 #: endosys/controllers/rest/informes.py:229
 #: endosys/public/webapp/js/informes.js:48
 msgid "Adjunto"
-msgstr "Attached"
+msgstr ""
 
 #: endosys/controllers/rest/informes.py:180
 #: endosys/controllers/rest/informes.py:204
@@ -407,309 +405,314 @@ msgstr "Attached"
 #: endosys/public/webapp/js/informes.js:70
 #: endosys/public/webapp/js/notificaciones.js:360
 msgid "Fecha"
-msgstr "Date"
+msgstr ""
 
 #: endosys/controllers/rest/informes.py:202
 #: endosys/controllers/rest/informes.py:244
 msgid "exploraci&oacute;n"
-msgstr "examination"
+msgstr ""
 
 #: endosys/controllers/rest/informes.py:213
 #: endosys/controllers/rest/informes.py:254
 msgid "Paciente sin informes asociados"
-msgstr "Patient with no related reports"
+msgstr ""
 
 #: endosys/controllers/rest/informes.py:215
 #: endosys/controllers/rest/informes.py:256
 msgid "Sin informes"
-msgstr "No reports"
+msgstr ""
 
 #: endosys/controllers/rest/informes.py:338
 msgid "Error: No se especifico el paciente"
-msgstr "Error: Patient has not been indicated"
+msgstr ""
 
 #: endosys/controllers/rest/informes.py:444
 msgid "Error al acceder a la plataforma de firma"
-msgstr "An error has occurred while accessing to signature platform"
+msgstr ""
 
 #: endosys/controllers/rest/informes.py:507
 #: endosys/controllers/rest/informes.py:510
 msgid ""
-"No es posible visualizar el informe porque la exploración se encuentra borrada"
-msgstr "Report for a deleted examination can not be viewed"
+"No es posible visualizar el informe porque la exploración se encuentra "
+"borrada"
+msgstr ""
 
 #: endosys/controllers/rest/informes.py:625
 msgid "El usuario actual no puede generar informes para esta exploración"
-msgstr "The current user cannot generate new reports for this examination"
+msgstr ""
 
 #: endosys/controllers/rest/informes.py:672
 msgid "No se pudo obtener captura del pacs, no se puede generar informe"
-msgstr "Cannot obtain PACS capture, cannot generate report"
+msgstr ""
 
 #: endosys/controllers/rest/informes.py:682
 #: endosys/controllers/rest/informes.py:716
 #: endosys/controllers/rest/informes.py:718
 #: endosys/controllers/rest/informes.py:783
-#, python-format
 msgid "Ocurrio un error en la creación del informe"
-msgstr "An error has occurred while generating the report"
+msgstr ""
 
 #: endosys/controllers/rest/informes.py:714
 msgid ""
-"Se ha terminado el tiempo de espera de creación de informe. Intentelo nuevamente."
-msgstr "Timeout was exceded while creating report. Try again."
+"Se ha terminado el tiempo de espera de creación de informe. Intentelo "
+"nuevamente."
+msgstr ""
 
 #: endosys/controllers/rest/informes.py:788
 msgid "ERROR: No se puede modificar un informe"
-msgstr "ERROR: Cannot modify a Report"
+msgstr ""
 
 #: endosys/controllers/rest/informes.py:802
 msgid "El usuario actual no puede borrar el informe"
-msgstr "The current user cannot delete reports"
+msgstr ""
 
 #: endosys/controllers/rest/informes.py:851
 msgid "Es necesario un motivo de borrado"
-msgstr "A reason is required to delete"
+msgstr ""
 
 #: endosys/controllers/rest/informes.py:868
 #, python-format
 msgid "Ha ocurrido un error al finalizar la generación del informe (%s)"
-msgstr "An error has occurred while finishing generating the report (%s)"
+msgstr ""
 
 #: endosys/controllers/rest/medicos.py:39
 msgid "ERROR: No se puede modificar un medico"
-msgstr "ERROR: Cannot modify a physician"
+msgstr ""
 
 #: endosys/controllers/rest/medicos.py:43
 msgid "ERROR: No se puede crear un medico directamente (usar gestion de usuarios)"
-msgstr "ERROR: Cannot create a physician directly (should use user management)"
+msgstr ""
 
 #: endosys/controllers/rest/medicos.py:47
 msgid "ERROR: No se puede eliminar un medico"
-msgstr "ERROR: Cannot delete a physician"
+msgstr ""
 
 #: endosys/controllers/rest/notificaciones.py:51
 msgid "ERROR: No se puede modificar la tarea"
-msgstr "ERROR: Cannot modify the task"
+msgstr ""
 
 #: endosys/controllers/rest/notificaciones.py:59
 #: endosys/controllers/rest/tareas.py:75
 msgid "ERROR: No se puede eliminar la tarea"
-msgstr "ERROR: Cannot delete the task"
+msgstr ""
 
 #: endosys/controllers/rest/notificaciones.py:118
 msgid "ERROR: No puede crear mensajes"
-msgstr "ERROR: Cannot create messages"
+msgstr ""
 
 #: endosys/controllers/rest/pacientes.py:144
 #, python-format
 msgid "Ha ocurrido un error cargando los pacientes (%s)"
-msgstr "An error has occurred while loading the patients (%s)"
+msgstr ""
 
 #: endosys/controllers/rest/pacientes.py:161
 #: endosys/public/webapp/js/pacientes.js:569
 #: endosys/public/webapp/js/pacientes.js:721
 msgid "No se ha encontrado ningún paciente"
-msgstr "No patient found"
+msgstr ""
 
 #: endosys/controllers/rest/pacientes.py:207
 #, python-format
 msgid "Ha ocurrido un error cargando el paciente (%s)"
-msgstr "An error has occurred while loading the patient (%s)"
+msgstr ""
 
 #: endosys/controllers/rest/pacientes.py:209
 msgid "No se ha encontrado el paciente"
-msgstr "Patient not found"
+msgstr ""
 
 #: endosys/controllers/rest/pacientes.py:251
 msgid "No se puede asignar un identificador"
-msgstr "Cannot assign an identifier"
+msgstr ""
 
 #: endosys/controllers/rest/pacientes.py:257
 msgid "El paciente indicado está deshabilitado. No se puede modificar"
-msgstr "The indicated patient is disabled. It cannot be modified"
+msgstr ""
 
 #: endosys/controllers/rest/pacientes.py:300
 #, python-format
 msgid "Ha ocurrido un error modificando el paciente (%s)"
-msgstr "An error has occurred while updating the patient (%s)"
+msgstr ""
 
 #: endosys/controllers/rest/pacientes.py:351
 msgid "No se puede crear un paciente con identificador vacio"
-msgstr "Cannot create a patient with an empty identifier"
+msgstr ""
 
 #: endosys/controllers/rest/pacientes.py:380
 #, python-format
 msgid "Ha ocurrido un error creando el paciente (%s)"
-msgstr "An error has occurred while creating the patient (%s)"
+msgstr ""
 
 #: endosys/controllers/rest/pacientes.py:404
 #, python-format
 msgid "Ya existe un paciente con el identificador: %s"
-msgstr "A patient with id # %s already exists"
+msgstr ""
 
 #: endosys/controllers/rest/pacientes.py:419
 #, python-format
 msgid "Ya existe un paciente con el NHC: %s para el centro: %s"
-msgstr "A patient with MR %s = %s already exists"
+msgstr ""
 
 #: endosys/controllers/rest/pacientes.py:445
 #, python-format
 msgid "Ha ocurrido un error eliminando el paciente (%s)"
-msgstr "An error has occurred while deleting the patient (%s)"
+msgstr ""
 
 #: endosys/controllers/rest/permisos.py:53
 msgid "El permiso no existe"
-msgstr "The permission does not exist"
+msgstr ""
 
 #: endosys/controllers/rest/predefinidos.py:101
 #: endosys/controllers/rest/predefinidos.py:117
 msgid "Ya existe un texto predefinido con el mismo nombre"
-msgstr "Predefined text already exists with the same name"
+msgstr ""
 
 #: endosys/controllers/rest/servicios.py:94
 #: endosys/controllers/rest/servicios.py:192
 #, python-format
 msgid "No se encuentra el servicio indicado con id: %s"
-msgstr "Service with id: %s not found"
+msgstr ""
 
 #: endosys/controllers/rest/tareas.py:115
 #: endosys/controllers/rest/tareas.py:118
 msgid "ERROR: El archivo solicitado no existe"
-msgstr "ERROR: The requested file does not exist"
+msgstr ""
 
 #: endosys/controllers/rest/tareas.py:125
 msgid "ERROR: No se puede modificar una tarea"
-msgstr "ERROR: Cannot modify a task"
+msgstr ""
 
 #: endosys/controllers/rest/tareas.py:138
 msgid "No es posible iniciar la tarea porque hay una en curso"
-msgstr "It is not possible to start the task because there is one in progress"
+msgstr ""
 
 #: endosys/controllers/rest/usuarios.py:120
 msgid "No tiene permisos para consultar la información de otros usuarios"
-msgstr "Current user has no permission to get other users information"
+msgstr ""
 
 #: endosys/controllers/rest/usuarios.py:237
 msgid "El usuario sysadmin sólo se puede modificar por él mismo"
-msgstr "Sysadmin user can be modified only by himself"
+msgstr ""
 
 #: endosys/controllers/rest/usuarios.py:253
 #, python-format
 msgid "No se encuentra el usuario en LDAP indicado con id: %s"
-msgstr "User with id: %s not found in LDAP"
+msgstr ""
 
 #: endosys/controllers/rest/usuarios.py:262
 #: endosys/controllers/rest/usuarios.py:280
 #: endosys/controllers/rest/usuarios.py:303
 #: endosys/controllers/rest/usuarios.py:377
 msgid "No se puede modificar el usuario"
-msgstr "Cannot modify an user"
+msgstr ""
 
 #: endosys/controllers/rest/usuarios.py:271
 #: endosys/controllers/rest/usuarios.py:293
 #, python-format
 msgid "No se encuentra el usuario indicado con id: %s"
-msgstr "User with id: %s not found"
+msgstr ""
 
 #: endosys/controllers/rest/usuarios.py:286
 msgid "El usuario sysadmin no se puede desactivar"
-msgstr "Sysadmin user cannot be deactivated"
+msgstr ""
 
 #: endosys/controllers/rest/usuarios.py:289
 msgid "El usuario no se puede desactivar a si mismo"
-msgstr "User cannot be deactivated by himself"
+msgstr ""
 
 #: endosys/controllers/rest/usuarios.py:355
 msgid "Solo sysadmin puede gestionar las claves API."
-msgstr "Only Sysadmin can manage API keys."
+msgstr ""
 
 #: endosys/controllers/rest/usuarios.py:365
 #: endosys/controllers/rest/usuarios.py:506
 #, python-format
 msgid "No se encuentra el usuario LDAP indicado con id: %s"
-msgstr "LDAP user with id: %s not found"
+msgstr ""
 
 #: endosys/controllers/rest/usuarios.py:477
 msgid "No dispone de permisos para modificar un permiso restringido"
-msgstr "Current user is not allowed to modify a restricted permission"
+msgstr ""
 
 #: endosys/controllers/rest/usuarios.py:514
 msgid "No se puede eliminar el usuario LDAP"
-msgstr "Cannot delete the LDAP user"
+msgstr ""
 
 #: endosys/controllers/rest/usuarios.py:532
 #: endosys/controllers/rest/usuarios.py:613
 #, python-format
 msgid "No se encuentra el médico indicado con id: %s"
-msgstr "Physician with id: %s not found"
+msgstr ""
 
 #: endosys/controllers/rest/usuarios.py:543
 msgid "No se puede eliminar el médico"
-msgstr "Cannot delete the physician"
+msgstr ""
 
 #: endosys/controllers/rest/usuarios.py:660
 msgid "No se puede modificar el médico"
-msgstr "Cannot modify the physician"
+msgstr ""
 
 #: endosys/controllers/rest/workstations.py:71
 #, python-format
 msgid "No se encuentra el Puesto indicado con id: %s"
-msgstr "Station with id: %s not found"
+msgstr ""
 
 #: endosys/controllers/rest/workstations.py:75
 msgid "El puesto que desea modificar esta borrado"
-msgstr "Station was deleted"
+msgstr ""
 
 #: endosys/controllers/rest/workstations.py:85
 #: endosys/controllers/rest/workstations.py:143
 msgid "El IP que desea asignar ya esta en uso por otro puesto"
-msgstr "The IP address to assign is already in use by another workstation"
+msgstr ""
 
 #: endosys/controllers/rest/workstations.py:105
 msgid "A ocurrido un error de integridad referencial."
-msgstr "An referential integrity error has occurred."
+msgstr ""
 
 #: endosys/controllers/rest/workstations.py:136
 msgid "No se permite la creación de un Workstation por defecto"
-msgstr "Creation of default Workstation is not allowed"
+msgstr ""
 
 #: endosys/controllers/rest/workstations.py:163
 msgid "No se ha indicado el motivo de borrado."
-msgstr "The reason for deletion has not been indicated."
+msgstr ""
 
 #: endosys/lib/busquedas.py:135
 #: endosys/public/webapp/content/dialog_cita.html:4
 #: endosys/public/webapp/js/pacientes.js:357
 msgid "Datos del paciente"
-msgstr "Patient information"
+msgstr ""
 
-#: endosys/lib/busquedas.py:139 endosys/public/webapp/content/paciente.html:52
+#: endosys/lib/busquedas.py:139
+#: endosys/public/webapp/content/paciente.html:52
 msgid "Género:Sexo"
-msgstr "Gender"
+msgstr ""
 
-#: endosys/lib/busquedas.py:148 endosys/public/webapp/content/paciente.html:83
+#: endosys/lib/busquedas.py:148
+#: endosys/public/webapp/content/paciente.html:83
 msgid "Paciente:Población"
-msgstr "City"
+msgstr ""
 
-#: endosys/lib/busquedas.py:153 endosys/public/webapp/content/paciente.html:93
+#: endosys/lib/busquedas.py:153
+#: endosys/public/webapp/content/paciente.html:93
 msgid "Paciente:Provincia"
-msgstr "Region"
+msgstr ""
 
 #: endosys/lib/busquedas.py:158 endosys/lib/busquedas.py:199
 #: endosys/public/webapp/content/dialog_cita.html:32
 #: endosys/public/webapp/content/dialog_cita.html:104
 #: endosys/public/webapp/content/exploracion_info.html:25
 msgid "Aseguradora"
-msgstr "Insurance"
+msgstr ""
 
 #: endosys/lib/busquedas.py:169
 msgid "Fecha exploración"
-msgstr "Examination date"
+msgstr ""
 
 #: endosys/lib/busquedas.py:174 endosys/lib/tareas.py:43
 #: endosys/public/webapp/js/busqueda_citas.js:69
-#: endosys/public/webapp/js/citas.js:911 endosys/public/webapp/js/citas.js:912
+#: endosys/public/webapp/js/citas.js:911
+#: endosys/public/webapp/js/citas.js:912
 #: endosys/public/webapp/js/exploraciones.js:86
 #: endosys/public/webapp/content/calendario.html:14
 #: endosys/public/webapp/content/dialog_cita.html:74
@@ -718,15 +721,15 @@ msgstr "Examination date"
 #: endosys/public/webapp/content/usuario.html:35
 #: endosys/public/webapp/content/usuario.html:62
 msgid "Médico"
-msgstr "Physician"
+msgstr ""
 
 #: endosys/lib/busquedas.py:179
 msgid "Tipo exploración"
-msgstr "Examination type"
+msgstr ""
 
 #: endosys/lib/busquedas.py:184
 msgid "Tiene imágenes"
-msgstr "Has images"
+msgstr ""
 
 #: endosys/lib/busquedas.py:189 endosys/lib/tareas.py:45
 #: endosys/public/webapp/content/dialog_editar_tipo_exploracion.html:11
@@ -734,452 +737,427 @@ msgstr "Has images"
 #: endosys/public/webapp/js/exploraciones.js:91
 #: endosys/public/webapp/js/usuarios.js:501
 msgid "Servicio"
-msgstr "Service"
+msgstr ""
 
 #: endosys/lib/busquedas.py:194
 msgid "Edad paciente"
-msgstr "Patient Age"
+msgstr ""
 
 #: endosys/lib/busquedas.py:867
 #, python-format
 msgid ""
-"No se ha podido identificar el tipo de campo para la búsqueda. Tipo de campo = %s"
-msgstr "Cannot identify the field type for the searching. Field type = %s"
+"No se ha podido identificar el tipo de campo para la búsqueda. Tipo de "
+"campo = %s"
+msgstr ""
 
 #: endosys/lib/busquedas.py:895
 #, python-format
 msgid "No se ha podido identificar el campo para la búsqueda. Id del campo = %s"
-msgstr "Cannot identify the field for the searching. Field Id = %s"
+msgstr ""
 
 #: endosys/lib/busquedas.py:959
 msgid "El formulario indicado por el id. de conjunto no se ha encontrado"
-msgstr "The form indicated by the grouping id is not found"
+msgstr ""
 
 #: endosys/lib/busquedas.py:1056
 #, python-format
 msgid "No se encuentra la búsqueda avanzada con id = %s"
-msgstr "Searching with id = %s not found"
+msgstr ""
 
 #: endosys/lib/capturas.py:403
 msgid "No hay configuraciones para el QR"
-msgstr "QR settings not found"
+msgstr ""
 
 #: endosys/lib/citas.py:371
 msgid ""
-"Los siguientes campos de una cita son obligatorios: \"paciente_id\", \"fecha\" y "
-"\"hora\""
+"Los siguientes campos de una cita son obligatorios: \"paciente_id\", "
+"\"fecha\" y \"hora\""
 msgstr ""
-"This appointment information is mandatory: \"paciente_id\", \"fecha\" y \"hora\""
 
 #: endosys/lib/citas.py:378
-msgid "El paciente indicado está deshabilitado. No se puede asignar una nueva cita"
-msgstr "The indicated patient is disabled. Cannot assign a new appointment"
+msgid ""
+"El paciente indicado está deshabilitado. No se puede asignar una nueva "
+"cita"
+msgstr ""
 
 #: endosys/lib/citas.py:410
 msgid "La cita no está en un horario correcto de la agenda"
-msgstr "The appointment is not in a valid schedule time"
+msgstr ""
 
 #: endosys/lib/citas.py:418
 msgid "La sala indicada no está disponible en la agenda indicada"
-msgstr "The indicated room is not available for the indicated schedule"
+msgstr ""
 
 #: endosys/lib/citas.py:431
 msgid ""
-"La sala indicada ya está ocupada por otra cita en el intervalo de tiempo indicado"
+"La sala indicada ya está ocupada por otra cita en el intervalo de tiempo "
+"indicado"
 msgstr ""
-"The indicated room is already accupied by another appointment in the indicated "
-"time interval"
 
 #: endosys/lib/citas.py:439
 msgid "El médico indicado no está disponible en la agenda indicada"
-msgstr "The indicated physician is not available for the indicated schedule"
+msgstr ""
 
 #: endosys/lib/citas.py:451
 msgid ""
-"El médico indicado ya está ocupado por otra cita en el intervalo de tiempo "
-"indicado"
+"El médico indicado ya está ocupado por otra cita en el intervalo de "
+"tiempo indicado"
 msgstr ""
-"The indicated physician is already occupied by another appointment in the "
-"indicated time interval"
 
-#: endosys/lib/citas.py:479 endosys/lib/citas.py:483 endosys/lib/citas.py:486
-#: endosys/lib/citas.py:489
+#: endosys/lib/citas.py:479 endosys/lib/citas.py:483
+#: endosys/lib/citas.py:486 endosys/lib/citas.py:489
 msgid "Error de integridad. El identificador externo de la cita debe ser único"
-msgstr "Integrity error. The external appointment identifier must be unique"
+msgstr ""
 
 #: endosys/lib/formularios.py:726
 #, python-format
 msgid "El tipo del parámetro \"param\" es incorrecto (%s)"
-msgstr "The \"param\" parameter type is invalid (%s)"
+msgstr ""
 
 #: endosys/lib/genericREST.py:76
 #, python-format
 msgid "No se encuentra el registro con id: %s"
-msgstr "Record with id: %s not found"
+msgstr ""
 
 #: endosys/lib/genericREST.py:303 endosys/lib/genericREST.py:429
 #: endosys/lib/genericREST.py:585
 msgid "ERROR: el formato de la fecha es incorrecto"
-msgstr "ERROR: The date format is not valid"
+msgstr ""
 
 #: endosys/lib/genericREST.py:320 endosys/lib/genericREST.py:352
 msgid "ERROR: el formato de la hora es incorrecto"
-msgstr "ERROR: the time format is not valid"
+msgstr ""
 
 #: endosys/lib/genericREST.py:435
 #, python-format
 msgid "ERROR: no existe el campo \"%s\""
-msgstr "ERROR: field \"%s\" not found"
+msgstr ""
 
 #: endosys/lib/misc.py:635 endosys/lib/misc.py:658
 msgid "Tipo no valido"
-msgstr "Invalid type"
+msgstr ""
 
 #: endosys/lib/misc.py:671
 msgid "\"data\" no es de un tipo valido"
-msgstr "\"data\" is not of a valid type"
+msgstr ""
 
 #: endosys/lib/tareas.py:27
 msgid "Exportar CSV de "
-msgstr "Export CSV of "
+msgstr ""
 
 #: endosys/lib/tareas.py:28
 msgid "Tarea finalizada!"
-msgstr "Task finished!"
+msgstr ""
 
 #: endosys/lib/tareas.py:29
 msgid "Ocurrio un error y no se ha podido finalizar la tarea!"
-msgstr "An error has occurred and the task has not finished correctly!"
+msgstr ""
 
 #: endosys/lib/tareas.py:31
 msgid "Reorganización de carpeta de"
-msgstr "Reorganization of folder"
+msgstr ""
 
 #: endosys/lib/tareas.py:32
 msgid "Se han reorganizado: "
-msgstr "Reorganized "
+msgstr ""
 
 #: endosys/lib/tareas.py:33
 msgid "capturas"
-msgstr "captures"
+msgstr ""
 
 #: endosys/lib/tareas.py:34
 msgid "informes"
-msgstr "reports"
+msgstr ""
 
 #: endosys/lib/tareas.py:39 endosys/public/webapp/js/citas.js:895
 #: endosys/public/webapp/js/exploraciones.js:82
 msgid "Paciente"
-msgstr "Patient"
+msgstr ""
 
 #: endosys/lib/tareas.py:40
 msgid "Fecha Inicio"
-msgstr "Start date"
+msgstr ""
 
 #: endosys/lib/tareas.py:41
 msgid "Fecha Fin"
-msgstr "End date"
+msgstr ""
 
 #: endosys/lib/tareas.py:42 endosys/public/webapp/js/tareas.js:119
 msgid "Estado"
-msgstr "Status"
+msgstr ""
 
 #: endosys/lib/tareas.py:44
 msgid "Búsqueda personalizada Nº"
-msgstr "Custom searching n"
+msgstr ""
 
 #: endosys/lib/dicom/worklist/receiving.py:54
 msgid "No se pudieron cargar los plugins del worklist"
-msgstr "Worklist plugins cannot be load"
+msgstr ""
 
 #: endosys/lib/dicom/worklist/receiving.py:307
 msgid "Ocurrio un error con el plugin de get_idpaciente"
-msgstr "An error has occurred with get_idpaciente plugin"
+msgstr ""
 
 #: endosys/lib/dicom/worklist/receiving.py:368
 msgid "Ocurrio un error con el plugin de parse_nombres"
-msgstr "An error has occurred with parse_nombres plugin"
+msgstr ""
 
 #: endosys/lib/dicom/worklist/receiving.py:393
-#, python-format
 msgid "Ocurrio un error con el plugin de parse_sexo"
-msgstr "An error has occurred with parse_sexo plugin"
+msgstr ""
 
 #: endosys/lib/hl7_wrapper/sending.py:709
 #: endosys/lib/hl7_wrapper/sending.py:787
 msgid "Error en sistema externo"
-msgstr "External system error"
+msgstr ""
 
 #: endosys/lib/hl7_wrapper/sending.py:801
 msgid "Consulta de citas HL7: Solo se soporta SQM_SQR"
-msgstr "HL7 date query: only SQM_SQR is supported"
+msgstr ""
 
 #: endosys/lib/informes/openoffice.py:222
 msgid "El nombre de la plantilla tiene caracteres no permitidos"
-msgstr "Template name has invalid characters"
+msgstr ""
 
 #: endosys/lib/informes/valores.py:23
 msgid "(No definido)"
-msgstr "(UNDEFINED)"
+msgstr ""
 
 #: endosys/lib/pydicom_wrapper/base.py:23
 msgid "No se envió la configuración"
-msgstr "Settings are not sent"
+msgstr ""
 
 #: endosys/lib/pydicom_wrapper/base.py:27
 msgid "No se enviaron los datos de conexión"
-msgstr "Connection data was not sent"
+msgstr ""
 
 #: endosys/lib/pydicom_wrapper/base.py:34
 msgid "Los parametros del conexion a MWL no son correctos"
-msgstr "Incorrect request MWL parameters"
+msgstr ""
 
 #: endosys/lib/pydicom_wrapper/base.py:68
 msgid "Error al conectárse al servidor DICOM Worklist"
-msgstr "Error connecting DICOM Worklist server"
+msgstr ""
 
 #: endosys/lib/pydicom_wrapper/mwl.py:77
 msgid ""
-"Error en respuesta MWL: Finalizació del tiempo de espera, la petición fue "
-"abortada o se recibió una respuesta inválida"
+"Error en respuesta MWL: Finalizació del tiempo de espera, la petición fue"
+" abortada o se recibió una respuesta inválida"
 msgstr ""
-"MWL response error: timeout was finished, request was aborted or received "
-"response was invalid"
 
 #: endosys/lib/pydicom_wrapper/mwl.py:83
 msgid "Conexion al worklist ha fallado"
-msgstr "Worklist connection failed"
+msgstr ""
 
 #: endosys/lib/usuarios/seguridad.py:76
 msgid "Realizar exploraciones"
-msgstr "Perform examinations"
+msgstr ""
 
 #: endosys/lib/usuarios/seguridad.py:77
 msgid ""
-"Permiso que autoriza al usuario a realizar exploraciones. También hace que se "
-"muestre la opción “Nueva exploración” en el menú de la aplicación, para que esta "
-"opción esté disponible, se ha de indicar en la configuración del Endotools."
+"Permiso que autoriza al usuario a realizar exploraciones. También hace "
+"que se muestre la opción “Nueva exploración” en el menú de la aplicación,"
+" para que esta opción esté disponible, se ha de indicar en la "
+"configuración del Endosys."
 msgstr ""
-"Permission that authorizes the user to perform examinations. It also causes the "
-"\"New Examination\" option to be displayed in the application menú."
 
 #: endosys/lib/usuarios/seguridad.py:79
 msgid "Consultar todas las exploraciones"
-msgstr "See all examinations"
+msgstr ""
 
 #: endosys/lib/usuarios/seguridad.py:80
 msgid ""
-"Permiso que autoriza a un usuario a consultar todas las exploraciones. El "
-"comportamiento por defecto, es que cada usuario solo pueda consultar solo sus "
-"exploraciones."
+"Permiso que autoriza a un usuario a consultar todas las exploraciones. El"
+" comportamiento por defecto, es que cada usuario solo pueda consultar "
+"solo sus exploraciones."
 msgstr ""
-"Permission that authorizes the user to browse all the examinations. Without this "
-"permission, the user can only see his examinations."
 
 #: endosys/lib/usuarios/seguridad.py:82
 msgid "Modificar todas las exploraciones"
-msgstr "Modify all examinations"
+msgstr ""
 
 #: endosys/lib/usuarios/seguridad.py:83
 msgid ""
-"Permiso que autoriza a un usuario a modificar todas las exploraciones. El "
-"comportamiento por defecto, es que cada usuario solo puede modificar solo sus "
-"exploraciones."
+"Permiso que autoriza a un usuario a modificar todas las exploraciones. El"
+" comportamiento por defecto, es que cada usuario solo puede modificar "
+"solo sus exploraciones."
 msgstr ""
-"Permission that authorizes the user to modify all examinations. Without this "
-"permission, the user can only modify his examinations."
 
 #: endosys/lib/usuarios/seguridad.py:85
 msgid "Informes de las exploraciones del usuario"
-msgstr "Reports of the user examinations"
+msgstr ""
 
 #: endosys/lib/usuarios/seguridad.py:86
 msgid ""
 "Permiso que autoriza a un usuario a generar informes de sus propias "
 "exploraciones."
 msgstr ""
-"Permission that authorizes the user to generate reports of his examinations."
 
 #: endosys/lib/usuarios/seguridad.py:88
 msgid "Informes de todas las exploraciones"
-msgstr "Reports of all examinations"
+msgstr ""
 
 #: endosys/lib/usuarios/seguridad.py:89
 msgid ""
-"Permiso que autoriza a un usuario a realizar informes de cualquier exploración, "
-"aunque la exploración pertenezca a otro usuario. Esta opción no da permisos para "
-"cancelar informes. Los informes solo se pueden cancelar por el médico de la "
-"exploración o el sysadmin."
+"Permiso que autoriza a un usuario a realizar informes de cualquier "
+"exploración, aunque la exploración pertenezca a otro usuario. Esta opción"
+" no da permisos para cancelar informes. Los informes solo se pueden "
+"cancelar por el médico de la exploración o el sysadmin."
 msgstr ""
-"Permission that authorizes the user to generate reports of all examinations."
 
 #: endosys/lib/usuarios/seguridad.py:91
 msgid "Crear y modificar citas"
-msgstr "Create and modify appointments"
+msgstr ""
 
 #: endosys/lib/usuarios/seguridad.py:92
 msgid ""
-"Permiso que autoriza al usuario a crear y modificar las citas. En el caso de que "
-"las citas estén integradas, este permiso debería estar desactivado. Para mayor "
-"seguridad, la opción “Gestión Agenda” del menú de la aplicación, desde donde se "
-"permiten crear, modificar y eliminar citas, se activa o desactiva desde la "
-"configuración de Endotools."
-msgstr "Permission that authorizes the user to create and modify appointments."
+"Permiso que autoriza al usuario a crear y modificar las citas. En el caso"
+" de que las citas estén integradas, este permiso debería estar "
+"desactivado. Para mayor seguridad, la opción “Gestión Agenda” del menú de"
+" la aplicación, desde donde se permiten crear, modificar y eliminar "
+"citas, se activa o desactiva desde la configuración de Endosys."
+msgstr ""
 
 #: endosys/lib/usuarios/seguridad.py:94
 msgid "Crear y modificar pacientes"
-msgstr "Create and modify patients"
+msgstr ""
 
 #: endosys/lib/usuarios/seguridad.py:95
 msgid ""
-"Permiso que autoriza al usuario a crear y modificar los pacientes. En caso de "
-"que los pacientes estén integrados, este permiso debería estar desactivado. Por "
-"mayor seguridad, la gestión de pacientes se activa o desactiva desde la "
-"configuración de Endotools."
-msgstr "Permission that authorizes the user to create and modify patients."
+"Permiso que autoriza al usuario a crear y modificar los pacientes. En "
+"caso de que los pacientes estén integrados, este permiso debería estar "
+"desactivado. Por mayor seguridad, la gestión de pacientes se activa o "
+"desactiva desde la configuración de Endosys."
+msgstr ""
 
 #: endosys/lib/usuarios/seguridad.py:97
 msgid "Crear elementos de las tablas"
-msgstr "Create table items"
+msgstr ""
 
 #: endosys/lib/usuarios/seguridad.py:98
 msgid ""
 "Permiso que permite añadir valores a los campos tipo seleccionables o "
-"multiselección que se visualizan en los formularios, también permite añadir "
-"textos predefinidos en los campos tipo descripción (Memo) que se visualizan en "
-"los formularios."
+"multiselección que se visualizan en los formularios, también permite "
+"añadir textos predefinidos en los campos tipo descripción (Memo) que se "
+"visualizan en los formularios."
 msgstr ""
-"Permission that authorizes the user to add items in select and multiselect "
-"fields."
 
 #: endosys/lib/usuarios/seguridad.py:100
 msgid "Dar de baja elementos en las tablas"
-msgstr "Deactivate table items"
+msgstr ""
 
 #: endosys/lib/usuarios/seguridad.py:101
 msgid ""
 "Permiso que permite eliminar valores a los campos tipo seleccionables o "
-"multiselección que se visualizan en los formularios, también permite eliminar "
-"textos predefinidos en los campos tipo descripción (Memo) que se visualizan en "
-"los formularios."
+"multiselección que se visualizan en los formularios, también permite "
+"eliminar textos predefinidos en los campos tipo descripción (Memo) que se"
+" visualizan en los formularios."
 msgstr ""
-"Permission that authorizes the user to delete items in select, multiselect "
-"fields and predefined text."
 
 #: endosys/lib/usuarios/seguridad.py:103
 msgid "Administrar usuarios restringido"
-msgstr "Restricted user management"
+msgstr ""
 
 #: endosys/lib/usuarios/seguridad.py:104
 msgid ""
-"Permiso que permite crear, modificar y eliminar usuarios, también permite "
-"asignar y desasignar permisos no restringidos, estos permisos son los de menor "
-"seguridad. Este permiso te permite visualizar la opción “Gestión usuarios” del "
-"menú de la aplicación."
+"Permiso que permite crear, modificar y eliminar usuarios, también permite"
+" asignar y desasignar permisos no restringidos, estos permisos son los de"
+" menor seguridad. Este permiso te permite visualizar la opción “Gestión "
+"usuarios” del menú de la aplicación."
 msgstr ""
-"Permission that authorizes the user to add, modify and delete users and modify "
-"his not restricted permissions. It also causes the \"User manamegent\" option to "
-"be displayed in the application menu."
 
 #: endosys/lib/usuarios/seguridad.py:106
 msgid "Administrar usuarios"
-msgstr "User management"
+msgstr ""
 
 #: endosys/lib/usuarios/seguridad.py:107
 msgid ""
-"Permiso restringido que permite crear, modificar y eliminar usuarios, también "
-"permite asignar y desasignar permisos restringidos, estos permisos son los de "
-"mayor seguridad. Este permiso te permite visualizar la opción “Gestión usuarios” "
-"del menú de la aplicación."
+"Permiso restringido que permite crear, modificar y eliminar usuarios, "
+"también permite asignar y desasignar permisos restringidos, estos "
+"permisos son los de mayor seguridad. Este permiso te permite visualizar "
+"la opción “Gestión usuarios” del menú de la aplicación."
 msgstr ""
-"Permission that authorizes the user to add, modify and delete users and modify "
-"his restricted permissions. It also causes the \"User manamegent\" option to be "
-"displayed in the application menu."
 
 #: endosys/lib/usuarios/seguridad.py:109
 msgid "Administrar organización"
-msgstr "Facilities administration"
+msgstr ""
 
 #: endosys/lib/usuarios/seguridad.py:110
 msgid ""
-"Permiso restringido que permite crear, modificar y eliminar la organización del "
-"hospital y otros parámetros de configuración de Endotools. Los parámetros a "
-"configurar desde esta opción son los siguientes: Centros, Servicios, Salas, "
-"Agendas, Motivos de cancelación y Prioridades. Este permiso te permite "
-"visualizar la opción “Administrar organización” del menú de la aplicación."
+"Permiso restringido que permite crear, modificar y eliminar la "
+"organización del hospital y otros parámetros de configuración de "
+"Endosys. Los parámetros a configurar desde esta opción son los "
+"siguientes: Centros, Servicios, Salas, Agendas, Motivos de cancelación y "
+"Prioridades. Este permiso te permite visualizar la opción “Administrar "
+"organización” del menú de la aplicación."
 msgstr ""
-"Permission that authorizes the user to add, modify and delete facilities of the "
-"hospital and others configuration parameters of EndoTools."
 
 #: endosys/lib/usuarios/seguridad.py:112
 msgid "Administrar tipos de exploración"
-msgstr "Examination type management"
+msgstr ""
 
 #: endosys/lib/usuarios/seguridad.py:113
 msgid ""
-"Permiso restringido que permite administrar los tipos de exploración y todos lo "
-"que compone un tipo de exploración: Formularios, Campos y Grupo de campos. Este "
-"permiso te permite visualizar la opción “Editor de tipos de exploración” del "
-"menú de la aplicación."
+"Permiso restringido que permite administrar los tipos de exploración y "
+"todos lo que compone un tipo de exploración: Formularios, Campos y Grupo "
+"de campos. Este permiso te permite visualizar la opción “Editor de tipos "
+"de exploración” del menú de la aplicación."
 msgstr ""
-"Permission that authorizes the user to manage examination types, forms, fields  "
-"and group fields. It also causes the \"Examination type management\" option to "
-"be displayed in the application menu."
 
 #: endosys/lib/usuarios/seguridad.py:115
 msgid ""
-"Borrar exploraciones e informes. Consultar y recuperar exploraciones borradas"
-msgstr "Delete examinations and reports. Browse and recover deleted examinations"
+"Borrar exploraciones e informes. Consultar y recuperar exploraciones "
+"borradas"
+msgstr ""
 
 #: endosys/lib/usuarios/seguridad.py:116
 msgid ""
-"Permite a un usuario borrar exploraciones e informes realizados. Permite a un "
-"usuario Consultar y Recuperar exploraciones que ya han sido borradas."
+"Permite a un usuario borrar exploraciones e informes realizados. Permite "
+"a un usuario Consultar y Recuperar exploraciones que ya han sido "
+"borradas."
 msgstr ""
-"Permission that authorizes the user to delete examination and reports. It also "
-"authorizes the user to browse and recover deleted examinations."
 
 #: endosys/lib/usuarios/seguridad.py:134
 msgid "Eliminar permisos no utilizados"
-msgstr "Deleting unused permissions"
+msgstr ""
 
 #: endosys/lib/usuarios/seguridad.py:140
 #, python-format
 msgid "Quitar el permiso \"%s\" asignado al usuario \"%s\""
-msgstr "Removing the permission \"%s\" from the user \"%s\""
+msgstr ""
 
 #: endosys/lib/usuarios/seguridad.py:142
 #, python-format
 msgid "Eliminar permiso \"%s\""
-msgstr "Delete permission \"%s\""
+msgstr ""
 
 #: endosys/lib/usuarios/seguridad.py:144
 msgid "Se han eliminado los permisos no utilizados"
-msgstr "Unused permissions have been deleted"
+msgstr ""
 
 #: endosys/public/webapp/main.html:102
 msgid "Marcar todas como leidas"
-msgstr "Mark all as read"
+msgstr ""
 
 #: endosys/public/webapp/main.html:106
 msgid "Ver todas"
-msgstr "View all"
+msgstr ""
 
 #: endosys/public/webapp/main.html:123
 msgid "Atrás"
-msgstr "Back"
+msgstr ""
 
 #: endosys/public/webapp/main.html:124
 msgid "Continuar"
-msgstr "Continue"
+msgstr ""
 
 #: endosys/public/webapp/content/administracion.html:5
 msgid "Centros"
-msgstr "Facilities"
+msgstr ""
 
 #: endosys/public/webapp/content/agenda.html:3
 msgid "Datos de la agenda"
-msgstr "Schedule information"
+msgstr ""
 
 #: endosys/public/webapp/content/agenda.html:6
 #: endosys/public/webapp/content/centro.html:6
@@ -1190,7 +1168,7 @@ msgstr "Schedule information"
 #: endosys/public/webapp/js/administracion/administracion.js:44
 #: endosys/public/webapp/js/administracion/administracion.js:52
 msgid "Código"
-msgstr "Code"
+msgstr ""
 
 #: endosys/public/webapp/content/agenda.html:11
 #: endosys/public/webapp/content/centro.html:11
@@ -1208,55 +1186,55 @@ msgstr "Code"
 #: endosys/public/webapp/js/administracion/administracion.js:53
 #: endosys/public/webapp/js/administracion/administracion.js:61
 msgid "Nombre"
-msgstr "Name"
+msgstr ""
 
 #: endosys/public/webapp/content/agenda.html:18
 msgid "Datos relacionados a la agenda"
-msgstr "Information related to this schedule"
+msgstr ""
 
 #: endosys/public/webapp/content/agenda.html:21
 #: endosys/public/webapp/content/centro.html:22
 #: endosys/public/webapp/content/servicio.html:21
 msgid "Salas"
-msgstr "Rooms"
+msgstr ""
 
 #: endosys/public/webapp/content/agenda.html:26
 #: endosys/public/webapp/content/servicio.html:26
 msgid "Médicos"
-msgstr "Physicians"
+msgstr ""
 
 #: endosys/public/webapp/content/agenda.html:35
 msgid "Horarios agenda"
-msgstr "Schedule timetable"
+msgstr ""
 
 #: endosys/public/webapp/content/agenda.html:39
 #: endosys/public/webapp/content/dialog_hora.html:4
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:432
 msgid "Día"
-msgstr "Day"
+msgstr ""
 
 #: endosys/public/webapp/content/agenda.html:40
 #: endosys/public/webapp/content/dialog_cita.html:68
 msgid "Hora inicio"
-msgstr "Start time"
+msgstr ""
 
 #: endosys/public/webapp/content/agenda.html:41
 #: endosys/public/webapp/content/dialog_cita.html:80
 #: endosys/public/webapp/content/dialog_hora.html:21
 msgid "Hora fin"
-msgstr "End time"
+msgstr ""
 
 #: endosys/public/webapp/content/agenda.html:74
 msgid "Modificar agenda"
-msgstr "Modify schedule"
+msgstr ""
 
 #: endosys/public/webapp/content/agenda.html:75
 msgid "Nueva agenda"
-msgstr "Create schedule"
+msgstr ""
 
 #: endosys/public/webapp/content/agenda.html:76
 msgid "Eliminar agenda"
-msgstr "Delete schedule"
+msgstr ""
 
 #: endosys/public/webapp/content/busqueda_citas.html:6
 #: endosys/public/webapp/content/busqueda_exploraciones.html:8
@@ -1265,20 +1243,20 @@ msgstr "Delete schedule"
 #: endosys/public/webapp/content/gestion_pacientes.html:47
 #: endosys/public/webapp/content/gestion_tareas.html:5
 msgid "Encontrados:Total"
-msgstr "Found"
+msgstr ""
 
 #: endosys/public/webapp/content/busqueda_exploraciones.html:13
 #: endosys/public/webapp/content/busqueda_exploraciones_fecha.html:69
 msgid "[title]Exportar resultados de exploraciones"
-msgstr "Export examinations results"
+msgstr ""
 
 #: endosys/public/webapp/content/busqueda_exploraciones_fecha.html:9
 msgid "Un solo día"
-msgstr "One day"
+msgstr ""
 
 #: endosys/public/webapp/content/busqueda_exploraciones_fecha.html:10
 msgid "Entre dos fechas"
-msgstr "Between two dates"
+msgstr ""
 
 #: endosys/public/webapp/content/busqueda_exploraciones_fecha.html:16
 #: endosys/public/webapp/content/busqueda_exploraciones_fecha.html:37
@@ -1286,38 +1264,38 @@ msgstr "Between two dates"
 #: endosys/public/webapp/content/lista_citas.html:30
 #: endosys/public/webapp/js/input_tipo_multi.js:63
 msgid "Buscar"
-msgstr "Search"
+msgstr ""
 
 #: endosys/public/webapp/content/busqueda_exploraciones_fecha.html:26
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:430
 msgid "Hoy"
-msgstr "Today"
+msgstr ""
 
 #: endosys/public/webapp/content/busqueda_exploraciones_fecha.html:27
 msgid "Ayer"
-msgstr "Yesterday"
+msgstr ""
 
 #: endosys/public/webapp/content/busqueda_exploraciones_fecha.html:32
 #: endosys/public/webapp/js/tareas.js:111
 msgid "Inicio"
-msgstr "Start"
+msgstr ""
 
 #: endosys/public/webapp/content/busqueda_exploraciones_fecha.html:35
 #: endosys/public/webapp/js/tareas.js:115
 msgid "Fin"
-msgstr "End"
+msgstr ""
 
 #: endosys/public/webapp/content/busqueda_exploraciones_fecha.html:41
 msgid "Semana actual"
-msgstr "Current week"
+msgstr ""
 
 #: endosys/public/webapp/content/busqueda_exploraciones_fecha.html:42
 msgid "Mes actual"
-msgstr "Current month"
+msgstr ""
 
 #: endosys/public/webapp/content/busqueda_exploraciones_fecha.html:51
 msgid "Buscar exploraciones borradas"
-msgstr "Search deleted examinations"
+msgstr ""
 
 #: endosys/public/webapp/content/calendario.html:8
 #: endosys/public/webapp/content/dialog_cita.html:62
@@ -1325,132 +1303,137 @@ msgstr "Search deleted examinations"
 #: endosys/public/webapp/content/exploracion_info.html:34
 #: endosys/public/webapp/content/lista_citas.html:9
 #: endosys/public/webapp/js/busqueda_citas.js:68
-#: endosys/public/webapp/js/citas.js:909 endosys/public/webapp/js/citas.js:910
+#: endosys/public/webapp/js/citas.js:909
+#: endosys/public/webapp/js/citas.js:910
 #: endosys/public/webapp/js/usuarios.js:507
 msgid "Agenda"
-msgstr "Schedule"
+msgstr ""
 
 #: endosys/public/webapp/content/calendario.html:11
 #: endosys/public/webapp/content/dialog_cita.html:86
 #: endosys/public/webapp/js/busqueda_citas.js:70
-#: endosys/public/webapp/js/citas.js:905 endosys/public/webapp/js/citas.js:906
-#: endosys/public/webapp/js/citas.js:907 endosys/public/webapp/js/citas.js:908
+#: endosys/public/webapp/js/citas.js:905
+#: endosys/public/webapp/js/citas.js:906
+#: endosys/public/webapp/js/citas.js:907
+#: endosys/public/webapp/js/citas.js:908
 msgid "Sala"
-msgstr "Room"
+msgstr ""
 
 #: endosys/public/webapp/content/calendario.html:17
 #: endosys/public/webapp/content/dialog_cita.html:92
 msgid "Abrev:Tipo exploración"
-msgstr "Exam type"
+msgstr ""
 
 #: endosys/public/webapp/content/calendario.html:20
 #: endosys/public/webapp/content/dialog_cita.html:98
 #: endosys/public/webapp/content/exploracion_cita.html:9
 #: endosys/public/webapp/content/exploracion_info.html:38
 #: endosys/public/webapp/js/busqueda_citas.js:71
-#: endosys/public/webapp/js/citas.js:903 endosys/public/webapp/js/citas.js:904
+#: endosys/public/webapp/js/citas.js:903
+#: endosys/public/webapp/js/citas.js:904
 #: endosys/public/webapp/js/administracion/administracion.js:49
 msgid "Prioridad"
-msgstr "Priority"
+msgstr ""
 
 #: endosys/public/webapp/content/calendario.html:26
 msgid "Buscar citas de un paciente"
-msgstr "Search patient appointments"
+msgstr ""
 
 #: endosys/public/webapp/content/centro.html:3
 msgid "Datos del centro"
-msgstr "Facility information"
+msgstr ""
 
 #: endosys/public/webapp/content/centro.html:18
 msgid "Salas del centro"
-msgstr "Facility rooms"
+msgstr ""
 
 #: endosys/public/webapp/content/centro.html:25
 msgid "Id"
-msgstr "Id"
+msgstr ""
 
 #: endosys/public/webapp/content/centro.html:25
 #: endosys/public/webapp/content/dialog_sala.html:3
 #: endosys/public/webapp/js/tareas.js:121
 msgid "Descripción"
-msgstr "Description"
+msgstr ""
 
 #: endosys/public/webapp/content/centro.html:34
 #: endosys/public/webapp/js/busquedas_avanzadas/logica_estructura.js:86
 msgid "Añadir valor"
-msgstr "Add value"
+msgstr ""
 
 #: endosys/public/webapp/content/centro.html:47
 msgid "Modificar centro"
-msgstr "Modify facility"
+msgstr ""
 
 #: endosys/public/webapp/content/centro.html:48
 msgid "Nuevo centro"
-msgstr "Create facility"
+msgstr ""
 
 #: endosys/public/webapp/content/centro.html:49
 msgid "Eliminar centro"
-msgstr "Delete facility"
+msgstr ""
 
 #: endosys/public/webapp/content/condicion.html:4
 msgid "Campo"
-msgstr "Field"
+msgstr ""
 
 #: endosys/public/webapp/content/condicion.html:9
 msgid "Operación"
-msgstr "Operator"
+msgstr ""
 
 #: endosys/public/webapp/content/crear_notificacion.html:9
 msgid "Enviar"
-msgstr "Send"
+msgstr ""
 
 #: endosys/public/webapp/content/crear_notificacion.html:14
 msgid "Previsualizar"
-msgstr "Preview"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_cita.html:14
 msgid "Teléfonos"
-msgstr "Phones"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_cita.html:20
 msgid "Identificador"
-msgstr "Identifier"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_cita.html:26
 #: endosys/public/webapp/content/paciente.html:10
-#: endosys/public/webapp/js/citas.js:643 endosys/public/webapp/js/citas.js:893
+#: endosys/public/webapp/js/citas.js:643
+#: endosys/public/webapp/js/citas.js:893
 #: endosys/public/webapp/js/exploraciones.js:81
 #: endosys/public/webapp/js/nueva_exploracion.js:841
 #: endosys/public/webapp/js/nueva_exploracion.js:885
 #: endosys/public/webapp/js/pacientes.js:550
 msgid "NHC"
-msgstr "MR"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_cita.html:38
 #: endosys/public/webapp/content/paciente.html:48
 msgid "Fecha de nacimiento"
-msgstr "Birth date"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_cita.html:45
 msgid "Ver detalle del paciente"
-msgstr "Patient details"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_cita.html:52
 #: endosys/public/webapp/js/gestion_agenda/dialogo_cita.js:315
 msgid "Datos de la cita"
-msgstr "Appointment information"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_cita.html:57
 #: endosys/public/webapp/content/paciente.html:49
 msgid "[placeholder]dd/mm/aaaa"
-msgstr "[placeholder]dd/mm/yyyy"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_cita.html:69
 #: endosys/public/webapp/content/dialog_cita.html:81
 #: endosys/public/webapp/content/dialog_hora.html:18
 #: endosys/public/webapp/content/dialog_hora.html:22
 msgid "[placeholder]hh:mm"
-msgstr "[placeholder]hh:mm"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_cita.html:112
 #: endosys/public/webapp/content/exploracion_cita.html:39
@@ -1458,24 +1441,24 @@ msgstr "[placeholder]hh:mm"
 #: endosys/public/webapp/js/busqueda_citas.js:72
 #: endosys/public/webapp/js/citas.js:917
 msgid "Observaciones"
-msgstr "Comments"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_editar_tipo_exploracion.html:7
 msgid "Codigo tipo exploración"
-msgstr "Examination type code"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_editar_tipo_exploracion.html:15
 #: endosys/public/webapp/js/tablas.js:368
 msgid "Orden"
-msgstr "Order"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_editar_tipo_exploracion.html:19
 msgid "Duración por defecto (en Minutos)"
-msgstr "Default duration (minutes)"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_editar_tipo_exploracion.html:23
 msgid "Color"
-msgstr "Color"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_hora.html:6
 #: endosys/public/webapp/js/busquedas_avanzadas/logica_estructura.js:142
@@ -1486,310 +1469,310 @@ msgstr "Color"
 #: endosys/public/webapp/js/gestion_agenda/dialogo_cita.js:398
 #: endosys/public/webapp/js/gestion_agenda/dialogo_cita.js:416
 msgid "Seleccione"
-msgstr "Select"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_hora.html:7
 #: endosys/public/webapp/js/administracion/administracion.js:15
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:8
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:401
 msgid "Lunes"
-msgstr "Monday"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_hora.html:8
 #: endosys/public/webapp/js/administracion/administracion.js:16
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:9
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:401
 msgid "Martes"
-msgstr "Tuesday"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_hora.html:9
 #: endosys/public/webapp/js/administracion/administracion.js:17
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:10
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:401
 msgid "Miércoles"
-msgstr "Wednesday"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_hora.html:10
 #: endosys/public/webapp/js/administracion/administracion.js:18
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:11
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:402
 msgid "Jueves"
-msgstr "Thursday"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_hora.html:11
 #: endosys/public/webapp/js/administracion/administracion.js:19
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:12
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:402
 msgid "Viernes"
-msgstr "Friday"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_hora.html:12
 #: endosys/public/webapp/js/administracion/administracion.js:20
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:13
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:402
 msgid "Sábado"
-msgstr "Saturday"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_hora.html:13
 #: endosys/public/webapp/js/administracion/administracion.js:21
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:14
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:401
 msgid "Domingo"
-msgstr "Sunday"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_hora.html:17
 msgid "Hora ini"
-msgstr "Start time"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_informacion_exploracion.html:5
 #: endosys/public/webapp/content/tipos_exploracion.html:4
 msgid "Cita:"
-msgstr "Appointment:"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_informacion_exploracion.html:9
 msgid "Agenda:"
-msgstr "Schedule:"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_informacion_exploracion.html:13
 msgid "Prestación:"
-msgstr "Procedure:"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_informacion_exploracion.html:25
 msgid "Nombre:"
-msgstr "Name:"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_informacion_exploracion.html:29
 msgid "Edad:"
-msgstr "Age:"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_informacion_exploracion.html:34
 msgid "Tipo de exploración:"
-msgstr "Examination type:"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_nuevo_editar_campo.html:12
 #: endosys/public/webapp/content/dialog_nuevo_editar_campo.html:31
 #: endosys/public/webapp/js/editor_formularios.js:53
 msgid "Título"
-msgstr "Title"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_nuevo_editar_campo.html:18
 msgid "Ancho (Columnas: 1,2,3,4,..)"
-msgstr "Width (Columns: 1,2,3,4,...)"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_nuevo_editar_campo.html:24
 msgid "Tipo de campo"
-msgstr "Field type"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_nuevo_editar_campo.html:26
 msgid "Text"
-msgstr "Text"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_nuevo_editar_campo.html:27
 #: endosys/public/webapp/js/editor_formularios.js:45
 msgid "Memo"
-msgstr "Memo"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_nuevo_editar_campo.html:28
 #: endosys/public/webapp/js/editor_formularios.js:47
 msgid "Select"
-msgstr "Select"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_nuevo_editar_campo.html:29
 msgid "Multi select"
-msgstr "Multi select"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_nuevo_editar_campo.html:30
 msgid "Yes/No"
-msgstr "Yes/No"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_nuevo_editar_campo.html:37
 msgid "Tipo de control"
-msgstr "Control type"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_nuevo_editar_campo.html:39
 msgid "Por defecto"
-msgstr "By default"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_nuevo_editar_campo.html:40
 msgid "Autocomplete (solo Select)"
-msgstr "Autocomplete(only select)"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_nuevo_editar_campo.html:41
 msgid "Con cantidades (solo Multiselect)"
-msgstr "With amount (only Multiselect)"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_nuevo_editar_campo.html:47
 msgid "¿Obligatorio?"
-msgstr "Required?"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_nuevo_editar_campo.html:53
 msgid "¿Solo lectura?"
-msgstr "Read only?"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_nuevo_editar_campo.html:59
 msgid "Ámbito (sólo select o multiselect)"
-msgstr "Ambit (only select or multiselect)"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_nuevo_editar_campo.html:61
 msgid "Global"
-msgstr "Global"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_nuevo_editar_campo.html:62
 msgid "Por servicio"
-msgstr "By service"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_nuevo_editar_campo.html:69
 msgid "Valor por defecto"
-msgstr "Assign default value"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_nuevo_editar_campo.html:72
 msgid "A tener en cuenta:"
-msgstr "To consider:"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_nuevo_editar_campo.html:75
 msgid "Texto: Texto hasta 1000 caracteres"
-msgstr "Text: Text until 1000 characters"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_nuevo_editar_campo.html:76
 msgid "Memo: Texto hasta 1000 caracteres"
-msgstr "Memo: Text until 1000 characters"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_nuevo_editar_campo.html:77
 msgid "Select: insertar el ID del elemento"
-msgstr "Select: insert element id"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_nuevo_editar_campo.html:78
 msgid "Multiselect: insertar el ID's separados por coma"
-msgstr "Multiselect: insert id's separated by comma"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_nuevo_editar_campo.html:79
 msgid "Sí/No: 0=No, 1=Sí"
-msgstr "Yes/No:0=No, 1=Yes"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_nuevo_editar_campo.html:87
 msgid "Calculado "
-msgstr "Calculated "
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_tarea.html:8
 msgid "Estado:"
-msgstr "Status:"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_tarea.html:12
 msgid "Comienzo:"
-msgstr "Beginning:"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_tarea.html:17
 msgid "Descripción:"
-msgstr "Description:"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_tarea.html:23
 msgid "Finalización:"
-msgstr "Ending:"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_tarea.html:28
 msgid "Resultado:"
-msgstr "Result:"
+msgstr ""
 
 #: endosys/public/webapp/content/dialog_tarea.html:32
 msgid "Descripción del resultado:"
-msgstr "Result description:"
+msgstr ""
 
 #: endosys/public/webapp/content/edicion_busqueda2.html:16
 msgid "Creado por"
-msgstr "Performed by"
+msgstr ""
 
 #: endosys/public/webapp/content/edicion_busqueda2.html:22
 #: endosys/public/webapp/content/prioridad.html:16
 #: endosys/public/webapp/js/administracion/administracion.js:54
 #: endosys/public/webapp/js/busquedas_avanzadas/gestion_busquedas.js:62
 msgid "Nivel"
-msgstr "Level"
+msgstr ""
 
 #: endosys/public/webapp/content/edicion_busqueda2.html:24
 #: endosys/public/webapp/js/busquedas_avanzadas/gestion_busquedas.js:35
 msgid "Público global"
-msgstr "Global public"
+msgstr ""
 
 #: endosys/public/webapp/content/edicion_busqueda2.html:25
 #: endosys/public/webapp/js/busquedas_avanzadas/gestion_busquedas.js:38
 msgid "Público de servicio"
-msgstr "Service information"
+msgstr ""
 
 #: endosys/public/webapp/content/edicion_busqueda2.html:26
 #: endosys/public/webapp/js/busquedas_avanzadas/gestion_busquedas.js:41
 msgid "Protegido global"
-msgstr "Global protected"
+msgstr ""
 
 #: endosys/public/webapp/content/edicion_busqueda2.html:27
 #: endosys/public/webapp/js/busquedas_avanzadas/gestion_busquedas.js:44
 msgid "Protegido de servicio"
-msgstr "Service information"
+msgstr ""
 
 #: endosys/public/webapp/content/edicion_busqueda2.html:28
 #: endosys/public/webapp/js/busquedas_avanzadas/gestion_busquedas.js:47
 msgid "Privada"
-msgstr "Private"
+msgstr ""
 
 #: endosys/public/webapp/content/edicion_busqueda2.html:36
 #: endosys/public/webapp/js/imagenes_expl.js:331
 #: endosys/public/webapp/js/imagenes_expl.js:377
 #: endosys/public/webapp/js/informes.js:393
 msgid "Comentario"
-msgstr "Comment"
+msgstr ""
 
 #: endosys/public/webapp/content/edicion_busqueda2.html:42
 msgid "Guardar búsqueda"
-msgstr "Save searching"
+msgstr ""
 
 #: endosys/public/webapp/content/edicion_busqueda2.html:43
 msgid "Guardar cómo"
-msgstr "Save as"
+msgstr ""
 
 #: endosys/public/webapp/content/edicion_busqueda2.html:44
 #: endosys/public/webapp/content/gestion_busquedas.html:10
 msgid "Ejecutar"
-msgstr "Run"
+msgstr ""
 
 #: endosys/public/webapp/content/editor_formularios.html:8
 msgid "Crear Campo"
-msgstr "Create field"
+msgstr ""
 
 #: endosys/public/webapp/content/editor_formularios.html:9
 msgid "Editar Campo"
-msgstr "Edit field"
+msgstr ""
 
 #: endosys/public/webapp/content/editor_formularios.html:10
 #: endosys/public/webapp/js/editor_formularios.js:184
 msgid "Borrar Campo"
-msgstr "Delete field"
+msgstr ""
 
 #: endosys/public/webapp/content/editor_formularios.html:12
 msgid "Guardar formulario"
-msgstr "Save form"
+msgstr ""
 
 #: endosys/public/webapp/content/editor_formularios.html:25
 msgid "Insertar fila"
-msgstr "Insert row"
+msgstr ""
 
 #: endosys/public/webapp/content/editor_formularios.html:26
 msgid "Quitar fila"
-msgstr "Remove row"
+msgstr ""
 
 #: endosys/public/webapp/content/editor_formularios.html:29
 msgid "Grupos de campos"
-msgstr "Field groups"
+msgstr ""
 
 #: endosys/public/webapp/content/editor_formularios.html:32
 msgid "Add"
-msgstr "Add"
+msgstr ""
 
 #: endosys/public/webapp/content/editor_formularios.html:33
 msgid "Create..."
-msgstr "Create..."
+msgstr ""
 
 #: endosys/public/webapp/content/editor_formularios.html:34
 msgid "Rename..."
-msgstr "Rename..."
+msgstr ""
 
 #: endosys/public/webapp/content/editor_formularios.html:35
 #: endosys/public/webapp/content/editor_tipos_exploracion.html:55
@@ -1798,15 +1781,15 @@ msgstr "Rename..."
 #: endosys/public/webapp/content/usuario.html:74
 #: endosys/public/webapp/js/gestion_agenda/dialogo_cita.js:295
 msgid "Delete"
-msgstr "Delete"
+msgstr ""
 
 #: endosys/public/webapp/content/editor_tipos_exploracion.html:7
 msgid "Crear"
-msgstr "Create"
+msgstr ""
 
 #: endosys/public/webapp/content/editor_tipos_exploracion.html:8
 msgid "Editar"
-msgstr "Edit"
+msgstr ""
 
 #: endosys/public/webapp/content/editor_tipos_exploracion.html:9
 #: endosys/public/webapp/content/exploracion.html:61
@@ -1814,15 +1797,15 @@ msgstr "Edit"
 #: endosys/public/webapp/js/exploraciones.js:1164
 #: endosys/public/webapp/js/administracion/administracion.js:228
 msgid "Borrar"
-msgstr "Delete"
+msgstr ""
 
 #: endosys/public/webapp/content/editor_tipos_exploracion.html:17
 msgid "Formularios"
-msgstr "Forms"
+msgstr ""
 
 #: endosys/public/webapp/content/editor_tipos_exploracion.html:23
 msgid "Asignados"
-msgstr "Assigned"
+msgstr ""
 
 #: endosys/public/webapp/content/editor_tipos_exploracion.html:31
 #: endosys/public/webapp/content/exploracion.html:92
@@ -1832,7 +1815,7 @@ msgstr "Assigned"
 #: endosys/public/webapp/js/administracion/dialogo_sala.js:22
 #: endosys/public/webapp/js/gestion_agenda/dialogo_cita.js:212
 msgid "Save"
-msgstr "Save"
+msgstr ""
 
 #: endosys/public/webapp/content/editor_tipos_exploracion.html:32
 #: endosys/public/webapp/js/controles.js:383
@@ -1846,104 +1829,100 @@ msgstr "Save"
 #: endosys/public/webapp/js/busquedas_avanzadas/dialogo_condicion.js:99
 #: endosys/public/webapp/js/gestion_agenda/dialogo_cita.js:287
 msgid "Cancel"
-msgstr "Cancel"
+msgstr ""
 
 #: endosys/public/webapp/content/editor_tipos_exploracion.html:48
 #: endosys/public/webapp/js/input_tipo_multi.js:62
 msgid "Disponibles"
-msgstr "Available"
+msgstr ""
 
 #: endosys/public/webapp/content/editor_tipos_exploracion.html:52
 msgid "Edit"
-msgstr "Edit"
+msgstr ""
 
 #: endosys/public/webapp/content/editor_tipos_exploracion.html:53
 msgid "Create"
-msgstr "Create"
+msgstr ""
 
 #: endosys/public/webapp/content/editor_tipos_exploracion.html:54
 msgid "Renombrar"
-msgstr "Rename"
+msgstr ""
 
 #: endosys/public/webapp/content/editor_tipos_exploracion.html:56
 msgid "Exportar (XML)"
-msgstr "Export (XML)"
+msgstr ""
 
 #: endosys/public/webapp/content/editor_tipos_exploracion.html:58
 msgid "Importar (XML)"
-msgstr "Import (XML)"
+msgstr ""
 
 #: endosys/public/webapp/content/exploracion.html:14
 msgid ""
-"[title]Número de exploración pertenenciente a este tipo de exploración sobre la "
-"cantidad de exploraciones de este mismo tipo"
+"[title]Número de exploración pertenenciente a este tipo de exploración "
+"sobre la cantidad de exploraciones de este mismo tipo"
 msgstr ""
-"[title]Examination number assigned to this examination type and total amount of "
-"examinations of this same type"
 
 #: endosys/public/webapp/content/exploracion.html:15
 msgid "BORRADA"
-msgstr "DELETED"
+msgstr ""
 
 #: endosys/public/webapp/content/exploracion.html:33
 msgid "Importar imagen"
-msgstr "Import image"
+msgstr ""
 
 #: endosys/public/webapp/content/exploracion.html:41
 #: endosys/public/webapp/js/exploraciones.js:223
 msgid "Capturar"
-msgstr "Capture"
+msgstr ""
 
 #: endosys/public/webapp/content/exploracion.html:44
 msgid "Informes"
-msgstr "Reports"
+msgstr ""
 
 #: endosys/public/webapp/content/exploracion.html:45
 msgid "Imágenes"
-msgstr "Images"
+msgstr ""
 
 #: endosys/public/webapp/content/exploracion.html:60
 #: endosys/public/webapp/js/notificaciones.js:233
 #: endosys/public/webapp/js/notificaciones.js:389
 msgid "Ver"
-msgstr "View"
+msgstr ""
 
 #: endosys/public/webapp/content/exploracion.html:66
 msgid "Generar informe..."
-msgstr "Generate report..."
+msgstr ""
 
 #: endosys/public/webapp/content/exploracion.html:67
 msgid "Generar informe con firma..."
-msgstr "Generate signed report..."
+msgstr ""
 
 #: endosys/public/webapp/content/exploracion.html:69
 msgid "Adjuntar documento..."
-msgstr "Attach document..."
+msgstr ""
 
 #: endosys/public/webapp/content/exploracion.html:72
 msgid ""
-"Se generará un nuevo informe utilizando los datos de la exploración actuales. El "
-"nuevo informe no podrá ser modificado ni eliminado. Si realiza cambios en los "
-"datos de la exploración tendrá que generar un nuevo informe."
+"Se generará un nuevo informe utilizando los datos de la exploración "
+"actuales. El nuevo informe no podrá ser modificado ni eliminado. Si "
+"realiza cambios en los datos de la exploración tendrá que generar un "
+"nuevo informe."
 msgstr ""
-"A new report will be generated using the current examination data. This new "
-"report can not be modified or deleted. If changes are made in the examination "
-"data, you should generate a new report."
 
 #: endosys/public/webapp/content/exploracion.html:93
 #: endosys/public/webapp/js/citas.js:795
 #: endosys/public/webapp/js/exploraciones.js:1028
 msgid "No realizada"
-msgstr "Not performed"
+msgstr ""
 
 #: endosys/public/webapp/content/exploracion.html:96
 #: endosys/public/webapp/js/exploraciones.js:1210
 msgid "Recuperar"
-msgstr "Recover"
+msgstr ""
 
 #: endosys/public/webapp/content/exploracion.html:97
 msgid "Asignar valores por defecto"
-msgstr "Assign default values"
+msgstr ""
 
 #: endosys/public/webapp/content/exploracion_cita.html:17
 #: endosys/public/webapp/content/exploracion_info.html:20
@@ -1952,405 +1931,406 @@ msgstr "Assign default values"
 #: endosys/public/webapp/js/tareas.js:113
 #: endosys/public/webapp/js/tareas.js:117
 msgid "Hora"
-msgstr "Time"
+msgstr ""
 
 #: endosys/public/webapp/content/exploracion_cita.html:23
 #: endosys/public/webapp/content/exploracion_info.html:52
-#: endosys/public/webapp/js/citas.js:919 endosys/public/webapp/js/citas.js:921
+#: endosys/public/webapp/js/citas.js:919
+#: endosys/public/webapp/js/citas.js:921
 #: endosys/public/webapp/js/citas.js:923
 msgid "Prestación"
-msgstr "Procedure"
+msgstr ""
 
 #: endosys/public/webapp/content/exploracion_cita.html:29
 #: endosys/public/webapp/content/exploracion_info.html:58
 msgid "Servicio peticionario"
-msgstr "Requesting service"
+msgstr ""
 
 #: endosys/public/webapp/content/exploracion_cita.html:33
 #: endosys/public/webapp/content/exploracion_info.html:62
 msgid "Médico peticionario"
-msgstr "Requesting physician"
+msgstr ""
 
 #: endosys/public/webapp/content/exploracion_info.html:4
 msgid "Datos exploración"
-msgstr "Examination data"
+msgstr ""
 
 #: endosys/public/webapp/content/exploracion_info.html:8
 msgid "Tipo de exploración"
-msgstr "Examination type"
+msgstr ""
 
 #: endosys/public/webapp/content/exploracion_info.html:31
 msgid "Datos cita"
-msgstr "Date information"
+msgstr ""
 
 #: endosys/public/webapp/content/gestion_busquedas.html:9
 msgid "Rename"
-msgstr "Rename"
+msgstr ""
 
 #: endosys/public/webapp/content/gestion_busquedas.html:11
 msgid "Modificar"
-msgstr "Modify"
+msgstr ""
 
 #: endosys/public/webapp/content/gestion_busquedas.html:12
 msgid "Nueva búsqueda"
-msgstr "Create searching"
+msgstr ""
 
 #: endosys/public/webapp/content/gestion_pacientes.html:17
 msgid "DNI"
-msgstr "Id"
+msgstr ""
 
 #: endosys/public/webapp/content/gestion_pacientes.html:20
 #: endosys/public/webapp/content/paciente.html:21
 #: endosys/public/webapp/js/citas.js:896
 #: endosys/public/webapp/js/pacientes.js:553
 msgid "Paciente:Nombre"
-msgstr "First name"
+msgstr ""
 
 #: endosys/public/webapp/content/gestion_pacientes.html:23
 #: endosys/public/webapp/content/paciente.html:31
 #: endosys/public/webapp/js/citas.js:897
 #: endosys/public/webapp/js/pacientes.js:554
 msgid "Paciente:html:1er apellido"
-msgstr "Surname"
+msgstr ""
 
 #: endosys/public/webapp/content/gestion_pacientes.html:26
 #: endosys/public/webapp/content/paciente.html:39
 #: endosys/public/webapp/js/citas.js:898
 #: endosys/public/webapp/js/pacientes.js:555
 msgid "Paciente:html:2o apellido"
-msgstr "Second surname"
+msgstr ""
 
 #: endosys/public/webapp/content/gestion_pacientes.html:29
 msgid "Incluir deshabilitados"
-msgstr "Include disabled"
+msgstr ""
 
 #: endosys/public/webapp/content/gestion_pacientes.html:34
 #: endosys/public/webapp/js/pacientes.js:766
 msgid "Nuevo paciente"
-msgstr "New patient"
+msgstr ""
 
 #: endosys/public/webapp/content/gestion_tablas.html:5
 #: endosys/public/webapp/js/Util/misc.js:416
 #: endosys/public/webapp/js/dialogs/plantillas_dialog.js:39
 msgid "Cargando..."
-msgstr "Loading..."
+msgstr ""
 
 #: endosys/public/webapp/content/gestion_tablas.html:14
 msgid "Elementos"
-msgstr "Items"
+msgstr ""
 
 #: endosys/public/webapp/content/gestion_tablas.html:16
 #: endosys/public/webapp/js/input_tipo_multi.js:68
 msgid "Añadir"
-msgstr "Add"
+msgstr ""
 
 #: endosys/public/webapp/content/gestion_tablas.html:23
 msgid "Mostrar:"
-msgstr "Show:"
+msgstr ""
 
 #: endosys/public/webapp/content/gestion_tablas.html:28
 msgid "Solo activos"
-msgstr "Active only"
+msgstr ""
 
 #: endosys/public/webapp/content/gestion_tablas.html:29
 msgid "Todos"
-msgstr "All"
+msgstr ""
 
 #: endosys/public/webapp/content/gestion_tablas.html:40
 msgid "Modify"
-msgstr "Modify"
+msgstr ""
 
 #: endosys/public/webapp/content/gestion_tablas.html:41
 msgid "Actualizar"
-msgstr "Update"
+msgstr ""
 
 #: endosys/public/webapp/content/gestion_tablas.html:44
 msgid "Exportar"
-msgstr "Export"
+msgstr ""
 
 #: endosys/public/webapp/content/gestion_tablas.html:45
 msgid "Exportar activos"
-msgstr "Export active"
+msgstr ""
 
 #: endosys/public/webapp/content/gestion_tablas.html:46
 msgid "Exportar todos"
-msgstr "Export all"
+msgstr ""
 
 #: endosys/public/webapp/content/gestion_tablas.html:47
 #: endosys/public/webapp/js/tablas.js:75
 msgid "Importar"
-msgstr "Import (XML)"
+msgstr ""
 
 #: endosys/public/webapp/content/gestion_usuarios.html:7
 msgid "Filtrar por servicio"
-msgstr "Filter by service"
+msgstr ""
 
 #: endosys/public/webapp/content/gestion_usuarios.html:14
 #: endosys/public/webapp/js/usuarios.js:1208
 msgid "Nuevo usuario"
-msgstr "New user"
+msgstr ""
 
 #: endosys/public/webapp/content/importar.html:5
 msgid "Seleccionar fichero..."
-msgstr "Select file."
+msgstr ""
 
 #: endosys/public/webapp/content/importar.html:8
 msgid "Ningún fichero seleccionado."
-msgstr "No selected file."
+msgstr ""
 
 #: endosys/public/webapp/content/importar.html:19
 msgid "Progreso"
-msgstr "Progress"
+msgstr ""
 
 #: endosys/public/webapp/content/importar.html:23
 msgid "El formato debe ser texto plano en "
-msgstr "Format should be plain text in "
+msgstr ""
 
 #: endosys/public/webapp/content/importar.html:24
 msgid "Para exportar desde Excel: "
-msgstr "From export from Excel: "
+msgstr ""
 
 #: endosys/public/webapp/content/lista_citas.html:22
 msgid "Historia"
-msgstr "MR"
+msgstr ""
 
 #: endosys/public/webapp/content/motivo_cancelacion.html:4
 msgid "Datos del motivo de cancelación"
-msgstr "Cancellation reason information"
+msgstr ""
 
 #: endosys/public/webapp/content/motivo_cancelacion.html:20
 msgid "Modificar motivo"
-msgstr "Modify reason"
+msgstr ""
 
 #: endosys/public/webapp/content/motivo_cancelacion.html:21
 msgid "Nuevo motivo"
-msgstr "Create reason"
+msgstr ""
 
 #: endosys/public/webapp/content/motivo_cancelacion.html:22
 msgid "Eliminar motivo"
-msgstr "Delete reason"
+msgstr ""
 
 #: endosys/public/webapp/content/paciente.html:6
 msgid "Id Único"
-msgstr "Unique Id"
+msgstr ""
 
 #: endosys/public/webapp/content/paciente.html:26
 #: endosys/public/webapp/js/pacientes.js:552
 msgid "Paciente:DNI"
-msgstr "Id"
+msgstr ""
 
 #: endosys/public/webapp/content/paciente.html:62
 msgid "Edad actual"
-msgstr "Current age"
+msgstr ""
 
 #: endosys/public/webapp/content/paciente.html:73
 msgid "Paciente:Dirección"
-msgstr "Address"
+msgstr ""
 
 #: endosys/public/webapp/content/paciente.html:78
 msgid "Paciente:Código postal"
-msgstr "Postcode"
+msgstr ""
 
 #: endosys/public/webapp/content/paciente.html:88
 msgid "Paciente:Teléfono"
-msgstr "Phone number"
+msgstr ""
 
 #: endosys/public/webapp/content/paciente.html:98
 msgid "Paciente:Teléfono 2"
-msgstr "Alternative phone number"
+msgstr ""
 
 #: endosys/public/webapp/content/paciente.html:109
 msgid "Última aseguradora usada"
-msgstr "Last used insurance"
+msgstr ""
 
 #: endosys/public/webapp/content/paciente.html:114
 msgid "Paciente:Nº afiliación"
-msgstr "Affiliation number"
+msgstr ""
 
 #: endosys/public/webapp/content/paciente.html:123
 #: endosys/public/webapp/js/informes.js:71
 #: endosys/public/webapp/js/dialogs/plantillas_dialog.js:19
 msgid "Comentarios"
-msgstr "Comments"
+msgstr ""
 
 #: endosys/public/webapp/content/predefinido.html:5
 #: endosys/public/webapp/js/nuevo_elemento.js:51
 #: endosys/public/webapp/js/tablas.js:353
 msgid "Elemento"
-msgstr "Item"
+msgstr ""
 
 #: endosys/public/webapp/content/predefinido.html:9
 msgid "Texto predefinido"
-msgstr "Predefined text"
+msgstr ""
 
 #: endosys/public/webapp/content/prioridad.html:4
 msgid "Datos de la prioridad"
-msgstr "Priority information"
+msgstr ""
 
 #: endosys/public/webapp/content/prioridad.html:24
 msgid "Modificar prioridad"
-msgstr "Modify priority"
+msgstr ""
 
 #: endosys/public/webapp/content/prioridad.html:25
 msgid "Nueva prioridad"
-msgstr "Create priority"
+msgstr ""
 
 #: endosys/public/webapp/content/prioridad.html:26
 msgid "Eliminar prioridad"
-msgstr "Delete priority"
+msgstr ""
 
 #: endosys/public/webapp/content/servicio.html:3
 msgid "Datos del servicio"
-msgstr "Service information"
+msgstr ""
 
 #: endosys/public/webapp/content/servicio.html:18
 msgid "Datos relacionados al servicio"
-msgstr "Information related to this service"
+msgstr ""
 
 #: endosys/public/webapp/content/servicio.html:34
 msgid "Modificar servicio"
-msgstr "Modify service"
+msgstr ""
 
 #: endosys/public/webapp/content/servicio.html:35
 msgid "Nuevo servicio"
-msgstr "Create service"
+msgstr ""
 
 #: endosys/public/webapp/content/servicio.html:36
 msgid "Eliminar servicio"
-msgstr "Delete service"
+msgstr ""
 
 #: endosys/public/webapp/content/tipos_exploracion.html:6
 msgid " Prestación: "
-msgstr " Procedure: "
+msgstr ""
 
 #: endosys/public/webapp/content/tipos_exploracion.html:11
 msgid "Historia:"
-msgstr "MR #:"
+msgstr ""
 
 #: endosys/public/webapp/content/tipos_exploracion.html:13
 msgid "Paciente:"
-msgstr "Patient:"
+msgstr ""
 
 #: endosys/public/webapp/content/tipos_exploracion.html:15
 msgid " Edad: "
-msgstr " Age: "
+msgstr ""
 
 #: endosys/public/webapp/content/usuario.html:4
 msgid "Datos del usuario"
-msgstr "User information"
+msgstr ""
 
 #: endosys/public/webapp/content/usuario.html:6
 msgid "Nombre:Usuario"
-msgstr "User name"
+msgstr ""
 
 #: endosys/public/webapp/content/usuario.html:10
-#: endosys/public/webapp/js/Endotools/ET_auth.js:78
+#: endosys/public/webapp/js/Endosys/ET_auth.js:78
 msgid "Contraseña"
-msgstr "Password"
+msgstr ""
 
 #: endosys/public/webapp/content/usuario.html:22
 #: endosys/public/webapp/js/editor_formularios.js:76
 #: endosys/public/webapp/js/usuarios.js:1016
 msgid "Tipo"
-msgstr "Type"
+msgstr ""
 
 #: endosys/public/webapp/content/usuario.html:24
 #: endosys/public/webapp/js/notificaciones.js:495
 #: endosys/public/webapp/js/tareas.js:145
 #: endosys/public/webapp/js/usuarios.js:999
-#: endosys/public/webapp/js/Endotools/ET_auth.js:77
+#: endosys/public/webapp/js/Endosys/ET_auth.js:77
 msgid "Usuario"
-msgstr "User name"
+msgstr ""
 
 #: endosys/public/webapp/content/usuario.html:25
 #: endosys/public/webapp/content/usuario.html:64
 #: endosys/public/webapp/js/usuarios.js:997
 msgid "Administrador"
-msgstr "Administrator"
+msgstr ""
 
 #: endosys/public/webapp/content/usuario.html:29
 #: endosys/public/webapp/js/editor_tipos_expl.js:172
 #: endosys/public/webapp/js/tablas.js:360
 #: endosys/public/webapp/js/usuarios.js:1012
 msgid "Activo"
-msgstr "Active"
+msgstr ""
 
 #: endosys/public/webapp/content/usuario.html:41
 msgid "Servicios"
-msgstr "Services"
+msgstr ""
 
 #: endosys/public/webapp/content/usuario.html:45
 msgid "Agendas"
-msgstr "Schedules"
+msgstr ""
 
 #: endosys/public/webapp/content/usuario.html:49
 msgid "Nª colegiado"
-msgstr "License number"
+msgstr ""
 
 #: endosys/public/webapp/content/usuario.html:55
 msgid "Permisos"
-msgstr "Permissions"
+msgstr ""
 
 #: endosys/public/webapp/content/usuario.html:58
 msgid "Usuario:Perfil"
-msgstr "Profile"
+msgstr ""
 
 #: endosys/public/webapp/content/usuario.html:60
 msgid "Selecciona un perfil..."
-msgstr "Select profile..."
+msgstr ""
 
 #: endosys/public/webapp/content/usuario.html:61
 msgid "Administrativo"
-msgstr "Administrative"
+msgstr ""
 
 #: endosys/public/webapp/content/usuario.html:63
 msgid "Médico supervisor"
-msgstr "Supervisor physician"
+msgstr ""
 
 #: endosys/public/webapp/content/usuario.html:73
 #: endosys/public/webapp/js/exploraciones.js:1145
 #: endosys/public/webapp/js/exploraciones.js:1149
 msgid "Deshacer cambios"
-msgstr "Undo changes"
+msgstr ""
 
 #: endosys/public/webapp/content/usuario.html:78
 msgid "API Key"
-msgstr "API Key"
+msgstr ""
 
 #: endosys/public/webapp/content/usuario.html:80
 msgid "Mostrar clave"
-msgstr "Show key"
+msgstr ""
 
 #: endosys/public/webapp/content/usuario.html:81
 msgid "Ocultar clave"
-msgstr "Hide key"
+msgstr ""
 
 #: endosys/public/webapp/content/usuario.html:82
 msgid "Regenerar clave"
-msgstr "Regenerate key"
+msgstr ""
 
 #: endosys/public/webapp/content/usuario.html:83
 msgid "Eliminar clave"
-msgstr "Delete key"
+msgstr ""
 
 #: endosys/public/webapp/js/busqueda_citas.js:19
 msgid "Cargando citas..."
-msgstr "Loading appointments..."
+msgstr ""
 
 #: endosys/public/webapp/js/busqueda_citas.js:29
 msgid "error al cargar el fichero busqueda_citas.html"
-msgstr "error while loading file busqueda_citas.html"
+msgstr ""
 
 #: endosys/public/webapp/js/busqueda_citas.js:66
 #: endosys/public/webapp/js/citas.js:902
 #: endosys/public/webapp/js/exploraciones.js:79
 msgid "Time:Hora"
-msgstr "Time"
+msgstr ""
 
 #: endosys/public/webapp/js/busqueda_citas.js:67
 #: endosys/public/webapp/js/citas.js:901
 msgid "Abrev:Tipo exploracion"
-msgstr "Exam type"
+msgstr ""
 
 #: endosys/public/webapp/js/busqueda_citas.js:157
 #: endosys/public/webapp/js/citas.js:487
@@ -2359,12 +2339,12 @@ msgstr "Exam type"
 #: endosys/public/webapp/js/pacientes.js:737
 #: endosys/public/webapp/js/tipos_exploracion.js:83
 #: endosys/public/webapp/js/usuarios.js:680
-#: endosys/public/webapp/js/Endotools/ET_statusbar.js:36
+#: endosys/public/webapp/js/Endosys/ET_statusbar.js:36
 #: endosys/public/webapp/js/administracion/administracion.js:593
 #: endosys/public/webapp/js/busquedas_avanzadas/gestion_busquedas.js:189
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:128
 msgid "Ready"
-msgstr "Ready"
+msgstr ""
 
 #: endosys/public/webapp/js/busqueda_citas.js:210
 #: endosys/public/webapp/js/editor_formularios.js:461
@@ -2376,151 +2356,153 @@ msgstr "Ready"
 #: endosys/public/webapp/js/tareas.js:215
 #: endosys/public/webapp/js/tareas.js:265
 msgid "Listo"
-msgstr "Ready"
+msgstr ""
 
 #: endosys/public/webapp/js/busqueda_citas.js:214
 #: endosys/public/webapp/js/citas.js:538
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:548
 msgid "Error al cargar las citas"
-msgstr "Error while loading appointments"
+msgstr ""
 
 #: endosys/public/webapp/js/busqueda_por_paciente.js:8
-#: endosys/public/webapp/js/main.js:384 endosys/public/webapp/js/main.js:399
+#: endosys/public/webapp/js/main.js:384
+#: endosys/public/webapp/js/main.js:399
 msgid "Exploraciones"
-msgstr "Examinations"
+msgstr ""
 
 #: endosys/public/webapp/js/busqueda_por_paciente.js:16
 #: endosys/public/webapp/js/nueva_exploracion.js:425
 msgid "Seleccionar el paciente"
-msgstr "Select patient"
+msgstr ""
 
 #: endosys/public/webapp/js/busqueda_por_paciente.js:32
 #: endosys/public/webapp/js/nueva_exploracion.js:954
 msgid "Debe seleccionar un paciente para continuar"
-msgstr "Please select a patient to continue"
+msgstr ""
 
 #: endosys/public/webapp/js/busqueda_por_paciente.js:46
 msgid "Búsqueda por paciente"
-msgstr "Search by patient"
+msgstr ""
 
 #: endosys/public/webapp/js/captura.js:45
 msgid "Se ha finalizado el envío de las imágenes capturadas"
-msgstr "Sending of captured images has finished succesfully"
+msgstr ""
 
 #: endosys/public/webapp/js/citas.js:62
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:44
 msgid "Loading..."
-msgstr "Loading..."
+msgstr ""
 
 #: endosys/public/webapp/js/citas.js:347
 msgid "Cancelar cita"
-msgstr "Cancel appointment"
+msgstr ""
 
 #: endosys/public/webapp/js/citas.js:347
 msgid ""
-"¿Está seguro de que desea no realizar la cita? ya no se volverá a mostrar en "
-"este listado."
+"¿Está seguro de que desea no realizar la cita? ya no se volverá a mostrar"
+" en este listado."
 msgstr ""
-"Are you sure you want to not finish this appointment? it will not show again in "
-"this list."
 
 #: endosys/public/webapp/js/citas.js:374
 msgid "La cita no se puede cancelar"
-msgstr "Can not cancel the appointment"
+msgstr ""
 
 #: endosys/public/webapp/js/citas.js:383
 #: endosys/public/webapp/js/exploraciones.js:1057
 msgid "No ha seleccionado un motivo de cancelación"
-msgstr "Please select a cancellation reason"
+msgstr ""
 
 #: endosys/public/webapp/js/citas.js:425
 msgid "Citas del "
-msgstr "Appointments from "
+msgstr ""
 
 #: endosys/public/webapp/js/citas.js:465
 #: endosys/public/webapp/js/gestion_agenda/dialogo_cita.js:230
 msgid "Debe seleccionar una agenda"
-msgstr "Please select a schedule"
+msgstr ""
 
 #: endosys/public/webapp/js/citas.js:590
 msgid "Ha ocurrido un error obteniendo las agendas"
-msgstr "An error has occurred while getting the schedules"
+msgstr ""
 
 #: endosys/public/webapp/js/citas.js:811
 msgid "Exploración borrada"
-msgstr "Examination deleted"
+msgstr ""
 
 #: endosys/public/webapp/js/citas.js:824
 msgid "En curso"
-msgstr "In progress"
+msgstr ""
 
 #: endosys/public/webapp/js/citas.js:837
 msgid "Finalizada"
-msgstr "Finished"
+msgstr ""
 
-#: endosys/public/webapp/js/citas.js:849 endosys/public/webapp/js/citas.js:862
+#: endosys/public/webapp/js/citas.js:849
+#: endosys/public/webapp/js/citas.js:862
 #: endosys/public/webapp/js/citas.js:916
 msgid "Cancelada"
-msgstr "Cancelled"
+msgstr ""
 
 #: endosys/public/webapp/js/citas.js:869
 msgid "Pendiente"
-msgstr "Pending"
+msgstr ""
 
 #: endosys/public/webapp/js/citas.js:899
 msgid "Nacimiento"
-msgstr "Birth date"
+msgstr ""
 
 #: endosys/public/webapp/js/citas.js:900
 #: endosys/public/webapp/js/gestion_agenda/dialogo_cita.js:40
 msgid "Edad"
-msgstr "Age"
+msgstr ""
 
 #: endosys/public/webapp/js/citas.js:913
 msgid "Servicio Peticionario"
-msgstr "Requesting service"
+msgstr ""
 
-#: endosys/public/webapp/js/citas.js:914 endosys/public/webapp/js/citas.js:915
+#: endosys/public/webapp/js/citas.js:914
+#: endosys/public/webapp/js/citas.js:915
 msgid "Médico Peticionario"
-msgstr "Requesting physician"
+msgstr ""
 
-#: endosys/public/webapp/js/citas.js:918 endosys/public/webapp/js/citas.js:920
+#: endosys/public/webapp/js/citas.js:918
+#: endosys/public/webapp/js/citas.js:920
 #: endosys/public/webapp/js/citas.js:922
 msgid "Abrev:Código"
-msgstr "Code"
+msgstr ""
 
 #: endosys/public/webapp/js/citas.js:924
 msgid "Ubicación del Paciente"
-msgstr "Patient location"
+msgstr ""
 
 #: endosys/public/webapp/js/citas.js:925
 msgid "ID Admisión"
-msgstr "Admission Id"
+msgstr ""
 
 #: endosys/public/webapp/js/citas.js:926
 msgid "Accession Number"
-msgstr "Accession Number"
+msgstr ""
 
 #: endosys/public/webapp/js/citas.js:927
 msgid "Study Instance UID"
-msgstr "Study Instance UID"
+msgstr ""
 
 #: endosys/public/webapp/js/citas.js:928
 msgid "Realizada por"
-msgstr "Performed by"
+msgstr ""
 
 #: endosys/public/webapp/js/controles.js:155
 msgid "Sí"
-msgstr "Yes"
+msgstr ""
 
 #: endosys/public/webapp/js/controles.js:158
 #: endosys/public/webapp/js/editor_formularios.js:61
 msgid "No"
-msgstr "No"
+msgstr ""
 
 #: endosys/public/webapp/js/controles.js:205
 msgid "elemento"
-msgstr "item"
+msgstr ""
 
 #: endosys/public/webapp/js/controles.js:229
 #: endosys/public/webapp/js/controles.js:327
@@ -2530,21 +2512,22 @@ msgstr "item"
 #: endosys/public/webapp/js/nueva_exploracion.js:1415
 #: endosys/public/webapp/js/tablas.js:820
 msgid "Aceptar"
-msgstr "Accept"
+msgstr ""
 
 #: endosys/public/webapp/js/controles.js:232
 #: endosys/public/webapp/js/controles.js:330
 #: endosys/public/webapp/js/exploraciones.js:1555
-#: endosys/public/webapp/js/tablas.js:81 endosys/public/webapp/js/tareas.js:345
+#: endosys/public/webapp/js/tablas.js:81
+#: endosys/public/webapp/js/tareas.js:345
 #: endosys/public/webapp/js/gestion_agenda/dialogo_paciente.js:53
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:175
 msgid "Cancelar"
-msgstr "Cancel"
+msgstr ""
 
 #: endosys/public/webapp/js/controles.js:309
 #: endosys/public/webapp/js/pacientes.js:351
 msgid "Cerrar"
-msgstr "Close"
+msgstr ""
 
 #: endosys/public/webapp/js/controles.js:379
 #: endosys/public/webapp/js/controles.js:446
@@ -2553,80 +2536,78 @@ msgstr "Close"
 #: endosys/public/webapp/js/usuarios.js:1218
 #: endosys/public/webapp/js/busquedas_avanzadas/dialogo_condicion.js:41
 msgid "Accept"
-msgstr "Accept"
+msgstr ""
 
 #: endosys/public/webapp/js/editor_formularios.js:23
 msgid "Cargando Editor de formularios..."
-msgstr "Loading form editor..."
+msgstr ""
 
 #: endosys/public/webapp/js/editor_formularios.js:43
 msgid "Texto"
-msgstr "Text"
+msgstr ""
 
 #: endosys/public/webapp/js/editor_formularios.js:49
 msgid "Multi"
-msgstr "Multi"
+msgstr ""
 
 #: endosys/public/webapp/js/editor_formularios.js:51
 msgid "Si/No"
-msgstr "Yes/No"
+msgstr ""
 
 #: endosys/public/webapp/js/editor_formularios.js:59
 msgid "Si"
-msgstr "Yes"
+msgstr ""
 
 #: endosys/public/webapp/js/editor_formularios.js:75
 msgid "Titulo"
-msgstr "Title"
+msgstr ""
 
 #: endosys/public/webapp/js/editor_formularios.js:77
 msgid "Usado"
-msgstr "Used"
+msgstr ""
 
 #: endosys/public/webapp/js/editor_formularios.js:86
 msgid "No se encontró el campo."
-msgstr "Field not found."
+msgstr ""
 
 #: endosys/public/webapp/js/editor_formularios.js:161
 msgid "Ocurrio un error al crear el campo."
-msgstr "An error has occurred while creating the field."
+msgstr ""
 
 #: endosys/public/webapp/js/editor_formularios.js:177
 msgid "Debe seleccionar un campo"
-msgstr "You must select a field"
+msgstr ""
 
 #: endosys/public/webapp/js/editor_formularios.js:184
 msgid "¿Está seguro que desea borrar el campo?"
-msgstr "Are you sure you want to delete this field?"
+msgstr ""
 
 #: endosys/public/webapp/js/editor_formularios.js:265
 msgid "Renombrar grupo de campos"
-msgstr "Rename field group"
+msgstr ""
 
 #: endosys/public/webapp/js/editor_formularios.js:266
 msgid "Ingresar nuevo nombre para este grupo de campos"
-msgstr "Enter new name for this field group"
+msgstr ""
 
 #: endosys/public/webapp/js/editor_formularios.js:291
 msgid "Borrar grupo de campos"
-msgstr "Delete field group"
+msgstr ""
 
 #: endosys/public/webapp/js/editor_tipos_expl.js:18
 msgid "Tipo de exploración modificada"
-msgstr "Examination type modified"
+msgstr ""
 
 #: endosys/public/webapp/js/editor_tipos_expl.js:19
 msgid ""
-"El tipo de exploración seleccionada ha sido modificada, si continua cualquier "
-"cambio realizado se perderá. ¿Está seguro que desea seleccionar otro tipo de "
-"exploración?"
+"El tipo de exploración seleccionada ha sido modificada, si continua "
+"cualquier cambio realizado se perderá. ¿Está seguro que desea seleccionar"
+" otro tipo de exploración?"
 msgstr ""
-"Examination type has been modified, if continue changes will be lost. Are you "
-"sure to select another type of examination?"
 
 #: endosys/public/webapp/js/editor_tipos_expl.js:71
 msgid "Seleccionado"
-msgstr "Selected"
+msgstr ""
 
 #: endosys/public/webapp/js/editor_tipos_expl.js:111
 #: endosys/public/webapp/js/usuarios.js:322
@@ -2639,209 +2620,208 @@ msgstr "Selected"
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:795
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:808
 msgid "Ninguno"
-msgstr "None"
+msgstr ""
 
 #: endosys/public/webapp/js/editor_tipos_expl.js:135
 msgid "Cargando editor de tipo de exploración"
-msgstr "Loading examination type editor"
+msgstr ""
 
 #: endosys/public/webapp/js/editor_tipos_expl.js:181
 msgid "No se encontró ningún tipo de exploración."
-msgstr "No examination type found."
+msgstr ""
 
 #: endosys/public/webapp/js/editor_tipos_expl.js:239
 msgid "Nuevo tipo de exploración"
-msgstr "New examination type"
+msgstr ""
 
 #: endosys/public/webapp/js/editor_tipos_expl.js:242
 #: endosys/public/webapp/js/editor_tipos_expl.js:313
 #: endosys/public/webapp/js/imagenes_expl.js:365
 #: endosys/public/webapp/js/pacientes.js:334
 msgid "Guardar"
-msgstr "Save"
+msgstr ""
 
 #: endosys/public/webapp/js/editor_tipos_expl.js:304
 msgid "Debe seleccionar el tipo de exploración a editar"
-msgstr "You must select an examination type to edit"
+msgstr ""
 
 #: endosys/public/webapp/js/editor_tipos_expl.js:311
 msgid "Editar tipo de exploración"
-msgstr "Edit Examination type"
+msgstr ""
 
 #: endosys/public/webapp/js/editor_tipos_expl.js:385
 msgid "Debe seleccionar el tipo de exploración"
-msgstr "You must elect an examination type"
+msgstr ""
 
 #: endosys/public/webapp/js/editor_tipos_expl.js:390
 msgid "Eliminar tipo de exploración"
-msgstr "Delete examination type"
+msgstr ""
 
 #: endosys/public/webapp/js/editor_tipos_expl.js:390
 msgid "¿Estás seguro de que quieres eliminar este tipo de exploración?"
-msgstr "Are you sure you want to remove this examination type?"
+msgstr ""
 
 #: endosys/public/webapp/js/editor_tipos_expl.js:395
 msgid "No se pudo borrar el tipo de exploración."
-msgstr "The examination type could not be deleted."
+msgstr ""
 
 #: endosys/public/webapp/js/editor_tipos_expl.js:488
 msgid "Nuevo formulario"
-msgstr "New form"
+msgstr ""
 
 #: endosys/public/webapp/js/editor_tipos_expl.js:489
 msgid "Escribe el título para el nuevo formulario"
-msgstr "Enter title for the new form"
+msgstr ""
 
 #: endosys/public/webapp/js/editor_tipos_expl.js:514
 msgid "Renombrar formulario"
-msgstr "Rename form"
+msgstr ""
 
 #: endosys/public/webapp/js/editor_tipos_expl.js:515
 msgid "Escribe el nombre para el formulario"
-msgstr "Enter name for the new form"
+msgstr ""
 
 #: endosys/public/webapp/js/editor_tipos_expl.js:535
 msgid "Eliminar formulario"
-msgstr "Delete form"
+msgstr ""
 
 #: endosys/public/webapp/js/editor_tipos_expl.js:535
 msgid "¿Estás seguro de que quieres eliminar el formulario seleccionado?"
-msgstr "Are you sure you want to delete the selected form?"
+msgstr ""
 
 #: endosys/public/webapp/js/editor_tipos_expl.js:543
 msgid "Editor de formulario"
-msgstr "Form editor"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:84
 msgid "Abrev:Tipo Exploracion"
-msgstr "Exam type"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:96
 msgid "Centro"
-msgstr "Facility"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:103
 #: endosys/public/webapp/js/exploraciones.js:441
 msgid "No se ha encontrado ninguna exploración"
-msgstr "No examination found"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:210
 msgid "Abriendo"
-msgstr "Opening"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:256
 msgid "No se ha podido ejecutar el programa de captura"
-msgstr "Cannot execute the image capture application"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:317
 #, python-format
 msgid "El fichero '%s' no se puede cargar porque su extensión no está permitida."
-msgstr "Can not upload file '%s' because the extension is not allowed."
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:324
 #, python-format
 msgid ""
-"El fichero '%s' no se puede cargar porque tiene un tamaño superior al permitido."
-msgstr "Can not upload file '%s' because surpasses the top file size limit."
+"El fichero '%s' no se puede cargar porque tiene un tamaño superior al "
+"permitido."
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:451
 msgid "Obteniendo los datos de la exploración..."
-msgstr "Getting examination data..."
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:548
 #: endosys/public/webapp/js/nueva_exploracion.js:1213
 #: endosys/public/webapp/js/nueva_exploracion.js:1357
 #: endosys/public/webapp/js/nueva_exploracion.js:1384
 msgid "años"
-msgstr "years old"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:668
 msgid "Ha ocurrido un error obteniendo los datos de la exploración"
-msgstr "An error has occurred while getting the examination data"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:689
 msgid "Guardando la exploración..."
-msgstr "Saving examination..."
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:925
 #: endosys/public/webapp/js/exploraciones.js:1174
 #: endosys/public/webapp/js/informes.js:293
 #: endosys/public/webapp/js/administracion/administracion.js:231
 msgid "Motivo"
-msgstr "Reason"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:957
 msgid "Finalizar"
-msgstr "Finish"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:1004
 msgid "Exploración finalizada correctamente"
-msgstr "Examination finished succesfully"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:1032
 msgid "Exploración no realizada"
-msgstr "Examination not performed"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:1033
 msgid ""
-"¿Está seguro de que desea no realizar la exploración? se perderán los cambios "
-"realizados"
+"¿Está seguro de que desea no realizar la exploración? se perderán los "
+"cambios realizados"
 msgstr ""
-"Are you sure you want to not perform this examination? all changes done will be "
-"lost"
 
 #: endosys/public/webapp/js/exploraciones.js:1048
 msgid "La exploración se ha marcado como \"No Realizada\""
-msgstr "The examination has been marked as \"Not performed\""
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:1087
 #: endosys/public/webapp/js/nueva_exploracion.js:641
 msgid "La exploración ha sido descartada"
-msgstr "The examination has been discarded successfully"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:1137
 msgid "Exploración guardada correctamente"
-msgstr "Examination saved successfully"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:1150
 msgid "¿Está seguro de que desea deshacer los cambios realizados?"
-msgstr "Are you sure you want to undo the changes done?"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:1169
 msgid "Borrar exploración"
-msgstr "Delete examination"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:1170
 msgid "¿Está seguro de que desea borrar la exploración?"
-msgstr "Are you sure you want to delete this examination?"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:1176
 #: endosys/public/webapp/js/informes.js:293
 #: endosys/public/webapp/js/administracion/administracion.js:231
 msgid "Ingrese el motivo por el cual desea borrar:"
-msgstr "Enter the reason you want to delete:"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:1188
 msgid "La exploración ha sido eliminada"
-msgstr "Examination has been deleted"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:1200
 #: endosys/public/webapp/js/informes.js:306
 #: endosys/public/webapp/js/administracion/administracion.js:237
 msgid "Debe completar el motivo"
-msgstr "You must complete the reason"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:1215
 msgid "Recuperar exploración"
-msgstr "Recover examination"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:1216
 msgid "¿Está seguro de que desea recuperar la exploración?"
-msgstr "Are you sure you want to recover this examination?"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:1273
 msgid "Cargando la exploración..."
-msgstr "Loading examination..."
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:1295
 #: endosys/public/webapp/js/exploraciones.js:1331
@@ -2849,642 +2829,644 @@ msgstr "Loading examination..."
 #: endosys/public/webapp/js/exploraciones.js:1603
 #: endosys/public/webapp/js/exploraciones.js:1638
 msgid "Cargando gestión de exploraciones..."
-msgstr "Loading examinations..."
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:1392
 msgid "Debe introducir un rango de fechas antes de iniciar la búsqueda"
-msgstr "You must enter a range of dates before search"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:1521
 msgid "Exploración sin finalizar"
-msgstr "Examination not finished"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:1521
 #: endosys/public/webapp/js/nueva_exploracion.js:550
 #: endosys/public/webapp/js/nueva_exploracion.js:739
 msgid "Realizando exploración"
-msgstr "Performing examination"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:1545
 msgid "Seleccionar exploración sin finalizar"
-msgstr "Select a not finished examination"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:1551
 #: endosys/public/webapp/js/gestion_agenda/dialogo_paciente.js:41
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:163
 msgid "Seleccionar"
-msgstr "Select"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:1666
 #: endosys/public/webapp/js/main.js:399
 msgid "Buscar por número de exploración"
-msgstr "Search by examination number"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:1668
 msgid "Número de exploración"
-msgstr "Examination number"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:1694
 msgid "No se ha encontrado ninguna exploración con este número"
-msgstr "No examination found with this examination number"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:1845
 msgid "Error al finalizar la Exploración"
-msgstr "An Error has occurred while finishing the examination"
+msgstr ""
 
 #: endosys/public/webapp/js/exploraciones.js:1851
-msgid "La exploración no se ha guardado, existen campos obligatorios sin rellenar."
-msgstr "The examination has not been saved. You must fill in all required fields."
+msgid ""
+"La exploración no se ha guardado, existen campos obligatorios sin "
+"rellenar."
+msgstr ""
 
 #: endosys/public/webapp/js/formularios.js:1650
 msgid "Sin valor"
-msgstr "No value"
+msgstr ""
 
 #: endosys/public/webapp/js/formularios.js:1661
 msgid "Nuevo valor..."
-msgstr "New value..."
+msgstr ""
 
 #: endosys/public/webapp/js/formularios.js:1826
 msgid "Recargar elementos de este campo"
-msgstr "Reload items for field"
+msgstr ""
 
 #: endosys/public/webapp/js/formularios.js:1832
 msgid "Actualizando elementos"
-msgstr "Updating table ítems"
+msgstr ""
 
 #: endosys/public/webapp/js/formularios.js:1841
 msgid "Elementos actualizados"
-msgstr "Updated items"
+msgstr ""
 
 #: endosys/public/webapp/js/imagenes_expl.js:266
 msgid "Imagen no disponible en este momento."
-msgstr "Image not available at this moment."
+msgstr ""
 
 #: endosys/public/webapp/js/imagenes_expl.js:306
 msgid "Video no disponible en este momento."
-msgstr "Video not available at this moment."
+msgstr ""
 
 #: endosys/public/webapp/js/imagenes_expl.js:315
 msgid "Descargar Video"
-msgstr "Download Video"
+msgstr ""
 
 #: endosys/public/webapp/js/imagenes_expl.js:318
 #: endosys/public/webapp/js/tareas.js:160
 #: endosys/public/webapp/js/tareas.js:326
 msgid "Descargar"
-msgstr "Download"
+msgstr ""
 
 #: endosys/public/webapp/js/imagenes_expl.js:328
 msgid ""
-"Descargue el video en su ordenador y utilice un reproductor para visualizarlo "
-"(Windows Media Player o VLC)"
+"Descargue el video en su ordenador y utilice un reproductor para "
+"visualizarlo (Windows Media Player o VLC)"
 msgstr ""
-"Download the video to your computer and use a player like Windows Media Player "
-"or VLC to reproduce"
 
 #: endosys/public/webapp/js/imagenes_expl.js:362
 msgid "Ingresar comentario"
-msgstr "Insert comment"
+msgstr ""
 
 #: endosys/public/webapp/js/imagenes_expl.js:563
 msgid "Sólo puede añadir imágenes a la generación de informes"
-msgstr "Only images are allowed in the report"
+msgstr ""
 
 #: endosys/public/webapp/js/informes.js:45
 msgid "Informe firmado"
-msgstr "Report signed"
+msgstr ""
 
 #: endosys/public/webapp/js/informes.js:51
 msgid "Otros"
-msgstr "Others"
+msgstr ""
 
 #: endosys/public/webapp/js/informes.js:87
 msgid "La exploración no tiene informes"
-msgstr "The examination has no reports"
+msgstr ""
 
 #: endosys/public/webapp/js/informes.js:195
 msgid "El fichero ha de ser un pdf."
-msgstr "File must be pdf."
+msgstr ""
 
 #: endosys/public/webapp/js/informes.js:198
 msgid "El fichero ha de ser menor de 5Mb."
-msgstr "File must be less than 5 MB."
+msgstr ""
 
 #: endosys/public/webapp/js/informes.js:232
 msgid "Antes de poder generar informes se debe finalizar la exploración"
-msgstr "You must finish this examination to generate a new report"
+msgstr ""
 
 #: endosys/public/webapp/js/informes.js:240
 msgid "Ver todos los informes del paciente"
-msgstr "View all patient reports"
+msgstr ""
 
 #: endosys/public/webapp/js/informes.js:291
 msgid "Borrar informe"
-msgstr "Delete report"
+msgstr ""
 
 #: endosys/public/webapp/js/informes.js:291
 msgid "¿Está seguro de que desea borrar el informe?"
-msgstr "Are you sure you want to delete this report?"
+msgstr ""
 
 #: endosys/public/webapp/js/informes.js:345
 msgid "Generar informe"
-msgstr "Generate report"
+msgstr ""
 
 #: endosys/public/webapp/js/informes.js:346
 msgid ""
-"Antes de generar el informe se guardará cualquier cambio realizado en los datos "
-"de la exploración. ¿Desea continuar?"
+"Antes de generar el informe se guardará cualquier cambio realizado en los"
+" datos de la exploración. ¿Desea continuar?"
 msgstr ""
-"Before generating a new report, any changes made to the examination data will be "
-"saved. Do you want to continue?"
 
 #: endosys/public/webapp/js/informes.js:370
 #: endosys/public/webapp/js/informes.js:385
 msgid "No ha seleccionado ninguna plantilla"
-msgstr "No template selected"
+msgstr ""
 
 #: endosys/public/webapp/js/informes.js:391
 msgid "¿Está seguro de que desea subir el documento?"
-msgstr "Are you sure you want to upload this document?"
+msgstr ""
 
 #: endosys/public/webapp/js/informes.js:393
 msgid "Ingrese un comentario:"
-msgstr "Insert comment:"
+msgstr ""
 
 #: endosys/public/webapp/js/input_tipo_multi.js:71
 msgid "Quitar"
-msgstr "Remove"
+msgstr ""
 
 #: endosys/public/webapp/js/input_tipo_multi.js:74
 msgid "Nuevo..."
-msgstr "New..."
+msgstr ""
 
 #: endosys/public/webapp/js/input_tipo_multi.js:78
 msgid "Seleccionados"
-msgstr "Selected"
+msgstr ""
 
 #: endosys/public/webapp/js/input_tipo_multi.js:89
 msgid "Seleccionar elementos"
-msgstr "Select items"
+msgstr ""
 
-#: endosys/public/webapp/js/main.js:266 endosys/public/webapp/js/userinfo.js:62
+#: endosys/public/webapp/js/main.js:266
+#: endosys/public/webapp/js/userinfo.js:62
 msgid "Citas pendientes"
-msgstr "Pending appointments"
+msgstr ""
 
 #: endosys/public/webapp/js/main.js:267
 #: endosys/public/webapp/js/nueva_exploracion.js:63
 #: endosys/public/webapp/js/nueva_exploracion.js:90
 #: endosys/public/webapp/js/userinfo.js:83
 msgid "Nueva exploración"
-msgstr "New examination"
+msgstr ""
 
-#: endosys/public/webapp/js/main.js:268 endosys/public/webapp/js/userinfo.js:63
+#: endosys/public/webapp/js/main.js:268
+#: endosys/public/webapp/js/userinfo.js:63
 msgid "Buscar exploraciones"
-msgstr "Examination searching"
+msgstr ""
 
 #: endosys/public/webapp/js/main.js:269
 msgid "Por fecha"
-msgstr "By date"
+msgstr ""
 
 #: endosys/public/webapp/js/main.js:270
 msgid "Por paciente"
-msgstr "By patient"
+msgstr ""
 
 #: endosys/public/webapp/js/main.js:271
 msgid "Por número de exploración"
-msgstr "By examination number"
+msgstr ""
 
 #: endosys/public/webapp/js/main.js:272
 msgid "Sin finalizar"
-msgstr "Non finished"
+msgstr ""
 
 #: endosys/public/webapp/js/main.js:273
 msgid "Avanzada"
-msgstr "Advanced"
+msgstr ""
 
 #: endosys/public/webapp/js/main.js:274
 msgid "Nueva..."
-msgstr "New..."
+msgstr ""
 
 #: endosys/public/webapp/js/main.js:275
 msgid "Administrar..."
-msgstr "Manage..."
+msgstr ""
 
-#: endosys/public/webapp/js/main.js:276 endosys/public/webapp/js/main.js:358
+#: endosys/public/webapp/js/main.js:276
+#: endosys/public/webapp/js/main.js:358
 #: endosys/public/webapp/js/userinfo.js:61
 msgid "Gestión de agenda"
-msgstr "Schedule management"
+msgstr ""
 
-#: endosys/public/webapp/js/main.js:277 endosys/public/webapp/js/main.js:377
+#: endosys/public/webapp/js/main.js:277
+#: endosys/public/webapp/js/main.js:377
 #: endosys/public/webapp/js/userinfo.js:65
 msgid "Gestión de pacientes"
-msgstr "Patient management"
+msgstr ""
 
-#: endosys/public/webapp/js/main.js:278 endosys/public/webapp/js/userinfo.js:68
+#: endosys/public/webapp/js/main.js:278
+#: endosys/public/webapp/js/userinfo.js:68
 msgid "Administración"
-msgstr "Administration"
+msgstr ""
 
-#: endosys/public/webapp/js/main.js:279 endosys/public/webapp/js/main.js:422
+#: endosys/public/webapp/js/main.js:279
+#: endosys/public/webapp/js/main.js:422
 #: endosys/public/webapp/js/userinfo.js:66
 msgid "Tablas"
-msgstr "Tables"
+msgstr ""
 
 #: endosys/public/webapp/js/main.js:280
 #: endosys/public/webapp/js/usuarios.js:1008
 msgid "Usuarios"
-msgstr "Users"
+msgstr ""
 
 #: endosys/public/webapp/js/main.js:281
 msgid "General"
-msgstr "General"
+msgstr ""
 
 #: endosys/public/webapp/js/main.js:282
 msgid "Tipos de exploración"
-msgstr "Examination types"
+msgstr ""
 
-#: endosys/public/webapp/js/main.js:283 endosys/public/webapp/js/main.js:467
+#: endosys/public/webapp/js/main.js:283
+#: endosys/public/webapp/js/main.js:467
 #: endosys/public/webapp/js/tareas.js:70
 #: endosys/public/webapp/js/userinfo.js:69
 msgid "Tareas"
-msgstr "Tasks"
+msgstr ""
 
-#: endosys/public/webapp/js/main.js:284 endosys/public/webapp/js/main.js:476
+#: endosys/public/webapp/js/main.js:284
+#: endosys/public/webapp/js/main.js:476
 #: endosys/public/webapp/js/userinfo.js:73
 msgid "Enviar Mensaje"
-msgstr "Send message"
+msgstr ""
 
 #: endosys/public/webapp/js/main.js:384
 msgid "Buscar por fecha"
-msgstr "Search by date"
+msgstr ""
 
 #: endosys/public/webapp/js/main.js:429
 msgid "Administrar búsquedas"
-msgstr "Searching management"
+msgstr ""
 
 #: endosys/public/webapp/js/main.js:436
 #: endosys/public/webapp/js/userinfo.js:104
 msgid "Editor de tipos de exploración"
-msgstr "Examination types editor"
+msgstr ""
 
 #: endosys/public/webapp/js/main.js:443
 #: endosys/public/webapp/js/userinfo.js:117
 msgid "Gestión de usuarios"
-msgstr "User management"
+msgstr ""
 
 #: endosys/public/webapp/js/main.js:450
 #: endosys/public/webapp/js/userinfo.js:122
-msgid "Administración de EndoTools"
-msgstr "EndoTools administration"
+msgid "Administración de EndoSys"
+msgstr ""
 
 #: endosys/public/webapp/js/notificaciones.js:39
 msgid "¡Notificación importante!"
-msgstr "Important notification!"
+msgstr ""
 
 #: endosys/public/webapp/js/notificaciones.js:59
 msgid "Notificación"
-msgstr "Notification"
+msgstr ""
 
 #: endosys/public/webapp/js/notificaciones.js:218
 msgid "No hay nuevas notificaciones"
-msgstr "No new notifications"
+msgstr ""
 
 #: endosys/public/webapp/js/notificaciones.js:308
 msgid "Cargando Notificaciones..."
-msgstr "Loading notifications..."
+msgstr ""
 
 #: endosys/public/webapp/js/notificaciones.js:310
 msgid "Notificaciones"
-msgstr "Notifications"
+msgstr ""
 
 #: endosys/public/webapp/js/notificaciones.js:362
 msgid "Mensaje"
-msgstr "Message"
+msgstr ""
 
 #: endosys/public/webapp/js/notificaciones.js:374
 #: endosys/public/webapp/js/notificaciones.js:423
 msgid "No se ha encontrado ninguna notificación"
-msgstr "No notification found"
+msgstr ""
 
 #: endosys/public/webapp/js/notificaciones.js:385
 #: endosys/public/webapp/js/tareas.js:154
 msgid "Opciones"
-msgstr "Options"
+msgstr ""
 
 #: endosys/public/webapp/js/notificaciones.js:390
 #: endosys/public/webapp/js/pacientes.js:337
 #: endosys/public/webapp/js/tareas.js:334
 #: endosys/public/webapp/js/administracion/dialogo_sala.js:73
 msgid "Eliminar"
-msgstr "Delete"
+msgstr ""
 
 #: endosys/public/webapp/js/notificaciones.js:446
 msgid "Error al cargar las notificaciones"
-msgstr "An error has occurred while loading the notifications"
+msgstr ""
 
 #: endosys/public/webapp/js/notificaciones.js:452
 msgid "¿Esta seguro que desea eliminar la notificación?"
-msgstr "Are you sure you want to delete this notification?"
+msgstr ""
 
 #: endosys/public/webapp/js/notificaciones.js:456
 msgid "La notificación ha sido eliminada con éxito"
-msgstr "The notification has been deleted successfully"
+msgstr ""
 
 #: endosys/public/webapp/js/notificaciones.js:487
 msgid "Crear Notificación"
-msgstr "Create notification"
+msgstr ""
 
 #: endosys/public/webapp/js/notificaciones.js:502
 #: endosys/public/webapp/js/usuarios.js:1022
 msgid "No se ha encontrado ningún usuario"
-msgstr "No user found"
+msgstr ""
 
 #: endosys/public/webapp/js/notificaciones.js:578
 msgid "No puede enviar un mensaje sin contenido."
-msgstr "Cannot send message without content."
+msgstr ""
 
 #: endosys/public/webapp/js/notificaciones.js:584
 msgid "Debe seleccionar al menos un usuario"
-msgstr "Please select an user"
+msgstr ""
 
 #: endosys/public/webapp/js/notificaciones.js:602
 msgid "¿Está seguro que desea enviar la notificación?"
-msgstr "Are you sure you want to send the notification?"
+msgstr ""
 
 #: endosys/public/webapp/js/notificaciones.js:606
 msgid "Notificación enviada!"
-msgstr "Notification sent!"
+msgstr ""
 
 #: endosys/public/webapp/js/notificaciones.js:610
 msgid "Se canceló el envío."
-msgstr "Sending has been cancelled."
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:113
 msgid "Modificar la cita"
-msgstr "Modify appointment"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:116
 msgid "Seleccionar la cita"
-msgstr "Select appointment"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:261
 msgid "Modificar el tipo de exploración"
-msgstr "Modify examination type"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:263
 msgid "Seleccionar el tipo de exploración"
-msgstr "Select an examination type"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:351
 msgid "Debe seleccionar un tipo de exploración para continuar"
-msgstr "Please select an examination type to continue"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:423
 msgid "Modificar el paciente"
-msgstr "Modify the patient"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:471
 msgid ""
-"ERROR: se ha intentado ejecutar el paso \"seleccionar agenda\" pero no está "
-"activada la opción \"INTEGRACION_SIHGA\""
+"ERROR: se ha intentado ejecutar el paso \"seleccionar agenda\" pero no "
+"está activada la opción \"INTEGRACION_SIHGA\""
 msgstr ""
-"ERROR: se ha intentado ejecutar el paso \"seleccionar agenda\" pero no está "
-"activada la opción \"INTEGRACION_SIHGA\""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:475
 msgid "Seleccionar la agenda y la prestación"
-msgstr "Select schedule and procedure"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:497
 msgid "Debe seleccionar una prestación para continuar"
-msgstr "Please select a procedure to continue"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:516
 msgid "Se requiere un servicio activo para poder realizar una nueva exploración"
-msgstr "An active service is required for performing a new examination"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:528
 msgid "La exploración se esta editando. Por favor espere..."
-msgstr "The examination is being edited. Please wait..."
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:587
 msgid "La información introducida se perderá si va hacia atrás."
-msgstr "Going back will cause that the entered information will be lost."
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:630
 msgid "¿Esta seguro?"
-msgstr "Are you sure?"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:668
 msgid "Seleccionar Opción"
-msgstr "Select option"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:673
 msgid "Sí, quiero descartar"
-msgstr "Yes, discard"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:677
 msgid "No, ir hacia atrás"
-msgstr "No, go back"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:689
 msgid "¿Desea descartar la exploración?"
-msgstr "Discard the examination?"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:760
 msgid "Error al crear la exploración"
-msgstr "An error has occurred while creating the examination"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:1031
 msgid "Debe seleccionar una cita para continuar"
-msgstr "Please select an appointment to continue"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:1050
 msgid "La cita selecciona se está realizando"
-msgstr "The selected appointment is being performed"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:1067
 msgid ""
 "La cita selecciona se está realizando. \r\n"
-"\t\t\t\t\t\t\t\t\t\t\t\tSeleccione una cita libre o la misma que esta editando"
-msgstr "Selected date is being performed"
+"\t\t\t\t\t\t\t\t\t\t\t\tSeleccione una cita libre o la misma que esta "
+"editando"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:1083
 msgid "La cita selecciona ya está realizada"
-msgstr "The selected appointment has already been performed"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:1090
 msgid "La cita seleccionada ha sido cancelada"
-msgstr "The selected appointment has been canceled"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:1097
 msgid "La exploración de esta cita ha sido borrada"
-msgstr "The examination of this appointment has been deleted"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:1130
 msgid "Confirmación de paciente"
-msgstr "Patient confirmation"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:1130
 msgid "Se dispone a realizar una exploración a"
-msgstr "Initiating an examination to"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:1131
 msgid "con número de historia"
-msgstr "with MR"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:1172
 msgid "Confirmación de cambio de paciente"
-msgstr "Patient changing confirmation"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:1177
 #: endosys/public/webapp/js/nueva_exploracion.js:1249
 msgid "Sí, deseo cambiarlo"
-msgstr "Yes, I want to change"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:1189
 #: endosys/public/webapp/js/nueva_exploracion.js:1327
 msgid "No, continuar con el original"
-msgstr "No, continue with the original"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:1205
 msgid "¿Esta seguro que desea cambiar el paciente?"
-msgstr "Are you sure you want to change the patient?"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:1244
 msgid "Confirmación de cambio de tipo de exploración"
-msgstr "Examination type changing confirmation"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:1261
 msgid "No, continuar con la original"
-msgstr "No, continue with the original"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:1277
 msgid "¿Esta seguro que desea cambiar el tipo de exploración?"
-msgstr "Are you sure you want to change the examination type?"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:1309
 msgid "Confirmación de cambio de cita"
-msgstr "Appointment changing confirmation"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:1314
 msgid "Sí, deseo cambiarla"
-msgstr "Yes, I want to change"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:1345
 msgid "¿Esta seguro que desea cambiar la cita?"
-msgstr "Are you sure you want to change the appointment?"
+msgstr ""
 
 #: endosys/public/webapp/js/nueva_exploracion.js:1410
 msgid "Información de la exploración que se está modificando"
-msgstr "Information about the examination being modified"
+msgstr ""
 
 #: endosys/public/webapp/js/nuevo_elemento.js:55
 msgid "Nuevo elemento"
-msgstr "New item"
+msgstr ""
 
 #: endosys/public/webapp/js/nuevo_elemento.js:86
 #: endosys/public/webapp/js/tablas.js:682
 msgid ""
-"No se puede añadir un nuevo elemento a un campo con ámbito 'por servicio' porque "
-"no hay ningún servicio activo."
+"No se puede añadir un nuevo elemento a un campo con ámbito 'por servicio'"
+" porque no hay ningún servicio activo."
 msgstr ""
-"New ítem to ambit \"by service\" cannot be added, there aren't any active "
-"service."
 
 #: endosys/public/webapp/js/nuevo_elemento.js:102
 msgid "No se puede crear un elemento con texto vacio"
-msgstr "You can't create an empty element"
+msgstr ""
 
 #: endosys/public/webapp/js/pacientes.js:21
 msgid "Obteniendo los datos del paciente..."
-msgstr "Getting patient data..."
+msgstr ""
 
 #: endosys/public/webapp/js/pacientes.js:85
 msgid "Guardando los datos del paciente..."
-msgstr "Saving patient data..."
+msgstr ""
 
 #: endosys/public/webapp/js/pacientes.js:123
 msgid "Creando el paciente..."
-msgstr "Creating patient..."
+msgstr ""
 
 #: endosys/public/webapp/js/pacientes.js:177
 msgid "Autogenerado"
-msgstr "Auto generated"
+msgstr ""
 
 #: endosys/public/webapp/js/pacientes.js:202
-#, python-format
 msgid "Ya existe un paciente con el "
-msgstr "A patient with already exists "
+msgstr ""
 
 #: endosys/public/webapp/js/pacientes.js:339
 msgid "Eliminar paciente"
-msgstr "Delete patient"
+msgstr ""
 
 #: endosys/public/webapp/js/pacientes.js:339
 msgid "¿Está seguro de que desea eliminar este paciente?"
-msgstr "Are you sure you want to delete this patient?"
+msgstr ""
 
 #: endosys/public/webapp/js/pacientes.js:434
 #: endosys/public/webapp/js/pacientes.js:455
 msgid "Cargando gestión de pacientes..."
-msgstr "Loading patient management..."
+msgstr ""
 
 #: endosys/public/webapp/js/pacientes.js:444
 msgid "error al cargar el fichero gestion_pacientes.html"
-msgstr "error while loading file gestion_pacientes.html"
+msgstr ""
 
 #: endosys/public/webapp/js/pacientes.js:587
 #: endosys/public/webapp/js/tareas.js:163
 msgid "Ver detalle"
-msgstr "View details"
+msgstr ""
 
 #: endosys/public/webapp/js/pacientes.js:727
 msgid "Error al cargar los pacientes"
-msgstr "An error has occurred while loading patients"
+msgstr ""
 
 #: endosys/public/webapp/js/pacientes.js:791
 msgid "El  no puede estar vacio"
-msgstr "The room name cannot be empty"
+msgstr ""
 
 #: endosys/public/webapp/js/sesion.js:123
 msgid "Cierre automático de sesión"
-msgstr "Automatic Log out"
+msgstr ""
 
 #: endosys/public/webapp/js/sesion.js:133
 msgid "Su sesión está por finalizar en: "
-msgstr "The session is about to finish in "
+msgstr ""
 
 #: endosys/public/webapp/js/sesion.js:136
 msgid " segundo/s."
-msgstr " second/s."
+msgstr ""
 
 #: endosys/public/webapp/js/sesion.js:141
 msgid "Continuar conectado"
-msgstr "Stay logged in"
+msgstr ""
 
 #: endosys/public/webapp/js/tablas.js:36
 msgid "Se han importado correctamente todos los valores"
-msgstr "All values was imported successfully"
+msgstr ""
 
 #: endosys/public/webapp/js/tablas.js:38
 msgid "No se ha podido importar ningún elemento"
-msgstr "Cannot import any item"
+msgstr ""
 
 #: endosys/public/webapp/js/tablas.js:40
 msgid "Ocurrió un error al grabar algunos elementos"
-msgstr "An error occurred while saving items"
+msgstr ""
 
 #: endosys/public/webapp/js/tablas.js:50
 msgid "Importar desde fichero"
-msgstr "Import from file"
+msgstr ""
 
 #: endosys/public/webapp/js/tablas.js:68
 msgid "Fichero seleccionado: "
-msgstr "File selected "
+msgstr ""
 
 #: endosys/public/webapp/js/tablas.js:150
 msgid "Datos del texto predefinido"
-msgstr "Predefined text data"
+msgstr ""
 
 #: endosys/public/webapp/js/tablas.js:195
 #: endosys/public/webapp/js/tablas.js:199
@@ -3492,848 +3474,986 @@ msgstr "Predefined text data"
 #: endosys/public/webapp/js/tablas.js:706
 #: endosys/public/webapp/js/tablas.js:710
 msgid "Ocurrió un error al grabar"
-msgstr "An error occurred while saving"
+msgstr ""
 
 #: endosys/public/webapp/js/tablas.js:230
 msgid "Aseguradoras"
-msgstr "Insurance"
+msgstr ""
 
 #: endosys/public/webapp/js/tablas.js:318
 msgid "Cargando gestión de tablas..."
-msgstr "Loading table management..."
+msgstr ""
 
 #: endosys/public/webapp/js/tablas.js:524
 msgid "Textos predefinidos del campo"
-msgstr "Predefined texts for field"
+msgstr ""
 
 #: endosys/public/webapp/js/tablas.js:543
 msgid ""
-"<span title=\"Ámbito por servicio: Cada servicio dispone de su propio listado de "
-"elementos para este campo\"> (ámbito por servicio)</span>"
+"<span title=\"Ámbito por servicio: Cada servicio dispone de su propio "
+"listado de elementos para este campo\"> (ámbito por servicio)</span>"
 msgstr ""
-"<span title=\"Ambit by service. Every service has their own ítem list for this "
-"field\"> (ambit by service)</span>"
 
 #: endosys/public/webapp/js/tablas.js:547
 msgid ""
-"<span title=\"Ámbito global: Todos los servicios comparten el mismo listado de "
-"elementos para este campo\"> (ámbito global)</span>"
+"<span title=\"Ámbito global: Todos los servicios comparten el mismo "
+"listado de elementos para este campo\"> (ámbito global)</span>"
 msgstr ""
-"<span title=\"Global ambit: All services share the same ítem list for this field"
-"\"> (global ambit)</span>"
 
 #: endosys/public/webapp/js/tablas.js:550
 msgid "Elementos del campo"
-msgstr "Items for field"
+msgstr ""
 
 #: endosys/public/webapp/js/tablas.js:791
 msgid "Ningún elemento pudo ser borrado."
-msgstr "No item has been deleted."
+msgstr ""
 
 #: endosys/public/webapp/js/tablas.js:794
 msgid "Ocurrieron errores en la eliminación de algunos elementos."
-msgstr "An error has occurred while deleting some ítems."
+msgstr ""
 
 #: endosys/public/webapp/js/tablas.js:797
 msgid "Los elementos fueron eliminados correctamente."
-msgstr "Items has been deleted successfully."
+msgstr ""
 
 #: endosys/public/webapp/js/tablas.js:804
 msgid ""
-"Los siguientes elementos no se pudieron eliminar porque tienen datos dependientes"
-msgstr "These items could not be deleted because they have depending data"
+"Los siguientes elementos no se pudieron eliminar porque tienen datos "
+"dependientes"
+msgstr ""
 
 #: endosys/public/webapp/js/tablas.js:811
 msgid ""
-"Destilde la opción 'Activo' si no quiere que se muestren en los formularios."
+"Destilde la opción 'Activo' si no quiere que se muestren en los "
+"formularios."
 msgstr ""
-"Uncheck the 'active' option if you don't want them to be shown in any form."
 
 #: endosys/public/webapp/js/tablas.js:815
 msgid "Los siguientes elmentos no se eliminaron"
-msgstr "These items were not deleted"
+msgstr ""
 
 #: endosys/public/webapp/js/tablas.js:878
 msgid "Actualizando los elementos de la tabla..."
-msgstr "Updating table items..."
+msgstr ""
 
 #: endosys/public/webapp/js/tablas.js:884
 msgid "Ha ocurrido un error actualizando los elementos de la tabla"
-msgstr "An error has occurred while updating the table items"
+msgstr ""
 
 #: endosys/public/webapp/js/tareas.js:31
 msgid "En Curso"
-msgstr "In progress"
+msgstr ""
 
 #: endosys/public/webapp/js/tareas.js:34
 msgid "Finalizado"
-msgstr "Finished"
+msgstr ""
 
 #: endosys/public/webapp/js/tareas.js:37
 msgid "Error"
-msgstr "Error"
+msgstr ""
 
 #: endosys/public/webapp/js/tareas.js:40
 msgid "Desconocido"
-msgstr "Unknown"
+msgstr ""
 
 #: endosys/public/webapp/js/tareas.js:67
 msgid "Cargando Tareas..."
-msgstr "Loading tasks..."
+msgstr ""
 
 #: endosys/public/webapp/js/tareas.js:109
 msgid "Nº"
-msgstr "No"
+msgstr ""
 
 #: endosys/public/webapp/js/tareas.js:134
 #: endosys/public/webapp/js/tareas.js:210
 msgid "No se ha encontrado ninguna tarea"
-msgstr "No task found"
+msgstr ""
 
 #: endosys/public/webapp/js/tareas.js:226
 msgid "Error al cargar las tareas"
-msgstr "Error while loading tasks"
+msgstr ""
 
 #: endosys/public/webapp/js/tareas.js:236
 msgid "La tarea se ha iniciado con éxito."
-msgstr "The task has started successfully."
+msgstr ""
 
 #: endosys/public/webapp/js/tareas.js:238
 msgid "Puede consultar el estado desde la sección de Tareas del Sistema"
-msgstr "You can check the status from the Tasks section"
+msgstr ""
 
 #: endosys/public/webapp/js/tareas.js:245
 msgid "Obteniendo los datos de la tarea..."
-msgstr "Getting task data..."
+msgstr ""
 
 #: endosys/public/webapp/js/tareas.js:269
 msgid "La información que se desea visualizar ya no existe."
-msgstr "The information to display no longer exists."
+msgstr ""
 
 #: endosys/public/webapp/js/tareas.js:291
 msgid "La tarea ha sido eliminada con éxito"
-msgstr "The task has been deleted successfully"
+msgstr ""
 
 #: endosys/public/webapp/js/tareas.js:302
 msgid "Detalle de la tarea"
-msgstr "Task details"
+msgstr ""
 
 #: endosys/public/webapp/js/tareas.js:337
 msgid "¿Esta seguro que desea eliminar la tarea?"
-msgstr "Are you sure you want to delete this task?"
+msgstr ""
 
 #: endosys/public/webapp/js/tipos_exploracion.js:34
 msgid "Cargando tipos de exploración..."
-msgstr "Loading examination types..."
+msgstr ""
 
 #: endosys/public/webapp/js/tipos_exploracion.js:55
 msgid "Éste es el tipo de exploración programado"
-msgstr "This is the scheduled examination type"
+msgstr ""
 
 #: endosys/public/webapp/js/tipos_exploracion.js:58
 msgid "Puede seleccionar otro tipo de exploración diferente"
-msgstr "You can select another examination type"
+msgstr ""
 
 #: endosys/public/webapp/js/userinfo.js:67
 msgid "Búsquedas avanzadas"
-msgstr "Advanced searching"
+msgstr ""
 
 #: endosys/public/webapp/js/usuarios.js:76
 msgid "Permiso"
-msgstr "Permission"
+msgstr ""
 
 #: endosys/public/webapp/js/usuarios.js:91
 msgid "No se ha encontrado ningún permiso"
-msgstr "No permission found"
+msgstr ""
 
 #: endosys/public/webapp/js/usuarios.js:280
 msgid "El usuario no tiene ninguna clave generada."
-msgstr "User doesn't have any generated key."
+msgstr ""
 
 #: endosys/public/webapp/js/usuarios.js:324
 #: endosys/public/webapp/js/usuarios.js:920
 #: endosys/public/webapp/js/workstations.js:75
 #: endosys/public/webapp/js/administracion/administracion.js:281
 msgid "# servicios seleccionados..."
-msgstr "# services selected..."
+msgstr ""
 
 #: endosys/public/webapp/js/usuarios.js:353
 msgid "# agendas seleccionadas..."
-msgstr "# schedules selected..."
+msgstr ""
 
 #: endosys/public/webapp/js/usuarios.js:666
 msgid "Guardando los datos del usuario..."
-msgstr "Saving user data..."
+msgstr ""
 
 #: endosys/public/webapp/js/usuarios.js:715
 msgid "Eliminar usuario"
-msgstr "Delete user"
+msgstr ""
 
 #: endosys/public/webapp/js/usuarios.js:717
 msgid "¿Está seguro de que desea eliminar este usuario?"
-msgstr "Are you sure you want to delete this user?"
+msgstr ""
 
 #: endosys/public/webapp/js/usuarios.js:747
 msgid ""
 "No se puede eliminar el usuario. Probablemente el usuario tenga alguna "
 "exploración o cita"
 msgstr ""
-"Cannot delete this user. Probably the user has some examination or appointment"
 
 #: endosys/public/webapp/js/usuarios.js:750
 msgid "Ha ocurrido un error eliminando el usuario"
-msgstr "An error has occurred while deleting the user"
+msgstr ""
 
 #: endosys/public/webapp/js/usuarios.js:765
 msgid "¿Realmente quiere eliminar la clave para el usuario?"
-msgstr "Sure of deleting this key for the user?"
+msgstr ""
 
 #: endosys/public/webapp/js/usuarios.js:783
 msgid "¿Realmente quiere generar una nueva clave para el usuario?"
-msgstr "Sure of creating a new key for the user?"
+msgstr ""
 
 #: endosys/public/webapp/js/usuarios.js:902
 msgid "Cargando gestión de usuarios..."
-msgstr "Loading user management..."
+msgstr ""
 
 #: endosys/public/webapp/js/usuarios.js:1014
 msgid "Ldap"
-msgstr "Ldap"
+msgstr ""
 
 #: endosys/public/webapp/js/usuarios.js:1101
 msgid "Creando el usuario..."
-msgstr "Creating new user..."
+msgstr ""
 
 #: endosys/public/webapp/js/usuarios.js:1185
 msgid "El usuario se ha creado correctamente"
-msgstr "New user created successfully"
+msgstr ""
 
 #: endosys/public/webapp/js/usuarios.js:1199
 msgid "Error al crear el usuario, revise los valores introducidos en los campos"
 msgstr ""
-"An error has occurred while creating the new user. Please check the set values"
 
 #: endosys/public/webapp/js/workstations.js:30
 msgid "Nuevo puesto"
-msgstr "New station"
+msgstr ""
 
 #: endosys/public/webapp/js/workstations.js:40
 msgid "El nombre no puede estar vacio"
-msgstr "Name cannot be empty"
-
-#: endosys/public/webapp/js/Endotools/ET_auth.js:76
-msgid "Autenticación de usuario"
-msgstr "User authentication"
-
-#: endosys/public/webapp/js/Endotools/ET_auth.js:79
-msgid "Iniciar sesión"
-msgstr "Log in"
-
-#: endosys/public/webapp/js/Endotools/ET_auth.js:120
-msgid "Sesión:Cerrar"
-msgstr "Log out"
-
-#: endosys/public/webapp/js/Endotools/ET_auth.js:149
-msgid "Autenticando usuario..."
-msgstr "Authenticating user..."
-
-#: endosys/public/webapp/js/Endotools/ET_auth.js:160
-msgid "Usuario autenticado correctamente"
-msgstr "User authenticated successfully"
-
-#: endosys/public/webapp/js/Endotools/ET_auth.js:166
-msgid "Error en la autenticación de usuario"
-msgstr "An error occurred while authenticating user"
-
-#: endosys/public/webapp/js/Endotools/ET_auth.js:191
-msgid "Este puesto no tiene acceso al sistema Endosys App."
-msgstr "This station hasn't access to Endosys App system."
-
-#: endosys/public/webapp/js/Endotools/ET_auth.js:238
-msgid ""
-"El usuario no pertenece a ninguno de los servicios disponibles en este puesto de "
-"trabajo"
 msgstr ""
-"The user does not belong to any of the services available on this workstation"
 
-#: endosys/public/webapp/js/Endotools/ET_auth.js:261
+#: endosys/public/webapp/js/Endosys/ET_auth.js:76
+msgid "Autenticación de usuario"
+msgstr ""
+
+#: endosys/public/webapp/js/Endosys/ET_auth.js:79
+msgid "Iniciar sesión"
+msgstr ""
+
+#: endosys/public/webapp/js/Endosys/ET_auth.js:120
+msgid "Sesión:Cerrar"
+msgstr ""
+
+#: endosys/public/webapp/js/Endosys/ET_auth.js:149
+msgid "Autenticando usuario..."
+msgstr ""
+
+#: endosys/public/webapp/js/Endosys/ET_auth.js:160
+msgid "Usuario autenticado correctamente"
+msgstr ""
+
+#: endosys/public/webapp/js/Endosys/ET_auth.js:166
+msgid "Error en la autenticación de usuario"
+msgstr ""
+
+#: endosys/public/webapp/js/Endosys/ET_auth.js:191
+msgid "Este puesto no tiene acceso al sistema Endosys App."
+msgstr ""
+
+#: endosys/public/webapp/js/Endosys/ET_auth.js:238
+msgid ""
+"El usuario no pertenece a ninguno de los servicios disponibles en este "
+"puesto de trabajo"
+msgstr ""
+
+#: endosys/public/webapp/js/Endosys/ET_auth.js:261
 msgid "Seleccionar servicio"
-msgstr "Select service"
+msgstr ""
 
-#: endosys/public/webapp/js/Endotools/ET_auth.js:295
+#: endosys/public/webapp/js/Endosys/ET_auth.js:295
 msgid "Ningún servicio activo"
-msgstr "No active service"
+msgstr ""
 
-#: endosys/public/webapp/js/Endotools/ET_varios.js:100
-#: endosys/public/webapp/js/Endotools/ET_varios.js:115
-#: endosys/public/webapp/js/Endotools/ET_varios.js:127
-#: endosys/public/webapp/js/Endotools/ET_varios.js:136
-#: endosys/public/webapp/js/Endotools/ET_varios.js:168
-#: endosys/public/webapp/js/Endotools/ET_varios.js:179
+#: endosys/public/webapp/js/Endosys/ET_varios.js:100
+#: endosys/public/webapp/js/Endosys/ET_varios.js:115
+#: endosys/public/webapp/js/Endosys/ET_varios.js:127
+#: endosys/public/webapp/js/Endosys/ET_varios.js:136
+#: endosys/public/webapp/js/Endosys/ET_varios.js:168
+#: endosys/public/webapp/js/Endosys/ET_varios.js:179
 msgid "Selecciona"
-msgstr "Select"
+msgstr ""
 
-#: endosys/public/webapp/js/Endotools/ET_varios.js:103
-#: endosys/public/webapp/js/Endotools/ET_varios.js:118
-#: endosys/public/webapp/js/Endotools/ET_varios.js:130
-#: endosys/public/webapp/js/Endotools/ET_varios.js:139
+#: endosys/public/webapp/js/Endosys/ET_varios.js:103
+#: endosys/public/webapp/js/Endosys/ET_varios.js:118
+#: endosys/public/webapp/js/Endosys/ET_varios.js:130
+#: endosys/public/webapp/js/Endosys/ET_varios.js:139
 msgid "Sea igual"
-msgstr "Is equal"
+msgstr ""
 
-#: endosys/public/webapp/js/Endotools/ET_varios.js:106
-#: endosys/public/webapp/js/Endotools/ET_varios.js:121
-#: endosys/public/webapp/js/Endotools/ET_varios.js:142
+#: endosys/public/webapp/js/Endosys/ET_varios.js:106
+#: endosys/public/webapp/js/Endosys/ET_varios.js:121
+#: endosys/public/webapp/js/Endosys/ET_varios.js:142
 msgid "Diferente"
-msgstr "Is different"
+msgstr ""
 
-#: endosys/public/webapp/js/Endotools/ET_varios.js:109
+#: endosys/public/webapp/js/Endosys/ET_varios.js:109
 msgid "Contiene"
-msgstr "Contains"
+msgstr ""
 
-#: endosys/public/webapp/js/Endotools/ET_varios.js:145
+#: endosys/public/webapp/js/Endosys/ET_varios.js:145
 msgid "Menor que"
-msgstr "Less than"
+msgstr ""
 
-#: endosys/public/webapp/js/Endotools/ET_varios.js:148
+#: endosys/public/webapp/js/Endosys/ET_varios.js:148
 msgid "Mayor que"
-msgstr "Greater than"
+msgstr ""
 
-#: endosys/public/webapp/js/Endotools/ET_varios.js:151
+#: endosys/public/webapp/js/Endosys/ET_varios.js:151
 msgid "Mayor o igual que"
-msgstr "Greater than or equal to"
+msgstr ""
 
-#: endosys/public/webapp/js/Endotools/ET_varios.js:154
+#: endosys/public/webapp/js/Endosys/ET_varios.js:154
 msgid "Menor o igual que"
-msgstr "Less than or equal to"
+msgstr ""
 
-#: endosys/public/webapp/js/Endotools/ET_varios.js:157
+#: endosys/public/webapp/js/Endosys/ET_varios.js:157
 msgid "Esté entre"
-msgstr "Between"
+msgstr ""
 
-#: endosys/public/webapp/js/Endotools/ET_varios.js:160
+#: endosys/public/webapp/js/Endosys/ET_varios.js:160
 msgid "No esté entre"
-msgstr "Between"
+msgstr ""
 
-#: endosys/public/webapp/js/Endotools/ET_varios.js:171
+#: endosys/public/webapp/js/Endosys/ET_varios.js:171
 msgid "Que tenga alguno de (y cumpla las condiciones)"
-msgstr "Having any of (and meet the conditions)"
+msgstr ""
 
-#: endosys/public/webapp/js/Endotools/ET_varios.js:174
+#: endosys/public/webapp/js/Endosys/ET_varios.js:174
 msgid "Que tenga todos de (y cumpla las condiciones)"
-msgstr "Having all of (and meet the conditions)"
+msgstr ""
 
-#: endosys/public/webapp/js/Endotools/ET_varios.js:182
+#: endosys/public/webapp/js/Endosys/ET_varios.js:182
 msgid "Que tenga alguno de"
-msgstr "Has at least one"
+msgstr ""
 
-#: endosys/public/webapp/js/Endotools/ET_varios.js:185
+#: endosys/public/webapp/js/Endosys/ET_varios.js:185
 msgid "Que tenga todos de"
-msgstr "Has all"
+msgstr ""
 
 #: endosys/public/webapp/js/Util/firma_electronica.js:31
 msgid "Error firmando el PDF"
-msgstr "Error signing PDF"
+msgstr ""
 
 #: endosys/public/webapp/js/Util/firma_electronica.js:119
 msgid "Previsualización del informe"
-msgstr "Report preview"
+msgstr ""
 
 #: endosys/public/webapp/js/Util/firma_electronica.js:136
 msgid "Firmar y guardar"
-msgstr "Sign and save"
+msgstr ""
 
 #: endosys/public/webapp/js/Util/firma_electronica.js:251
 msgid "Ha ocurrido un error guardando el informe firmado"
-msgstr "An error has occurred while saving the signed report"
+msgstr ""
 
 #: endosys/public/webapp/js/Util/misc.js:512
 msgid "Resultados"
-msgstr "Results"
+msgstr ""
 
 #: endosys/public/webapp/js/Util/misc.js:558
 msgid "Configuración de impresión"
-msgstr "Print settings"
+msgstr ""
 
 #: endosys/public/webapp/js/Util/misc.js:562
 msgid "Imprimir"
-msgstr "Print"
+msgstr ""
 
 #: endosys/public/webapp/js/Util/misc.js:579
 msgid "Columnas"
-msgstr "Columns"
+msgstr ""
 
 #: endosys/public/webapp/js/Util/misc.js:601
 msgid "Tamaño de fuente"
-msgstr "Font size"
+msgstr ""
 
 #: endosys/public/webapp/js/Util/misc.js:603
 msgid "Pequeño"
-msgstr "Small"
+msgstr ""
 
 #: endosys/public/webapp/js/Util/misc.js:604
 msgid "Mediano"
-msgstr "Normal"
+msgstr ""
 
 #: endosys/public/webapp/js/Util/misc.js:605
 msgid "Grande"
-msgstr "Big"
+msgstr ""
 
 #: endosys/public/webapp/js/Util/misc.js:607
 msgid "Ayuda"
-msgstr "Help"
+msgstr ""
 
 #: endosys/public/webapp/js/Util/misc.js:607
 msgid ""
-"Para una mejor impresión use orientación horizontal, seleccione menos columnas, "
-"y configure el tamaño de la fuente."
+"Para una mejor impresión use orientación horizontal, seleccione menos "
+"columnas, y configure el tamaño de la fuente."
 msgstr ""
-"For better printing, use landscape orientation, select fewer columns and set the "
-"font size."
 
 #: endosys/public/webapp/js/Util/misc.js:651
 msgid "Ocurrió un error"
-msgstr "An error occurred"
+msgstr ""
 
 #: endosys/public/webapp/js/administracion/administracion.js:41
 msgid "Motivos de cancelación"
-msgstr "Cancellation reasons"
+msgstr ""
 
 #: endosys/public/webapp/js/administracion/administracion.js:41
 #: endosys/public/webapp/js/dialogs/motivo_cancelacion_dialog.js:7
 msgid "Motivo de cancelación"
-msgstr "Cancellation reason"
+msgstr ""
 
 #: endosys/public/webapp/js/administracion/administracion.js:49
 msgid "Prioridades"
-msgstr "Priorities"
+msgstr ""
 
 #: endosys/public/webapp/js/administracion/administracion.js:58
 msgid "Workstations"
-msgstr "Workstations"
+msgstr ""
 
 #: endosys/public/webapp/js/administracion/administracion.js:58
 msgid "Workstation"
-msgstr "Workstation"
+msgstr ""
 
 #: endosys/public/webapp/js/administracion/administracion.js:62
 msgid "IP"
-msgstr "IP"
+msgstr ""
 
 #: endosys/public/webapp/js/administracion/administracion.js:183
 msgid "Debe de completar todos los campos"
-msgstr "You must fill in all fields"
+msgstr ""
 
 #: endosys/public/webapp/js/administracion/administracion.js:211
 msgid "Ocurrio un error"
-msgstr "An error occurred"
+msgstr ""
 
 #: endosys/public/webapp/js/administracion/administracion.js:228
 msgid "¿Está seguro de que desea borrar?"
-msgstr "Are you sure you want to delete this?"
+msgstr ""
 
 #: endosys/public/webapp/js/administracion/administracion.js:371
 msgid "Cargando administración de endosys..."
-msgstr "Loading EndoTools administration..."
+msgstr ""
 
 #: endosys/public/webapp/js/administracion/administracion.js:637
 #: endosys/public/webapp/js/administracion/administracion.js:665
 msgid "Debe de completar todos los campos del centro"
-msgstr "All facility data should be filled"
+msgstr ""
 
 #: endosys/public/webapp/js/administracion/administracion.js:680
 msgid "Error al eliminar el centro"
-msgstr "Error while deleting the facility"
+msgstr ""
 
 #: endosys/public/webapp/js/administracion/administracion.js:778
 #: endosys/public/webapp/js/administracion/administracion.js:1172
 msgid "Salas disponibles"
-msgstr "Available rooms"
+msgstr ""
 
 #: endosys/public/webapp/js/administracion/administracion.js:781
 #: endosys/public/webapp/js/administracion/administracion.js:1175
 msgid "# salas seleccionados..."
-msgstr "# rooms selected..."
+msgstr ""
 
 #: endosys/public/webapp/js/administracion/administracion.js:832
 #: endosys/public/webapp/js/administracion/administracion.js:1216
 msgid "Médicos disponibles"
-msgstr "Available physicians"
+msgstr ""
 
 #: endosys/public/webapp/js/administracion/administracion.js:835
 msgid "# medicos seleccionados..."
-msgstr "# physicians selected..."
+msgstr ""
 
 #: endosys/public/webapp/js/administracion/administracion.js:944
 #: endosys/public/webapp/js/administracion/administracion.js:990
 msgid "Debe de completar todos los campos del servicio"
-msgstr "All service data should be filled"
+msgstr ""
 
 #: endosys/public/webapp/js/administracion/administracion.js:1006
 msgid "Error al eliminar el servicio"
-msgstr "Error while deleting the service"
+msgstr ""
 
 #: endosys/public/webapp/js/administracion/administracion.js:1102
 #: endosys/public/webapp/js/administracion/administracion.js:1133
 msgid "Debe de completar todos los campos de la agenda"
-msgstr "All schedule data should be filled"
+msgstr ""
 
 #: endosys/public/webapp/js/administracion/administracion.js:1149
 msgid "Error al eliminar la agenda"
-msgstr "Error while deleting the schedule"
+msgstr ""
 
 #: endosys/public/webapp/js/administracion/administracion.js:1219
 msgid "# médicos seleccionados..."
-msgstr "# physicians selected..."
+msgstr ""
 
 #: endosys/public/webapp/js/administracion/dialogo_hora.js:48
 #: endosys/public/webapp/js/administracion/dialogo_sala.js:109
 msgid "Datos de la sala"
-msgstr "Room information"
+msgstr ""
 
 #: endosys/public/webapp/js/administracion/dialogo_hora.js:75
 msgid "Debe rellenar los campos correctamente"
-msgstr "Please fill the data correctly"
+msgstr ""
 
 #: endosys/public/webapp/js/administracion/dialogo_hora.js:99
 #: endosys/public/webapp/js/busquedas_avanzadas/dialogo_condicion.js:110
 msgid "Error al cargar el fichero"
-msgstr "Error loading file"
+msgstr ""
 
 #: endosys/public/webapp/js/administracion/dialogo_sala.js:58
 msgid "El nombre de la sala no puede estar vacio"
-msgstr "The room name cannot be empty"
+msgstr ""
 
 #: endosys/public/webapp/js/administracion/dialogo_sala.js:77
 msgid "¿Esta seguro que desea eliminar la Sala?"
-msgstr "Are you sure you want to delete this room?"
+msgstr ""
 
 #: endosys/public/webapp/js/busquedas_avanzadas/dialogo_condicion.js:28
 msgid "Nueva Condición"
-msgstr "New condition"
+msgstr ""
 
 #: endosys/public/webapp/js/busquedas_avanzadas/editor_busqueda2.js:362
 msgid "No existe ningun criterio de busqueda, debes introducir uno"
-msgstr "There is no search criteria, you should create at least one"
+msgstr ""
 
 #: endosys/public/webapp/js/busquedas_avanzadas/editor_busqueda2.js:385
 #: endosys/public/webapp/js/busquedas_avanzadas/editor_busqueda2.js:421
 msgid "La búsqueda se ha guardado correctamente"
-msgstr "Searching saved successfully"
+msgstr ""
 
 #: endosys/public/webapp/js/busquedas_avanzadas/editor_busqueda2.js:394
 msgid "Guardar la búsqueda"
-msgstr "Save searching"
+msgstr ""
 
 #: endosys/public/webapp/js/busquedas_avanzadas/editor_busqueda2.js:396
 msgid "Descripción de la búsqueda"
-msgstr "Searching description"
+msgstr ""
 
 #: endosys/public/webapp/js/busquedas_avanzadas/ejecutar_busqueda.js:16
 msgid "Resultados búsqueda"
-msgstr "Search results"
+msgstr ""
 
 #: endosys/public/webapp/js/busquedas_avanzadas/ejecutar_busqueda.js:24
 #: endosys/public/webapp/js/busquedas_avanzadas/ejecutar_busqueda.js:75
 msgid "Nueva"
-msgstr "New"
+msgstr ""
 
 #: endosys/public/webapp/js/busquedas_avanzadas/ejecutar_busqueda.js:39
 #: endosys/public/webapp/js/busquedas_avanzadas/ejecutar_busqueda.js:66
 msgid "Edición búsqueda"
-msgstr "Searching editing"
+msgstr ""
 
 #: endosys/public/webapp/js/busquedas_avanzadas/gestion_busquedas.js:15
 msgid "Cargando gestión de búsquedas..."
-msgstr "Loading searching management..."
+msgstr ""
 
 #: endosys/public/webapp/js/busquedas_avanzadas/gestion_busquedas.js:59
 msgid "Búsquedas"
-msgstr "Searchings"
+msgstr ""
 
 #: endosys/public/webapp/js/busquedas_avanzadas/gestion_busquedas.js:61
 msgid "Propietario"
-msgstr "Owner"
+msgstr ""
 
 #: endosys/public/webapp/js/busquedas_avanzadas/gestion_busquedas.js:65
 msgid "No se ha encontrado ninguna búsqueda"
-msgstr "No searching found"
+msgstr ""
 
 #: endosys/public/webapp/js/busquedas_avanzadas/gestion_busquedas.js:110
 #: endosys/public/webapp/js/busquedas_avanzadas/gestion_busquedas.js:164
 #: endosys/public/webapp/js/busquedas_avanzadas/gestion_busquedas.js:184
 msgid "Debes seleccionar una búsqueda"
-msgstr "You must select a searching"
+msgstr ""
 
 #: endosys/public/webapp/js/busquedas_avanzadas/gestion_busquedas.js:127
 msgid "Renombrar búsqueda"
-msgstr "Rename searching"
+msgstr ""
 
 #: endosys/public/webapp/js/busquedas_avanzadas/gestion_busquedas.js:129
 msgid "Nueva descripción"
-msgstr "New description"
+msgstr ""
 
 #: endosys/public/webapp/js/busquedas_avanzadas/logica_estructura.js:127
 msgid "El valor seleccionado no se puede eliminar. Debe existir al menos un valor"
-msgstr "Cannot delete the selected value, there must be at least one value"
+msgstr ""
 
 #: endosys/public/webapp/js/busquedas_avanzadas/logica_estructura.js:135
 msgid "Valor"
-msgstr "Value"
+msgstr ""
 
 #: endosys/public/webapp/js/dialogs/editorformularios_dialogs.js:8
 msgid "Desactivado"
-msgstr "Deactivated"
+msgstr ""
 
 #: endosys/public/webapp/js/dialogs/editorformularios_dialogs.js:11
 msgid "Activado"
-msgstr "Active"
+msgstr ""
 
 #: endosys/public/webapp/js/dialogs/editorformularios_dialogs.js:17
 msgid "Editar campo"
-msgstr "Edit field"
+msgstr ""
 
 #: endosys/public/webapp/js/dialogs/editorformularios_dialogs.js:19
 msgid "Nuevo campo"
-msgstr "New field"
+msgstr ""
 
 #: endosys/public/webapp/js/dialogs/plantillas_dialog.js:14
 msgid "Plantillas de informes"
-msgstr "Report templates"
+msgstr ""
 
 #: endosys/public/webapp/js/dialogs/plantillas_dialog.js:21
 msgid "Seleccione una plantilla para generar el informe"
-msgstr "Select a template to generate the new report"
+msgstr ""
 
 #: endosys/public/webapp/js/dialogs/plantillas_dialog.js:26
 msgid "Atención"
-msgstr "Warning"
+msgstr ""
 
 #: endosys/public/webapp/js/dialogs/plantillas_dialog.js:26
 msgid ""
-"Antes de generar el informe se guardará cualquier cambio realizado en los datos "
-"de la exploración"
+"Antes de generar el informe se guardará cualquier cambio realizado en los"
+" datos de la exploración"
 msgstr ""
-"Any change done to the examination data will be saved before generating the new "
-"report"
 
 #: endosys/public/webapp/js/gestion_agenda/dialogo_cita.js:32
 msgid "Nº Afil."
-msgstr "Affiliaton No."
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/dialogo_cita.js:263
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:756
 msgid "La cita se ha modificado correctamente"
-msgstr "Appointment saved successfully"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/dialogo_cita.js:268
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:761
 msgid "Error al modificar la cita"
-msgstr "An error has occurred while saving the appointment"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/dialogo_cita.js:270
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:763
 msgid "Los datos de la cita no son válidos"
-msgstr "The appointment data is not valid"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/dialogo_cita.js:351
 msgid "Error loading file"
-msgstr "Error loading file"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/dialogo_paciente.js:33
 msgid "Seleccionar paciente"
-msgstr "Select patient"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/dialogo_paciente.js:44
 msgid "Debe seleccionar un paciente"
-msgstr "You must select a patient"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:149
 msgid "Seleccionar cita del paciente"
-msgstr "Select patient appointment"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:166
 msgid "Debe seleccionar una cita"
-msgstr "You must select an appointment"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:301
 msgid "No puede asignar una fecha anterior a la actual"
-msgstr "Cannot assign a date before the current one"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:395
 msgid "Enero"
-msgstr "January"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:395
 msgid "Febrero"
-msgstr "February"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:395
 msgid "Marzo"
-msgstr "March"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:395
 msgid "Abril"
-msgstr "April"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:395
 msgid "Mayo"
-msgstr "May"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:395
 msgid "Junio"
-msgstr "June"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:395
 msgid "Julio"
-msgstr "July"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:396
 msgid "Agosto"
-msgstr "August"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:396
 msgid "Septiembre"
-msgstr "September"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:396
 msgid "Octubre"
-msgstr "October"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:396
 msgid "Noviembre"
-msgstr "November"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:396
 msgid "Diciembre"
-msgstr "December"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:398
 msgid "Ene"
-msgstr "Jan"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:398
 msgid "Feb"
-msgstr "Feb"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:398
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:404
 msgid "Mar"
-msgstr "Tue"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:398
 msgid "Abr"
-msgstr "Apr"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:398
 msgid "May"
-msgstr "May"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:398
 msgid "Jun"
-msgstr "Jun"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:398
 msgid "Jul"
-msgstr "Jul"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:399
 msgid "Ago"
-msgstr "Aug"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:399
 msgid "Sep"
-msgstr "Sep"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:399
 msgid "Oct"
-msgstr "Oct"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:399
 msgid "Nov"
-msgstr "Nov"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:399
 msgid "Dic"
-msgstr "Dec"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:404
 msgid "Dom"
-msgstr "Sun"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:404
 msgid "Lun"
-msgstr "Mon"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:404
 msgid "Mie"
-msgstr "Wed"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:404
 msgid "Jue"
-msgstr "Thu"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:404
 msgid "Vie"
-msgstr "Fri"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:404
 msgid "Sab"
-msgstr "Sat"
+msgstr ""
 
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:431
 msgid "Semana"
-msgstr "Week"
+msgstr ""
+
+#~ msgid "ERROR: No se puede eliminar una exploracion"
+#~ msgstr ""
+
+#~ msgid "Obteniendo las agendas..."
+#~ msgstr ""
+
+#~ msgid "Cargando"
+#~ msgstr ""
+
+#~ msgid "El paciente indicado está deshabilitado. No se cambiar el paciente"
+#~ msgstr ""
+
+#~ msgid "ERROR: No se puede modificar un elemento"
+#~ msgstr ""
+
+#~ msgid "Ha ocurrido un error modificando la cita (%s)"
+#~ msgstr ""
+
+#~ msgid "Ha ocurrido un error iniciando la exploracion (%s)"
+#~ msgstr ""
+
+#~ msgid "Edad actual"
+#~ msgstr ""
+
+#~ msgid "No ha seleccionado un motivo de fallo"
+#~ msgstr ""
+
+#~ msgid "Motivo de fallo"
+#~ msgstr ""
+
+#~ msgid "Paciente no acude"
+#~ msgstr ""
+
+#~ msgid "Paciente mal preparado"
+#~ msgstr ""
+
+#~ msgid "Paciente no aporta volante"
+#~ msgstr ""
+
+#~ msgid "Claustrofobia - paciente no colabora"
+#~ msgstr ""
+
+#~ msgid "Solicitud del paciente"
+#~ msgstr ""
+
+#~ msgid "Avería o déficit en aparataje, local, material"
+#~ msgstr ""
+
+#~ msgid "Falta historia clínica o pruebas complementarias"
+#~ msgstr ""
+
+#~ msgid "Paciente mal citado"
+#~ msgstr ""
+
+#~ msgid "Todos"
+#~ msgstr ""
+
+#~ msgid "Crear Mensaje"
+#~ msgstr ""
+
+#~ msgid "No se ha indicado el paciente o el tipo de exploración"
+#~ msgstr ""
+
+#~ msgid "La exploración no se puede eliminar porque tiene imagenes asociadas"
+#~ msgstr ""
+
+#~ msgid "La exploración no se puede eliminar"
+#~ msgstr ""
+
+#~ msgid "Exploraci&oacute;n"
+#~ msgstr ""
+
+#~ msgid "Fecha de realizaci&oacute;n"
+#~ msgstr ""
+
+#~ msgid ""
+#~ msgstr ""
+
+#~ msgid "ERROR: No se puede eliminar un informe"
+#~ msgstr ""
+
+#~ msgid "previsualizar_informe(): Solo admite plantillas .DOC, .DOCX o .ODT"
+#~ msgstr ""
+
+#~ msgid " "
+#~ msgstr ""
+
+#~ msgid "No válido"
+#~ msgstr ""
+
+#~ msgid "La exploración ha sido descartada con éxito"
+#~ msgstr ""
+
+#~ msgid "Error al guardar la Exploración"
+#~ msgstr ""
+
+#~ msgid "Imagen"
+#~ msgstr ""
+
+#~ msgid "Informe no válido"
+#~ msgstr ""
+
+#~ msgid "No hay notificaciones"
+#~ msgstr ""
+
+#~ msgid "La cita seleccionada ya no está disponible"
+#~ msgstr ""
+
+#~ msgid "Error al cargar los textos predefinidos"
+#~ msgstr ""
+
+#~ msgid "No existen citas"
+#~ msgstr ""
+
+#~ msgid "No se ha encontrado la cita"
+#~ msgstr ""
+
+#~ msgid "No se encontraron citas"
+#~ msgstr ""
+
+#~ msgid "Error al consultar citas existentes"
+#~ msgstr ""
+
+#~ msgid "Error al consultar citas"
+#~ msgstr ""
+
+#~ msgid "Enero"
+#~ msgstr ""
+
+#~ msgid "Enero2"
+#~ msgstr ""
 
 #~ msgid "No implementado"
-#~ msgstr "Not implemented"
+#~ msgstr ""
+
+#~ msgid "Ya existe un paciente con el NHC %s"
+#~ msgstr ""
+
+#~ msgid "Ya existe un paciente con %s = %s"
+#~ msgstr ""
 
 #~ msgid "No se encuentra el Workstation indicado con id: %s"
-#~ msgstr "Can not find the Workstation with id: %s"
+#~ msgstr ""
 
 #~ msgid "Se ha definido un campo identificador de paciente incorrecto (%s)"
-#~ msgstr "An incorrect patient field identifier has been defined (%s)"
+#~ msgstr ""
 
 #~ msgid "Nº Historia"
-#~ msgstr "MR #"
+#~ msgstr ""
 
 #~ msgid "Paciente:Aseguradora"
-#~ msgstr "Insurance"
+#~ msgstr ""
 
 #~ msgid "Paciente:Historia"
-#~ msgstr "MR #"
+#~ msgstr ""
 
 #~ msgid "Cita"
-#~ msgstr "Appointment"
+#~ msgstr ""
 
 #~ msgid "Plantilla"
-#~ msgstr "Template"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "La cita selecciona se está realizando. \n"
+#~ "\t\t\t\t\t\t\t\t\t\t\t\tSeleccione una cita "
+#~ "libre o la misma que esta editando"
+#~ msgstr ""
 
 #~ msgid "Ha ocurrido un error guardando los datos del paciente"
-#~ msgstr "An error has occurred while saving the patient data"
+#~ msgstr ""
+
+#~ msgid "Ha ocurrido un error creando el paciente"
+#~ msgstr ""
 
 #~ msgid "Que tenga alguno con su cantidad igual a"
-#~ msgstr "Has at least with his amount equal to"
+#~ msgstr ""
 
 #~ msgid "Que tenga alguno con su cantidad diferente a"
-#~ msgstr "Has at least with his amount different to"
+#~ msgstr ""
 
 #~ msgid "Que tenga alguno con su cantidad sea menor que"
-#~ msgstr "Has at least with his amount below to"
+#~ msgstr ""
 
 #~ msgid "Que tenga alguno con su cantidad sea mayor que"
-#~ msgstr "Has at least with his amount above to"
+#~ msgstr ""
 
 #~ msgid "Que tenga alguno con su cantidad sea mayor o igual que"
-#~ msgstr "Has at least with his amount above or equal to"
+#~ msgstr ""
 
 #~ msgid "Que tenga alguno con su cantidad sea menor o igual que"
-#~ msgstr "Has at least with his amount below or equal to"
+#~ msgstr ""
 
 #~ msgid "Que tenga alguno con su cantidad esté entre"
-#~ msgstr "Has at least with his amount between to"
+#~ msgstr ""
 
 #~ msgid "Que tenga alguno con su cantidad no esté entre"
-#~ msgstr "Has at least with his amount not between to"
+#~ msgstr ""
 
 #~ msgid "Error al eliminar"
-#~ msgstr "Error while deleting"
+#~ msgstr ""
+

@@ -129,7 +129,7 @@ var estructura = function () {
 		label.appendTo(paraf);
 
 		if (campo.tipo_camp == "2" || campo.tipo_camp == "3") {
-			Endotools.elementos.index(TM.content_editor_busqueda.elementos, { 'campo_id': campo.id_camp }).done(function (elementos) {
+			Endosys.elementos.index(TM.content_editor_busqueda.elementos, { 'campo_id': campo.id_camp }).done(function (elementos) {
 				var select = $('<select name="valores" style="width: 200px;"></select>');
 				select.append($('<option value="">' + _('Seleccione') + '</option>'));	// IDIOMAOK
 

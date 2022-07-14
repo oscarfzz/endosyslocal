@@ -81,8 +81,8 @@ class InformesController(GenericRESTController):
     def _return_index_html(self, informes, format='html'):
 
         html = cargar_layout_main()
-        html = html.replace("|ENDOTOOLS:TITULO|", _(u'Listado de informes').encode())
-        html = html.replace("|ENDOTOOLS:TITULO_CONTENIDO|", _(u'Listado de informes').encode())
+        html = html.replace("|ENDOSYS:TITULO|", _(u'Listado de informes').encode())
+        html = html.replace("|ENDOSYS:TITULO_CONTENIDO|", _(u'Listado de informes').encode())
 
         centro = None
         try:
@@ -136,7 +136,7 @@ class InformesController(GenericRESTController):
                             formatea_valor(paciente.apellido2)
                         )
 
-        html = html.replace("|ENDOTOOLS:SUBTITULO_CONTENIDO|", h2.encode('utf-8'))
+        html = html.replace("|ENDOSYS:SUBTITULO_CONTENIDO|", h2.encode('utf-8'))
 
 
 
@@ -216,7 +216,7 @@ class InformesController(GenericRESTController):
 
             contenido = u'<div class="endo-panel-detail listado-informes"><ul>%s</ul></div>' % li_exploraciones
 
-            html = html.replace("|ENDOTOOLS:CONTENIDO|", contenido.encode('utf-8'))
+            html = html.replace("|ENDOSYS:CONTENIDO|", contenido.encode('utf-8'))
 
         else:
             # NO agrupado - Para Compatiblidad anterior
@@ -257,7 +257,7 @@ class InformesController(GenericRESTController):
 
             contenido = u'<div class="endo-panel-detail listado-informes"><ul>%s</ul></div>' % lis
 
-            html = html.replace("|ENDOTOOLS:CONTENIDO|", contenido.encode('utf-8'))
+            html = html.replace("|ENDOSYS:CONTENIDO|", contenido.encode('utf-8'))
 
 
         return html
@@ -332,10 +332,10 @@ class InformesController(GenericRESTController):
 
         if not existe_paciente and format=="html":
             html = cargar_layout_main()
-            html = html.replace("|ENDOTOOLS:TITULO|", _(u'Listado de informes').encode())#IDIOMAOK
-            html = html.replace("|ENDOTOOLS:SUBTITULO_CONTENIDO|", "")#IDIOMAOK
-            html = html.replace("|ENDOTOOLS:TITULO_CONTENIDO|", _(u'Listado de informes').encode())#IDIOMAOK
-            html = html.replace("|ENDOTOOLS:CONTENIDO|", '<div class="error-html-informes">'+_(u'Error: No se especifico el paciente').encode()+'</div>')#IDIOMAOK
+            html = html.replace("|ENDOSYS:TITULO|", _(u'Listado de informes').encode())#IDIOMAOK
+            html = html.replace("|ENDOSYS:SUBTITULO_CONTENIDO|", "")#IDIOMAOK
+            html = html.replace("|ENDOSYS:TITULO_CONTENIDO|", _(u'Listado de informes').encode())#IDIOMAOK
+            html = html.replace("|ENDOSYS:CONTENIDO|", '<div class="error-html-informes">'+_(u'Error: No se especifico el paciente').encode()+'</div>')#IDIOMAOK
             return html
 
         # 2.4.10

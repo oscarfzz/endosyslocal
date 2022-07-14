@@ -1034,7 +1034,7 @@ msgid ""
 "Permiso que autoriza al usuario a realizar exploraciones. También hace "
 "que se muestre la opción “Nueva exploración” en el menú de la aplicación,"
 " para que esta opción esté disponible, se ha de indicar en la "
-"configuración del Endotools."
+"configuración del Endosys."
 msgstr ""
 
 #: endosys/lib/usuarios/seguridad.py:79
@@ -1091,7 +1091,7 @@ msgid ""
 " de que las citas estén integradas, este permiso debería estar "
 "desactivado. Para mayor seguridad, la opción “Gestión Agenda” del menú de"
 " la aplicación, desde donde se permiten crear, modificar y eliminar "
-"citas, se activa o desactiva desde la configuración de Endotools."
+"citas, se activa o desactiva desde la configuración de Endosys."
 msgstr ""
 
 #: endosys/lib/usuarios/seguridad.py:94
@@ -1103,7 +1103,7 @@ msgid ""
 "Permiso que autoriza al usuario a crear y modificar los pacientes. En "
 "caso de que los pacientes estén integrados, este permiso debería estar "
 "desactivado. Por mayor seguridad, la gestión de pacientes se activa o "
-"desactiva desde la configuración de Endotools."
+"desactiva desde la configuración de Endosys."
 msgstr ""
 
 #: endosys/lib/usuarios/seguridad.py:97
@@ -1162,7 +1162,7 @@ msgstr "Administrar organización"
 msgid ""
 "Permiso restringido que permite crear, modificar y eliminar la "
 "organización del hospital y otros parámetros de configuración de "
-"Endotools. Los parámetros a configurar desde esta opción son los "
+"Endosys. Los parámetros a configurar desde esta opción son los "
 "siguientes: Centros, Servicios, Salas, Agendas, Motivos de cancelación y "
 "Prioridades. Este permiso te permite visualizar la opción “Administrar "
 "organización” del menú de la aplicación."
@@ -2359,7 +2359,7 @@ msgid "Nombre:Usuario"
 msgstr "Usuario"
 
 #: endosys/public/webapp/content/usuario.html:10
-#: endosys/public/webapp/js/Endotools/ET_auth.js:78
+#: endosys/public/webapp/js/Endosys/ET_auth.js:78
 msgid "Contraseña"
 msgstr "Contraseña"
 
@@ -2375,7 +2375,7 @@ msgstr "Nuevo motivo"
 #: endosys/public/webapp/js/notificaciones.js:495
 #: endosys/public/webapp/js/tareas.js:145
 #: endosys/public/webapp/js/usuarios.js:999
-#: endosys/public/webapp/js/Endotools/ET_auth.js:77
+#: endosys/public/webapp/js/Endosys/ET_auth.js:77
 msgid "Usuario"
 msgstr "Usuario"
 
@@ -2478,7 +2478,7 @@ msgstr "Tipo expl."
 #: endosys/public/webapp/js/pacientes.js:737
 #: endosys/public/webapp/js/tipos_exploracion.js:83
 #: endosys/public/webapp/js/usuarios.js:680
-#: endosys/public/webapp/js/Endotools/ET_statusbar.js:36
+#: endosys/public/webapp/js/Endosys/ET_statusbar.js:36
 #: endosys/public/webapp/js/administracion/administracion.js:593
 #: endosys/public/webapp/js/busquedas_avanzadas/gestion_busquedas.js:189
 #: endosys/public/webapp/js/gestion_agenda/gestion_agenda.js:128
@@ -3338,8 +3338,8 @@ msgstr "Gestión de usuarios"
 
 #: endosys/public/webapp/js/main.js:450
 #: endosys/public/webapp/js/userinfo.js:122
-msgid "Administración de EndoTools"
-msgstr "Administración de EndoTools"
+msgid "Administración de EndoSys"
+msgstr "Administración de EndoSys"
 
 #: endosys/public/webapp/js/notificaciones.js:39
 msgid "¡Notificación importante!"
@@ -3948,35 +3948,35 @@ msgstr "Nuevo centro"
 msgid "El nombre no puede estar vacio"
 msgstr "El nombre de la sala no puede estar vacio"
 
-#: endosys/public/webapp/js/Endotools/ET_auth.js:76
+#: endosys/public/webapp/js/Endosys/ET_auth.js:76
 msgid "Autenticación de usuario"
 msgstr "Autenticación de usuario"
 
-#: endosys/public/webapp/js/Endotools/ET_auth.js:79
+#: endosys/public/webapp/js/Endosys/ET_auth.js:79
 msgid "Iniciar sesión"
 msgstr "Iniciar sesión"
 
-#: endosys/public/webapp/js/Endotools/ET_auth.js:120
+#: endosys/public/webapp/js/Endosys/ET_auth.js:120
 msgid "Sesión:Cerrar"
 msgstr "Cerrar"
 
-#: endosys/public/webapp/js/Endotools/ET_auth.js:149
+#: endosys/public/webapp/js/Endosys/ET_auth.js:149
 msgid "Autenticando usuario..."
 msgstr "Autenticando usuario..."
 
-#: endosys/public/webapp/js/Endotools/ET_auth.js:160
+#: endosys/public/webapp/js/Endosys/ET_auth.js:160
 msgid "Usuario autenticado correctamente"
 msgstr "Usuario autenticado correctamente"
 
-#: endosys/public/webapp/js/Endotools/ET_auth.js:166
+#: endosys/public/webapp/js/Endosys/ET_auth.js:166
 msgid "Error en la autenticación de usuario"
 msgstr "Error en la autenticación de usuario"
 
-#: endosys/public/webapp/js/Endotools/ET_auth.js:191
+#: endosys/public/webapp/js/Endosys/ET_auth.js:191
 msgid "Este puesto no tiene acceso al sistema Endosys App."
 msgstr ""
 
-#: endosys/public/webapp/js/Endotools/ET_auth.js:238
+#: endosys/public/webapp/js/Endosys/ET_auth.js:238
 msgid ""
 "El usuario no pertenece a ninguno de los servicios disponibles en este "
 "puesto de trabajo"
@@ -3984,77 +3984,77 @@ msgstr ""
 "El usuario no pertenece a ninguno de los servicios disponibles en este "
 "puesto de trabajo"
 
-#: endosys/public/webapp/js/Endotools/ET_auth.js:261
+#: endosys/public/webapp/js/Endosys/ET_auth.js:261
 msgid "Seleccionar servicio"
 msgstr "Seleccionar servicio"
 
-#: endosys/public/webapp/js/Endotools/ET_auth.js:295
+#: endosys/public/webapp/js/Endosys/ET_auth.js:295
 msgid "Ningún servicio activo"
 msgstr "Ningún servicio activo"
 
-#: endosys/public/webapp/js/Endotools/ET_varios.js:100
-#: endosys/public/webapp/js/Endotools/ET_varios.js:115
-#: endosys/public/webapp/js/Endotools/ET_varios.js:127
-#: endosys/public/webapp/js/Endotools/ET_varios.js:136
-#: endosys/public/webapp/js/Endotools/ET_varios.js:168
-#: endosys/public/webapp/js/Endotools/ET_varios.js:179
+#: endosys/public/webapp/js/Endosys/ET_varios.js:100
+#: endosys/public/webapp/js/Endosys/ET_varios.js:115
+#: endosys/public/webapp/js/Endosys/ET_varios.js:127
+#: endosys/public/webapp/js/Endosys/ET_varios.js:136
+#: endosys/public/webapp/js/Endosys/ET_varios.js:168
+#: endosys/public/webapp/js/Endosys/ET_varios.js:179
 msgid "Selecciona"
 msgstr "Selecciona"
 
-#: endosys/public/webapp/js/Endotools/ET_varios.js:103
-#: endosys/public/webapp/js/Endotools/ET_varios.js:118
-#: endosys/public/webapp/js/Endotools/ET_varios.js:130
-#: endosys/public/webapp/js/Endotools/ET_varios.js:139
+#: endosys/public/webapp/js/Endosys/ET_varios.js:103
+#: endosys/public/webapp/js/Endosys/ET_varios.js:118
+#: endosys/public/webapp/js/Endosys/ET_varios.js:130
+#: endosys/public/webapp/js/Endosys/ET_varios.js:139
 msgid "Sea igual"
 msgstr "Sea igual"
 
-#: endosys/public/webapp/js/Endotools/ET_varios.js:106
-#: endosys/public/webapp/js/Endotools/ET_varios.js:121
-#: endosys/public/webapp/js/Endotools/ET_varios.js:142
+#: endosys/public/webapp/js/Endosys/ET_varios.js:106
+#: endosys/public/webapp/js/Endosys/ET_varios.js:121
+#: endosys/public/webapp/js/Endosys/ET_varios.js:142
 msgid "Diferente"
 msgstr "Diferente"
 
-#: endosys/public/webapp/js/Endotools/ET_varios.js:109
+#: endosys/public/webapp/js/Endosys/ET_varios.js:109
 msgid "Contiene"
 msgstr "Contiene"
 
-#: endosys/public/webapp/js/Endotools/ET_varios.js:145
+#: endosys/public/webapp/js/Endosys/ET_varios.js:145
 msgid "Menor que"
 msgstr "Menor que"
 
-#: endosys/public/webapp/js/Endotools/ET_varios.js:148
+#: endosys/public/webapp/js/Endosys/ET_varios.js:148
 msgid "Mayor que"
 msgstr "Mayor que"
 
-#: endosys/public/webapp/js/Endotools/ET_varios.js:151
+#: endosys/public/webapp/js/Endosys/ET_varios.js:151
 msgid "Mayor o igual que"
 msgstr "Mayor o igual que"
 
-#: endosys/public/webapp/js/Endotools/ET_varios.js:154
+#: endosys/public/webapp/js/Endosys/ET_varios.js:154
 msgid "Menor o igual que"
 msgstr "Menor o igual que"
 
-#: endosys/public/webapp/js/Endotools/ET_varios.js:157
+#: endosys/public/webapp/js/Endosys/ET_varios.js:157
 msgid "Esté entre"
 msgstr "Esté entre"
 
-#: endosys/public/webapp/js/Endotools/ET_varios.js:160
+#: endosys/public/webapp/js/Endosys/ET_varios.js:160
 msgid "No esté entre"
 msgstr "No esté entre"
 
-#: endosys/public/webapp/js/Endotools/ET_varios.js:171
+#: endosys/public/webapp/js/Endosys/ET_varios.js:171
 msgid "Que tenga alguno de (y cumpla las condiciones)"
 msgstr ""
 
-#: endosys/public/webapp/js/Endotools/ET_varios.js:174
+#: endosys/public/webapp/js/Endosys/ET_varios.js:174
 msgid "Que tenga todos de (y cumpla las condiciones)"
 msgstr ""
 
-#: endosys/public/webapp/js/Endotools/ET_varios.js:182
+#: endosys/public/webapp/js/Endosys/ET_varios.js:182
 msgid "Que tenga alguno de"
 msgstr "Que tenga alguno de"
 
-#: endosys/public/webapp/js/Endotools/ET_varios.js:185
+#: endosys/public/webapp/js/Endosys/ET_varios.js:185
 msgid "Que tenga todos de"
 msgstr "Que tenga todos de"
 

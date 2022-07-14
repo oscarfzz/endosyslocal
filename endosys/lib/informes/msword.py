@@ -5,7 +5,7 @@ que el usuario estaba editando sin guardar los cambios, o que si de alguna forma
 el programa está bloqueado (p.e. un dialogo que tiene abierto el usuario) no se
 pueda generar el informe...
 Se podría estudiar la opción de crear una instancia exclusiva para uso de
-EndoTools, que no interfiera con la posible aplicación abierta por un usuario.
+EndoSys, que no interfiera con la posible aplicación abierta por un usuario.
 
 NOTA: Ya se controla, si hay algún otro documento abierto sin guardar no se cierra Word
 
@@ -263,7 +263,7 @@ def generar_informe_msword(nombre_archivo, exploracion, plantilla, imagenes = No
 			doc.ExportAsFixedFormat(nombre_archivo, wdExportFormatPDF, False)
 			if DEBUG_GUARDAR_DOC: doc.SaveAs(nombre_archivo + '.doc')
 		finally:
-            # Cerrar el documento abierto por EndoTools
+            # Cerrar el documento abierto por EndoSys
 ##			print 'word.Documents.Count', word.Documents.Count # xxx
 
 			if not DEBUG_MOSTRAR_WORD:

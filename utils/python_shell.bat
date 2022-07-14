@@ -10,7 +10,7 @@ echo.
 SET OLDDIR=%cd%
 SET BASE=%~dp0..\
 cd %BASE%
-for %%F in ("%cd%") do set RUTA_ENDOTOOLSWEB=%%~dpF
+for %%F in ("%cd%") do set RUTA_ENDOSYSWEB=%%~dpF
 
 echo .ini files availables:
 echo ----------------------
@@ -18,5 +18,5 @@ dir /B *.ini | findstr /v "test-endosys-sample.ini"
 echo.
 
 SET /P ARCHIVO_INI=Write the name of .ini file:
-"%RUTA_ENDOTOOLSWEB%\PortablePython\App\python.exe" "%RUTA_ENDOTOOLSWEB%\PortablePython\App\Scripts\paster-script.py" shell "%ARCHIVO_INI%"
+"%RUTA_ENDOSYSWEB%\PortablePython\App\python.exe" "%RUTA_ENDOSYSWEB%\PortablePython\App\Scripts\paster-script.py" shell "%ARCHIVO_INI%"
 pause

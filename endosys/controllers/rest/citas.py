@@ -205,7 +205,7 @@ class CitasController(GenericRESTController):
 ##              abort_xml(500, 'Ha ocurrido un error cargando las citas (%s)' % e)
 
             # Si tiene activo el modo preprocess, lo que hace es ejecutar la funcionalidad del plugin,
-            # que se supone que deja la tabla de citas de EndoTools en el estado correcto, y luego
+            # que se supone que deja la tabla de citas de EndoSys en el estado correcto, y luego
             # continua con el funcionamiento normal del genericrest
             if pluginCitas.preprocess_mode:
                 return GenericRESTController._doIndex(self, params, format)
@@ -669,7 +669,7 @@ class CitasController(GenericRESTController):
                 cita = pluginCitas.create(cita)
             except PluginException, e:
                 log.error(e)
-                abort_xml(e.http_status, str(e), codigo=e.endotools_errorcode)
+                abort_xml(e.http_status, str(e), codigo=e.endosys_errorcode)
             except Exception, e:
                 log.error(e)
 ##              abort_xml(500, 'Ha ocurrido un error creando la cita (%s)' % e)

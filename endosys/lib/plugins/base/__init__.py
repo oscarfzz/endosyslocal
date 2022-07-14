@@ -6,14 +6,14 @@ log = logging.getLogger(__name__)
 
 class PluginException(Exception):
 	http_status = 500
-	endotools_errorcode = 0
+	endosys_errorcode = 0
 	def __init__(self, *args, **kwargs):
 		#   XXX	si los params son unicode los paso a str...
 		#   aunque esto seria mejor hacerlo a otro nivel para que sirve para
-		#	cualquier excepcion (creo que en lib.middleware.error -> EndoTools_ErrorHandler)
+		#	cualquier excepcion (creo que en lib.middleware.error -> EndoSys_ErrorHandler)
 
 		if 'codigo' in kwargs:
-			self.endotools_errorcode = kwargs['codigo']
+			self.endosys_errorcode = kwargs['codigo']
 
 		_args = []
 		for a in args:

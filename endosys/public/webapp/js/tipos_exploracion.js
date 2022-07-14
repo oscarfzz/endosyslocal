@@ -28,18 +28,18 @@
 				//	o.onBtnClick, o.callback
 				//	si se indica un default_tipo_exploracion_id, será el seleccionado por defecto
 				TM.content_tiposExploracion.activate();
-				Endotools.statusbar.mostrar_mensaje(_('Cargando tipos de exploración...'));/*IDIOMAOK*/
+				Endosys.statusbar.mostrar_mensaje(_('Cargando tipos de exploración...'));/*IDIOMAOK*/
 				
 				TM.content_tiposExploracion.load_content(mainlayout, "content/tipos_exploracion.html"+ew_version_param())
 				
 				.then(function() {
 
 					var params = {activo:1, servicio_id:''};
-					if ( Endotools.auth.servicio_activo && Endotools.auth.servicio_activo.id){
-						params.servicio_id = Endotools.auth.servicio_activo.id;
+					if ( Endosys.auth.servicio_activo && Endosys.auth.servicio_activo.id){
+						params.servicio_id = Endosys.auth.servicio_activo.id;
 					}
 
-					return Endotools.tipos_exploracion.index(TM.content_tiposExploracion, params)
+					return Endosys.tipos_exploracion.index(TM.content_tiposExploracion, params)
 				})
 				
 				.done(function(tiposexpl) {
@@ -72,7 +72,7 @@
 						tipos_exploracion._crear_boton(tiposexpl[n].id, tiposexpl[n].nombre, (default_tipo_exploracion_id), $container, o, multiples_columnas);
 					}
 					
-					Endotools.statusbar.mostrar_mensaje(_('Ready'));	/*IDIOMAOK*/
+					Endosys.statusbar.mostrar_mensaje(_('Ready'));	/*IDIOMAOK*/
 					if (o && o.callback) o.callback();
 				});
 		}

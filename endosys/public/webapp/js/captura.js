@@ -36,7 +36,7 @@ var gestion_captura = function() {
 		},
 		
 		finishPostEvent: function() {
-			Endotools.statusbar.mostrar_mensaje(_('Se ha finalizado el envío de las imágenes capturadas'));/*IDIOMAOK*/
+			Endosys.statusbar.mostrar_mensaje(_('Se ha finalizado el envío de las imágenes capturadas'));/*IDIOMAOK*/
 			
 			//	obtener las miniaturas, SOLO SI ESTA EN LA PANTALLA DE EXPLORACIONES!!!
 			

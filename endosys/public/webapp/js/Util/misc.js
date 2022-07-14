@@ -4,7 +4,7 @@
 	return ("nodeType" in e && "tagName" in e);
 }
 
-function parseEndotoolsBool(oData) {
+function parseEndosysBool(oData) {
 	// interpretar los 'sí' y 'no' del campo activo como true y false
 	/*
 		Y.log(oData);
@@ -255,7 +255,7 @@ function crear_alerta(contenido, time) {
 
 	var defaults = {
 		layout: 'bottomRight',
-		theme: opciones_config.THEME_ENDOTOOLS,
+		theme: opciones_config.THEME_ENDOSYS,
 		type: 'information',
 		text: contenido,
 		dismissQueue: true,
@@ -617,11 +617,11 @@ function peticion_rest(cantidad, params) {
 		console.log(i);
 		var t0 = performance.now();
 
-		Endotools.exploraciones.index(TM.operaciones, params).then(function () {
+		Endosys.exploraciones.index(TM.operaciones, params).then(function () {
 			var t1 = performance.now();
 			console.log("Exploraciones: " + (t1 - t0) + " milliseconds.");
 			// var t0 = performance.now();
-			// Endotools.servicios.index(TM.operaciones, {});
+			// Endosys.servicios.index(TM.operaciones, {});
 		});
 	}
 }

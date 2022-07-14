@@ -177,7 +177,7 @@ def FusionarPacientesM2(codigo_centro, nhc_origen, nhc_destino, idunico_origen, 
 
     # Comprobar la consistencia de datos, el idunico del mensaje y de la BBDD deben coincidir
     if idunico_origen != rel_paciente_centro_origen.paciente.idunico:
-        raise Exception("FusionarPacientesM2(): Problema en la consistencia de datos. El id. unico indicado ('%s') no coincide con el ya existente en la BBDD de EndoTools Web ('%s')" % (idunico_origen, rel_paciente_centro_origen.paciente.idunico))
+        raise Exception("FusionarPacientesM2(): Problema en la consistencia de datos. El id. unico indicado ('%s') no coincide con el ya existente en la BBDD de EndoSys Web ('%s')" % (idunico_origen, rel_paciente_centro_origen.paciente.idunico))
     
     # Obtener el Paciente con el NHC destino indicado, para este Centro.
     q = meta.Session.query(Rel_Pacientes_Centros).filter( and_(Rel_Pacientes_Centros.nhc == nhc_destino, Rel_Pacientes_Centros.centro_id == centro_id) )
@@ -209,7 +209,7 @@ def FusionarPacientesM2(codigo_centro, nhc_origen, nhc_destino, idunico_origen, 
             paciente_destino = q.one()
             q = meta.Session.query(Rel_Pacientes_Centros).filter( and_(Rel_Pacientes_Centros.paciente_id == paciente_destino.id, Rel_Pacientes_Centros.centro_id == centro_id) )
             if q.count() > 0:
-                raise Exception("FusionarPacientesM2(): Problema en la consistencia de datos. Ya existe un paciente en la BBDD de EndoTools Web con el IDUNICO '%s' pero con un NHC distinto al indicado ('%s')" % (idunico_destino, nhc_destino))
+                raise Exception("FusionarPacientesM2(): Problema en la consistencia de datos. Ya existe un paciente en la BBDD de EndoSys Web con el IDUNICO '%s' pero con un NHC distinto al indicado ('%s')" % (idunico_destino, nhc_destino))
 
         else:
             # En caso negativo, hacer un INSERT de un nuevo paciente con el
@@ -233,7 +233,7 @@ def FusionarPacientesM2(codigo_centro, nhc_origen, nhc_destino, idunico_origen, 
 
         # Comprobar la consistencia de datos, el idunico del mensaje y de la BBDD deben coincidir
         if idunico_destino != rel_paciente_centro_destino.paciente.idunico:
-            raise Exception("FusionarPacientesM2(): Problema en la consistencia de datos. El id. unico indicado ('%s') no coincide con el ya existente en la BBDD de EndoTools Web ('%s')" % (idunico_destino, rel_paciente_centro_destino.paciente.idunico))
+            raise Exception("FusionarPacientesM2(): Problema en la consistencia de datos. El id. unico indicado ('%s') no coincide con el ya existente en la BBDD de EndoSys Web ('%s')" % (idunico_destino, rel_paciente_centro_destino.paciente.idunico))
 
     paciente_id_destino = rel_paciente_centro_destino.paciente_id
 

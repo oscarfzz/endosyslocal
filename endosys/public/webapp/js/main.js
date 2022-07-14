@@ -85,11 +85,11 @@ function init_asistente() {
 }
 var __theme_loaded_ie7_8 = false ;
 
-function set_endotools_theme(themename) {
+function set_endosys_theme(themename) {
 	//	quitar CSS links previos
 
 
-	//	añadir CSS links correspondientes al theme de EndoTools
+	//	añadir CSS links correspondientes al theme de EndoSys
 
 	if (!($.browser.msie && ($.browser.version == "8.0" || $.browser.version == "7.0" ))) {
 
@@ -282,12 +282,12 @@ function crear_menu_principal(opciones_menu, busquedas_avanzadas) {
 		switch(parseInt(busquedas_avanzadas[i].nivel, 10)) {
 			case 1: // publico servicio
 			case 3: // protegida servicio
-				if (!!busquedas_avanzadas[i].servicio_id && !!Endotools.auth && !!Endotools.auth.servicio_activo &&
-					busquedas_avanzadas[i].servicio_id !== Endotools.auth.servicio_activo.id) continue;
+				if (!!busquedas_avanzadas[i].servicio_id && !!Endosys.auth && !!Endosys.auth.servicio_activo &&
+					busquedas_avanzadas[i].servicio_id !== Endosys.auth.servicio_activo.id) continue;
 				break;
 			case 4: // privada
-				if (!!busquedas_avanzadas[i].username && !!Endotools.auth &&
-					busquedas_avanzadas[i].username !== Endotools.auth.username) continue;
+				if (!!busquedas_avanzadas[i].username && !!Endosys.auth &&
+					busquedas_avanzadas[i].username !== Endosys.auth.username) continue;
 				break;
 			default: // publica
 				break;
@@ -384,10 +384,10 @@ function crear_menu_principal(opciones_menu, busquedas_avanzadas) {
 		set_titulo_pantalla(_('Gestión de usuarios'));/*IDIOMAOK*/
 		contenido_principal.mostrar(gestion_usuarios);
 	});
-	//	CONFIGURACIÓN ENDOTOOLS
+	//	CONFIGURACIÓN ENDOSYS
 	$('#menu-principal-administracion').click(function() {
 		reset_pantalla();
-		set_titulo_pantalla(_('Administración de EndoTools'));/*IDIOMAOK*/
+		set_titulo_pantalla(_('Administración de EndoSys'));/*IDIOMAOK*/
 		contenido_principal.mostrar(administracion);
 	});
 

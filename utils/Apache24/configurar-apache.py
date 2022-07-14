@@ -47,7 +47,7 @@ def configure_file(origen, destino, **data):
 
     APACHE_DIR = data['APACHE_DIR']
     NOMBRE = data['NOMBRE']
-    ENDOTOOLS = data['ENDOTOOLS']
+    ENDOSYS = data['ENDOSYS']
     PORT = data ['PORT']
     SSL_PORT = data['SSL_PORT']
     ENV_VERSION = data['ENV_VERSION']
@@ -59,7 +59,7 @@ def configure_file(origen, destino, **data):
         print(u"Configurando fichero '%s' con los siguientes parámetros:" %
                destino)
         pprint.pprint(data, stream=None, indent=1, width=80, depth=None)
-        fichero_destino.write(configuracion.format(ENDOTOOLS=ENDOTOOLS,
+        fichero_destino.write(configuracion.format(ENDOSYS=ENDOSYS,
                                                    PORT=PORT,
                                                    SSL_PORT=SSL_PORT,
                                                    NOMBRE=NOMBRE,
@@ -75,10 +75,10 @@ def configure_file(origen, destino, **data):
 
 def configurar_apache():
     base = path.dirname(path.realpath(__file__))
-    endotools_base = path.dirname(path.dirname(path.dirname(base)))
+    endosys_base = path.dirname(path.dirname(path.dirname(base)))
     general_config = 'httpd.conf'
-    endotools_config = 'httpd-endosys.conf'
-    endotools_ssl_config = 'httpd-endosys-ssl.conf'
+    endosys_config = 'httpd-endosys.conf'
+    endosys_ssl_config = 'httpd-endosys-ssl.conf'
     module = 'mod_wsgi.so'
 
     if not path.exists('C:\endosysapp\Apache24'):
@@ -98,7 +98,7 @@ def configurar_apache():
     # Buscamos si hay un fichero .ini, si no hay o hay multiples preguntamos
     # por el nombre.
     inis = []
-    for file in listdir(path.join(endotools_base, 'endosysapp')):
+    for file in listdir(path.join(endosys_base, 'endosysapp')):
         if file.endswith(".ini") and not 'test-endosys-sample.ini' in file:
             inis.append(file.replace('.ini',''))
 
@@ -114,14 +114,14 @@ def configurar_apache():
 
     # Buscamos en la configuración del .ini el puerto a usar.
     port = ''
-    if path.exists(path.join(endotools_base, 'endosysapp', '%s.ini' % nombre)):
+    if path.exists(path.join(endosys_base, 'endosysapp', '%s.ini' % nombre)):
         config = ConfigParser.RawConfigParser()
-        config.read(path.join(endotools_base, 'endosysapp', '%s.ini' % nombre))
+        config.read(path.join(endosys_base, 'endosysapp', '%s.ini' % nombre))
         port = config.get('server:main', 'port')
 
     print("Configuramos el fichero 'endosys.wsgi' para que use '%s.ini'." %
           nombre)
-    for line in input(path.join(endotools_base, 'endosysapp', 'endosys.wsgi'),
+    for line in input(path.join(endosys_base, 'endosysapp', 'endosys.wsgi'),
                       inplace=True):
         if "ini_file =" in line:
             print('ini_file = "%s.ini"' % nombre)
@@ -136,11 +136,11 @@ def configurar_apache():
     copy_file(path.join(base, module), path.join(apache_dir, 'modules', module))
 
     # Buscamos la version del entorno.
-    file = open(path.join(endotools_base, 'endosysapp', 'env_version.txt'), 'r')
+    file = open(path.join(endosys_base, 'endosysapp', 'env_version.txt'), 'r')
     env_version = file.read()
     file.close()
 
-    data = { 'ENDOTOOLS': endotools_base,
+    data = { 'ENDOSYS': endosys_base,
              'NOMBRE': nombre,
              'PORT': port,
              'SSL_PORT': "443",
@@ -151,7 +151,7 @@ def configurar_apache():
     configure_file(path.join(base, general_config), apache_file, **data)
 
     # Copiamos las configuraciones extras
-    extras = [endotools_config, endotools_ssl_config]
+    extras = [endosys_config, endosys_ssl_config]
     for extra in extras:
         extra_file = path.join(apache_dir, 'conf', 'extra', extra)
         configure_file(path.join(base, extra), extra_file, **data)
@@ -159,10 +159,10 @@ def configurar_apache():
     # Tratamos de instalar el servicio en Windows
     if osname == 'nt':
         answer = raw_input('Desea instalar el servicio "Apache 2.4"' + \
-                           ' (EndoTools: %s)"? (S/n) ' % nombre)
+                           ' (EndoSys: %s)"? (S/n) ' % nombre)
         if len(answer) == 0 or answer[0].lower() == 's':
             call([path.join(apache_dir, 'bin', 'httpd'), '-k', 'install', '-n',
-                  'Apache 2.4 (EndoTools: %s)' % nombre])
+                  'Apache 2.4 (EndoSys: %s)' % nombre])
 
 def main():
     configurar_apache()

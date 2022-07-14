@@ -1,6 +1,6 @@
 ﻿/* Gestionar la barra que muestra el estado de la aplicación, 
  * Para mostrar la barra usar:
- * Endotools.statusbar.mostrar_mensaje()
+ * Endosys.statusbar.mostrar_mensaje()
  * Parametros:
  *	- Titulo: Texto que se mostrara
  *  - Tipo: 0 Estado normal (informacion) - Por defecto
@@ -8,7 +8,7 @@
  *  - Duración: Tiempo que se mostrara el mensaje. Por defecto 4000
  *  - id: Para identificar el mensaje con un ID
  */
-Endotools.statusbar = function() {
+Endosys.statusbar = function() {
  
 	var $overlay;
 	var counter = 0;
@@ -50,7 +50,7 @@ Endotools.statusbar = function() {
 
 			if (counter == 0) $overlay.fadeIn(500);
 			counter++;
-			var d = duracion ? duracion : Endotools.statusbar.duracion;
+			var d = duracion ? duracion : Endosys.statusbar.duracion;
 			setTimeout(function() {				
 				counter--;
 				if (counter <= 0) {

@@ -1,6 +1,6 @@
 ﻿''' clase base para crear un plugin de campos.
 
-El plugin de campos sirve para añadir campos aparte de los normales de EndoTools.
+El plugin de campos sirve para añadir campos aparte de los normales de EndoSys.
 Los valores de estos campos se obtienen y modifican de una forma externa al resto
 de campos.
 

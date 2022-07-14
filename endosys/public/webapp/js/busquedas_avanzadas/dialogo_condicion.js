@@ -120,7 +120,7 @@ var dialogo_condicion = function () {
 			form_condicion.find('.campo-nombre').html(campo_seleccionado.desc_camp);
 
 			// recuperamos las operaciones que se puede realizar con el campo seleccionado "igual", "diferente"...
-			var operaciones = Endotools.busqueda_avanzada.get_operaciones(campo_seleccionado.tipo_camp, campo_seleccionado.tipo_control || campo_seleccionado.tipo_cont);
+			var operaciones = Endosys.busqueda_avanzada.get_operaciones(campo_seleccionado.tipo_camp, campo_seleccionado.tipo_control || campo_seleccionado.tipo_cont);
 
 			//montar el select de las operaciones disponibles igual, diferente...
 			var select_operaciones = form_condicion.find('.operacion-list');

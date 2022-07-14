@@ -1,12 +1,12 @@
 ﻿"""
-EndoTools Web 2.4.10
+EndoSys Web 2.4.10
 
 Procesado de Chunks.
 
 IMPORTANTE:
 	Este fichero es compartido entre los proyectos:
-		EndoTools Web
-		Cliente EndoTools Web
+		EndoSys Web
+		Cliente EndoSys Web
 
 	De esta manera las dos aplicaciones comparten la misma implementación para
 	procesar los chunks.
@@ -151,7 +151,7 @@ def _write_chunk_header(chunk_version, fdest, filename, num, chunkscount, explor
 			UUID de los chunks  Identificador único de todos los chunks que
 								componen un archivo.
 			TIPO de chunk		un identificador que indica qué es este archivo
-								para que el servidor de EndoTools sepa cómo procesarlo.
+								para que el servidor de EndoSys sepa cómo procesarlo.
 
 		FORMATO CABECERA (300 bytes):
 			version del formato de chunk

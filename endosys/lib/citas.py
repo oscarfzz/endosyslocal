@@ -1,15 +1,15 @@
 ﻿"""
-Gestión de citas. Cualquier parte de EndoTools que acceda a las citas
+Gestión de citas. Cualquier parte de EndoSys que acceda a las citas
 debería hacerlo utilizando este module.
 
   XXX rest/citas
   XXX plugins...
 
-Accede siempre a la bbdd de EndoTools Web. Se debería implementar aqui la
+Accede siempre a la bbdd de EndoSys Web. Se debería implementar aqui la
 funcionalidad de los plugins para cambiar el comportamiento
 
 XXX renombrar el concepto CITA, ya que en los hospitales hay distintos conceptos
-como cita, petición, wirklist, etc... que al final son lo mismo en EndoTools Web.
+como cita, petición, wirklist, etc... que al final son lo mismo en EndoSys Web.
 """
 import logging
 from pylons.i18n import _

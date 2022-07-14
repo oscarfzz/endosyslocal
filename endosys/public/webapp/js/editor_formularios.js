@@ -20,7 +20,7 @@ var editor_formularios = function() {
 			TM.content_editorFormularios.campos.activate();
 			TM.content_editorFormularios.gruposcampos.activate();
 			TM.content_editorFormularios.formulario.activate();
-			Endotools.statusbar.mostrar_mensaje(_('Cargando Editor de formularios...'));	/*IDIOMOK*/
+			Endosys.statusbar.mostrar_mensaje(_('Cargando Editor de formularios...'));	/*IDIOMOK*/
 			TM.content_editorFormularios.load_content(mainlayout, 'content/editor_formularios.html'+ew_version_param()).done(function() {
 				$('.layout_main_content').layout({
 					west__size: 380,
@@ -36,17 +36,17 @@ var editor_formularios = function() {
 				// crear la tabla de campos
 				// formatter para la columna 'tipo'
 				var tipo_formatter = function(elLiner, oRecord, oColumn, oData) {
-					if(oData == Endotools.campos.TIPO_TEXTO) {
+					if(oData == Endosys.campos.TIPO_TEXTO) {
 						elLiner.innerHTML = _('Texto');		/*IDIOMAOK*/
-					} else if(oData == Endotools.campos.TIPO_MEMO) {
+					} else if(oData == Endosys.campos.TIPO_MEMO) {
 						elLiner.innerHTML = _('Memo');		/*IDIOMAOK*/
-					} else if(oData == Endotools.campos.TIPO_SELECCION) {
+					} else if(oData == Endosys.campos.TIPO_SELECCION) {
 						elLiner.innerHTML = _('Select');	/*IDIOMAOK*/
-					} else if(oData == Endotools.campos.TIPO_MULTI) {
+					} else if(oData == Endosys.campos.TIPO_MULTI) {
 						elLiner.innerHTML = _('Multi');		/*IDIOMAOK*/
-					} else if(oData == Endotools.campos.TIPO_BOOL) {
+					} else if(oData == Endosys.campos.TIPO_BOOL) {
 						elLiner.innerHTML = _('Si/No');		/*IDIOMAOK*/
-					} else if(oData == Endotools.campos.TIPO_SEPARADOR) {
+					} else if(oData == Endosys.campos.TIPO_SEPARADOR) {
 						elLiner.innerHTML = _('Título');	/*IDIOMAOK*/
 					}
 				}
@@ -119,7 +119,7 @@ var editor_formularios = function() {
 						// nuevocampo:  nombre, titulo, tipo, columnas, tipo_control
 						el_nuevocampo = nuevocampo;
 
-						return Endotools.campos.create(TM.content_editorFormularios, {
+						return Endosys.campos.create(TM.content_editorFormularios, {
 							nombre: nuevocampo.nombre,
 							titulo: nuevocampo.titulo,
 							tipo: nuevocampo.tipo,
@@ -175,7 +175,7 @@ var editor_formularios = function() {
 						if(sel) sel = sel[0];
 						var campo_id = rs.getRecord(sel).getData('id');
 
-						Endotools.campos['delete'](TM.operaciones, campo_id, null, {'datatable': datatable});
+						Endosys.campos['delete'](TM.operaciones, campo_id, null, {'datatable': datatable});
 					});
 				});
 
@@ -202,7 +202,7 @@ var editor_formularios = function() {
 						args['gruposcampos'] = args['gruposcampos'] + grupoCampos.id;
 					}
 
-					Endotools.formularios.update(TM.content_editorFormularios.formulario, formulario_id, args);
+					Endosys.formularios.update(TM.content_editorFormularios.formulario, formulario_id, args);
 				});
 
 				$('#editorforms-anadir-grupocampos-btn').button().click(function() {
@@ -225,7 +225,7 @@ var editor_formularios = function() {
 						// nuevogrupocampos:    nombre, columnas
 						el_nuevogrupocampos = nuevogrupocampos;
 
-						return Endotools.grupos_campos.create(
+						return Endosys.grupos_campos.create(
 							TM.operaciones,
 							{
 								nombre: nuevogrupocampos.nombre,
@@ -253,7 +253,7 @@ var editor_formularios = function() {
 						$option.text()
 					).then(function(nuevo_valor) {
 						// modificar el nombre del grupo de campos
-						return $.when(nuevo_valor, Endotools.grupos_campos.update(TM.operaciones, grupocampos_id, {nombre: nuevo_valor}));
+						return $.when(nuevo_valor, Endosys.grupos_campos.update(TM.operaciones, grupocampos_id, {nombre: nuevo_valor}));
 					}).done(function(nuevo_valor) {
 						$option.text(nuevo_valor);
 
@@ -276,7 +276,7 @@ var editor_formularios = function() {
 					controles.confirm_dialog(_('Borrar grupo de campos'), ('¿Desea borrar este grupo de campos?')).then(function() {	/*IDIOMAOK*/
 						grupocampos_id = $('#gruposCampos-lista-anadir option:selected').val();
 						
-						return Endotools.grupos_campos['delete'](TM.operaciones, grupocampos_id)
+						return Endosys.grupos_campos['delete'](TM.operaciones, grupocampos_id)
 					}).done(function() {
 						if (gruposcampos[grupocampos_id]) {
 							delete gruposcampos[grupocampos_id];
@@ -296,7 +296,7 @@ var editor_formularios = function() {
 				});
 
 				// actualizar lista de grupos de campos
-				Endotools.grupos_campos.index(TM.content_editorFormularios.gruposcampos).done(function(gruposCampos) {
+				Endosys.grupos_campos.index(TM.content_editorFormularios.gruposcampos).done(function(gruposCampos) {
 					var $lista = $('#gruposCampos-lista-anadir');
 					$lista.empty();
 
@@ -315,7 +315,7 @@ var editor_formularios = function() {
 				});
 
 				// cargar el formulario
-				Endotools.formularios.show(TM.content_editorFormularios.formulario, formulario_id).done(function(response) {
+				Endosys.formularios.show(TM.content_editorFormularios.formulario, formulario_id).done(function(response) {
 					var formulario = {
 						id: formulario_id,
 						titulo: formulario_titulo,
@@ -378,7 +378,7 @@ var editor_formularios = function() {
 								tipo_control: record.getData("tipo_control"),
 								titulo: record.getData("titulo"),
 								ancho: Number(record.getData("columnas")),
-								alto: Endotools.campos.get_alto_por_defecto( record.getData("tipo") ),
+								alto: Endosys.campos.get_alto_por_defecto( record.getData("tipo") ),
 								orden: -1,
 								posx: -1,
 								posy: -1,
@@ -425,8 +425,8 @@ var editor_formularios = function() {
 				});
 
 				// cargar todos los campos en el listado de campos
-				Endotools.campos.index(TM.content_editorFormularios.campos, null, {'datatable': datatable});
-				Endotools.statusbar.mostrar_mensaje(_('Listo'));	/*IDIOMAOK*/
+				Endosys.campos.index(TM.content_editorFormularios.campos, null, {'datatable': datatable});
+				Endosys.statusbar.mostrar_mensaje(_('Listo'));	/*IDIOMAOK*/
 			});
 		},
 
@@ -436,7 +436,7 @@ var editor_formularios = function() {
 			nuevo_campo_dialog.mostrar(campo_id).then(function(nuevocampo) {
 				el_nuevocampo = nuevocampo;
 
-				return Endotools.campos.update(
+				return Endosys.campos.update(
 					TM.content_editorFormularios,
 					campo_id,
 					{

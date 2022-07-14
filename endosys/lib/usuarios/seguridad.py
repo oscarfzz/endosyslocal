@@ -74,7 +74,7 @@ class roles:
 roles_details = {
 	roles.realizar_exploraciones:
 		RoleDetails(_(u'Realizar exploraciones'),#IDIOMAOK
-					_(u'Permiso que autoriza al usuario a realizar exploraciones. También hace que se muestre la opción “Nueva exploración” en el menú de la aplicación, para que esta opción esté disponible, se ha de indicar en la configuración del Endotools.')),#IDIOMAOK
+					_(u'Permiso que autoriza al usuario a realizar exploraciones. También hace que se muestre la opción “Nueva exploración” en el menú de la aplicación, para que esta opción esté disponible, se ha de indicar en la configuración del Endosys.')),#IDIOMAOK
 	roles.consultar_exploraciones_todas:
 		RoleDetails(_(u'Consultar todas las exploraciones'),#IDIOMAOK
 					_(u'Permiso que autoriza a un usuario a consultar todas las exploraciones. El comportamiento por defecto, es que cada usuario solo pueda consultar solo sus exploraciones.')),#IDIOMAOK
@@ -89,10 +89,10 @@ roles_details = {
 					_(u'Permiso que autoriza a un usuario a realizar informes de cualquier exploración, aunque la exploración pertenezca a otro usuario. Esta opción no da permisos para cancelar informes. Los informes solo se pueden cancelar por el médico de la exploración o el sysadmin.')),#IDIOMAOK
 	roles.crear_modif_citas:
 		RoleDetails(_(u'Crear y modificar citas'),#IDIOMAOK
-					_(u'Permiso que autoriza al usuario a crear y modificar las citas. En el caso de que las citas estén integradas, este permiso debería estar desactivado. Para mayor seguridad, la opción “Gestión Agenda” del menú de la aplicación, desde donde se permiten crear, modificar y eliminar citas, se activa o desactiva desde la configuración de Endotools.')),#IDIOMAOK
+					_(u'Permiso que autoriza al usuario a crear y modificar las citas. En el caso de que las citas estén integradas, este permiso debería estar desactivado. Para mayor seguridad, la opción “Gestión Agenda” del menú de la aplicación, desde donde se permiten crear, modificar y eliminar citas, se activa o desactiva desde la configuración de Endosys.')),#IDIOMAOK
 	roles.crear_modif_pacientes:
 		RoleDetails(_(u'Crear y modificar pacientes'),#IDIOMAOK
-					_(u'Permiso que autoriza al usuario a crear y modificar los pacientes. En caso de que los pacientes estén integrados, este permiso debería estar desactivado. Por mayor seguridad, la gestión de pacientes se activa o desactiva desde la configuración de Endotools.')),#IDIOMAOK
+					_(u'Permiso que autoriza al usuario a crear y modificar los pacientes. En caso de que los pacientes estén integrados, este permiso debería estar desactivado. Por mayor seguridad, la gestión de pacientes se activa o desactiva desde la configuración de Endosys.')),#IDIOMAOK
 	roles.crear_elementos:
 		RoleDetails(_(u'Crear elementos de las tablas'),#IDIOMAOK
 					_(u'Permiso que permite añadir valores a los campos tipo seleccionables o multiselección que se visualizan en los formularios, también permite añadir textos predefinidos en los campos tipo descripción (Memo) que se visualizan en los formularios.')),#IDIOMAOK
@@ -107,7 +107,7 @@ roles_details = {
 					_(u'Permiso restringido que permite crear, modificar y eliminar usuarios, también permite asignar y desasignar permisos restringidos, estos permisos son los de mayor seguridad. Este permiso te permite visualizar la opción “Gestión usuarios” del menú de la aplicación.'), True),#IDIOMAOK
 	roles.admin_organizacion:
 		RoleDetails(_(u'Administrar organización'),#IDIOMAOK
-					_(u'Permiso restringido que permite crear, modificar y eliminar la organización del hospital y otros parámetros de configuración de Endotools. Los parámetros a configurar desde esta opción son los siguientes: Centros, Servicios, Salas, Agendas, Motivos de cancelación y Prioridades. Este permiso te permite visualizar la opción “Administrar organización” del menú de la aplicación.'), True),#IDIOMAOK
+					_(u'Permiso restringido que permite crear, modificar y eliminar la organización del hospital y otros parámetros de configuración de Endosys. Los parámetros a configurar desde esta opción son los siguientes: Centros, Servicios, Salas, Agendas, Motivos de cancelación y Prioridades. Este permiso te permite visualizar la opción “Administrar organización” del menú de la aplicación.'), True),#IDIOMAOK
 	roles.admin_tipos_exploracion:
 		RoleDetails(_(u'Administrar tipos de exploración'),#IDIOMAOK
 					_(u'Permiso restringido que permite administrar los tipos de exploración y todos lo que compone un tipo de exploración: Formularios, Campos y Grupo de campos. Este permiso te permite visualizar la opción “Editor de tipos de exploración” del menú de la aplicación.'), True),#IDIOMAOK

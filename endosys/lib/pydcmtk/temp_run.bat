@@ -1,1 +1,1 @@
-"C:\Proyectos\NUEVO ENDOTOOLS 2\proyecto Pylons\endosys\endosys\lib\pydcmtk\dicom\bin\genuid.exe" -I -r 1.2.826.0.1.3680043.8.272 >> "C:\Proyectos\NUEVO ENDOTOOLS 2\proyecto Pylons\endosys\endosys\lib\pydcmtk\temp_run.out"
+"C:\Proyectos\NUEVO ENDOSYS 2\proyecto Pylons\endosys\endosys\lib\pydcmtk\dicom\bin\genuid.exe" -I -r 1.2.826.0.1.3680043.8.272 >> "C:\Proyectos\NUEVO ENDOSYS 2\proyecto Pylons\endosys\endosys\lib\pydcmtk\temp_run.out"
