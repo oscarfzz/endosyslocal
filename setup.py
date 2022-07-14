@@ -6,14 +6,14 @@ except ImportError:
 	from setuptools import setup, find_packages
 
 setup(
-	name='endotools',
+	name='endosys',
 	version="",
 	install_requires=["Pylons>=0.9.6.1"],
 	packages=find_packages(exclude=['ez_setup']),
 	include_package_data=True,
 	test_suite='nose.collector',
-	package_data={'endotools': ['i18n/*/LC_MESSAGES/*.mo']},
-	message_extractors = {'endotools': [
+	package_data={'endosys': ['i18n/*/LC_MESSAGES/*.mo']},
+	message_extractors = {'endosys': [
 			('**.py', 'python', None),
 			('templates/**.mako', 'mako', None),
 			('public/webapp/**.js', 'javascript', None),
@@ -21,10 +21,10 @@ setup(
 	]},
 	entry_points="""
 	[babel.extractors]
-	html = endotools.lib.babel_extract_html:extract_html
+	html = endosys.lib.babel_extract_html:extract_html
 
 	[paste.app_factory]
-	main = endotools.config.middleware:make_app
+	main = endosys.config.middleware:make_app
 
 	[paste.app_install]
 	main = pylons.util:PylonsInstaller

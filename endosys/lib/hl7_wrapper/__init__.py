@@ -4,7 +4,7 @@ import datetime
 from endosys.lib.misc import valid_date_range
 import hl7
 
-# "log" genera conflicto con el modulo endotools.lib.hl7_wrapper.log, por eso se renombra a "log_"
+# "log" genera conflicto con el modulo endosys.lib.hl7_wrapper.log, por eso se renombra a "log_"
 log_ = logging.getLogger(__name__)
 
 FIELD_SEPARATOR =           "|"

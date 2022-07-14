@@ -97,7 +97,7 @@ def generar_informe_html(exploracion, plantilla, imagenes = None, local = False,
 			   con la extensión. p.e: "GASTROSCOPIA 2 FOTOS.htm"
 
 	exploracion: es la exploracion de la que se quiere generar el informe.
-				 Ha de ser un objeto de tipo endotools.model.exploraciones.Exploracion
+				 Ha de ser un objeto de tipo endosys.model.exploraciones.Exploracion
 				 También puede ser un int, en este caso es el id. de un
 				 tipo de exploración, y se utiliza para comprobar si una plantilla
 				 se generaría correctamente (que no falten campos)

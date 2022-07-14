@@ -76,7 +76,7 @@ def _endotools_environment_config():
     # añade la carpeta de las plantillas de informes a la ruta de templates de mako
     config['buffet.template_options']['mako.directories'].append( paths['custom_informes_templ'] )
 
-    # anade la carpeta de endotools/templates a los templates disponibles en el pylons
+    # anade la carpeta de endosys/templates a los templates disponibles en el pylons
     config['buffet.template_options']['mako.directories'].append( os.path.join(paths['root'],'templates') )
 
 def load_environment(global_conf, app_conf):
@@ -97,7 +97,7 @@ def load_environment(global_conf, app_conf):
                     templates=[os.path.join(root, 'templates')])
 
     # Initialize config with the basic options
-    config.init_app(global_conf, app_conf, package='endotools',
+    config.init_app(global_conf, app_conf, package='endosys',
                     template_engine='mako', paths=paths)
 
     _endotools_environment_config()
@@ -113,7 +113,7 @@ def load_environment(global_conf, app_conf):
     #tmpl_options['mako.input_encoding'] = 'UTF-8'
     #tmpl_options['mako.output_encoding'] = 'UTF-8'
     #tmpl_options['mako.default_filters'] = ['force_ascii']
-    #tmpl_options['mako.imports'] = ["from endotools.config.environment import force_ascii"]
+    #tmpl_options['mako.imports'] = ["from endosys.config.environment import force_ascii"]
 
     # CONFIGURATION OPTIONS HERE (note: all config options will override
     # any Pylons config options)

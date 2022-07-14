@@ -14,7 +14,7 @@ try:
 except ImportError:
     from PIL import Image
 log = logging.getLogger(__name__)
-appPath = path.join(sys.path[0], 'endotools', 'lib', 'pydcmtk')
+appPath = path.join(sys.path[0], 'endosys', 'lib', 'pydcmtk')
 dcmConfig.binPath = path.join(appPath, 'dicom', 'bin') + '\\'
 dcmConfig.tempPath = path.join(appPath, 'dicom', 'temp') + '\\'
 dcmConfig.showExecute = '1'

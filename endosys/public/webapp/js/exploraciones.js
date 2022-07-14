@@ -627,7 +627,7 @@ var gestion_exploraciones = function () {
             //  Guardar el orden de las capturas
             if ($tab_capturas) {
                 var capturas = [];
-                $tab_capturas.find("li.endotools-imagen-container>a").each(function (index, el) {
+                $tab_capturas.find("li.endosys-imagen-container>a").each(function (index, el) {
                     capturas.push($(el).data("imagen").id);
                 });
                 updates.push(Endotools.exploraciones.update(
@@ -664,7 +664,7 @@ var gestion_exploraciones = function () {
         valores_por_defecto_from_form: function (tm, $form) {
             //  extraer los valores de los campos para enviar por REST como valores por defecto
             //      recorrer todos los tabs de formularios
-            //  XXX esta funcion está sacada de endotools.exploraciones.guardar_exploracion(), mirar
+            //  XXX esta funcion está sacada de endosys.exploraciones.guardar_exploracion(), mirar
             //      si se puede compartir código...
             //  XXX Esta mal
             $form.find('.tab_exploracion').each(function (index, el) {
@@ -684,7 +684,7 @@ var gestion_exploraciones = function () {
                         //  el valor esta en el atributo value del elemento button
                         valor = Endotools.Y.one(control._button).get('value');
                         //      TIPO BOOL
-                        //} else if (control.hasClass('endotools-checkbox')) {
+                        //} else if (control.hasClass('endosys-checkbox')) {
                     } else if (esControlTipo(control, Endotools.campos.TIPO_BOOL)) {
                         //  el valor esta en el atributo value del elemento button
                         valor = control.get('checked') ? 1 : 0;

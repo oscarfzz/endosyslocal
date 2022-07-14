@@ -4,7 +4,7 @@ from endosys.model import meta
 from endosys.model.elementos import Elemento
 from xml.etree.ElementTree import Element, SubElement, tostring
 
-#from endotools.lib.base import *
+#from endosys.lib.base import *
 from endosys.lib.genericREST import *
 
 from authkit.authorize.pylons_adaptors import authorized, authorize, NotAuthorizedError

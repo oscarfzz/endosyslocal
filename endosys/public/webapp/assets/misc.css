@@ -73,9 +73,9 @@ COLORES:
 
 /*	Citas cancelada	*/
 
-.yui-skin-endotools .yui-dt td.cita-cancelada, 
-.yui-skin-endotools .yui-dt td.cita-cancelada.yui-dt-asc , 
-.yui-skin-endotools .yui-dt td.cita-cancelada.yui-dt-desc{	
+.yui-skin-endosys .yui-dt td.cita-cancelada, 
+.yui-skin-endosys .yui-dt td.cita-cancelada.yui-dt-asc , 
+.yui-skin-endosys .yui-dt td.cita-cancelada.yui-dt-desc{	
 	/*background-color: #fc8c86;
 	border-color: #fc8c86;
 	color: #fc8c86;*/
@@ -86,9 +86,9 @@ COLORES:
 
 
 /*	Citas realizadas	*/
-.yui-skin-endotools .yui-dt td.cita-realizada,
-.yui-skin-endotools .yui-dt td.cita-realizada.yui-dt-asc,
-.yui-skin-endotools .yui-dt td.cita-realizada.yui-dt-desc{
+.yui-skin-endosys .yui-dt td.cita-realizada,
+.yui-skin-endosys .yui-dt td.cita-realizada.yui-dt-asc,
+.yui-skin-endosys .yui-dt td.cita-realizada.yui-dt-desc{
 	background-image:url("/webapp/assets/icons/pelotita_verde.png");
 	background-repeat: no-repeat;
 	background-position: center;
@@ -98,9 +98,9 @@ COLORES:
 }
 
 /*	Citas iniciada	*/
-.yui-skin-endotools .yui-dt td.cita-iniciada,
-.yui-skin-endotools .yui-dt td.cita-iniciada.yui-dt-asc,
-.yui-skin-endotools .yui-dt td.cita-iniciada.yui-dt-desc {
+.yui-skin-endosys .yui-dt td.cita-iniciada,
+.yui-skin-endosys .yui-dt td.cita-iniciada.yui-dt-asc,
+.yui-skin-endosys .yui-dt td.cita-iniciada.yui-dt-desc {
 	background-image:url("/webapp/assets/icons/pelotita_amarilla.png");
 	background-repeat: no-repeat;
 	background-position: center;
@@ -111,9 +111,9 @@ COLORES:
 }
 
 /*	Citas pendiente	*/
-.yui-skin-endotools .yui-dt td.cita-pendiente,
-.yui-skin-endotools .yui-dt td.cita-pendiente.yui-dt-asc,
-.yui-skin-endotools .yui-dt td.cita-pendiente.yui-dt-desc {
+.yui-skin-endosys .yui-dt td.cita-pendiente,
+.yui-skin-endosys .yui-dt td.cita-pendiente.yui-dt-asc,
+.yui-skin-endosys .yui-dt td.cita-pendiente.yui-dt-desc {
 	background-image:url("/webapp/assets/icons/pelotita_azul.png");
 	background-repeat: no-repeat;
 	background-position: center;

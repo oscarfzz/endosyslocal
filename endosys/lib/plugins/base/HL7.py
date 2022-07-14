@@ -6,7 +6,7 @@ usa cuando no es suficiente con Mirth Connect.
 En principio no se encarga del transporte.
 '''
 
-##from endotools.lib.misc import record
+##from endosys.lib.misc import record
 from endosys.lib.plugins.base import obj_from_params, Plugin
 ##from datetime import date
 

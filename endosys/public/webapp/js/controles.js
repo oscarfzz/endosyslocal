@@ -62,7 +62,7 @@ var controles = function() {
 			datatable.subscribe("rowMouseoutEvent",  datatable.onEventUnhighlightRow);
 			//	obtener el color del fondo del header definido por CSS y configurar la opción COLOR_COLUMNFILLER
 			//datatable.set("COLOR_COLUMNFILLER", "#C4E5D6");
-			var colorfondo = $('.yui-skin-endotools .yui-dt th').first().css('background-color')
+			var colorfondo = $('.yui-skin-endosys .yui-dt th').first().css('background-color')
 			datatable.set("COLOR_COLUMNFILLER", colorfondo);
 			
 			if (options && options.layoutPaneResizing) {

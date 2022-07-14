@@ -4,9 +4,9 @@
   <head>
     ${self.head_tags()}
     ${h.javascript_include_tag(builtins=True)}
-    <script src="/javascripts/endotools.js" type="text/javascript"></script>
+    <script src="/javascripts/endosys.js" type="text/javascript"></script>
     ${self.javascript_tags()}
-    ##${h.stylesheet_link_tag('/css/endotools.css')}
+    ##${h.stylesheet_link_tag('/css/endosys.css')}
     ##${h.stylesheet_link_tag('/css/layout.css')}
   </head>
   <body>

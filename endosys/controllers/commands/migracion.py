@@ -172,7 +172,7 @@ class MigracionController(CommandController):
 			params['step'] = 1
 			return render(template,extra_vars=params)
 
-		#verificar las versiones del endotools que sean iguales
+		#verificar las versiones del endosys que sean iguales
 		versiones_ok = self.verificar_versiones_endotools()
 		if not versiones_ok:
 			params['error'] = self.msgs['error_versiones']
@@ -428,7 +428,7 @@ class MigracionController(CommandController):
 
 	def crear_session(self, tipo):
 		""" Crear la session para la base de datos 
-			origen que no esta conectada con endotools
+			origen que no esta conectada con endosys
 		"""
 		if tipo == 'origen':
 			bind = self.db_origen['engine']
@@ -444,7 +444,7 @@ class MigracionController(CommandController):
 
 	def conectar_db(self, tipo, database):
 		""" Conectar con la bd origen que no esta asociada
-			al endotools
+			al endosys
 		"""
 		if tipo=='origen':
 			self.db_origen['CONN'] = database
@@ -482,10 +482,10 @@ class MigracionController(CommandController):
 			if ori_version.valor == des_version.valor:
 				return True
 			else:
-				self.write_log("Las versiones de endotools son distintas", LOG_ERROR)
+				self.write_log("Las versiones de endosys son distintas", LOG_ERROR)
 				return False
 		except Exception,e:
-			self.write_log("Ocurrio un error al obtener las versions del endotools (%s)" % (str(e)), LOG_ERROR)
+			self.write_log("Ocurrio un error al obtener las versions del endosys (%s)" % (str(e)), LOG_ERROR)
 			return False
 
 	def crear_tablas_migracion(self):
@@ -592,7 +592,7 @@ class MigracionController(CommandController):
 	
 	def crear_columnas_migracion(self):
 		""" Crea las columnas de identificacion de migracion en 
-			las diferentes tablas de endotools que estan 
+			las diferentes tablas de endosys que estan 
 			involucradas en la migracion
 			Usado en Paso 2
 		"""
@@ -1643,7 +1643,7 @@ class MigracionController(CommandController):
 				des_user = self.get_row_des_from_ori_id(UserD, ori_user.id, True)
 
 				if not des_user:
-					# busca si el nombre de usuario esta usado ya en endotools ----
+					# busca si el nombre de usuario esta usado ya en endosys ----
 					# la primera busqueda es con el nombre igual
 					numero_user = 0
 					nombre_numero = None
@@ -1705,7 +1705,7 @@ class MigracionController(CommandController):
 		output_ui.append(MSG_DISP % (UserRoleO.__name__, len(ori_users_roles_result)))
 		for ori_user_role in ori_users_roles_result:
 
-			#los roles tienen el mismo id en todas las basde de endotools
+			#los roles tienen el mismo id en todas las basde de endosys
 			# por lo tanto no es necesario buscarlos en destino para mapearlos con origen
 
 			# comprobar si esta excluido

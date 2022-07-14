@@ -61,7 +61,7 @@ def get_tipoExploracion_id_from_prestacion(**kwargs):
 ##		prestacion="GASTRO"
 ##	se devuelve el codigo de servicio.
 ##	"""
-##	from endotools.model.meta import Session
+##	from endosys.model.meta import Session
 ##	q = Session.query(Map_Prest_TiposExpl)
 ##	if not('prestacion' in kwargs):
 ##		raise Exception(u'la función "get_servicio_from_prestacion" debe tener el parámetro "prestacion"')

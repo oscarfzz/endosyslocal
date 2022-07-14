@@ -31,8 +31,8 @@ from endosys.lib.informes.valores import get_no_definido_value
 
 log = logging.getLogger(__name__)
 
-SENDING_APPLICATION =   "endotools"
-SENDING_FACILITY =      "endotools"
+SENDING_APPLICATION =   "endosys"
+SENDING_FACILITY =      "endosys"
 RECEIVING_APPLICATION = "HIS"
 RECEIVING_FACILITY =    "HIS"
 VERSION_ID =            "2.5"
@@ -82,7 +82,7 @@ def _make_MSH(centro, message_code, trigger_event, message_structure):
     datetime_message =      endosys.lib.hl7_wrapper.datetime_to_hl7(datetime.datetime.now())
     message_control_id =    endosys.lib.hl7_wrapper.datetime_to_hl7(datetime.datetime.now(), True)
     msh = "MSH|^~\&|%s|%s|%s|%s|%s||%s^%s^%s|%s|P|%s|||AL|NE\r" % (
-                    config.get('HL7.APPLICATION_ID', 'endotools'),
+                    config.get('HL7.APPLICATION_ID', 'endosys'),
                     facility,
                     config.get('HL7.EXTERNAL_APPLICATION_ID', 'HIS'),
                     facility,
@@ -197,7 +197,7 @@ def _make_obx_campos(exploracion, seq_start):
     ini_base = 'ENVIAR_ORU.OBX_DAT'
     ini_pos = 1
     ini_campos = 'CAMPOS'
-    application_id = config.get('HL7.APPLICATION_ID', 'endotools')
+    application_id = config.get('HL7.APPLICATION_ID', 'endosys')
     # CAMPO_EXTERNO es el valor del INI que sirve para completar el OBX 3.1
     #ini_externo = 'CAMPO_EXTERNO' 
 
@@ -315,11 +315,11 @@ def _crear_mensaje_oru_r01(informe, versiones=False, incrustado=False, anular=Fa
     - La libreria de python hl7 no sirve para crear mensajes HL7, solo para
       parsearlos, asi que este ORU se genera "a mano".
     - Los segmentos OBX tendran este formato: 
-      'OBX|1|RP|%s|INF|http://endotools-server/rest/exploraciones/117/informes/_LAST.pdf\r'
-      'OBX|%s|RP|%s|IMG|http://endotools-server/rest/capturas/254.jpg\r'
-      'OBX|2|RP|ID|IMG|http://endotools-server/rest/capturas/254.jpg||||\r' +\
-      'OBX|3|RP|ID|IMG|http://endotools-server/rest/capturas/255.jpg||||\r' +\
-      'OBX|4|RP|ID|IMG|http://endotools-server/rest/capturas/256.jpg||||'
+      'OBX|1|RP|%s|INF|http://endosys-server/rest/exploraciones/117/informes/_LAST.pdf\r'
+      'OBX|%s|RP|%s|IMG|http://endosys-server/rest/capturas/254.jpg\r'
+      'OBX|2|RP|ID|IMG|http://endosys-server/rest/capturas/254.jpg||||\r' +\
+      'OBX|3|RP|ID|IMG|http://endosys-server/rest/capturas/255.jpg||||\r' +\
+      'OBX|4|RP|ID|IMG|http://endosys-server/rest/capturas/256.jpg||||'
 
     LIMITACIONES:
     - en PID solo se indica el NHC

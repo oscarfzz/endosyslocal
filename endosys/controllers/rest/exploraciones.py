@@ -504,8 +504,8 @@ class ExploracionesController(GenericRESTController):
                 dicom_data.patientName = exploracion.cita.work.patientName
                 dicom_data.patientBirthDate = exploracion.cita.work.patientBirthDate
                 dicom_data.patientSex = exploracion.cita.work.patientSex
-##              dicom_data.studyDate = endotools.lib.dicom.util.date_to_DICOM(exploracion.fecha)
-##              dicom_data.studyTime = endotools.lib.dicom.util.time_to_DICOM(exploracion.hora)
+##              dicom_data.studyDate = endosys.lib.dicom.util.date_to_DICOM(exploracion.fecha)
+##              dicom_data.studyTime = endosys.lib.dicom.util.time_to_DICOM(exploracion.hora)
 
                 dicom_data.studyDescription = exploracion.cita.work.schProcStepDescription
 
@@ -589,7 +589,7 @@ class ExploracionesController(GenericRESTController):
 
         # actualizar los campos dicom de la exploracion de fecha y hora
         # XXX   ya lo hago al crear la exploracion
-##      endotools.lib.dicom.util.date_to_DICOM()
+##      endosys.lib.dicom.util.date_to_DICOM()
 ##      exploracion.exploracion_dicom.studyDate =
 ##      exploracion.exploracion_dicom.studyTime =
 ##      Session.commit()
@@ -606,8 +606,8 @@ class ExploracionesController(GenericRESTController):
 ##              abort_xml(500, 'Ha ocurrido un error finalizando la exploracion (%s)' % e)
 
         # si esta habilitado el envio de imagenes a un pacs, hacerlo ahora
-##      if endotools.lib.dicom.PACS.get_store_enabled():
-##          endotools.lib.dicom.PACS.store(exploracion.id)
+##      if endosys.lib.dicom.PACS.get_store_enabled():
+##          endosys.lib.dicom.PACS.store(exploracion.id)
 
         # enviar a Mirth el mensaje ORR, si está configurado asi, y si tiene cita
         # XXX ya no se utiliza ENVIAR_ORR, ahora es ENVIAR_CAPTURA_ACTIVIDAD!!!
@@ -631,8 +631,8 @@ class ExploracionesController(GenericRESTController):
                 abort_xml(500, _('Ha ocurrido un error finalizando la exploracion (%s)') % e)#IDIOMAOK
 
         # Si esta habilitado el envio de imagenes a un pacs, hacerlo ahora
-        #if endotools.lib.dicom.PACS.get_store_enabled():
-        #   endotools.lib.dicom.PACS.store(exploracion.id)
+        #if endosys.lib.dicom.PACS.get_store_enabled():
+        #   endosys.lib.dicom.PACS.store(exploracion.id)
 
         # enviar a Mirth el mensaje ORR, si está configurado asi, y si tiene cita
         if config.get('ENVIAR_CAPTURA_ACTIVIDAD.ACTIVO', '0') == '1':

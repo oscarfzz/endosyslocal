@@ -335,7 +335,7 @@ class CapturasController(GenericRESTController):
             # No es necesario Login, viene del mirth
             log.info('%s - Captura ID: %s' % (_(u'Se ingreso al update de capturas mediante Mirth'),str(captura.id)))
         else:
-            # Accede mediante endotools
+            # Accede mediante endosys
             if not authorized(RemoteUser()):
                 abort(403, _(u'El usuario no tiene permisos'))#IDIOMAOK
 

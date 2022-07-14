@@ -1,5 +1,5 @@
 ﻿"""
-modulo standard de DICOM de endotools web.
+modulo standard de DICOM de endosys web.
 
 	-acceso a worklist (filtro por fecha)
 	-guardar el worklist en BBDD
@@ -135,7 +135,7 @@ def get_worklist(date=None, modality=None, codigo_centro=None):
 							endosys.lib.pydcmtk.pydcmtk.kPatientName,
 							endosys.lib.pydcmtk.pydcmtk.kPatientBirthDate,
 							endosys.lib.pydcmtk.pydcmtk.kPatientSex,
-							#endotools.lib.pydcmtk.pydcmtk.kPlacerOrderNumberImagingServiceRequest,  # XXX   es necesario?
+							#endosys.lib.pydcmtk.pydcmtk.kPlacerOrderNumberImagingServiceRequest,  # XXX   es necesario?
 	##						kScheduledProcedureStepStartDate,
 	##						kScheduledProcedureStepStartTime,
 	##						kScheduledProcedureStepDescription,
@@ -328,10 +328,10 @@ class _config:
 # una configuración para un centro, tiene preferencia sobre la genérica.
 """
 try:
-	import endotools.lib.misc
-	from endotools.lib.organizacion_centros import get_centros
+	import endosys.lib.misc
+	from endosys.lib.organizacion_centros import get_centros
 	for centro in get_centros():
-		r = endotools.lib.misc.record()
+		r = endosys.lib.misc.record()
 		r.lib =			_config.worklist.lib # la LIB es general, no por centro
 		r.callingAE =	config.get('WORKLIST.%s.CALLING_AE' % centro.codigo, None)
 		r.calledAE =	config.get('WORKLIST.%s.CALLED_AE' % centro.codigo, None)

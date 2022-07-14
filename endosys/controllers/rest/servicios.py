@@ -7,7 +7,7 @@ from endosys.model.medicos import Rel_Medicos_Servicios
 from endosys.model.usuarios import get_usuario
 from xml.etree.ElementTree import Element, SubElement, tostring
 
-#from endotools.lib.base import *
+#from endosys.lib.base import *
 from endosys.lib.genericREST import *
 
 from authkit.authorize.pylons_adaptors import authorize

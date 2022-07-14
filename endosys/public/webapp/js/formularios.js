@@ -682,7 +682,7 @@ ETFormData.prototype = {
         $contenedor.find('.campo-tipo-memo').addClass('pure-input-1');
         $contenedor.find('.campo-tipo-multi').addClass('pure-input-1');
         $contenedor.find('.campo-tipo-selec').addClass('width-100');
-        $contenedor.find('.endotools-autocomplete').addClass('pure-input-1');
+        $contenedor.find('.endosys-autocomplete').addClass('pure-input-1');
     },
 
     generar_grupoCampos: function (grupoCampos, o) {
@@ -842,7 +842,7 @@ ETFormData.prototype = {
                 //  el valor esta en el atributo value del elemento button
                 valor = $control.val();
                 //  tipo select con autocomplete    
-            } else if ($control.hasClass('endotools-autocomplete')) {
+            } else if ($control.hasClass('endosys-autocomplete')) {
 
                 valor = $control.val();
 
@@ -1072,7 +1072,7 @@ ETFormData.prototype = {
                     },
                     minLength: 2
                 })
-                    .addClass('endotools-autocomplete')
+                    .addClass('endosys-autocomplete')
                     .appendTo(controlwrapper)
                     .data("ui-autocomplete")._renderItem = function (ul, item) {
                         var $a = $("<a></a>").text(item.label);

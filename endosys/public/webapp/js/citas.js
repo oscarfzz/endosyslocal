@@ -409,7 +409,7 @@
 						//<<<
 						
 						//	si no es la integración de CHUS, usar las agendas estandar
-						//	de endotools.
+						//	de endosys.
 						var $agenda = $("#busqueda-citas-agenda");
 						if ($agenda.val())
 							params.agenda_id = $agenda.val();

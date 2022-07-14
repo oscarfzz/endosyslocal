@@ -1,2 +1,2 @@
-recursive-include endotools/public *
-recursive-include endotools/templates *
+recursive-include endosys/public *
+recursive-include endosys/templates *

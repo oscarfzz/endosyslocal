@@ -137,6 +137,6 @@ def valid_password(environ, username, password):
             log.debug("validar por ldap")
             if _validate_ldap(username.lower(), password): return True
         else:
-            log.debug(u"validar por método de endotools")
+            log.debug(u"validar por método de endosys")
             if users.user_has_password(username.lower(), password): return True
     return False

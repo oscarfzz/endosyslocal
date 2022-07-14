@@ -59,7 +59,7 @@ class CheckController(BaseController):
 			s += 'Esta es la configuración antigua (por defecto de Pylons), ahora se debe utilizar '
 			s += 'la carpeta /cache. Se debe cambiar esto en el archivo INI, hasta que no se corrija '
 			s += 'no se utilizará la carpeta /data para guardar las capturas e informes, y se seguirán '
-			s += 'almacenando en /endotools/capturas y /endotools/informes</b>'
+			s += 'almacenando en /endosys/capturas y /endosys/informes</b>'
 			s += '</li>'
 
 		s += '</ul>'
@@ -128,11 +128,11 @@ class CheckController(BaseController):
 		return '<p>Esta funcionalidad ha sido deshabilitada a partir de la versión 2.2.0</p>'
 		# 	#########
 
-		from endotools.model.tiposExploracion import TipoExploracion
-		from endotools.lib.misc import registro_by_id, formatea_valor
-		from endotools.model import meta
-		from endotools.lib.formularios import FormExplData
-		from endotools.lib.informes import get_plantillas
+		from endosys.model.tiposExploracion import TipoExploracion
+		from endosys.lib.misc import registro_by_id, formatea_valor
+		from endosys.model import meta
+		from endosys.lib.formularios import FormExplData
+		from endosys.lib.informes import get_plantillas
 
 		response.content_type = "text/html"
 		s = u'<h1>Comprobar plantillas de informes</h1>'

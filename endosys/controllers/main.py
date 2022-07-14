@@ -118,7 +118,7 @@ class MainController(BaseController):
 
 	def res(self, filename):
 		"""
-		/res accede a los archivos en endotools/res (blank.png...)
+		/res accede a los archivos en endosys/res (blank.png...)
 		"""
 		return self._servir_fichero(os.path.join(config['pylons.paths']['root'], 'res', filename))
 

@@ -23,26 +23,26 @@ from sqlalchemy import *
 import csv
 
 
-# cadena de conexión a BBDD de endotools
-endotools = {}
-endotools['CONN'] =  'mssql://%s:%s@%s/%s' % (USER_ENDOTOOLS, PASS_ENDOTOOLS, HOST_ENDOTOOLS, BBDD_ENDOTOOLS)
+# cadena de conexión a BBDD de endosys
+endosys = {}
+endosys['CONN'] =  'mssql://%s:%s@%s/%s' % (USER_ENDOTOOLS, PASS_ENDOTOOLS, HOST_ENDOTOOLS, BBDD_ENDOTOOLS)
 
 contador = 0
 poblaciones_endotools = None
 
 def ini_endotools():
-	global endotools, poblaciones_endotools, contador
+	global endosys, poblaciones_endotools, contador
 
 	# iniciar sqlachemy, conexión a la bbdd y tabla de pacientes
-	endotools['engine'] = create_engine(endotools['CONN'])
-	endotools['metadata'] = MetaData()
-	endotools['metadata'].bind = endotools['engine']
-	poblaciones_endotools = Table('Poblaciones', endotools['metadata'], autoload=True)
+	endosys['engine'] = create_engine(endosys['CONN'])
+	endosys['metadata'] = MetaData()
+	endosys['metadata'].bind = endosys['engine']
+	poblaciones_endotools = Table('Poblaciones', endosys['metadata'], autoload=True)
 	contador = 0
 	leer_fichero_csv()
 
 def leer_fichero_csv():
-	global endotools, poblaciones_endotools, contador
+	global endosys, poblaciones_endotools, contador
 	csvfile = open(RUTA, 'rb')
 	try:
 		csvreader = csv.reader(csvfile, delimiter=';', quotechar='"', quoting = csv.QUOTE_NONE, escapechar = '\\')

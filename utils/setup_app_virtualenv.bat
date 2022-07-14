@@ -17,7 +17,7 @@ FOR /f "tokens=*" %%i IN (env_version.txt) DO SET ENV_VERSION=%%i
 
 echo .ini files availables:
 echo ----------------------
-dir /B *.ini | findstr /v "test-endotools-sample.ini"
+dir /B *.ini | findstr /v "test-endosys-sample.ini"
 echo.
 
 SET /P ARCHIVO_INI=Write the name of .ini file to configure Endosys App:

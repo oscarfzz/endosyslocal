@@ -251,7 +251,7 @@ var gestion_pacientes = function() {
 			  },
 			  minLength: 2
 			})
-			.addClass('endotools-autocomplete')
+			.addClass('endosys-autocomplete')
 			.data("ui-autocomplete")._renderItem = function(ul, item) {
 				var $a = $("<a></a>").text(item.label);
 				highlightText(this.term, $a);
@@ -277,7 +277,7 @@ var gestion_pacientes = function() {
 			  },
 			  minLength: 2
 			})
-			.addClass('endotools-autocomplete')
+			.addClass('endosys-autocomplete')
 			.data("ui-autocomplete")._renderItem = function(ul, item) {
 				var $a = $("<a></a>").text(item.label);
 				highlightText(this.term, $a);

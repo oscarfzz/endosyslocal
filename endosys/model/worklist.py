@@ -65,7 +65,7 @@ def get_work(**kwargs):
     elif 'accessionNumber' in kwargs:
         q = q.filter( Work.accessionNumber == kwargs['accessionNumber'] )
     else:
-        raise Exception(u'la función "model.endotools.worklist.get_work()" debe tener 1 parámetro ("cita_id" o "accessionNumber")')
+        raise Exception(u'la función "model.endosys.worklist.get_work()" debe tener 1 parámetro ("cita_id" o "accessionNumber")')
     if q.count():
         return q.one()
     else:

@@ -77,7 +77,7 @@ más habitual de los paneles en EndoTools.
 .ui-layout-resizer-closed {
 	background-color: #FFFFFF;
 	/*background: url(/web/assets/resizer_background.png) repeat scroll 0 0 #D1E6FC;*/
-	 /*background: url("../../lib/jquery-ui-1.9.2.custom/css/endotools/images/ui-bg_glass_75_e6e6e6_1x400.png") repeat-x scroll 50% 50% #E6E6E6;*/
+	 /*background: url("../../lib/jquery-ui-1.9.2.custom/css/endosys/images/ui-bg_glass_75_e6e6e6_1x400.png") repeat-x scroll 50% 50% #E6E6E6;*/
 	opacity:		.60;
 	filter:			Alpha(Opacity=60);
 	/*margin-top: -10px !important;*/

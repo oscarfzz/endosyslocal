@@ -518,7 +518,7 @@ def objeto_to_csv(data,lineterminator=None,opciones={}):
 				log.debug(keys_array)
 
 
-			# - Escribe los headers con sus nombres como se muestran en el endotools
+			# - Escribe los headers con sus nombres como se muestran en el endosys
 			# - headers puede venir ordenado diferente, por eso se reacomoda el keys_array segun
 			#   como venga ordenado el header
 			if headers:

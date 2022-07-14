@@ -1,4 +1,4 @@
-﻿"""Setup the endotools application"""
+﻿"""Setup the endosys application"""
 def __(msg):
     """ Para que al importar modulos que usen i18n._ no den error, ya que en
         websetup no está inicializado esto.
@@ -28,7 +28,7 @@ log = logging.getLogger(__name__)
 
 def setup_config(command, filename, section, vars):
 
-    """Place any commands to setup endotools here"""
+    """Place any commands to setup endosys here"""
     conf = appconfig('config:' + filename)
     load_environment(conf.global_conf, conf.local_conf)
 
@@ -36,9 +36,9 @@ def setup_config(command, filename, section, vars):
     from endosys import model
     from endosys.model import meta
 
-    # Si el INI utilizado es "test-endotools-sample.ini",
+    # Si el INI utilizado es "test-endosys-sample.ini",
     # se está haciendo el testing.
-    testing = (os.path.basename(filename) == "test-endotools-sample.ini")
+    testing = (os.path.basename(filename) == "test-endosys-sample.ini")
     
     users = UsersFromDatabase(model)
     if testing:
@@ -58,7 +58,7 @@ def setup_config(command, filename, section, vars):
 
     # Crear los usuarios por defecto y asignarle roles
     if not users.user_exists('admin'):
-        users.user_create('admin', password='endotools')
+        users.user_create('admin', password='endosys')
         meta.Session.flush()
 
         #  Crear un medico vinculado al user admin
@@ -78,7 +78,7 @@ def setup_config(command, filename, section, vars):
             log.warning(str(e))
 
     if not users.user_exists('sysadmin'):
-        users.user_create('sysadmin', password='endotools')
+        users.user_create('sysadmin', password='endosys')
         meta.Session.flush()
         
         #  Crear un medico vinculado al user sysadmin
@@ -115,7 +115,7 @@ def setup_config(command, filename, section, vars):
     if testing:
         create_basic_data()
 
-    # actualiza la version del endotools
+    # actualiza la version del endosys
     update_version_number_db(meta.Session)
 
     meta.Session.commit()

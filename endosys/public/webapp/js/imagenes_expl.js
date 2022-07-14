@@ -116,7 +116,7 @@ var imagenes_expl = function() {
 					'minZoomRatio': 0.4,
 					'hide': function(event){
 						var id_seleccionada = imagenes_expl.viewer_js.images[imagenes_expl.viewer_js.index].attributes["data-id"].nodeValue;
-						$(".endotools-imagen-container").css("background-color", "transparent");
+						$(".endosys-imagen-container").css("background-color", "transparent");
 						$("#captura"+id_seleccionada+"").css("background-color", "#ec948d");
 					},
 					'viewed': function(event){
@@ -409,7 +409,7 @@ var imagenes_expl = function() {
 					}else{
 
 						// Si no existia el LI entonces lo crea. Esto lo hace 1 sola vez
-						$container_li = $('<li id ="captura'+imagen.id+'" class="endotools-imagen-container' +
+						$container_li = $('<li id ="captura'+imagen.id+'" class="endosys-imagen-container' +
 										  ' li-type-'+multimedia.type +
 										  ' ' + disponible_class + '"></li>')
 										  .appendTo($parent);
@@ -446,7 +446,7 @@ var imagenes_expl = function() {
 						var $img_link = $('<a href="#"></a>')
 									.appendTo($container_li)
 					 				.data('imagen', imagen)
-					 				.append($('<img src="' + thumb_src +'" class="endotools-imagen"></img>'));
+					 				.append($('<img src="' + thumb_src +'" class="endosys-imagen"></img>'));
 
 
 						//$viewer_li.append('<img src="'+img_src+'" />')
@@ -608,7 +608,7 @@ var imagenes_expl = function() {
 			//funcion para desmarcar todas las captura y flechas seleccionadas en pantalla
 
 			//deseleccionar todas las imagenes/capturas
-			$('.endotools-imagen-container').each(function(index, el) {
+			$('.endosys-imagen-container').each(function(index, el) {
 				$(el).css("background-color", "transparent");
 			});
 

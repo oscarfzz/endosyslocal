@@ -37,7 +37,7 @@ def generar_informe_openoffice(nombre_archivo, exploracion, plantilla, imagenes 
 	Parametros:
 		nombre_archivo: El nombre de archivo PDF
 		exploracion: 	es la exploracion de la que se quiere generar el informe.
-					 	Ha de ser un objeto de tipo endotools.model.exploraciones.Exploracion
+					 	Ha de ser un objeto de tipo endosys.model.exploraciones.Exploracion
 					 	También puede ser un int, en este caso es el id. de un
 					 	tipo de exploración, y se utiliza para comprobar si una plantilla
 					 	se generaría correctamente (que no falten campos)
@@ -84,7 +84,7 @@ def generar_informe_openoffice_externo(nombre_archivo, exploracion, plantilla, i
 	"""
 	Descripción:
 		Esta funcion llama a un script externo para que en caso de cuelgue no
-	 	afecte al servicio de endotools y no haya que reiniciarlo.
+	 	afecte al servicio de endosys y no haya que reiniciarlo.
 	Parametros:
 		Los mismos que generar_informe_oppenoffice_externo
 	Retorno:

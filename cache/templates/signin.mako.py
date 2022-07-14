@@ -22,7 +22,7 @@ def render_body(context,**pageargs):
         context.write(u'\n    ')
         # SOURCE LINE 6
         context.write(unicode(h.javascript_include_tag(builtins=True)))
-        context.write(u'\n    <script src="/javascripts/endotools.js" type="text/javascript"></script>\n    ')
+        context.write(u'\n    <script src="/javascripts/endosys.js" type="text/javascript"></script>\n    ')
         # SOURCE LINE 8
         context.write(unicode(self.javascript_tags()))
         context.write(u'\n')

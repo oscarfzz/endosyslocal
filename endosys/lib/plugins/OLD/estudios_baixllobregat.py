@@ -63,7 +63,7 @@ class PluginEstudiosBaixLlobregat(PluginEstudios):
 		self.modelos_endoscopios = {}
 
 		self.like_filter = ()
-		self.tabla = endotools.model.estudios.Estudio
+		self.tabla = endosys.model.estudios.Estudio
 
 		# crear la tabla TicketsLavadoras en la BBDD
 		self._crear_tabla_TicketsLavadoras()

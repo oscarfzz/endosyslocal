@@ -572,7 +572,7 @@ class InformesController(GenericRESTController):
             #                                         - Rel_capturas_informes se tendria que generar despues de crear correctamente el
             #                                           informe. Por lo que esta tabla tampoco tendria mucho sentido ya que solo serviria
             #                                           como informacion y no para la propia generacion. Igualmente como informacion
-            #                                           tambien puede servir para otras funcionalidades de endotools en el futuro
+            #                                           tambien puede servir para otras funcionalidades de endosys en el futuro
 
             # Leer parametros
             if 'webob._parsed_post_vars' in request.environ:

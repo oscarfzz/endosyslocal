@@ -1,7 +1,7 @@
 # funcion que devuelve la plantilla del signin
 
 
-#from endotools.lib.base import *
+#from endosys.lib.base import *
 
 #def signin():
 #    return render('/signin.mako')

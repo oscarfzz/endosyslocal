@@ -109,7 +109,7 @@ a la derecha mediante el padding-right
 	margin: 0;
 }
 
-#exploracion_form_tabview #exploracion-tab-imagenes .endotools-imagen-container {
+#exploracion_form_tabview #exploracion-tab-imagenes .endosys-imagen-container {
 	display: inline-block;
 	*display: inline;	/*	IE7	*/
 	padding: 4px;
@@ -117,7 +117,7 @@ a la derecha mediante el padding-right
 	position: relative;	/*	para permitir posicionar dentro de forma absoluta el checkbox	*/
 }	
 	
-#exploracion_form_tabview #exploracion-tab-imagenes img.endotools-imagen {
+#exploracion_form_tabview #exploracion-tab-imagenes img.endosys-imagen {
 	cursor: pointer;
 }
 

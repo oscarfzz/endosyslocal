@@ -89,7 +89,7 @@ def recorrer_update(path_lectura,path_destino=os.getcwd()):
 def logica_ejecucion_update(destino, esfichero, origen = None, nameFile = None):
 	"""
 		en esta funcion se implementa la logica de copiar los ficheros de la
-		carpeta del paquete de actualizacion a la carpeta de endotools
+		carpeta del paquete de actualizacion a la carpeta de endosys
 
 		Si es un directorio
 			si no existe --> crear carpeta

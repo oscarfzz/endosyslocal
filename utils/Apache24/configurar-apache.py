@@ -77,8 +77,8 @@ def configurar_apache():
     base = path.dirname(path.realpath(__file__))
     endotools_base = path.dirname(path.dirname(path.dirname(base)))
     general_config = 'httpd.conf'
-    endotools_config = 'httpd-endotools.conf'
-    endotools_ssl_config = 'httpd-endotools-ssl.conf'
+    endotools_config = 'httpd-endosys.conf'
+    endotools_ssl_config = 'httpd-endosys-ssl.conf'
     module = 'mod_wsgi.so'
 
     if not path.exists('C:\endosysapp\Apache24'):
@@ -99,12 +99,12 @@ def configurar_apache():
     # por el nombre.
     inis = []
     for file in listdir(path.join(endotools_base, 'endosysapp')):
-        if file.endswith(".ini") and not 'test-endotools-sample.ini' in file:
+        if file.endswith(".ini") and not 'test-endosys-sample.ini' in file:
             inis.append(file.replace('.ini',''))
 
     if len(inis) == 1:
         nombre = inis[0]
-        print("Usamos %s.ini como fichero de configuración de endotools." %
+        print("Usamos %s.ini como fichero de configuración de endosys." %
               nombre)
     else:
         nombre = path.basename(raw_input("Indique el nombre del fichero" + \
@@ -119,9 +119,9 @@ def configurar_apache():
         config.read(path.join(endotools_base, 'endosysapp', '%s.ini' % nombre))
         port = config.get('server:main', 'port')
 
-    print("Configuramos el fichero 'endotools.wsgi' para que use '%s.ini'." %
+    print("Configuramos el fichero 'endosys.wsgi' para que use '%s.ini'." %
           nombre)
-    for line in input(path.join(endotools_base, 'endosysapp', 'endotools.wsgi'),
+    for line in input(path.join(endotools_base, 'endosysapp', 'endosys.wsgi'),
                       inplace=True):
         if "ini_file =" in line:
             print('ini_file = "%s.ini"' % nombre)

@@ -5,14 +5,14 @@ import time
 from datetime import date, timedelta
 
 import logging
-##from endotools.model.citas import Cita
+##from endosys.model.citas import Cita
 from xml.etree.ElementTree import Element, SubElement, tostring
 
 from endosys.lib.genericREST import *
 
 from endosys.lib.base import *
 from endosys.lib.misc import *
-##from endotools.lib.genericREST import *
+##from endosys.lib.genericREST import *
 
 from authkit.authorize.pylons_adaptors import authorized, authorize, authorize_request, NotAuthorizedError
 from authkit.permissions import RemoteUser, ValidAuthKitUser, UserIn, HasAuthKitRole, And

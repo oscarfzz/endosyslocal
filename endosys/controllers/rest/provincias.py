@@ -4,7 +4,7 @@ from pylons.i18n import _
 from endosys.model.provincias import Provincia
 from xml.etree.ElementTree import Element, SubElement, tostring
 
-#from endotools.lib.base import *
+#from endosys.lib.base import *
 from endosys.lib.genericREST import *
 
 from authkit.authorize.pylons_adaptors import authorize

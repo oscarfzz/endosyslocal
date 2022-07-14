@@ -70,12 +70,12 @@ class PluginCampos(Plugin):
 		#   Se ha de indicar con este formato:
 		#	   identificador_campo = nombres_campos
 		#   siendo "identificador_campo" el nombre al que hará referencia la implementacion
-		#   del plugin, y "nombres_campos" una lista de nombres que tienen los campos en endotools web.
+		#   del plugin, y "nombres_campos" una lista de nombres que tienen los campos en endosys web.
 		#   esto permite configurar estos campos independientemente del nombre que se les haya dado
-		#   en endotools web y sin modificar el plugin.
+		#   en endosys web y sin modificar el plugin.
 		#   (no diferencia mays/mins, se hace un uppercase de todo)
 
-		#   XXX podria ser interesante permitir asignar una lista de nombre de campos de endotools web...
+		#   XXX podria ser interesante permitir asignar una lista de nombre de campos de endosys web...
 
 		self.campos_actualizables = None
 		self._dict_campos_actualizables_uppercased = False
@@ -139,7 +139,7 @@ class PluginCampos(Plugin):
 		"""
 		actualiza la lista de elementos si se trata de un campo de tipo selec.
 		Sirve para que un campo se comporte de forma normal, guardando los elementos
-		en la bbdd de endotools web, pero permitiendo obtenerlos de una fuente externa,
+		en la bbdd de endosys web, pero permitiendo obtenerlos de una fuente externa,
 		sincronizandolos.
 		"""
 		# comprobar que el campo esté en la lista.

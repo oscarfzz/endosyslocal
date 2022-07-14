@@ -102,7 +102,7 @@ class Hl7Process:
         búsquedas avanzadas.
         (aun se guardan algunos valores clave directamente en columnas de CITAS_EX)
 
-    ·   Falta revisar en todas las funciones "asignar_campos" que se usen endotools.lib.hl7_wrapper.hl7absent()
+    ·   Falta revisar en todas las funciones "asignar_campos" que se usen endosys.lib.hl7_wrapper.hl7absent()
         y hl7val()
 
     ·   De momento, a las citas creadas por mensajes HL7 ORM o SIU siempre se les
@@ -893,8 +893,8 @@ class Hl7Process:
         nte = self.msg.segment_optional('NTE')
 
         #id_list =                  self._patient_identifier_list(pid, 3)
-        #cip =                      endotools.lib.hl7_wrapper.hl7val(id_list[0].get(1))   #   cip
-        #nhc =                      endotools.lib.hl7_wrapper.hl7val(id_list[2].get(1))   #   nhc
+        #cip =                      endosys.lib.hl7_wrapper.hl7val(id_list[0].get(1))   #   cip
+        #nhc =                      endosys.lib.hl7_wrapper.hl7val(id_list[2].get(1))   #   nhc
         identificadores =       self._patient_identifier_list(pid, 3)   # (cip, dni, nhc, ss)
         cip =               identificadores['JHN']   #   cip
         id_unico =        identificadores['PN']   #   identificador único
@@ -1050,8 +1050,8 @@ class Hl7Process:
         nte = self.msg.segment_optional('NTE')
 
         #id_list =                  self._patient_identifier_list(pid, 3)
-        #cip =                      endotools.lib.hl7_wrapper.hl7val(id_list[0].get(1))   #   cip
-        #nhc =                      endotools.lib.hl7_wrapper.hl7val(id_list[2].get(1))   #   nhc
+        #cip =                      endosys.lib.hl7_wrapper.hl7val(id_list[0].get(1))   #   cip
+        #nhc =                      endosys.lib.hl7_wrapper.hl7val(id_list[2].get(1))   #   nhc
 
         identificadores =       self._patient_identifier_list(pid, 3)   # (cip, dni, nhc, ss)
         cip =               identificadores['JHN']   #   cip

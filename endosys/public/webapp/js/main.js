@@ -93,20 +93,20 @@ function set_endotools_theme(themename) {
 
 	if (!($.browser.msie && ($.browser.version == "8.0" || $.browser.version == "7.0" ))) {
 
-		$('head link.endotools-theme-link-tag').remove();
+		$('head link.endosys-theme-link-tag').remove();
 
 		if (themename) {
 			//se carga el tema indicado
 			$('#ubicacion-theme-css')
-//			.after('<link class="endotools-theme-link-tag" type="text/css" rel="stylesheet" href="themes/' + themename + '/jqueryui/jquery-ui-' + $.ui.version + '.custom.css" />')//jquery-ui <= 1.10
-			.after('<link class="endotools-theme-link-tag" type="text/css" rel="stylesheet" href="themes/' + themename + '/jqueryui/jquery-ui.css" />')//jquery-ui 1.11
-			.after('<link class="endotools-theme-link-tag" type="text/css" rel="stylesheet" href="themes/' + themename + '/pure-endotools.css" />')
-			.after('<link class="endotools-theme-link-tag" type="text/css" rel="stylesheet" href="themes/' + themename + '/endotools.css" />')
-			.after('<link class="endotools-theme-link-tag" type="text/css" rel="stylesheet" href="themes/' + themename + '/yui2-datatable-skin.css" />')
-			.after('<link class="endotools-theme-link-tag" type="text/css" rel="stylesheet" href="themes/' + themename + '/Jquery-datatable-skin.css" />');
+//			.after('<link class="endosys-theme-link-tag" type="text/css" rel="stylesheet" href="themes/' + themename + '/jqueryui/jquery-ui-' + $.ui.version + '.custom.css" />')//jquery-ui <= 1.10
+			.after('<link class="endosys-theme-link-tag" type="text/css" rel="stylesheet" href="themes/' + themename + '/jqueryui/jquery-ui.css" />')//jquery-ui 1.11
+			.after('<link class="endosys-theme-link-tag" type="text/css" rel="stylesheet" href="themes/' + themename + '/pure-endosys.css" />')
+			.after('<link class="endosys-theme-link-tag" type="text/css" rel="stylesheet" href="themes/' + themename + '/endosys.css" />')
+			.after('<link class="endosys-theme-link-tag" type="text/css" rel="stylesheet" href="themes/' + themename + '/yui2-datatable-skin.css" />')
+			.after('<link class="endosys-theme-link-tag" type="text/css" rel="stylesheet" href="themes/' + themename + '/Jquery-datatable-skin.css" />');
 		}else{
 			//se carga un tema por defecto
-			$('#ubicacion-theme-css').after('<link class="endotools-theme-link-tag" type="text/css" rel="stylesheet" href="/lib/jquery-ui-' + $.ui.version + '.custom/css/smoothness/jquery-ui-' + $.ui.version + '.custom.css" />');// XXX jquery-ui 1.11?
+			$('#ubicacion-theme-css').after('<link class="endosys-theme-link-tag" type="text/css" rel="stylesheet" href="/lib/jquery-ui-' + $.ui.version + '.custom/css/smoothness/jquery-ui-' + $.ui.version + '.custom.css" />');// XXX jquery-ui 1.11?
 		}
 	}else{
 	//IE8 IE7
@@ -120,8 +120,8 @@ function set_endotools_theme(themename) {
 			//cargar tema que se especifica
 //			document.createStyleSheet('themes/' + themename + '/jqueryui/jquery-ui-' + $.ui.version + '.custom.css');//jquery-ui <= 1.10
 			document.createStyleSheet('themes/' + themename + '/jqueryui/jquery-ui.css');//jquery-ui 1.11
-			document.createStyleSheet('themes/' + themename + '/pure-endotools.css');
-			document.createStyleSheet('themes/' + themename + '/endotools.css');
+			document.createStyleSheet('themes/' + themename + '/pure-endosys.css');
+			document.createStyleSheet('themes/' + themename + '/endosys.css');
 			document.createStyleSheet('themes/' + themename + '/yui2-datatable-skin.css');
 			document.createStyleSheet('themes/' + themename + '/Jquery-datatable-skin.css');
 		}else{

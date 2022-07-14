@@ -2,7 +2,7 @@
 
 import os
 from endosys.lib.base import *
-##import endotools.lib.dicom.thread
+##import endosys.lib.dicom.thread
 import endosys.lib.dicom.util
 from endosys.lib.pydcmtk.pydcmtk import *
 from pylons import config
@@ -55,7 +55,7 @@ class PruebasController(BaseController):
 	@authorize(UserIn(['sysadmin']))
 	def procesar_imagen(self):
 		endosys.lib.dicom.thread.procesar_imagen(
-								os.path.join('C:\Proyectos\NUEVO ENDOTOOLS 2\proyecto Pylons\endotools\endotools\capturas',
+								os.path.join('C:\Proyectos\NUEVO ENDOTOOLS 2\proyecto Pylons\endosys\endosys\capturas',
 											'142.bmp'),
 								PatientName = 'juan',
 								PatientID = '123',
@@ -135,7 +135,7 @@ class PruebasController(BaseController):
 ##		dcmConfig.Server = config.get('PACS_SERVER', '')
 ##		dcmConfig.Port = config.get('PACS_PORT', '')
 ##		dcmConfig.PortMove = config.get('PACS_PORTMOVE', '6000')
-##		endotools.lib.dicom.util.Retrieve_DCM(StudyInstanceUID, SeriesInstanceUID, SOPInstanceUID, archivo_salida)
+##		endosys.lib.dicom.util.Retrieve_DCM(StudyInstanceUID, SeriesInstanceUID, SOPInstanceUID, archivo_salida)
 ##		return "ok"
 
 

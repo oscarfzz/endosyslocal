@@ -677,7 +677,7 @@ class CampoBusquedaFormMulti(CampoBusquedaSelec):
 	def valor_from_xml(e):
 		valor = record()
 		valor.id = e.find('id').text.upper()
-		valor.descripcion = endotools.lib.elementos.get_by_id(valor.id).nombre
+		valor.descripcion = endosys.lib.elementos.get_by_id(valor.id).nombre
 		
 		# Estructura ejemplo
 		# valores

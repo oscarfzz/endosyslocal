@@ -3,7 +3,7 @@ from sqlalchemy import orm
 from sqlalchemy.orm import relation, backref
 
 from endosys.model import meta, GrupoCampos, Formulario, Servicio
-##from endotools.model.campos import Campo
+##from endosys.model.campos import Campo
 
 t_tiposExploracion = sa.Table("TiposExploracion", meta.metadata,
     sa.Column("id", sa.types.Integer, sa.schema.Sequence('secuencia_tiposexpl'), primary_key=True),

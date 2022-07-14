@@ -3,7 +3,7 @@ from sqlalchemy import orm, ForeignKey
 from sqlalchemy.orm import relation, backref
 
 #   QUITAR_CITA.SERVICIO_ID
-##from endotools.model import meta, Paciente, Medico, TipoExploracion, Exploracion, Sala, Servicio, MotivoCancelacion, Prioridad, Agenda
+##from endosys.model import meta, Paciente, Medico, TipoExploracion, Exploracion, Sala, Servicio, MotivoCancelacion, Prioridad, Agenda
 from endosys.model import meta, Paciente, Medico, TipoExploracion, Exploracion, Sala, MotivoCancelacion, Prioridad, Agenda, Aseguradora
 
 # NOTA:	Tomamos como convención que los campos de tipo Date son fechas y los de

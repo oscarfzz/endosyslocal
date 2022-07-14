@@ -5,7 +5,7 @@ from sqlalchemy import orm, ForeignKey
 from sqlalchemy.orm import relation, backref
 
 from endosys.model import meta, Aseguradora, Centro
-##from endotools.model.aseguradoras import Aseguradora
+##from endosys.model.aseguradoras import Aseguradora
 
 # NOTA:	Tomamos como convención que los campos de tipo Date son fechas y los de
 #       tipo DateTime son horas, aunque en BBDD se guarden ambos como DATETIME.

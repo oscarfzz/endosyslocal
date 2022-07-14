@@ -32,7 +32,7 @@ pkg_resources.working_set.add_entry(conf_dir)
 pkg_resources.require('Paste')
 pkg_resources.require('PasteScript')
 
-test_file = os.path.join(conf_dir, 'test-endotools-sample.ini')
+test_file = os.path.join(conf_dir, 'test-endosys-sample.ini')
 cmd = paste.script.appinstall.SetupCommand('setup-app')
 #cmd.run([test_file])
 
@@ -41,7 +41,7 @@ class TestController(TestCase):
     def __init__(self, *args, **kwargs):
         from paste import lint
         lint.check_content_type = lambda status, headers: None
-        wsgiapp = loadapp('config:test-endotools-sample.ini', relative_to=conf_dir)
+        wsgiapp = loadapp('config:test-endosys-sample.ini', relative_to=conf_dir)
         self.app = paste.fixture.TestApp(wsgiapp)
         TestCase.__init__(self, *args, **kwargs)
         self.nombre_recursos = None

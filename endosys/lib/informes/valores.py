@@ -15,7 +15,7 @@ from sqlalchemy.orm.attributes import InstrumentedAttribute
 from endosys.lib.formularios import FormExplData
 from endosys.lib.exploraciones import *
 import endosys.lib.capturas as lib_capturas
-#from endotools.lib.capturas import _archivo, get_by_id
+#from endosys.lib.capturas import _archivo, get_by_id
 import logging
 log = logging.getLogger(__name__)
 

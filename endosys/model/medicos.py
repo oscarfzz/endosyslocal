@@ -10,7 +10,7 @@ from sqlalchemy import orm
 from sqlalchemy.orm import relation, backref
 
 from endosys.model import meta, Servicio, Agenda
-##from endotools.model.servicios import Servicio
+##from endosys.model.servicios import Servicio
 
 t_medicos = sa.Table("Medicos", meta.metadata,
     sa.Column("id", sa.types.Integer, sa.schema.Sequence('secuencia_medicos'), primary_key=True),

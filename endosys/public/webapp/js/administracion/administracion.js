@@ -333,7 +333,7 @@ var administracion = function() {
 				TM.content_administracion.arbol.activate();
 				TM.content_administracion.detalles.activate();
 
-				Endotools.statusbar.mostrar_mensaje(_('Cargando administración de endotools...'));/*IDIOMAOK*/
+				Endotools.statusbar.mostrar_mensaje(_('Cargando administración de endosys...'));/*IDIOMAOK*/
 
 				//	$.when()	ejecuta varias promises y cuando todas se han cumplido, continua.
 				//	.then()		es la continuación de un promise cumplido, además de permitir encadenar una siguiente promise.

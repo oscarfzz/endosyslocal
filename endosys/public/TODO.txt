@@ -27,7 +27,7 @@
   Valorar si se elimina /test
   Comprobar si se puede eliminar la carpeta /templates_informes (usado en RamblaNova�?)
   unknown.png (referenciado en rest/capturas.py) no es parte de web, se ha pasado a
-	una nueva carpeta endotools/res)
+	una nueva carpeta endosys/res)
   se renombra /newweb -> /webapp
   se renombra /js -> /lib
   se renombra /newadmin -> /admin
@@ -50,5 +50,5 @@
 �OBJETIVO:
 
 Facilidad para actualizar aplicaci�n completa "gen�rica", borrando una carpeta y sustitu-
-y�ndola por otra. Para ello, en /endotools/public solo deber�a "webapp", "informes",
+y�ndola por otra. Para ello, en /endosys/public solo deber�a "webapp", "informes",
 "admin", "lib" y posiblemente "util".

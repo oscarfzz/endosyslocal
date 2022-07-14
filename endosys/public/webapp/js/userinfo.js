@@ -109,7 +109,7 @@ var userinfo = function() {
 					if (!exist) {
 						opciones_menu.push({num: 8,id:"menu-principal-usuarios", desc:_('Gestión de usuarios')});/*IDIOMAOK*/
 					}
-				//el permiso admin_organizacion  para la opcion de "Configuración de endotools"
+				//el permiso admin_organizacion  para la opcion de "Configuración de endosys"
 				} else if (arrayPermUser[i].id == "admin_organizacion" ){
 					opciones_menu.push({num: 12,id:"menu-principal-administracion", desc:_('Administración de EndoTools')});/*IDIOMAOK*/
 					

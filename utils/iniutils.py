@@ -9,7 +9,7 @@ scriptpath = os.path.dirname(os.path.abspath(__file__))
 rootpath = os.path.abspath(os.path.join(scriptpath, '..'))
 
 TEMPLATEINI_FILENAME = "endosysapp-sample.ini"
-TESTINI_FILENAME = "test-endotools-sample.ini"
+TESTINI_FILENAME = "test-endosys-sample.ini"
 
 ####################
 # test
@@ -23,7 +23,7 @@ f.close()
 def _proc_params(infile, outfile, outfileext = "output.ini"):
     if not infile:
         # Buscar si hay un solo INI
-        # (omitir test-endotools-sample.ini)
+        # (omitir test-endosys-sample.ini)
         inis = glob.glob(os.path.join(rootpath, '*.ini'))
         if TESTINI_FILENAME in inis:
             inis.remove(TESTINI_FILENAME)

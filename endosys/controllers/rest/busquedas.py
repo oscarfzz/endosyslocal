@@ -4,7 +4,7 @@ from endosys.model.busquedas import Busqueda
 import xml.etree.ElementTree
 from xml.etree.ElementTree import Element, SubElement, tostring
 
-#from endotools.lib.base import *
+#from endosys.lib.base import *
 from endosys.lib.genericREST import *
 
 from authkit.authorize.pylons_adaptors import authorize

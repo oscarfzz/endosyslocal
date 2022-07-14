@@ -1,9 +1,9 @@
 
 	[babel.extractors]
-	html = endotools.lib.babel_extract_html:extract_html
+	html = endosys.lib.babel_extract_html:extract_html
 
 	[paste.app_factory]
-	main = endotools.config.middleware:make_app
+	main = endosys.config.middleware:make_app
 
 	[paste.app_install]
 	main = pylons.util:PylonsInstaller

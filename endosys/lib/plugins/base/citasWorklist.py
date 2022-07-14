@@ -29,7 +29,7 @@ log = logging.getLogger(__name__)
 
 from endosys.model import meta
 from endosys.lib.misc import record, registro_by_id, medico_from_user
-#from endotools.lib.plugins.base import obj_from_params, Plugin
+#from endosys.lib.plugins.base import obj_from_params, Plugin
 from endosys.lib.plugins.base import *
 from endosys.lib.plugins.base.citas import PluginCitas, Cita
 from sqlalchemy.types import Integer, Date
@@ -43,7 +43,7 @@ import endosys.lib.dicom.util
 from endosys.lib.pydcmtk.pydcmtk import *
 import time
 import endosys.model
-import endosys.model.citas #, endotools.model.tiposExploracion
+import endosys.model.citas #, endosys.model.tiposExploracion
 import endosys.model.pacientes
 from endosys.model.map_Prest_TiposExpl import get_servicios_from_prestacion
 from endosys.model.servicios import get_servicio
@@ -267,7 +267,7 @@ class PluginCitasWorklist(PluginCitas):
 			para indicar que muestre solo las citas no realizadas (sin exploracion asociada)
 		"""
 
-		#   XXX	 utilizar mejor endotools.lib.dicom.thread¿? creando hilos por cada peticion, asi no se bloquea al ejecutar el dcmQuery, esperando la respuesta
+		#   XXX	 utilizar mejor endosys.lib.dicom.thread¿? creando hilos por cada peticion, asi no se bloquea al ejecutar el dcmQuery, esperando la respuesta
 
 		if not 'fecha' in params or not params['fecha']:
 			raise E_ParamIncorrecto('No se ha indicado el parametro "fecha" en la llamada a "index" de "PluginCitasWorklist"')
@@ -345,9 +345,9 @@ class PluginCitasWorklist(PluginCitas):
 
 			# crear el paciente si no existe (se identifica por el nhc... XXX   en algún caso podría ser otro id, por ejemplo CIP, CIPA, NUHSA...)	//////y no hay plugin de pacientes
 			# XXX pensar si seria mejor hacer esto desde el show
-##			from endotools.config.plugins import pluginPacientes
+##			from endosys.config.plugins import pluginPacientes
 ##			if not pluginPacientes:
-			#import endotools.model.pacientes   no se porqué, si pongo el import aqui hace cosas raras (con la variable local endotools), asi que lo pongo arriba de todo
+			#import endosys.model.pacientes   no se porqué, si pongo el import aqui hace cosas raras (con la variable local endosys), asi que lo pongo arriba de todo
 			q = meta.Session.query(endosys.model.pacientes.Paciente)
 			q = q.filter( endosys.model.pacientes.Paciente.idunico == cita.paciente.idunico )
 			if q.count() > 0:

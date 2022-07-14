@@ -68,7 +68,7 @@ class OpcionesconfigController(BaseController):
                     'NOTIFICACIONES.REFRESCO': 60000,                   # 60000 por defecto / 1 minuto
                     'HABILITAR_CODIGOS_ELEMENTOS': 0,
                     'PERMITIR_API_KEY': 0,
-                    'HL7.APPLICATION_ID': 'endotools',
+                    'HL7.APPLICATION_ID': 'endosys',
                     'HL7.EXTERNAL_APPLICATION_ID': 'HIS',
                     'HL7.FUSIONES.MODO': 0,
                     'CANCELAR_CITAS_EXPLORACIONES': 1,

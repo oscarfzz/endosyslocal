@@ -7,7 +7,7 @@ from base import BasePyDICOM
 class WorklistRequest(BasePyDICOM):
 	""" La intención de esta clase es que sea 
 		aislada de cualquier libreria de 
-		pylons y endotools asi luego
+		pylons y endosys asi luego
 		puede ser usada en otros desarrollos
 	"""
 

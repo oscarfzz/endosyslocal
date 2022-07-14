@@ -90,7 +90,7 @@ __view.exposed = True
 ##class EndoToolsEvalException(PylonsEvalException):
 ##
 ##	def __format(self, item):
-##		from endotools.lib.base import h
+##		from endosys.lib.base import h
 ##		import simplejson
 ##		o = {
 ##			'uri': item.view_uri,
