@@ -1,5 +1,5 @@
 echo ***************************************************  
-echo * EndoTools Web - Compile Catalog                 *
+echo * Endosys App - Compile Catalog                 *
 echo ***************************************************
 echo.
 

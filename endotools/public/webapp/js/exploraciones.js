@@ -176,7 +176,7 @@ var gestion_exploraciones = function () {
             var paciente_id = exploracion.paciente_id;
 
             if (opciones_config["EWC_MODO.ACTIVO"] == 1) {
-                // Se crea el link del nuevo Endotools Web Client
+                // Se crea el link del nuevo Endosys App Client
                 $("#exploracion-capturar-btn").button().click(function () {
                     $("#exploracion-capturar-btn").prop("disabled", true);
                     $("#exploracion-capturar-btn").addClass("btn-disabled");

@@ -3973,7 +3973,7 @@ msgid "Error en la autenticación de usuario"
 msgstr "Error en la autenticación de usuario"
 
 #: endotools/public/webapp/js/Endotools/ET_auth.js:191
-msgid "Este puesto no tiene acceso al sistema EndoTools Web."
+msgid "Este puesto no tiene acceso al sistema Endosys App."
 msgstr ""
 
 #: endotools/public/webapp/js/Endotools/ET_auth.js:238

@@ -1,16 +1,16 @@
-·DESCRIPCIÓN DE CARPETAS Y ARCHIVOS:
+ï¿½DESCRIPCIï¿½N DE CARPETAS Y ARCHIVOS:
 
  /ELIMINAR_*	carpetas a eliminar
- /js		archivos javascript comunes a cualquier web de EndoTools Web
+ /js		archivos javascript comunes a cualquier web de Endosys App
  /firebug-lite	Herramienta de debug para IE7
- /newweb	Aplicación principal EndoTools Web
+ /newweb	Aplicaciï¿½n principal Endosys App
  /yui2 y /yui3	bibliotecas YUI utilizadas actualmente por /newweb
  /test		pruebas, no necesario
  admin.html	admin
  blank.*	JPG y PN, referenciados en lib/informes.py...
 
 
-·MOVER ESPECIFICAS DE CLIENTES A OTRA UBICACIÓN:
+ï¿½MOVER ESPECIFICAS DE CLIENTES A OTRA UBICACIï¿½N:
 
  /broggi
  /capio
@@ -19,13 +19,13 @@
  /ramblanova
 
 
-·VARIOS
+ï¿½VARIOS
 
-  Firebug lite: ¿Dejar esta herramienta?
+  Firebug lite: ï¿½Dejar esta herramienta?
   El contenido de /misc se ha movido a /js
   El contenido de /pruebas se ha movido a /test
   Valorar si se elimina /test
-  Comprobar si se puede eliminar la carpeta /templates_informes (usado en RamblaNova¿?)
+  Comprobar si se puede eliminar la carpeta /templates_informes (usado en RamblaNovaï¿½?)
   unknown.png (referenciado en rest/capturas.py) no es parte de web, se ha pasado a
 	una nueva carpeta endotools/res)
   se renombra /newweb -> /webapp
@@ -35,20 +35,20 @@
   se mueven /yui2 y /yui3 a /lib/yui2 y /lib/yui3
 
 
-·REORGANIZAR CARPETAS Y ARCHIVOS: (algo asi)
+ï¿½REORGANIZAR CARPETAS Y ARCHIVOS: (algo asi)
   
-  webapp	aplicación principal de EndoTools Web (/newweb)
+  webapp	aplicaciï¿½n principal de Endosys App (/newweb)
   informes	archivos usados por el server de informes (blank.jpg, blank.png)
   admin		admin existente (admin.html)
-  lib		librerias comunes del servidor, usadas por la aplicación,
+  lib		librerias comunes del servidor, usadas por la aplicaciï¿½n,
 		admin, etc... (/js, /yui2, /yui3)
-  misc		varios archivos no necesarios para la aplicación (/firebug-lite...)
-  "cliente"	archivos adicionales de clientes específicos, normalmente para informes
+  misc		varios archivos no necesarios para la aplicaciï¿½n (/firebug-lite...)
+  "cliente"	archivos adicionales de clientes especï¿½ficos, normalmente para informes
 		(fuentes, logos...) -> (/broggi, /capio, etc...).
 
 
-·OBJETIVO:
+ï¿½OBJETIVO:
 
-Facilidad para actualizar aplicación completa "genérica", borrando una carpeta y sustitu-
-yéndola por otra. Para ello, en /endotools/public solo debería "webapp", "informes",
+Facilidad para actualizar aplicaciï¿½n completa "genï¿½rica", borrando una carpeta y sustitu-
+yï¿½ndola por otra. Para ello, en /endotools/public solo deberï¿½a "webapp", "informes",
 "admin", "lib" y posiblemente "util".

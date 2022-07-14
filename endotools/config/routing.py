@@ -23,7 +23,7 @@ def make_map():
     map.connect('/web/{filename:.*?}', controller='main', action='web')
     # acceso al admin
     map.connect('/admin', controller='main', action='admin')
-    # acceso a los res. de endotools web (blank.png...)
+    # acceso a los res. de Endosys App (blank.png...)
     map.connect('/res/{filename:.*?}', controller='main', action='res')
     # acceso a los custom res. (logos, fuentes...) en los informes html
     map.connect('/custom/res/{filename:.*?}', controller='main', action='custom_informes_res')

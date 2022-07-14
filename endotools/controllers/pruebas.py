@@ -200,7 +200,7 @@ class PruebasController(BaseController):
 		mas info:
         http://www.openoffice.org/udk/common/man/tutorial/office_automation.html
 		"""
-		title = 'EndoTools Web - Prueba de Automatización OLE de OpenOffice'
+		title = 'Endosys App - Prueba de Automatización OLE de OpenOffice'
 		readyscript = """
 			$('#abrirdocumento').click(function(e) {
 				$.ajax({
@@ -223,7 +223,7 @@ class PruebasController(BaseController):
 		body = """
 			<h1>Prueba de Automatización OLE de OpenOffice</h1>
 			<p>Estas pruebas consisten en controlar OpenOffice mediante automatización
-			OLE en el servidor de EndoTools Web. Debe estar instalado OpenOffice.
+			OLE en el servidor de Endosys App. Debe estar instalado OpenOffice.
 			La mayoría de pruebas tiene resultados solo visibles en el servidor.</p>
 			<div>
 			<p>Abrir un documento</p>

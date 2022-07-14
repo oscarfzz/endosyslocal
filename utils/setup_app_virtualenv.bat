@@ -1,7 +1,7 @@
 @echo off
 
 echo **************************************************  
-echo * EndoTools Web - Setup App Command line utility *
+echo * Endosys App - Setup App Command line utility *
 echo **************************************************                                              
 echo * This utility create database tables.           *
 echo * To proceed is necessary specify an .ini file   *
@@ -20,7 +20,7 @@ echo ----------------------
 dir /B *.ini | findstr /v "test-endotools-sample.ini"
 echo.
 
-SET /P ARCHIVO_INI=Write the name of .ini file to configure EndoTools Web:
+SET /P ARCHIVO_INI=Write the name of .ini file to configure Endosys App:
 
 %RUTA_ENDOTOOLSWEB%\virtualenv\env_%ENV_VERSION%\Scripts\paster.exe setup-app %ARCHIVO_INI%
 pause

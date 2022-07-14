@@ -28,7 +28,7 @@ class ConfigController(BaseController):
 	@authorize(UserIn(['sysadmin']))
 	def index(self):
 		"""
-		consultar y modificar la configuración (INI) de EndoTools Web.
+		consultar y modificar la configuración (INI) de Endosys App.
 		el parametro "modo=basico|avanzado|completo" indica si se mostrará la
 		config básica, avanzada o completa.
 		La config completa muestra todas las claves del INI, mientras que la

@@ -1,10 +1,10 @@
 @echo off
 
 echo ***************************************************  
-echo * EndoTools Web - RUN SERVER Command line utility *
+echo * Endosys App - RUN SERVER Command line utility *
 echo ***************************************************                                              
 echo * This utility is for execute an instance of      *
-echo * EndoTools Web Server                            *
+echo * Endosys App Server                            *
 echo * (not suitable for production)                   *
 echo ***************************************************
 echo.

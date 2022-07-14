@@ -58,14 +58,14 @@ class DbupdateController(BaseController):
         s += '.value_col {width: 70%;} '
         s += '</style>'
 
-        s += '<title>EndoTools Web - Actualización de base de datos (beta)</title>'
+        s += '<title>Endosys App - Actualización de base de datos (beta)</title>'
         s += '</head><body>'
 
         s += '<h1>Actualización de base de datos (beta)</h1>'
         s += '<h2>Notas</h2>'
         s += '<p>'
         s += """
-        La actualización automática de la base de datos de EndoTools Web sólo se puede utilizar
+        La actualización automática de la base de datos de Endosys App sólo se puede utilizar
         con la versión <strong>2.2.1.3</strong> o posterior. En versiones anteriores se deberá realizar de forma manual.
         <br>
         """
@@ -83,7 +83,7 @@ class DbupdateController(BaseController):
         s += '<h2>Instrucciones de uso</h2>'
         s += '<ol>'
         s += """<li>
-        Actualizar EndoTools Web a la versión deseada, copiando los ficheros en el servidor.
+        Actualizar Endosys App a la versión deseada, copiando los ficheros en el servidor.
         </li>"""
         s += """<li>
         Crear las nuevas tablas de base de datos mediante la utilidad del servidor "setup-app".

@@ -1,7 +1,7 @@
 @echo off
 
 echo ***************************************************  
-echo * EndoTools Web - Extract Messages                *
+echo * Endosys App - Extract Messages                *
 echo ***************************************************
 echo.
 

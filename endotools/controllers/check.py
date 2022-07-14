@@ -27,7 +27,7 @@ class CheckController(BaseController):
 	@authorize(UserIn(['sysadmin']))
 	def index(self):
 		"""
-		realiza algunos checks en la configuración de EndoTools Web, debido a
+		realiza algunos checks en la configuración de Endosys App, debido a
 		las modificaciones realizadas a partir del 15-6-2012
 		"""
 		response.content_type = "text/html"

@@ -1,7 +1,7 @@
 @echo off
 
 echo **************************************************  
-echo * EndoTools Web - Setup.py egg_info              *
+echo * Endosys App - Setup.py egg_info              *
 echo **************************************************                                              
 echo.
 

@@ -300,7 +300,7 @@ function unset_prevenir_refresco_manual(retorno_milisegundos) {
 }
 
 /*
- *	Captura LInk endotools web client
+ *	Captura LInk Endosys App client
  *	Evitar que aparezca el cartel de cierre de ventana por x tiempo
  *	Sirve para abrir un link y que no aparezca el cartel y se active
  *	automaticamente de nuevo.

@@ -1,7 +1,7 @@
 @echo off
 
 echo **************************************************  
-echo * EndoTools Web - Shell Command line utility     *
+echo * Endosys App - Shell Command line utility     *
 echo **************************************************                                              
 echo * This utility is for enter in pylons Shell mode *
 echo **************************************************

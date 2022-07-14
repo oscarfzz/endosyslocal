@@ -27,7 +27,7 @@
 	
 /*	,firmar: function(informe_id) {
 	
-		controles.confirm_dialog('EndoTools Web', '¿Desea firmar el informe seleccionado?', function() {
+		controles.confirm_dialog('Endosys App', '¿Desea firmar el informe seleccionado?', function() {
 			//	obtener el PDF mediante AJAX (se obtiene ya en base64)
 	
 			$.ajax({

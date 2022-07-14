@@ -31,7 +31,7 @@ class ReasignarPacienteController(BaseController):
 
 
 
-		s += '<title>EndoTools Web - Reasignación de pacientes</title>'
+		s += '<title>Endosys App - Reasignación de pacientes</title>'
 		s += '</head><body>'
 
 		s += '<h1>Reasignación de pacientes</h1>'

@@ -163,7 +163,7 @@
 						// Abre un dialogo que sirve para registrar un nuevo puesto.
 						return dialog_crear_workstation();
 					}else{ 
-						error_text = _("Este puesto no tiene acceso al sistema EndoTools Web.")
+						error_text = _("Este puesto no tiene acceso al sistema Endosys App.")
 						alert(error_text);//IDIOMAOK
 						return $.Deferred().reject(jqXHR, data, error_text).promise();	
 					}

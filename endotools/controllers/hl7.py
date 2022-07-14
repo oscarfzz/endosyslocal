@@ -56,7 +56,7 @@ class Hl7Controller(BaseController):
 		"""
 		XXX
 		Interfaz para poder configurar el "parseo" de mensajes HL7 desde
-		EndoTools Web. Por ejemplo, podría servir para indicar qué campo
+		Endosys App. Por ejemplo, podría servir para indicar qué campo
 		de los mensajes ORM se utiliza como identificador, si se han de
 		omitir algunos campos del segmento PID, etc...
 		Mirth Connect podría llamar a config() en el deploy. La configuración

@@ -13,7 +13,7 @@ from endotools.model import init_model
 from endotools.lib.checks import check_cache_dir
 
 def _endotools_environment_config():
-    """ Configuración de variables de EndoTools Web, como por ejemplo rutas, etc...
+    """ Configuración de variables de Endosys App, como por ejemplo rutas, etc...
         Añadir paths:
         ------------
         se puede añadir directamente a conf['pylons.paths']

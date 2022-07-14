@@ -1,5 +1,5 @@
 echo ***************************************************  
-echo * EndoTools Web - Update Catalog                  *
+echo * Endosys App - Update Catalog                  *
 echo ***************************************************
 echo.
 
