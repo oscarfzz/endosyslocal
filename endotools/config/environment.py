@@ -117,6 +117,10 @@ def load_environment(global_conf, app_conf):
 
     # CONFIGURATION OPTIONS HERE (note: all config options will override
     # any Pylons config options)
+    import base64
+    raw_password = config.get('raw_password')
+    password = base64.b64decode(raw_password)
+    config['sqlalchemy.url'] = config.get('sqlalchemy.url').format(password)
 
     engine = engine_from_config(config, 'sqlalchemy.')
     init_model(engine)
