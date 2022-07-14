@@ -1,5 +1,5 @@
 ﻿#Este fichero se encarga de pasar un listado de poblaciones de un fichero CSV a
-#la tabla de poblaciones de base de datos de endotoolsweb.
+#la tabla de poblaciones de base de datos de endosysapp.
 #caracter del fichero CSV:
 #   LIMITADO POR ;
 #   La primera linea del fichero ha de contener el primer valor, no los titulos de los campos
@@ -13,7 +13,7 @@
 HOST_ENDOTOOLS = 'host'
 USER_ENDOTOOLS = 'user'
 PASS_ENDOTOOLS = 'password'
-BBDD_ENDOTOOLS = 'endotoolsweb'
+BBDD_ENDOTOOLS = 'endosysapp'
 
 # configuracio fichero
 RUTA = 'poblaciones.csv'

@@ -17,13 +17,13 @@ log.addHandler( logging.StreamHandler(sys.stdout) )
 ##log.error
 
 def cargar_lista_updates(version):
-	#ejemplo ficheros update "endotoolsweb-update-2.3.1.12-2.3.1.3"
+	#ejemplo ficheros update "endosysapp-update-2.3.1.12-2.3.1.3"
 	versiones_disponibles = []
 	ficheros = os.listdir('update_archives')
 	print "Selecciona la version a la que desea actualizar:"
 
 	for f in ficheros:
-		if 'endotoolsweb-update' in f:
+		if 'endosysapp-update' in f:
 			a = str(f).split('-')
 			try:
 				if version == a[2]:
@@ -184,7 +184,7 @@ if __name__ == "__main__":
 
 	if actualizacion in versiones_disponibles:
 		log.info("La actualizacion seleccionada es: %s" % actualizacion)
-		filezip = 'endotoolsweb-update-%s-%s.zip' % (version, actualizacion)
+		filezip = 'endosysapp-update-%s-%s.zip' % (version, actualizacion)
 		try:
 			descomprimir_zip(filezip)
 			log.info("Endotools se ha actualizado correctamente")

@@ -65,8 +65,8 @@ def make_app(global_conf, full_stack=True, **app_conf):
         defaults to main).
     """
 
-    #import endotools.config.endotoolsweb
-    #endotools.config.endotoolsweb.initialize()
+    #import endotools.config.endosysapp
+    #endotools.config.endosysapp.initialize()
 
     # Configure the Pylons environment
     load_environment(global_conf, app_conf)
