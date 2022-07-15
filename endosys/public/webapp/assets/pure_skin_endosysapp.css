@@ -1,0 +1,949 @@
+
+body {
+    background-color: #ffffff !important;
+}
+
+/* from PURE buttons-core.css */
+.pure-skin-endosys button {
+    /* Structure */
+    display: inline-block !important;
+    *display: inline !important; /*IE 6/7*/
+    zoom: 1 !important;
+    line-height: normal !important;
+    white-space: nowrap !important;
+    vertical-align: baseline !important;
+    text-align: center !important;
+    cursor: pointer !important;
+    -webkit-user-drag: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+}
+
+/* Firefox: Get rid of the inner focus border */
+.pure-skin-endosys button::-moz-focus-inner{
+    padding: 0 !important;
+    border: 0 !important;
+}
+/* end from PURE buttons-core.css */
+/* from PURE buttons.css */
+/*csslint unqualified-attributes:false*/
+
+.pure-skin-endosys button {
+    font-size: 100% !important;
+    *font-size: 90% !important; /*IE 6/7 - To reduce IE's oversized button text*/
+    *overflow: visible !important; /*IE 6/7 - Because of IE's overly large left/right padding on buttons */
+    padding: 0.5em 1.5em 0.5em !important;
+    color: #0e1320 !important; /* rgba not supported (IE 8) */
+    /* color: rgba(0, 0, 0, 0.80) !important; rgba supported */
+    /* *color: #444 !important; IE 6 & 7 */
+    border: 1px solid #a6b3d9 !important; /*IE 6/7/8*/
+    border: none rgba(0, 0, 0, 0) !important; /*IE9 + everything else*/
+    background-color: #b0bcdd !important;
+    text-decoration: none !important;
+    border-radius: 2px !important;
+    -webkit-font-smoothing: antialiased !important;
+    /* Transitions */
+    -webkit-transition: 0.1s linear -webkit-box-shadow !important;
+    -moz-transition: 0.1s linear -moz-box-shadow !important;
+    -ms-transition: 0.1s linear box-shadow !important;
+    -o-transition: 0.1s linear box-shadow !important;
+    transition: 0.1s linear box-shadow !important;
+}
+
+.pure-skin-endosys button-hover,
+.pure-skin-endosys button:hover {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#00000000', GradientType=0) !important;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(40%, rgba(0,0,0, 0.05)), to(rgba(0,0,0, 0.05))) !important;
+    background-image: -webkit-linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.15)) !important;
+    background-image: -moz-linear-gradient(top, rgba(0,0,0, 0.05) 0%, rgba(0,0,0, 0.05)) !important;
+    background-image: -ms-linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.15)) !important;
+    background-image: -o-linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.05)) !important;
+    background-image: linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.05)) !important;
+}
+
+.pure-skin-endosys button:focus {
+    outline: 0 !important;
+}
+.pure-skin-endosys button-active,
+.pure-skin-endosys button:active {
+    box-shadow: 0 0 0 1px rgba(0,0,0, 0.15) inset, 0 0 6px rgba(0,0,0, 0.20) inset !important;
+}
+
+.pure-skin-endosys button[disabled],
+.pure-skin-endosys button:disabled,
+.pure-skin-endosys button:disabled:hover,
+.pure-skin-endosys button:disabled:active {
+    border: none !important;
+    background-image: none !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false) !important;
+    filter: alpha(opacity=40) !important;
+    -khtml-opacity: 0.40 !important;
+    -moz-opacity: 0.40 !important;
+    opacity: 0.40 !important;
+    cursor: not-allowed !important;
+    box-shadow: none !important;
+}
+
+.pure-skin-endosys .btn-hidden {
+    display: none !important;
+}
+
+/* Firefox: Get rid of the inner focus border */
+.pure-skin-endosys button::-moz-focus-inner{
+    padding: 0 !important;
+    border: 0 !important;
+}
+
+/*! Copyright 2013 Yahoo! Inc. http://yuilibrary.com/license/ */
+/* This page lists core form styles adopted from Normalize.css. */
+/*! Copyright (c) Nicolas Gallagher and Jonathan Neal */
+
+/*! normalize.css v1.1.0 | MIT License | git.io/normalize */
+
+/* This page has Normalize.css form-specific style rules applied to a .yui3-form context */
+
+/* ==========
+Forms Core
+=========*/
+
+
+/*
+ * Corrects margin displayed oddly in IE 6/7.
+ */
+
+.pure-skin-endosys .pure-form {
+    margin: 0 !important;
+}
+
+/* Define consistent border, margin, and padding.*/
+ 
+
+.pure-skin-endosys .pure-form fieldset {
+    border: 1px solid #c0c0c0 !important;
+    margin: 0 2px !important;
+    padding: 0.35em 0.625em 0.75em !important;
+}
+
+/*
+ * 1. Corrects color not being inherited in IE 6/7/8/9.
+ * 2. Corrects text not wrapping in Firefox 3.
+ * 3. Corrects alignment displayed oddly in IE 6/7.
+ */
+
+.pure-skin-endosys .pure-form legend {
+    border: 0 !important; /* 1 */
+    padding: 0 !important;
+    white-space: normal !important; /* 2 */
+    *margin-left: -7px !important; /* 3 */
+}
+
+/*
+ * 1. Corrects font size not being inherited in all browsers.
+ * 2. Addresses margins set differently in IE 6/7, Firefox 3+, Safari 5,
+ *    and Chrome.
+ * 3. Improves appearance and consistency in all browsers.
+ */
+
+.pure-skin-endosys .pure-form button,
+.pure-skin-endosys .pure-form input,
+.pure-skin-endosys .pure-form select,
+.pure-skin-endosys .pure-form textarea {
+    font-size: 100% !important; /* 1 */
+    margin: 0 !important; /* 2 */
+    vertical-align: baseline !important; /* 3 */
+    *vertical-align: middle !important; /* 3 */
+}
+
+/*
+ * Addresses Firefox 3+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+.pure-skin-endosys .pure-form button,
+.pure-skin-endosys .pure-form input {
+    line-height: normal !important;
+}
+
+/*
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Corrects inability to style clickable `input` types in iOS.
+ * 3. Improves usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 4. Removes inner spacing in IE 7 without affecting normal text inputs.
+ *    Known issue: inner spacing remains in IE 6.
+ */
+
+.pure-skin-endosys .pure-form button,
+.pure-skin-endosys .pure-form input[type="button"], /* 1 */
+.pure-skin-endosys .pure-form input[type="reset"],
+.pure-skin-endosys .pure-form input[type="submit"] {
+    -webkit-appearance: button !important; /* 2 */
+    cursor: pointer !important; /* 3 */
+    *overflow: visible !important;  /* 4 */
+}
+
+/*
+ * Re-set default cursor for disabled elements.
+ */
+
+.pure-skin-endosys .pure-form button[disabled],
+.pure-skin-endosys .pure-form input[disabled] {
+    cursor: default !important;
+}
+
+/*
+ * 1. Addresses box sizing set to content-box in IE 8/9.
+ * 2. Removes excess padding in IE 8/9.
+ * 3. Removes excess padding in IE 7.
+ *    Known issue: excess padding remains in IE 6.
+ */
+
+.pure-skin-endosys .pure-form input[type="checkbox"],
+.pure-skin-endosys .pure-form input[type="radio"] {
+    box-sizing: border-box !important; /* 1 */
+    padding: 0 !important; /* 2 */
+    *height: 13px !important; /* 3 */
+    *width: 13px !important; /* 3 */
+}
+
+/*
+ * 1. Addresses `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+.pure-skin-endosys .pure-form input[type="search"] {
+    -webkit-appearance: textfield !important; /* 1 */
+    -moz-box-sizing: content-box !important;
+    -webkit-box-sizing: content-box !important; /* 2 */
+    box-sizing: content-box !important;
+}
+
+/*
+ * Removes inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+
+.pure-skin-endosys .pure-form input[type="search"]::-webkit-search-cancel-button,
+.pure-skin-endosys .pure-form input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none !important;
+}
+
+/*
+ * Removes inner padding and border in Firefox 3+.
+ */
+
+.pure-skin-endosys .pure-form button::-moz-focus-inner,
+.pure-skin-endosys .pure-form input::-moz-focus-inner {
+    border: 0 !important;
+    padding: 0 !important;
+}
+
+/*
+ * 1. Removes default vertical scrollbar in IE 6/7/8/9.
+ * 2. Improves readability and alignment in all browsers.
+ */
+
+.pure-skin-endosys .pure-form textarea {
+    overflow: auto !important; /* 1 */
+    vertical-align: top !important; /* 2 */
+}
+/* ===============  forms-responsive.css =================*/
+@media only screen and (max-width : 480px) {
+    .pure-skin-endosys .pure-form button[type="submit"] {
+    margin: 0.7em 0 0 !important;
+    }
+
+    .pure-skin-endosys .pure-form input[type="text"],
+    .pure-skin-endosys .pure-form input[type="password"],
+    .pure-skin-endosys .pure-form input[type="email"],
+    .pure-skin-endosys .pure-form input[type="url"],
+    .pure-skin-endosys .pure-form input[type="date"],
+    .pure-skin-endosys .pure-form input[type="month"],
+    .pure-skin-endosys .pure-form input[type="time"],
+    .pure-skin-endosys .pure-form input[type="datetime"],
+    .pure-skin-endosys .pure-form input[type="datetime-local"],
+    .pure-skin-endosys .pure-form input[type="week"],
+    .pure-skin-endosys .pure-form input[type="number"],
+    .pure-skin-endosys .pure-form input[type="search"],
+    .pure-skin-endosys .pure-form input[type="tel"],
+    .pure-skin-endosys .pure-form input[type="color"],
+    .pure-skin-endosys .pure-form label {
+        margin-bottom: 0.3em !important;
+        display: block !important;
+    }
+    
+    .pure-skin-endosys .pure-group input[type="text"],
+    .pure-skin-endosys .pure-group input[type="password"],
+    .pure-skin-endosys .pure-group input[type="email"],
+    .pure-skin-endosys .pure-group input[type="url"],
+    .pure-skin-endosys .pure-group input[type="date"],
+    .pure-skin-endosys .pure-group input[type="month"],
+    .pure-skin-endosys .pure-group input[type="time"],
+    .pure-skin-endosys .pure-group input[type="datetime"],
+    .pure-skin-endosys .pure-group input[type="datetime-local"],
+    .pure-skin-endosys .pure-group input[type="week"],
+    .pure-skin-endosys .pure-group input[type="number"],
+    .pure-skin-endosys .pure-group input[type="search"],
+    .pure-skin-endosys .pure-group input[type="tel"],
+    .pure-skin-endosys .pure-group input[type="color"] {
+        margin-bottom: 0 !important;
+    }
+
+    .pure-skin-endosys .pure-form-aligned .pure-control-group label {
+        margin-bottom: 0.3em !important;
+        text-align: left !important;
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .pure-skin-endosys .pure-form-aligned .pure-controls {
+        margin: 1.5em 0 0 0 !important;
+    }
+
+    /* NOTE: pure-help-inline is deprecated. Use .pure-form-message-inline instead. */
+    .pure-skin-endosys .pure-form .pure-help-inline,
+    .pure-skin-endosys .pure-form-message-inline,
+    .pure-skin-endosys .pure-form-message {
+        display: block !important;
+        font-size: 80% !important;
+        /* increased bottom padding to make it group with its related input element */
+        padding: 0.2em 0 0.8em !important;
+    }
+}
+
+/* ===============  forms.css =================================*/
+.pure-skin-endosys .pure-form input[type="text"],
+.pure-skin-endosys .pure-form input[type="password"],
+.pure-skin-endosys .pure-form input[type="email"],
+.pure-skin-endosys .pure-form input[type="url"],
+.pure-skin-endosys .pure-form input[type="date"],
+.pure-skin-endosys .pure-form input[type="month"],
+.pure-skin-endosys .pure-form input[type="time"],
+.pure-skin-endosys .pure-form input[type="datetime"],
+.pure-skin-endosys .pure-form input[type="datetime-local"],
+.pure-skin-endosys .pure-form input[type="week"],
+.pure-skin-endosys .pure-form input[type="number"],
+.pure-skin-endosys .pure-form input[type="search"],
+.pure-skin-endosys .pure-form input[type="tel"],
+.pure-skin-endosys .pure-form input[type="color"],
+.pure-skin-endosys .pure-form select,
+.pure-skin-endosys .pure-form textarea {
+    padding: 0.5em 0.6em !important;
+    display: inline-block !important;
+    border: 1px solid #e6e6e6 !important;
+    font-size: 0.8em !important;
+    box-shadow: inset 0 1px 3px #e6e6e6 !important;
+    border-radius: 4px !important;
+    -webkit-transition: 0.3s linear border !important;
+    -moz-transition: 0.3s linear border !important;
+    -ms-transition: 0.3s linear border !important;
+    -o-transition: 0.3s linear border !important;
+    transition: 0.3s linear border !important;
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+.pure-skin-endosys .pure-form input[type="text"]:focus,
+.pure-skin-endosys .pure-form input[type="password"]:focus,
+.pure-skin-endosys .pure-form input[type="email"]:focus,
+.pure-skin-endosys .pure-form input[type="url"]:focus,
+.pure-skin-endosys .pure-form input[type="date"]:focus,
+.pure-skin-endosys .pure-form input[type="month"]:focus,
+.pure-skin-endosys .pure-form input[type="time"]:focus,
+.pure-skin-endosys .pure-form input[type="datetime"]:focus,
+.pure-skin-endosys .pure-form input[type="datetime-local"]:focus,
+.pure-skin-endosys .pure-form input[type="week"]:focus,
+.pure-skin-endosys .pure-form input[type="number"]:focus,
+.pure-skin-endosys .pure-form input[type="search"]:focus,
+.pure-skin-endosys .pure-form input[type="tel"]:focus,
+.pure-skin-endosys .pure-form input[type="color"]:focus,
+.pure-skin-endosys .pure-form select:focus,
+.pure-skin-endosys .pure-form textarea:focus {
+    outline: 0 !important;
+    outline: thin dotted \9 !important; /* IE6-9 */
+    border-color: #129FEA !important;
+}
+
+.pure-skin-endosys .pure-form input[type="file"]:focus,
+.pure-skin-endosys .pure-form input[type="radio"]:focus,
+.pure-skin-endosys .pure-form input[type="checkbox"]:focus {
+    outline: thin dotted #333 !important;
+    outline: 1px auto #129FEA !important;
+}
+.pure-skin-endosys .pure-form .pure-checkbox,
+.pure-skin-endosys .pure-form .pure-radio {
+    margin: 0.5em 0 !important;
+    display: block !important;
+}
+.pure-skin-endosys .pure-form input[type="text"][disabled],
+.pure-skin-endosys .pure-form input[type="password"][disabled],
+.pure-skin-endosys .pure-form input[type="email"][disabled],
+.pure-skin-endosys .pure-form input[type="url"][disabled],
+.pure-skin-endosys .pure-form input[type="date"][disabled],
+.pure-skin-endosys .pure-form input[type="month"][disabled],
+.pure-skin-endosys .pure-form input[type="time"][disabled],
+.pure-skin-endosys .pure-form input[type="datetime"][disabled],
+.pure-skin-endosys .pure-form input[type="datetime-local"][disabled],
+.pure-skin-endosys .pure-form input[type="week"][disabled],
+.pure-skin-endosys .pure-form input[type="number"][disabled],
+.pure-skin-endosys .pure-form input[type="search"][disabled],
+.pure-skin-endosys .pure-form input[type="tel"][disabled],
+.pure-skin-endosys .pure-form input[type="color"][disabled],
+.pure-skin-endosys .pure-form select[disabled],
+.pure-skin-endosys .pure-form textarea[disabled] {
+    cursor: not-allowed !important;
+    box-shadow: inset 0 1px 10px #ededed !important;
+    background-color: #ededed !important;
+    color: #adadad !important;
+    border-color: #e6e6e6 !important;
+}
+.pure-skin-endosys .pure-form input[readonly],
+.pure-skin-endosys .pure-form select[readonly],
+.pure-skin-endosys .pure-form textarea[readonly],
+.pure-skin-endosys .pure-form input[readonly]:focus,
+.pure-skin-endosys .pure-form select[readonly]:focus,
+.pure-skin-endosys .pure-form textarea[readonly]:focus {
+    background: #eee !important; /* menu hover bg color */
+    color: #777 !important; /* menu text color */
+    border-color: #ccc !important;
+}
+.pure-skin-endosys .pure-form input:focus:invalid,
+.pure-skin-endosys .pure-form textarea:focus:invalid,
+.pure-skin-endosys .pure-form select:focus:invalid {
+    color: #b94a48 !important;
+    border: 1px solid #ee5f5b !important;
+}
+.pure-skin-endosys .pure-form input:focus:invalid:focus,
+.pure-skin-endosys .pure-form textarea:focus:invalid:focus,
+.pure-skin-endosys .pure-form select:focus:invalid:focus {
+    border-color: #e9322d !important;
+}
+.pure-skin-endosys .pure-form input[type="file"]:focus:invalid:focus,
+.pure-skin-endosys .pure-form input[type="radio"]:focus:invalid:focus,
+.pure-skin-endosys .pure-form input[type="checkbox"]:focus:invalid:focus {
+    outline-color: #e9322d !important;
+}
+.pure-skin-endosys .pure-form select {
+    border: 1px solid #e6e6e6 !important;
+    background-color: white !important;
+}
+.pure-skin-endosys .pure-form select[multiple] {
+    height: auto !important;
+}
+.pure-skin-endosys .pure-form label {
+    margin: 0.5em 0 0.2em !important;
+    color: #4f4f4f !important;
+    font-size:90% !important;
+}
+.pure-skin-endosys .pure-form fieldset {
+    margin: 0 !important;
+    padding: 0.35em 0 0.75em !important;
+    border: 0 !important;
+}
+.pure-skin-endosys .pure-form legend {
+    display: block !important;
+    width: 100% !important;
+    padding: 0.3em 0 !important;
+    margin-bottom: 0.3em !important;
+    font-size: 125% !important;
+    color: #262626 !important;
+    border-bottom: 1px solid #ededed !important;
+}
+
+.pure-skin-endosys .pure-form-stacked input[type="text"],
+.pure-skin-endosys .pure-form-stacked input[type="password"],
+.pure-skin-endosys .pure-form-stacked input[type="email"],
+.pure-skin-endosys .pure-form-stacked input[type="url"],
+.pure-skin-endosys .pure-form-stacked input[type="date"],
+.pure-skin-endosys .pure-form-stacked input[type="month"],
+.pure-skin-endosys .pure-form-stacked input[type="time"],
+.pure-skin-endosys .pure-form-stacked input[type="datetime"],
+.pure-skin-endosys .pure-form-stacked input[type="datetime-local"],
+.pure-skin-endosys .pure-form-stacked input[type="week"],
+.pure-skin-endosys .pure-form-stacked input[type="number"],
+.pure-skin-endosys .pure-form-stacked input[type="search"],
+.pure-skin-endosys .pure-form-stacked input[type="tel"],
+.pure-skin-endosys .pure-form-stacked input[type="color"],
+.pure-skin-endosys .pure-form-stacked select,
+.pure-skin-endosys .pure-form-stacked label,
+.pure-skin-endosys .pure-form-stacked textarea {
+    display: block !important;
+    margin: 0.25em 0 !important;
+}
+
+.pure-skin-endosys .pure-form-aligned input,
+.pure-skin-endosys .pure-form-aligned textarea,
+.pure-skin-endosys .pure-form-aligned select,
+/* note: pure-help-inline is deprecated. Use .pure-form-message-inline instead */
+.pure-skin-endosys .pure-form-aligned .pure-help-inline, 
+.pure-skin-endosys .pure-form-message-inline {
+    display: inline-block !important;
+    *display: inline !important; /* IE7 inline-block hack */
+    *zoom: 1 !important;
+    vertical-align: middle !important;
+}
+
+/* aligned Forms */
+.pure-skin-endosys .pure-form-aligned .pure-control-group {
+    margin-bottom: 0.5em !important;
+}
+.pure-skin-endosys .pure-form-aligned .pure-control-group label {
+    text-align: right !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    width: 10em !important;
+    margin: 0 1em 0 0 !important;
+}
+.pure-skin-endosys .pure-form-aligned .pure-controls {
+    margin: 1.5em 0 0 10em !important;
+}
+
+/* Rounded Inputs */
+.pure-skin-endosys .pure-form input.pure-input-rounded,
+.pure-skin-endosys .pure-form .pure-input-rounded {
+    border-radius: 30px !important;
+    padding: 0.5em 1em !important;
+}
+
+/* Grouped Inputs */
+.pure-skin-endosys .pure-form .pure-group fieldset {
+    margin-bottom: 10px !important;
+}
+.pure-skin-endosys .pure-form .pure-group input {
+    display: block !important;
+    padding: 0.5em 0.6em !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    position: relative !important;
+    top: -1px !important;
+}
+.pure-skin-endosys .pure-form .pure-group input:focus {
+    z-index: 2 !important;
+}
+.pure-skin-endosys .pure-form .pure-group input:first-child {
+    top: 1px !important;
+    border-radius: 4px 4px 0px 0px !important;
+}
+.pure-skin-endosys .pure-form .pure-group input:last-child {
+    top: -2px !important;
+    border-radius: 0px 0px 4px 4px !important;
+}
+.pure-skin-endosys .pure-form .pure-group button {
+    margin: 0.35em 0 !important;
+}
+
+.pure-skin-endosys .pure-form .pure-input-1 {
+    width: 100% !important;
+}
+.pure-skin-endosys .pure-form .pure-input-2-3 {
+    width: 66% !important;
+}
+.pure-skin-endosys .pure-form .pure-input-1-2 {
+    width: 50% !important;
+}
+.pure-skin-endosys .pure-form .pure-input-1-3 {
+    width: 33% !important;
+}
+.pure-skin-endosys .pure-form .pure-input-1-4 {
+    width: 25% !important;
+}
+
+/* Inline help for forms */
+/* Note: pure-help-inline is deprecated. Use .pure-form-message-inline instead */ 
+.pure-skin-endosys .pure-form .pure-help-inline,
+.pure-skin-endosys .pure-form-message-inline {
+    display: inline-block !important;
+    padding-left: 0.3em !important;
+    color: #adadad !important;
+    vertical-align: middle !important;
+    font-size: 90% !important;
+}
+
+/* Block help for forms */
+.pure-skin-endosys .pure-form-message {
+    display: block !important;
+    color: #adadad !important;
+    font-size: 90% !important;
+}
+/* note no template for forms-r.css. no skinnable properties */
+
+/* foundational CSS */
+.pure-skin-endosys .pure-table {
+    /* Remove spacing between table cells (from Normalize.css) */
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+    empty-cells: show !important;
+    border: 1px solid #e6eaf4 !important;
+}
+
+.pure-skin-endosys .pure-table caption {
+    color: #adadad !important;
+    font: italic 85%/1 arial, sans-serif !important;
+    padding: 1em 0 !important;
+    text-align: center !important;
+}
+
+.pure-skin-endosys .pure-table td,
+.pure-skin-endosys .pure-table th {
+    border-left: 1px solid #e6eaf4 !important;/* inner column border */
+    border-width: 0 0 0 1px !important;
+    font-size: inherit !important;
+    margin: 0 !important;
+    overflow: visible !important; /*to make ths where the title is really long work*/
+    padding: 0.3em 0.6em !important; /* cell padding */
+}
+
+.pure-skin-endosys .pure-table td:first-child,
+.pure-skin-endosys .pure-table th:first-child {
+    border-left-width: 0 !important;
+}
+
+.pure-skin-endosys .pure-table thead {
+    background-color: #d1d7eb !important;
+    color: #1c2440 !important;
+    text-align: left !important;
+    vertical-align: bottom !important;
+}
+
+/*
+striping:
+   even - #fff (white)
+   odd  - #f2f2f2 (light gray)
+*/
+.pure-skin-endosys .pure-table td {
+    background-color: #f1f3f9 !important;
+    color: #344579 !important;
+}
+.pure-skin-endosys .pure-table-odd td {
+    background-color: #e6eaf4 !important;
+    color: #273259 !important;
+}
+
+/* nth-child selector for modern browsers */
+.pure-skin-endosys .pure-table-striped tr:nth-child(2n-1) td {
+    background-color: #e6eaf4 !important;
+    color: #273259 !important;
+}
+
+
+/* BORDERED TABLES */
+.pure-skin-endosys .pure-table-bordered td {
+    border-bottom: 1px solid #e6eaf4 !important;
+}
+.pure-skin-endosys .pure-table-bordered tbody > tr:last-child td,
+.pure-skin-endosys .pure-table-horizontal tbody > tr:last-child td {
+    border-bottom-width: 0 !important;
+}
+
+/* HORIZONTAL BORDERED TABLES */
+.pure-skin-endosys .pure-table-horizontal td,
+.pure-skin-endosys .pure-table-horizontal th {
+    border-width: 0 0 1px 0 !important;
+    border-bottom:1px solid #e6eaf4 !important;
+}
+.pure-skin-endosys .pure-table-horizontal tbody > tr:last-child td {
+    border-bottom-width: 0 !important;
+}
+
+/* from PURE menu-core.css */
+/*csslint adjoining-classes:false, outline-none:false*/
+/*TODO: Remove this lint rule override after a refactor of this code.*/ 
+
+.pure-skin-endosys .pure-menu ul {
+    position: absolute !important;
+    visibility: hidden !important;
+}
+
+.pure-skin-endosys .pure-menu.pure-menu-open {
+    visibility: visible !important;
+    z-index: 2 !important;
+    width: 100% !important;
+}
+
+.pure-skin-endosys .pure-menu ul {
+    left: -10000px !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    top: -10000px !important;
+    z-index: 1 !important;
+}
+
+.pure-skin-endosys .pure-menu > ul { position: relative !important; }
+
+.pure-skin-endosys .pure-menu-open > ul {
+    left: 0 !important;
+    top: 0 !important;
+    visibility: visible !important;
+}
+
+.pure-skin-endosys .pure-menu-open > ul:focus {
+    outline: 0 !important;
+}
+
+.pure-skin-endosys .pure-menu li {
+    position: relative !important;
+}
+
+.pure-skin-endosys .pure-menu a, .pure-skin-endosys .pure-menu .pure-menu-heading {
+    display: block !important;
+    color: inherit !important;
+    line-height: 1.5em !important;
+    padding: 0.35em 1.4em !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+}
+
+.pure-skin-endosys .pure-menu.pure-menu-horizontal > .pure-menu-heading {
+    display: inline-block !important;
+    *display: inline !important;
+    zoom: 1 !important;
+    margin: 0 !important;
+    vertical-align: middle !important;
+}
+.pure-skin-endosys .pure-menu.pure-menu-horizontal > ul {
+    display: inline-block !important;
+    *display: inline !important;
+    zoom: 1 !important;
+    vertical-align: middle !important;
+    /* height: 2.4em !important; removed for Skin Builder */
+}
+
+.pure-skin-endosys .pure-menu li a { padding: 0.35em 1.4em !important; }
+
+.pure-skin-endosys .pure-menu-can-have-children > .pure-menu-label:after {
+    content: '\25B8' !important;
+    float: right !important;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'DejaVu Sans', sans-serif !important; /* These specific fonts have the Unicode char we need. */
+    margin-right: -20px !important;
+    margin-top: -1px !important;
+}
+
+.pure-skin-endosys .pure-menu-can-have-children > .pure-menu-label {
+    padding-right: 30px !important;
+}
+
+.pure-skin-endosys .pure-menu-separator {
+    background-color: #e6eaf4 !important;
+    display: block !important;
+    height: 1px !important;
+    font-size: 0 !important;
+    margin: 7px 2px !important;
+    overflow: hidden !important;
+}
+
+.pure-skin-endosys .pure-menu-hidden {
+    display: none !important;
+}
+
+/* FIXED MENU */
+.pure-skin-endosys .pure-menu-fixed {
+    position: fixed !important;
+    top:0 !important;
+    left:0 !important;
+    width: 100% !important;
+}
+
+
+/* HORIZONTAL MENU CODE */
+
+/* Initial menus should be inline-block so that they are horizontal */
+.pure-skin-endosys .pure-menu-horizontal li {
+    display: inline-block !important;
+    *display: inline !important;
+    zoom: 1 !important;
+    vertical-align: middle !important;
+}
+
+/* Submenus should still be display:block !important; */
+.pure-skin-endosys .pure-menu-horizontal li li {
+    display: block !important;
+}
+
+/* Content after should be down arrow */
+.pure-skin-endosys .pure-menu-horizontal > .pure-menu-children > .pure-menu-can-have-children > .pure-menu-label:after {
+    content: "\25BE" !important;
+}
+/*Add extra padding to elements that have the arrow so that the hover looks nice */
+.pure-skin-endosys .pure-menu-horizontal > .pure-menu-children > .pure-menu-can-have-children > .pure-menu-label {
+    padding-right: 30px !important;
+}
+
+/* Adjusting separator for vertical menus */
+.pure-skin-endosys .pure-menu-horizontal li.pure-menu-separator {
+    height: 50% !important;
+    width: 1px !important;
+    margin: 0 7px !important;
+}
+
+/* Submenus should be horizontal separator again */
+.pure-skin-endosys .pure-menu-horizontal li li.pure-menu-separator {
+height: 1px !important;
+width: auto !important;
+margin: 7px 2px !important;
+}
+
+
+/* end from yuicss/menu-core.css *******************************************/
+/* from yuicss menu-paginator.css */
+/*csslint box-model:false*/
+/*TODO: Remove this lint rule override after a refactor of this code.*/ 
+
+.pure-skin-endosys .pure-paginator {
+
+    /* `pure-g` Grid styles */
+    letter-spacing: -0.31em !important; /* Webkit: collapse white-space between units */
+    *letter-spacing: normal !important; /* reset IE < 8 */
+    *word-spacing: -0.43em !important; /* IE < 8: collapse white-space between units */
+    text-rendering: optimizespeed !important; /* Webkit: fixes text-rendering: optimizeLegibility */
+
+    /* `pure-paginator` Specific styles */
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.opera-only :-o-prefocus,
+.pure-skin-endosys .pure-paginator {
+    word-spacing: -0.43em !important;
+}
+
+/* `pure-u` Grid styles */
+.pure-skin-endosys .pure-paginator li {
+    display: inline-block !important;
+    *display: inline !important; /* IE < 8: fake inline-block */
+    zoom: 1 !important;
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
+    vertical-align: top !important;
+    text-rendering: auto !important;
+}
+.pure-skin-endosys .pure-paginator button {
+    border-radius: 0 !important;
+    padding: 0.8em 1.4em !important;
+    vertical-align: top !important;
+    height: 1.1em !important;
+}
+.pure-skin-endosys .pure-paginator button:focus,
+.pure-skin-endosys .pure-paginator button:active {
+    outline-style: none !important;
+}
+.pure-skin-endosys .pure-paginator .prev,
+.pure-skin-endosys .pure-paginator .next {
+    /*color: #C0C1C3 !important; allow button to color text*/
+}
+.pure-skin-endosys .pure-paginator .prev {
+    border-radius: 4px 0px 0px 4px !important;
+}
+.pure-skin-endosys .pure-paginator .next {
+    border-radius: 0px 4px 4px 0px !important;
+}
+/* end from PURE menu-paginator.css ******************************/
+/* from PURE menu.css *******************************************/
+/* MAIN MENU STYLING */
+/*csslint adjoining-classes:false*/
+/*TODO: Remove this lint rule override after a refactor of this code.*/ 
+
+.pure-skin-endosys .pure-menu.pure-menu-open,
+.pure-skin-endosys .pure-menu.pure-menu-horizontal li .pure-menu-children {
+    background: #f1f3f9 !important; /* Old browsers */
+    border: 1px solid #e6eaf4 !important;
+}
+
+/* remove borders for horizontal menus */
+.pure-skin-endosys .pure-menu.pure-menu-horizontal,
+.pure-skin-endosys .pure-menu.pure-menu-horizontal .pure-menu-heading {
+    border: none !important;
+}
+
+
+/* LINK STYLES */
+
+.pure-skin-endosys .pure-menu a {
+    border: 1px solid transparent !important;
+    border-left: none !important;
+    border-right: none !important;
+
+}
+
+.pure-skin-endosys .pure-menu a,
+.pure-skin-endosys .pure-menu .pure-menu-can-have-children > li:after {
+    color: #344579 !important;
+}
+
+.pure-skin-endosys .pure-menu .pure-menu-can-have-children > li:hover:after {
+    color: #273259 !important;
+}
+
+/* Focus style for a dropdown menu-item when the parent has been opened */
+.pure-skin-endosys .pure-menu .pure-menu-open {
+    background: #d8ddee !important;
+}
+
+.pure-skin-endosys .pure-menu li a:hover,
+.pure-skin-endosys .pure-menu li a:focus {
+    background: #d8ddee !important;
+}
+
+/* DISABLED STATES */
+.pure-skin-endosys .pure-menu li.pure-menu-disabled a:hover,
+.pure-skin-endosys .pure-menu li.pure-menu-disabled a:focus {
+    background: #f1f3f9 !important;
+    color: #97a6d3 !important;
+}
+
+.pure-skin-endosys .pure-menu .pure-menu-disabled > a {
+    background-image: none !important;
+    border-color: transparent !important;
+    cursor: default !important;
+}
+
+.pure-skin-endosys .pure-menu .pure-menu-disabled > a,
+.pure-skin-endosys .pure-menu .pure-menu-can-have-children.pure-menu-disabled > a:after {
+    color: #97a6d3 !important;
+}
+
+/* HEADINGS */
+.pure-skin-endosys .pure-menu .pure-menu-heading {
+    color: #171f36 !important;
+    text-transform: uppercase !important;
+    font-size: 90% !important;
+    margin-top: 0.5em !important;
+    border-bottom: solid 1px #e6eaf4 !important;
+}
+
+
+/* SELECTED MENU ITEM */
+.pure-skin-endosys .pure-menu li.pure-menu-selected a {
+    background-color: #3355BA !important;
+    color: #fbfcfe !important;
+}
+
+/* FIXED MENU */
+.pure-skin-endosys .pure-menu.pure-menu-open.pure-menu-fixed {
+    border: none !important;
+    border-bottom: 1px solid #e6eaf4 !important;
+}
+/* end from PURE menu.css ***********************************/
+/* from PURE menu-responsive.css ****************************/
+/* RESPONSIVE */
+
+@media (max-width: 480px) {
+
+    .pure-skin-endosys .pure-menu-horizontal {
+        width:100% !important;
+    }
+
+    .pure-skin-endosys .pure-menu-children li {
+        display: block !important;
+        border-bottom:1px solid #e6eaf4 !important;
+    }
+
+}
+/* end from menu-responsive.css ******************/
+
