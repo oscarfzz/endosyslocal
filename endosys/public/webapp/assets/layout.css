@@ -41,7 +41,7 @@ más habitual de los paneles en EndoSys.
 
 .layout_main_content {
 	height: 100%;
-	*height: 450px;	/* en IE7 se ha de indicar un alto concreto */
+	min-height: 450px;
 }
 
 .ui-layout-pane {

@@ -45,22 +45,34 @@
 			$("#mainheader-loggedin").html('');
 		
 			//	mostrar login
-			mainlayout.html(sprintf(
-				'<div id="login-form" class="ui-dialog ui-widget ui-widget-content ui-corner-all">' +
-				'<h3>%s</h3>' +/*IDIOMAOK*/
-				'<form class="pure-form pure-form-stacked">' +
-					'<fieldset>' +
-						'<legend></legend>' +
-						'<label>%s</label>' +/*IDIOMAOK*/
-						'<input id="login-form-user" type="text"/>' +
-						'<label>%s</label>' +/*IDIOMAOK*/
-						'<input id="login-form-pass" type="password"/>' +
-					'</fieldset>' +
-					'<fieldset>' +
-						'<button id="login-form-entrar-btn" type="button">%s</button>' +/*IDIOMAOK*/
-					'</fieldset>' +
-				'</form>' +
-				'</div>',
+			var login="";
+			login += "<div class=\"container\">";
+			login += "    <div class=\"row\">";
+			login += "        <div id=\"login-form\" class=\"col-sm-9 col-md-7 col-lg-5 mx-auto\">";
+			login += "            <form class=\"form-horizontal my-5\">";
+			login += "                <span class=\"heading\">Log In<\/span>";
+			login += "";
+			login += "                <div class=\"form-group\">";
+			login += "                    <input type=\"text\" class=\"form-control\" id=\"login-form-user\" placeholder=\"Username\" \/>";
+			login += "                    <i class=\"fa fa-user\"><\/i>";
+			login += "                <\/div>";
+			login += "";
+			login += "                <div class=\"form-group help\">";
+			login += "                    <input type=\"password\" class=\"form-control\" id=\"login-form-pass\" placeholder=\"Password\" \/>";
+			login += "                    <i class=\"fa fa-lock\"><\/i>";
+			login += "                <\/div>";
+			login += "";
+			login += "                <div class=\"form-group pb-1\">";
+			login += "                    <button id=\"login-form-entrar-btn\" class=\"btn btn-default\">log in<\/button>";
+			login += "                <\/div>";
+			login += "            <\/form>";
+			login += "        <\/div>";
+			login += "    <\/div>";
+			login += "<\/div>";
+			login += "";
+			
+			
+			mainlayout.html(sprintf(login,
 				_('Autenticación de usuario'),
 				_('Usuario'),
 				_('Contraseña'),
