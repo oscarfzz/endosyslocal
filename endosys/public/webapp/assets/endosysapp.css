@@ -2,8 +2,7 @@
 /*********	TODO EL NUEVO CSS AÑADIDO SKY-CSS	*************/
 /*********	GENERAL	*************/
 .layout_main_content {
-    min-height: 900px;
-    max-height: 90vh !important;
+    height: 100% !important;
 }
 
 /*********	LOGIN	*************/

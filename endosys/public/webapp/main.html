@@ -322,12 +322,12 @@ $(function() {
 		var heightdiff = $('#mainheader').innerHeight() + $('#maintitle').innerHeight() + $('#mainfooter').innerHeight();
 		if (!($.browser.msie && ($.browser.version == "7.0"))) {
 			$(window).resize(function() {
-				mainlayout.css('height', ($(this).height() - 155) + 'px');
+				// mainlayout.css('height', ($(this).height() - 155) + 'px');
 			}).resize();
 		} else {
 			//	IE7
 			$(window).resize(function() {
-				mainlayout.css('height', ($(this).height() - 170) + 'px');
+				// mainlayout.css('height', ($(this).height() - 170) + 'px');
 			}).resize();
 		}
 
