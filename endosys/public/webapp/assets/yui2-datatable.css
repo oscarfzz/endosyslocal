@@ -1,0 +1,144 @@
+/*
+COLORES:
+	#EDEDEE		gris claro		Fondo
+	#EC948D		rojo claro		Highlight
+*/
+
+/*	bordes	*/
+.yui-skin-endosys .yui-dt-scrollable .yui-dt-hd {
+	border-left: 1px solid #EC948D !important;
+	border-right: 1px solid #EC948D !important;
+	border-top: 1px solid #EC948D !important;
+	border-top-left-radius: 4px !important;
+	border-top-right-radius: 4px !important;
+}
+
+.yui-skin-endosys .yui-dt-scrollable .yui-dt-bd {
+	border-left: 1px solid #EC948D !important;
+	border-right: 1px solid #EC948D !important;
+	border-bottom: 1px solid #EC948D !important;
+	border-bottom-left-radius: 4px !important;
+	border-bottom-right-radius: 4px !important;
+}
+
+.yui-skin-endosys .yui-dt tr.yui-dt-first td {
+	border-top: none !important;
+}
+
+.yui-skin-endosys .yui-dt-scrollable .yui-dt-data tr.yui-dt-last td {
+	border-bottom: none !important;
+}
+
+.yui-skin-endosys .yui-dt td {
+	border-color: #EC948D !important;
+}
+
+.yui-skin-endosys .yui-dt th {
+	border-color: #EC948D !important;
+}
+
+/*	fuente	*/
+.yui-skin-endosys .yui-dt table {
+	font-family: inherit !important;
+}
+
+/*	fondo header	*/
+.yui-skin-endosys .yui-dt th {
+	background: none repeat scroll 0 0 #DA291C !important;
+}
+
+/*	texto header	*/
+.yui-skin-endosys .yui-dt th, .yui-skin-endosys .yui-dt th a {
+	color: #FFFFFF !important;
+}
+
+/* sortable columns */
+.yui-skin-endosys th.yui-dt-asc,
+.yui-skin-endosys th.yui-dt-desc {
+	background: none repeat scroll 0 0 #FFFFFF !important;
+}
+
+/* texto sortable columns */
+.yui-skin-endosys th.yui-dt-asc a,
+.yui-skin-endosys th.yui-dt-desc a {
+	color: #DA291C !important;
+}
+
+/*	resizer	*/
+.yui-dt-resizer {
+	/*background-color: #CCCCCC !important;*/
+}
+
+/*	fondo	*/
+.yui-skin-endosys .yui-dt-scrollable .yui-dt-bd {
+	background-color: #EDEDEE !important;
+}
+/*	striping	*/
+.yui-skin-endosys tr.yui-dt-even {	background-color: #EDEDEE !important; }
+.yui-skin-endosys tr.yui-dt-odd {	background-color: #FFFFFF !important; }
+.yui-skin-endosys tr.yui-dt-even td.yui-dt-asc,
+.yui-skin-endosys tr.yui-dt-even td.yui-dt-desc {background-color: #EDEDEE !important; }
+.yui-skin-endosys tr.yui-dt-odd td.yui-dt-asc,
+.yui-skin-endosys tr.yui-dt-odd td.yui-dt-desc {	background-color: #FFFFFF !important; }
+
+/* disable striping in list mode */
+.yui-skin-endosys .yui-dt-list tr.yui-dt-even {	background-color:#EDEDEE !important; }
+.yui-skin-endosys .yui-dt-list tr.yui-dt-odd {	background-color:#FFFFFF !important; }
+.yui-skin-endosys .yui-dt-list tr.yui-dt-even td.yui-dt-asc,
+.yui-skin-endosys .yui-dt-list tr.yui-dt-even td.yui-dt-desc {background-color:#EDEDEE !important; }
+.yui-skin-endosys .yui-dt-list tr.yui-dt-odd td.yui-dt-asc,
+.yui-skin-endosys .yui-dt-list tr.yui-dt-odd td.yui-dt-desc {	background-color:#FFFFFF !important; }
+
+/* highlighting */
+/*.yui-skin-endosys th.yui-dt-highlighted,
+.yui-skin-endosys th.yui-dt-highlighted a {
+    background-color: EC948D !important;
+}*/
+.yui-skin-endosys tr.yui-dt-highlighted,
+.yui-skin-endosys tr.yui-dt-highlighted td.yui-dt-asc,
+.yui-skin-endosys tr.yui-dt-highlighted td.yui-dt-desc,
+.yui-skin-endosys tr.yui-dt-even td.yui-dt-highlighted,
+.yui-skin-endosys tr.yui-dt-odd td.yui-dt-highlighted {
+    background-color: #EC948D !important;
+}
+
+/* enable highlighting in list mode */
+/*.yui-skin-endosys .yui-dt-list th.yui-dt-highlighted,
+.yui-skin-endosys .yui-dt-list th.yui-dt-highlighted a {
+    background-color: #EC948D !important;
+}*/
+.yui-skin-endosys .yui-dt-list tr.yui-dt-highlighted,
+.yui-skin-endosys .yui-dt-list tr.yui-dt-highlighted td.yui-dt-asc,
+.yui-skin-endosys .yui-dt-list tr.yui-dt-highlighted td.yui-dt-desc,
+.yui-skin-endosys .yui-dt-list tr.yui-dt-even td.yui-dt-highlighted,
+.yui-skin-endosys .yui-dt-list tr.yui-dt-odd td.yui-dt-highlighted {
+    background-color: #EC948D !important;
+}
+
+/*	selected	*/
+.yui-skin-endosys tr.yui-dt-selected td,
+.yui-skin-endosys tr.yui-dt-selected td.yui-dt-asc,
+.yui-skin-endosys tr.yui-dt-selected td.yui-dt-desc {
+	background-color: #EC948D !important;
+	color: #FFFFFF !important;
+    /*background-color: inherit !important;*/
+    /*background-color: #FFFFFF !important;
+	color: #486F65 !important;*/
+}
+
+.yui-skin-endosys .yui-dt-list tr.yui-dt-selected td,
+.yui-skin-endosys .yui-dt-list tr.yui-dt-selected td.yui-dt-asc,
+.yui-skin-endosys .yui-dt-list tr.yui-dt-selected td.yui-dt-desc {
+	background-color: #EC948D !important;
+	color: #FFFFFF !important;
+    /*background-color: inherit !important;*/
+    /*background-color: #FFFFFF !important;
+	color: #486F65 !important;*/
+}
+
+
+/*	???	*/
+.yui-dt-editor .yui-dt-button button {
+    width: 6em !important;
+}
+
