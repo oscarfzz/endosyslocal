@@ -108,7 +108,7 @@ body {
     /*IE 6/7/8*/
     border: none rgba(0, 0, 0, 0) !important;
     /*IE9 + everything else*/
-    background-color: #2196f3 !important;
+    background-color: #1e40af !important;
     color: white !important;
     text-decoration: none !important;
     border-radius: 4px !important;
@@ -130,7 +130,7 @@ body {
     background-image: -ms-linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.15)) !important;
     background-image: -o-linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.05)) !important;
     background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.05)) !important;
-    background-color: #1e88e5 !important;
+    background-color: #2250e6 !important;
 }
 
 .pure-skin-endosys button:focus {
@@ -479,14 +479,14 @@ Forms Core
     outline: 0 !important;
     outline: thin dotted \9 !important;
     /* IE6-9 */
-    border-color: #2196f3 !important;
+    border-color: #1e40af !important;
 }
 
 .pure-skin-endosys .pure-form input[type="file"]:focus,
 .pure-skin-endosys .pure-form input[type="radio"]:focus,
 .pure-skin-endosys .pure-form input[type="checkbox"]:focus {
     outline: thin dotted #333 !important;
-    outline: 1px auto #2196f3 !important;
+    outline: 1px auto #1e40af !important;
 }
 
 .pure-skin-endosys .pure-form .pure-checkbox,
