@@ -44,6 +44,16 @@ body {
     height: 100% !important;
 }
 
+.contenedor2 {
+    background-color: white !important;
+}
+
+.contenedor2 > .ui-layout-north, .ui-layout-center, .ui-layout-resizer {
+    background-color: white !important;
+    border-radius: 0 !important;
+    height: auto !important;
+}
+
 #maintitle > #mainnav {
     display: flex !important;
     column-gap: 10px !important;
@@ -641,6 +651,11 @@ Forms Core
 .pure-skin-endosys .pure-form-stacked textarea {
     display: block !important;
     margin: 0.25em 0 !important;
+}
+
+.pure-skin-endosys .pure-form-stacked button {
+    width: 100% !important;
+    margin-bottom: 10px !important;
 }
 
 .pure-skin-endosys .pure-form-aligned input,
