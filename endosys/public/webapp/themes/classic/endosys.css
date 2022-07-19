@@ -54,10 +54,6 @@ COLORES:
 
 /*	antes en main_new.css	*/
 
-#mainheader {
-    background-image: url(logo_endosys.png);
-}
-
 #maintitle-texto-subtitulo {
 	color: #C4E5D6;
 }
@@ -73,14 +69,6 @@ COLORES:
 
 .statusbar-normal {	background-image: url(fondo_statusbar_normal.png);}
 .statusbar-error {	background-image: url(fondo_statusbar_error.png);}
-
-#menu-principal-btn {
-	background-image: url(menu_principal_btn.png);
-}
-
-#menu-principal-btn:hover {
-	background-image: url(menu_principal_btn_hover.png);
-}
 
 .entorno-pruebas {
     background-image: url(logo_endosys_pruebas.png)!important;
