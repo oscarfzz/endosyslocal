@@ -43,10 +43,35 @@
     border-radius: 8px !important;
 }
 
+#menu-principal {
+    padding: 10px !important;
+    display: flex;
+    flex-direction: column !important;
+    row-gap: 5px !important;
+    color: var(--primary-text) !important;
+    box-shadow: var(--shadow) !important;
+    background-color: var(--background-paper) !important;
+    border: none !important;
+    border-radius: 8px !important;
+}
+
+#menu-principal li > ul {
+    padding: 10px !important;
+    display: flex;
+    flex-direction: column !important;
+    row-gap: 5px !important;
+    color: var(--primary-text) !important;
+    box-shadow: var(--shadow) !important;
+    background-color: var(--background-paper) !important;
+    border: none !important;
+    border-radius: 8px !important;
+}
+
 /* contenido del popup de notificaciones. */
 #ul-notificaciones {
     height: 100% !important;
     display: flex !important;
+    flex-direction: column !important;
     row-gap: 5px !important;
     width: 100% !important;
     padding: 10px !important;
