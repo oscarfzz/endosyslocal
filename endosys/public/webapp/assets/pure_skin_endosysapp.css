@@ -96,10 +96,129 @@ body {
     z-index: 100;
 }
 
+#mainheader {
+	height: 72px; 
+    background-image: none;	/*	THEMABLE	*/
+    background-position: 0 0px;
+	background-repeat: no-repeat;
+    background-color: var(--background-main);
+	color: var(--primary-text);
+	display: flex !important;
+	justify-content: space-between !important;
+	align-items: center !important;
+	padding: 0px 10px !important;
+}
+
+#mainheader-left {
+	display: flex !important;
+	column-gap: 10px !important;
+	flex-wrap: nowrap !important;
+	align-items: center;
+	height: 100%;
+}
+
+#mainheader-right {
+	display: flex !important;
+	column-gap: 10px !important;
+	align-items: center !important;
+	flex-wrap: nowrap;
+}
+
+#loggedin-usuario {
+	font-size: 120%;
+	font-weight: bold;
+	color: var(--primary-text) !important;
+	padding: 0.7em;
+	text-align: right;
+}
+
 .btn-legend {
     display: flex !important;
     align-items: center !important;
     column-gap: 10px !important;
+}
+
+#n-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    height: 32px;
+    color: var(--primary-text) !important;
+    background-color: var(--secondary-color) !important;
+}
+
+#n-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    height: 32px;
+    color: var(--primary-text) !important;
+    background-color: var(--secondary-color) !important;
+
+    /* Hidden sin romper el grid */
+    visibility: hidden;
+    height: 0 !important;
+}
+
+.abierto>.notificaciones.endo-panel {
+    position: absolute !important;
+    width: 300px !important;
+    z-index: 300 !important;
+    right: 10px !important;
+    height: 350px !important;
+    overflow: auto !important;
+    margin-top: 10px !important;
+    display: grid !important;
+    grid-template-rows: auto 1fr auto !important;
+}
+
+.notificaciones.endo-panel {
+    display: none !important;
+    box-shadow: var(--shadow);
+    background-color: var(--background-paper);
+    border: none !important;
+    border-radius: 8px !important;
+}
+
+#menu-principal {
+    padding: 10px 0px !important;
+    display: flex;
+    flex-direction: column !important;
+    row-gap: 5px !important;
+    color: var(--primary-text) !important;
+    box-shadow: var(--shadow) !important;
+    background-color: var(--background-paper) !important;
+    border: none !important;
+    border-radius: 8px !important;
+}
+
+#menu-principal li > ul {
+    padding: 10px 0px !important;
+    display: flex;
+    flex-direction: column !important;
+    row-gap: 5px !important;
+    color: var(--primary-text) !important;
+    box-shadow: var(--shadow) !important;
+    background-color: var(--background-paper) !important;
+    border: none !important;
+    border-radius: 8px !important;
+}
+
+.element-list {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    padding: 5px 10px !important;
 }
 
 /* from PURE buttons-core.css */

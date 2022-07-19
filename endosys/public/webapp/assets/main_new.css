@@ -155,41 +155,6 @@ form.pure-form.pure-form-stacked .ui-multiselect {
 				del OCX de captura)
 #mainstatusbar:	Barra de estado. Utiliza las classes .statusbar-normal y .statusbar-error
 */
-#mainheader {
-	height: 72px; 
-    background-image: none;	/*	THEMABLE	*/
-    background-position: 0 0px;
-	background-repeat: no-repeat;
-    background-color: var(--background-main);
-	color: var(--primary-text);
-	display: flex !important;
-	justify-content: space-between !important;
-	align-items: center !important;
-	padding: 0px 10px !important;
-}
-
-#mainheader-left {
-	display: flex !important;
-	column-gap: 10px !important;
-	flex-wrap: nowrap !important;
-	align-items: center;
-	height: 100%;
-}
-
-#mainheader-right {
-	display: flex !important;
-	column-gap: 10px !important;
-	align-items: center !important;
-	flex-wrap: nowrap;
-}
-
-#loggedin-usuario {
-	font-size: 120%;
-	font-weight: bold;
-	color: var(--primary-text) !important;
-	padding: 0.7em;
-	text-align: right;
-}
 
 #loggedin-salir-btn {
 	font-size: 100%;
