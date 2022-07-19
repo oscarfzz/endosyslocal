@@ -300,8 +300,8 @@ function crear_menu_principal(opciones_menu, busquedas_avanzadas) {
 	menu_principal = menu_principal
 	 .menu()
 	 .position({	//	OK para jQueryUI >= 1.10
-		my: "left top",
-		at: "left top",
+		my: "left bottom",
+		at: "left top-10",
 		of: $('#menu-principal-btn')
 	});
 

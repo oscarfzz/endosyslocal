@@ -96,6 +96,12 @@ body {
     z-index: 100;
 }
 
+.btn-legend {
+    display: flex !important;
+    align-items: center !important;
+    column-gap: 10px !important;
+}
+
 /* from PURE buttons-core.css */
 .pure-skin-endosys button {
     /* Structure */
