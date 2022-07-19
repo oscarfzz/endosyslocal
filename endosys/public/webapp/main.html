@@ -1,9 +1,10 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <!--html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es" dir="ltr"-->
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ENDOSYS:LANG" dir="ltr">
+
 <head>
-    <title>Endosys App</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Endosys App</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 	<!--	Pure	-->
 	<link type="text/css" href="/lib/Pure/pure-min.css?v=ENDOSYS:VERSION" rel="stylesheet" />
@@ -12,11 +13,13 @@
 	<!--script data-main="/web/" type="text/javascript" src="/lib/jquery/require-jquery.js?v=ENDOSYS:VERSION"></script-->
 	<script data-main="/web/" type="text/javascript" src="/lib/jquery/jquery-1.8.2.js?v=ENDOSYS:VERSION"></script>
 
-	<script>$.uiBackCompat = false;</script><!-- Descomentar este script para deshabilitar la backward compatibility de jQueryUI 1.10 con 1.9-->
+	<script>$.uiBackCompat = false;</script>
+	<!-- Descomentar este script para deshabilitar la backward compatibility de jQueryUI 1.10 con 1.9-->
 	<script type="text/javascript" src="/lib/jquery-ui-1.11.2.custom/jquery-ui.js?v=ENDOSYS:VERSION"></script>
 
 	<!--IDIOMA-->
-	<script type="text/javascript" src="/lib/jquery-ui-1.9.2.custom/js/i18n/jquery.ui.datepicker-ENDOSYS:LANG.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript"
+		src="/lib/jquery-ui-1.9.2.custom/js/i18n/jquery.ui.datepicker-ENDOSYS:LANG.js?v=ENDOSYS:VERSION"></script>
 
 	<!--	i18next	-->
 	<script type='text/javascript' src='/lib/i18next-1.7.4/i18next-1.7.4.js?v=ENDOSYS:VERSION'></script>
@@ -26,20 +29,21 @@
 
 	<!--	FULLCALENDAR	-->
 	<link rel='stylesheet' type='text/css' href='/lib/fullcalendar/fullcalendar.css?v=ENDOSYS:VERSION' />
-	<link rel='stylesheet' type='text/css' href='/lib/fullcalendar/fullcalendar.print.css?v=ENDOSYS:VERSION' media='print' />
+	<link rel='stylesheet' type='text/css' href='/lib/fullcalendar/fullcalendar.print.css?v=ENDOSYS:VERSION'
+		media='print' />
 	<script type='text/javascript' src='/lib/fullcalendar/fullcalendar.min.js?v=ENDOSYS:VERSION'></script>
 
 	<!--	JSTREE	-->
 	<script type='text/javascript' src='/lib/jstree/jquery.jstree.js?v=ENDOSYS:VERSION'></script>
 
 	<!--	DATATABLE	-->
-	<link type="text/css" href="assets/dataTable.css?v=ENDOSYS:VERSION" rel="stylesheet"/>
+	<link type="text/css" href="assets/dataTable.css?v=ENDOSYS:VERSION" rel="stylesheet" />
 	<!--link type="text/css" href="/lib/datatables/css/jquery.dataTables_themeroller.css?v=ENDOSYS:VERSION" rel="stylesheet"/>
 	<link type="text/css" href="/lib/datatables/css/demo_table.css?v=ENDOSYS:VERSION" rel="stylesheet"/-->
 	<!--	FIN DATATABLE	-->
 
-    <!-- Animaciones para el sistema de notificaciones	-->
-    <link type="text/css" href="assets/animate.css?v=ENDOSYS:VERSION" rel="stylesheet"/>
+	<!-- Animaciones para el sistema de notificaciones	-->
+	<link type="text/css" href="assets/animate.css?v=ENDOSYS:VERSION" rel="stylesheet" />
 
 	<!-- YUI2 -->
 	<!-- Individual YUI CSS files -->
@@ -49,8 +53,9 @@
 	<!-- Individual YUI 2 JS files -->
 	<script type="text/javascript" src="/lib/yui2/combo.js?v=ENDOSYS:VERSION"></script>
 
-    <link rel="stylesheet" type="text/css" href="/combo.css?files=/webapp/assets/controles_yui.css|/webapp/assets/misc.css|/webapp/assets/tipos_exploracion.css|/webapp/assets/formularios.css|/webapp/assets/main_new.css|/webapp/assets/layout.css|/webapp/assets/editor_formularios.css|/webapp/assets/exploraciones.css|/webapp/assets/notificaciones.css">
-    <link rel="stylesheet" type="text/css" href="assets/agendas_chus.css?v=ENDOSYS:VERSION">
+	<link rel="stylesheet" type="text/css"
+		href="/combo.css?files=/webapp/assets/controles_yui.css|/webapp/assets/misc.css|/webapp/assets/tipos_exploracion.css|/webapp/assets/formularios.css|/webapp/assets/main_new.css|/webapp/assets/layout.css|/webapp/assets/editor_formularios.css|/webapp/assets/exploraciones.css|/webapp/assets/notificaciones.css">
+	<link rel="stylesheet" type="text/css" href="assets/agendas_chus.css?v=ENDOSYS:VERSION">
 
 	<!-- YUI3 -->
 	<link rel="stylesheet" type="text/css" href="/lib/yui3/build/cssgrids/grids.css?v=ENDOSYS:VERSION">
@@ -62,11 +67,13 @@
 	<script type="text/javascript" src="/lib/jquery-ui-layout/jquery.layout-latest.js?v=ENDOSYS:VERSION"></script>
 	<script type="text/javascript" src="/lib/noty/packaged/jquery.noty.packaged.min.js?v=ENDOSYS:VERSION"></script>
 	<script type="text/javascript" src="/lib/noty/themes/default.js?v=ENDOSYS:VERSION"></script>
-	<script type="text/javascript" src="/lib/gfranko-jquery.selectBoxIt.js/jquery.selectBoxIt.min.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript"
+		src="/lib/gfranko-jquery.selectBoxIt.js/jquery.selectBoxIt.min.js?v=ENDOSYS:VERSION"></script>
 	<link rel="stylesheet" href="/lib/gfranko-jquery.selectBoxIt.js/jquery.selectBoxIt.css?v=ENDOSYS:VERSION">
 
 	<!--	22/2/2015: Antes era modulos de RequireJS:	-->
-	<script type="text/javascript" src="/lib/jquery-ui-multiselect-widget-1.13/jquery.multiselect.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript"
+		src="/lib/jquery-ui-multiselect-widget-1.13/jquery.multiselect.js?v=ENDOSYS:VERSION"></script>
 	<script type="text/javascript" src="/lib/jquery.fileupload/jquery.iframe-transport.js?v=ENDOSYS:VERSION"></script>
 	<script type="text/javascript" src="/lib/jquery.fileupload/jquery.fileupload.js?v=ENDOSYS:VERSION"></script>
 	<script type="text/javascript" src="/lib/datatables/js/jquery.dataTables.js?v=ENDOSYS:VERSION"></script>
@@ -77,7 +84,8 @@
 	<link rel="stylesheet" type="text/css" href="/lib/viewerjs/viewer.min.css?v=ENDOSYS:VERSION">
 
 	<!--	XXX de momento cargar de forma estática los CSS, ya que el CSSLoader a veces falla	-->
-	<link rel="stylesheet" type="text/css" href="/lib/jquery-ui-multiselect-widget-1.13/jquery.multiselect.css?v=ENDOSYS:VERSION">
+	<link rel="stylesheet" type="text/css"
+		href="/lib/jquery-ui-multiselect-widget-1.13/jquery.multiselect.css?v=ENDOSYS:VERSION">
 
 	<!--	aqui es donde se insertan los links a los css del theme de forma dinámica	-->
 	<script type="text/javascript" id="ubicacion-theme-css"></script>
@@ -97,264 +105,274 @@
 </head>
 
 <!--body class="yui-skin-sam yui-skin-endosys pure-skin-endosys endosys-compact-width"-->
+
 <body class="yui-skin-sam yui-skin-endosys pure-skin-endosys">
 
-<div id="mainheader">
-	<div style="float:right">
-		<div id="mainheader-loggedin"></div>
-		<div id="mainheader-notificaciones">
-			<div class="notificaciones-titulo">
-				<div class="titulo-texto"><span id="cantidad-notificaciones">0</span> <span id="text-label-notificacion"></span></div>
-				<div class="icono"></div>
+	<div id="mainheader">
+		<div id="mainheader-left">
+			<div id="mainheader-image">
 			</div>
-			<div class="notificaciones endo-panel">
-				<div id="n-header" style="display:none;" data-i18n>Marcar todas como leidas</div>
-				<ul id="ul-notificaciones">
 
-				</ul>
-				<div id="n-footer" data-i18n>Ver todas</div>
+			<div id="menu-principal-btn" class="icon-button icon-button-primary">
+				<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em"
+					preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+					<path fill="currentColor"
+						d="M12 5a1 1 0 1 0 0 2h8a1 1 0 1 0 0-2h-8Zm-5 7a1 1 0 0 1 1-1h8a1 1 0 1 1 0 2H8a1 1 0 0 1-1-1Zm-4 6a1 1 0 0 1 1-1h8a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1Z" />
+				</svg>
 			</div>
 		</div>
+		<div id="mainheader-right">
+
+			<div id="mainheader_wrapper">
+				<div id="mainheader-loggedin"></div>
+				<div id="mainheader-notificaciones">
+					<div class="notificaciones-titulo">
+						<div class="titulo-texto"><span id="cantidad-notificaciones">0</span></div>
+						<div class="icon-button icon-button-primary">
+							<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em"
+								height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+								<path fill="currentColor"
+									d="M12 22a2 2 0 0 1-2-2h4a2 2 0 0 1-2 2Zm8-3H4v-2l2-1v-5.5a8.065 8.065 0 0 1 .924-4.06A4.654 4.654 0 0 1 10 4.18V2h3.646a4.5 4.5 0 0 0 4.3 7.4c.035.357.052.727.052 1.1V16l2 1v2H20ZM17 8a3 3 0 1 1 .01-6A3 3 0 0 1 17 8Z" />
+							</svg>
+						</div>
+					</div>
+					<div class="notificaciones endo-panel">
+						<div id="n-header" style="display:none;" data-i18n>Marcar todas como leidas</div>
+						<ul id="ul-notificaciones">
+
+						</ul>
+						<div id="n-footer" data-i18n>Ver todas</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="mainheader_logout"></div>
+
+		</div>
 	</div>
-</div>
 
-<div id="maintitle">
-	<div id="menu-principal-btn"></div>
+	<div id="mainlayout" class="layout-background"></div>
+	<div id="mainfooter" class="layout-footer">
+		<div id="et-capture-control-container"></div>
+		<span id="info_puesto"></span> <span id="info_servicio"></span>
+		- Endosys App <span id="version_number"></span> - 2019
+	</div>
 
-	<div id="maintitle-texto">
-		<span id="maintitle-texto-titulo"></span>
-		<span id="maintitle-texto-subtitulo"></span>
-		<div class="font-color-claro" id="maintitle-icon-information"><i class="fa fa-exclamation-circle"></i></div>
-    </div>
+	<script type="text/javascript" src="js/Util/xmlutils.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/Util/contenido.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/Util/misc.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/Util/transaction_manager.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/Util/transaction_manager_jquery.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/Util/firma_electronica.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/paginacion.js?v=ENDOSYS:VERSION"></script>
 
+	<script type="text/javascript">var Endosys = {};</script>
+	<script type="text/javascript" src="js/Endosys/ET_REST.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/Endosys/ET_auth.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/Endosys/ET_statusbar.js?v=ENDOSYS:VERSION"></script>
 
-	<div id="mainnav">
-		<button id="mainnav-atras-btn" class="ui-button-small" type="button" data-i18n>Atrás</button>
-		<button id="mainnav-continuar-btn" class="ui-button-small" type="button" data-i18n>Continuar</button>
-    </div>
-</div>
+	<!--	acceso a controllers mediante REST	-->
+	<script type="text/javascript" src="js/Endosys/ET_varios.js?v=ENDOSYS:VERSION"></script>
 
-<div id="mainlayout" class="layout-background"></div>
-<div id="mainfooter">
-	<div id="et-capture-control-container"></div>
-	<span id="info_puesto"></span> <span id="info_servicio"></span>
-	- Endosys App <span id="version_number"></span> - 2019
-</div>
+	<!--	varios	-->
+	<script type="text/javascript" src="js/main.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/workstations.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/captura.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/controles.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/opciones_config.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/userinfo.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/menu_textos_predefinidos.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/nuevo_elemento.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/input_tipo_multi.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/dialogs/editorformularios_dialogs.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/dialogs/motivo_cancelacion_dialog.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/dialogs/plantillas_dialog.js?v=ENDOSYS:VERSION"></script>
 
-<script type="text/javascript" src="js/Util/xmlutils.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/Util/contenido.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/Util/misc.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/Util/transaction_manager.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/Util/transaction_manager_jquery.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/Util/firma_electronica.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/paginacion.js?v=ENDOSYS:VERSION"></script>
+	<!--	pantallas	-->
+	<script type="text/javascript" src="js/editor_tipos_expl.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/editor_formularios.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/tablas.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/pacientes.js?v=ENDOSYS:VERSION"></script> <!--	XXX	-->
+	<script type="text/javascript" src="js/agendas_chus.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/citas.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/imagenes_expl.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/informes.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/formularios.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/exploraciones.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/nueva_exploracion.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/busqueda_por_paciente.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/tipos_exploracion.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/busquedas_avanzadas/ejecutar_busqueda.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/busquedas_avanzadas/editor_busqueda2.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/busquedas_avanzadas/dialogo_condicion.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/busquedas_avanzadas/logica_estructura.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/busquedas_avanzadas/gestion_busquedas.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/gestion_agenda/gestion_agenda.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/gestion_agenda/dialogo_cita.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/gestion_agenda/dialogo_paciente.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/administracion/administracion.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/administracion/dialogo_sala.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/administracion/dialogo_hora.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/usuarios.js?v=ENDOSYS:VERSION"></script>
+	<!-- 22/2/2015: ya no es un module de requirejs -->
+	<script type="text/javascript" src="js/tareas.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/notificaciones.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/sesion.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="js/busqueda_citas.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="/lib/sprintf-0.7-beta1.js?v=ENDOSYS:VERSION"></script>
 
-<script type="text/javascript">var Endosys = {};</script>
-<script type="text/javascript" src="js/Endosys/ET_REST.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/Endosys/ET_auth.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/Endosys/ET_statusbar.js?v=ENDOSYS:VERSION"></script>
+	<script>
 
-<!--	acceso a controllers mediante REST	-->
-<script type="text/javascript" src="js/Endosys/ET_varios.js?v=ENDOSYS:VERSION"></script>
+		// GLOBALES
+		var mainlayout;	// objeto jQuery
+		var contenido_principal = new Contenido();	//	para poder llamar al "destroy" al cambiar de pantalla y asi poder destruir objetos creados, etc...
+		var _ = i18n.t;	//	usar la función _(), porque el extractor de mensajes de Babel no reconoce metodos como i18n.t() , por el punto.
+		var idioma;
+		var workstation = null;
+		var version = "";
 
-<!--	varios	-->
-<script type="text/javascript" src="js/main.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/workstations.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/captura.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/controles.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/opciones_config.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/userinfo.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/menu_textos_predefinidos.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/nuevo_elemento.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/input_tipo_multi.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/dialogs/editorformularios_dialogs.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/dialogs/motivo_cancelacion_dialog.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/dialogs/plantillas_dialog.js?v=ENDOSYS:VERSION"></script>
+		$(function () {
 
-<!--	pantallas	-->
-<script type="text/javascript" src="js/editor_tipos_expl.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/editor_formularios.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/tablas.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/pacientes.js?v=ENDOSYS:VERSION"></script>	<!--	XXX	-->
-<script type="text/javascript" src="js/agendas_chus.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/citas.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/imagenes_expl.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/informes.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/formularios.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/exploraciones.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/nueva_exploracion.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/busqueda_por_paciente.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/tipos_exploracion.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/busquedas_avanzadas/ejecutar_busqueda.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/busquedas_avanzadas/editor_busqueda2.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/busquedas_avanzadas/dialogo_condicion.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/busquedas_avanzadas/logica_estructura.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/busquedas_avanzadas/gestion_busquedas.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/gestion_agenda/gestion_agenda.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/gestion_agenda/dialogo_cita.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/gestion_agenda/dialogo_paciente.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/administracion/administracion.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/administracion/dialogo_sala.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/administracion/dialogo_hora.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/usuarios.js?v=ENDOSYS:VERSION"></script>	<!-- 22/2/2015: ya no es un module de requirejs -->
-<script type="text/javascript" src="js/tareas.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/notificaciones.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/sesion.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="js/busqueda_citas.js?v=ENDOSYS:VERSION"></script>
-<script type="text/javascript" src="/lib/sprintf-0.7-beta1.js?v=ENDOSYS:VERSION"></script>
+			// i18n
+			// El idioma del servidor viene en el atributo lang del elemento HTML
+			var idioma = $('html').attr('lang');
+			// Hasta que no ha cargado el idioma, no continua
+			$.i18n.init({
+				lng: idioma,
+				resGetPath: '/locales/__lng__/__ns__.json?v=ENDOSYS:VERSION',
+				nsseparator: ':::',	//	se cambian los separadores de namespace y key (por defecto : y .), asi se pueden usar en los keys
+				keyseparator: '::',
+				fallbackLng: false
+			})
+				.done(function (t) {
+					$("body").i18n();
 
-<script>
+					//	gestion transacciones
+					TM.add("operaciones", true).activate();	//	desde aqui se ejecutan los POST, PUT y DELETE (crear, modificar y eliminar)
+					TM.add("nueva_exploracion", false, true).activate();	//	se utiliza para crear una nueva exploracion. Se evita que se creen 2 por error al pulsar 2 veces el botón.
+					TM.add("buscar_citas", false, true).activate();			//	se utiliza para buscar citas. Se evita que se ejecute la busqueda 2 veces al pulsar 2 veces el botón. (el worklist mediante dcmtk da problemas si se ejecuta 2 veces simultaneamente)	//	05-06-2012 BOTON_BUSCAR_CITAS
+					TM.add("content_tablas");
+					TM.add("content_pacientes");
+					TM.add("content_agendas_chus");
+					TM.add("content_citas");
+					TM.add("content_exploraciones");
+					TM.add("content_tiposExploracion");
+					TM.add("content_editorFormularios");
+					TM.add("content_editorTiposExpl");
+					TM.add("content_usuarios");
+					TM.add("content_editor_busqueda");
+					TM.add("gestion_busquedas");
+					TM.add("gestion_agenda");
+					TM.add("content_test");
+					TM.add("content_administracion", true);
+					TM.add("tareas", true).activate();
+					TM.add("notificaciones", true).activate();
+					TM.content_tablas.add("detalles", true);
+					TM.content_pacientes.add("detalles");
+					TM.content_pacientes.add("buscar", false, true);	// para el botón buscar pacientes, evita abortar búsquedas en curso por pulsarlo repetidas veces
+					TM.content_agendas_chus.add("detalles");
+					TM.content_citas.add("agendas_chus");
+					TM.content_citas.add("detalles");
+					TM.content_citas.add("agendas");
+					TM.content_exploraciones.add("detalles");
+					TM.content_exploraciones.add("buscar", false, true);	// para el botón buscar exploraciones, evita abortar búsquedas en curso por pulsarlo repetidas veces
+					TM.content_exploraciones.detalles.add("elementoscampos", true);
+					TM.content_exploraciones.detalles.add("textospredefinidos", true);
+					TM.content_exploraciones.detalles.add("informes");
+					TM.content_exploraciones.detalles.add("imagenes", true);
+					TM.content_exploraciones.detalles.add("cita");
+					TM.content_editorFormularios.add("campos");
+					TM.content_editorFormularios.add("gruposcampos");
+					TM.content_editorFormularios.add("formulario");
+					TM.content_editorTiposExpl.add("tiposexploracion");
+					TM.content_editorTiposExpl.add("detalles");
+					TM.content_usuarios.add("servicios");
+					TM.content_usuarios.add("detalles");
+					TM.gestion_busquedas.add("busquedas");
+					TM.gestion_busquedas.add("detalles");
+					TM.content_editor_busqueda.add("arbol");
+					TM.content_editor_busqueda.add("detalles");
+					TM.content_editor_busqueda.add("elementos", true);
+					TM.content_administracion.add("arbol");
+					TM.content_administracion.add("detalles");
 
-// GLOBALES
-var mainlayout;	// objeto jQuery
-var contenido_principal = new Contenido();	//	para poder llamar al "destroy" al cambiar de pantalla y asi poder destruir objetos creados, etc...
-var _ = i18n.t;	//	usar la función _(), porque el extractor de mensajes de Babel no reconoce metodos como i18n.t() , por el punto.
-var idioma;
-var workstation = null;
-var version = "";
+					//	configuración básica (de momento solo por el theme de endosys)
+					opciones_config.inicializar_basicas()
+						.done(function () {
+							set_endosys_theme(opciones_config.THEME_ENDOSYS);
 
-$(function() {
+							if (opciones_config["EWC_MODO.ACTIVO"] == 0) {
+								//	control de captura
+								gestion_captura.cargarEtCapControl($('#et-capture-control-container'), 150, 25, false);
 
-	// i18n
-	// El idioma del servidor viene en el atributo lang del elemento HTML
-	var idioma = $('html').attr('lang');
-	// Hasta que no ha cargado el idioma, no continua
-	$.i18n.init({
-		lng: idioma,
-		resGetPath: '/locales/__lng__/__ns__.json?v=ENDOSYS:VERSION',
-		nsseparator: ':::',	//	se cambian los separadores de namespace y key (por defecto : y .), asi se pueden usar en los keys
-		keyseparator: '::',
-		fallbackLng: false
-	})
-	.done(function(t) {
-		$("body").i18n();
+								// Configura el puerto segun segun el protocolo y
+								// luego si hay datos del puerto o si usa el por defecto
+								var port;
+								if (document.location.protocol == 'https:') {
+									port = document.location.port ? document.location.port : 443;
+								} else {
+									port = document.location.port ? document.location.port : 80;
+								}
+								gestion_captura.etcapcontrol.protocol = document.location.protocol;
 
-		//	gestion transacciones
-		TM.add("operaciones", true).activate();	//	desde aqui se ejecutan los POST, PUT y DELETE (crear, modificar y eliminar)
-		TM.add("nueva_exploracion", false, true).activate();	//	se utiliza para crear una nueva exploracion. Se evita que se creen 2 por error al pulsar 2 veces el botón.
-		TM.add("buscar_citas", false, true).activate();			//	se utiliza para buscar citas. Se evita que se ejecute la busqueda 2 veces al pulsar 2 veces el botón. (el worklist mediante dcmtk da problemas si se ejecuta 2 veces simultaneamente)	//	05-06-2012 BOTON_BUSCAR_CITAS
-		TM.add("content_tablas");
-		TM.add("content_pacientes");
-		TM.add("content_agendas_chus");
-		TM.add("content_citas");
-		TM.add("content_exploraciones");
-		TM.add("content_tiposExploracion");
-		TM.add("content_editorFormularios");
-		TM.add("content_editorTiposExpl");
-		TM.add("content_usuarios");
-		TM.add("content_editor_busqueda");
-		TM.add("gestion_busquedas");
-		TM.add("gestion_agenda");
-		TM.add("content_test");
-		TM.add("content_administracion", true);
-		TM.add("tareas",true).activate();
-		TM.add("notificaciones",true).activate();
-		TM.content_tablas.add("detalles", true);
-		TM.content_pacientes.add("detalles");
-		TM.content_pacientes.add("buscar", false, true);	// para el botón buscar pacientes, evita abortar búsquedas en curso por pulsarlo repetidas veces
-		TM.content_agendas_chus.add("detalles");
-		TM.content_citas.add("agendas_chus");
-		TM.content_citas.add("detalles");
-		TM.content_citas.add("agendas");
-		TM.content_exploraciones.add("detalles");
-		TM.content_exploraciones.add("buscar", false, true);	// para el botón buscar exploraciones, evita abortar búsquedas en curso por pulsarlo repetidas veces
-		TM.content_exploraciones.detalles.add("elementoscampos", true);
-		TM.content_exploraciones.detalles.add("textospredefinidos", true);
-		TM.content_exploraciones.detalles.add("informes");
-		TM.content_exploraciones.detalles.add("imagenes",true);
-		TM.content_exploraciones.detalles.add("cita");
-		TM.content_editorFormularios.add("campos");
-		TM.content_editorFormularios.add("gruposcampos");
-		TM.content_editorFormularios.add("formulario");
-		TM.content_editorTiposExpl.add("tiposexploracion");
-		TM.content_editorTiposExpl.add("detalles");
-		TM.content_usuarios.add("servicios");
-		TM.content_usuarios.add("detalles");
-		TM.gestion_busquedas.add("busquedas");
-		TM.gestion_busquedas.add("detalles");
-		TM.content_editor_busqueda.add("arbol");
-		TM.content_editor_busqueda.add("detalles");
-		TM.content_editor_busqueda.add("elementos", true);
-		TM.content_administracion.add("arbol");
-		TM.content_administracion.add("detalles");
+								var host = document.location.hostname;
+								gestion_captura.configurar({ 'port': port, 'host': host });
+							}
 
-		//	configuración básica (de momento solo por el theme de endosys)
-		opciones_config.inicializar_basicas()
-		.done(function() {
-			set_endosys_theme(opciones_config.THEME_ENDOSYS);
+						});
 
-			if (opciones_config["EWC_MODO.ACTIVO"]==0){
-				//	control de captura
-				gestion_captura.cargarEtCapControl($('#et-capture-control-container'), 150, 25, false);
+					//	obtener la info del workstation por la IP (no requiere auth)
+					get_workstation();
 
-				// Configura el puerto segun segun el protocolo y
-				// luego si hay datos del puerto o si usa el por defecto
-				var port;
-				if (document.location.protocol == 'https:'){
-					port = document.location.port ? document.location.port : 443;
-				}else{
-					port = document.location.port ? document.location.port : 80;
-				}
-				gestion_captura.etcapcontrol.protocol = document.location.protocol;
+					$.datepicker.setDefaults($.datepicker.regional["es"]);
 
-				var host = document.location.hostname;
-				gestion_captura.configurar( {'port': port, 'host': host} );
-			}
+					mainlayout = $("#mainlayout");
+
+					$('#menu-principal-btn').click(function () { mostrar_menu_principal(); });
+					//Endosys.REST.init();
+					Endosys.auth.init();
+					Endosys.statusbar.init();
+
+					//	asistente (botones)
+					init_asistente();
+
+					// mantener la altura correcta. solo para IE8 y Firefox, en IE7 y IE6
+					// el footer queda abajo de la pagina y se usa el scroll del navegador
+					var heightdiff = $('#mainheader').innerHeight() + $('#maintitle').innerHeight() + $('#mainfooter').innerHeight();
+					if (!($.browser.msie && ($.browser.version == "7.0"))) {
+						$(window).resize(function () {
+							// mainlayout.css('height', ($(this).height() - 155) + 'px');
+						}).resize();
+					} else {
+						//	IE7
+						$(window).resize(function () {
+							// mainlayout.css('height', ($(this).height() - 170) + 'px');
+						}).resize();
+					}
+
+					//	versión
+					$.get('/version', function (data) {
+						//	mostrar solo la primera linea... asi en el version.txt se pueden añadir observaciones debajo.
+						data = data.split('\n');
+						$('#version_number').html('v' + data[0]);
+						version = data[0];
+					});
+
+					gestion_notificaciones.crear_eventos();
+
+				});
 
 		});
+	</script>
 
-		//	obtener la info del workstation por la IP (no requiere auth)
-		get_workstation();
-
-		$.datepicker.setDefaults($.datepicker.regional["es"]);
-
-		mainlayout = $("#mainlayout");
-
-		$('#menu-principal-btn').click(function() { mostrar_menu_principal(); });
-		//Endosys.REST.init();
-		Endosys.auth.init();
-		Endosys.statusbar.init();
-
-		//	asistente (botones)
-		init_asistente();
-
-		// mantener la altura correcta. solo para IE8 y Firefox, en IE7 y IE6
-		// el footer queda abajo de la pagina y se usa el scroll del navegador
-		var heightdiff = $('#mainheader').innerHeight() + $('#maintitle').innerHeight() + $('#mainfooter').innerHeight();
-		if (!($.browser.msie && ($.browser.version == "7.0"))) {
-			$(window).resize(function() {
-				// mainlayout.css('height', ($(this).height() - 155) + 'px');
-			}).resize();
-		} else {
-			//	IE7
-			$(window).resize(function() {
-				// mainlayout.css('height', ($(this).height() - 170) + 'px');
-			}).resize();
-		}
-
-		//	versión
-		$.get('/version', function(data) {
-			//	mostrar solo la primera linea... asi en el version.txt se pueden añadir observaciones debajo.
-			data = data.split('\n');
-			$('#version_number').html('v' + data[0]);
-			version = data[0];
-		});
-
-		gestion_notificaciones.crear_eventos();
-
-	});
-
-});
-</script>
-
-<!--
+	<!--
 Los comentarios con el contenido ENDOSYS:xxxx se preprocesan por el servidor. Por lo tanto,
 no modificarlos, ya que se ha de respetar el "case", espacios, etc...
 
 ENDOSYS:FIRMA_ELECTRONICA -> añade deployJava y MiniApplet, y carga el miniApplet de firma electronica
 -->
 
-<!--ENDOSYS:FIRMA_ELECTRONICA-->
+	<!--ENDOSYS:FIRMA_ELECTRONICA-->
 
 </body>
 
