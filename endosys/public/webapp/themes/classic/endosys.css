@@ -74,13 +74,7 @@ COLORES:
     background-image: url(logo_endosys_pruebas.png)!important;
 }
 
-.notificaciones{
-	
-   	border: 1px solid #C4E5D6 !important;
-}
-
 #n-footer{background-color: gray;}
-#n-header{background-color: gray;}
 
 #ul-notificaciones li{
 	border-bottom: 2px solid #ddd;

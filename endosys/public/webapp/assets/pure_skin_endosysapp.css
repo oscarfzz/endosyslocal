@@ -1,9 +1,11 @@
 :root {
     --primary-color: #1e40af;
     --primary-color-hover: #1e40afe1;
+    --secondary-color: #09BC8A;
     --primary-text: #FFFFFF;
     --contrast-text: #121212;
     --background-main: #121212;
+    --background-paper: #1E1E1E;
     --shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
 }
 

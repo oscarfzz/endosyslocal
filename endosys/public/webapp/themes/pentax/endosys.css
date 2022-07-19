@@ -69,24 +69,12 @@ COLORES:
 .statusbar-normal {	background-image: url(fondo_statusbar_normal.png);}
 .statusbar-error {	background-image: url(fondo_statusbar_error.png);}
 
-.entorno-pruebas {
-    /* background-image: url(logo_endosys_pruebas.png)!important; */
-}
-
 /*	adaptacion del JSTREE al tema endosys pentax	*/
 
 #organizacion.jstree-apple .jstree-hovered { background:#EC948D; border:1px solid #EC948D;  padding:0 3px 0 1px; text-shadow:1px 1px 1px silver; }
 #organizacion.jstree-apple .jstree-clicked { background:#EC948D; border:1px solid #EC948D; color: #FFFFFF; padding:0 3px 0 1px; }
 
-
-.notificaciones{
-	
-   	border: 1px solid #EC948D !important;
-}
-
-
 #n-footer{background-color: gray;}
-#n-header{background-color: gray;}
 
 #ul-notificaciones li{
 	border-bottom: 2px solid #ddd;

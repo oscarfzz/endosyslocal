@@ -1,107 +1,140 @@
-
-#mainheader-notificaciones{
-    display:none;
-    overflow:hidden;
+#mainheader-notificaciones {
     padding: 10px 10px 10px 0px;
+    position: relative;
     /*display:none;*/
 }
-.notificaciones-titulo{
-	cursor:pointer;
-	 text-align: right;
-	-webkit-touch-callout: none;
+
+.notificaciones-titulo {
+    cursor: pointer;
+    text-align: right;
+    -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none;    
+    user-select: none;
     position: relative !important;
 }
 
-.notificaciones-titulo .titulo-texto{
+.notificaciones-titulo .titulo-texto {
     position: absolute;
     right: 0;
     top: -10px;
     right: -10px;
 }
-.abierto{
-    float: none !important;
-    min-height: 100px !important;
-    max-height: 350px !important;
-    overflow: visible !important;
-    position: fixed !important;
-    right: 0;
-    top: 49px;
+
+.abierto>.notificaciones.endo-panel {
+    position: absolute !important;
     width: 300px !important;
-    z-index: 1000000 !important;
-    height:	auto!important;
-}
-.abierto .notificaciones{
-	display:block;
-}
-.abierto .notificaciones-titulo{
-	font-weight: bold;
+    z-index: 300 !important;
+    right: 10px !important;
+    height: 350px !important;
+    overflow: auto !important;
+    margin-top: 10px !important;
+    display: grid !important;
+    grid-template-rows: auto 1fr auto !important;
 }
 
-.notificaciones{
-	margin-top: 25px;
-	display:none;
-    box-shadow: 4px 4px 10px -4px rgba(0, 0, 0, 0.3);
-    overflow: visible !important;
-	min-height:70px;
-	max-height:320px;
-	width:100%;
+.notificaciones.endo-panel {
+    display: none !important;
+    box-shadow: var(--shadow);
+    background-color: var(--background-paper);
+    border: none !important;
+    border-radius: 8px !important;
 }
 
 /* contenido del popup de notificaciones. */
-#ul-notificaciones{
-	margin:0;
-	padding:0;
-	min-height: 50px;
-	max-height: 290px;
-	overflow:auto;
+#ul-notificaciones {
+    height: 100% !important;
+    display: flex !important;
+    row-gap: 5px !important;
+    width: 100% !important;
+    padding: 10px !important;
+    margin: 0 !important;
+    overflow: auto !important;
 }
-#n-footer{height:20px; width:100%;}
-#n-header{height:20px; width:100%;}
+
 
 /* listado de notificaciones*/
-#ul-notificaciones li{
+#ul-notificaciones li {
     list-style: none;
+    width: 100%;
     margin: 0px;
-    padding: 10px;
-    padding-bottom: 10px;
 }
-#ul-notificaciones li:last-child{
-border-bottom: none;
+
+#ul-notificaciones li:last-child {
+    border-bottom: none;
 }
 
 
-.n-fecha {font-size: 12px; font-weight: bold;}
-.n-contenido{font-size: 13px;}
-.n-btn-content{
-	float: right;
-    margin-top: 20px;
-    width: 15%;}
-.n-left{float:left;width: 85%;}
-.clearfix{clear:both;}
-#n-footer{
-	
-    font-size: 13px;
+.n-fecha {
+    font-size: 12px;
     font-weight: bold;
-    height: 20px;
-    padding-top: 3px;
+}
+
+.n-contenido {
+    font-size: 13px;
+}
+
+.n-btn-content {
+    float: right;
+    margin-top: 20px;
+    width: 15%;
+}
+
+.n-left {
+    float: left;
+    width: 85%;
+}
+
+.clearfix {
+    clear: both;
+}
+
+#n-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
     text-align: center;
-    cursor:pointer;
+    cursor: pointer;
+    height: 32px;
+    color: var(--primary-text) !important;
+    background-color: var(--secondary-color) !important;
+}
+
+#n-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    height: 32px;
+    color: var(--primary-text) !important;
+    background-color: var(--secondary-color) !important;
+
+    /* Hidden sin romper el grid */
+    visibility: hidden;
+    height: 0 !important;
 }
 
 
-.n-container-no-notificaciones {text-align: center; font-size: 14px;
-	margin-top: 8px;
+.n-container-no-notificaciones {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 8px;
 }
+
 /* fin del listado de las notificaciones */
 
 #mensaje-contenido {
-    width:500px;
-    height:300px;
-    display:block;
+    width: 500px;
+    height: 300px;
+    display: block;
     margin-bottom: 20px;
 }
