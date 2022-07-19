@@ -160,26 +160,39 @@ form.pure-form.pure-form-stacked .ui-multiselect {
     background-image: none;	/*	THEMABLE	*/
     background-position: 0 0px;
 	background-repeat: no-repeat;
-    background-color: #FFFFFF;
+    background-color: var(--background-main);
+	color: var(--primary-text);
+	display: flex !important;
+	justify-content: space-between !important;
+	align-items: center !important;
+	padding-right: 10px !important;
+}
+
+#mainheader-left {
+	display: flex !important;
+	column-gap: 10px !important;
+	flex-wrap: nowrap !important;
+	align-items: center;
+	height: 100%;
+}
+
+#mainheader-right {
+	display: flex !important;
+	column-gap: 10px !important;
+	align-items: center !important;
+	flex-wrap: nowrap;
 }
 
 #loggedin-usuario {
 	font-size: 120%;
 	font-weight: bold;
-	color: #404040;
-	margin-right: 130px;
-	float: right;
+	color: var(--primary-text) !important;
 	padding: 0.7em;
 	text-align: right;
 }
 
 #loggedin-salir-btn {
 	font-size: 100%;
-	position: absolute;
-	right: 0px;
-	top: 0px;
-	margin: 1em;
-	height: 42px;
 }
 
 #maintitle {
