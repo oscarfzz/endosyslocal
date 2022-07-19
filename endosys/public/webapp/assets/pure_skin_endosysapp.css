@@ -85,8 +85,15 @@ body {
 }
 
 #mainheader-image {
-    background-image: url(logo_endosys.png);
+    background-image: url(../themes/pentax/logo_endosys.png);
+    width: 480px;
+    height: 100%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 100;
 }
+
 /* from PURE buttons-core.css */
 .pure-skin-endosys button {
     /* Structure */

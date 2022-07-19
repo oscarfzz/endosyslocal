@@ -165,7 +165,7 @@ form.pure-form.pure-form-stacked .ui-multiselect {
 	display: flex !important;
 	justify-content: space-between !important;
 	align-items: center !important;
-	padding-right: 10px !important;
+	padding: 0px 10px !important;
 }
 
 #mainheader-left {
