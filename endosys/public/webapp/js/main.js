@@ -217,21 +217,6 @@ function crear_menu_principal(opciones_menu, busquedas_avanzadas) {
 				${icons.buscar_exploraciones_sin_finalizar}
 				<span>%s</span>
 			</li>
-			<li id="menu-principal-buscarexpl-avanzadas" class="element-list">
-				${icons.buscar_exploraciones_avanzada}
-				<span>%s</span>
-				<ul>
-				<li id="menu-principal-nuevabusqueda" class="element-list">
-					${icons.buscar_exploraciones_avanzada_nuevo}
-					<span>%s</span>
-				</li>
-				<li id="menu-principal-busquedas" class="element-list">
-					${icons.buscar_exploraciones_avanzada_administrar}
-					<span>%s</span>	
-				</li>
-				<li>-</li>
-				</ul>
-			</li>
 			</ul>
 		</li>` +
 
@@ -293,9 +278,6 @@ function crear_menu_principal(opciones_menu, busquedas_avanzadas) {
 		_("Por paciente"),
 		_("Por número de exploración"),
 		_("Sin finalizar"),
-		_("Avanzada"),
-		_("Nueva..."),
-		_("Administrar..."),
 		_("Gestión de agenda"),
 		_("Gestión de pacientes"),
 		_("Administración"),
@@ -345,9 +327,9 @@ function crear_menu_principal(opciones_menu, busquedas_avanzadas) {
 			default: // publica
 				break;
 		}
-		$('#menu-principal-buscarexpl-avanzadas>ul')
-			.append($('<li class="menu-principal-busqueda" id="menu-principal-busqueda-' + busquedas_avanzadas[i].id + '">' +
-				'<span class="endo-icon ui-icon" />' + busquedas_avanzadas[i].descripcion + '</li>'));
+		// $('#menu-principal-buscarexpl-avanzadas>ul')
+		// 	.append($('<li class="menu-principal-busqueda" id="menu-principal-busqueda-' + busquedas_avanzadas[i].id + '">' +
+		// 		'<span class="endo-icon ui-icon" />' + busquedas_avanzadas[i].descripcion + '</li>'));
 	}
 
 	menu_principal = menu_principal
@@ -401,11 +383,11 @@ function crear_menu_principal(opciones_menu, busquedas_avanzadas) {
 				contenido_principal.mostrar(gestion_exploraciones.una, exploracion.id);
 			});
 	});
-	//	NUEVA BUSQUEDA AVANZADA
-	$('#menu-principal-nuevabusqueda').click(function () {
-		reset_pantalla();
-		ejecutar_busqueda.mostrar_ejecutar_busqueda_no_exist();
-	});
+	// //	NUEVA BUSQUEDA AVANZADA
+	// $('#menu-principal-nuevabusqueda').click(function () {
+	// 	reset_pantalla();
+	// 	ejecutar_busqueda.mostrar_ejecutar_busqueda_no_exist();
+	// });
 	//	BUSCAR EXPLORACIONES SIN FINALIZAR
 	$('#menu-principal-buscarexpl-sinfinalizar').click(function () {
 		reset_pantalla();
@@ -419,12 +401,12 @@ function crear_menu_principal(opciones_menu, busquedas_avanzadas) {
 		set_titulo_pantalla(_('Tablas'));/*IDIOMAOK*/
 		contenido_principal.mostrar(gestion_tablas);
 	});
-	//GESTION BUSQUEDAS AVANZADAS
-	$('#menu-principal-busquedas').click(function () {
-		reset_pantalla();
-		set_titulo_pantalla(_('Administrar búsquedas'));/*IDIOMAOK*/
-		contenido_principal.mostrar(gestion_busquedas);
-	});
+	// //GESTION BUSQUEDAS AVANZADAS
+	// $('#menu-principal-busquedas').click(function () {
+	// 	reset_pantalla();
+	// 	set_titulo_pantalla(_('Administrar búsquedas'));/*IDIOMAOK*/
+	// 	contenido_principal.mostrar(gestion_busquedas);
+	// });
 	//	EDITOR DE TIPOS DE EXPL.
 	$('#menu-principal-editortiposexpl').click(function () {
 		reset_pantalla();
@@ -444,13 +426,13 @@ function crear_menu_principal(opciones_menu, busquedas_avanzadas) {
 		contenido_principal.mostrar(administracion);
 	});
 
-	//	BUSQUEDAS AVANZADAS
-	$('.menu-principal-busqueda').click(function () {
-		reset_pantalla();
-		var busqueda_id = $(this).attr('id').slice("menu-principal-busqueda-".length);
-		set_titulo_pantalla("Exploraciones", $(this).text());
-		ejecutar_busqueda.mostrar_ejecutar_busqueda_exist(busqueda_id);
-	});
+	// //	BUSQUEDAS AVANZADAS
+	// $('.menu-principal-busqueda').click(function () {
+	// 	reset_pantalla();
+	// 	var busqueda_id = $(this).attr('id').slice("menu-principal-busqueda-".length);
+	// 	set_titulo_pantalla("Exploraciones", $(this).text());
+	// 	ejecutar_busqueda.mostrar_ejecutar_busqueda_exist(busqueda_id);
+	// });
 
 	//	TAREAS
 	$('#menu-principal-tareas').click(function () {
