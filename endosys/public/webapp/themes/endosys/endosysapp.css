@@ -89,7 +89,7 @@ body {
 }
 
 #mainheader-image {
-    background-image: url(../themes/pentax/logo_endosys.png);
+    background-image: url(../pentax/logo_endosys.png);
     width: 480px;
     height: 100%;
     background-position: center;
