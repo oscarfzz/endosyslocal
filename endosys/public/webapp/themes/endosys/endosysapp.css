@@ -1,6 +1,8 @@
 :root {
     --primary-color: #1e40af;
     --primary-color-hover: #7e9cffe1;
+    --alert-color: #EF6F6C;
+    --alert-color-hover: #ef6e6cc7;
     --secondary-color: #09BC8A;
     --primary-text: #FFFFFF;
     --contrast-text: #6e6b7b;
@@ -299,7 +301,7 @@ body {
     height: 40px !important;
     border-radius: 50% !important;
     color: var(--contrast-text) !important;
-    display: flex !important;
+    display: flex;
     justify-content: center !important;
     align-items: center !important;
     background-color: transparent !important;
@@ -312,6 +314,22 @@ body {
     background-color: #ffffff14 !important;
 }
 
+.n-container {
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    column-gap: 10px;
+}
+
+.n-left {
+    flex-grow: 1;
+}
+
+.n-left {
+    flex-grow: 0;
+}
+
 .icon-button-primary {
     background-color: var(--primary-color) !important;
     color: var(--primary-text) !important;
@@ -319,6 +337,15 @@ body {
 
 .icon-button-primary:hover {
     background-color: var(--primary-color-hover) !important;
+}
+
+.icon-button-alert {
+    background-color: var(--alert-color) !important;
+    color: var(--primary-text) !important;
+}
+
+.icon-button-alert:hover {
+    background-color: var(--alert-color-hover) !important;
 }
 
 #mainheader_wrapper {

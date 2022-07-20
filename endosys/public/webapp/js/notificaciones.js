@@ -183,8 +183,7 @@ var gestion_notificaciones = function() {
 				}
 				gestion_notificaciones.cantidad_anterior = results.length;		
 				
-				if (results.length==0){
-
+				if (results.length===0){
 					li =  '<li>';
 					li += '	<div class="n-container-no-notificaciones">';
 					li += _('No hay nuevas notificaciones');//IDIOMAOK
@@ -201,8 +200,9 @@ var gestion_notificaciones = function() {
 						li += '				<div class="n-fecha">'+results[i].fecha+' - ' + results[i].hora + '</div>';
 						li += '				<div class="n-contenido">'+results[i].contenido+'</div>';
 						li += '			</div>';
-						li += '			<div class="n-btn-content"><button data-id="'+results[i].id+'" class="ui-button-small">'+_('Ver')+'</button></div>';//IDIOMAOK
-						li += '		<div class="clearfix"></div></div>';
+						// li += '			<div class="n-right"><button data-id="'+results[i].id+'" class="ui-button-small">'+_('Ver')+'</button></div>';//IDIOMAOK
+						li += '		</div>';
+						li += '<hr />';
 						li += '	</li>';
 
 						$("#ul-notificaciones").append(li);
