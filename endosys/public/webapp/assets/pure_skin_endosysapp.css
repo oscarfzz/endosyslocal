@@ -247,6 +247,7 @@ body {
     align-items: center !important;
     justify-content: center !important;
     column-gap: 10px !important;
+    padding-top: 15px !important;
 }
 
 #paginacion>a {
