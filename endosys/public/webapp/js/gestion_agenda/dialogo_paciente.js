@@ -30,8 +30,8 @@ var dialogo_paciente = function () {
 					autoOpen: false,
 					resizable: false,
 					title: _('Seleccionar paciente'),/*IDIOMAOK*/
-					height: 610,
-					width: 1000,
+					height: 720,
+					width: 1280,
 					close: function () {
 						$('#content_form_paciente').dialog("destroy");
 						$('#content_form_paciente').remove();
