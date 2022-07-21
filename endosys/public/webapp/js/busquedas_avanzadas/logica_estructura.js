@@ -204,7 +204,7 @@ var estructura = function () {
 			}
 
 			if (campo.tipo_camp == "8") {
-				input.datepicker();
+				input.flatpickr();
 			}
 			
 			$(".zona_valores").find("input:first").focus();
