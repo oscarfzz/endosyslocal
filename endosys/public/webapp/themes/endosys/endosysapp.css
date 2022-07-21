@@ -1739,4 +1739,45 @@ striping:
     display: none !important;
 }
 
+#login-form {
+	position: absolute;
+	display: block;
+	width: 500px;
+	padding: 0.5em 1.5em;
+    border-radius: 8px;
+    box-shadow: 0px 0px 30px 10px rgba(0,0,0,0.3);
+}
+
+#login-form form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+#login-form .form-group {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    column-gap: 10px;
+}
+
+#login-form .form-group i {
+    width: 36px;
+    height: 36px;
+    color: var(--primary-text);
+    border: 1px solid var(--primary-color);
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-form .form-group i:hover {
+    border-color: var(--primary-color-hover);
+    background-color: var(--primary-color-hover);
+}
+
+
 /* end from menu-responsive.css ******************/

@@ -207,23 +207,6 @@ form.pure-form.pure-form-stacked .ui-multiselect {
 	margin-top: 8px;
 }
 
-/* #login-form {
-	position: absolute;
-	display: block;
-	width: 320px;
-	padding: 0.5em 1.5em;
-} */
-
-/* #login-form input{
-	width: 100%;
-	background-repeat: no-repeat;
-	background-position: 4px 8px;
-	padding-left: 22px;
-}
-
-#login-form-user {background-image: url(/web/assets/icons/usuario.png);}
-#login-form-pass {background-image: url(/web/assets/icons/password.png);} */
-
 #mainlayout {
 	overflow: auto;
 }
