@@ -369,6 +369,7 @@ body {
 .pure-skin-endosys button {
     font-size: 100% !important;
     *font-size: 90% !important;
+    background-image: unset !important;
     /*IE 6/7 - To reduce IE's oversized button text*/
     *overflow: visible !important;
     /*IE 6/7 - Because of IE's overly large left/right padding on buttons */
@@ -1701,6 +1702,41 @@ striping:
 
 .yui-skin-endosys .toggle-group > label {
     margin: 0 !important;
+}
+
+.yui-skin-endosys #botones_salas {
+    margin-top: 10px !important;
+}
+
+.yui-skin-endosys .pure-g {
+    column-gap: 10px !important;
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+}
+
+.yui-skin-endosys .pure-g select {
+    display: none !important;
+}
+
+.yui-skin-endosys .pure-g button {
+    max-width: 273px !important;
+}
+
+.yui-skin-endosys .pure-g button > span {
+    white-space: pre-line !important;
+}
+
+#detalle_elemento > form > fieldset:last-of-type {
+    display: flex !important;
+    width: 80% !important;
+    max-width: 700px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    column-gap: 10px !important;
+}
+
+#detalle_elemento > form > fieldset:last-of-type legend {
+    display: none !important;
 }
 
 /* end from menu-responsive.css ******************/
