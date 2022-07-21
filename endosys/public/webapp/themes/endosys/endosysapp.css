@@ -91,7 +91,7 @@ body {
 }
 
 #mainheader-image {
-    background-image: url(../pentax/logo_endosys.png);
+    background-image: url(./logo_endosys.png);
     width: 480px;
     height: 100%;
     background-position: center;
@@ -693,7 +693,8 @@ Forms Core
 .pure-skin-endosys .pure-form input[type="tel"],
 .pure-skin-endosys .pure-form input[type="color"],
 .pure-skin-endosys .pure-form select,
-.pure-skin-endosys .pure-form textarea {
+.pure-skin-endosys .pure-form textarea,
+.pure-skin-endosys .pure-form input:not([type]) {
     padding: 0.5em 0.6em !important;
     display: inline-block !important;
     font-size: 0.8em !important;
@@ -727,7 +728,8 @@ Forms Core
 .pure-skin-endosys .pure-form input[type="tel"]:hover,
 .pure-skin-endosys .pure-form input[type="color"]:hover,
 .pure-skin-endosys .pure-form select:hover,
-.pure-skin-endosys .pure-form textarea:hover {
+.pure-skin-endosys .pure-form textarea:hover,
+.pure-skin-endosys .pure-form input:not([type]):hover {
     border-color: #212121 !important;
 }
 
@@ -746,7 +748,8 @@ Forms Core
 .pure-skin-endosys .pure-form input[type="tel"]:focus,
 .pure-skin-endosys .pure-form input[type="color"]:focus,
 .pure-skin-endosys .pure-form select:focus,
-.pure-skin-endosys .pure-form textarea:focus {
+.pure-skin-endosys .pure-form textarea:focus,
+.pure-skin-endosys .pure-form input:not([type]):focus {
     outline: 0 !important;
     outline: thin dotted \9 !important;
     /* IE6-9 */
@@ -781,7 +784,7 @@ Forms Core
 .pure-skin-endosys .pure-form input[type="tel"][disabled],
 .pure-skin-endosys .pure-form input[type="color"][disabled],
 .pure-skin-endosys .pure-form select[disabled],
-.pure-skin-endosys .pure-form textarea[disabled] {
+.pure-skin-endosys .pure-form textarea[disabled] .pure-skin-endosys .pure-form input:not([type])[disabled] {
     cursor: not-allowed !important;
     background-color: #ededed !important;
     color: #adadad !important;
@@ -1455,6 +1458,7 @@ striping:
 /* Cabecera */
 .yui-skin-endosys .yui-dt-scrollable .yui-dt-hd {
     border: none !important;
+    width: 100% !important;
     border-top-left-radius: 8px !important;
     border-top-right-radius: 8px !important;
 }
@@ -1471,6 +1475,11 @@ striping:
 
 .yui-skin-endosys .yui-dt-hd table thead tr>th:last-of-type {
     width: 166px !important;
+    min-width: 166px !important;
+}
+
+.yui-skin-endosys .yui-dt-hd table thead tr>th>.yui-dt-liner {
+    overflow: unset !important;
 }
 
 .yui-skin-endosys .yui-dt-hd table thead tr>th a {
@@ -1649,6 +1658,48 @@ striping:
 /*	???	*/
 .yui-dt-editor .yui-dt-button button {
     width: 6em !important;
+}
+
+#tablas-exportar-btn-todos {
+    height: auto;
+}
+
+.yui-skin-endosys .button-list-vertical.seccion-horizontal > * {
+    margin-bottom: 10px !important;
+}
+
+#organizacion.jstree-apple  a {
+    padding: 4px 10px !important;
+    border: 1px solid var(--primary-color-hover);
+    height: 28px;
+    margin-bottom: 4px ;
+}
+
+#organizacion.jstree-apple .jstree-hovered {
+    background: var(--primary-color-hover);
+    border-color: var(--primary-color-hover);
+    color: var(--primary-text);
+}
+
+#organizacion.jstree-apple .jstree-clicked {
+    background: var(--primary-color-hover);
+    border: 1px solid var(--primary-color-hover);
+    color: var(--primary-text);
+}
+
+.dataTables_wrapper .display.dataTable th {
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.dataTables_wrapper tbody tr.odd:hover, 
+.dataTables_wrapper tbody tr.even:hover, 
+.dataTables_wrapper tbody tr.odd td.highlighted {
+    background-color: var(--primary-color-hover);
+}
+
+.yui-skin-endosys .toggle-group > label {
+    margin: 0 !important;
 }
 
 /* end from menu-responsive.css ******************/
