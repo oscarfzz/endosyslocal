@@ -83,11 +83,11 @@ var gestion_exploraciones = function () {
 
             gestion_exploraciones.datatable_results = new YAHOO.widget.ScrollingDataTable(
                 args_local.datatable_el, fielddef, dummyDataSource, {
-                    initialLoad: false,
-                    MSG_EMPTY: '<em>' + _('No se ha encontrado ninguna exploración') + '</em>',/*IDIOMAOK*/
-                    height: "200px",    //  solo para que tenga el scrollbar, luego el alto es dinámico.
-                    width: "100%"
-                });
+                initialLoad: false,
+                MSG_EMPTY: '<em>' + _('No se ha encontrado ninguna exploración') + '</em>',/*IDIOMAOK*/
+                height: "200px",    //  solo para que tenga el scrollbar, luego el alto es dinámico.
+                width: "100%"
+            });
 
             datatable_results = gestion_exploraciones.datatable_results;
 
@@ -306,8 +306,8 @@ var gestion_exploraciones = function () {
                 $("#exploracion-capturar-btn").show();
                 $("#captura-importarimg-btn").show();
             }
-            
-            if (exploracion.estado == 1 && Endosys.auth.username=="sysadmin") {
+
+            if (exploracion.estado == 1 && Endosys.auth.username == "sysadmin") {
                 $("#captura-importarimg-btn").show();
             }
         },
@@ -1173,14 +1173,23 @@ var gestion_exploraciones = function () {
                     var $tabs = $('#busquedaexpl-tabview').tabs({ active: 0 });// OK para jQueryUI >= 1.10
 
                     //  crear calendario para busqueda de un dia
-                    $("#busqueda-undia-datepicker").datepicker().change(function () {
-                        $("#busqueda-fecha-undia").val($("#busqueda-undia-datepicker").val());
-                        $("#busqueda-undia-btn").click();
-                    });
+                    $("#busqueda-undia-datepicker").flatpickr({
+                        inline: true,
+                        onChange: function (selectedDates, dateStr, instance) {
+                            $("#busqueda-fecha-undia").val($("#busqueda-undia-datepicker").val());
+                            $("#busqueda-undia-btn").click();
+                        }
+                    })
+
 
                     //  crear datepickers
-                    $("#busqueda-fecha-inicio").datepicker();
-                    $("#busqueda-fecha-fin").datepicker();
+                    $("#busqueda-fecha-inicio").flatpickr({
+                        dateFormat: "d-m-Y",
+                    });
+
+                    $("#busqueda-fecha-fin").flatpickr({
+                        dateFormat: "d-m-Y",
+                    });
 
                     //  boton buscar (entre 2 fechas)
                     $('#busqueda-buscar-btn').button().click(function () {
