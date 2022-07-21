@@ -364,7 +364,7 @@
 					// Inicializando datepicker con la fecha actual
 					$("#busqueda-fecha").flatpickr({
 						defaultDate: new Date(),
-						dateFormat: "Y-m-d",
+						dateFormat: "d-m-Y",
 					});
 
 					
