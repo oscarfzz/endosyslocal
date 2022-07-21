@@ -18,8 +18,8 @@
 	<script type="text/javascript" src="/lib/jquery-ui-1.11.2.custom/jquery-ui.js?v=ENDOSYS:VERSION"></script>
 
 	<!--IDIOMA-->
-	<script type="text/javascript"
-		src="/lib/jquery-ui-1.9.2.custom/js/i18n/jquery.ui.datepicker-ENDOSYS:LANG.js?v=ENDOSYS:VERSION"></script>
+	<!-- <script type="text/javascript"
+		src="/lib/jquery-ui-1.9.2.custom/js/i18n/jquery.ui.datepicker-ENDOSYS:LANG.js?v=ENDOSYS:VERSION"></script> -->
 
 	<!--	i18next	-->
 	<script type='text/javascript' src='/lib/i18next-1.7.4/i18next-1.7.4.js?v=ENDOSYS:VERSION'></script>
@@ -99,6 +99,7 @@
 
 	<!--	Datepicker -->
 	<script type="text/javascript" src="/lib/flatpickr/flatpickr.min.js?v=ENDOSYS:VERSION"></script>
+	<script type="text/javascript" src="/lib/flatpickr/es.js?v=ENDOSYS:VERSION"></script>
 	<link rel="stylesheet" href="/lib/flatpickr/flatpickr.min.css?v=ENDOSYS:VERSION">
 
 	<!-- Endosys APP -->
@@ -345,7 +346,7 @@
 					//	obtener la info del workstation por la IP (no requiere auth)
 					get_workstation();
 
-					$.datepicker.setDefaults($.datepicker.regional["es"]);
+					flatpickr.localize(flatpickr.l10ns.es);
 
 					mainlayout = $("#mainlayout");
 
