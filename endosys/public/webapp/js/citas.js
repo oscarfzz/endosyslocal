@@ -361,12 +361,12 @@
 					});
 
 
-					$("#busqueda-fecha").datepicker({ defaultDate: 0 });
-					//asignar fecha por defecto el dia actual
+					// Inicializando datepicker con la fecha actual
+					$("#busqueda-fecha").flatpickr({
+						defaultDate: new Date(),
+						dateFormat: "Y-m-d",
+					});
 
-					var yourDate = new Date();
-					var formatDate = yourDate.getDate()  + '/' + (yourDate.getMonth() + 1) + '/' + yourDate.getFullYear();
-					$('#busqueda-fecha').val(formatDate);
 					
 					//	boton buscar
 					$("#busqueda-buscar-btn").button().click(function() {
@@ -381,7 +381,7 @@
 
 						// accion del boton imprimir
 						$("#imprimir-citas-btn").off().click(function() {
-							dia_seleccionado = $("#busqueda-fecha").val();	
+							dia_seleccionado = $("#busqueda-fecha").val();
 							agenda_seleccionada = $('#busqueda-citas-agenda option[value="'+$("#busqueda-citas-agenda").val()+'"]').text()
 
 							var opciones = {titulo: _("Citas del ")+ dia_seleccionado + " - " + agenda_seleccionada}
@@ -588,17 +588,6 @@
 							check.parent().next().css('color','black');
 						}else{
 							check.parent().next().css('color','gray');
-						}
-					});
-
-					/* Captura el evento onClose para para cambiar el estado del checkbox a
-					   seleccionado cuando la fecha es distina de "". Sin esto ocurre 
-					   un comportamiento no deseado.
-					*/
-					$("#busqueda-fecha").datepicker("option","onClose",function(date){
-						if (date!=""){
-							var check = $("#checkbox-fecha");
-							check.prop("checked", true).trigger("change");
 						}
 					});
 
