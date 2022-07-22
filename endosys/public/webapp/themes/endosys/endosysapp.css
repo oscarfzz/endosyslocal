@@ -42,7 +42,7 @@
 body {
     background-color: #ffffff !important;
     display: grid !important;
-    grid-template-rows: auto 1fr auto !important;
+    grid-template-rows: auto auto 1fr auto !important;
     width: 100% !important;
     height: 100vh !important;
     min-height: 900px !important;
@@ -54,7 +54,7 @@ body {
 }
 
 #maintitle {
-    height: 100% !important;
+    height: 60px;
 }
 
 .layout-footer {
