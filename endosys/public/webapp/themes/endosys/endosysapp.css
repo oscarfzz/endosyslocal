@@ -697,11 +697,11 @@ Forms Core
 .pure-skin-endosys .pure-form select,
 .pure-skin-endosys .pure-form textarea,
 .pure-skin-endosys .pure-form input:not([type]) {
-    padding: 0.5em 0.6em !important;
+    padding: 0.5em 0.6em;
     display: inline-block;
     font-size: 0.8em !important;
     border-radius: 4px !important;
-    border: 1px solid #C5C5C5 !important;
+    border: 1px solid #C5C5C5;
     -webkit-transition: 0.3s linear border !important;
     -moz-transition: 0.3s linear border !important;
     -ms-transition: 0.3s linear border !important;
@@ -1800,6 +1800,12 @@ striping:
     row-gap: 10px;
 }
 
-
+.flatpickr-calendar select,
+.flatpickr-calendar input {
+    border: none !important;
+    padding: 0 !important;
+    padding-left: 6px !important;
+    min-height: unset !important;
+}
 
 /* end from menu-responsive.css ******************/
