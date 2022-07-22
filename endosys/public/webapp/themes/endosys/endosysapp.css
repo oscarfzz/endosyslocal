@@ -54,7 +54,7 @@ body {
 }
 
 #maintitle {
-    height: 60px;
+    height: 100% !important;
 }
 
 .layout-footer {
