@@ -637,7 +637,7 @@ Forms Core
     .pure-skin-endosys .pure-form input[type="color"],
     .pure-skin-endosys .pure-form label {
         margin-bottom: 0.3em !important;
-        display: block !important;
+        display: block;
     }
 
     .pure-skin-endosys .pure-group input[type="text"],
@@ -698,7 +698,7 @@ Forms Core
 .pure-skin-endosys .pure-form textarea,
 .pure-skin-endosys .pure-form input:not([type]) {
     padding: 0.5em 0.6em !important;
-    display: inline-block !important;
+    display: inline-block;
     font-size: 0.8em !important;
     border-radius: 4px !important;
     border: 1px solid #C5C5C5 !important;
@@ -926,7 +926,7 @@ Forms Core
 .pure-skin-endosys .pure-form-stacked select,
 .pure-skin-endosys .pure-form-stacked label,
 .pure-skin-endosys .pure-form-stacked textarea {
-    display: block !important;
+    display: block;
     margin: 0.25em 0 !important;
 }
 
@@ -941,8 +941,8 @@ Forms Core
 /* note: pure-help-inline is deprecated. Use .pure-form-message-inline instead */
 .pure-skin-endosys .pure-form-aligned .pure-help-inline,
 .pure-skin-endosys .pure-form-message-inline {
-    display: inline-block !important;
-    *display: inline !important;
+    display: inline-block;
+    *display: inline;
     /* IE7 inline-block hack */
     *zoom: 1 !important;
     vertical-align: middle !important;
@@ -1455,6 +1455,9 @@ striping:
     border-radius: 8px !important;
     box-shadow: var(--shadow);
     background-color: #ffffff !important;
+    width: auto;
+    max-width: 100%;
+    overflow: auto;
 }
 
 /* Cabecera */
@@ -1714,10 +1717,6 @@ striping:
     width: 100% !important;
 } */
 
-.yui-skin-endosys .pure-g select {
-    display: none !important;
-}
-
 .yui-skin-endosys .pure-g button {
     max-width: 273px !important;
 }
@@ -1791,5 +1790,11 @@ striping:
     background-color: var(--primary-color-hover);
 }
 
+.layout-auto-fr-auto {
+    display: grid !important;
+    grid-template-rows: auto 1fr auto !important;
+    overflow: auto !important;
+    row-gap: 10px;
+}
 
 /* end from menu-responsive.css ******************/
