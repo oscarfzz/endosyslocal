@@ -281,8 +281,8 @@ body {
 /* from PURE buttons-core.css */
 .pure-skin-endosys button {
     /* Structure */
-    display: inline-block !important;
-    *display: inline !important;
+    display: inline-block;
+    *display: inline;
     /*IE 6/7*/
     zoom: 1 !important;
     line-height: normal !important;
