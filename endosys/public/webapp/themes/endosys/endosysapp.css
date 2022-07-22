@@ -931,7 +931,6 @@ Forms Core
 }
 
 .pure-skin-endosys .pure-form-stacked button {
-    width: 100% !important;
     margin-bottom: 10px !important;
 }
 
@@ -1717,6 +1716,10 @@ striping:
     width: 100% !important;
 } */
 
+.yui-skin-endosys svg {
+    vertical-align: unset;
+}
+
 .yui-skin-endosys .pure-g button {
     max-width: 273px !important;
 }
@@ -1796,5 +1799,7 @@ striping:
     overflow: auto !important;
     row-gap: 10px;
 }
+
+
 
 /* end from menu-responsive.css ******************/

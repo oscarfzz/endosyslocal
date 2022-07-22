@@ -1,7 +1,7 @@
-﻿<div class="layout_main_content">	
+﻿<div class="layout_main_content">
 	<div class="ui-layout-west endo_pane_redondeado endo-panel endo_pane_content">
-	
-		<div id="datatable_tipos_expl" class="yui-skin-endosys"></div> 
+
+		<div id="datatable_tipos_expl" class="yui-skin-endosys"></div>
 		<!--ANTIGUO-->
 		<div class="buttons-div">
 			<button id="editor-nuevo-tipoexpl-btn" type="button" data-i18n>Crear</button>
@@ -9,23 +9,36 @@
 			<button id="editor-eliminar-tipoexpl-btn" type="button" value="" data-i18n>Borrar</button>
 		</div>
 
-    </div>
+	</div>
 
-	<div  class="ui-layout-center endo_pane_redondeado endo-panel-detail endo_pane_content">
+	<div class="ui-layout-center endo_pane_redondeado endo-panel-detail endo_pane_content">
 
 		<!--ANTIGUO-->
 		<h4><span data-i18n>Formularios</span><span id="form_select"></h4>
-			
+
 		<div class="yui3-g">
 			<div class="yui3-u-2-5">
 				<form class="pure-form pure-form-stacked">
 					<fieldset>
 						<label data-i18n>Asignados</label>
-						<select id="formularios_seleccionados" size="16" multiple="multiple" style="width: 98%;"></select>
-						
+						<select id="formularios_seleccionados" size="16" multiple="multiple"
+							style="width: 98%;"></select>
+
 						<div class="buttons-div">
-							<button id="editor-formarriba-btn" class="button-icon" type="button"></button>
-							<button id="editor-formabajo-btn" class="button-icon" type="button"></button>
+							<button id="editor-formarriba-btn" class="button-icon" type="button">
+								<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em"
+									height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1024 1024">
+									<path fill="currentColor"
+										d="M858.9 689L530.5 308.2c-9.4-10.9-27.5-10.9-37 0L165.1 689c-12.2 14.2-1.2 35 18.5 35h656.8c19.7 0 30.7-20.8 18.5-35z" />
+								</svg>
+							</button>
+							<button id="editor-formabajo-btn" class="button-icon" type="button">
+								<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em"
+									height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1024 1024">
+									<path fill="currentColor"
+										d="M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z" />
+								</svg>
+							</button>
 						</div>
 						<div class="buttons-div button-margin-top">
 							<button id="editor-guardar-btn" type="button" data-i18n>Save</button>
@@ -47,30 +60,30 @@
 					<fieldset>
 						<label class="titulo" data-i18n>Disponibles</label>
 						<select id="formularios_todos" size="16" multiple="multiple" style="width: 98%;"></select>
-						
+
 						<div class="buttons-div button-margin-top">
 							<button id="editor-editarform-btn" type="button" data-i18n>Edit</button>
 							<button id="editor-nuevoform-btn" type="button" data-i18n>Create</button>
 							<button id="editor-renombrarform-btn" type="button" data-i18n>Renombrar</button>
 							<button id="editor-eliminarform-btn" type="button" data-i18n>Delete</button>
-							<button id="editor-exportarform-btn" type="button" data-i18n>Exportar (XML)</button>				
-							<span id="editor-importarform-btn" class="fileinput-button" style="margin-top:5px;">
+							<button id="editor-exportarform-btn" type="button" data-i18n>Exportar (XML)</button>
+							<button id="editor-importarform-btn" class="fileinput-button" style="margin-top:5px;">
 								<span data-i18n>Importar (XML)</span>
-								<input id="editor-importar-fileupload" type="file" name="archivo" title="NOTA: Al importar, si ya existen en la base de datos Campos o GruposCampos con exactamente el mismo nombre, entonces los reutiliza. Si no, los crea nuevos. En el caso de los Campos, también comprueba que coincida el Tipo.">
-							</span>
-							
-							
+								<input id="editor-importar-fileupload" type="file" name="archivo"
+									title="NOTA: Al importar, si ya existen en la base de datos Campos o GruposCampos con exactamente el mismo nombre, entonces los reutiliza. Si no, los crea nuevos. En el caso de los Campos, también comprueba que coincida el Tipo.">
+								</span>
+
+
 						</div>
 					</fieldset>
 				</form>
 			</div>
 		</div>
-			
-			
-	
-    </div>
+
+
+
+	</div>
 
 
 
 </div>
-
