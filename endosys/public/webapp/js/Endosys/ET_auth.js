@@ -46,7 +46,7 @@
 
 			//	mostrar login
 			var login = "";
-			login += "<div class=\"container\">";
+			login += "<div class=\"container-login-form\">";
 			login += "    <div class=\"row\">";
 			login += "        <div id=\"login-form\" class=\"col-sm-9 col-md-7 col-lg-5 mx-auto\">";
 			login += "            <form class=\"form-horizontal my-5\">";
