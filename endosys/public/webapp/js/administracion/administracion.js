@@ -58,8 +58,9 @@ var administracion = function() {
 					titulo: [_('Workstations'), _('Workstation')],
 					res:	Endosys.workstations,
 					detalle:	{
-						'nombre':	{titulo: _('Nombre'), tipo: 'TEXTO', required: true},
-						'ip':		{titulo: _('IP'), tipo: 'TEXTO'/*, readonly: true*/}
+						'nombre':	{titulo: _('SALAS'), tipo: 'TEXTO', required: true},
+						'ip':		{titulo: _('IP'), tipo: 'TEXTO'/*, readonly: true*/},
+						'nombre_equipo':		{titulo: _('NOMBRE EQUIPO'), tipo: 'TEXTO'/*, readonly: true*/}
 					},
 					custom_detalle: detalle_workstation,
 					custom_guardar: guardar_workstation, 
@@ -139,7 +140,6 @@ var administracion = function() {
 							'<button id="nuevo_btn" type="button" value="Guardar" data-i18n>Nuevo</button>' +
 							'<button id="eliminar_btn" type="button" value="Eliminar" data-i18n>Eliminar</button></fieldset>');
 
-			$("label[for='nombre-_rest_workstations']").text("SALA")
 			//	Según si se ha pasado "data" o no, mostrar unos u otros botones
 			if (data) {
 				$("#nuevo_btn").hide();

@@ -19,8 +19,8 @@ class WorkstationsController(GenericRESTController):
 		self.tabla = Workstation
 		self.nombre_recurso = 'workstation'
 		self.nombre_recursos = 'workstations'
-		self.campos_index = ('id', 'nombre', 'ip', 'tipo')
-		self.campos_show = ('id', 'nombre', 'ip', 'tipo', 'servicios', 'borrado_motivo', 'borrado')
+		self.campos_index = ('id', 'nombre', 'ip', 'nombre_equipo', 'tipo')
+		self.campos_show = ('id', 'nombre', 'ip', 'nombre_equipo', 'tipo', 'servicios', 'borrado_motivo', 'borrado')
 		self.campo_orderby = Workstation.nombre
 
 
