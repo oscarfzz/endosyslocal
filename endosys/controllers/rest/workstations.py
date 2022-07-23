@@ -94,6 +94,9 @@ class WorkstationsController(GenericRESTController):
 		tipo = request.params.get('tipo', None)
 		if tipo: workstation.tipo = tipo
 
+		nombre_equipo = request.params.get('nombre_equipo', None)
+		if nombre_equipo: workstation.nombre_equipo = nombre_equipo
+
 		self._guardar_servicios(workstation)
 
 		meta.Session.update(workstation)
