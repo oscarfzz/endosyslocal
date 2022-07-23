@@ -457,6 +457,14 @@ function crear_menu_principal(opciones_menu, busquedas_avanzadas) {
 		ejecutar_busqueda.activo = false;
 	});
 
+
+	if (Endosys.auth.username !== 'sysadmin') {
+		$("#menu-principal-administracion").remove()
+		$("#menu-principal-editortiposexpl").remove()
+		$("#menu-principal-tareas").remove()
+		$("#menu-principal-mensaje").remove()
+	}
+
 	return menu_principal;
 }
 
