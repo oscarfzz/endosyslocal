@@ -1831,6 +1831,10 @@ striping:
     border-color: var(--primary-color-hover);
 }
 
+.yui-skin-endosys .wrapper-tabs ul li a {
+    color: var(--primary-color) !important;
+}
+
 .yui-skin-endosys .wrapper-tabs ul li:hover a,
 .yui-skin-endosys .wrapper-tabs ul li.ui-tabs-active.ui-state-active a {
     color: var(--primary-text) !important;
