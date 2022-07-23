@@ -281,10 +281,12 @@ def get_workstation(**kwargs):
 			# si no hay con esa ip y esta configurado para que funcione con sin IP
 			q_ws = meta.Session.query(model.Workstation).filter( model.Workstation.ip == None )
 			q_ws = q_ws.filter(and_(or_(model.Workstation.borrado == 0, model.Workstation.borrado == None)))
+	elif 'nombre_equipo' in kwargs:
+		q_ws = q_ws.filter( model.Workstation.nombre_equipo == kwargs['nombre_equipo'] )
 	elif 'nombre' in kwargs:
 		q_ws = meta.Session.query(model.Workstation).filter( model.Workstation.nombre == kwargs['nombre'] )
 	else:
-		raise Exception(u'la función "get_workstation" debe tener 1 solo parámetro "id", "ip" o "nombre"')
+		raise Exception(u'la función "get_workstation" debe tener 1 solo parámetro "id", "ip", "nombre equipo" o "nombre"')
 
 	
 	if q_ws.count():

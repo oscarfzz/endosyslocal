@@ -34,9 +34,18 @@ class WorkstationsController(GenericRESTController):
 		Si id='auto', entonces se busca por la IP del cliente. 
 		Para esto no hace falta estar autenticado.
 		"""
-		if id == 'auto':
+		comprobacion_por_nombre_equipo = config.get('WORKSTATIONS.COMPROBACION_POR_NOMBRE_EQUIPO', '0')
+		comprobacion_por_ip = config.get('WORKSTATIONS.COMPROBACION_POR_IP', '1')
+
+		if comprobacion_por_nombre_equipo == '1':
+			import os
+			nombre_equipo = os.environ['COMPUTERNAME']
+			workstation = get_workstation(nombre_equipo=nombre_equipo)
+		elif comprobacion_por_ip == '1':
 			ipaddress =	obtener_request_ip(request)
 			workstation = get_workstation(ip=ipaddress)
+			
+		if id == 'auto':
 			if workstation:
 				id = workstation.id
 			else:
@@ -127,7 +136,6 @@ class WorkstationsController(GenericRESTController):
 	@authorize(RemoteUser())
 	def create(self, format='xml'):
 		p = request.params
-		print(p)
 
 		comprobacion_por_nombre_equipo = config.get('WORKSTATIONS.COMPROBACION_POR_NOMBRE_EQUIPO', '0')
 		comprobacion_por_ip = config.get('WORKSTATIONS.COMPROBACION_POR_IP', '1')
@@ -136,7 +144,6 @@ class WorkstationsController(GenericRESTController):
 			import os
 			nombre_equipo = os.environ['COMPUTERNAME']
 			p['nombre_equipo'] = nombre_equipo
-			print(nombre_equipo)
 			workstations = meta.Session.query(Workstation).filter(
 				and_(Workstation.nombre_equipo == nombre_equipo, or_(Workstation.borrado == 0, Workstation.borrado == None)))
 			if workstations.count() > 0:
