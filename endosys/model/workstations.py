@@ -35,6 +35,7 @@ t_workstations = sa.Table("Workstations", meta.metadata,
     sa.Column("id",			sa.types.Integer, sa.schema.Sequence('secuencia_workstations'), primary_key=True),
     sa.Column("nombre",		sa.types.String(50), nullable=True),
     sa.Column("ip",			sa.types.String(15), nullable=True), # v2.4.8.5: ahora puede ser NULL, que será el workstation "por defecto".
+    sa.Column("nombre_equipo", sa.types.String(200), nullable=True),
 	sa.Column("tipo",		sa.types.Integer,	 nullable=True),
 	sa.Column("borrado", 	sa.types.Boolean, nullable=False, default=False),  
     sa.Column("borrado_motivo", sa.types.String(200), nullable=True),   
