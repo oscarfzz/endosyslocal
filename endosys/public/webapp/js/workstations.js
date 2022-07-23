@@ -25,8 +25,8 @@ function dialog_crear_workstation(){
 
 	return controles.modal_dialog.mostrar({
 				title: _('Nuevo puesto'),/*IDIOMAOK*/
-				height: 275,
-				width: 350,
+				height: 400,
+				width: 380,
 				dialogClass: "dialog_nuevo_puesto",
 				resizable: false,
 				enterAccept: false,
@@ -84,6 +84,7 @@ function dialog_crear_workstation(){
 	// si viene por el done quiere decir que se apreto "aceptar", por lo tanto se
 	// crea el workstation con los servicios seleccionados. 
 	.then(function(params){
+		console.log(params)
 		return Endosys.workstations.create(TM.operaciones, params)
 	});
 

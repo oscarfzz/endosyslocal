@@ -127,23 +127,40 @@ class WorkstationsController(GenericRESTController):
 	@authorize(RemoteUser())
 	def create(self, format='xml'):
 		p = request.params
-		# Si no se proporciona una IP, se da por hecho que ha de usar la del client conectacto,
-		# es decir, que se está registrando.
-		if not 'ip' in p:
-			p['ip'] = obtener_request_ip(request)
-			
-		# Otro caso distinto es si se proporciona el parametro IP vacío (ip=''), que significa
-		# que se trata del Workstation "por defecto" y se asignará NULL
-		if p['ip'] == '':
-			if not(config.get("WORKSTATIONS.PERMITIR_SIN_IP", '0') == '1'):
-				abort_json(400, _(u'No se permite la creación de un Workstation por defecto'))
-		else:
-			# #comprobar que esa ip no este usada por otro workstation
-			workstation_ip = p['ip'] or None # Usar None en vez de, por ejemplo, cadena vacía
-			if workstation_ip is not None:
-				workstations = meta.Session.query(Workstation).filter(and_(Workstation.ip == workstation_ip, or_(Workstation.borrado == 0, Workstation.borrado == None)))
-				if workstations.count() > 0:
-					abort_json(400, _(u'El IP que desea asignar ya esta en uso por otro puesto'))#IDIOMAOK
+		print(p)
+
+		comprobacion_por_nombre_equipo = config.get('WORKSTATIONS.COMPROBACION_POR_NOMBRE_EQUIPO', '0')
+		comprobacion_por_ip = config.get('WORKSTATIONS.COMPROBACION_POR_IP', '1')
+
+		if comprobacion_por_nombre_equipo == '1':
+			import os
+			nombre_equipo = os.environ['COMPUTERNAME']
+			p['nombre_equipo'] = nombre_equipo
+			print(nombre_equipo)
+			workstations = meta.Session.query(Workstation).filter(
+				and_(Workstation.nombre_equipo == nombre_equipo, or_(Workstation.borrado == 0, Workstation.borrado == None)))
+			if workstations.count() > 0:
+				abort_json(400, _(u'El nombre del equipo que desea asignar ya esta en uso por otro puesto'))#IDIOMAOK
+
+
+		elif comprobacion_por_ip == '1':
+			# Si no se proporciona una IP, se da por hecho que ha de usar la del client conectacto,
+			# es decir, que se está registrando.
+			if not 'ip' in p:
+				p['ip'] = obtener_request_ip(request)
+				
+			# Otro caso distinto es si se proporciona el parametro IP vacío (ip=''), que significa
+			# que se trata del Workstation "por defecto" y se asignará NULL
+			if p['ip'] == '':
+				if not(config.get("WORKSTATIONS.PERMITIR_SIN_IP", '0') == '1'):
+					abort_json(400, _(u'No se permite la creación de un Workstation por defecto'))
+			else:
+				# #comprobar que esa ip no este usada por otro workstation
+				workstation_ip = p['ip'] or None # Usar None en vez de, por ejemplo, cadena vacía
+				if workstation_ip is not None:
+					workstations = meta.Session.query(Workstation).filter(and_(Workstation.ip == workstation_ip, or_(Workstation.borrado == 0, Workstation.borrado == None)))
+					if workstations.count() > 0:
+						abort_json(400, _(u'El IP que desea asignar ya esta en uso por otro puesto'))#IDIOMAOK
 
 		return self._doCreate(p, format)
 
