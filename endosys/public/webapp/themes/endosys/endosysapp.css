@@ -1470,6 +1470,12 @@ striping:
     background-color: var(--primary-color) !important;
 }
 
+
+.yui-skin-endosys .table-dense .yui-dt-hd table thead tr>th {
+    height: auto !important;
+    padding: calc(var(--spacing) * 0.5) !important;
+}
+
 .yui-skin-endosys .yui-dt-hd table thead tr>th:last-of-type {
     width: 166px !important;
     min-width: 166px !important;
@@ -1503,13 +1509,17 @@ striping:
     padding: 12px 16px !important;
 }
 
+.yui-skin-endosys .table-dense .yui-dt-bd table tbody td {
+    height: auto !important;
+    padding: calc(var(--spacing) * 0.5) !important;
+}
+
 .yui-skin-endosys .yui-dt-bd table tbody>tr>td:last-of-type {
     width: 150px !important;
 }
 
 .yui-skin-endosys .yui-dt>.yui-dt-hd table tr th>.yui-dt-resizerliner>.yui-dt-liner {
     overflow: unset !important;
-    padding: 0px !important;
 }
 
 .yui-skin-endosys .yui-dt>.yui-dt-bd table tr td>.yui-dt-liner {
