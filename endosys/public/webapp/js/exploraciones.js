@@ -1175,27 +1175,29 @@ var gestion_exploraciones = function () {
                     //  crear calendario para busqueda de un dia
                     $("#busqueda-undia-datepicker").flatpickr({
                         inline: true,
+                        locale: 'es',
+                        mode: 'range',
+                        format: "Y-m-d",
                         onChange: function (selectedDates, dateStr, instance) {
-                            $("#busqueda-fecha-undia").val($("#busqueda-undia-datepicker").val());
-                            $("#busqueda-undia-btn").click();
+                            console.log(selectedDates)
+                            if (selectedDates.length === 2) {
+                                var fecha_min = selectedDates[0].toISOString().substring(0, 10);
+                                var fecha_max = selectedDates[1].toISOString().substring(0, 10);
+                                buscarEntre2fechas(fecha_min, fecha_max)
+                            }
+
+                            if (selectedDates.length === 1) {
+                                var fecha_min = selectedDates[0].toISOString().substring(0, 10);
+                                buscarPorFecha(fecha_min)
+                            }
+                            
+
                         }
                     })
 
-
-                    //  crear datepickers
-                    $("#busqueda-fecha-inicio").flatpickr({
-                        dateFormat: "d-m-Y",
-                    });
-
-                    $("#busqueda-fecha-fin").flatpickr({
-                        dateFormat: "d-m-Y",
-                    });
-
                     //  boton buscar (entre 2 fechas)
-                    $('#busqueda-buscar-btn').button().click(function () {
+                    function buscarEntre2fechas(fecha_min, fecha_max) {
                         var args = { estado: 1 };
-                        var fecha_min = $("#busqueda-fecha-inicio").val();
-                        var fecha_max = $("#busqueda-fecha-fin").val();
 
                         if (fecha_min) args.fecha_min = fecha_min;
                         if (fecha_max) args.fecha_max = fecha_max;
@@ -1211,21 +1213,19 @@ var gestion_exploraciones = function () {
                                 args.borrado = 1;
                             }
 
-                            gestion_exploraciones.buscar_exploraciones(args, $('#total-exploraciones'), $("#exportar_excel"));
+                            gestion_exploraciones?.buscar_exploraciones(args, $('#total-exploraciones'), $("#exportar_excel"));
                         }
-                    });
+                    };
 
                     //  boton buscar (una sola fecha)
-                    $('#busqueda-undia-btn').button().click(function () {
+                    function buscarPorFecha (fecha) {
                         var args = { estado: 1 };
-                        var fecha = $("#busqueda-fecha-undia").val();
-
                         if (fecha) args.fecha = fecha;
                         if (Endosys.auth.servicio_activo) args.servicio_activo = Endosys.auth.servicio_activo.id;
                         if ($("#checkbox-buscar-eliminados").prop("checked")) args.borrado = 1;
 
-                        gestion_exploraciones.buscar_exploraciones(args, $('#total-exploraciones'), $("#exportar_excel"));
-                    });
+                        gestion_exploraciones?.buscar_exploraciones(args, $('#total-exploraciones'), $("#exportar_excel"));
+                    };
 
                     //  boton semana actual (entre 2 fechas)
                     $('#busqueda-semanaactual-btn').button().click(function () {
