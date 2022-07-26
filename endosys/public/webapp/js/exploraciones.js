@@ -1181,13 +1181,13 @@ var gestion_exploraciones = function () {
                         onChange: function (selectedDates, dateStr, instance) {
                             console.log(selectedDates)
                             if (selectedDates.length === 2) {
-                                var fecha_min = selectedDates[0].toISOString().substring(0, 10);
-                                var fecha_max = selectedDates[1].toISOString().substring(0, 10);
+                                var fecha_min = selectedDates[0].toLocaleString().split(',')[0];
+                                var fecha_max = selectedDates[1].toLocaleString().split(',')[0];
                                 buscarEntre2fechas(fecha_min, fecha_max)
                             }
 
                             if (selectedDates.length === 1) {
-                                var fecha_min = selectedDates[0].toISOString().substring(0, 10);
+                                var fecha_min = selectedDates[0].toLocaleString().split(',')[0];
                                 buscarPorFecha(fecha_min)
                             }
                             
