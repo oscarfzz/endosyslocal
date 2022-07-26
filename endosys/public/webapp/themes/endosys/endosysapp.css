@@ -44,7 +44,7 @@
 body {
     background-color: #ffffff !important;
     display: grid !important;
-    grid-template-rows: auto auto 1fr auto !important;
+    grid-template-rows: auto 1fr auto !important;
     width: 100% !important;
     height: 100vh !important;
     min-height: 900px !important;
@@ -53,10 +53,6 @@ body {
 
 #mainlayout {
     background-color: white !important;
-}
-
-#maintitle {
-    height: 100% !important;
 }
 
 .layout-footer {
@@ -82,11 +78,17 @@ body {
     height: auto !important;
 }
 
-#maintitle>#mainnav {
-    display: flex !important;
-    column-gap: 10px !important;
+
+#maintitle {
     height: 100% !important;
-    align-items: center !important;
+    background-color: unset;
+}
+
+#maintitle>#mainnav {
+    display: flex;
+    column-gap: 10px;
+    height: 100%;
+    align-items: center;
 }
 
 #maintitle>#mainnav>button {
@@ -123,6 +125,7 @@ body {
     flex-wrap: nowrap !important;
     align-items: center;
     height: 100%;
+    flex-grow: 1;
 }
 
 #mainheader-right {
@@ -141,9 +144,17 @@ body {
 }
 
 .btn-legend {
-    display: flex !important;
-    align-items: center !important;
-    column-gap: 10px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: calc(var(--spacing) * .75);
+    flex-basis: 75px;
+}
+
+.btn-legend > span {
+    font-size: 14px;
+    font-weight: 600;
 }
 
 #n-footer {
@@ -212,6 +223,10 @@ body {
     background-color: var(--background-paper) !important;
     border: none !important;
     border-radius: 8px !important;
+}
+
+#menu-principal-btn {
+    height: 100%;
 }
 
 #menu-principal li>ul {
@@ -317,6 +332,11 @@ body {
     background-color: #ffffff14 !important;
 }
 
+.pure-skin-endosys .icon-button-small {
+    width: 36px !important;
+    height: 36px !important;
+}
+
 .n-container {
     display: flex;
     width: 100%;
@@ -364,7 +384,8 @@ body {
     border: 0 !important;
 }
 
-/* end from PURE buttons-core.css */
+/* end from PURE buttons-c
+ore.css */
 /* from PURE buttons.css */
 /*csslint unqualified-attributes:false*/
 

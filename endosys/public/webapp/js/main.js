@@ -78,8 +78,8 @@ function set_informacion(callback) {
 function init_asistente() {
 	/*$("#mainnav-continuar-btn").button();
 	$("#mainnav-atras-btn").button();*/
-	$("#mainnav-continuar-btn").button({ icons: { primary: "ui-icon-triangle-1-e" }, text: false });
-	$("#mainnav-atras-btn").button({ icons: { primary: "ui-icon-triangle-1-w" }, text: false });
+	$("#mainnav-continuar-btn").button({ text: true });
+	$("#mainnav-atras-btn").button({ text: true });
 	desactivar_asistente();
 }
 var __theme_loaded_ie7_8 = false;
