@@ -1113,7 +1113,7 @@ ETFormData.prototype = {
             // Campo multiseleccion
             // Crear boton al lado del label para modificar elementos
             var $target_control = null;
-            var $boton_edit = $('<button type="button" class="boton-aux-campo ui-button-small">...</button>');
+            var $boton_edit = $('<button type="button" class="boton-aux-campo button-small"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1024 1024"><path fill="currentColor" d="M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"/></svg></button>');
             $label.append($boton_edit);
             $boton_edit.button({ icons: { primary: "ui-icon-triangle-1-se" }, text: false });
             if (!this.generado.editable) {
@@ -1160,7 +1160,7 @@ ETFormData.prototype = {
                 .prop('checked', campo.valor)
                 .appendTo(controlwrapper);
 
-            $('<label style="font-size: 10px;">No text</label>')
+            $('<label style="font-size: 10px;" class="btn-hidden">No text</label>')
                 .attr('for', control_ID)
                 .appendTo(controlwrapper);
 

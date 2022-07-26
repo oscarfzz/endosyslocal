@@ -337,6 +337,12 @@ body {
     height: 36px !important;
 }
 
+.pure-skin-endosys td:hover > label > span > .actualizar-elementos {
+    padding: 0px 6px !important;
+    margin: 0 !important;
+    margin-left: 10px !important;
+}
+
 .n-container {
     display: flex;
     width: 100%;
@@ -436,6 +442,10 @@ ore.css */
 .pure-skin-endosys button-active,
 .pure-skin-endosys button:active {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.20) inset !important;
+}
+
+.pure-skin-endosys .button-small {
+ padding: 0.5em !important;   
 }
 
 .pure-skin-endosys button[disabled],
