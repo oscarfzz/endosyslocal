@@ -1177,7 +1177,6 @@ var gestion_exploraciones = function () {
                         inline: true,
                         locale: 'es',
                         mode: 'range',
-                        format: "Y-m-d",
                         onChange: function (selectedDates, dateStr, instance) {
                             console.log(selectedDates)
                             if (selectedDates.length === 2) {
