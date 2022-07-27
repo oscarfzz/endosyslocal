@@ -494,7 +494,7 @@ var imagenes_expl = function () {
 								.appendTo($container_li)
 								.button({ text: false })
 								.data('imagen', imagen)
-								.click();
+								.click(( ) => $(`#captura${imagen.id}`).remove());
 
 
 							if (imagen.posx && imagen.posy) {

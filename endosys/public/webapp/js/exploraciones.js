@@ -418,32 +418,32 @@ var gestion_exploraciones = function () {
                 grafico_div.css("background-repeat", 'no-repeat');
                 grafico_div.css("background-image", 'url("/res/grafico_' + exploracion.tipoExploracion.codigo + '.jpg")');
 
-                //construimos la papelera para eliminar flechas de posicionamiento
-                var $papelera = $('<img id="papelera" src="/res/papelera.png" style="position: absolute;">');
-                $papelera.css('right', '0px');
-                $papelera.css('top', '0px');
-                $papelera.css('margin-top', '5px');
-                $papelera.css('margin-right', '5px');
-                $papelera.droppable({
-                    accept: ".flecha",
-                    hoverClass: "papelera_over",
-                    drop: function (event, ui) {
-                        Endosys.imagenes.update(
-                            tm,
-                            ui.draggable.data("imagen").id,
-                            { 'posx': null, 'posy': null }
-                        );
+                // //construimos la papelera para eliminar flechas de posicionamiento
+                // var $papelera = $('<img id="papelera" src="/res/papelera.png" style="position: absolute;">');
+                // $papelera.css('right', '0px');
+                // $papelera.css('top', '0px');
+                // $papelera.css('margin-top', '5px');
+                // $papelera.css('margin-right', '5px');
+                // $papelera.droppable({
+                //     accept: ".flecha",
+                //     hoverClass: "papelera_over",
+                //     drop: function (event, ui) {
+                //         Endosys.imagenes.update(
+                //             tm,
+                //             ui.draggable.data("imagen").id,
+                //             { 'posx': null, 'posy': null }
+                //         );
 
-                        ui.draggable.remove();
-                        //el codigo comentado es para cuando se elimina una flecha roja se deseleccione su captura relacionada
-                        //se decide que no sea asi por eso se comenta codigo
-                        /*if(ui.draggable.attr("src") == "/res/flecha_grafico_seleccionada.png"){
-                            $("#captura"+ui.draggable.data("imagen").id+"").css("background-color", "transparent");
-                        }*/
-                    }
-                });
+                //         ui.draggable.remove();
+                //         //el codigo comentado es para cuando se elimina una flecha roja se deseleccione su captura relacionada
+                //         //se decide que no sea asi por eso se comenta codigo
+                //         /*if(ui.draggable.attr("src") == "/res/flecha_grafico_seleccionada.png"){
+                //             $("#captura"+ui.draggable.data("imagen").id+"").css("background-color", "transparent");
+                //         }*/
+                //     }
+                // });
 
-                $('#exploracion_form_tabview #exploracion-tab-imagenes>.ui-layout-east').append($papelera);
+                // $('#exploracion_form_tabview #exploracion-tab-imagenes>.ui-layout-east').append($papelera);
 
                 if (callback && callback.success) callback.success(exploracion);
 
