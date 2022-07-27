@@ -1591,13 +1591,13 @@ var gestion_exploraciones = function () {
             $("#exploracion-invalido-btn").button("option", "disabled", true);
             $(".tab_exploracion").find('input[type="checkbox"]').button("option", "disabled", true);
             $("#exploracion-cancelar-btn").button("option", "disabled", true);
-            $("#exploracion-guardar-btn").button("option", "disabled", true);
+            $("#exploracion-guardar-btn").prop("disabled", true);
         },
 
         _habilitar_guardar: function () {
             // habilita el boton de guardar.
             // aqui ya existe el button y usa el .button para habilitar
-            $("#exploracion-guardar-btn").button("option", "disabled", false);
+            $("#exploracion-guardar-btn").prop("disabled", false);
         },
 
         _deshabilitar_guardar: function () {
