@@ -204,7 +204,9 @@ var estructura = function () {
 			}
 
 			if (campo.tipo_camp == "8") {
-				input.flatpickr();
+				input.flatpickr({
+					dateFormat: "d/m/Y",
+				});
 			}
 			
 			$(".zona_valores").find("input:first").focus();

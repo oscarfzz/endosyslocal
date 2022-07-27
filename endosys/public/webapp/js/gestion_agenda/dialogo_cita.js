@@ -91,7 +91,7 @@ var dialogo_cita = function() {
 					var hora_ini = data_cita.hora_ini +":"+ data_cita.minuto_ini; 
 					var hora_fin = data_cita.hora_fin +":"+ data_cita.minuto_fin;
 					content_form_cita.find("#campo-fecha").val(fecha_ini);
-					content_form_cita.find("#campo-fecha").flatpickr({ defaultDate: fecha_ini, minDate: new Date() });
+					content_form_cita.find("#campo-fecha").flatpickr({ defaultDate: fecha_ini, minDate: new Date(), dateFormat: "d/m/Y", });
 					content_form_cita.find("#campo-hora-ini").val(hora_ini);
 					content_form_cita.find("#campo-hora-fin").val(hora_fin);
 					if (opciones_config.IDENTIFICADORES_PACIENTE.toUpperCase() === 'IDUNICO' ||
