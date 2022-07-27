@@ -1907,13 +1907,34 @@ striping:
     width: 100%;
 }
 .yui-skin-endosys .ui-sortable li {
-    width: 300px;
-    height: auto;
+    width: 260px;
+    height: 170px;
 }
+
+.yui-skin-endosys #exploracion_form_tabview #exploracion-tab-imagenes .endosys-imagen-container {
+    padding: 0;
+    overflow: hidden;
+}
+.yui-skin-endosys #exploracion-mostrar-paciente span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.yui-skin-endosys #exploracion-mostrar-paciente #historia {
+    color: var(--primary-color);
+}
+
+.yui-skin-endosys #exploracion-mostrar-paciente:hover {
+    background: unset;
+    border: unset;
+}
+
 .yui-skin-endosys .ui-sortable li > a{
     width: 100%;
     display: flex;
     justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 .yui-skin-endosys .ui-sortable li a > img {
