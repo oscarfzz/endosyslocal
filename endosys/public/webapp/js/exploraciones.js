@@ -1181,19 +1181,33 @@ var gestion_exploraciones = function () {
                         onChange: function (selectedDates, dateStr, instance) {
                             console.log(selectedDates)
                             if (selectedDates.length === 2) {
-                                var fecha_min = selectedDates[0].toLocaleString().split(',')[0];
-                                var fecha_max = selectedDates[1].toLocaleString().split(',')[0];
+                                var fecha_min = parseDate(selectedDates[0]);
+                                var fecha_max = parseDate(selectedDates[1]);
                                 buscarEntre2fechas(fecha_min, fecha_max)
                             }
 
                             if (selectedDates.length === 1) {
-                                var fecha_min = selectedDates[0].toLocaleString().split(',')[0];
+                                var fecha_min = parseDate(selectedDates[0]);
                                 buscarPorFecha(fecha_min)
                             }
                             
 
                         }
                     })
+
+                    function parseDate (date) {
+
+                        let day = date.getDate()
+                        let month = date.getMonth() + 1
+                        let year = date.getFullYear()
+                        
+                        if(month < 10){
+                           return `${day}/0${month}/${year}`
+                        }else{
+                          return `${day}/${month}/${year}`
+                        }
+
+                    }
 
                     //  boton buscar (entre 2 fechas)
                     function buscarEntre2fechas(fecha_min, fecha_max) {
